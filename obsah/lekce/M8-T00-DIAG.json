@@ -362,7 +362,7 @@
       "kapitola": "zlomky",
       "cas_min": 2,
       "zdroj": "vlastni",
-      "zadani": "Lucka měla $240$ Kč. Šestinu utratila za lístek do kina. Ze zbytku dala tři pětiny za dárek pro Emu.\n\nKolik korun stál dárek?",
+      "zadani": "Lucka měla $300$ Kč. Třetinu utratila za lístek do kina. Ze zbytku dala tři pětiny za dárek pro Emu.\n\nKolik korun stál dárek?",
       "kroky": [
         {
           "id": "final",
@@ -376,7 +376,7 @@
           },
           "zname_chyby": [
             {
-              "hodnota": 144,
+              "hodnota": 180,
               "typ_chyby": "z-celku-misto-ze-zbytku"
             },
             {
@@ -391,7 +391,7 @@
         }
       ],
       "tisk": {
-        "zadani": "Lucka měla $240$ Kč. Šestinu utratila za lístek do kina. Ze zbytku dala tři pětiny za dárek pro Emu.\n\nKolik korun stál dárek?\n\nVýsledek: ______ Kč"
+        "zadani": "Lucka měla $300$ Kč. Třetinu utratila za lístek do kina. Ze zbytku dala tři pětiny za dárek pro Emu.\n\nKolik korun stál dárek?\n\nVýsledek: ______ Kč"
       }
     },
     {
@@ -463,7 +463,7 @@
             },
             {
               "hodnota": 3,
-              "typ_chyby": "odcitani-zaporneho"
+              "typ_chyby": "minus-krat-minus"
             }
           ]
         }
@@ -778,9 +778,9 @@
     }
   ],
   "kontrola": {
-    "jistota": "stredni",
-    "zkontroloval": "autor",
+    "jistota": "jista",
+    "zkontroloval": "recenzent",
     "datum": "2026-10-01",
-    "poznamka": "Autor přepočítal všech 20 úloh i všechny známé chyby skriptem (Python, zlomky přesně) a ověřil přes vyhodnoceni.js (vzorová odpověď = správně, každá známá chyba vrátí svůj kód). Výsledky (známé chyby): U1 50 (140; 49), U2 36 (6; 216), U3 0,54 (0,405), U4 3,24 (5,4; 0,54), U5 253 (100; 280; 73; 352), U6 150 (525; 750; 10), U7 $\\frac{11}{12}$ ($\\frac{2}{5}$; $\\frac{1}{3}$), U8 10 (16; 6), U9 $\\frac{3}{2}$ ($\\frac{1}{2}$; $\\frac{2}{3}$; $\\frac{27}{8}$; $\\frac{1}{3}$), U10 120 (144; 40; 80), U11 −2 (2; −20; −11), U12 13 (−3; 7; 3), U13 70 (40; 140; 160), U14 30 (60; 18; 32), U15 270 (240; 450), U16 9 (16; 10), U17 544 (96; 625; 736), U18 30 (4,8; 0,3; 52), U19 94 (47; 60; 54), U20 30 (3; 30 000; 300). Odchylky od osnovy §5: U2 doplněno „nejdříve“ (bez něj je správně i 72, 108…). U3 bez chyby 0,45 (nevzniká čtením podle délky, ta dá 0,405; 0,45 i 0,5 jsou „zatím nesedí“). U9 přidána 4. chyba $\\frac{1}{3}$ smisene-jako-soucin (osnova ji nabízí). U8 popisek „Číslo místo otazníku“. U18 jednotka „žáků“. Teploty v U11 zapsané „$-6{,}5$ °C“ (značka mimo KaTeX). Sporné pro recenzenta: (1) U5 a U9 mají 4 známé chyby (SABLONA §7 výjimečně 4); U5 má třikrát stejný kód obsah-po-desitkach (převod po 10 u obou nebo jen u jednoho sčítance). (2) U18: hodnota 0,3 (jedno procento) je pro dítě nepřirozené číslo žáků, kód odpovida-na-jinou-otazku podle osnovy §7. (3) U10: 40 je zároveň šestina z 240 (lístek do kina), vyhodnotí se jako zlomek-z-cisla-jen-deleni; dítě, které odpoví cenou lístku, dostane stejný kód. (4) U19 povrch-bez-podstav 54 = plášť při podstavě 5 × 4; při jiné volbě podstavy vyjde plášť 64 nebo 70 (zatím nesedí). (5) U20 zapomnel-prevest-jednotky = 3 (počítal s 2 dm jako s 2 cm, převod na litry správně); kdo nepřevede vůbec, napíše 3 000 (zatím nesedí). (6) cas_min úloh 1–2, součet 25 = cas_min lekce; skutečný čas ukáže pilot. (7) U13, U14 bez obrázku (obrázek by prozradil úhel nebo stranu k výšce)."
+    "poznamka": "Recenzent nezávisle přepočítal všech 20 úloh a všechny známé chyby (Python Fraction) a ověřil přes vyhodnotKrok: vzorová odpověď je správně (i s desetinnou čárkou a typografickým mínus), každá známá chyba vrátí svůj kód, žádná se nekryje se správnou odpovědí; nezkrácené $\\frac{22}{24}$ (U7) a $\\frac{6}{4}$ (U9) dají „správně, ale zkrať“. Rovnoměrnost: 2 úlohy na každé `tema` 1–10, kapitoly podle osnovy, součet `cas_min` 25 = lekce (asi 75 s na úlohu). Opraveno: (1) U10 větší zásah do čísel: místo $240$ Kč a šestiny je $300$ Kč a třetina (lístek $100$ Kč, zbytek $200$, dárek stále $120$). Důvod: u šestiny a pětin vyjde $\\frac{1}{5}$ zbytku vždy stejně jako cena lístku ($40$), takže odpověď cenou lístku by dostala kód zlomek-z-cisla-jen-deleni. Nově: $180$ z-celku-misto-ze-zbytku, $40$ zlomek-z-cisla-jen-deleni, $80$ zamenil-cast-a-zbytek, lístek $100$ se s žádnou chybou nekryje. Odchylka od osnovy §5. (2) U12 hodnota $3$ ($8 - 5 \\cdot (-1)$ počítané jako $8 - 5$): kód odcitani-zaporneho → minus-krat-minus podle pravidla R32 ve slovníku (u $a - b \\cdot (-c)$ se zapisuje minus-krat-minus). Ponecháno vědomě: U5 a U9 mají 4 známé chyby (SABLONA §7 výjimka; U5 třikrát obsah-po-desitkach pro převod po 10 u různých sčítanců); U18 $0{,}3$ (jedno procento) jako odpovida-na-jinou-otazku podle osnovy §7; U19 plášť $54$ jen pro podstavu $5 \\times 4$ (jiný plášť je „zatím nesedí“); U20 $3$ = výška brána jako $2$ cm. Látka 6.–7. ročníku, bez mocnin, odmocnin a rovnic; zadání bez nápovědy, tisk bez řešení. Skutečný čas ověří pilot."
   }
 }
