@@ -25,7 +25,7 @@ Samostatná aplikace postavená na základech „Spolu“ (`mrkvicka-studentbase
 - Proto: otázky v taháku musí být srozumitelné i jako nápověda přímo pro dítě (přímá řeč k dítěti, bez rodu, bez prozrazení odpovědi).
 
 ## 4. Čím se liší od Spolu
-- Úroveň: 8. třída opakuje 6.–7. ročník, úlohy o stupeň těžší než „Čeština: základy“ a Fáze 1 Spolu, ale bez nové látky 8. ročníku (mocniny, odmocniny, Pythagorova věta, výrazy s mnohočleny zde nejsou; v češtině ne větné rozbory souvětí 9. ročníku).
+- Úroveň: 8. třída opakuje 6.–7. ročník. Matematika: číselná náročnost jako Fáze 1 Spolu, širší záběr (rozhodnutí 1. 10.). Čeština o stupeň výš než „Čeština: základy“. Bez nové látky 8. ročníku (mocniny, odmocniny, Pythagorova věta, výrazy s mnohočleny zde nejsou; v češtině ne větné rozbory souvětí 9. ročníku).
 - Svět úloh: 13–14letí (škola, sport, kamarádi, technika, příroda, rodina). Jména v češtině: Tomáš, Lucka, Honzík, Klára, Adam, Ema; detektiv je vždy Petr.
 - Jazyková správnost češtiny jako ve Spolu: každý hodnocený tvar ověřený v Internetové jazykové příručce ÚJČ, zdroj v `kontrola.zdroj`, žádné dublety ve vyhodnocení.
 
@@ -41,3 +41,14 @@ Pro každou lekci platí:
 - vzorová odpověď každého kroku vyjde správně;
 - recenze (u češtiny i korektura ÚJČ) s `kontrola.jistota: "jista"`;
 - průchod v prohlížeči žák → rodič → tisk a v režimu „Dnes samo“ bez nálezů.
+
+## 7. Rozhodnutí vedoucího k osnově matematiky (1. 10., OSNOVA-MATEMATIKA §8)
+1. `varianta: "z8"`; `tyden` = číslo tématu 1–10 (diagnostika 0), `poradi` = lekce v tématu 1–4. Úloha diagnostiky má vždy `tema` (1–10).
+2. Pořadí témat podle osnovy (jednotky T03, geometrie T07, poměr a procenta před tělesy) — přijato.
+3. Konstrukce (`rysovani`) v 40 lekcích nejsou (nefungují v režimu „Dnes samo“); souměrnost jen „pozná a dopočítá“. Papírové listy s konstrukcemi případně později mimo 40 lekcí.
+4. Úrok: jednoduchý, za rok nebo celé měsíce, bez daně a bez složeného úrokování.
+5. `typ: "cermat"` = „Hlavní úloha“; slovo CERMAT se v UI, tisku ani manuálu nesmí objevit. Pravidla klonování CERMAT (SABLONA §5.3, §18 o přijímačkách, §20) pro Spolu 8 neplatí.
+6. Značky jednotek $\text{cm}^2$, $\text{m}^3$ ano; mocnina jako operace ne (obsah a objem jako součin).
+7. Doporučení: slabá (0/2) i nejistá (1/2) témata jedna skupina v pořadí osnovy, silná (2/2) na konec a jen L4; po oranžové nebo červené L4 (podle hlavní barvy lekce) se doplní L1–L3.
+8. T04-L4 detektiv „nezkrátil úplně“: odchylka povolena (final jako dlaždice nebo `cislo` „čitatel v základním tvaru“).
+9. Diagnostika 20 úloh (2 na téma) — přijato.
