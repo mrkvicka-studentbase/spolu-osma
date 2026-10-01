@@ -52,3 +52,16 @@ Pro každou lekci platí:
 7. Doporučení: slabá (0/2) i nejistá (1/2) témata jedna skupina v pořadí osnovy, silná (2/2) na konec a jen L4; po oranžové nebo červené L4 (podle hlavní barvy lekce) se doplní L1–L3.
 8. T04-L4 detektiv „nezkrátil úplně“: odchylka povolena (final jako dlaždice nebo `cislo` „čitatel v základním tvaru“).
 9. Diagnostika 20 úloh (2 na téma) — přijato.
+
+## 8. Rozhodnutí vedoucího k osnově češtiny (1. 10., cestina/Obsah/OSNOVA.md §19)
+1. Velká písmena a synonyma/antonyma vypuštěna (dublety) — přijato. Žádné 11. téma.
+2. Diktát až od tématu 3 (T2 bez diktátu).
+3. Společný základ Z1–Z5 (§2.1) přijat; diagnostika ho neměří.
+4. **Diktát čárky nehodnotí** (`hodnotit_interpunkci: false` všude, aplikace interpunkci v diktátu neporovnává). Čárky se měří jen úlohami `klik_ve_textu` s `cil: "mezery"`. Diktát L36 je běžný diktát (slova a pravopis); nahrávky čtou interpunkci přirozeně a nevyslovují ji.
+5. Diktát v T8 (L32) zůstává.
+6. Nové kapitoly (`pridavna-jmena`, `zajmena-cislovky`, `shoda`, `vetne-cleny`, `pravopis`) jsou v `obsah/hlasky.md`, 44 nových kódů v `cestina/Obsah/TYPY-CHYB.md` (oddíl Spolu 8) a `web/js/typy-chyb-cj.js`. Kódy v `chyby_ocekavane` holé (aplikace skládá `diktat-pravopis-…`).
+7. Nahrávka diktátu hlásí „velké písmeno — …“ i u přivlastňovacích tvarů (*Tomášovy, Klářin*).
+8. `oznac_role`: nejvýš 8 rolí v jednom kroku; víc → rozdělit na kroky po skupinách (např. ohebné / neohebné druhy).
+9. Prahy `semafor_tydne` ~90 % zelená, ~70 % oranžová — přijato.
+10. Diagnostika: položka s více mezerami se počítá jen celá; „7 a více slabých témat → pořadí osnovy“ — přijato.
+11. Jméno Honzík: mimo T6 jen vytištěné, ne v diktátu ani v mezeře.

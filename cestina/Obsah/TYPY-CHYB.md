@@ -164,3 +164,53 @@ Skupiny: `sd` slovní druhy · `rod`/`cislo`/`pad` kategorie podst. jmen · `ziv
 1. Kód popisuje **co dítě udělalo**, ne co mělo udělat (`pad-1-za-4`, ne `pad-spatne`).
 2. Ke každému kódu otázka pro rodiče, která nedává odpověď (výjimka: čisté znalosti jako *bychom*, kde otázka odpověď obsahuje a je to tak označeno).
 3. Kód se přidá do tabulky **před** použitím v JSON; QA validuje, že každý kód v lekcích existuje ve slovníku.
+
+## Spolu 8 — opakování 8. třídy (OSNOVA §17, 1. 10. 2026)
+Lekce = číslo lekce Spolu 8 (1–40), D = diagnostika. Otázka slouží rodiči i jako nápověda dítěti v režimu „Dnes samo“.
+
+| Kód | Co dítě udělá | Příklad | Lekce | Otázka pro rodiče |
+|---|---|---|---|---|
+| `ohebnost-stupnovani` | příslovce označí jako ohebné, protože jde stupňovat | *rychle* → ohebné | 1, 2, 4, D1 | „Zkus to slovo říct v jiném pádě nebo s *já, ty, on*. Jde to? Je stupňování totéž?“ |
+| `sd-podstatne-za-prislovce` | podstatné jméno, které zná jako „kdy?“, určí jako příslovce | *Ten večer byl dlouhý.* → příslovce | 3 | „Je před tím slovem *ten*? Jde na něj ukázat jako na věc?“ |
+| `vzor-zena-za-predseda` | mužské jméno na *-a* dá ke vzoru *žena* | *hokejista, táta* → žena | 5, D3 | „Řekni před to slovo *ten*, nebo *ta*. Který vzor má stejný rod?“ |
+| `stupnovani-nepravidelne-pravidelne` | nepravidelné stupňování utvoří pravidelně | *dobrý – dobřejší* | 9, 12, D6 | „Řekni to ve větě: Tenhle dort je ještě ___ než ten druhý. Jak to zní?“ |
+| `stupnovani-zamena` | zamění 2. a 3. stupeň | *nejlepší* → 2. stupeň | 9, D6 | „Srovnáváš dvě věci, nebo vybíráš tu úplně ze všech?“ |
+| `privlastnovaci-i-za-y` | v přivlastňovacím přídavném jménu napíše *-ovi* tam, kde patří *-ovy* | *Tomášovi klíče* | 11, 12, D5 | „Řekni před podstatné jméno *ti*, nebo *ty*. Co se k němu hodí?“ |
+| `privlastnovaci-y-za-i` | napíše *-ovy* tam, kde patří *-ovi* | *Tomášovy kamarádi* | 11, 12 | totéž |
+| `zajmeno-druh-zamena` | zamění druh zájmena | *který* v otázce → vztažné; *nikdo* → neurčité | 13, 14, 16 | „Co to slovo ve větě dělá: ptá se, ukazuje, něco popírá, nebo připojuje další větu?“ |
+| `jenz-rod-zamena` | použije *jenž/jež* v jiném rodě | *kniha, jenž* | 13 | „Ke kterému slovu se to zájmeno vztahuje? Řekni před něj *ten, ta*, nebo *to*.“ |
+| `zajmeno-ji-delka` | napíše *jí* ve 4. p. nebo *ji* ve 3. a 7. p. | *viděla jí*, *podala ji ruku* | 14, 16 | „Dosaď místo toho slova *Lucku*, nebo *Lucce*. Které se hodí?“ |
+| `zajmeno-jeho-po-predlozce` | po předložce použije *jeho, jemu* místo *něho, němu* (u osobního zájmena) | *šel pro jeho* | 14 | „Stojí před zájmenem krátké slovo jako *pro, k, bez*? Řekni to nahlas i s ním.“ |
+| `cislovka-druh-zamena` | zamění druh číslovky | *dvoje* → násobná | 15, 16 | „Na co se ptáš: kolik? kolikátý? kolikery? kolikrát?“ |
+| `cislovka-hovorovy-tvar` | vybere/napíše hovorový tvar *dvouma, třema, čtyřma* (ne u částí těla) | *se třema kamarády* | 15, 16, D8 | „Jak to napíšeš v písemce? Řekni řadu: se dvěma, se třemi, se …“ — *pozn.: tahák dává tvar, čistá znalost (jako `bysme-za-bychom`)* |
+| `cislovka-pad-zamena` | zamění tvar 2./6. a 3./7. pádu | *se dvou kamarády*, *ke dvou* | 15, D8 | „Na jakou otázku to odpovídá: s kým? bez koho? o kom? ke komu?“ |
+| `vid-zamena` | určí dokonavé sloveso jako nedokonavé nebo naopak | *přečíst* → nedokonavé | 18, 19, 20, D9 | „Dej to sloveso do neurčitého tvaru a zkus: *budu ___*. Jde to?“ |
+| `bude-s-dokonavym` | utvoří budoucí čas dokonavého slovesa s *budu* | *budu přečíst* | 18, 20 | „Jde říct *budu přečíst*? Jak řekneš, že to zítra dokončíš?“ |
+| `rod-trpny-za-byt` | tvar *být* bez příčestí (*byl doma*) určí jako rod trpný | *Lucka byla doma.* → trpný | 19, D10 | „Děje se tu s Luckou něco, nebo jen říká, kde je? Je za *byla* tvar na *-n, -t*?“ |
+| `rod-trpny-neuzna` | rod trpný určí jako činný | *Most byl postaven.* → činný | 19, 20, D10 | „Dělá to ten, o kom se mluví, nebo se to děje s ním?“ |
+| `prisudek-slovesny-za-jmenny` | slovesný přísudek se slovesem *být* (*byla doma*) určí jako jmenný | *Klára byla doma.* → jmenný | 29 | „Říká to, jaká nebo kdo Klára je, nebo kde je?“ |
+| `prisudek-jmenny-za-slovesny` | jmenný přísudek se sponou určí jako slovesný | *Tomáš je brankář.* → slovesný | 29 | „Je za *je* slovo, které říká, kdo nebo jaký podmět je?“ |
+| `prisudek-jmenny-jen-spona` | u jmenného přísudku označí jen *je, byl* | *Soused je kuchař.* → přísudek *je* | 29 | „Co se o sousedovi říká? Stačí samo *je*?“ |
+| `predmet-za-pu` | předmět určí jako příslovečné určení | *mluvili o výletu* → PU místa | 30 | „Zeptej se od slovesa. Hodí se otázka *kde? kdy? jak? proč?*, nebo pádová otázka?“ |
+| `pu-za-predmet` | příslovečné určení určí jako předmět | *včera* → předmět | 30, 32, D16 | totéž |
+| `pu-druh-zamena` | zamění druh příslovečného určení | *kvůli dešti* → PU času | 30 | „Jakou otázkou se na to zeptáš: kde, kdy, jak, nebo proč?“ |
+| `privlastek-shoda-zamena` | zamění přívlastek shodný a neshodný | *dům u řeky* → shodný | 31 | „Změň tvar jména: bez domu … Mění se ten přívlastek s ním?“ |
+| `privlastek-neshodny-za-pu` | přívlastek neshodný určí jako příslovečné určení | *Dům u řeky je starý.* → PU | 31, D17 | „Ke kterému slovu to patří: ke jménu, nebo ke slovesu? Zeptej se od něj.“ |
+| `pu-za-privlastek` | příslovečné určení určí jako přívlastek | *čekal u vchodu* → přívlastek | 31 | totéž |
+| `veta-hlavni-za-vedlejsi` | zamění větu hlavní a vedlejší (řídí se pořadím) | *Když pršelo, …* → hlavní | 33, 36 | „Kterou z těch vět řekneš samotnou? Kterou začíná slovo jako *že, když, který*?“ |
+| `carka-vlozena-chybi-druha` | u vložené vedlejší věty chybí čárka na jejím konci | *Pes, který štěkal usnul.* | 34, 36, D18 | „Kde vedlejší věta končí? Najdi její sloveso a podívej se, co je za ní.“ |
+| `carka-vycet-chybi` | ve výčtu bez spojky chybí čárka | *svačinu pití a pláštěnku* | 35, 36, D20 | „Kolik věcí je vyjmenováno? Co je mezi nimi?“ |
+| `carka-chybi-pred-ale` | ve větě jednoduché chybí čárka před *ale* | *malý ale rychlý* | 35, D20 | „Spojuje *ale* dvě věci, které jdou spolu, nebo staví jednu proti druhé?“ |
+| `carka-navic-pred-i-ani-nebo` | napíše čárku před *i, ani, nebo* ve slučovacím spojení | *Tomáš, i Lucka* | 35 | „Spojuje to slovo jen dvě věci za sebou, podobně jako *a*?“ |
+| `carka-osloveni-chybi` | neoddělí oslovení | *Kláro pojď!* | 35 | „Na koho se ve větě volá? Kde to volání končí?“ |
+| `stavba-hranice-zamena` | určí hranici předpony a kořene jinde | *o\ | „Najdi slovo bez předpony, ze kterého je to utvořené. Kde začíná?“ | ddělit* |
+| `stavba-cast-zamena` | zamění části slova (předponu, kořen, příponu, koncovku) | *přeskoč* → kořen | 40 | „Která část zůstane stejná ve všech příbuzných slovech?“ |
+| `zdvojene-chybi` | na švu napíše jen jednu ze dvou stejných souhlásek | *cený, odělení* | 37, 40, D23 | „Rozlož slovo na části. Končí jedna část stejným písmenem, jakým začíná další?“ |
+| `zdvojene-navic` | napíše dvě souhlásky tam, kde je jedna | *vlnněný* | 37 | „Ze kterého slova je utvořené? Kolik *n* má jeho základ a kolik přípona?“ |
+| `u-krouzek-za-carku` | napíše *ů* na začátku kořene po předponě | *neůspěch* | 37 | „Rozlož slovo. Jak začíná slovo bez předpony?“ |
+| `u-carka-za-krouzek` | napíše *ú* uvnitř domácího slova | *dúm* | 37 | „Stojí to *ú* na začátku slova, nebo hned za předponou?“ |
+| `s-z-predpona-zamena` | zamění předponu *s-* a *z-* | *zhodit, sničit* | 38, 40, D22 | „Co se tím dějem stane: jde něco dolů nebo dohromady, nebo se něco změní?“ |
+| `skupina-e-za-je` | napíše *bě, vě* na švu *ob-, v-* + *je-* | *oběvit, věl* | 39, 40, D21 | „Rozlož slovo: je na začátku předpona *ob-* nebo *v-*? Jak začíná zbytek?“ |
+| `skupina-je-za-e` | napíše *bje, vje* bez předpony | *vjeverka* | 39 | totéž |
+| `skupina-me-za-mne` | napíše *mě* tam, kde patří *mně* | *zapoměl, příjemě* | 39, 40, D21 | „Najdi příbuzné slovo. Je v něm *mn* nebo *men*?“ |
+| `skupina-mne-za-me` | napíše *mně* tam, kde patří *mě* | *mněsto, rozumněl* | 39 | totéž |

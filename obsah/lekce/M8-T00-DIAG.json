@@ -1,0 +1,786 @@
+{
+  "id": "M8-T00-DIAG",
+  "typ": "diagnostika",
+  "faze": "osma",
+  "tyden": 0,
+  "poradi": 1,
+  "tema": "Úvodní test",
+  "kapitola": "diagnostika",
+  "varianta": "z8",
+  "cil_pro_rodice": "Zjistíte, která z deseti témat 6. a 7. třídy dítěti jdou a kterými lekcemi začít.",
+  "uvod_pro_rodice": "Dítě samo vyřeší 20 krátkých úloh, dvě z každého tématu (asi 25 minut), vy nenapovídáte a po dokončení uvidíte, která témata jdou a kde začít.",
+  "cas_min": 25,
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "ulohy": [
+    {
+      "id": "M8-T00-DIAG-U1",
+      "typ": "diagnostika",
+      "tema": 1,
+      "kapitola": "pocetni-operace",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Vypočítej:\n\n$$60 - 4 \\cdot (3 + 2) : 2$$",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 50
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 140,
+              "typ_chyby": "scital-pred-nasobenim"
+            },
+            {
+              "hodnota": 49,
+              "typ_chyby": "ignoroval-zavorku"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Vypočítej:\n\n$$60 - 4 \\cdot (3 + 2) : 2$$\n\nVýsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T00-DIAG-U2",
+      "typ": "diagnostika",
+      "tema": 1,
+      "kapitola": "pocetni-operace",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Tramvaj číslo 3 odjíždí ze zastávky každých $12$ minut, tramvaj číslo 7 každých $18$ minut. V $8{:}00$ odjely obě současně.\n\nZa kolik minut nejdříve odjedou ze zastávky zase obě současně?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "min"
+          },
+          "spravne": {
+            "hodnota": 36
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 6,
+              "typ_chyby": "nsd-nsn-zamena"
+            },
+            {
+              "hodnota": 216,
+              "typ_chyby": "nsn-soucin-cisel"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Tramvaj číslo 3 odjíždí ze zastávky každých $12$ minut, tramvaj číslo 7 každých $18$ minut. V $8{:}00$ odjely obě současně.\n\nZa kolik minut nejdříve odjedou ze zastávky zase obě současně?\n\nVýsledek: ______ min"
+      }
+    },
+    {
+      "id": "M8-T00-DIAG-U3",
+      "typ": "diagnostika",
+      "tema": 2,
+      "kapitola": "desetinna-cisla",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Napiš největší z těchto čísel:\n\n$$0{,}5 \\qquad 0{,}45 \\qquad 0{,}405 \\qquad 0{,}54$$",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 0.54
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 0.405,
+              "typ_chyby": "porovnani-desetinnych-podle-delky"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Napiš největší z těchto čísel:\n\n$$0{,}5 \\qquad 0{,}45 \\qquad 0{,}405 \\qquad 0{,}54$$\n\nVýsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T00-DIAG-U4",
+      "typ": "diagnostika",
+      "tema": 2,
+      "kapitola": "desetinna-cisla",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Vypočítej:\n\n$$0{,}6 \\cdot 0{,}4 + 1{,}5 : 0{,}5$$",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 3.24
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 5.4,
+              "typ_chyby": "carka-pri-nasobeni"
+            },
+            {
+              "hodnota": 0.54,
+              "typ_chyby": "carka-pri-deleni"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Vypočítej:\n\n$$0{,}6 \\cdot 0{,}4 + 1{,}5 : 0{,}5$$\n\nVýsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T00-DIAG-U5",
+      "typ": "diagnostika",
+      "tema": 3,
+      "kapitola": "jednotky",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Kolik decimetrů čtverečních je dohromady?\n\n$$2\\ \\text{m}^2 + 50\\ \\text{dm}^2 + 300\\ \\text{cm}^2$$",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "dm²"
+          },
+          "spravne": {
+            "hodnota": 253
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 100,
+              "typ_chyby": "obsah-po-desitkach"
+            },
+            {
+              "hodnota": 280,
+              "typ_chyby": "obsah-po-desitkach"
+            },
+            {
+              "hodnota": 73,
+              "typ_chyby": "obsah-po-desitkach"
+            },
+            {
+              "hodnota": 352,
+              "typ_chyby": "zapomnel-prevest-jednotky"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Kolik decimetrů čtverečních je dohromady?\n\n$$2\\ \\text{m}^2 + 50\\ \\text{dm}^2 + 300\\ \\text{cm}^2$$\n\nVýsledek: ______ $\\text{dm}^2$"
+      }
+    },
+    {
+      "id": "M8-T00-DIAG-U6",
+      "typ": "diagnostika",
+      "tema": 3,
+      "kapitola": "geometrie",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Obdélníková zahrada má obvod $50$ m. Jedna její strana měří $15$ m.\n\nJaký obsah má zahrada?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m²"
+          },
+          "spravne": {
+            "hodnota": 150
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 525,
+              "typ_chyby": "strana-z-obvodu-bez-poloviny"
+            },
+            {
+              "hodnota": 750,
+              "typ_chyby": "pocital-se-vsemi-cisly"
+            },
+            {
+              "hodnota": 10,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Obdélníková zahrada má obvod $50$ m. Jedna její strana měří $15$ m.\n\nJaký obsah má zahrada?\n\nVýsledek: ______ $\\text{m}^2$"
+      }
+    },
+    {
+      "id": "M8-T00-DIAG-U7",
+      "typ": "diagnostika",
+      "tema": 4,
+      "kapitola": "zlomky",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Vypočítej a výsledek zapiš zlomkem v základním tvaru:\n\n$$\\frac{3}{4} + \\frac{1}{6}$$",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 11,
+            "j": 12
+          },
+          "zname_chyby": [
+            {
+              "c": 2,
+              "j": 5,
+              "typ_chyby": "scital-citatele-i-jmenovatele"
+            },
+            {
+              "c": 1,
+              "j": 3,
+              "typ_chyby": "neprepocital-citatel"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tisk": {
+        "zadani": "Vypočítej a výsledek zapiš zlomkem v základním tvaru:\n\n$$\\frac{3}{4} + \\frac{1}{6}$$\n\nVýsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T00-DIAG-U8",
+      "typ": "diagnostika",
+      "tema": 4,
+      "kapitola": "zlomky",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Doplň číslo místo otazníku, aby se zlomky rovnaly:\n\n$$\\frac{6}{15} = \\frac{?}{25}$$",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Číslo místo otazníku",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 10
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 16,
+              "typ_chyby": "pricetl-misto-nasobeni"
+            },
+            {
+              "hodnota": 6,
+              "typ_chyby": "upravil-jen-cast-zlomku"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Doplň číslo místo otazníku, aby se zlomky rovnaly:\n\n$$\\frac{6}{15} = \\frac{?}{25}$$\n\nMísto otazníku patří: ______"
+      }
+    },
+    {
+      "id": "M8-T00-DIAG-U9",
+      "typ": "diagnostika",
+      "tema": 5,
+      "kapitola": "zlomky",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Vypočítej a výsledek zapiš zlomkem v základním tvaru:\n\n$$2\\frac{1}{4} : \\frac{3}{2}$$",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 3,
+            "j": 2
+          },
+          "zname_chyby": [
+            {
+              "c": 1,
+              "j": 2,
+              "typ_chyby": "smisene-scital-celou-cast"
+            },
+            {
+              "c": 2,
+              "j": 3,
+              "typ_chyby": "prevratil-prvni"
+            },
+            {
+              "c": 27,
+              "j": 8,
+              "typ_chyby": "delil-bez-prevraceni"
+            },
+            {
+              "c": 1,
+              "j": 3,
+              "typ_chyby": "smisene-jako-soucin"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tisk": {
+        "zadani": "Vypočítej a výsledek zapiš zlomkem v základním tvaru:\n\n$$2\\frac{1}{4} : \\frac{3}{2}$$\n\nVýsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T00-DIAG-U10",
+      "typ": "diagnostika",
+      "tema": 5,
+      "kapitola": "zlomky",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Lucka měla $240$ Kč. Šestinu utratila za lístek do kina. Ze zbytku dala tři pětiny za dárek pro Emu.\n\nKolik korun stál dárek?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 120
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 144,
+              "typ_chyby": "z-celku-misto-ze-zbytku"
+            },
+            {
+              "hodnota": 40,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            },
+            {
+              "hodnota": 80,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Lucka měla $240$ Kč. Šestinu utratila za lístek do kina. Ze zbytku dala tři pětiny za dárek pro Emu.\n\nKolik korun stál dárek?\n\nVýsledek: ______ Kč"
+      }
+    },
+    {
+      "id": "M8-T00-DIAG-U11",
+      "typ": "diagnostika",
+      "tema": 6,
+      "kapitola": "cela-cisla",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Ráno bylo $-6{,}5$ °C. Do poledne se oteplilo o $9$ °C, do večera se pak ochladilo o $4{,}5$ °C.\n\nKolik stupňů bylo večer?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "°C"
+          },
+          "spravne": {
+            "hodnota": -2
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 2,
+              "typ_chyby": "mensi-minus-vetsi"
+            },
+            {
+              "hodnota": -20,
+              "typ_chyby": "ruzna-znamenka-secetl"
+            },
+            {
+              "hodnota": -11,
+              "typ_chyby": "posun-spatnym-smerem"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Ráno bylo $-6{,}5$ °C. Do poledne se oteplilo o $9$ °C, do večera se pak ochladilo o $4{,}5$ °C.\n\nKolik stupňů bylo večer?\n\nVýsledek: ______ °C"
+      }
+    },
+    {
+      "id": "M8-T00-DIAG-U12",
+      "typ": "diagnostika",
+      "tema": 6,
+      "kapitola": "cela-cisla",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Vypočítej:\n\n$$(-12) : 3 \\cdot (-2) - 5 \\cdot (-1)$$",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 13
+          },
+          "zname_chyby": [
+            {
+              "hodnota": -3,
+              "typ_chyby": "minus-krat-minus"
+            },
+            {
+              "hodnota": 7,
+              "typ_chyby": "neslo-zleva"
+            },
+            {
+              "hodnota": 3,
+              "typ_chyby": "odcitani-zaporneho"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Vypočítej:\n\n$$(-12) : 3 \\cdot (-2) - 5 \\cdot (-1)$$\n\nVýsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T00-DIAG-U13",
+      "typ": "diagnostika",
+      "tema": 7,
+      "kapitola": "geometrie",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "V rovnoramenném trojúhelníku měří úhel proti základně $40°$.\n\nJak velký je jeden úhel při základně?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "°"
+          },
+          "spravne": {
+            "hodnota": 70
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 40,
+              "typ_chyby": "rovnoramenny-uhly-zamena"
+            },
+            {
+              "hodnota": 140,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 160,
+              "typ_chyby": "soucet-uhlu-trojuhelniku-spatne"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "V rovnoramenném trojúhelníku měří úhel proti základně $40°$.\n\nJak velký je jeden úhel při základně?\n\nVýsledek: ______ °"
+      }
+    },
+    {
+      "id": "M8-T00-DIAG-U14",
+      "typ": "diagnostika",
+      "tema": 7,
+      "kapitola": "geometrie",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Rovnoběžník má strany dlouhé $10$ cm a $6$ cm. Výška na delší stranu měří $3$ cm.\n\nJaký obsah má rovnoběžník?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm²"
+          },
+          "spravne": {
+            "hodnota": 30
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 60,
+              "typ_chyby": "vyska-jako-strana"
+            },
+            {
+              "hodnota": 18,
+              "typ_chyby": "vyska-k-jine-strane"
+            },
+            {
+              "hodnota": 32,
+              "typ_chyby": "obvod-obsah-zamena"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Rovnoběžník má strany dlouhé $10$ cm a $6$ cm. Výška na delší stranu měří $3$ cm.\n\nJaký obsah má rovnoběžník?\n\nVýsledek: ______ $\\text{cm}^2$"
+      }
+    },
+    {
+      "id": "M8-T00-DIAG-U15",
+      "typ": "diagnostika",
+      "tema": 8,
+      "kapitola": "pomer",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Adam a Ema si rozdělili $720$ Kč v poměru $5 : 3$ (Adam : Ema).\n\nKolik korun dostala Ema?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 270
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 240,
+              "typ_chyby": "deleni-v-pomeru-bez-souctu-dilu"
+            },
+            {
+              "hodnota": 450,
+              "typ_chyby": "deleni-v-pomeru-prohodil"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Adam a Ema si rozdělili $720$ Kč v poměru $5 : 3$ (Adam : Ema).\n\nKolik korun dostala Ema?\n\nVýsledek: ______ Kč"
+      }
+    },
+    {
+      "id": "M8-T00-DIAG-U16",
+      "typ": "diagnostika",
+      "tema": 8,
+      "kapitola": "pomer",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Šest stejných čerpadel vyčerpá vodu z bazénu za $12$ hodin.\n\nZa kolik hodin by ji vyčerpalo osm takových čerpadel?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "h"
+          },
+          "spravne": {
+            "hodnota": 9
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 16,
+              "typ_chyby": "neprima-jako-prima"
+            },
+            {
+              "hodnota": 10,
+              "typ_chyby": "umera-jako-soucet"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Šest stejných čerpadel vyčerpá vodu z bazénu za $12$ hodin.\n\nZa kolik hodin by ji vyčerpalo osm takových čerpadel?\n\nVýsledek: ______ h"
+      }
+    },
+    {
+      "id": "M8-T00-DIAG-U17",
+      "typ": "diagnostika",
+      "tema": 9,
+      "kapitola": "procenta",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Mikina stála $640$ Kč. Ve výprodeji ji zlevnili o $15\\,\\%$.\n\nKolik korun stojí mikina teď?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 544
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 96,
+              "typ_chyby": "jen-cast-bez-celku"
+            },
+            {
+              "hodnota": 625,
+              "typ_chyby": "procento-jako-cislo"
+            },
+            {
+              "hodnota": 736,
+              "typ_chyby": "zdrazeni-sleva-zamena"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Mikina stála $640$ Kč. Ve výprodeji ji zlevnili o $15\\,\\%$.\n\nKolik korun stojí mikina teď?\n\nVýsledek: ______ Kč"
+      }
+    },
+    {
+      "id": "M8-T00-DIAG-U18",
+      "typ": "diagnostika",
+      "tema": 9,
+      "kapitola": "procenta",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Ve třídě je $12$ dívek. To je $40\\,\\%$ všech žáků třídy.\n\nKolik žáků má třída?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "žáků"
+          },
+          "spravne": {
+            "hodnota": 30
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 4.8,
+              "typ_chyby": "spatny-zaklad"
+            },
+            {
+              "hodnota": 0.3,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 52,
+              "typ_chyby": "procento-jako-cislo"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Ve třídě je $12$ dívek. To je $40\\,\\%$ všech žáků třídy.\n\nKolik žáků má třída?\n\nVýsledek: ______ žáků"
+      }
+    },
+    {
+      "id": "M8-T00-DIAG-U19",
+      "typ": "diagnostika",
+      "tema": 10,
+      "kapitola": "geometrie",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Kvádr má rozměry $5$ cm, $4$ cm a $3$ cm.\n\nJaký povrch má kvádr?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm²"
+          },
+          "spravne": {
+            "hodnota": 94
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 47,
+              "typ_chyby": "povrch-jen-tri-steny"
+            },
+            {
+              "hodnota": 60,
+              "typ_chyby": "povrch-objem-zamena"
+            },
+            {
+              "hodnota": 54,
+              "typ_chyby": "povrch-bez-podstav"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Kvádr má rozměry $5$ cm, $4$ cm a $3$ cm.\n\nJaký povrch má kvádr?\n\nVýsledek: ______ $\\text{cm}^2$"
+      }
+    },
+    {
+      "id": "M8-T00-DIAG-U20",
+      "typ": "diagnostika",
+      "tema": 10,
+      "kapitola": "geometrie",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Akvárium tvaru kvádru má dno s rozměry $50$ cm a $30$ cm. Voda v něm sahá do výšky $2$ dm.\n\nKolik litrů vody je v akváriu?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "l"
+          },
+          "spravne": {
+            "hodnota": 30
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 3,
+              "typ_chyby": "zapomnel-prevest-jednotky"
+            },
+            {
+              "hodnota": 30000,
+              "typ_chyby": "litr-zamena"
+            },
+            {
+              "hodnota": 300,
+              "typ_chyby": "objem-po-desitkach-nebo-stovkach"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Akvárium tvaru kvádru má dno s rozměry $50$ cm a $30$ cm. Voda v něm sahá do výšky $2$ dm.\n\nKolik litrů vody je v akváriu?\n\nVýsledek: ______ l"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "stredni",
+    "zkontroloval": "autor",
+    "datum": "2026-10-01",
+    "poznamka": "Autor přepočítal všech 20 úloh i všechny známé chyby skriptem (Python, zlomky přesně) a ověřil přes vyhodnoceni.js (vzorová odpověď = správně, každá známá chyba vrátí svůj kód). Výsledky (známé chyby): U1 50 (140; 49), U2 36 (6; 216), U3 0,54 (0,405), U4 3,24 (5,4; 0,54), U5 253 (100; 280; 73; 352), U6 150 (525; 750; 10), U7 $\\frac{11}{12}$ ($\\frac{2}{5}$; $\\frac{1}{3}$), U8 10 (16; 6), U9 $\\frac{3}{2}$ ($\\frac{1}{2}$; $\\frac{2}{3}$; $\\frac{27}{8}$; $\\frac{1}{3}$), U10 120 (144; 40; 80), U11 −2 (2; −20; −11), U12 13 (−3; 7; 3), U13 70 (40; 140; 160), U14 30 (60; 18; 32), U15 270 (240; 450), U16 9 (16; 10), U17 544 (96; 625; 736), U18 30 (4,8; 0,3; 52), U19 94 (47; 60; 54), U20 30 (3; 30 000; 300). Odchylky od osnovy §5: U2 doplněno „nejdříve“ (bez něj je správně i 72, 108…). U3 bez chyby 0,45 (nevzniká čtením podle délky, ta dá 0,405; 0,45 i 0,5 jsou „zatím nesedí“). U9 přidána 4. chyba $\\frac{1}{3}$ smisene-jako-soucin (osnova ji nabízí). U8 popisek „Číslo místo otazníku“. U18 jednotka „žáků“. Teploty v U11 zapsané „$-6{,}5$ °C“ (značka mimo KaTeX). Sporné pro recenzenta: (1) U5 a U9 mají 4 známé chyby (SABLONA §7 výjimečně 4); U5 má třikrát stejný kód obsah-po-desitkach (převod po 10 u obou nebo jen u jednoho sčítance). (2) U18: hodnota 0,3 (jedno procento) je pro dítě nepřirozené číslo žáků, kód odpovida-na-jinou-otazku podle osnovy §7. (3) U10: 40 je zároveň šestina z 240 (lístek do kina), vyhodnotí se jako zlomek-z-cisla-jen-deleni; dítě, které odpoví cenou lístku, dostane stejný kód. (4) U19 povrch-bez-podstav 54 = plášť při podstavě 5 × 4; při jiné volbě podstavy vyjde plášť 64 nebo 70 (zatím nesedí). (5) U20 zapomnel-prevest-jednotky = 3 (počítal s 2 dm jako s 2 cm, převod na litry správně); kdo nepřevede vůbec, napíše 3 000 (zatím nesedí). (6) cas_min úloh 1–2, součet 25 = cas_min lekce; skutečný čas ukáže pilot. (7) U13, U14 bez obrázku (obrázek by prozradil úhel nebo stranu k výšce)."
+  }
+}
