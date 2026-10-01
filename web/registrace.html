@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registrace — Spolu na přijímačky</title>
+  <meta name="description" content="Registrace do pilotu Spolu na přijímačky (4 lekce zdarma) a přihlášení do účtu.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230F172A'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11' fill='none' stroke='%231FC27E' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <!-- Motiv (R26): před CSS, ať stránka neblikne. spolu.motiv = svetly | tmavy | auto (výchozí auto = podle zařízení) -->
+  <script>(function(){var K='spolu.motiv',d=document.documentElement,mq=window.matchMedia?matchMedia('(prefers-color-scheme: dark)'):null;
+  function volba(){try{var v=localStorage.getItem(K);return v==='svetly'||v==='tmavy'?v:'auto'}catch(e){return 'auto'}}
+  function pouzij(){var v=volba();d.setAttribute('data-motiv',v==='auto'?(mq&&mq.matches?'tmavy':'svetly'):v);d.setAttribute('data-motiv-volba',v);
+  var b=document.querySelectorAll('[data-motiv-nastav]');for(var i=0;i<b.length;i++)b[i].setAttribute('aria-pressed',String(b[i].getAttribute('data-motiv-nastav')===v))}
+  function nastav(v){try{localStorage.setItem(K,v==='svetly'||v==='tmavy'?v:'auto')}catch(e){}pouzij()}
+  if(mq&&mq.addEventListener)mq.addEventListener('change',pouzij);
+  addEventListener('storage',function(e){if(e.key===K)pouzij()});
+  document.addEventListener('click',function(e){var t=e.target&&e.target.closest?e.target.closest('[data-motiv-nastav]'):null;if(t)nastav(t.getAttribute('data-motiv-nastav'))});
+  document.addEventListener('DOMContentLoaded',pouzij);
+  window.spoluMotiv={volba:volba,nastav:nastav,pouzij:pouzij};pouzij()})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
+<script type="module" src="js/registrace.js"></script>
+</head>
+<body>
+
+<header class="hlavicka">
+  <div class="hlavicka__vnitrek">
+    <a class="logo" href="index.html"><span class="logo__znacka">Student<span>Base</span></span><span class="logo__produkt">Spolu na přijímačky</span></a>
+  </div>
+</header>
+
+<main class="obal obal--uzky obal--stranka zasobnik zasobnik--volny" id="obsah">
+
+  <noscript>
+    <div class="hlaska hlaska--varovani" role="alert">
+      <div class="hlaska__text"><strong>Registrace potřebuje zapnutý JavaScript.</strong>Zapněte ho prosím v prohlížeči, nebo zkuste jiný prohlížeč.</div>
+    </div>
+  </noscript>
+
+  <div class="prepinac" role="group" aria-label="Registrace nebo přihlášení" id="prepinac" class="prepinac na-stred">
+    <button class="prepinac__volba" type="button" aria-pressed="true" data-rezim="registrace">Registrace</button>
+    <button class="prepinac__volba" type="button" aria-pressed="false" data-rezim="prihlaseni">Přihlášení</button>
+  </div>
+
+  <!-- ================= Registrace ================= -->
+  <section id="sekce-registrace" aria-labelledby="registrace-nadpis">
+    <form class="formular" id="formular-registrace" novalidate>
+      <div class="formular__uvod">
+        <h1 id="registrace-nadpis">Registrace do pilotu</h1>
+        <p class="text-tlumeny">4 lekce zdarma od 1. 10. Zabere to 2 minuty.</p>
+      </div>
+
+      <div class="hlaska hlaska--varovani" role="alert" id="registrace-chyba" hidden>
+        <svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 16H3z"/><path d="M12 10v4M12 16.8h.01"/></svg>
+        <div class="hlaska__text"><strong data-text></strong><div class="hlaska__akce" data-akce hidden></div></div>
+      </div>
+
+      <fieldset class="formular__sekce">
+        <legend class="formular__nadpis-sekce">Vy</legend>
+        <div class="pole-skupina">
+          <label class="pole-popisek" for="r-jmeno">Vaše jméno</label>
+          <input class="pole" id="r-jmeno" name="jmeno" autocomplete="name" maxlength="100" aria-describedby="r-jmeno-chyba">
+          <p class="pole-chyba" id="r-jmeno-chyba" hidden></p>
+        </div>
+        <div class="pole-skupina">
+          <label class="pole-popisek" for="r-email">E-mail</label>
+          <input class="pole" id="r-email" name="email" type="email" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" maxlength="200" aria-describedby="r-email-chyba">
+          <p class="pole-chyba" id="r-email-chyba" hidden></p>
+        </div>
+        <div class="pole-skupina">
+          <label class="pole-popisek" for="r-heslo">Heslo</label>
+          <input class="pole" id="r-heslo" name="heslo" type="password" autocomplete="new-password" aria-describedby="r-heslo-nap r-heslo-chyba">
+          <div class="radek radek--mezi">
+            <p class="pole-napoveda" id="r-heslo-nap">Alespoň 8 znaků.</p>
+            <button class="tlacitko tlacitko--tiche" type="button" data-zobrazit-heslo="r-heslo" aria-controls="r-heslo" aria-pressed="false"><svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span>Zobrazit heslo</span></button>
+          </div>
+          <p class="pole-chyba" id="r-heslo-chyba" hidden></p>
+        </div>
+      </fieldset>
+
+      <fieldset class="formular__sekce">
+        <legend class="formular__nadpis-sekce">Dítě</legend>
+        <div class="pole-skupina">
+          <label class="pole-popisek" for="r-dite">Křestní jméno dítěte</label>
+          <input class="pole" id="r-dite" name="dite" autocomplete="off" maxlength="50" aria-describedby="r-dite-nap r-dite-chyba">
+          <p class="pole-napoveda" id="r-dite-nap">Druhé dítě můžete přidat později, je zdarma.</p>
+          <p class="pole-chyba" id="r-dite-chyba" hidden></p>
+        </div>
+        <div class="pole-skupina">
+          <fieldset class="volby" id="r-skola" aria-describedby="r-skola-chyba">
+            <legend>Na jakou školu se hlásí?</legend>
+            <label class="volba"><input class="volba__vstup" type="radio" name="typ_skoly" value="gymnazium"><span class="volba__obsah">Gymnázium</span></label>
+            <label class="volba"><input class="volba__vstup" type="radio" name="typ_skoly" value="ss_maturita"><span class="volba__obsah">SŠ s maturitou</span></label>
+          </fieldset>
+          <p class="pole-chyba" id="r-skola-chyba" hidden></p>
+        </div>
+        <div class="pole-skupina">
+          <fieldset class="volby volby--stupnice" id="r-znamka" aria-describedby="r-znamka-chyba">
+            <legend>Známka z matematiky na konci 8. třídy</legend>
+            <label class="volba"><input class="volba__vstup" type="radio" name="znamka" value="1"><span class="volba__obsah">1</span></label>
+            <label class="volba"><input class="volba__vstup" type="radio" name="znamka" value="2"><span class="volba__obsah">2</span></label>
+            <label class="volba"><input class="volba__vstup" type="radio" name="znamka" value="3"><span class="volba__obsah">3</span></label>
+            <label class="volba"><input class="volba__vstup" type="radio" name="znamka" value="4"><span class="volba__obsah">4</span></label>
+            <label class="volba"><input class="volba__vstup" type="radio" name="znamka" value="5"><span class="volba__obsah">5</span></label>
+          </fieldset>
+          <p class="pole-chyba" id="r-znamka-chyba" hidden></p>
+        </div>
+      </fieldset>
+
+      <div class="pole-skupina">
+        <label class="pole-popisek" for="r-odkud">Odkud o nás víte? <span class="pole-popisek__volitelne">(nepovinné)</span></label>
+        <select class="pole" id="r-odkud" name="zdroj">
+          <option value="">Vyberte…</option>
+          <option value="fb">Facebook</option>
+          <option value="ig">Instagram</option>
+          <option value="web">Web nebo vyhledávač</option>
+          <option value="jine">Jinde (od známých, z doučování…)</option>
+        </select>
+      </div>
+
+      <div class="pole-skupina">
+        <!-- TODO Pavel: konkrétní URL obchodních podmínek StudentBase (zatím odkaz na web) -->
+        <label class="zaskrtavatko">
+          <input type="checkbox" id="r-souhlas" name="souhlas" aria-describedby="r-souhlas-chyba">
+          <span>Souhlasím s <a href="https://studentbase.cz" target="_blank" rel="noopener">obchodními podmínkami</a> a zpracováním osobních údajů.</span>
+        </label>
+        <p class="pole-chyba" id="r-souhlas-chyba" hidden></p>
+      </div>
+
+      <button class="tlacitko tlacitko--primarni tlacitko--velke tlacitko--cela-sirka" type="submit">Zaregistrovat se</button>
+      <p class="text-stred text-tlumeny">Už máte účet? <a href="registrace.html?prihlaseni=1" data-prepnout="prihlaseni">Přihlaste se</a></p>
+    </form>
+  </section>
+
+  <!-- ================= Po registraci: potvrzení e-mailu ================= -->
+  <section id="sekce-potvrzeni" class="zasobnik" aria-labelledby="potvrzeni-nadpis" hidden>
+    <div class="prazdny-stav prazdny-stav--plny">
+      <span class="ikona-kruh ikona-kruh--zelena"><svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></span>
+      <h1 class="prazdny-stav__nadpis" id="potvrzeni-nadpis" tabindex="-1">Zkontrolujte svůj e-mail</h1>
+      <p>Poslali jsme vám e-mail na <strong id="potvrzeni-email"></strong>. Potvrďte ho kliknutím na odkaz v e-mailu a pak se přihlaste.</p>
+      <p class="prazdny-stav__text">Nic nepřišlo? Podívejte se za pár minut do složky Hromadné nebo Spam.</p>
+      <button class="tlacitko tlacitko--primarni tlacitko--velke" type="button" data-prepnout="prihlaseni">Přejít na přihlášení</button>
+    </div>
+  </section>
+
+  <!-- ================= Přihlášení ================= -->
+  <section id="sekce-prihlaseni" aria-labelledby="prihlaseni-nadpis" hidden>
+    <form class="formular" id="formular-prihlaseni" novalidate>
+      <div class="formular__uvod">
+        <h1 id="prihlaseni-nadpis">Přihlášení</h1>
+        <p class="text-tlumeny">Na telefonu i na počítači dítěte se přihlaste stejným účtem.</p>
+      </div>
+
+      <div class="hlaska hlaska--varovani" role="alert" id="prihlaseni-chyba" hidden>
+        <svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 16H3z"/><path d="M12 10v4M12 16.8h.01"/></svg>
+        <div class="hlaska__text"><strong data-text></strong><div class="hlaska__akce" data-akce hidden></div></div>
+      </div>
+
+      <div class="pole-skupina">
+        <label class="pole-popisek" for="p-email">E-mail</label>
+        <input class="pole" id="p-email" name="email" type="email" autocomplete="username" inputmode="email" autocapitalize="off" spellcheck="false" maxlength="200" aria-describedby="p-email-chyba">
+        <p class="pole-chyba" id="p-email-chyba" hidden></p>
+      </div>
+      <div class="pole-skupina">
+        <label class="pole-popisek" for="p-heslo">Heslo</label>
+        <input class="pole" id="p-heslo" name="heslo" type="password" autocomplete="current-password" aria-describedby="p-heslo-chyba">
+        <div class="radek radek--mezi">
+          <a href="registrace.html?obnova=1" id="p-zapomenute" data-prepnout="obnova">Zapomněli jste heslo?</a>
+          <button class="tlacitko tlacitko--tiche" type="button" data-zobrazit-heslo="p-heslo" aria-controls="p-heslo" aria-pressed="false"><svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span>Zobrazit heslo</span></button>
+        </div>
+        <p class="pole-chyba" id="p-heslo-chyba" hidden></p>
+      </div>
+
+      <button class="tlacitko tlacitko--primarni tlacitko--velke tlacitko--cela-sirka" type="submit">Přihlásit se</button>
+      <p class="text-stred text-tlumeny">Ještě nemáte účet? <a href="registrace.html" data-prepnout="registrace">Zaregistrujte se</a></p>
+    </form>
+  </section>
+
+  <!-- ================= Zapomenuté heslo (R20) ================= -->
+  <section id="sekce-obnova" aria-labelledby="obnova-nadpis" hidden>
+    <form class="formular" id="formular-obnova" novalidate>
+      <div class="formular__uvod">
+        <h1 id="obnova-nadpis" tabindex="-1">Zapomenuté heslo</h1>
+        <p class="text-tlumeny">Napište e-mail, se kterým jste se registrovali. Pošleme vám odkaz na nastavení nového hesla.</p>
+      </div>
+
+      <div class="hlaska hlaska--varovani" role="alert" id="obnova-chyba" hidden>
+        <svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 16H3z"/><path d="M12 10v4M12 16.8h.01"/></svg>
+        <div class="hlaska__text"><strong data-text></strong><div class="hlaska__akce" data-akce hidden></div></div>
+      </div>
+
+      <div class="hlaska hlaska--uspech" role="status" id="obnova-odeslano" hidden>
+        <svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>
+        <div class="hlaska__text"><strong id="obnova-odeslano-nadpis"></strong><span id="obnova-odeslano-text"></span></div>
+      </div>
+
+      <div class="pole-skupina">
+        <label class="pole-popisek" for="o-email">E-mail</label>
+        <input class="pole" id="o-email" name="email" type="email" autocomplete="username" inputmode="email" autocapitalize="off" spellcheck="false" maxlength="200" aria-describedby="o-email-chyba">
+        <p class="pole-chyba" id="o-email-chyba" hidden></p>
+      </div>
+
+      <button class="tlacitko tlacitko--primarni tlacitko--velke tlacitko--cela-sirka" type="submit">Poslat odkaz</button>
+      <p class="text-stred text-tlumeny"><a href="registrace.html?prihlaseni=1" data-prepnout="prihlaseni">Zpět na přihlášení</a></p>
+    </form>
+  </section>
+</main>
+
+<div class="toasty" aria-live="polite"></div>
+<footer class="paticka-stranky"><div class="paticka-motiv"><span>Vzhled:</span>
+    <div class="prepinac prepinac--motiv" role="group" aria-label="Vzhled">
+      <button class="prepinac__volba" type="button" data-motiv-nastav="svetly" aria-pressed="false">Světlý</button>
+      <button class="prepinac__volba" type="button" data-motiv-nastav="tmavy" aria-pressed="false">Tmavý</button>
+      <button class="prepinac__volba" type="button" data-motiv-nastav="auto" aria-pressed="true">Podle zařízení</button>
+    </div>
+  </div></footer>
+</body>
+</html>

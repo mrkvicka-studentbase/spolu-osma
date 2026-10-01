@@ -1,0 +1,567 @@
+{
+  "id": "F2-VZOR-L2",
+  "typ": "simulace",
+  "faze": "faze2",
+  "tyden": 8,
+  "poradi": 4,
+  "tema": "Vzorová simulace — úlohy 9–16",
+  "kapitola": "simulace",
+  "varianta": "z9",
+  "cil_pro_rodice": "Dítě zvládne celý test 70 minut v klidu a zapíše odpovědi do záznamového archu.",
+  "uvod_pro_rodice": "Vzorová simulace pro test frontendu (není to obsah pro rodiny).",
+  "cas_min": 70,
+  "pomucky": [
+    "propiska",
+    "tužka",
+    "pravítko",
+    "kružítko",
+    "záznamový arch"
+  ],
+  "simulace": {
+    "cislo": 1,
+    "cast": 2,
+    "prvni_cast": "F2-VZOR-L1",
+    "odpocet_min": 70
+  },
+  "ulohy": [
+    {
+      "id": "F2-VZOR-L2-U1",
+      "typ": "simulace",
+      "pozice": 9,
+      "kapitola": "geometrie",
+      "zdroj": "vlastní (vzorová lekce pro test frontendu)",
+      "zadani": "Úsečka $AB$ je narýsovaná v záznamovém archu. Sestroj trojúhelník $ABC$, ve kterém $|BC| = 4$ cm a $|AC| = 5$ cm. Bod $C$ leží nad přímkou $AB$.",
+      "obrazek": "<svg viewBox=\"0 0 100 60\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"20\" y1=\"50\" x2=\"80\" y2=\"50\" stroke=\"currentColor\" stroke-width=\"0.6\"/><circle cx=\"20\" cy=\"50\" r=\"0.9\" fill=\"currentColor\"/><circle cx=\"80\" cy=\"50\" r=\"0.9\" fill=\"currentColor\"/><text x=\"16\" y=\"56\" font-size=\"5\" fill=\"currentColor\">A</text><text x=\"81\" y=\"56\" font-size=\"5\" fill=\"currentColor\">B</text></svg>",
+      "obrazek_popis": "Úsečka AB dlouhá 6 cm.",
+      "obrazek_mm": 100,
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "9",
+          "vstup": {
+            "typ": "rysovani"
+          },
+          "body": 3
+        }
+      ],
+      "tahak": {
+        "reseni": "Kružnice se středem $A$ a poloměrem $5$ cm.\n\nKružnice se středem $B$ a poloměrem $4$ cm.\n\n**Výsledek:** $C$ je průsečík obou kružnic nad přímkou $AB$.",
+        "typicka_chyba": "Když dítě prohodilo poloměry ($4$ cm od $A$): trojúhelník je zrcadlově obrácený.",
+        "reseni_obrazek": "<svg viewBox=\"0 0 100 60\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"20\" cy=\"50\" r=\"50\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"0.3\" stroke-dasharray=\"1.5 1.5\"/><circle cx=\"80\" cy=\"50\" r=\"40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"0.3\" stroke-dasharray=\"1.5 1.5\"/><polygon points=\"20,50 80,50 57.5,16.93\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"0.8\"/><circle cx=\"57.5\" cy=\"16.93\" r=\"0.9\" fill=\"currentColor\"/><text x=\"16\" y=\"56\" font-size=\"5\" fill=\"currentColor\">A</text><text x=\"81\" y=\"56\" font-size=\"5\" fill=\"currentColor\">B</text><text x=\"58.5\" y=\"13.5\" font-size=\"5\" fill=\"currentColor\">C</text></svg>",
+        "reseni_obrazek_popis": "Trojúhelník ABC, bod C je průsečík kružnice kolem A (5 cm) a kružnice kolem B (4 cm).",
+        "kontrola_rodice": [
+          "„Leží bod C tam, kde se protínají obě kružnice, jako na obrázku?“",
+          "„Jsou vrcholy A, B, C označené písmeny?“",
+          "„Je C nad úsečkou AB, ne pod ní?“"
+        ]
+      },
+      "tisk": {
+        "zadani": "V záznamovém archu je narýsovaná úsečka $AB$. Sestrojte trojúhelník $ABC$, ve kterém $|BC| = 4$ cm a $|AC| = 5$ cm. Bod $C$ leží v polorovině nad přímkou $AB$. Rýsujte tužkou, čáry obtáhněte."
+      }
+    },
+    {
+      "id": "F2-VZOR-L2-U2",
+      "typ": "simulace",
+      "pozice": 10,
+      "kapitola": "geometrie",
+      "zdroj": "vlastní (vzorová lekce pro test frontendu)",
+      "zadani": "Úsečka $AB$ je strana čtverce $ABCD$. Sestroj čtverec $ABCD$ nad přímkou $AB$.",
+      "obrazek": "<svg viewBox=\"0 0 100 60\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"30\" y1=\"52\" x2=\"70\" y2=\"52\" stroke=\"currentColor\" stroke-width=\"0.6\"/><circle cx=\"30\" cy=\"52\" r=\"0.9\" fill=\"currentColor\"/><circle cx=\"70\" cy=\"52\" r=\"0.9\" fill=\"currentColor\"/><text x=\"26\" y=\"58\" font-size=\"5\" fill=\"currentColor\">A</text><text x=\"71\" y=\"58\" font-size=\"5\" fill=\"currentColor\">B</text></svg>",
+      "obrazek_popis": "Úsečka AB dlouhá 4 cm.",
+      "obrazek_mm": 100,
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "10",
+          "vstup": {
+            "typ": "rysovani"
+          },
+          "body": 2
+        }
+      ],
+      "tahak": {
+        "reseni": "Kolmice k $AB$ v bodech $A$ a $B$.\n\nNa kolmice naneseme $4$ cm.\n\n**Výsledek:** čtverec $ABCD$ nad přímkou $AB$.",
+        "typicka_chyba": "Když strany nejsou kolmé: dítě kreslilo od oka bez trojúhelníku s ryskou.",
+        "reseni_obrazek": "<svg viewBox=\"0 0 100 60\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"30,52 70,52 70,12 30,12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"0.8\"/><polyline points=\"30,48 34,48 34,52\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"0.4\"/><polyline points=\"70,48 66,48 66,52\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"0.4\"/><text x=\"26\" y=\"58\" font-size=\"5\" fill=\"currentColor\">A</text><text x=\"71\" y=\"58\" font-size=\"5\" fill=\"currentColor\">B</text><text x=\"71\" y=\"11\" font-size=\"5\" fill=\"currentColor\">C</text><text x=\"25\" y=\"11\" font-size=\"5\" fill=\"currentColor\">D</text></svg>",
+        "reseni_obrazek_popis": "Čtverec ABCD se stranou 4 cm nad úsečkou AB, pravé úhly u A a B.",
+        "kontrola_rodice": [
+          "„Jsou strany u A a u B kolmé jako na obrázku?“",
+          "„Jsou vrcholy označené A, B, C, D ve stejném pořadí?“"
+        ]
+      },
+      "tisk": {
+        "zadani": "V záznamovém archu je narýsovaná úsečka $AB$. Sestrojte čtverec $ABCD$ v polorovině nad přímkou $AB$. Rýsujte tužkou, čáry obtáhněte."
+      }
+    },
+    {
+      "id": "F2-VZOR-L2-U3",
+      "typ": "simulace",
+      "pozice": 11,
+      "kapitola": "slovni-ulohy",
+      "zdroj": "vlastní (vzorová lekce pro test frontendu)",
+      "zadani": "Ema měří $148$ cm, Filip $156$ cm a Gábina $152$ cm.\n\nRozhodni o každém tvrzení, zda je pravdivé (A), či nikoli (N).",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "11.1 Průměrná výška všech tří dětí je $152$ cm.",
+          "vstup": {
+            "typ": "dlazdice",
+            "pismena": "AN",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "pravdivé",
+                "spravne": true
+              },
+              {
+                "id": "n",
+                "text": "nepravdivé",
+                "spravne": false,
+                "typ_chyby": "prumer-bez-deleni-poctem"
+              }
+            ]
+          },
+          "body": 1
+        },
+        {
+          "id": "k2",
+          "popisek": "11.2 Filip je o $8$ cm vyšší než Ema.",
+          "vstup": {
+            "typ": "dlazdice",
+            "pismena": "AN",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "pravdivé",
+                "spravne": true
+              },
+              {
+                "id": "n",
+                "text": "nepravdivé",
+                "spravne": false,
+                "typ_chyby": "prirustek-a-hodnota-zamena"
+              }
+            ]
+          },
+          "body": 1
+        },
+        {
+          "id": "final",
+          "popisek": "11.3 Gábina je vyšší než průměr všech tří dětí.",
+          "vstup": {
+            "typ": "dlazdice",
+            "pismena": "AN",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "pravdivé",
+                "spravne": false,
+                "typ_chyby": "tipnul-bez-vypoctu"
+              },
+              {
+                "id": "n",
+                "text": "nepravdivé",
+                "spravne": true
+              }
+            ]
+          },
+          "body": 2
+        }
+      ],
+      "tahak": {
+        "reseni": "$148 + 156 + 152 = 456$, $456 : 3 = 152$ (11.1 A)\n\n$156 - 148 = 8$ (11.2 A)\n\n$152$ se rovná průměru, není vyšší (11.3 N)\n\n**Výsledek:** A, A, N",
+        "typicka_chyba": "Když dítě u 11.3 zakřížkovalo A: nespočítalo průměr a tipovalo."
+      },
+      "tisk": {
+        "zadani": "Ema měří $148$ cm, Filip $156$ cm a Gábina $152$ cm.\n\nRozhodněte o každém z tvrzení 11.1–11.3, zda je pravdivé (A), či nikoli (N).\n\n**11.1** Průměrná výška všech tří dětí je $152$ cm.\n\n**11.2** Filip je o $8$ cm vyšší než Ema.\n\n**11.3** Gábina je vyšší než průměr všech tří dětí."
+      }
+    },
+    {
+      "id": "F2-VZOR-L2-U4",
+      "typ": "simulace",
+      "pozice": 12,
+      "kapitola": "geometrie",
+      "zdroj": "vlastní (vzorová lekce pro test frontendu)",
+      "zadani": "Rovnoramenný trojúhelník má základnu $16$ cm, rameno $17$ cm a výšku na základnu $15$ cm. Jaký má obsah?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "12",
+          "vstup": {
+            "typ": "dlazdice",
+            "pismena": "A-E",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$15\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "vybral-mezivysledek"
+              },
+              {
+                "id": "b",
+                "text": "$120\\ \\text{cm}^2$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$136\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "vyska-jako-strana"
+              },
+              {
+                "id": "d",
+                "text": "$240\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "trojuhelnik-bez-deleni-dvema"
+              },
+              {
+                "id": "e",
+                "text": "jiná hodnota",
+                "spravne": false,
+                "typ_chyby": "jina-hodnota-prehledl"
+              }
+            ]
+          },
+          "body": 2
+        }
+      ],
+      "tahak": {
+        "reseni": "$\\frac{16 \\cdot 15}{2} = 120$ (základna krát výška lomeno dvěma)\n\n**Výsledek:** B",
+        "typicka_chyba": "Když dítě zakřížkovalo D: zapomnělo dělit dvěma."
+      },
+      "tisk": {
+        "zadani": "Rovnoramenný trojúhelník má základnu $16$ cm, rameno $17$ cm a výšku na základnu $15$ cm. Jaký má obsah?"
+      }
+    },
+    {
+      "id": "F2-VZOR-L2-U5",
+      "typ": "simulace",
+      "pozice": 13,
+      "kapitola": "slovni-ulohy",
+      "zdroj": "vlastní (vzorová lekce pro test frontendu)",
+      "zadani": "Cyklista ujede $3$ km za $12$ minut. Za kolik minut ujede stejnou rychlostí $5$ km?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "13",
+          "vstup": {
+            "typ": "dlazdice",
+            "pismena": "A-E",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$15$ min",
+                "spravne": false,
+                "typ_chyby": "umera-jako-soucet"
+              },
+              {
+                "id": "b",
+                "text": "$20$ min",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$36$ min",
+                "spravne": false,
+                "typ_chyby": "numericka-chyba"
+              },
+              {
+                "id": "d",
+                "text": "$7{,}2$ min",
+                "spravne": false,
+                "typ_chyby": "tempo-rychlost-zamena"
+              },
+              {
+                "id": "e",
+                "text": "jiná hodnota",
+                "spravne": false,
+                "typ_chyby": "jina-hodnota-prehledl"
+              }
+            ]
+          },
+          "body": 2
+        }
+      ],
+      "tahak": {
+        "reseni": "$12 : 3 = 4$ minuty na kilometr\n\n$5 \\cdot 4 = 20$\n\n**Výsledek:** B",
+        "typicka_chyba": "Když dítě zakřížkovalo A: přičetlo rozdíl místo násobení."
+      },
+      "tisk": {
+        "zadani": "Cyklista ujede $3$ km za $12$ minut. Za kolik minut ujede stejnou rychlostí $5$ km?"
+      }
+    },
+    {
+      "id": "F2-VZOR-L2-U6",
+      "typ": "simulace",
+      "pozice": 14,
+      "kapitola": "geometrie",
+      "zdroj": "vlastní (vzorová lekce pro test frontendu)",
+      "zadani": "Krychle má povrch $54\\ \\text{cm}^2$. Jaký má objem?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "14",
+          "vstup": {
+            "typ": "dlazdice",
+            "pismena": "A-E",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$9\\ \\text{cm}^3$",
+                "spravne": false,
+                "typ_chyby": "vybral-mezivysledek"
+              },
+              {
+                "id": "b",
+                "text": "$27\\ \\text{cm}^3$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$54\\ \\text{cm}^3$",
+                "spravne": false,
+                "typ_chyby": "povrch-objem-zamena"
+              },
+              {
+                "id": "d",
+                "text": "$36\\ \\text{cm}^3$",
+                "spravne": false,
+                "typ_chyby": "numericka-chyba"
+              },
+              {
+                "id": "e",
+                "text": "jiná hodnota",
+                "spravne": false,
+                "typ_chyby": "jina-hodnota-prehledl"
+              }
+            ]
+          },
+          "body": 2
+        }
+      ],
+      "tahak": {
+        "reseni": "$54 : 6 = 9$ (obsah jedné stěny)\n\n$a = 3$ cm\n\n**Výsledek:** $3^3 = 27\\ \\text{cm}^3$, tedy B",
+        "typicka_chyba": "Když dítě zakřížkovalo A: vybralo obsah stěny, ne objem."
+      },
+      "tisk": {
+        "zadani": "Krychle má povrch $54\\ \\text{cm}^2$. Jaký má objem?"
+      }
+    },
+    {
+      "id": "F2-VZOR-L2-U7",
+      "typ": "simulace",
+      "pozice": 15,
+      "kapitola": "procenta",
+      "zdroj": "vlastní (vzorová lekce pro test frontendu)",
+      "zadani": "Tričko stálo původně $300$ Kč. Ke každé úloze 15.1–15.3 přiřaď správný výsledek A–F.",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "15.1 Cena po slevě $20\\,\\%$",
+          "vstup": {
+            "typ": "dlazdice",
+            "pismena": "A-F",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$240$ Kč",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$320$ Kč",
+                "spravne": false,
+                "typ_chyby": "procento-jako-cislo"
+              },
+              {
+                "id": "c",
+                "text": "$280$ Kč",
+                "spravne": false,
+                "typ_chyby": "procento-jako-cislo"
+              },
+              {
+                "id": "d",
+                "text": "$360$ Kč",
+                "spravne": false,
+                "typ_chyby": "zdrazeni-sleva-zamena"
+              },
+              {
+                "id": "e",
+                "text": "$60$ Kč",
+                "spravne": false,
+                "typ_chyby": "jen-cast-bez-celku"
+              },
+              {
+                "id": "f",
+                "text": "jiný výsledek",
+                "spravne": false,
+                "typ_chyby": "jina-hodnota-prehledl"
+              }
+            ]
+          },
+          "body": 2
+        },
+        {
+          "id": "k2",
+          "popisek": "15.2 Cena po zdražení o $20\\,\\%$",
+          "vstup": {
+            "typ": "dlazdice",
+            "pismena": "A-F",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$240$ Kč",
+                "spravne": false,
+                "typ_chyby": "zdrazeni-sleva-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$320$ Kč",
+                "spravne": false,
+                "typ_chyby": "procento-jako-cislo"
+              },
+              {
+                "id": "c",
+                "text": "$280$ Kč",
+                "spravne": false,
+                "typ_chyby": "procento-jako-cislo"
+              },
+              {
+                "id": "d",
+                "text": "$360$ Kč",
+                "spravne": true
+              },
+              {
+                "id": "e",
+                "text": "$60$ Kč",
+                "spravne": false,
+                "typ_chyby": "jen-cast-bez-celku"
+              },
+              {
+                "id": "f",
+                "text": "jiný výsledek",
+                "spravne": false,
+                "typ_chyby": "jina-hodnota-prehledl"
+              }
+            ]
+          },
+          "body": 2
+        },
+        {
+          "id": "final",
+          "popisek": "15.3 O kolik korun se cena změní při slevě $20\\,\\%$",
+          "vstup": {
+            "typ": "dlazdice",
+            "pismena": "A-F",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$240$ Kč",
+                "spravne": false,
+                "typ_chyby": "odpovida-na-jinou-otazku"
+              },
+              {
+                "id": "b",
+                "text": "$320$ Kč",
+                "spravne": false,
+                "typ_chyby": "procento-jako-cislo"
+              },
+              {
+                "id": "c",
+                "text": "$280$ Kč",
+                "spravne": false,
+                "typ_chyby": "procento-jako-cislo"
+              },
+              {
+                "id": "d",
+                "text": "$360$ Kč",
+                "spravne": false,
+                "typ_chyby": "zdrazeni-sleva-zamena"
+              },
+              {
+                "id": "e",
+                "text": "$60$ Kč",
+                "spravne": true
+              },
+              {
+                "id": "f",
+                "text": "jiný výsledek",
+                "spravne": false,
+                "typ_chyby": "jina-hodnota-prehledl"
+              }
+            ]
+          },
+          "body": 2
+        }
+      ],
+      "tahak": {
+        "reseni": "$300 \\cdot 0{,}8 = 240$ (15.1 A)\n\n$300 \\cdot 1{,}2 = 360$ (15.2 D)\n\n$300 \\cdot 0{,}2 = 60$ (15.3 E)\n\n**Výsledek:** A, D, E",
+        "typicka_chyba": "Když dítě u 15.1 zakřížkovalo C: odečetlo 20 korun místo 20 procent."
+      },
+      "tisk": {
+        "zadani": "Tričko stálo původně $300$ Kč. Přiřaďte ke každé úloze 15.1–15.3 správný výsledek z nabídky A–F.\n\n**15.1** Cena po slevě $20\\,\\%$\n\n**15.2** Cena po zdražení o $20\\,\\%$\n\n**15.3** O kolik korun se cena změní při slevě $20\\,\\%$"
+      }
+    },
+    {
+      "id": "F2-VZOR-L2-U8",
+      "typ": "simulace",
+      "pozice": 16,
+      "kapitola": "slovni-ulohy",
+      "zdroj": "vlastní (vzorová lekce pro test frontendu)",
+      "zadani": "První obrazec je z $4$ zápalek. Každý další obrazec má o $3$ zápalky víc než předchozí.\n\n**16.1** Kolik zápalek má 5. obrazec?\n\n**16.2** Kolik zápalek má 20. obrazec?",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "16.1",
+          "vstup": {
+            "typ": "cislo"
+          },
+          "spravne": {
+            "hodnota": 16
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 19,
+              "typ_chyby": "rada-posun-o-jednu"
+            }
+          ],
+          "body": 2
+        },
+        {
+          "id": "final",
+          "popisek": "16.2",
+          "vstup": {
+            "typ": "cislo"
+          },
+          "spravne": {
+            "hodnota": 61
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 80,
+              "typ_chyby": "rada-n-krat-prvni"
+            },
+            {
+              "hodnota": 64,
+              "typ_chyby": "rada-posun-o-jednu"
+            }
+          ],
+          "body": 2
+        }
+      ],
+      "tahak": {
+        "reseni": "$4 + 4 \\cdot 3 = 16$ (5. obrazec má o 4 přírůstky víc)\n\n$4 + 19 \\cdot 3 = 61$\n\n**Výsledek:** $16$ a $61$ zápalek",
+        "typicka_chyba": "Když dítě u 16.2 napsalo $64$: přičetlo o jeden přírůstek víc."
+      },
+      "tisk": {
+        "zadani": "První obrazec je z $4$ zápalek. Každý další obrazec má o $3$ zápalky víc než předchozí.\n\n**16.1** Kolik zápalek má 5. obrazec?\n\n**16.2** Kolik zápalek má 20. obrazec?"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "nizka",
+    "poznamka": "Vzorová lekce jen pro test frontendu Fáze 2 (testy/data), nikdy se neseeduje. Body: 3 + 2 + 4 + 2 + 2 + 2 + 6 + 4 = 25.",
+    "zkontroloval": "frontend",
+    "datum": "2026-09-25"
+  }
+}

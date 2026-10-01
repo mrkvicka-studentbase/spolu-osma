@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Přehled · Spolu na přijímačky</title>
+
+  <!-- Motiv (R26): před CSS, ať stránka neblikne. spolu.motiv = svetly | tmavy | auto (výchozí auto = podle zařízení) -->
+  <script>(function(){var K='spolu.motiv',d=document.documentElement,mq=window.matchMedia?matchMedia('(prefers-color-scheme: dark)'):null;
+  function volba(){try{var v=localStorage.getItem(K);return v==='svetly'||v==='tmavy'?v:'auto'}catch(e){return 'auto'}}
+  function pouzij(){var v=volba();d.setAttribute('data-motiv',v==='auto'?(mq&&mq.matches?'tmavy':'svetly'):v);d.setAttribute('data-motiv-volba',v);
+  var b=document.querySelectorAll('[data-motiv-nastav]');for(var i=0;i<b.length;i++)b[i].setAttribute('aria-pressed',String(b[i].getAttribute('data-motiv-nastav')===v))}
+  function nastav(v){try{localStorage.setItem(K,v==='svetly'||v==='tmavy'?v:'auto')}catch(e){}pouzij()}
+  if(mq&&mq.addEventListener)mq.addEventListener('change',pouzij);
+  addEventListener('storage',function(e){if(e.key===K)pouzij()});
+  document.addEventListener('click',function(e){var t=e.target&&e.target.closest?e.target.closest('[data-motiv-nastav]'):null;if(t)nastav(t.getAttribute('data-motiv-nastav'))});
+  document.addEventListener('DOMContentLoaded',pouzij);
+  window.spoluMotiv={volba:volba,nastav:nastav,pouzij:pouzij};pouzij()})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
+  <script type="module" src="js/prehled.js"></script>
+</head>
+<body>
+  <header class="hlavicka">
+    <div class="hlavicka__vnitrek">
+      <a class="logo" href="prehled.html"><span class="logo__znacka">Student<span>Base</span></span><span class="logo__produkt">Spolu na přijímačky</span></a>
+    </div>
+  </header>
+
+  <main class="stranka-zak">
+    <div class="zasobnik zasobnik--volny" id="obsah"></div>
+  </main>
+
+  <!-- Obrazovka 5: volba režimu -->
+  <dialog class="modal" id="modalRezim" aria-labelledby="modalRezimNadpis">
+    <div class="modal__panel">
+      <h2 class="modal__nadpis" id="modalRezimNadpis">Jak dnes budete pracovat?</h2>
+      <button class="tlacitko tlacitko--tiche tlacitko--ikona modal__zavrit" type="button" aria-label="Zavřít"><svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <div class="volby-karet">
+        <button class="volba-karta" type="button" data-rezim="app"><span class="ikona-kruh"><svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span><span class="volba-karta__nazev">V aplikaci</span><span class="volba-karta__popis" id="rezimAppPopis">Dítě řeší na počítači nebo tabletu.</span></button>
+        <button class="volba-karta" type="button" data-rezim="papir"><span class="ikona-kruh"><svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/></svg></span><span class="volba-karta__nazev">Na papír</span><span class="volba-karta__popis" id="rezimPapirPopis">Vytisknete úlohy, výsledky zadáte vy.</span></button>
+        <button class="volba-karta" type="button" data-rezim="samo" id="rezimSamo" hidden><span class="ikona-kruh"><svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><span class="volba-karta__nazev" id="rezimSamoNazev">Dnes samo</span><span class="volba-karta__popis" id="rezimSamoPopis">Nemáte dnes čas? Dítě pracuje v aplikaci samo.</span></button>
+      </div>
+      <label class="volba-potvrzeni" id="rezimSamoPotvrzeni" hidden><input type="checkbox" id="rezimSamoSouhlas"> <span id="rezimSamoSouhlasText">Rodič ví, že dnes pracuji sám nebo sama.</span></label>
+    </div>
+  </dialog>
+
+  <!-- SOS u kapitoly (jen rodič) -->
+  <dialog class="modal" id="modalSos" aria-labelledby="modalSosNadpis">
+    <div class="modal__panel">
+      <h2 class="modal__nadpis" id="modalSosNadpis">Potřebujete pomoc?</h2>
+      <button class="tlacitko tlacitko--tiche tlacitko--ikona modal__zavrit" type="button" aria-label="Zavřít"><svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <p id="sosText"></p>
+      <p class="modal__text" id="sosKapitola"></p>
+      <div class="modal__akce">
+        <a class="tlacitko tlacitko--primarni" id="sosOdkaz" href="#"><svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>Napsat e-mail</a>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="toasty" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Admin — Spolu na přijímačky</title>
+
+<!-- Motiv (R26): před CSS, ať stránka neblikne. spolu.motiv = svetly | tmavy | auto (výchozí auto = podle zařízení) -->
+<script>(function(){var K='spolu.motiv',d=document.documentElement,mq=window.matchMedia?matchMedia('(prefers-color-scheme: dark)'):null;
+function volba(){try{var v=localStorage.getItem(K);return v==='svetly'||v==='tmavy'?v:'auto'}catch(e){return 'auto'}}
+function pouzij(){var v=volba();d.setAttribute('data-motiv',v==='auto'?(mq&&mq.matches?'tmavy':'svetly'):v);d.setAttribute('data-motiv-volba',v);
+var b=document.querySelectorAll('[data-motiv-nastav]');for(var i=0;i<b.length;i++)b[i].setAttribute('aria-pressed',String(b[i].getAttribute('data-motiv-nastav')===v))}
+function nastav(v){try{localStorage.setItem(K,v==='svetly'||v==='tmavy'?v:'auto')}catch(e){}pouzij()}
+if(mq&&mq.addEventListener)mq.addEventListener('change',pouzij);
+addEventListener('storage',function(e){if(e.key===K)pouzij()});
+document.addEventListener('click',function(e){var t=e.target&&e.target.closest?e.target.closest('[data-motiv-nastav]'):null;if(t)nastav(t.getAttribute('data-motiv-nastav'))});
+document.addEventListener('DOMContentLoaded',pouzij);
+window.spoluMotiv={volba:volba,nastav:nastav,pouzij:pouzij};pouzij()})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/design-system.css">
+</head>
+<body>
+<header class="hlavicka">
+  <div class="hlavicka__vnitrek">
+    <a class="logo" href="admin.html"><span class="logo__znacka">Student<span>Base</span></span><span class="logo__produkt">Admin</span></a>
+    <span class="stitek stitek--na-tmave" id="adminEmail"></span>
+  </div>
+</header>
+
+<main class="obal obal--stranka zasobnik" id="obsah" aria-busy="true"></main>
+
+<div class="toasty" aria-live="polite"></div>
+
+<!-- Potvrzovací dialog pro Odemknout / Uzavřít -->
+<dialog class="modal" id="modalPotvrdit" aria-labelledby="modalPotvrditNadpis">
+  <div class="modal__panel">
+    <h2 class="modal__nadpis" id="modalPotvrditNadpis">Opravdu?</h2>
+    <button class="tlacitko tlacitko--tiche tlacitko--ikona modal__zavrit" type="button" aria-label="Zavřít">
+      <svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <p class="modal__text" id="modalPotvrditText"></p>
+    <div class="modal__akce">
+      <button class="tlacitko tlacitko--sekundarni" type="button" id="modalPotvrditZrusit">Zrušit</button>
+      <button class="tlacitko tlacitko--primarni" type="button" id="modalPotvrditOk">Potvrdit</button>
+    </div>
+  </div>
+</dialog>
+
+<footer class="paticka-stranky"><div class="paticka-motiv"><span>Vzhled:</span>
+    <div class="prepinac prepinac--motiv" role="group" aria-label="Vzhled">
+      <button class="prepinac__volba" type="button" data-motiv-nastav="svetly" aria-pressed="false">Světlý</button>
+      <button class="prepinac__volba" type="button" data-motiv-nastav="tmavy" aria-pressed="false">Tmavý</button>
+      <button class="prepinac__volba" type="button" data-motiv-nastav="auto" aria-pressed="true">Podle zařízení</button>
+    </div>
+  </div></footer>
+<script type="module" src="js/admin.js"></script>
+</body>
+</html>

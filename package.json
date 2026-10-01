@@ -1,0 +1,22 @@
+{
+  "name": "spolu-na-prijimacky",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Spolu na přijímačky (StudentBase.cz) — nástroje pro vývoj. Web ve složce web/ je statický a nepotřebuje npm ani build.",
+  "type": "module",
+  "scripts": {
+    "migrovat": "node supabase/skripty/migrovat.mjs",
+    "sql": "node supabase/skripty/sql.mjs",
+    "seed": "node supabase/seed/seed-lekce.mjs",
+    "seed:validace": "node supabase/seed/seed-lekce.mjs --jen-validace",
+    "test": "node --test \"testy/*.test.js\"",
+    "validace:cestina": "node supabase/seed/seed-lekce.mjs --adresar obsah/cestina/lekce --jen-validace",
+    "qa:cestina": "node nastroje/qa-cestina.mjs"
+  },
+  "devDependencies": {
+    "pg": "8.13.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,2815 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spolu.studentbase.cz/obsah/schema.json",
+  "title": "Lekce — Spolu na přijímačky",
+  "description": "Formát souboru obsah/lekce/<id>.json podle kostra/03-format-obsahu.md. Běžná lekce = přesně 4 úlohy v pořadí rozcvicka, detektiv, cermat, semafor. Diagnostika (faze1, tyden 0, typ 'diagnostika') = jen final kroky, bez taháku a semaforu. Vlastní rozšíření polí jen s prefixem x_ (ignoruje je validátor i web). Validuje supabase/seed/seed-lekce.mjs (podmnožina JSON Schema: type, const, enum, required, properties, patternProperties, additionalProperties, items, prefixItems, minItems, maxItems, minLength, maxLength, pattern, minimum, maximum, allOf, oneOf, if/then, dependentRequired, $ref). Doplněno 25. 9. (R29, R30, ODPOVED-D): pomucky, kapitoly pomer a slovni-ulohy, vstupy vyraz a poradi, obrazek + obrazek_popis. Fáze 2 (R38, osnova-faze2 §3.5 a §4): typ lekce bezna/blok/simulace, pseudo-kapitoly mix a simulace, kapitola a pozice u úlohy, dlaždice s pismena, vstup rysovani, krok postup a body, tahak.reseni_obrazek a kontrola_rodice, obrazek_mm. Čeština (cestina/Obsah/FORMAT-CJ.md, 29. 9. 2026): větev lekceCestina — predmet 'cestina', faze 'zaklady', 6 úloh (rozcvicka, nova ×3, detektiv, kontrolni), nové vstupy dlazdice_vice, klik_ve_textu, oznac_role, doplnit_pismeno, kratky_text, seradit, poslech, diktat; kontrola.zdroj (příručka ÚJČ).",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/lekceBezna"
+    },
+    {
+      "$ref": "#/$defs/lekceDiagnostika"
+    },
+    {
+      "$ref": "#/$defs/lekceSimulace"
+    },
+    {
+      "$ref": "#/$defs/lekceCestina"
+    }
+  ],
+  "$defs": {
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "idLekce": {
+      "type": "string",
+      "pattern": "^(P[1-9][0-9]*|F[12]-T[0-9]{2}-(L[1-4]|DIAG)|F2-VZOR-(L[1-4]|BLOK))$",
+      "description": "P1…; F1-T03-L2; F2-T10-L4; diagnostika F1-T00-DIAG; F2-VZOR-L1/BLOK = vzorové lekce frontendu jen v testy/data (nikdy v obsah/lekce)"
+    },
+    "kapitola": {
+      "enum": [
+        "pocetni-operace",
+        "cela-cisla",
+        "zlomky",
+        "desetinna-cisla",
+        "pomer",
+        "procenta",
+        "jednotky",
+        "slovni-ulohy",
+        "vyrazy",
+        "rovnice",
+        "geometrie"
+      ],
+      "description": "Kódy kapitol podle obsah/hlasky.md (+ pomer, slovni-ulohy dle ODPOVED-D)."
+    },
+    "lekceBezna": {
+      "type": "object",
+      "required": [
+        "id",
+        "faze",
+        "tyden",
+        "poradi",
+        "tema",
+        "kapitola",
+        "varianta",
+        "cil_pro_rodice",
+        "uvod_pro_rodice",
+        "cas_min",
+        "ulohy",
+        "kontrola"
+      ],
+      "properties": {
+        "$schema": {
+          "type": "string"
+        },
+        "id": {
+          "$ref": "#/$defs/idLekce"
+        },
+        "typ": {
+          "enum": [
+            "lekce",
+            "bezna",
+            "blok"
+          ],
+          "description": "Chybí = bezna. blok = blok na čas (Fáze 2), formát jako běžná lekce."
+        },
+        "faze": {
+          "enum": [
+            "pilot",
+            "faze1",
+            "faze2"
+          ]
+        },
+        "tyden": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16
+        },
+        "poradi": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        },
+        "tema": {
+          "$ref": "#/$defs/text"
+        },
+        "kapitola": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/kapitola"
+            },
+            {
+              "const": "mix",
+              "description": "Bloky a rozbory Fáze 2; kapitolu pak nese každá úloha."
+            }
+          ]
+        },
+        "varianta": {
+          "enum": [
+            "z9",
+            "z7"
+          ]
+        },
+        "cil_pro_rodice": {
+          "$ref": "#/$defs/text"
+        },
+        "uvod_pro_rodice": {
+          "$ref": "#/$defs/text"
+        },
+        "cas_min": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 60
+        },
+        "ulohy": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "prefixItems": [
+            {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/uloha"
+                },
+                {
+                  "properties": {
+                    "typ": {
+                      "const": "rozcvicka"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/uloha"
+                },
+                {
+                  "properties": {
+                    "typ": {
+                      "const": "detektiv"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/uloha"
+                },
+                {
+                  "properties": {
+                    "typ": {
+                      "const": "cermat"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/uloha"
+                },
+                {
+                  "properties": {
+                    "typ": {
+                      "const": "semafor"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "kontrola": {
+          "$ref": "#/$defs/kontrola"
+        },
+        "uvod_pravidla": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 6,
+          "description": "Žebříček „Platí:“ pod úvodem (R23).",
+          "items": {
+            "type": "object",
+            "required": [
+              "znak",
+              "text"
+            ],
+            "properties": {
+              "znak": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 36
+              },
+              "text": {
+                "$ref": "#/$defs/text"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "pomucky": {
+          "$ref": "#/$defs/pomucky"
+        }
+      },
+      "patternProperties": {
+        "^x_": {}
+      },
+      "additionalProperties": false
+    },
+    "lekceDiagnostika": {
+      "type": "object",
+      "required": [
+        "id",
+        "typ",
+        "faze",
+        "tyden",
+        "poradi",
+        "tema",
+        "kapitola",
+        "varianta",
+        "cas_min",
+        "ulohy",
+        "kontrola"
+      ],
+      "properties": {
+        "$schema": {
+          "type": "string"
+        },
+        "id": {
+          "$ref": "#/$defs/idLekce"
+        },
+        "typ": {
+          "const": "diagnostika"
+        },
+        "faze": {
+          "const": "faze1"
+        },
+        "tyden": {
+          "const": 0
+        },
+        "poradi": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        },
+        "tema": {
+          "$ref": "#/$defs/text"
+        },
+        "kapitola": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/kapitola"
+            },
+            {
+              "const": "diagnostika"
+            }
+          ]
+        },
+        "varianta": {
+          "enum": [
+            "z9",
+            "z7"
+          ]
+        },
+        "cil_pro_rodice": {
+          "$ref": "#/$defs/text"
+        },
+        "uvod_pro_rodice": {
+          "$ref": "#/$defs/text"
+        },
+        "cas_min": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 90
+        },
+        "ulohy": {
+          "type": "array",
+          "minItems": 10,
+          "maxItems": 30,
+          "items": {
+            "$ref": "#/$defs/ulohaDiagnostika"
+          }
+        },
+        "kontrola": {
+          "$ref": "#/$defs/kontrola"
+        },
+        "pomucky": {
+          "$ref": "#/$defs/pomucky"
+        }
+      },
+      "patternProperties": {
+        "^x_": {}
+      },
+      "additionalProperties": false
+    },
+    "kontrola": {
+      "type": "object",
+      "required": [
+        "jistota"
+      ],
+      "properties": {
+        "jistota": {
+          "enum": [
+            "jista",
+            "stredni",
+            "nizka",
+            "neurceno"
+          ]
+        },
+        "poznamka": {
+          "type": "string"
+        },
+        "zkontroloval": {
+          "type": "string"
+        },
+        "datum": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        }
+      },
+      "patternProperties": {
+        "^x_": {}
+      },
+      "additionalProperties": false
+    },
+    "uloha": {
+      "type": "object",
+      "required": [
+        "id",
+        "typ",
+        "cas_min",
+        "zadani",
+        "zdroj",
+        "kroky",
+        "tahak",
+        "semafor",
+        "tisk"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9-]+-U[0-9]+$"
+        },
+        "typ": {
+          "enum": [
+            "rozcvicka",
+            "detektiv",
+            "cermat",
+            "semafor"
+          ]
+        },
+        "cas_min": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        },
+        "zadani": {
+          "$ref": "#/$defs/text"
+        },
+        "zdroj": {
+          "$ref": "#/$defs/text"
+        },
+        "kroky": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/$defs/krok"
+          }
+        },
+        "tahak": {
+          "$ref": "#/$defs/tahak"
+        },
+        "semafor": {
+          "$ref": "#/$defs/semafor"
+        },
+        "tisk": {
+          "$ref": "#/$defs/tisk"
+        },
+        "obrazek": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Inline SVG bez skriptů, odkazů a foreignObject; barvy jen currentColor / var(--…) (ODPOVED-D bod 1)."
+        },
+        "obrazek_popis": {
+          "$ref": "#/$defs/text",
+          "description": "1 věta: co je na obrázku (pro rodiče a když se SVG nevykreslí)."
+        },
+        "pozice": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16,
+          "description": "Pozice v testu CERMAT (rozložení 2026)."
+        },
+        "kapitola": {
+          "$ref": "#/$defs/kapitola"
+        },
+        "obrazek_mm": {
+          "type": "number",
+          "minimum": 10,
+          "maximum": 190,
+          "description": "Šířka obrázku v tisku v mm; u konstrukcí měřítko 1 : 1 (výjimka z limitu 60 mm)."
+        }
+      },
+      "patternProperties": {
+        "^x_": {}
+      },
+      "additionalProperties": false,
+      "dependentRequired": {
+        "obrazek": [
+          "obrazek_popis"
+        ]
+      }
+    },
+    "ulohaDiagnostika": {
+      "type": "object",
+      "required": [
+        "id",
+        "typ",
+        "kapitola",
+        "zadani",
+        "zdroj",
+        "kroky"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9-]+-U[0-9]+$"
+        },
+        "typ": {
+          "const": "diagnostika"
+        },
+        "kapitola": {
+          "$ref": "#/$defs/kapitola"
+        },
+        "cas_min": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "zadani": {
+          "$ref": "#/$defs/text"
+        },
+        "zdroj": {
+          "$ref": "#/$defs/text"
+        },
+        "kroky": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "$ref": "#/$defs/krok"
+          }
+        },
+        "tisk": {
+          "$ref": "#/$defs/tisk"
+        },
+        "obrazek": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Inline SVG bez skriptů, odkazů a foreignObject; barvy jen currentColor / var(--…) (ODPOVED-D bod 1)."
+        },
+        "obrazek_popis": {
+          "$ref": "#/$defs/text",
+          "description": "1 věta: co je na obrázku (pro rodiče a když se SVG nevykreslí)."
+        },
+        "obrazek_mm": {
+          "type": "number",
+          "minimum": 10,
+          "maximum": 190,
+          "description": "Šířka obrázku v tisku v mm; u konstrukcí měřítko 1 : 1 (výjimka z limitu 60 mm)."
+        }
+      },
+      "patternProperties": {
+        "^x_": {}
+      },
+      "additionalProperties": false,
+      "dependentRequired": {
+        "obrazek": [
+          "obrazek_popis"
+        ]
+      }
+    },
+    "tahak": {
+      "type": "object",
+      "required": [
+        "vysvetleni",
+        "reseni",
+        "otazky",
+        "otocena_role",
+        "typicka_chyba"
+      ],
+      "properties": {
+        "vysvetleni": {
+          "$ref": "#/$defs/text"
+        },
+        "reseni": {
+          "$ref": "#/$defs/text"
+        },
+        "otazky": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/$defs/otazka"
+          }
+        },
+        "otocena_role": {
+          "$ref": "#/$defs/text"
+        },
+        "typicka_chyba": {
+          "$ref": "#/$defs/text"
+        },
+        "otocena_role_odpoved": {
+          "$ref": "#/$defs/text",
+          "description": "Vzorová odpověď dítěte na otočenou roli — pro rodiče, sbalená (R21)."
+        },
+        "reseni_obrazek": {
+          "type": "string",
+          "minLength": 1,
+          "description": "SVG hotové konstrukce/řešení pro rodiče; stejná pravidla jako obrazek."
+        },
+        "reseni_obrazek_popis": {
+          "$ref": "#/$defs/text",
+          "description": "1 věta, co je na obrázku řešení."
+        },
+        "kontrola_rodice": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/$defs/text"
+          },
+          "description": "2–3 otázky, podle kterých rodič porovná rýsování s reseni_obrazek (Sedí / Nesedí)."
+        }
+      },
+      "patternProperties": {
+        "^x_": {}
+      },
+      "additionalProperties": false,
+      "dependentRequired": {
+        "reseni_obrazek": [
+          "reseni_obrazek_popis"
+        ]
+      }
+    },
+    "semafor": {
+      "type": "object",
+      "required": [
+        "zelena",
+        "oranzova",
+        "cervena"
+      ],
+      "properties": {
+        "zelena": {
+          "$ref": "#/$defs/text"
+        },
+        "oranzova": {
+          "$ref": "#/$defs/text"
+        },
+        "cervena": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "tisk": {
+      "type": "object",
+      "required": [
+        "zadani"
+      ],
+      "properties": {
+        "zadani": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "patternProperties": {
+        "^x_": {}
+      },
+      "additionalProperties": false
+    },
+    "krok": {
+      "type": "object",
+      "required": [
+        "id",
+        "popisek",
+        "vstup"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(k[0-9]+|final)$"
+        },
+        "popisek": {
+          "$ref": "#/$defs/text"
+        },
+        "vstup": {
+          "$ref": "#/$defs/vstup"
+        },
+        "spravne": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "zname_chyby": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "typ_chyby"
+            ],
+            "properties": {
+              "typ_chyby": {
+                "$ref": "#/$defs/text"
+              }
+            }
+          }
+        },
+        "kontrola_tvaru": {
+          "enum": [
+            "zakladni_tvar",
+            "soucin",
+            "bez_zavorek",
+            null
+          ]
+        },
+        "postup": {
+          "type": "boolean",
+          "description": "Povinný celý postup (CERMAT 2.3, 3.3, 4): v tisku velký rámeček, v simulaci otázka rodiči."
+        },
+        "body": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10,
+          "description": "Jen simulace: orientační body kroku (vidí jen rodič)."
+        }
+      },
+      "patternProperties": {
+        "^x_": {}
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "vstup": {
+                "properties": {
+                  "typ": {
+                    "const": "dlazdice"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "vstup": {
+                "required": [
+                  "moznosti"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "vstup": {
+                "properties": {
+                  "typ": {
+                    "const": "cislo"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "spravne"
+            ],
+            "properties": {
+              "spravne": {
+                "$ref": "#/$defs/hodnotaCislo"
+              },
+              "zname_chyby": {
+                "items": {
+                  "$ref": "#/$defs/chybaCislo"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "vstup": {
+                "properties": {
+                  "typ": {
+                    "const": "zlomek"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "spravne"
+            ],
+            "properties": {
+              "spravne": {
+                "$ref": "#/$defs/hodnotaZlomek"
+              },
+              "zname_chyby": {
+                "items": {
+                  "$ref": "#/$defs/chybaZlomek"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "vstup": {
+                "properties": {
+                  "typ": {
+                    "const": "smisene"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "spravne"
+            ],
+            "properties": {
+              "spravne": {
+                "$ref": "#/$defs/hodnotaSmisene"
+              },
+              "zname_chyby": {
+                "items": {
+                  "$ref": "#/$defs/chybaSmisene"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "vstup": {
+                "properties": {
+                  "typ": {
+                    "const": "text"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "spravne": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "vstup": {
+                "properties": {
+                  "typ": {
+                    "const": "vyraz"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "spravne"
+            ],
+            "properties": {
+              "spravne": {
+                "$ref": "#/$defs/hodnotaVyraz"
+              },
+              "zname_chyby": {
+                "items": {
+                  "$ref": "#/$defs/chybaVyraz"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "vstup": {
+                "properties": {
+                  "typ": {
+                    "const": "poradi"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "spravne"
+            ],
+            "properties": {
+              "vstup": {
+                "required": [
+                  "vyraz",
+                  "operace"
+                ]
+              },
+              "spravne": {
+                "$ref": "#/$defs/hodnotaPoradi"
+              },
+              "zname_chyby": {
+                "items": {
+                  "$ref": "#/$defs/chybaPoradi"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "vstup": {
+                "properties": {
+                  "typ": {
+                    "const": "rysovani"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "spravne": false,
+              "zname_chyby": false,
+              "kontrola_tvaru": false
+            }
+          }
+        }
+      ]
+    },
+    "vstup": {
+      "type": "object",
+      "required": [
+        "typ"
+      ],
+      "properties": {
+        "typ": {
+          "enum": [
+            "dlazdice",
+            "cislo",
+            "zlomek",
+            "smisene",
+            "text",
+            "vyraz",
+            "poradi",
+            "rysovani"
+          ]
+        },
+        "moznosti": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/moznost"
+          },
+          "maxItems": 6
+        },
+        "jednotka": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "vyraz": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Jen u typu poradi: LaTeX výraz s klikacími místy op{id}{znak} (osnova-faze1 §6.2)."
+        },
+        "operace": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/$defs/operace"
+          },
+          "description": "Jen u typu poradi: operace z op{…}; popis je pro rodiče, dítěti se neukazuje."
+        },
+        "promenne": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z]$"
+          },
+          "description": "Jen u typu vyraz: proměnné výrazu (SABLONA §15)."
+        },
+        "vytknout": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20,
+          "description": "Jen u typu vyraz s kontrola_tvaru soucin: co má dítě vytknout (např. \"-2x\"). Činitelé bez součtu (i se znaménkem) musí mít stejnou hodnotu; jinak nesedí s kódem vytknul-neuplne, u opačného znaménka vytkl-bez-minusu."
+        },
+        "dosazeni": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "patternProperties": {
+              "^[a-z]$": {
+                "type": "number"
+              }
+            },
+            "additionalProperties": false
+          },
+          "description": "Jen u typu vyraz: vlastní sady dosazení, když výchozí nejdou (SABLONA §15)."
+        },
+        "pismena": {
+          "enum": [
+            "A-E",
+            "AN",
+            "A-F"
+          ],
+          "description": "Dlaždice s pevným pořadím a štítky písmen (osnova-faze2 §4): A-E = 5 možností, AN = 2, A-F = 6. Texty bez vlastního „A)“."
+        }
+      },
+      "patternProperties": {
+        "^x_": {}
+      },
+      "additionalProperties": false,
+      "if": {
+        "required": [
+          "pismena"
+        ]
+      },
+      "then": {
+        "properties": {
+          "moznosti": {
+            "minItems": 2,
+            "maxItems": 6
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "moznosti": {
+            "minItems": 3,
+            "maxItems": 4
+          }
+        }
+      }
+    },
+    "moznost": {
+      "type": "object",
+      "required": [
+        "id",
+        "text",
+        "spravne"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+$"
+        },
+        "text": {
+          "$ref": "#/$defs/text"
+        },
+        "spravne": {
+          "type": "boolean"
+        },
+        "typ_chyby": {
+          "$ref": "#/$defs/text"
+        },
+        "stitek": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20,
+          "description": "Malý štítek nad výrazem dlaždice, např. „1. řádek“ (R23)."
+        }
+      },
+      "patternProperties": {
+        "^x_": {}
+      },
+      "additionalProperties": false
+    },
+    "hodnotaCislo": {
+      "type": "object",
+      "required": [
+        "hodnota"
+      ],
+      "properties": {
+        "hodnota": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "hodnotaZlomek": {
+      "type": "object",
+      "required": [
+        "c",
+        "j"
+      ],
+      "properties": {
+        "c": {
+          "type": "integer"
+        },
+        "j": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "hodnotaSmisene": {
+      "type": "object",
+      "required": [
+        "cela",
+        "c",
+        "j"
+      ],
+      "properties": {
+        "cela": {
+          "type": "integer"
+        },
+        "c": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "j": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "chybaCislo": {
+      "type": "object",
+      "required": [
+        "hodnota",
+        "typ_chyby"
+      ],
+      "properties": {
+        "hodnota": {
+          "type": "number"
+        },
+        "typ_chyby": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "chybaZlomek": {
+      "type": "object",
+      "required": [
+        "c",
+        "j",
+        "typ_chyby"
+      ],
+      "properties": {
+        "c": {
+          "type": "integer"
+        },
+        "j": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "typ_chyby": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "chybaSmisene": {
+      "type": "object",
+      "required": [
+        "cela",
+        "c",
+        "j",
+        "typ_chyby"
+      ],
+      "properties": {
+        "cela": {
+          "type": "integer"
+        },
+        "c": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "j": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "typ_chyby": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "otazka": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/text"
+        },
+        {
+          "type": "object",
+          "required": [
+            "text"
+          ],
+          "properties": {
+            "k": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20,
+              "description": "Ke kterému příkladu/kroku otázka patří: „A“, „B“, „C“, „Krok 1“, „Výsledek“ (R23)."
+            },
+            "text": {
+              "$ref": "#/$defs/text"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "pomucky": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "description": "Co si má žák připravit (R29 H2); když chybí, web použije výchozí trojici.",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 30
+      }
+    },
+    "operace": {
+      "type": "object",
+      "required": [
+        "id",
+        "popis"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*$"
+        },
+        "popis": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "hodnotaVyraz": {
+      "type": "object",
+      "required": [
+        "vyraz"
+      ],
+      "properties": {
+        "vyraz": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Zápis výrazu: 0-9 x + - * · / ^ ² ( ) , . mezera; ekvivalenci a kontrolu tvaru řeší frontend."
+    },
+    "chybaVyraz": {
+      "type": "object",
+      "required": [
+        "vyraz",
+        "typ_chyby"
+      ],
+      "properties": {
+        "vyraz": {
+          "$ref": "#/$defs/text"
+        },
+        "typ_chyby": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "poradiOperaci": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "hodnotaPoradi": {
+      "type": "object",
+      "required": [
+        "poradi"
+      ],
+      "properties": {
+        "poradi": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/$defs/poradiOperaci"
+          },
+          "description": "Seznam povolených pořadí (i když je jen jedno)."
+        }
+      },
+      "additionalProperties": false
+    },
+    "chybaPoradi": {
+      "type": "object",
+      "required": [
+        "poradi",
+        "typ_chyby"
+      ],
+      "properties": {
+        "poradi": {
+          "$ref": "#/$defs/poradiOperaci"
+        },
+        "typ_chyby": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "tahakSimulace": {
+      "type": "object",
+      "required": [
+        "reseni",
+        "typicka_chyba"
+      ],
+      "properties": {
+        "reseni": {
+          "$ref": "#/$defs/text"
+        },
+        "typicka_chyba": {
+          "$ref": "#/$defs/text"
+        },
+        "reseni_obrazek": {
+          "type": "string",
+          "minLength": 1,
+          "description": "SVG hotové konstrukce/řešení pro rodiče; stejná pravidla jako obrazek."
+        },
+        "reseni_obrazek_popis": {
+          "$ref": "#/$defs/text",
+          "description": "1 věta, co je na obrázku řešení."
+        },
+        "kontrola_rodice": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/$defs/text"
+          },
+          "description": "2–3 otázky, podle kterých rodič porovná rýsování s reseni_obrazek (Sedí / Nesedí)."
+        }
+      },
+      "dependentRequired": {
+        "reseni_obrazek": [
+          "reseni_obrazek_popis"
+        ]
+      },
+      "patternProperties": {
+        "^x_": {}
+      },
+      "additionalProperties": false,
+      "description": "Simulace: rodič vidí jen řešení a typickou chybu (bez otázek L1–L3 a otočené role)."
+    },
+    "lekceSimulace": {
+      "type": "object",
+      "required": [
+        "id",
+        "typ",
+        "faze",
+        "tyden",
+        "poradi",
+        "tema",
+        "kapitola",
+        "varianta",
+        "cas_min",
+        "simulace",
+        "ulohy",
+        "kontrola"
+      ],
+      "properties": {
+        "$schema": {
+          "type": "string"
+        },
+        "id": {
+          "$ref": "#/$defs/idLekce"
+        },
+        "typ": {
+          "const": "simulace"
+        },
+        "faze": {
+          "const": "faze2"
+        },
+        "tyden": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 13
+        },
+        "poradi": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        },
+        "tema": {
+          "$ref": "#/$defs/text"
+        },
+        "kapitola": {
+          "const": "simulace"
+        },
+        "varianta": {
+          "enum": [
+            "z9",
+            "z7"
+          ]
+        },
+        "cil_pro_rodice": {
+          "$ref": "#/$defs/text"
+        },
+        "uvod_pro_rodice": {
+          "$ref": "#/$defs/text"
+        },
+        "uvod_pravidla": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 6,
+          "description": "Žebříček „Platí:“ pod úvodem (R23).",
+          "items": {
+            "type": "object",
+            "required": [
+              "znak",
+              "text"
+            ],
+            "properties": {
+              "znak": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 36
+              },
+              "text": {
+                "$ref": "#/$defs/text"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "pomucky": {
+          "$ref": "#/$defs/pomucky"
+        },
+        "cas_min": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 90
+        },
+        "simulace": {
+          "$ref": "#/$defs/simulaceInfo"
+        },
+        "ulohy": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {
+            "$ref": "#/$defs/ulohaSimulace"
+          }
+        },
+        "kontrola": {
+          "$ref": "#/$defs/kontrola"
+        }
+      },
+      "patternProperties": {
+        "^x_": {}
+      },
+      "additionalProperties": false,
+      "description": "Jedna část simulace přijímačky (úlohy 1–8 nebo 9–16, 25 bodů); obě části sdílí jeden odpočet."
+    },
+    "simulaceInfo": {
+      "type": "object",
+      "required": [
+        "cislo",
+        "cast",
+        "odpocet_min"
+      ],
+      "properties": {
+        "cislo": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9
+        },
+        "cast": {
+          "enum": [
+            1,
+            2
+          ]
+        },
+        "druha_cast": {
+          "$ref": "#/$defs/idLekce"
+        },
+        "prvni_cast": {
+          "$ref": "#/$defs/idLekce"
+        },
+        "odpocet_min": {
+          "type": "integer",
+          "minimum": 10,
+          "maximum": 120
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "cast": {
+                "const": 1
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "druha_cast"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "cast": {
+                "const": 2
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "prvni_cast"
+            ]
+          }
+        }
+      ],
+      "description": "cast 1 odkazuje na druha_cast, cast 2 na prvni_cast (odpočet části 2 čte začátek části 1)."
+    },
+    "ulohaSimulace": {
+      "type": "object",
+      "required": [
+        "id",
+        "typ",
+        "pozice",
+        "kapitola",
+        "zadani",
+        "zdroj",
+        "kroky",
+        "tahak",
+        "tisk"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9-]+-U[0-9]+$"
+        },
+        "typ": {
+          "const": "simulace"
+        },
+        "pozice": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16,
+          "description": "Pozice v testu CERMAT (rozložení 2026)."
+        },
+        "kapitola": {
+          "$ref": "#/$defs/kapitola"
+        },
+        "cas_min": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        },
+        "zadani": {
+          "$ref": "#/$defs/text"
+        },
+        "zdroj": {
+          "$ref": "#/$defs/text"
+        },
+        "kroky": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/$defs/krok"
+          }
+        },
+        "tahak": {
+          "$ref": "#/$defs/tahakSimulace"
+        },
+        "tisk": {
+          "$ref": "#/$defs/tisk"
+        },
+        "obrazek": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Inline SVG bez skriptů, odkazů a foreignObject; barvy jen currentColor / var(--…) (ODPOVED-D bod 1)."
+        },
+        "obrazek_popis": {
+          "$ref": "#/$defs/text",
+          "description": "1 věta: co je na obrázku (pro rodiče a když se SVG nevykreslí)."
+        },
+        "obrazek_mm": {
+          "type": "number",
+          "minimum": 10,
+          "maximum": 190,
+          "description": "Šířka obrázku v tisku v mm; u konstrukcí měřítko 1 : 1 (výjimka z limitu 60 mm)."
+        }
+      },
+      "dependentRequired": {
+        "obrazek": [
+          "obrazek_popis"
+        ]
+      },
+      "patternProperties": {
+        "^x_": {}
+      },
+      "additionalProperties": false
+    },
+    "lekceCestina": {
+      "type": "object",
+      "description": "Lekce češtiny (cestina/Obsah/FORMAT-CJ.md). poradi = pořadí v týdnu 1–4, číslo lekce 1–32 je v id.",
+      "required": [
+        "id",
+        "predmet",
+        "faze",
+        "tyden",
+        "poradi",
+        "tema",
+        "kapitola",
+        "cil_pro_rodice",
+        "uvod_pro_rodice",
+        "uvod_pravidla",
+        "slovnicek_pro_rodice",
+        "cas_min",
+        "ulohy",
+        "kontrola"
+      ],
+      "properties": {
+        "$schema": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^cj-t[1-8]-l([1-9]|[12][0-9]|3[0-2])$"
+        },
+        "predmet": {
+          "const": "cestina"
+        },
+        "faze": {
+          "const": "zaklady"
+        },
+        "tyden": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8
+        },
+        "poradi": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        },
+        "tema": {
+          "$ref": "#/$defs/text"
+        },
+        "kapitola": {
+          "enum": [
+            "slovni-druhy",
+            "podstatna-jmena",
+            "vzory",
+            "slovesa",
+            "vyjmenovana-slova",
+            "podmet-prisudek",
+            "souveti"
+          ]
+        },
+        "cil_pro_rodice": {
+          "$ref": "#/$defs/text"
+        },
+        "uvod_pro_rodice": {
+          "$ref": "#/$defs/text"
+        },
+        "uvod_pravidla": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "description": "Platí: pravidlo, test, příklad (SABLONA-CJ §1, §6.7); znak ≤ 36 znaků.",
+          "items": {
+            "type": "object",
+            "required": [
+              "znak",
+              "text"
+            ],
+            "properties": {
+              "znak": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 36
+              },
+              "text": {
+                "$ref": "#/$defs/text"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "slovnicek_pro_rodice": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/text"
+          },
+          "description": "Pojem → lidský překlad (zásada 9)."
+        },
+        "pomucky": {
+          "$ref": "#/$defs/pomucky"
+        },
+        "cas_min": {
+          "type": "integer",
+          "minimum": 20,
+          "maximum": 35
+        },
+        "vychozi_text": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "required": [
+                "id",
+                "nazev",
+                "text",
+                "shrnuti_pro_rodice"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "nazev": {
+                  "$ref": "#/$defs/text"
+                },
+                "text": {
+                  "$ref": "#/$defs/text"
+                },
+                "shrnuti_pro_rodice": {
+                  "$ref": "#/$defs/text"
+                }
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
+        "ulohy": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "prefixItems": [
+            {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/ulohaCestina"
+                },
+                {
+                  "properties": {
+                    "typ": {
+                      "const": "rozcvicka"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/ulohaCestina"
+                },
+                {
+                  "properties": {
+                    "typ": {
+                      "const": "nova"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/ulohaCestina"
+                },
+                {
+                  "properties": {
+                    "typ": {
+                      "const": "nova"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/ulohaCestina"
+                },
+                {
+                  "properties": {
+                    "typ": {
+                      "const": "nova"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/ulohaCestina"
+                },
+                {
+                  "properties": {
+                    "typ": {
+                      "const": "detektiv"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/ulohaCestina"
+                },
+                {
+                  "properties": {
+                    "typ": {
+                      "const": "kontrolni"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "kontrola": {
+          "$ref": "#/$defs/kontrolaCestina"
+        }
+      },
+      "patternProperties": {
+        "^x_": {}
+      },
+      "additionalProperties": false
+    },
+    "kontrolaCestina": {
+      "type": "object",
+      "required": [
+        "jistota"
+      ],
+      "properties": {
+        "jistota": {
+          "enum": [
+            "jista",
+            "stredni",
+            "nizka",
+            "neurceno"
+          ]
+        },
+        "poznamka": {
+          "type": "string"
+        },
+        "zkontroloval": {
+          "type": "string"
+        },
+        "datum": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "zdroj": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^https://prirucka\\.ujc\\.cas\\.cz/"
+          },
+          "description": "Odkazy do Internetové jazykové příručky ÚJČ (zásada 8)."
+        },
+        "testovaci_rodic": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "required": [
+                "srozumitelnost",
+                "cas_min",
+                "musel_neco_vedet"
+              ],
+              "properties": {
+                "srozumitelnost": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 5
+                },
+                "cas_min": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "musel_neco_vedet": {
+                  "type": "boolean"
+                }
+              },
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "patternProperties": {
+        "^x_": {}
+      },
+      "additionalProperties": false,
+      "if": {
+        "properties": {
+          "jistota": {
+            "const": "jista"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "zdroj"
+        ],
+        "properties": {
+          "zdroj": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    "semaforTydne": {
+      "type": "object",
+      "required": [
+        "zelena",
+        "oranzova",
+        "cervena"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "zelena": {
+          "type": "object",
+          "required": [
+            "podminka",
+            "min_spravne",
+            "doporuceni"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "podminka": {
+              "$ref": "#/$defs/text"
+            },
+            "min_spravne": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "doporuceni": {
+              "$ref": "#/$defs/text"
+            }
+          }
+        },
+        "oranzova": {
+          "type": "object",
+          "required": [
+            "podminka",
+            "min_spravne",
+            "doporuceni"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "podminka": {
+              "$ref": "#/$defs/text"
+            },
+            "min_spravne": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "doporuceni": {
+              "$ref": "#/$defs/text"
+            }
+          }
+        },
+        "cervena": {
+          "type": "object",
+          "required": [
+            "podminka",
+            "min_spravne",
+            "doporuceni"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "podminka": {
+              "$ref": "#/$defs/text"
+            },
+            "min_spravne": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "doporuceni": {
+              "$ref": "#/$defs/text"
+            }
+          }
+        }
+      }
+    },
+    "ulohaCestina": {
+      "type": "object",
+      "required": [
+        "id",
+        "typ",
+        "cil",
+        "cas_min",
+        "zadani",
+        "zdroj",
+        "kroky",
+        "tahak",
+        "semafor",
+        "tisk"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^cj-t[1-8]-l[0-9]+-U[1-6]$"
+        },
+        "typ": {
+          "enum": [
+            "rozcvicka",
+            "nova",
+            "detektiv",
+            "kontrolni"
+          ]
+        },
+        "cil": {
+          "$ref": "#/$defs/text"
+        },
+        "cas_min": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 15
+        },
+        "zadani": {
+          "$ref": "#/$defs/text"
+        },
+        "zdroj": {
+          "$ref": "#/$defs/text"
+        },
+        "kroky": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/$defs/krokCestina"
+          }
+        },
+        "tahak": {
+          "$ref": "#/$defs/tahak"
+        },
+        "semafor": {
+          "$ref": "#/$defs/semafor"
+        },
+        "tisk": {
+          "$ref": "#/$defs/tisk"
+        },
+        "tydenni": {
+          "type": "boolean",
+          "description": "Týdenní kontrola (úloha 6 v lekcích 4, 8, …)."
+        },
+        "semafor_tydne": {
+          "$ref": "#/$defs/semaforTydne"
+        },
+        "text_id": {
+          "type": "string",
+          "description": "Odkaz na vychozi_text lekce (od týdne 7)."
+        }
+      },
+      "patternProperties": {
+        "^x_": {}
+      },
+      "additionalProperties": false,
+      "dependentRequired": {
+        "semafor_tydne": [
+          "tydenni"
+        ]
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "typ": {
+                "const": "detektiv"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "kroky": {
+                "minItems": 2,
+                "maxItems": 2
+              }
+            }
+          }
+        }
+      ]
+    },
+    "chybaMnozinaCj": {
+      "type": "object",
+      "required": [
+        "typ_chyby"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "hodnota": {
+          "type": "array"
+        },
+        "navic": {
+          "type": "array",
+          "minItems": 1
+        },
+        "chybi": {
+          "type": "array",
+          "minItems": 1
+        },
+        "typ_chyby": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "description": "hodnota = přesná množina; navic/chybi = chyba, když odpověď obsahuje / postrádá některý prvek."
+    },
+    "krokCestina": {
+      "type": "object",
+      "required": [
+        "id",
+        "popisek",
+        "vstup"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(k[0-9]+|final)$"
+        },
+        "popisek": {
+          "$ref": "#/$defs/text"
+        },
+        "vstup": {
+          "$ref": "#/$defs/vstupCestina"
+        },
+        "spravne": true,
+        "zname_chyby": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": [
+              "typ_chyby"
+            ],
+            "properties": {
+              "typ_chyby": {
+                "$ref": "#/$defs/text"
+              }
+            }
+          }
+        },
+        "varianty": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "ignorovat_velikost": {
+          "type": "boolean"
+        },
+        "chyby_ocekavane": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "veta",
+              "slovo",
+              "typ_chyby"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "veta": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "slovo": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "typ_chyby": {
+                "$ref": "#/$defs/text"
+              }
+            }
+          }
+        }
+      },
+      "patternProperties": {
+        "^x_": {}
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "vstup": {
+                "properties": {
+                  "typ": {
+                    "const": "dlazdice"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "spravne": false,
+              "zname_chyby": false
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "vstup": {
+                "properties": {
+                  "typ": {
+                    "const": "dlazdice_vice"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "spravne"
+            ],
+            "properties": {
+              "spravne": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "zname_chyby": {
+                "items": {
+                  "$ref": "#/$defs/chybaMnozinaCj"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "vstup": {
+                "properties": {
+                  "typ": {
+                    "const": "klik_ve_textu"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "spravne"
+            ],
+            "properties": {
+              "spravne": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "zname_chyby": {
+                "items": {
+                  "$ref": "#/$defs/chybaMnozinaCj"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "vstup": {
+                "properties": {
+                  "typ": {
+                    "const": "oznac_role"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "spravne"
+            ],
+            "properties": {
+              "spravne": {
+                "type": "object"
+              },
+              "zname_chyby": {
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "hodnota",
+                    "typ_chyby"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "hodnota": {
+                      "type": "object"
+                    },
+                    "typ_chyby": {
+                      "$ref": "#/$defs/text"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "vstup": {
+                "properties": {
+                  "typ": {
+                    "const": "doplnit_pismeno"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "spravne"
+            ],
+            "properties": {
+              "spravne": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "zname_chyby": {
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "hodnota",
+                    "typ_chyby"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "hodnota": {
+                      "type": "array",
+                      "items": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      }
+                    },
+                    "typ_chyby": {
+                      "$ref": "#/$defs/text"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "vstup": {
+                "properties": {
+                  "typ": {
+                    "const": "kratky_text"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "spravne"
+            ],
+            "properties": {
+              "spravne": {
+                "type": "string",
+                "minLength": 1
+              },
+              "zname_chyby": {
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "hodnota",
+                    "typ_chyby"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "hodnota": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "typ_chyby": {
+                      "$ref": "#/$defs/text"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "vstup": {
+                "properties": {
+                  "typ": {
+                    "const": "seradit"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "spravne"
+            ],
+            "properties": {
+              "spravne": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "zname_chyby": {
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "hodnota",
+                    "typ_chyby"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "hodnota": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "typ_chyby": {
+                      "$ref": "#/$defs/text"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "vstup": {
+                "properties": {
+                  "typ": {
+                    "const": "diktat"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "chyby_ocekavane"
+            ],
+            "properties": {
+              "spravne": {
+                "type": "null"
+              },
+              "zname_chyby": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "vstup": {
+                "properties": {
+                  "typ": {
+                    "const": "poslech"
+                  },
+                  "vnoreny_vstup": {
+                    "properties": {
+                      "typ": {
+                        "const": "dlazdice"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "spravne": false,
+              "zname_chyby": false
+            }
+          }
+        }
+      ]
+    },
+    "vstupCestina": {
+      "type": "object",
+      "required": [
+        "typ"
+      ],
+      "properties": {
+        "typ": {
+          "enum": [
+            "dlazdice",
+            "dlazdice_vice",
+            "klik_ve_textu",
+            "oznac_role",
+            "doplnit_pismeno",
+            "kratky_text",
+            "seradit",
+            "poslech",
+            "diktat"
+          ]
+        },
+        "moznosti": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 8
+        },
+        "volitelne": {
+          "type": "array",
+          "description": "Prvky, které smí i nemusí být vybrané (obojí správně, zásada 8)."
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cil": {
+          "enum": [
+            "slova",
+            "mezery"
+          ]
+        },
+        "min": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "slova": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "role": {
+          "oneOf": [
+            {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          ]
+        },
+        "mezery": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "i",
+              "moznosti"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "i": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "moznosti": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 4,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        },
+        "napoveda_formatu": {
+          "$ref": "#/$defs/text"
+        },
+        "polozky": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "audio": {
+          "type": "string",
+          "pattern": "^audio/cestina/t[1-8]/l[0-9]+-[a-z0-9-]+\\.mp3$",
+          "description": "Soubor web/<audio>; řádek v cestina/Obsah/AUDIO.md."
+        },
+        "prepis": {
+          "$ref": "#/$defs/text"
+        },
+        "max_prehrani": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "otazka": {
+          "$ref": "#/$defs/text"
+        },
+        "vnoreny_vstup": {
+          "$ref": "#/$defs/vstupCestina"
+        },
+        "vety": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": [
+              "audio",
+              "text"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "audio": {
+                "type": "string",
+                "pattern": "^audio/cestina/t[1-8]/l[0-9]+-[a-z0-9-]+\\.mp3$",
+                "description": "Soubor web/<audio>; řádek v cestina/Obsah/AUDIO.md."
+              },
+              "text": {
+                "$ref": "#/$defs/text"
+              }
+            }
+          }
+        },
+        "hodnotit_interpunkci": {
+          "type": "boolean"
+        },
+        "hodnotit_velikost": {
+          "type": "boolean"
+        }
+      },
+      "patternProperties": {
+        "^x_": {}
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "typ": {
+                "const": "dlazdice"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "moznosti"
+            ],
+            "properties": {
+              "moznosti": {
+                "maxItems": 6,
+                "items": {
+                  "$ref": "#/$defs/moznost"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "typ": {
+                "const": "dlazdice_vice"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "moznosti"
+            ],
+            "properties": {
+              "moznosti": {
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "volitelne": {
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "typ": {
+                "const": "klik_ve_textu"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "text",
+              "cil",
+              "min",
+              "max"
+            ],
+            "properties": {
+              "volitelne": {
+                "items": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "typ": {
+                "const": "oznac_role"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "text",
+              "slova",
+              "role"
+            ],
+            "properties": {}
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "typ": {
+                "const": "doplnit_pismeno"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "text",
+              "mezery"
+            ],
+            "properties": {
+              "text": {
+                "pattern": "_"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "typ": {
+                "const": "seradit"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "polozky"
+            ],
+            "properties": {}
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "typ": {
+                "const": "poslech"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "audio",
+              "prepis",
+              "max_prehrani",
+              "vnoreny_vstup"
+            ],
+            "properties": {
+              "vnoreny_vstup": {
+                "properties": {
+                  "typ": {
+                    "enum": [
+                      "dlazdice",
+                      "dlazdice_vice",
+                      "klik_ve_textu",
+                      "oznac_role",
+                      "doplnit_pismeno",
+                      "kratky_text",
+                      "seradit"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "typ": {
+                "const": "diktat"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "vety",
+              "max_prehrani",
+              "hodnotit_interpunkci",
+              "hodnotit_velikost"
+            ],
+            "properties": {}
+          }
+        }
+      ]
+    }
+  }
+}

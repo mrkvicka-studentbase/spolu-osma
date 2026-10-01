@@ -1,0 +1,336 @@
+/* ==========================================================================
+   cestina.css — vstupy dítěte pro češtinu (web/js/vstupy-cj.js; cestina/Obsah/FORMAT-CJ.md §3.2)
+   --------------------------------------------------------------------------
+   Jen proměnné design systému (design-system.css) → tmavý motiv funguje sám, žádné barvy natvrdo.
+   Pravidla: cíle pro prst ≥ 44 px (--dotyk-min); vybrané = zelená (.je-vybrano), bez významu „správně";
+   po chybě se v textu nic nezvýrazní; na 360 px žádný vodorovný posuv (dlouhá slova se zalomí).
+   Připojeno v lekce.html a rodic.html (náhled „Co vidí dítě").
+   ========================================================================== */
+
+/* --- Obal vstupu: sloupec (krok__vstup je v Matematice řádek) ------------- */
+.cj-vstup {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: var(--mezera-3);
+  min-width: 0;
+  max-width: 100%;
+}
+.cj-info {
+  margin: 0;
+  font-size: var(--pismo-zaklad);
+  color: var(--barva-text-tlumeny);
+}
+.cj-info:empty { display: none; }
+
+/* --- Text se slovy (klik_ve_textu, oznac_role, doplnit_pismeno) ----------- */
+.cj-text {
+  margin: 0;
+  font-size: var(--pismo-velke);
+  line-height: 2.3;               /* řádky s cíli 44 px se nepřekrývají */
+  overflow-wrap: anywhere;
+  max-width: var(--sirka-textu);
+}
+.cj-nezalomit { white-space: nowrap; }         /* slovo + jeho interpunkce se nerozdělí */
+.cj-slovo-pevne { white-space: normal; }
+
+.cj-slovo {
+  display: inline-block;
+  min-width: var(--dotyk-min);
+  min-height: var(--dotyk-min);
+  margin: 2px 0;
+  padding: 0.3rem var(--mezera-2);
+  border: 2px solid transparent;
+  border-bottom: 2px dashed var(--barva-okraj-pole);
+  border-radius: var(--polomer-s);
+  background: transparent;
+  color: var(--barva-text);
+  font: inherit;
+  line-height: 1.3;
+  vertical-align: middle;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color var(--prechod), border-color var(--prechod);
+}
+.cj-slovo:hover:not(:disabled) { border-color: var(--barva-silna); border-bottom-style: solid; }
+/* Vybrané slovo: zelená plocha (SABLONA-CJ §3.3: „vybráno", ne „správně"), text navy v obou motivech */
+.cj-slovo.je-vybrano {
+  background: var(--barva-zelena);
+  border-color: var(--barva-zelena-obrys);
+  border-bottom-style: solid;
+  color: var(--barva-na-zelene);
+}
+.cj-slovo:disabled { cursor: default; }
+.cj-vstup.je-zamceno .cj-slovo:not(.je-vybrano) { border-bottom-color: transparent; }
+
+/* Místo mezi slovy (klik na mezeru = kam patří čárka) */
+.cj-mezera {
+  display: inline-grid;
+  place-items: center;
+  width: var(--dotyk-min);
+  min-height: var(--dotyk-min);
+  margin: 2px 0;
+  padding: 0;
+  border: 2px dotted var(--barva-okraj-pole);
+  border-radius: var(--polomer-s);
+  background: transparent;
+  color: var(--barva-text);
+  font: inherit;
+  font-weight: var(--pismo-vaha-tucne);
+  line-height: 1;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.cj-mezera:hover:not(:disabled) { border-color: var(--barva-silna); }
+.cj-mezera.je-vybrano { border-style: solid; border-color: var(--barva-zelena-obrys); background: var(--barva-zelena); color: var(--barva-na-zelene); }
+.cj-mezera:disabled { cursor: default; }
+.cj-vstup.je-zamceno .cj-mezera:not(.je-vybrano) { border-color: transparent; }
+
+/* --- dlazdice_vice: dlaždice Matematiky + zaškrtávací znak vlevo nahoře ----- */
+/* vlevo místo na zaškrtnutí (přebíjí padding-inline mřížky z design-system.css ve 2 i 1 sloupci) */
+.cj-mrizka-vice.dlazdice-mrizka > .dlazdice.cj-dlazdice-vice { padding-left: calc(var(--mezera-2) * 2 + 1.4rem); }
+.cj-zaskrtnuti {
+  position: absolute;
+  top: 50%; left: var(--mezera-2);
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 1.4rem; height: 1.4rem;
+  border: 2px solid var(--barva-okraj-pole);
+  border-radius: var(--polomer-s);
+  background: var(--barva-povrch);
+  color: transparent;
+}
+.cj-zaskrtnuti .ikona { width: 1rem; height: 1rem; stroke-width: 3; }
+.cj-dlazdice-vice.je-vybrano .cj-zaskrtnuti,
+.cj-dlazdice-vice.je-spravne .cj-zaskrtnuti { border-color: var(--barva-zelena-obrys); background: var(--barva-zelena); color: var(--barva-na-zelene); }
+.cj-dlazdice-vice.je-spravne .dlazdice__znak--spravne { display: none; } /* stačí zaškrtnutí, ať se znaky nepřekrývají */
+
+/* --- oznac_role: slovo + štítek role pod ním, nabídka rolí pod textem ------ */
+.cj-slovo-s-roli {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: top;
+  max-width: 100%;
+  margin: 0 1px var(--mezera-1);
+  line-height: 1.3;
+  white-space: normal;
+}
+.cj-slovo--role { border-bottom: 2px solid var(--barva-silna); }
+.cj-slovo--role.je-vybrano {            /* slovo má roli: jemná zelená, ne plná (plná = aktivní výběr ve větě) */
+  background: var(--barva-zelena-plocha);
+  border-color: var(--barva-zelena-obrys);
+  color: var(--barva-text);
+}
+.cj-slovo--role.je-aktivni {
+  border: 2px solid var(--barva-silna);
+  box-shadow: 0 0 0 3px var(--barva-navy-obrys);
+}
+.cj-stitek-role {
+  max-width: 5.75rem;               /* „přídavné / jméno" na 2 řádky → víc slov na řádek telefonu */
+  padding: 1px var(--mezera-2);
+  border-radius: var(--polomer-s);
+  background: var(--barva-zelena-plocha);
+  border: 1px solid var(--barva-zelena-obrys);
+  color: var(--barva-text);
+  font-size: 0.75rem;
+  font-weight: var(--pismo-vaha-polotucne);
+  line-height: 1.2;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+/* pevná slova vedle slov se štítkem: zarovnat na řádek slova (ne na štítek) */
+.cj-vstup--oznac_role .cj-text { line-height: 1.3; }
+.cj-vstup--oznac_role :is(.cj-slovo-pevne, .cj-interpunkce) { display: inline-block; vertical-align: top; padding-top: calc(0.3rem + 4px); }
+.cj-vstup--oznac_role .cj-nezalomit { display: inline-block; vertical-align: top; margin-bottom: var(--mezera-2); }
+.cj-vstup--oznac_role .cj-nezalomit > .cj-slovo-s-roli { vertical-align: top; }
+.cj-stitek-role.je-prazdny {
+  background: var(--barva-povrch-2);
+  border-color: var(--barva-okraj);
+  color: var(--barva-text-tlumeny);
+}
+.cj-nabidka {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mezera-3);
+  padding: var(--mezera-4);
+  border: 2px solid var(--barva-silna);
+  border-radius: var(--polomer-l);
+  background: var(--barva-povrch);
+  box-shadow: var(--stin-2);
+  scroll-margin: var(--mezera-4);
+}
+.cj-nabidka[hidden] { display: none; }
+.cj-nabidka__slovo { margin: 0; font-weight: var(--pismo-vaha-polotucne); font-size: var(--pismo-stredni); }
+.cj-nabidka__skupina { display: flex; flex-direction: column; gap: var(--mezera-2); }
+.cj-nabidka__nazev { margin: 0; font-size: var(--pismo-zaklad); color: var(--barva-text-tlumeny); font-weight: var(--pismo-vaha-polotucne); }
+.cj-nabidka__akce { display: flex; justify-content: flex-end; }
+
+/* Volby (role) — menší dlaždice, stavy jako .dlazdice */
+.cj-volby { display: flex; flex-wrap: wrap; gap: var(--mezera-2); }
+.cj-volba {
+  min-height: var(--dotyk-min);
+  min-width: var(--dotyk-min);
+  max-width: 100%;
+  padding: var(--mezera-2) var(--mezera-4);
+  border: 2px solid var(--barva-okraj-silny);
+  border-radius: var(--polomer-m);
+  background: var(--barva-povrch);
+  color: var(--barva-text);
+  font: inherit;
+  font-size: var(--pismo-stredni);
+  font-weight: var(--pismo-vaha-polotucne);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  transition: border-color var(--prechod), background-color var(--prechod);
+}
+.cj-volba:hover:not(:disabled) { border-color: var(--barva-silna); }
+.cj-volba.je-vybrano {
+  border-color: var(--barva-zelena-obrys);
+  background: var(--barva-zelena);
+  color: var(--barva-na-zelene);
+}
+
+/* --- doplnit_pismeno: tlačítka písmen přímo ve slově ------------------------ */
+.cj-text--doplnit { line-height: 2.6; }
+.cj-mezera-pismeno {
+  display: inline-flex;
+  gap: 2px;
+  margin: 0 2px;
+  vertical-align: middle;
+}
+.cj-pismeno,
+.cj-doplneno {
+  display: inline-grid;
+  place-items: center;
+  min-width: var(--dotyk-min);
+  min-height: var(--dotyk-min);
+  padding: 0 var(--mezera-1);
+  border: 2px dashed var(--barva-okraj-pole);
+  border-radius: var(--polomer-s);
+  background: var(--barva-povrch);
+  color: var(--barva-text);
+  font: inherit;
+  font-weight: var(--pismo-vaha-polotucne);
+  line-height: 1;
+  cursor: pointer;
+}
+.cj-pismeno:hover:not(:disabled) { border-color: var(--barva-silna); border-style: solid; }
+.cj-doplneno {
+  border-style: solid;
+  border-color: var(--barva-zelena-obrys);
+  background: var(--barva-zelena);
+  color: var(--barva-na-zelene);
+  font-weight: var(--pismo-vaha-tucne);
+}
+.cj-pismeno:disabled, .cj-doplneno:disabled { cursor: default; }
+.cj-vstup.je-zamceno .cj-pismeno { opacity: 0.6; }
+
+/* --- kratky_text, diktát: pole s písmeny ------------------------------------ */
+.cj-pole {
+  max-width: 32rem;
+  font-size: var(--pismo-velke);
+}
+textarea.cj-pole { min-height: 5rem; resize: vertical; line-height: 1.45; }
+
+/* --- seradit: položky pod sebou, štítek pořadí ------------------------------ */
+.cj-polozky { display: flex; flex-direction: column; gap: var(--mezera-2); }
+.cj-polozka {
+  display: flex;
+  align-items: center;
+  gap: var(--mezera-3);
+  width: 100%;
+  min-height: 3.25rem;
+  padding: var(--mezera-2) var(--mezera-4);
+  border: 2px solid var(--barva-okraj-silny);
+  border-radius: var(--polomer-l);
+  background: var(--barva-povrch);
+  color: var(--barva-text);
+  font: inherit;
+  font-size: var(--pismo-stredni);
+  font-weight: var(--pismo-vaha-polotucne);
+  text-align: left;
+  cursor: pointer;
+}
+.cj-polozka:hover:not(:disabled) { border-color: var(--barva-silna); }
+.cj-polozka.je-vybrano { border-color: var(--barva-zelena-obrys); background: var(--barva-zelena-plocha); }
+.cj-polozka:disabled { cursor: default; }
+.cj-polozka__cislo {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 2rem; height: 2rem;
+  border: 2px dashed var(--barva-okraj-pole);
+  border-radius: var(--polomer-kruh);
+  font-weight: var(--pismo-vaha-tucne);
+}
+.cj-polozka.je-vybrano .cj-polozka__cislo { border-style: solid; border-color: var(--barva-zelena-obrys); background: var(--barva-zelena); color: var(--barva-na-zelene); }
+.cj-polozka__text { min-width: 0; overflow-wrap: anywhere; }
+.cj-pata { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--mezera-2); }
+
+/* --- Přehrávač (poslech, diktát) -------------------------------------------- */
+.cj-prehravac { display: flex; flex-direction: column; gap: var(--mezera-2); }
+.cj-prehravac__radek { display: flex; flex-wrap: wrap; align-items: center; gap: var(--mezera-3); }
+.cj-prehravac__tlacitko { min-height: var(--dotyk-velky); max-width: 100%; padding-inline: var(--mezera-5); }
+.cj-prehravac__tlacitko:disabled { opacity: 0.5; cursor: default; }
+.cj-prehravac__znak { display: inline-grid; place-items: center; }
+.cj-prehravac__pocet { font-size: var(--pismo-zaklad); color: var(--barva-text-tlumeny); }
+.cj-prehravac__pocet:empty { display: none; }
+.cj-audio { display: none; }
+.cj-audio-chyba {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--mezera-2);
+  margin: 0;
+  padding: var(--mezera-2) var(--mezera-3);
+  border-radius: var(--polomer-m);
+  background: var(--barva-oranzova-plocha);
+  color: var(--barva-text);
+  font-size: var(--pismo-zaklad);
+}
+.cj-audio-chyba[hidden] { display: none; }
+.cj-audio-chyba .ikona { flex: none; margin-top: 0.1em; color: var(--barva-oranzova-text); }
+
+.cj-otazka { margin: var(--mezera-2) 0 0; font-size: var(--pismo-velke); font-weight: var(--pismo-vaha-polotucne); line-height: 1.3; }
+.cj-vnoreny { min-width: 0; }
+
+/* --- Diktát: věty pod sebou -------------------------------------------------- */
+.cj-diktat { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--mezera-4); }
+.cj-diktat__veta { display: flex; flex-direction: column; gap: var(--mezera-2); }
+.cj-diktat__veta[hidden] { display: none; }
+.cj-diktat__stav { margin: 0; font-weight: var(--pismo-vaha-tucne); }
+.cj-diktat__dalsi { align-self: flex-start; }
+.cj-diktat__dalsi[hidden] { display: none; }
+
+/* --- Po správném pokusu: jemný zelený rámeček kolem odpovědi (po chybě nic) --- */
+.cj-vstup--klik_ve_textu.je-spravne .cj-text,
+.cj-vstup--oznac_role.je-spravne .cj-text,
+.cj-vstup--doplnit_pismeno.je-spravne .cj-text,
+.cj-vstup--seradit.je-spravne .cj-polozky,
+.cj-vstup--diktat.je-spravne .cj-diktat {
+  padding: var(--mezera-2) var(--mezera-3);
+  border-radius: var(--polomer-m);
+  box-shadow: 0 0 0 2px var(--barva-zelena-obrys);
+}
+
+/* --- Fokus (klávesnice) ------------------------------------------------------ */
+.cj-slovo:focus-visible, .cj-mezera:focus-visible, .cj-volba:focus-visible, .cj-pismeno:focus-visible,
+.cj-doplneno:focus-visible, .cj-polozka:focus-visible {
+  outline: 3px solid var(--barva-fokus);
+  outline-offset: 2px;
+}
+
+/* --- Dlaždice v lekci češtiny (lekce.js nastaví <html data-predmet="cestina">): slovo se uvnitř nedělí
+   („vyřeši-la"); když se nevejde do 2 sloupců, rozlozDlazdice() dá dlaždice pod sebe (měří přetečení). --- */
+[data-predmet="cestina"] .dlazdice__vyraz,
+.cj-vnoreny .dlazdice__vyraz { overflow-wrap: normal; word-break: normal; hyphens: manual; }
+
+/* --- Telefon: menší písmo textu, ať se věta vejde ------------------------------ */
+@media (max-width: 39.99rem) {
+  .cj-text { font-size: var(--pismo-stredni); }
+  .cj-nabidka { padding: var(--mezera-3); }
+}

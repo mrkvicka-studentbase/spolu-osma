@@ -1,0 +1,2472 @@
+/* ==========================================================================
+   Spolu na přijímačky — design systém (StudentBase.cz)
+   --------------------------------------------------------------------------
+   Bez frameworku, bez buildu. Písmo Sora se načítá v <head> každé stránky:
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="css/design-system.css">
+
+   Pojmenování (reporty/ROZHODNUTI.md R1): česky bez diakritiky,
+   blok / blok__cast / blok--varianta, stavy .je-*.
+   Popis komponent a HTML vzory: web/DESIGN.md. Živá ukázka: web/komponenty.html.
+
+   Obsah souboru:
+     1. Proměnné (to, co může Pavel ladit)
+     2. Reset a základ
+     3. Utility a rozložení
+     4. Ikony
+     5. Tlačítka, odkazy
+     6. Štítky, semafor znaky, průběh, pruh
+     7. Hlavička, lišty, spodní lišta, přepínače
+     8. Karty (obecná, lekce, volba)
+     9. Žák: karta úlohy, krok, dlaždice, vstupy, klávesnice, zpětná vazba
+    10. Rodič: tahák, otázky, rozbalovací, stav žáka, semafor, souhrn
+    11. Formuláře
+    12. Hlášky, toast, prázdný stav, načítání
+    13. Modal
+    14. Admin: filtry, tabulka
+    15. Přístupnost: fokus, omezený pohyb, tisk (základ)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. Proměnné
+   Kontrast (WCAG 2.1) ověřen na bílé (#FFF) a na pozadí (#F8FAFC):
+   - text navy 17,9 : 1, tlumený text 7,6 : 1
+   - zelená plocha #1FC27E s bílým textem jen 2,3 : 1 → na zelené VŽDY navy text (7,7 : 1)
+   - --barva-*-text jsou tmavé odstíny pro text/ikony (≥ 4,5 : 1 na bílé i na své -plocha)
+   - --barva-*-obrys jsou pro rámečky a grafiku (≥ 3 : 1 na bílé)
+   ========================================================================== */
+/* Motiv (R26): <html data-motiv="svetly|tmavy"> nastavuje inline skript v <head> každé stránky
+   (čte localStorage `spolu.motiv` = svetly | tmavy | auto; auto = podle prefers-color-scheme).
+   Světlá sada je výchozí (:root), tmavá přepisuje jen barvy a stíny. Tisk je vždy světlý
+   (tmavá sada platí jen pro @media screen; tisk.html motiv nenastavuje). */
+:root {
+  color-scheme: light;
+
+  /* --- Brand (konstanty; v komponentách raději sémantické proměnné níž) --- */
+  --barva-navy: #0F172A;            /* ze studentbase.cz (tmavé plochy, nadpisy) — k potvrzení */
+  --barva-navy-2: #1E293B;          /* studentbase.cz — sekundární tmavá */
+  --barva-navy-3: #334155;          /* ikony tlačítek, méně výrazný tmavý text */
+  --barva-navy-plocha: #EAF0F8;     /* světlý nádech navy: info, operátory, vybrané */
+  --barva-navy-obrys: #B8C4D6;
+
+  /* --- Sémantické: co která barva dělá (tmavý motiv je přepíná) ---------- */
+  --barva-silna: #0F172A;           /* silné popředí: rámeček vybraného, sekundární tlačítko, čáry */
+  --barva-inverzni: #0F172A;        /* plná „opačná" plocha: tlačítko --navy, vybraná volba, štítek --tmavy */
+  --barva-inverzni-hover: #334155;
+  --barva-na-inverzni: #FFFFFF;     /* text na --barva-inverzni */
+  --barva-hlavicka: #0F172A;        /* hlavička a patička (tmavá v obou motivech) */
+  --barva-na-zelene: #0F172A;       /* text/ikona na zelené, oranžové a červené ploše — v obou motivech */
+  --barva-toast: #0F172A;
+  --barva-toast-okraj: transparent;
+  --barva-lista: rgb(255 255 255 / 0.96);  /* spodní lišta rodiče (poloprůhledná) */
+  --barva-placeholder: #64748B;     /* 4,8 : 1 na bílé */
+
+  /* --- Zelená: akce + semafor ------------------------------------------ */
+  --barva-zelena: #1FC27E;          /* akce + „zelená" semaforu (plocha, ne text!) */
+  --barva-zelena-hover: #18A96C;
+  --barva-zelena-text: #0B7A4B;     /* zelený text/ikona: 5,4 : 1 na bílé */
+  --barva-zelena-plocha: #E8F8F0;
+  --barva-zelena-obrys: #0B7A4B;
+
+  /* --- Zelený akcent (D2): „život", NE hodnocení ---------------------------
+     Pravidlo: semaforová zelená = PLNÉ kolečko s fajfkou + slovo „Zelená".
+     Akcent = linky, prstence, čísla v prstenci, jemné podklady — nikdy plné kolečko s fajfkou. */
+  --barva-akcent: #1FC27E;          /* linky, pruh průběhu, prstence */
+  --barva-akcent-text: #0B7A4B;     /* čísla v prstenci, ikony nadpisů: 5,1 : 1 na akcent-ploše */
+  --barva-akcent-plocha: #F0FAF5;   /* jemný podklad sekcí (světlejší než semaforová plocha) */
+  --barva-akcent-linka: #BFEBD6;    /* tenké zelené okraje sekcí (dekorativní) */
+
+  /* --- Semafor (jen u rodiče a v adminu) --------------------------------- */
+  --barva-oranzova: #F5A623;
+  --barva-oranzova-text: #8A5300;   /* 6,3 : 1 na bílé */
+  --barva-oranzova-plocha: #FEF4E2;
+  --barva-oranzova-obrys: #C27803;
+
+  --barva-cervena: #E5484D;
+  --barva-cervena-text: #B42318;    /* 6,6 : 1 na bílé */
+  --barva-cervena-plocha: #FDECEC;
+  --barva-cervena-obrys: #E5484D;
+
+  /* --- „Nesedí" u dítěte: neutrální šedomodrá, NIKDY červená ------------- */
+  --barva-nesedi-text: #3E5170;
+  --barva-nesedi-plocha: #EEF2F7;
+  --barva-nesedi-obrys: #7B8BA5;
+
+  /* --- Text a plochy ---------------------------------------------------- */
+  --barva-text: #0F172A;
+  --barva-text-tlumeny: #475569;
+  --barva-text-na-tmave: #FFFFFF;   /* jen na --barva-hlavicka (tmavá v obou motivech) */
+  --barva-text-na-tmave-tlumeny: #CBD5E1;
+  --barva-pozadi: #F8FAFC;          /* pozadí stránky (studentbase.cz background-light) */
+  --barva-povrch: #FFFFFF;          /* karty */
+  --barva-povrch-2: #F1F5F9;        /* zamčené, pruhy tabulky */
+  --barva-okraj: #E2E8F0;           /* dekorativní okraje karet */
+  --barva-okraj-silny: #CBD5E1;
+  --barva-okraj-pole: #7B8BA5;      /* okraj formulářových polí: 3,4 : 1 */
+  --barva-odkaz: #0F172A;
+  --barva-fokus: #2563EB;
+  --barva-poradi: #1D4ED8;          /* štítek pořadí operací (F1 poradi, zadání G „modrý štítek“): 6,7 : 1 s bílou, 6,4 : 1 na pozadí */
+  --barva-na-poradi: #FFFFFF;
+  --barva-zvyrazneni: #F5C518;      /* žluté podtržení v zadání (záchranný protokol) */
+  --barva-zvyrazneni-plocha: #FEF7D6;
+  --barva-zaclona: rgb(15 23 42 / 0.55);
+
+  /* --- Písmo ------------------------------------------------------------ */
+  --pismo-rodina: "Sora", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --pismo-vaha-normalni: 400;
+  --pismo-vaha-polotucne: 600;
+  --pismo-vaha-tucne: 700;
+  --pismo-maly: 0.875rem;           /* 14 px — štítky, meta, admin */
+  --pismo-zaklad: 1rem;             /* 16 px — minimum pro rodiče */
+  --pismo-stredni: 1.125rem;        /* 18 px — text taháku */
+  --pismo-velke: 1.375rem;          /* 22 px */
+  --pismo-nadpis: 1.75rem;          /* 28 px */
+  --pismo-titulek: 2.25rem;         /* 36 px */
+  --pismo-zadani: 1.5rem;           /* 24 px — zadání úlohy u žáka */
+  --pismo-vstup: 1.5rem;            /* čísla v polích žáka */
+  --pismo-radek: 1.55;
+  --pismo-radek-nadpis: 1.25;
+  --pismo-katex: 1.08em;            /* KaTeX vůči okolnímu textu (výchozí 1.21em je vedle Sory moc) */
+
+  /* --- Mezery (4px mřížka) ---------------------------------------------- */
+  --mezera-1: 0.25rem;
+  --mezera-2: 0.5rem;
+  --mezera-3: 0.75rem;
+  --mezera-4: 1rem;
+  --mezera-5: 1.5rem;
+  --mezera-6: 2rem;
+  --mezera-7: 3rem;
+  --mezera-8: 4rem;
+
+  /* --- Poloměry --------------------------------------------------------- */
+  --polomer-s: 0.5rem;
+  --polomer-m: 0.75rem;
+  --polomer-l: 1rem;                /* studentbase.cz používá 1rem jako výchozí */
+  --polomer-xl: 1.5rem;
+  --polomer-kruh: 999px;
+
+  /* --- Stíny ------------------------------------------------------------ */
+  --stin-1: 0 1px 2px rgb(15 23 42 / 0.06), 0 1px 3px rgb(15 23 42 / 0.08);
+  --stin-2: 0 4px 14px rgb(15 23 42 / 0.08), 0 1px 3px rgb(15 23 42 / 0.06);
+  --stin-3: 0 16px 40px rgb(15 23 42 / 0.18);
+  --stin-zelena: 0 0 0 4px rgb(31 194 126 / 0.25);
+  --stin-lista: 0 -4px 16px rgb(15 23 42 / 0.06);
+
+  /* --- Rozměry ---------------------------------------------------------- */
+  --dotyk-min: 2.75rem;             /* 44 px — minimální dotyková plocha */
+  --dotyk-velky: 3.5rem;            /* 56 px — hlavní akce rodiče, klávesnice */
+  --sirka-obsahu: 75rem;            /* 1200 px */
+  --sirka-uzka: 32rem;              /* formuláře, obsah pro telefon */
+  --sirka-textu: 65ch;
+  --prechod: 150ms ease;
+}
+
+/* --- Tmavý motiv (R26) -------------------------------------------------------------------------
+   Kontrast ověřen výpočtem (WCAG 2.1) na pozadí #0B1220, povrchu #111A2E, povrchu-2 #18233A
+   a na všech -plocha: text 12,4–15,9 : 1, tlumený 5,9–8,6 : 1, -text barvy ≥ 5,9 : 1,
+   okraj polí 3,0–4,4 : 1, fokus ≥ 5,9 : 1. Na zelené/oranžové/červené ploše zůstává navy text
+   (7,7 / 8,8 / 4,6 : 1). Zelená #1FC27E se nemění (8,1 : 1 na pozadí). */
+@media screen {
+  :root[data-motiv="tmavy"] {
+    color-scheme: dark;
+
+    --barva-navy-3: #C3CEDD;
+    --barva-navy-plocha: #16233B;
+    --barva-navy-obrys: #3B4D6B;
+
+    --barva-silna: #E6EDF7;
+    --barva-inverzni: #E6EDF7;
+    --barva-inverzni-hover: #C9D4E3;
+    --barva-na-inverzni: #0B1220;
+    --barva-hlavicka: #060A14;
+    --barva-toast: #22304A;
+    --barva-toast-okraj: #3B4D6B;
+    --barva-lista: rgb(17 26 46 / 0.96);
+    --barva-placeholder: #8595AE;
+
+    --barva-zelena-hover: #3AD393;
+    --barva-zelena-text: #4ADE9B;
+    --barva-zelena-plocha: #0F2E25;
+    --barva-zelena-obrys: #1FC27E;
+
+    --barva-akcent-text: #4ADE9B;
+    --barva-akcent-plocha: #10261F;
+    --barva-akcent-linka: #1D4A3B;
+
+    --barva-oranzova-text: #FBBF5A;
+    --barva-oranzova-plocha: #33260F;
+    --barva-oranzova-obrys: #F5A623;
+
+    --barva-cervena-text: #FF9195;
+    --barva-cervena-plocha: #3B1A1D;
+    --barva-cervena-obrys: #F0676B;
+
+    --barva-nesedi-text: #BAC6D8;
+    --barva-nesedi-plocha: #1D2940;
+    --barva-nesedi-obrys: #7F90AE;
+
+    --barva-text: #E6EDF7;
+    --barva-text-tlumeny: #A3B1C6;
+    --barva-pozadi: #0B1220;
+    --barva-povrch: #111A2E;
+    --barva-povrch-2: #18233A;
+    --barva-okraj: #22304A;
+    --barva-okraj-silny: #33445F;
+    --barva-okraj-pole: #6B7C99;
+    --barva-odkaz: #E6EDF7;
+    --barva-fokus: #7DB3FF;
+    --barva-poradi: #7DB3FF;        /* 8,7 : 1 s tmavým textem, 8,1 : 1 na povrchu */
+    --barva-na-poradi: #0B1220;
+    --barva-zvyrazneni-plocha: #3A3212;
+    --barva-zaclona: rgb(0 0 0 / 0.7);
+
+    --stin-1: 0 1px 2px rgb(0 0 0 / 0.35);
+    --stin-2: 0 4px 14px rgb(0 0 0 / 0.4), 0 1px 3px rgb(0 0 0 / 0.3);
+    --stin-3: 0 16px 40px rgb(0 0 0 / 0.55);
+    --stin-zelena: 0 0 0 4px rgb(31 194 126 / 0.3);
+    --stin-lista: 0 -4px 16px rgb(0 0 0 / 0.4);
+  }
+}
+
+
+/* ==========================================================================
+   2. Reset a základ
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--pismo-rodina);
+  font-size: var(--pismo-zaklad);
+  font-weight: var(--pismo-vaha-normalni);
+  line-height: var(--pismo-radek);
+  color: var(--barva-text);
+  background: var(--barva-pozadi);
+  -webkit-font-smoothing: antialiased;
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote, fieldset { margin: 0; }
+ul[class], ol[class] { padding: 0; list-style: none; }
+fieldset { padding: 0; border: 0; min-width: 0; }
+legend { padding: 0; }
+
+h1, h2, h3, h4 {
+  font-weight: var(--pismo-vaha-tucne);
+  line-height: var(--pismo-radek-nadpis);
+  letter-spacing: -0.01em;
+}
+h1 { font-size: var(--pismo-nadpis); }
+h2 { font-size: var(--pismo-velke); }
+h3 { font-size: var(--pismo-stredni); }
+h4 { font-size: var(--pismo-zaklad); }
+
+img, svg, video { display: block; max-width: 100%; }
+svg { flex-shrink: 0; }
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+button { cursor: pointer; background: none; border: 0; padding: 0; }
+button:disabled { cursor: not-allowed; }
+
+a {
+  color: var(--barva-odkaz);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+a:hover { color: var(--barva-zelena-text); text-decoration-thickness: 2px; }
+
+strong, b { font-weight: var(--pismo-vaha-polotucne); }
+
+[hidden] { display: none !important; }
+
+table { border-collapse: collapse; }
+
+
+/* ==========================================================================
+   3. Utility a rozložení
+   ========================================================================== */
+.jen-ctecka {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+.jen-tisk { display: none !important; }
+
+.obal {
+  width: 100%;
+  max-width: var(--sirka-obsahu);
+  margin-inline: auto;
+  padding-inline: var(--mezera-4);
+}
+.obal--uzky { max-width: var(--sirka-uzka); }
+
+/* Svislý zásobník s mezerou; mezeru lze přepsat proměnnou --zasobnik-mezera */
+.zasobnik {
+  display: flex;
+  flex-direction: column;
+  gap: var(--zasobnik-mezera, var(--mezera-4));
+}
+.zasobnik--tesny { --zasobnik-mezera: var(--mezera-2); }
+.zasobnik--volny { --zasobnik-mezera: var(--mezera-6); }
+
+/* Vodorovná řada, zalamuje se */
+.radek {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--radek-mezera, var(--mezera-3));
+}
+.radek--mezi { justify-content: space-between; }
+.radek--konec { justify-content: flex-end; }
+.radek--nezalamovat { flex-wrap: nowrap; }
+
+/* Mřížka karet: na telefonu 1 sloupec, na PC víc (bez media queries) */
+.mrizka-karet {
+  display: grid;
+  gap: var(--mezera-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16.5rem), 1fr));
+}
+
+.text-tlumeny { color: var(--barva-text-tlumeny); }
+.text-stred { text-align: center; }
+.text-maly { font-size: var(--pismo-maly); }
+.text-tucny { font-weight: var(--pismo-vaha-tucne); }
+.cisla-tabulkova { font-variant-numeric: tabular-nums; }
+
+/* Malý nadpis sekce (VELKÁ PÍSMENA, jako na studentbase.cz) */
+.nadpis-sekce {
+  font-size: var(--pismo-maly);
+  font-weight: var(--pismo-vaha-tucne);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--barva-text-tlumeny);
+}
+
+.oddelovac {
+  border: 0;
+  border-top: 1px solid var(--barva-okraj);
+  margin: var(--mezera-5) 0;
+}
+
+/* Stránky */
+.stranka-rodic {
+  /* obsah pro telefon; nechává místo pro spodní lištu */
+  max-width: var(--sirka-uzka);
+  margin-inline: auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.stranka-rodic__obsah {
+  flex: 1;
+  padding: var(--mezera-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mezera-4);
+}
+
+.stranka-zak {
+  max-width: var(--sirka-obsahu);
+  margin-inline: auto;
+  padding: var(--mezera-5) var(--mezera-5) var(--mezera-7);
+}
+
+
+/* ==========================================================================
+   4. Ikony — jednoduché inline SVG, barva = currentColor
+   <svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><path d="…"/></svg>
+   Cesty ikon: web/DESIGN.md, tabulka „Ikony".
+   ========================================================================== */
+.ikona {
+  width: 1.25em;
+  height: 1.25em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: -0.25em;
+  display: inline-block;
+}
+.ikona--mala { width: 1em; height: 1em; }
+.ikona--velka { width: 1.75em; height: 1.75em; }
+.ikona--plna { fill: currentColor; stroke: none; }
+
+/* Ikona v kolečku (prázdný stav, volba režimu) */
+.ikona-kruh {
+  display: inline-grid;
+  place-items: center;
+  width: 3.5rem; height: 3.5rem;
+  border-radius: var(--polomer-kruh);
+  background: var(--barva-navy-plocha);
+  color: var(--barva-silna);
+  flex-shrink: 0;
+}
+.ikona-kruh .ikona { width: 1.75rem; height: 1.75rem; }
+.ikona-kruh--zelena { background: var(--barva-zelena-plocha); color: var(--barva-zelena-text); }
+
+
+/* ==========================================================================
+   5. Tlačítka
+   <button class="tlacitko tlacitko--primarni">Začít lekci</button>
+   ========================================================================== */
+.tlacitko {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mezera-2);
+  min-height: var(--dotyk-min);
+  min-width: var(--dotyk-min);
+  padding: var(--mezera-2) var(--mezera-5);
+  border: 2px solid transparent;
+  border-radius: var(--polomer-m);
+  font-size: var(--pismo-zaklad);
+  font-weight: var(--pismo-vaha-polotucne);
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--prechod), border-color var(--prechod), color var(--prechod), box-shadow var(--prechod), transform var(--prechod);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.tlacitko:active:not(:disabled) { transform: translateY(1px); }
+
+/* Hlavní akce: zelená plocha + navy text (bílý text by nesplnil AA) */
+.tlacitko--primarni {
+  background: var(--barva-zelena);
+  color: var(--barva-na-zelene);
+}
+.tlacitko--primarni:hover:not(:disabled) { background: var(--barva-zelena-hover); color: var(--barva-na-zelene); }
+
+.tlacitko--navy {
+  background: var(--barva-inverzni);
+  color: var(--barva-na-inverzni);
+}
+.tlacitko--navy:hover:not(:disabled) { background: var(--barva-inverzni-hover); color: var(--barva-na-inverzni); }
+
+.tlacitko--sekundarni {
+  background: var(--barva-povrch);
+  color: var(--barva-silna);
+  border-color: var(--barva-silna);
+}
+.tlacitko--sekundarni:hover:not(:disabled) { background: var(--barva-navy-plocha); color: var(--barva-silna); }
+
+.tlacitko--tiche {
+  background: transparent;
+  color: var(--barva-silna);
+  padding-inline: var(--mezera-3);
+}
+.tlacitko--tiche:hover:not(:disabled) { background: var(--barva-navy-plocha); color: var(--barva-silna); }
+
+/* Na tmavém pozadí (hlavička) */
+.tlacitko--na-tmave {
+  background: transparent;
+  color: var(--barva-text-na-tmave);
+  border-color: rgb(255 255 255 / 0.35);
+}
+.tlacitko--na-tmave:hover:not(:disabled) { background: rgb(255 255 255 / 0.1); color: var(--barva-text-na-tmave); }
+
+.tlacitko--velke {
+  min-height: var(--dotyk-velky);
+  padding-inline: var(--mezera-6);
+  font-size: var(--pismo-stredni);
+  border-radius: var(--polomer-l);
+}
+.tlacitko--male { min-height: 2.25rem; padding: var(--mezera-1) var(--mezera-3); font-size: var(--pismo-maly); } /* jen admin (myš) */
+.tlacitko--cela-sirka { width: 100%; }
+.tlacitko--ikona { padding: 0; width: var(--dotyk-min); }
+.tlacitko--ikona.tlacitko--velke { width: var(--dotyk-velky); }
+
+.tlacitko:disabled,
+.tlacitko[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.tlacitko.je-nacitani { pointer-events: none; opacity: 0.75; }
+
+
+/* ==========================================================================
+   6. Štítky, semafor znaky, průběh, pruh
+   ========================================================================== */
+.stitek {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--mezera-1);
+  min-height: 1.75rem;
+  padding: 0.125rem var(--mezera-3);
+  border-radius: var(--polomer-kruh);
+  font-size: var(--pismo-maly);
+  font-weight: var(--pismo-vaha-polotucne);
+  line-height: 1.3;
+  white-space: nowrap;
+  background: var(--barva-povrch-2);
+  color: var(--barva-text-tlumeny);
+}
+.stitek .ikona { width: 1rem; height: 1rem; }
+.stitek--navy { background: var(--barva-navy-plocha); color: var(--barva-silna); }
+.stitek--zelena { background: var(--barva-zelena-plocha); color: var(--barva-zelena-text); }
+.stitek--oranzova { background: var(--barva-oranzova-plocha); color: var(--barva-oranzova-text); }
+.stitek--cervena { background: var(--barva-cervena-plocha); color: var(--barva-cervena-text); }
+.stitek--tmavy { background: var(--barva-inverzni); color: var(--barva-na-inverzni); }
+
+/* Semafor znak: kolečko barvy + ikona (barva nikdy sama) */
+.semafor-znak {
+  display: inline-grid;
+  place-items: center;
+  width: 2.25rem; height: 2.25rem;
+  border-radius: var(--polomer-kruh);
+  border: 2px solid transparent;
+  color: var(--barva-na-zelene);
+  flex-shrink: 0;
+}
+.semafor-znak .ikona { width: 1.15rem; height: 1.15rem; stroke-width: 2.6; }
+.semafor-znak--zelena { background: var(--barva-zelena); border-color: var(--barva-zelena-obrys); }
+.semafor-znak--oranzova { background: var(--barva-oranzova); border-color: var(--barva-oranzova-obrys); }
+.semafor-znak--cervena { background: var(--barva-cervena); border-color: var(--barva-cervena-text); }
+.semafor-znak--zadna { background: var(--barva-povrch); border: 2px dashed var(--barva-okraj-pole); color: var(--barva-text-tlumeny); }
+.semafor-znak--mala { width: 1.5rem; height: 1.5rem; border-width: 1.5px; }
+.semafor-znak--mala .ikona { width: 0.85rem; height: 0.85rem; }
+.semafor-znak--velka { width: 3.5rem; height: 3.5rem; }
+.semafor-znak--velka .ikona { width: 1.75rem; height: 1.75rem; }
+
+/* Řada malých znaků (4 úlohy lekce na kartě) */
+.semafor-tecky { display: flex; gap: var(--mezera-1); align-items: center; }
+
+/* Průběh úloh 1/4 */
+.prubeh {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--mezera-3);
+  font-weight: var(--pismo-vaha-polotucne);
+  font-variant-numeric: tabular-nums;
+}
+.prubeh__kroky { display: flex; gap: var(--mezera-1); }
+.prubeh__krok {
+  width: 1.75rem; height: 0.5rem;
+  border-radius: var(--polomer-kruh);
+  background: var(--barva-okraj-silny);
+}
+.prubeh__krok.je-hotovo { background: var(--barva-silna); }
+.prubeh__krok.je-aktualni { background: var(--barva-zelena); box-shadow: 0 0 0 2px var(--barva-zelena-obrys) inset; }
+
+/* Pruh (týdenní postup) */
+.pruh {
+  height: 0.625rem;
+  border-radius: var(--polomer-kruh);
+  background: var(--barva-okraj);
+  overflow: hidden;
+}
+.pruh__vypln {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--barva-zelena);
+  transition: width 300ms ease;
+}
+
+/* Odpočet: klidný. Po vypršení .je-vyprselo — jen jemná změna, žádný alarm */
+.odpocet {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--mezera-2);
+  min-height: var(--dotyk-min);
+  padding: var(--mezera-1) var(--mezera-4);
+  border-radius: var(--polomer-kruh);
+  background: var(--barva-navy-plocha);
+  color: var(--barva-silna);
+  font-weight: var(--pismo-vaha-polotucne);
+  font-size: var(--pismo-stredni);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.odpocet__cas { min-width: 3.2em; }
+.odpocet.je-vyprselo {
+  background: var(--barva-povrch);
+  box-shadow: inset 0 0 0 2px var(--barva-navy-obrys);
+  color: var(--barva-text-tlumeny);
+  font-size: var(--pismo-zaklad);
+}
+
+
+/* ==========================================================================
+   7. Hlavička, lišty, spodní lišta, přepínače
+   ========================================================================== */
+.hlavicka {
+  background: var(--barva-hlavicka);
+  color: var(--barva-text-na-tmave);
+}
+.hlavicka__vnitrek {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--mezera-3);
+  min-height: 3.5rem;
+  padding: var(--mezera-2) var(--mezera-4);
+  max-width: var(--sirka-obsahu);
+  margin-inline: auto;
+}
+.logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--dotyk-min);
+  gap: var(--mezera-2);
+  color: inherit;
+  text-decoration: none;
+  font-weight: var(--pismo-vaha-tucne);
+  font-size: var(--pismo-stredni);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+.logo:hover { color: inherit; }
+.logo__znacka span { color: var(--barva-zelena); }
+.logo__produkt {
+  font-weight: var(--pismo-vaha-normalni);
+  font-size: var(--pismo-maly);
+  color: var(--barva-text-na-tmave-tlumeny);
+}
+
+/* Horní lišta lekce (žák i rodič): téma + odpočet + průběh */
+.lista-lekce {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--mezera-3) var(--mezera-4);
+  padding: var(--mezera-3) var(--mezera-4);
+  background: var(--barva-povrch);
+  border-bottom: 1px solid var(--barva-okraj);
+}
+.lista-lekce__tema { font-weight: var(--pismo-vaha-tucne); font-size: var(--pismo-stredni); line-height: 1.3; }
+.lista-lekce__podtitul { display: block; font-weight: var(--pismo-vaha-normalni); font-size: var(--pismo-zaklad); color: var(--barva-text-tlumeny); }
+.lista-lekce__stav { display: flex; align-items: center; gap: var(--mezera-4); flex-wrap: wrap; }
+
+/* Spodní lišta — hlavní akce rodiče na dosah palce */
+.spodni-lista {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  gap: var(--mezera-3);
+  padding: var(--mezera-3) var(--mezera-4) calc(var(--mezera-3) + env(safe-area-inset-bottom, 0px));
+  background: var(--barva-lista);
+  border-top: 1px solid var(--barva-okraj);
+  box-shadow: var(--stin-lista);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.spodni-lista > .tlacitko { flex: 1 1 0; min-height: var(--dotyk-velky); font-size: var(--pismo-stredni); }
+.spodni-lista > .tlacitko--ikona { flex: 0 0 var(--dotyk-velky); }
+
+/* Přepínač úloh u rodiče (← Úloha 2 ze 4 →) */
+.prepinac-uloh {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--mezera-2);
+}
+.prepinac-uloh__nazev { text-align: center; line-height: 1.3; }
+.prepinac-uloh__nazev strong { display: block; font-size: var(--pismo-stredni); }
+.prepinac-uloh__nazev span { color: var(--barva-text-tlumeny); }
+
+/* Segmentový přepínač (dítě A / dítě B, role, režim) */
+.prepinac {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--mezera-1);
+  padding: var(--mezera-1);
+  border-radius: var(--polomer-kruh);
+  background: var(--barva-povrch-2);
+  border: 1px solid var(--barva-okraj);
+}
+.prepinac__volba {
+  min-height: var(--dotyk-min);
+  padding: var(--mezera-1) var(--mezera-4);
+  border-radius: var(--polomer-kruh);
+  font-weight: var(--pismo-vaha-polotucne);
+  color: var(--barva-text-tlumeny);
+}
+.prepinac__volba:hover { color: var(--barva-silna); }
+.prepinac__volba[aria-pressed="true"],
+.prepinac__volba.je-vybrano {
+  background: var(--barva-inverzni);
+  color: var(--barva-na-inverzni);
+}
+
+
+/* ==========================================================================
+   8. Karty
+   ========================================================================== */
+.karta {
+  background: var(--barva-povrch);
+  border: 1px solid var(--barva-okraj);
+  border-radius: var(--polomer-l);
+  padding: var(--mezera-5);
+  box-shadow: var(--stin-1);
+}
+.karta--tesna { padding: var(--mezera-4); }
+.karta--zvyraznena { border-color: var(--barva-zelena); box-shadow: var(--stin-2); }
+.karta--tmava { background: var(--barva-hlavicka); color: var(--barva-text-na-tmave); border-color: var(--barva-hlavicka); }
+
+/* Hlavička týdenního přehledu */
+.prehled-hlavicka { display: flex; flex-direction: column; gap: var(--mezera-3); }
+.prehled-hlavicka__tyden { display: flex; flex-direction: column; gap: var(--mezera-2); }
+
+/* --- Karta lekce: stavy --nezacato | --probiha | --hotovo | --zamceno ---- */
+.karta-lekce {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--mezera-3);
+  padding: var(--mezera-5);
+  background: var(--barva-povrch);
+  border: 1px solid var(--barva-okraj);
+  border-radius: var(--polomer-l);
+  box-shadow: var(--stin-1);
+}
+.karta-lekce__hlavicka {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--mezera-3);
+}
+.karta-lekce__poradi {
+  font-size: var(--pismo-maly);
+  font-weight: var(--pismo-vaha-tucne);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--barva-text-tlumeny);
+}
+.karta-lekce__tema { font-size: var(--pismo-velke); font-weight: var(--pismo-vaha-tucne); line-height: 1.25; }
+.karta-lekce__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--mezera-1) var(--mezera-4);
+  color: var(--barva-text-tlumeny);
+}
+.karta-lekce__meta > span { display: inline-flex; align-items: center; gap: var(--mezera-1); }
+.karta-lekce__akce { margin-top: auto; padding-top: var(--mezera-2); display: flex; flex-wrap: wrap; gap: var(--mezera-2); align-items: center; }
+.karta-lekce__akce > .tlacitko { flex: 1 1 auto; }
+.karta-lekce__vysledek { display: flex; align-items: center; gap: var(--mezera-3); }
+
+.karta-lekce--probiha {
+  border-color: var(--barva-silna);
+  box-shadow: inset 4px 0 0 var(--barva-silna), var(--stin-2);
+}
+.karta-lekce--hotovo { background: var(--barva-povrch); }
+.karta-lekce--hotovo .karta-lekce__tema { color: var(--barva-navy-3); }
+
+.karta-lekce--zamceno {
+  background: var(--barva-povrch-2);
+  border-style: dashed;
+  border-color: var(--barva-okraj-silny);
+  box-shadow: none;
+}
+.karta-lekce--zamceno .karta-lekce__tema { color: var(--barva-text-tlumeny); }
+.karta-lekce__zamek {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--mezera-2);
+  color: var(--barva-text-tlumeny);
+  font-weight: var(--pismo-vaha-polotucne);
+}
+.karta-lekce__zamek .ikona { margin-top: 0.15em; }
+/* Zamčený týden jedním řádkem (zadání 30. 9., A): témata + „Otevře se …“, bez ceny */
+.tyden-zamceny {
+  display: flex; align-items: flex-start; gap: var(--mezera-3);
+  padding: var(--mezera-3) var(--mezera-4);
+  border: 1px dashed var(--barva-okraj-silny); border-radius: var(--polomer-l, var(--polomer-m));
+  background: var(--barva-povrch-2); color: var(--barva-text-tlumeny);
+}
+.tyden-zamceny > .ikona { flex: 0 0 auto; margin-top: 0.15em; }
+.tyden-zamceny__text { min-width: 0; }
+.tyden-zamceny__temata { margin: 0; }
+.tyden-zamceny__stav { margin: var(--mezera-1) 0 0; font-weight: var(--pismo-vaha-polotucne); }
+.tyden--zamceny .nadpis-sekce { color: var(--barva-text-tlumeny); }
+
+/* --- Velká volební karta (volba role, volba režimu) -------------------- */
+.volby-karet {
+  display: grid;
+  gap: var(--mezera-3);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+}
+/* Ikona vlevo, název a popis vpravo — kompaktní i na telefonu */
+.volba-karta {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: var(--mezera-4);
+  row-gap: var(--mezera-1);
+  width: 100%;
+  min-height: 5.5rem;
+  padding: var(--mezera-4) var(--mezera-5);
+  text-align: left;
+  background: var(--barva-povrch);
+  border: 2px solid var(--barva-okraj-silny);
+  border-radius: var(--polomer-l);
+  color: var(--barva-text);
+  transition: border-color var(--prechod), box-shadow var(--prechod), background-color var(--prechod);
+}
+.volba-karta:hover { border-color: var(--barva-silna); box-shadow: var(--stin-2); }
+.volba-karta.je-vybrano,
+.volba-karta[aria-pressed="true"] { border-color: var(--barva-zelena-obrys); background: var(--barva-zelena-plocha); box-shadow: var(--stin-zelena); }
+.volba-karta > .ikona-kruh { grid-row: span 2; }
+.volba-karta__nazev { font-size: var(--pismo-velke); font-weight: var(--pismo-vaha-tucne); line-height: 1.25; align-self: end; }
+.volba-karta__popis { color: var(--barva-text-tlumeny); align-self: start; line-height: 1.4; }
+
+
+/* ==========================================================================
+   9. Žák: rozložení lekce, karta úlohy, krok, dlaždice, vstupy, klávesnice
+   ========================================================================== */
+/* Na PC dva sloupce (zadání | kroky), na tabletu na výšku pod sebou */
+.lekce-zak {
+  display: grid;
+  gap: var(--mezera-5);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr)); /* 26rem: 2 sloupce i na 1024 px se scrollbarem */
+  align-items: start;
+}
+
+.karta-ulohy {
+  background: var(--barva-povrch);
+  border: 1px solid var(--barva-okraj);
+  border-radius: var(--polomer-xl);
+  padding: var(--mezera-6);
+  box-shadow: var(--stin-2);
+}
+.karta-ulohy__hlavicka { display: flex; flex-wrap: wrap; align-items: center; gap: var(--mezera-2); margin-bottom: var(--mezera-4); }
+.karta-ulohy__zadani {
+  font-size: var(--pismo-zadani);
+  line-height: 1.6;
+  max-width: var(--sirka-textu);
+}
+.karta-ulohy__zadani p + p { margin-top: var(--mezera-3); }
+.karta-ulohy__napoveda { margin-top: var(--mezera-4); color: var(--barva-text-tlumeny); font-size: var(--pismo-zaklad); }
+
+/* Klik na slovo/číslo = žluté podtržení (jen vizuální pomůcka) */
+.zvyraznitelne {
+  cursor: pointer;
+  border-radius: 0.2em;
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 0.18em;
+  text-underline-offset: 0.2em;
+  transition: background-color var(--prechod), text-decoration-color var(--prechod);
+}
+.zvyraznitelne:hover { text-decoration-color: var(--barva-okraj-silny); }
+.zvyraznitelne.je-zvyrazneno {
+  background: var(--barva-zvyrazneni-plocha);
+  text-decoration-color: var(--barva-zvyrazneni);
+}
+
+/* Krok úlohy */
+.krok {
+  background: var(--barva-povrch);
+  border: 1px solid var(--barva-okraj);
+  border-radius: var(--polomer-xl);
+  padding: var(--mezera-5) var(--mezera-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mezera-4);
+}
+.krok--hotovy { background: var(--barva-povrch-2); box-shadow: none; }
+.krok__cislo { font-size: var(--pismo-maly); font-weight: var(--pismo-vaha-tucne); letter-spacing: 0.06em; text-transform: uppercase; color: var(--barva-text-tlumeny); }
+.krok__popisek { font-size: var(--pismo-velke); font-weight: var(--pismo-vaha-polotucne); line-height: 1.3; }
+.krok__vstup { display: flex; flex-wrap: wrap; align-items: center; gap: var(--mezera-4); }
+.krok__akce { display: flex; flex-wrap: wrap; align-items: center; gap: var(--mezera-3); }
+
+/* --- Dlaždice: klid | .je-vybrano | .je-spravne | .je-nesedi ------------ */
+.dlazdice-mrizka {
+  display: grid;
+  gap: var(--mezera-3);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  width: 100%;
+}
+.dlazdice {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mezera-2);
+  min-height: 4.5rem;
+  padding: var(--mezera-4) var(--mezera-5);
+  background: var(--barva-povrch);
+  border: 2px solid var(--barva-okraj-silny);
+  border-radius: var(--polomer-l);
+  font-size: var(--pismo-velke);
+  font-weight: var(--pismo-vaha-polotucne);
+  color: var(--barva-text);
+  text-align: center;
+  line-height: 1.3;
+  transition: border-color var(--prechod), background-color var(--prechod), box-shadow var(--prechod), transform var(--prechod);
+}
+.dlazdice:hover:not(:disabled) { border-color: var(--barva-silna); box-shadow: var(--stin-2); }
+.dlazdice--radek { justify-content: flex-start; text-align: left; font-family: inherit; } /* detektiv: řádky výpočtu */
+.dlazdice__znak {
+  position: absolute;
+  top: var(--mezera-2); right: var(--mezera-2);
+  display: none;
+  width: 1.75rem; height: 1.75rem;
+  border-radius: var(--polomer-kruh);
+  place-items: center;
+}
+.dlazdice__znak .ikona { width: 1.1rem; height: 1.1rem; stroke-width: 2.6; }
+
+.dlazdice.je-vybrano,
+.dlazdice[aria-pressed="true"] {
+  border-color: var(--barva-silna);
+  background: var(--barva-navy-plocha);
+  box-shadow: 0 0 0 2px var(--barva-silna) inset;
+}
+.dlazdice.je-spravne {
+  border-color: var(--barva-zelena-obrys);
+  background: var(--barva-zelena-plocha);
+  color: var(--barva-text);
+  box-shadow: 0 0 0 2px var(--barva-zelena-obrys) inset;
+}
+.dlazdice.je-spravne .dlazdice__znak--spravne { display: grid; background: var(--barva-zelena); color: var(--barva-na-zelene); }
+/* „Nesedí" — neutrální šedomodrá, přerušovaný okraj, žádná červená */
+.dlazdice.je-nesedi {
+  border-style: dashed;
+  border-color: var(--barva-nesedi-obrys);
+  background: var(--barva-nesedi-plocha);
+  color: var(--barva-nesedi-text);
+  box-shadow: none;
+}
+.dlazdice.je-nesedi .dlazdice__znak--nesedi { display: grid; background: var(--barva-povrch); color: var(--barva-nesedi-text); border: 1.5px solid var(--barva-nesedi-obrys); }
+.dlazdice:disabled { cursor: default; }
+.dlazdice:disabled:not(.je-spravne):not(.je-nesedi):not(.je-vybrano) { opacity: 0.6; }
+
+/* --- Formulářová pole (sdílené žák/rodič/admin) ------------------------- */
+.pole {
+  display: block;
+  width: 100%;
+  min-height: 3rem;
+  padding: var(--mezera-2) var(--mezera-4);
+  background: var(--barva-povrch);
+  border: 2px solid var(--barva-okraj-pole);
+  border-radius: var(--polomer-m);
+  font-size: var(--pismo-zaklad); /* 16 px = iOS nezoomuje */
+  line-height: 1.4;
+  color: var(--barva-text);
+  transition: border-color var(--prechod), box-shadow var(--prechod);
+}
+.pole::placeholder { color: var(--barva-placeholder); opacity: 1; }
+.pole:hover { border-color: var(--barva-navy-3); }
+.pole:focus { outline: none; border-color: var(--barva-silna); box-shadow: 0 0 0 3px rgb(37 99 235 / 0.35); }
+textarea.pole { min-height: 6rem; resize: vertical; }
+select.pole {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 2.75rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230F172A' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  background-size: 1.25rem;
+}
+
+/* Velké pole pro čísla u žáka */
+.pole--cislo {
+  width: 9rem;
+  min-height: var(--dotyk-velky);
+  font-size: var(--pismo-vstup);
+  font-weight: var(--pismo-vaha-polotucne);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.pole--kratke { width: 5.5rem; padding-inline: var(--mezera-2); }
+
+/* Stav vyhodnocení pole */
+.pole.je-spravne, .je-spravne > .pole, .pole-cislo.je-spravne { border-color: var(--barva-zelena-obrys); background-color: var(--barva-zelena-plocha); }
+.pole.je-nesedi, .je-nesedi > .pole, .pole-cislo.je-nesedi { border-color: var(--barva-nesedi-obrys); border-style: dashed; background-color: var(--barva-nesedi-plocha); }
+
+/* Číslo s jednotkou: [   12 | cm ] */
+.pole-cislo {
+  display: inline-flex;
+  align-items: stretch;
+  background: var(--barva-povrch);
+  border: 2px solid var(--barva-okraj-pole);
+  border-radius: var(--polomer-m);
+  overflow: hidden;
+  transition: border-color var(--prechod), box-shadow var(--prechod);
+}
+.pole-cislo:focus-within { border-color: var(--barva-silna); box-shadow: 0 0 0 3px rgb(37 99 235 / 0.35); }
+.pole-cislo > .pole { border: 0; border-radius: 0; box-shadow: none; background: transparent; }
+.pole-cislo > .pole:focus { box-shadow: none; }
+.pole-cislo__jednotka {
+  display: flex;
+  align-items: center;
+  padding: 0 var(--mezera-4);
+  background: var(--barva-povrch-2);
+  border-left: 1px solid var(--barva-okraj);
+  font-size: var(--pismo-velke);
+  font-weight: var(--pismo-vaha-polotucne);
+  color: var(--barva-text-tlumeny);
+}
+
+/* Šablona zlomku: čitatel nad čarou, jmenovatel pod */
+.zlomek-vstup {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--mezera-2);
+  vertical-align: middle;
+}
+.zlomek-vstup > .pole { width: 6rem; }
+.zlomek-vstup__cara {
+  height: 3px;
+  border-radius: 2px;
+  background: var(--barva-silna);
+}
+/* Smíšené číslo: celá část vlevo + zlomek */
+.smisene-vstup {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--mezera-3);
+}
+.smisene-vstup__cela { width: 5.5rem; }
+
+/* Pomocný text vstupu (např. „Zapiš jako zlomek") */
+.vstup-popis { font-size: var(--pismo-zaklad); color: var(--barva-text-tlumeny); }
+
+/* --- Matematická klávesnice (tablet) ----------------------------------- */
+.klavesnice {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--mezera-2);
+  padding: var(--mezera-3);
+  background: var(--barva-povrch-2);
+  border: 1px solid var(--barva-okraj);
+  border-radius: var(--polomer-l);
+  max-width: 30rem;
+  width: 100%;
+  touch-action: manipulation;
+}
+.klavesnice__klavesa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mezera-1);
+  min-height: var(--dotyk-velky);
+  padding: 0 var(--mezera-1);
+  background: var(--barva-povrch);
+  border: 1px solid var(--barva-okraj-silny);
+  border-bottom-width: 3px;
+  border-radius: var(--polomer-m);
+  font-size: var(--pismo-velke);
+  font-weight: var(--pismo-vaha-polotucne);
+  color: var(--barva-text);
+  font-variant-numeric: tabular-nums;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.klavesnice__klavesa:active { transform: translateY(1px); border-bottom-width: 2px; }
+.klavesnice__klavesa--operator { background: var(--barva-navy-plocha); border-color: var(--barva-navy-obrys); }
+.klavesnice__klavesa--funkce { font-size: var(--pismo-zaklad); background: var(--barva-navy-plocha); border-color: var(--barva-navy-obrys); }
+.klavesnice__klavesa--smazat { font-size: var(--pismo-zaklad); }
+.klavesnice__klavesa--hotovo { font-size: var(--pismo-zaklad); background: var(--barva-zelena); border-color: var(--barva-zelena-obrys); color: var(--barva-na-zelene); }
+.klavesnice__klavesa--siroka { grid-column: span 2; }
+.klavesnice__klavesa sup { font-size: 0.6em; }
+
+/* --- Zpětná vazba po odevzdání kroku (žák) ----------------------------- */
+.zpetna-vazba {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--mezera-3);
+  padding: var(--mezera-3) var(--mezera-4);
+  border-radius: var(--polomer-m);
+  font-size: var(--pismo-stredni);
+  font-weight: var(--pismo-vaha-polotucne);
+  line-height: 1.4;
+}
+.zpetna-vazba .ikona { width: 1.5rem; height: 1.5rem; margin-top: 0.05em; }
+.zpetna-vazba--spravne { background: var(--barva-zelena-plocha); color: var(--barva-zelena-text); }
+.zpetna-vazba--nesedi { background: var(--barva-nesedi-plocha); color: var(--barva-nesedi-text); }
+.zpetna-vazba--poznamka { background: var(--barva-navy-plocha); color: var(--barva-silna); }
+
+/* Konec lekce u žáka */
+.konec-lekce { text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--mezera-4); padding: var(--mezera-7) var(--mezera-5); }
+
+
+/* ==========================================================================
+   10. Rodič: tahák, otázky, rozbalovací sekce, stav žáka, semafor, souhrn
+   ========================================================================== */
+.tahak { display: flex; flex-direction: column; gap: var(--mezera-4); font-size: var(--pismo-stredni); }
+.tahak__sekce {
+  background: var(--barva-povrch);
+  border: 1px solid var(--barva-okraj);
+  border-radius: var(--polomer-l);
+  padding: var(--mezera-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mezera-3);
+}
+.tahak__sekce--uvod { background: var(--barva-navy-plocha); border-color: var(--barva-navy-obrys); }
+.tahak__nadpis {
+  display: flex;
+  align-items: center;
+  gap: var(--mezera-2);
+  font-size: var(--pismo-zaklad);
+  font-weight: var(--pismo-vaha-tucne);
+  color: var(--barva-silna);
+}
+.tahak__nadpis .ikona { color: var(--barva-zelena-text); }
+
+/* Otázky L1 → L3 (další se odkryje tlačítkem „Další otázka") */
+.otazky { display: flex; flex-direction: column; gap: var(--mezera-3); }
+.otazka {
+  padding: var(--mezera-3) var(--mezera-4);
+  border-left: 4px solid var(--barva-zelena);
+  background: var(--barva-pozadi);
+  border-radius: 0 var(--polomer-m) var(--polomer-m) 0;
+}
+.otazka__uroven {
+  display: block;
+  font-size: var(--pismo-maly);
+  font-weight: var(--pismo-vaha-tucne);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--barva-text-tlumeny);
+  margin-bottom: var(--mezera-1);
+}
+.otazka__text { font-size: var(--pismo-stredni); font-weight: var(--pismo-vaha-polotucne); line-height: 1.45; }
+.otazka.je-nova { animation: objevit 240ms ease-out; }
+
+/* Rozbalovací sekce: <details class="rozbalovaci"><summary>…</summary>…</details> */
+.rozbalovaci {
+  background: var(--barva-povrch);
+  border: 1px solid var(--barva-okraj);
+  border-radius: var(--polomer-l);
+}
+.rozbalovaci > summary {
+  display: flex;
+  align-items: center;
+  gap: var(--mezera-3);
+  min-height: var(--dotyk-velky);
+  padding: var(--mezera-2) var(--mezera-4);
+  font-weight: var(--pismo-vaha-polotucne);
+  font-size: var(--pismo-zaklad);
+  cursor: pointer;
+  list-style: none;
+  border-radius: inherit;
+}
+.rozbalovaci > summary::-webkit-details-marker { display: none; }
+.rozbalovaci > summary::marker { content: ""; }
+.rozbalovaci > summary:hover { background: var(--barva-pozadi); }
+.rozbalovaci__sipka { margin-left: auto; transition: transform var(--prechod); color: var(--barva-text-tlumeny); }
+.rozbalovaci[open] > summary .rozbalovaci__sipka { transform: rotate(180deg); }
+.rozbalovaci[open] > summary { border-bottom: 1px solid var(--barva-okraj); border-radius: var(--polomer-l) var(--polomer-l) 0 0; }
+.rozbalovaci__obsah { padding: var(--mezera-4); font-size: var(--pismo-stredni); display: flex; flex-direction: column; gap: var(--mezera-3); }
+.rozbalovaci--reseni > summary { color: var(--barva-silna); }
+.rozbalovaci--reseni[open] { border-color: var(--barva-navy-obrys); }
+.rozbalovaci--reseni .rozbalovaci__obsah { background: var(--barva-pozadi); border-radius: 0 0 var(--polomer-l) var(--polomer-l); }
+
+/* Postup řešení (číslovaný) */
+.postup { counter-reset: postup; display: flex; flex-direction: column; gap: var(--mezera-2); }
+.postup > li { counter-increment: postup; position: relative; padding-left: 2.5rem; min-height: 1.75rem; }
+.postup > li::before {
+  content: counter(postup);
+  position: absolute; left: 0; top: 0.05em;
+  width: 1.75rem; height: 1.75rem;
+  display: grid; place-items: center;
+  border-radius: var(--polomer-kruh);
+  background: var(--barva-inverzni); color: var(--barva-na-inverzni);
+  font-size: var(--pismo-maly); font-weight: var(--pismo-vaha-tucne);
+}
+
+/* Stav žáka (načteno ze Supabase, tlačítko Obnovit) */
+.stav-zaka {
+  display: flex;
+  align-items: center;
+  gap: var(--mezera-3);
+  padding: var(--mezera-2) var(--mezera-2) var(--mezera-2) var(--mezera-4);
+  background: var(--barva-povrch);
+  border: 1px solid var(--barva-okraj);
+  border-radius: var(--polomer-l);
+}
+.stav-zaka__text { flex: 1; line-height: 1.35; }
+.stav-zaka__text strong { display: block; }
+.stav-zaka__text small { color: var(--barva-text-tlumeny); font-size: var(--pismo-maly); }
+.stav-zaka__fajfka { color: var(--barva-zelena-text); }
+
+/* Semafor: 4 velká tlačítka (co rodič viděl) */
+.semafor-volby { display: flex; flex-direction: column; gap: var(--mezera-2); }
+.semafor-volba {
+  display: flex;
+  align-items: center;
+  gap: var(--mezera-3);
+  width: 100%;
+  min-height: var(--dotyk-velky);
+  padding: var(--mezera-3) var(--mezera-4);
+  background: var(--barva-povrch);
+  border: 2px solid var(--barva-okraj-silny);
+  border-radius: var(--polomer-l);
+  font-size: var(--pismo-stredni);
+  font-weight: var(--pismo-vaha-polotucne);
+  text-align: left;
+  line-height: 1.3;
+  color: var(--barva-text);
+  transition: border-color var(--prechod), background-color var(--prechod);
+}
+.semafor-volba > .ikona { color: var(--barva-navy-3); width: 1.5rem; height: 1.5rem; }
+.semafor-volba:hover { border-color: var(--barva-silna); }
+.semafor-volba.je-vybrano,
+.semafor-volba[aria-pressed="true"] {
+  border-color: var(--barva-silna);
+  background: var(--barva-navy-plocha);
+  box-shadow: 0 0 0 1px var(--barva-silna) inset;
+}
+.semafor-volba__zaskrt { margin-left: auto; display: none; color: var(--barva-silna); }
+.semafor-volba.je-vybrano .semafor-volba__zaskrt,
+.semafor-volba[aria-pressed="true"] .semafor-volba__zaskrt { display: block; }
+
+/* Výsledná barva + doporučení */
+.semafor-vysledek {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mezera-2);
+  padding: var(--mezera-4);
+  border-radius: var(--polomer-l);
+  border: 2px solid;
+  border-left-width: 8px;
+}
+.semafor-vysledek__barva {
+  display: flex;
+  align-items: center;
+  gap: var(--mezera-3);
+  font-size: var(--pismo-velke);
+  font-weight: var(--pismo-vaha-tucne);
+  line-height: 1.2;
+}
+.semafor-vysledek__doporuceni { font-size: var(--pismo-stredni); color: var(--barva-text); }
+.semafor-vysledek__zmena { font-size: var(--pismo-zaklad); color: var(--barva-text-tlumeny); }
+.semafor-vysledek--zelena { background: var(--barva-zelena-plocha); border-color: var(--barva-zelena); }
+.semafor-vysledek--zelena .semafor-vysledek__barva { color: var(--barva-zelena-text); }
+.semafor-vysledek--oranzova { background: var(--barva-oranzova-plocha); border-color: var(--barva-oranzova); }
+.semafor-vysledek--oranzova .semafor-vysledek__barva { color: var(--barva-oranzova-text); }
+.semafor-vysledek--cervena { background: var(--barva-cervena-plocha); border-color: var(--barva-cervena); }
+.semafor-vysledek--cervena .semafor-vysledek__barva { color: var(--barva-cervena-text); }
+
+/* Souhrn lekce: 4 barvy, hlavní = poslední úloha */
+.souhrn { display: flex; flex-direction: column; gap: var(--mezera-4); }
+.souhrn__ulohy {
+  display: grid;
+  gap: var(--mezera-2);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.souhrn__uloha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--mezera-1);
+  padding: var(--mezera-3) var(--mezera-2);
+  background: var(--barva-povrch);
+  border: 1px solid var(--barva-okraj);
+  border-radius: var(--polomer-l);
+  text-align: center;
+  line-height: 1.3;
+  min-width: 0;
+}
+.souhrn__uloha-nazev { font-weight: var(--pismo-vaha-polotucne); }
+.souhrn__uloha-barva { font-size: var(--pismo-maly); color: var(--barva-text-tlumeny); }
+.souhrn__uloha--hlavni {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: var(--mezera-4);
+  padding: var(--mezera-4);
+  text-align: left;
+  border-width: 2px;
+  border-color: var(--barva-silna);
+  box-shadow: var(--stin-2);
+}
+.souhrn__uloha--hlavni .souhrn__uloha-nazev { font-size: var(--pismo-stredni); }
+.souhrn__uloha--hlavni .souhrn__uloha-barva { font-size: var(--pismo-zaklad); color: var(--barva-text); font-weight: var(--pismo-vaha-polotucne); }
+.souhrn__stitek-hlavni { display: block; font-size: var(--pismo-maly); font-weight: var(--pismo-vaha-tucne); text-transform: uppercase; letter-spacing: 0.06em; color: var(--barva-text-tlumeny); }
+
+
+/* ==========================================================================
+   11. Formuláře
+   ========================================================================== */
+.formular { display: flex; flex-direction: column; gap: var(--mezera-5); max-width: var(--sirka-uzka); }
+.formular__sekce { display: flex; flex-direction: column; gap: var(--mezera-4); }
+.formular__nadpis-sekce { font-size: var(--pismo-stredni); font-weight: var(--pismo-vaha-tucne); margin-bottom: var(--mezera-3); } /* legend není flex položka → vlastní odsazení */
+
+.pole-skupina { display: flex; flex-direction: column; gap: var(--mezera-2); }
+.pole-popisek { font-weight: var(--pismo-vaha-polotucne); }
+.pole-popisek__volitelne { font-weight: var(--pismo-vaha-normalni); color: var(--barva-text-tlumeny); }
+.pole-napoveda { font-size: var(--pismo-zaklad); color: var(--barva-text-tlumeny); }
+/* Chyba ve formuláři: oranžový tón + ikona (červená je vyhrazená semaforu) */
+.pole-chyba {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--mezera-2);
+  color: var(--barva-oranzova-text);
+  font-weight: var(--pismo-vaha-polotucne);
+}
+.pole-chyba .ikona { margin-top: 0.15em; }
+.pole[aria-invalid="true"], .pole.je-chybne { border-color: var(--barva-oranzova-obrys); background: var(--barva-oranzova-plocha); }
+
+/* Volby jako karty (radio): <label class="volba"><input type="radio" class="volba__vstup"><span class="volba__obsah">…</span></label> */
+.volby { display: grid; gap: var(--mezera-2); grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); }
+.volby > legend { margin-bottom: var(--mezera-2); font-weight: var(--pismo-vaha-polotucne); }
+.volby--stupnice { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.volba { position: relative; display: block; cursor: pointer; }
+.volba__vstup { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.volba__obsah {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.125rem;
+  min-height: var(--dotyk-velky);
+  padding: var(--mezera-2) var(--mezera-3);
+  background: var(--barva-povrch);
+  border: 2px solid var(--barva-okraj-pole);
+  border-radius: var(--polomer-m);
+  font-weight: var(--pismo-vaha-polotucne);
+  text-align: center;
+  line-height: 1.25;
+  transition: border-color var(--prechod), background-color var(--prechod);
+}
+.volba__obsah small { font-weight: var(--pismo-vaha-normalni); color: var(--barva-text-tlumeny); font-size: var(--pismo-maly); }
+.volba:hover .volba__obsah { border-color: var(--barva-silna); }
+.volba__vstup:checked + .volba__obsah {
+  border-color: var(--barva-silna);
+  background: var(--barva-inverzni);
+  color: var(--barva-na-inverzni);
+}
+.volba__vstup:checked + .volba__obsah small { color: var(--barva-na-inverzni); opacity: 0.8; }
+.volba__vstup:focus-visible + .volba__obsah { outline: 3px solid var(--barva-fokus); outline-offset: 2px; }
+
+/* Zaškrtávátko (souhlas s podmínkami) */
+.zaskrtavatko {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--mezera-3);
+  cursor: pointer;
+  min-height: var(--dotyk-min);
+  padding-top: var(--mezera-1);
+}
+.zaskrtavatko input {
+  flex: 0 0 1.5rem;
+  width: 1.5rem; height: 1.5rem;
+  margin: 0.05rem 0 0;
+  accent-color: var(--barva-silna);
+  cursor: pointer;
+}
+
+
+/* ==========================================================================
+   12. Hlášky, toast, prázdný stav, načítání
+   ========================================================================== */
+.hlaska {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--mezera-3);
+  padding: var(--mezera-3) var(--mezera-4);
+  border-radius: var(--polomer-m);
+  border-left: 4px solid;
+  line-height: 1.45;
+}
+.hlaska > .ikona { width: 1.5rem; height: 1.5rem; margin-top: 0.05em; }
+.hlaska__text { flex: 1; min-width: 0; }
+.hlaska__text strong { display: block; }
+.hlaska__akce { display: flex; gap: var(--mezera-2); flex-wrap: wrap; margin-top: var(--mezera-2); }
+.hlaska--info { background: var(--barva-navy-plocha); border-color: var(--barva-silna); color: var(--barva-silna); }
+.hlaska--uspech { background: var(--barva-zelena-plocha); border-color: var(--barva-zelena-obrys); color: var(--barva-text); }
+.hlaska--uspech > .ikona { color: var(--barva-zelena-text); }
+/* Systémová chyba (nepodařilo se uložit): oranžový tón, ne červený */
+.hlaska--varovani { background: var(--barva-oranzova-plocha); border-color: var(--barva-oranzova-obrys); color: var(--barva-text); }
+.hlaska--varovani > .ikona { color: var(--barva-oranzova-text); }
+
+/* Toasty: <div class="toasty" aria-live="polite"></div> jednou na stránce */
+.toasty {
+  position: fixed;
+  left: 50%;
+  bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px)); /* nad spodní lištou */
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--mezera-2);
+  width: min(28rem, calc(100% - 2rem));
+  pointer-events: none;
+}
+.toast {
+  display: flex;
+  align-items: center;
+  gap: var(--mezera-3);
+  width: 100%;
+  min-height: var(--dotyk-velky);
+  padding: var(--mezera-3) var(--mezera-4);
+  background: var(--barva-toast);
+  color: var(--barva-text-na-tmave);
+  border: 1px solid var(--barva-toast-okraj);
+  border-radius: var(--polomer-l);
+  box-shadow: var(--stin-3);
+  pointer-events: auto;
+  animation: toast-prijezd 220ms ease-out;
+}
+.toast > .ikona { color: var(--barva-zelena); width: 1.5rem; height: 1.5rem; }
+.toast__text { flex: 1; }
+.toast--varovani > .ikona { color: var(--barva-oranzova); }
+.toast.je-odchazi { animation: toast-odjezd 180ms ease-in forwards; }
+
+/* Prázdný stav */
+.prazdny-stav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--mezera-3);
+  padding: var(--mezera-7) var(--mezera-5);
+  border: 2px dashed var(--barva-okraj-silny);
+  border-radius: var(--polomer-xl);
+  background: var(--barva-povrch);
+}
+.prazdny-stav__nadpis { font-size: var(--pismo-velke); }
+.prazdny-stav__text { color: var(--barva-text-tlumeny); max-width: 34ch; }
+
+/* Točítko (načítání) */
+.tocitko {
+  display: inline-block;
+  width: 1.25em; height: 1.25em;
+  border: 3px solid var(--barva-okraj-silny);
+  border-top-color: var(--barva-silna);
+  border-radius: var(--polomer-kruh);
+  animation: tocit 800ms linear infinite;
+  vertical-align: -0.25em;
+}
+.nacitani { display: flex; align-items: center; justify-content: center; gap: var(--mezera-3); padding: var(--mezera-6); color: var(--barva-text-tlumeny); }
+
+
+/* ==========================================================================
+   13. Modal — <dialog class="modal"><div class="modal__panel">…</div></dialog>
+   Otevírá se dialog.showModal(); na telefonu vyjede zespodu.
+   ========================================================================== */
+.modal {
+  width: min(40rem, calc(100% - 2rem));
+  max-height: calc(100% - 2rem);
+  padding: 0;
+  border: 0;
+  border-radius: var(--polomer-xl);
+  background: var(--barva-povrch);
+  color: var(--barva-text);
+  box-shadow: var(--stin-3);
+  overflow: auto;
+}
+.modal::backdrop { background: var(--barva-zaclona); }
+.modal[open] { animation: objevit 200ms ease-out; }
+.modal__panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--mezera-4);
+  padding: var(--mezera-5);
+  background: var(--barva-povrch);
+  border-radius: var(--polomer-xl);
+}
+.modal__nadpis { font-size: var(--pismo-velke); padding-right: var(--dotyk-min); }
+.modal__text { color: var(--barva-text-tlumeny); }
+.modal__zavrit { position: absolute; top: var(--mezera-3); right: var(--mezera-3); }
+.modal__akce { display: flex; flex-wrap: wrap; gap: var(--mezera-2); justify-content: flex-end; }
+
+@media (max-width: 40rem) {
+  .modal {
+    width: 100%;
+    max-width: 100%;
+    margin: auto 0 0;
+    border-radius: var(--polomer-xl) var(--polomer-xl) 0 0;
+  }
+  .modal__panel { padding-bottom: calc(var(--mezera-5) + env(safe-area-inset-bottom, 0px)); border-radius: var(--polomer-xl) var(--polomer-xl) 0 0; }
+}
+
+
+/* ==========================================================================
+   14. Admin: filtry, tabulka (desktop, myš — hustší)
+   ========================================================================== */
+.filtry {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--mezera-3);
+  padding: var(--mezera-4);
+  background: var(--barva-povrch);
+  border: 1px solid var(--barva-okraj);
+  border-radius: var(--polomer-l);
+}
+.filtry__pole { display: flex; flex-direction: column; gap: var(--mezera-1); min-width: 10rem; }
+.filtry__pole--hledat { flex: 1 1 16rem; }
+.filtry__pole > label { font-size: var(--pismo-maly); font-weight: var(--pismo-vaha-polotucne); color: var(--barva-text-tlumeny); }
+.filtry__akce { margin-left: auto; display: flex; gap: var(--mezera-2); }
+.pole-hledat { position: relative; }
+.pole-hledat > .ikona { position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); color: var(--barva-text-tlumeny); pointer-events: none; }
+.pole-hledat > .pole { padding-left: 2.75rem; }
+.filtry .pole { min-height: var(--dotyk-min); }
+
+.tabulka-obal {
+  width: 100%;
+  overflow-x: auto;
+  background: var(--barva-povrch);
+  border: 1px solid var(--barva-okraj);
+  border-radius: var(--polomer-l);
+}
+.tabulka {
+  width: 100%;
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+}
+.tabulka th,
+.tabulka td {
+  padding: var(--mezera-3);
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--barva-okraj);
+}
+.tabulka th, .tabulka__cislo, .tabulka__nezalamovat { white-space: nowrap; }
+.tabulka__akce { flex-wrap: wrap; } /* v úzkém sloupci se tlačítka zalomí, nic se neschová za okraj */
+.tabulka th {
+  position: sticky;
+  top: 0;
+  background: var(--barva-povrch-2);
+  font-size: var(--pismo-maly);
+  font-weight: var(--pismo-vaha-tucne);
+  color: var(--barva-text-tlumeny);
+  letter-spacing: 0.02em;
+}
+.tabulka tbody tr:hover { background: var(--barva-pozadi); }
+.tabulka tbody tr:last-child td { border-bottom: 0; }
+.tabulka__cislo { text-align: right !important; }
+.tabulka__akce { display: flex; gap: var(--mezera-1); justify-content: flex-end; }
+.tabulka__razeni { display: inline-flex; align-items: center; gap: var(--mezera-1); font: inherit; color: inherit; text-transform: inherit; letter-spacing: inherit; }
+.tabulka__razeni[aria-sort] { color: var(--barva-silna); }
+.tabulka__sekundarni { display: block; font-size: var(--pismo-maly); color: var(--barva-text-tlumeny); }
+
+
+/* ==========================================================================
+   15. Přístupnost: fokus, animace, omezený pohyb, tisk
+   ========================================================================== */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--barva-fokus);
+  outline-offset: 2px;
+}
+.hlavicka :where(a, button):focus-visible { outline-color: #FFFFFF; }
+.pole:focus-visible, .pole-cislo > .pole:focus-visible { outline: none; } /* pole mají vlastní prstenec */
+
+@keyframes objevit { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes toast-prijezd { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes toast-odjezd { to { opacity: 0; transform: translateY(8px); } }
+@keyframes tocit { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .tocitko { animation: tocit 2.4s linear infinite !important; } /* pomalé, ale pořád vidět, že se něco děje */
+}
+
+@media print {
+  .jen-obrazovka, .spodni-lista, .hlavicka, .toasty, .modal { display: none !important; }
+  .jen-tisk { display: revert !important; }
+  body { background: #FFFFFF; }
+}
+
+/* Obsah dlaždice (text + vzorec KaTeX) drží pohromadě v jednom řádku textu */
+.dlazdice__text { display: block; min-width: 0; text-align: left; }
+
+
+/* ==========================================================================
+   16. Doplňky integrace (24. 9.) — náhrada inline stylů ze stránek (popis: DESIGN.md)
+   ========================================================================== */
+
+/* --- Obecné utility ------------------------------------------------------ */
+.obal--stranka { padding-block: var(--mezera-5) var(--mezera-7); }  /* <main class="obal …"> na běžné stránce */
+.text-stredni { font-size: var(--pismo-stredni); }
+.na-stred { align-self: center; }                                    /* položka zásobníku uprostřed */
+.formular__uvod { display: flex; flex-direction: column; gap: var(--mezera-2); }  /* nadpis + podtitul formuláře */
+.prazdny-stav--plny { border-style: solid; }                         /* prázdný stav jako potvrzení (ne „nic tu není") */
+.prazdny-stav__nadpis--velky { font-size: var(--pismo-nadpis); }
+.stitek--na-tmave { background: rgb(255 255 255 / 0.12); color: var(--barva-text-na-tmave); }  /* štítek v navy hlavičce */
+
+/* Tři volby v řadě (dotazník: délka lekce, režim, cena) */
+.volby--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+/* Souhrn rodiče: u hlavní úlohy barva na vlastním řádku */
+.souhrn__uloha--hlavni .souhrn__uloha-barva { display: block; }
+.semafor-vysledek__doporuceni > p + p { margin-top: var(--mezera-2); }
+
+/* --- Landing (index.html) ------------------------------------------------ */
+.landing-nadtitul { color: var(--barva-zelena); }                    /* s .nadpis-sekce na tmavé kartě */
+.landing-titulek { font-size: var(--pismo-titulek); }
+.landing-prislib { font-size: var(--pismo-velke); line-height: 1.45; max-width: var(--sirka-textu); }
+.landing-poznamka { color: var(--barva-text-na-tmave-tlumeny); }     /* drobný text na navy ploše */
+.landing-duvod { align-items: flex-start; }                          /* karta „Pro koho": ikona nahoře */
+.landing-cena__stitek { align-self: flex-start; }
+.landing-cena__castka { font-size: var(--pismo-nadpis); font-weight: var(--pismo-vaha-tucne); }
+.landing-vyhoda { align-items: flex-start; }
+.landing-vyhoda > .ikona { color: var(--barva-zelena-text); }
+.landing-vyzva { align-items: center; }
+.landing-vyzva .radek { justify-content: center; }
+.landing-paticka { padding-block: var(--mezera-6); }
+.landing-paticka__nadpis { font-size: var(--pismo-stredni); }
+
+
+/* --- R21: rodič — klíč semaforu, vnořené rozbalovací, „Zítra" v souhrnu, tabulka v modalu ---------- */
+.semafor-klic { display: flex; flex-direction: column; gap: var(--mezera-2); }
+.semafor-klic__uvod { color: var(--barva-text-tlumeny); }
+.semafor-klic__seznam { display: grid; gap: var(--mezera-1) 0; margin: 0; }
+.semafor-klic__seznam dt { font-weight: var(--pismo-vaha-polotucne); }
+.semafor-klic__seznam dd { margin: 0 0 var(--mezera-2); color: var(--barva-text-tlumeny); }
+.rozbalovaci--vnorene { box-shadow: none; background: var(--barva-povrch-2); }
+.souhrn__zitra { font-weight: var(--pismo-vaha-polotucne); }
+.souhrn__zitra--zelena { background: var(--barva-zelena-plocha); border-color: var(--barva-zelena-obrys); color: var(--barva-text); }
+.souhrn__zitra--oranzova { background: var(--barva-oranzova-plocha); border-color: var(--barva-oranzova-obrys); color: var(--barva-text); }
+.souhrn__zitra--cervena { background: var(--barva-cervena-plocha); border-color: var(--barva-cervena-obrys); color: var(--barva-text); }
+.modal__markdown table { width: 100%; border-collapse: collapse; }
+.modal__markdown th, .modal__markdown td { padding: var(--mezera-2); border-bottom: 1px solid var(--barva-okraj); text-align: left; vertical-align: middle; }
+.modal__markdown th { font-size: var(--pismo-maly); color: var(--barva-text-tlumeny); }
+.modal__markdown td:first-child { white-space: nowrap; font-size: var(--pismo-stredni); }
+
+/* --- Admin (admin.js; dříve inline styly) ------------------------------------------------------ */
+.admin-poznamka { min-width: 14rem; }
+.admin-nadpis { font-size: var(--pismo-stredni); margin-top: var(--mezera-6); }
+.admin-dlazdice { text-align: center; min-width: 9rem; }
+.admin-dlazdice__cislo { font-size: var(--pismo-velke); font-weight: var(--pismo-vaha-tucne); }
+.admin-legenda { margin-bottom: var(--mezera-3); }
+.admin-legenda__polozka { --radek-mezera: var(--mezera-1); }
+.admin-graf { width: 100%; height: auto; }            /* max-width nastavuje JS podle počtu kapitol */
+.admin-graf__osa { stroke: var(--barva-okraj); }
+.admin-graf__usek--zelena { fill: var(--barva-zelena); }
+.admin-graf__usek--oranzova { fill: var(--barva-oranzova); }
+.admin-graf__usek--cervena { fill: var(--barva-cervena); }
+.admin-graf__popisek { fill: var(--barva-text-tlumeny); }
+.admin-graf__kapitola { fill: var(--barva-silna); }
+.admin-radek-souhrn { font-weight: var(--pismo-vaha-tucne); }
+.admin-tyden { --radek-mezera: var(--mezera-3); flex-wrap: nowrap; }
+.admin-tyden__datum { width: 6rem; }
+.admin-tyden__pruh { flex: 1; }
+.admin-tyden__pocet { width: 2.5rem; text-align: right; }
+
+/* ==========================================================================
+   17. Úpravy po Pavlově testu (24. 9., R23): úvod v blocích, postup rodiče, řešení jako výpočet,
+       dlaždice bez zalamování, zadání vidět (sticky), display matematika
+   ========================================================================== */
+
+/* --- Matematika: vzorec se nikdy nezalamuje; display vzorec v zadání velký a na středu -------- */
+.katex { white-space: nowrap; }
+.zadani .katex-display { margin: var(--mezera-4) 0; font-size: 1.2em; text-align: center; padding-block: 0.2em; } /* E1: bez posuvníku — široký vzorec zmenší rozlozDlazdice() */
+.zadani p + p { margin-top: var(--mezera-3); }
+
+/* --- Dlaždice (E1, 25. 9.): 2 sloupce, NEBO všechny pod sebou — v jednom kroku se nemíchají ------
+   Rozhoduje rozlozDlazdice() v obsah.js: když se nejdelší možnost do 2 sloupců nevejde, přidá
+   .dlazdice-mrizka--jeden-sloupec; když se nevejde ani na celou šířku, zmenší vzorce (--meritko-vzorce).
+   Uvnitř dlaždice nikdy overflow: auto (žádný posuvník). */
+.dlazdice-mrizka { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.dlazdice-mrizka > .dlazdice { min-width: 0; }
+.dlazdice-mrizka--jeden-sloupec,
+.dlazdice-mrizka--sloupec { grid-template-columns: minmax(0, 1fr); }   /* --sloupec: detektivní řádky vždy pod sebou */
+.dlazdice__text { display: flex; flex-direction: column; align-items: inherit; gap: 0.15rem; min-width: 0; max-width: 100%; }
+.dlazdice:not(.dlazdice--radek) .dlazdice__text { align-items: center; text-align: center; }
+.dlazdice--radek .dlazdice__text { align-items: flex-start; text-align: left; }
+.dlazdice__stitek {
+  font-size: var(--pismo-maly);
+  font-weight: var(--pismo-vaha-tucne);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--barva-text-tlumeny);
+}
+.dlazdice__vyraz { display: block; max-width: 100%; }   /* E1: bez overflow — přetečení měří a řeší rozlozDlazdice() */
+
+/* --- Žák: zadání zůstává vidět (B1) --------------------------------------------------------- */
+.karta-ulohy__sbalit { margin-left: auto; min-height: var(--dotyk-min); }
+.karta-ulohy.je-sbalene .karta-ulohy__sbalit .ikona { transform: rotate(180deg); }
+@media (min-width: 64rem) {
+  /* PC: dva sloupce, zadání vlevo přilepené při posunu ke krokům */
+  .lekce-zak > .karta-ulohy { position: sticky; top: var(--mezera-4); max-height: calc(100vh - 2rem); overflow-y: auto; }
+  .karta-ulohy__sbalit { display: none; }
+  .lekce-zak > .karta-ulohy .karta-ulohy__pokracuje {
+    width: calc(100% + 2 * var(--mezera-6)); margin-inline: calc(-1 * var(--mezera-6));
+  }
+}
+@media (max-width: 63.99rem) {
+  /* tablet na výšku: jeden sloupec, zadání přilepené nahoře, jde sbalit */
+  .lekce-zak > .karta-ulohy { position: sticky; top: 0; z-index: 5; max-height: 50vh; overflow-y: auto; padding: var(--mezera-4) var(--mezera-5); }
+  .karta-ulohy.je-sbalene .karta-ulohy__zadani,
+  .karta-ulohy.je-sbalene .karta-ulohy__napoveda { display: none; }
+  .karta-ulohy.je-sbalene .karta-ulohy__hlavicka { margin-bottom: 0; }
+}
+@media (max-width: 39.99rem) {
+  /* telefon (testovací rodič F2-T03-L2): do 50 % výšky telefonu se zadání s nabídkou A)–E) nevejde a zbytek byl
+     schovaný pod okrajem — karta tu roste s obsahem a posouvá se celá stránka; „Skrýt zadání" zůstává */
+  .lekce-zak > .karta-ulohy { position: static; max-height: none; overflow: visible; }
+}
+/* zadání pokračuje pod okrajem přilepené karty (testovací rodič F2-T03-L2): pruh dole v kartě, bez vlivu na výšku obsahu
+   (záporný okraj = výška pruhu), klepnutí posune rámeček; lekce.js ho ukáže jen při přetečení a skryje na konci */
+.karta-ulohy__pokracuje {
+  position: sticky; bottom: 0; z-index: 1;
+  display: flex; align-items: center; justify-content: center; gap: var(--mezera-2);
+  width: calc(100% + 2 * var(--mezera-5)); height: 3rem; margin: -3rem calc(-1 * var(--mezera-5)) 0;
+  padding: var(--mezera-3) var(--mezera-4) 0; border: 0; border-radius: 0 0 var(--polomer-xl) var(--polomer-xl);
+  background: linear-gradient(to bottom, transparent, var(--barva-povrch) 55%);
+  color: var(--barva-silna); font: inherit; font-size: var(--pismo-zaklad); font-weight: var(--pismo-vaha-tucne); cursor: pointer;
+}
+.karta-ulohy__pokracuje[hidden] { display: none; }
+.karta-ulohy__pokracuje .ikona { color: var(--barva-akcent-text); }
+.karta-ulohy__pokracuje:focus-visible { outline: 3px solid var(--barva-fokus, var(--barva-silna)); outline-offset: -3px; }
+
+/* --- Rodič: úvod lekce v blocích (A1; revize C 24. 9.: kompaktnější, jednotný zelený akcent) --- */
+.uvod-lekce {
+  display: flex; flex-direction: column; gap: var(--mezera-3);
+  padding: var(--mezera-4);
+  background: var(--barva-povrch);
+  border: 1px solid var(--barva-okraj);
+  border-top: 4px solid var(--barva-akcent);
+  border-radius: var(--polomer-l);
+}
+.uvod-lekce__nadpis { font-size: var(--pismo-velke); }
+.uvod-lekce__veta { font-size: var(--pismo-stredni); font-weight: var(--pismo-vaha-polotucne); line-height: 1.4; }
+/* U 2.–4. úlohy úvod sbalený (JS: <details class="rozbalovaci rozbalovaci--uvod"> kolem .uvod-lekce) */
+.rozbalovaci--uvod > .rozbalovaci__obsah { padding: 0; }
+.rozbalovaci--uvod .uvod-lekce { border: 0; border-radius: 0 0 var(--polomer-l) var(--polomer-l); }
+.rozbalovaci--uvod .uvod-lekce__nadpis { display: none; }  /* nadpis nese <summary> */
+
+/* Žebříček „Platí:" — čísla v zeleném prstenci (akcent, ne semafor), všechny řádky stejné */
+.zebricek__nadpis { font-weight: var(--pismo-vaha-tucne); color: var(--barva-silna); margin-bottom: var(--mezera-2); }
+.zebricek__kroky { display: flex; flex-direction: column; gap: var(--mezera-1); }
+.zebricek__krok {
+  display: grid;
+  grid-template-columns: 2rem 3rem minmax(0, 1fr);
+  align-items: center;
+  gap: var(--mezera-3);
+  min-height: 2.75rem;
+  padding: var(--mezera-1) var(--mezera-3);
+  border-radius: var(--polomer-m);
+  background: var(--barva-akcent-plocha);
+  border: 1px solid var(--barva-akcent-linka);
+}
+.zebricek__cislo,
+.postup-rodice__cislo {
+  display: grid; place-items: center; flex: 0 0 auto;
+  width: 2rem; height: 2rem;
+  border-radius: var(--polomer-kruh);
+  background: var(--barva-povrch);
+  border: 2px solid var(--barva-akcent);
+  color: var(--barva-akcent-text);
+  font-size: var(--pismo-stredni); font-weight: var(--pismo-vaha-tucne);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.zebricek__znak { font-size: var(--pismo-velke); font-weight: var(--pismo-vaha-tucne); text-align: center; white-space: nowrap; }
+.zebricek__text { font-size: var(--pismo-stredni); font-weight: var(--pismo-vaha-polotucne); line-height: 1.3; }
+
+/* Rámeček „Pravidla pro vás" — neutrální (ne zelený: nejde o úlohu, ale o chování rodiče) */
+.pravidla-rodic {
+  padding: var(--mezera-3) var(--mezera-4);
+  border: 1px dashed var(--barva-okraj-pole);
+  border-radius: var(--polomer-m);
+  background: var(--barva-povrch-2);
+  font-size: var(--pismo-zaklad);
+}
+.pravidla-rodic__nadpis { display: flex; align-items: center; gap: var(--mezera-2); font-weight: var(--pismo-vaha-tucne); color: var(--barva-silna); margin-bottom: var(--mezera-1); }
+.pravidla-rodic__nadpis .ikona { color: var(--barva-akcent-text); }
+.pravidla-rodic__seznam { margin: 0; padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.125rem; }
+.pravidla-rodic__seznam li::marker { color: var(--barva-akcent-text); }
+
+/* --- Rodič: karta úlohy jako očíslovaný postup (A3; revize C: kompaktní, zelená linka postupu) -- */
+.postup-rodice { display: flex; flex-direction: column; gap: var(--mezera-3); counter-reset: none; }
+.postup-rodice__krok {
+  display: flex; flex-direction: column; gap: var(--mezera-3);
+  padding: var(--mezera-3) var(--mezera-4) var(--mezera-4);
+  background: var(--barva-povrch);
+  border: 1px solid var(--barva-okraj);
+  border-left: 4px solid var(--barva-akcent);
+  border-radius: var(--polomer-l);
+  box-shadow: var(--stin-1);
+}
+/* 1. krok = „co dělat teď" — zvýrazněný jemným zeleným podkladem */
+.postup-rodice__krok:first-child { background: var(--barva-akcent-plocha); border-color: var(--barva-akcent-linka); border-left-color: var(--barva-akcent); }
+.postup-rodice__hlavicka { display: flex; align-items: center; gap: var(--mezera-3); }
+.postup-rodice__nadpis { font-size: var(--pismo-stredni); line-height: 1.3; }
+.postup-rodice__obsah { display: flex; flex-direction: column; gap: var(--mezera-2); }
+.postup-rodice__obsah:empty { display: none; }
+.postup-rodice__pozn { color: var(--barva-text-tlumeny); font-size: var(--pismo-zaklad); }
+.otazka__k {
+  display: inline-block;
+  margin-right: var(--mezera-2);
+  padding: 0.05rem 0.5rem;
+  border-radius: var(--polomer-s);
+  background: var(--barva-inverzni); color: var(--barva-na-inverzni);
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+.otazka--otocena { border-left-color: var(--barva-silna); }
+.tahak__sekce--vysvetleni { background: var(--barva-akcent-plocha); border-color: var(--barva-akcent-linka); }
+.tahak__pomucky { display: flex; flex-direction: column; gap: var(--mezera-2); margin-top: var(--mezera-2); }
+
+/* Kompaktnější tahák na telefonu (revize C: stránka rodiče z ~2 750 px na ~2 200 px při 375 px) */
+.tahak { gap: var(--mezera-3); }
+.tahak__sekce { padding: var(--mezera-3) var(--mezera-4); gap: var(--mezera-2); }
+.tahak .otazka { padding: var(--mezera-2) var(--mezera-3); }
+.tahak .rozbalovaci > summary,
+.stranka-rodic .rozbalovaci > summary { min-height: 3rem; }
+.tahak .semafor-volba { min-height: 3rem; padding-block: var(--mezera-2); }
+.stranka-rodic__obsah { gap: var(--mezera-3); padding-top: var(--mezera-3); }
+.stav-zaka { padding-block: var(--mezera-1); }
+
+/* --- Řešení jako výpočet (A4, R23) ------------------------------------------------------------ */
+.reseni { display: flex; flex-direction: column; gap: var(--mezera-3); }
+.reseni__radek { font-size: var(--pismo-velke); line-height: 1.4; }
+.reseni__text .reseni__radek { font-size: var(--pismo-stredni); }
+.reseni__vysvetlivka { font-size: var(--pismo-zaklad); color: var(--barva-text-tlumeny); margin-top: 0.1rem; }
+.reseni__oddil { margin-top: var(--mezera-2); padding-top: var(--mezera-2); border-top: 1px solid var(--barva-okraj); }
+.reseni__oddil:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.reseni__oddil-nadpis { font-size: var(--pismo-stredni); color: var(--barva-silna); }
+.reseni__vysledek { /* akcent, ne semafor */
+  padding: var(--mezera-3) var(--mezera-4);
+  border-radius: var(--polomer-m);
+  background: var(--barva-akcent-plocha);
+  border: 2px solid var(--barva-akcent);
+}
+.reseni__vysledek .reseni__radek { font-weight: var(--pismo-vaha-tucne); }
+.reseni__vysledek-stitek { display: block; font-size: var(--pismo-maly); font-weight: var(--pismo-vaha-tucne); text-transform: uppercase; letter-spacing: 0.06em; color: var(--barva-akcent-text); }
+
+/* ==========================================================================
+   18. Revize C + motiv D (24. 9. večer): zelený akcent, sazba vzorců, přehled, souhrn,
+       přepínač motivu, doladění tmavého motivu
+   ========================================================================== */
+
+/* --- Zelený akcent (D2) — linky a prstence; semaforová zelená zůstává plné kolečko s fajfkou --- */
+.hlavicka { border-bottom: 3px solid var(--barva-akcent); }
+footer.hlavicka { border-bottom: 0; border-top: 3px solid var(--barva-akcent); }
+.prubeh__krok { background: var(--barva-okraj-silny); }
+.prubeh__krok.je-hotovo { background: var(--barva-akcent); }
+.prubeh__krok.je-aktualni { width: 2.5rem; background: var(--barva-akcent-plocha); box-shadow: inset 0 0 0 2px var(--barva-akcent); }
+/* aktivní krok žáka: zelená linka vlevo, hotový krok ztlumený */
+.krok:not(.krok--hotovy) { border-color: var(--barva-akcent-linka); box-shadow: inset 4px 0 0 var(--barva-akcent), var(--stin-1); }
+.krok:not(.krok--hotovy) .krok__cislo { color: var(--barva-akcent-text); }
+.karta-lekce--probiha { border-color: var(--barva-akcent); box-shadow: inset 4px 0 0 var(--barva-akcent), var(--stin-2); }
+.karta-lekce__meta .ikona { color: var(--barva-akcent-text); }
+.ikona-kruh { background: var(--barva-akcent-plocha); color: var(--barva-akcent-text); }
+.hlaska--info > .ikona { color: var(--barva-akcent-text); }
+.odpocet .ikona { color: var(--barva-akcent-text); }
+.odpocet.je-vyprselo .ikona { color: inherit; }
+.nadpis-sekce { color: var(--barva-text-tlumeny); }
+.prehled-hlavicka .nadpis-sekce,
+.uvod-lekce .zebricek__nadpis { color: var(--barva-akcent-text); }
+
+/* --- Přehled: akce karty lekce — hlavní akce přes celou šířku, tichá tlačítka vedle sebe ---- */
+.karta-lekce__akce > .tlacitko--primarni,
+.karta-lekce__akce > .tlacitko--sekundarni,
+.karta-lekce__akce > .tlacitko--navy { flex: 1 1 100%; }
+.karta-lekce__akce > .tlacitko--tiche { flex: 1 1 0; padding-inline: var(--mezera-2); white-space: nowrap; }
+
+/* --- Vzorce: KaTeX o něco menší vůči Soře, zarovnaný na účaří textu -------------------------- */
+:root .katex { font-size: calc(var(--pismo-katex) * var(--meritko-vzorce, 1)); }
+:root .zadani .katex-display > .katex { font-size: calc(1.25em * var(--meritko-vzorce, 1)); }
+.zebricek__znak .katex { font-size: 1em; }
+.reseni__radek .katex { font-size: calc(1em * var(--meritko-vzorce, 1)); }   /* E1 (QA 27. 9.): dlouhý řádek řešení u rodiče zmenší renderReseni() */
+.dlazdice__vyraz .katex { font-size: calc(1.15em * var(--meritko-vzorce, 1)); }     /* výraz v dlaždici stejně výrazný jako slovní dlaždice */
+
+/* --- Detektiv: Petrův výpočet v zadání jako „list s výpočtem" (řádky pod sebou, = pod sebou) -- */
+.zadani ol,
+.tisk-uloha__zadani ol {
+  counter-reset: radek;
+  list-style: none;
+  margin: var(--mezera-3) 0;
+  padding: var(--mezera-1) 0;
+  border-radius: var(--polomer-m);
+  background: var(--barva-povrch-2);
+  border: 1px solid var(--barva-okraj);
+}
+.zadani ol > li,
+.tisk-uloha__zadani ol > li {
+  counter-increment: radek;
+  display: flex;
+  align-items: baseline;
+  gap: var(--mezera-3);
+  padding: var(--mezera-1) var(--mezera-4);
+}
+.zadani ol > li + li,
+.tisk-uloha__zadani ol > li + li { border-top: 1px dashed var(--barva-okraj-silny); }
+.zadani ol > li::before,
+.tisk-uloha__zadani ol > li::before {
+  content: counter(radek) ".";
+  flex: 0 0 1.5em;
+  text-align: right;
+  font-size: 0.8em;
+  font-weight: var(--pismo-vaha-tucne);
+  color: var(--barva-text-tlumeny);
+  font-variant-numeric: tabular-nums;
+}
+.zadani ol > li > p { margin: 0; flex: 1 1 auto; min-width: 0; }   /* E1: řádek se nesmí roztáhnout na šířku vzorce (jinak ho rozlozZadani() nezměří) */
+/* Zadavatel 27. 9.: zalomený Petrův řádek musí být zřejmě jeden řádek. Na obrazovce bez ztráty šířky:
+   řádky se střídají v podbarvení (číslo jen u prvního vizuálního řádku) a slovo „řádek:" (renderMarkdown →
+   .radek-popisek) nahrazuje číslo vlevo, vzorec tak má celou šířku. Předsazení by zúžilo pokračování a zmenšilo
+   celý výpočet (QA 27. 9.: +24 zalomení), proto jen v tisku (široký papír). */
+.zadani ol > li .radek-popisek { display: none; }
+.zadani ol > li:nth-child(even) { background: var(--barva-povrch); }
+.zadani ol { padding-block: 0; }   /* zebra až k okraji rámečku (bez overflow: hidden — přetečení se nesmí schovat) */
+.zadani ol > li:first-child { border-radius: var(--polomer-m) var(--polomer-m) 0 0; }
+.zadani ol > li:last-child { border-radius: 0 0 var(--polomer-m) var(--polomer-m); }
+.zadani ol > li { padding-block: var(--mezera-2); }
+.tisk-uloha__zadani ol > li > p { padding-left: 1em; text-indent: -1em; }
+.tisk-uloha__zadani ol > li > p * { text-indent: 0; }
+.zadani ol > li { padding-inline: clamp(var(--mezera-2), 2vw, var(--mezera-4)); column-gap: clamp(var(--mezera-2), 2vw, var(--mezera-3)); } /* QA 27. 9.: na telefonu o 12 px víc místa pro výpočet */
+
+/* --- Souhrn lekce: úlohy jako řádky (dlouhý název „Úloha jako u přijímaček" se nezalamuje po slovech) */
+.souhrn__ulohy { grid-template-columns: minmax(0, 1fr); gap: var(--mezera-2); }
+.souhrn__uloha {
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: var(--mezera-3);
+  padding: var(--mezera-2) var(--mezera-3);
+  text-align: left;
+}
+.souhrn__uloha-nazev { flex: 1; }
+.souhrn__uloha-barva { font-size: var(--pismo-zaklad); }
+.souhrn__uloha--hlavni { padding: var(--mezera-3) var(--mezera-4); }
+
+/* --- Přepínač motivu (menu a patička stránek bez menu) ----------------------------------------
+   <div class="prepinac prepinac--motiv" role="group" aria-label="Vzhled">
+     <button class="prepinac__volba" type="button" data-motiv-nastav="svetly" aria-pressed="false">Světlý</button> …
+   Kliknutí obsluhuje inline skript motivu v <head> (delegace na [data-motiv-nastav]). */
+.prepinac--motiv { width: 100%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-radius: var(--polomer-m); }
+.prepinac--motiv .prepinac__volba { border-radius: var(--polomer-s); padding-inline: var(--mezera-2); font-size: var(--pismo-maly); }
+.paticka-motiv { display: flex; flex-wrap: wrap; align-items: center; gap: var(--mezera-2) var(--mezera-3); color: var(--barva-text-tlumeny); font-size: var(--pismo-maly); }
+.paticka-motiv .prepinac--motiv { width: auto; min-width: 18rem; }
+.hlavicka .paticka-motiv { color: var(--barva-text-na-tmave-tlumeny); }
+.hlavicka .prepinac { background: rgb(255 255 255 / 0.06); border-color: rgb(255 255 255 / 0.18); }
+.hlavicka .prepinac__volba { color: var(--barva-text-na-tmave-tlumeny); }
+.hlavicka .prepinac__volba[aria-pressed="true"] { background: var(--barva-zelena); color: var(--barva-na-zelene); }
+.paticka-stranky { padding: var(--mezera-6) var(--mezera-4) var(--mezera-7); display: flex; justify-content: center; }
+
+/* --- Tmavý motiv: doladění prvků, které nejdou čistě přes proměnné ---------------------------- */
+@media screen {
+  :root[data-motiv="tmavy"] select.pole {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E6EDF7' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  }
+  :root[data-motiv="tmavy"] .hlavicka { border-bottom-color: var(--barva-akcent); }
+  :root[data-motiv="tmavy"] .semafor-znak--cervena { border-color: var(--barva-cervena); }
+  :root[data-motiv="tmavy"] .semafor-znak--oranzova { border-color: var(--barva-oranzova); }
+  :root[data-motiv="tmavy"] .semafor-znak--zelena { border-color: var(--barva-zelena); }
+  /* KaTeX dědí barvu textu; čáry zlomků a odmocnin kreslí currentColor — nic dalšího netřeba */
+}
+
+/* Tisk je vždy světlý (tmavá sada je jen pro screen); zelená linka hlavičky se netiskne */
+@media print {
+  .hlavicka { border: 0; }
+}
+
+/* Admin graf: zelená a oranžová výplň mají na bílé < 3 : 1 → tenký tmavší obrys úseku (WCAG 1.4.11) */
+.admin-graf__usek--zelena { stroke: var(--barva-zelena-obrys); stroke-width: 1; }
+.admin-graf__usek--oranzova { stroke: var(--barva-oranzova-obrys); stroke-width: 1; }
+.admin-graf__usek--cervena { stroke: var(--barva-cervena-obrys); stroke-width: 1; }
+
+/* ==========================================================================
+   19. E1 + E2 (Pavlův 2. test, 25. 9.): dlaždice bez posuvníků, zvýrazňování po znacích
+   ========================================================================== */
+/* --meritko-vzorce (0,6–1) nastavuje rozlozDlazdice() na mřížce dlaždic / display vzorci / volbě v tisku.
+   Když se dlaždice s vícesloupcovým textem zúží, text se může zalomit; vzorec (.katex) nikdy. */
+.dlazdice-mrizka--jeden-sloupec > .dlazdice { justify-content: center; }
+/* QA 27. 9.: zadání a řešení — spodní mez zmenšení 16 px (minimum čitelnosti); co se nevejde ani tak,
+   přejde na další řádek jen za +, −, = mimo závorky (.vzorec-cast = nedělitelná část, obsah.js povolZalomeni) */
+:root .vzorec-zalomit .katex,
+:root .vzorec-zalomit.katex-display > .katex,
+:root .vzorec-zalomit .katex-display > .katex,
+:root .vzorec-zalomit .katex .katex-html { white-space: normal; }
+.katex .vzorec-cast { display: inline-block; white-space: nowrap; }
+
+/* E2: zvýraznitelný znak vzorce (list KaTeX: číslo, znaménko, závorka, proměnná).
+   ::after zvětší zásahovou plochu pro prst bez posunu sazby. */
+.zvyraznitelne--znak { position: relative; border-radius: 0.15em; text-decoration: none; }
+.zvyraznitelne--znak::after { content: ""; position: absolute; inset: -0.2em -0.1em; }
+.zvyraznitelne--znak:hover { box-shadow: 0 0.14em 0 0 var(--barva-okraj-silny); }
+.zvyraznitelne--znak.je-zvyrazneno {
+  background: var(--barva-zvyrazneni-plocha);
+  box-shadow: 0 0.14em 0 0 var(--barva-zvyrazneni);   /* stejné žluté podtržení jako u slov */
+}
+
+
+
+/* ==========================================================================
+   F1 rodič (Pavlův 2. test, 25. 9.) — postup ①–④ jako rozbalovací bloky s fajfkou,
+   brána „Další úloha". JS: rodic-karta.js (vytvorKartuUlohy, coChybi), rodic.js.
+   Hotový krok = zelený prstenec s fajfkou (akcent R27), ne semaforové kolečko.
+   ========================================================================== */
+.postup-rodice__krok { gap: 0; }
+.postup-rodice__krok:first-child { background: var(--barva-povrch); border-color: var(--barva-okraj); border-left-color: var(--barva-akcent); }
+.postup-rodice__krok.je-aktivni { background: var(--barva-akcent-plocha); border-color: var(--barva-akcent-linka); border-left-color: var(--barva-akcent); }
+.postup-rodice__krok.je-hotovo { box-shadow: none; border-left-color: var(--barva-akcent-linka); }
+.postup-rodice__detail > summary { list-style: none; cursor: pointer; min-height: var(--dotyk-min); border-radius: var(--polomer-m); }
+.postup-rodice__detail > summary::-webkit-details-marker { display: none; }
+.postup-rodice__detail > summary::marker { content: ""; }
+.postup-rodice__detail[open] > summary { margin-bottom: var(--mezera-3); }
+.postup-rodice__detail[open] > summary .postup-rodice__sipka { transform: rotate(180deg); }
+.postup-rodice__sipka { margin-left: auto; flex: 0 0 auto; }
+.postup-rodice__cislo .ikona { width: 1.15rem; height: 1.15rem; stroke-width: 3; }
+.je-hotovo .postup-rodice__cislo { background: var(--barva-akcent-plocha); }
+.je-hotovo .postup-rodice__nadpis { color: var(--barva-text-tlumeny); font-weight: var(--pismo-vaha-polotucne); }
+.postup-rodice__akce { display: flex; flex-direction: column; gap: var(--mezera-2); margin-top: var(--mezera-1); }
+
+/* nápověda „Použili jste otázku" u semaforového tlačítka (nic nepředvybírá) */
+.tahak .semafor-volba { flex-wrap: wrap; }
+.semafor-volba__napoveda { flex-basis: 100%; padding-left: 2rem; font-size: var(--pismo-maly); font-weight: var(--pismo-vaha-normalni); color: var(--barva-akcent-text); }
+
+/* brána „Další úloha": pod tlačítkem, co chybí */
+.spodni-lista { flex-wrap: wrap; }
+.spodni-lista__chybi { flex: 1 0 100%; margin: 0; text-align: center; font-size: var(--pismo-zaklad); color: var(--barva-text-tlumeny); }
+/* F1/E1: „Co vidí dítě" u rodiče — zadání + kroky s dlaždicemi jen ke čtení (rozložení rozlozDlazdice) */
+.co-vidi-dite__krok { display: flex; flex-direction: column; gap: var(--mezera-2); padding-top: var(--mezera-3); border-top: 1px solid var(--barva-okraj); }
+.co-vidi-dite__popisek { font-weight: var(--pismo-vaha-polotucne); }
+.co-vidi-dite__popisek .krok__cislo { margin-right: var(--mezera-1); }
+.dlazdice-mrizka--nahled > .dlazdice:disabled:not(.je-spravne):not(.je-nesedi):not(.je-vybrano) { opacity: 1; cursor: default; }
+.dlazdice-mrizka--nahled .dlazdice { min-height: 3.25rem; padding: var(--mezera-2) var(--mezera-3); font-size: var(--pismo-stredni); }
+/* E2 oprava (integrátor, 25. 9.): KaTeX kreslí nad jmenovatelem zlomku prázdný sloupec .vlist (vzpěra
+   hloubky), který zachytí klik — jmenovatel „10" nešel zvýraznit. Uvnitř vzorců zadání proto klik
+   dostávají jen klikací listy (.zvyraznitelne--znak), ostatní vrstvy KaTeX jsou „průhledné". */
+.zadani .katex * { pointer-events: none; }
+.zadani .katex .zvyraznitelne--znak,
+.zadani .katex .zvyraznitelne--znak * { pointer-events: auto; }
+/* ==========================================================================
+   20. B4 (Pavlův 3. test, 25. 9.): manuál v blocích (H1), „Připrav si" (H2), zlomek v žebříčku (H4)
+   JS: obsah.js renderManual(), lekce.js vykresliPripravit(), rodic-karta.js vytvorUvod().
+   ========================================================================== */
+/* H1 — blok manuálu: ikona v prstenci + nadpis, barevný pruh vlevo (stejný jazyk jako žebříček a kroky ①–④).
+   Barva má význam: zelená = co dělat, oranžová = pozor / past, semafor = kolečka R27, hlavní = rámeček nahoře. */
+.manual-blok {
+  --manual-pruh: var(--barva-akcent);
+  --manual-zvyrazneni: color-mix(in srgb, var(--barva-akcent) 32%, transparent);
+  position: relative;
+  display: flex; flex-direction: column; gap: var(--mezera-2);
+  padding: var(--mezera-3) var(--mezera-4) var(--mezera-3) calc(var(--mezera-4) + 4px);
+  background: var(--barva-povrch);
+  border: 1px solid var(--barva-okraj);
+  border-radius: var(--polomer-l);
+  overflow: hidden;
+}
+.manual-blok::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 5px; background: var(--manual-pruh); }
+.manual-blok__nadpis {
+  display: flex; align-items: center; gap: var(--mezera-3);
+  font-size: var(--pismo-stredni); line-height: 1.3; color: var(--barva-silna);
+}
+.manual-blok__ikona {
+  display: grid; place-items: center; flex: 0 0 auto;
+  width: 2.25rem; height: 2.25rem;
+  border-radius: var(--polomer-kruh);
+  border: 2px solid var(--barva-akcent);
+  background: var(--barva-akcent-plocha);
+  color: var(--barva-akcent-text);
+}
+.manual-blok__ikona .ikona { width: 1.2rem; height: 1.2rem; }
+.manual-blok__semafor { display: inline-flex; flex: 0 0 auto; gap: 3px; }
+.manual-blok__obsah { display: flex; flex-direction: column; gap: var(--mezera-2); }
+.manual-blok__obsah ol, .manual-blok__obsah ul { margin: 0; padding-left: 1.4rem; display: flex; flex-direction: column; gap: var(--mezera-1); }
+.manual-blok__zvyrazneni {
+  color: inherit; font-weight: var(--pismo-vaha-polotucne);
+  background: linear-gradient(transparent 52%, var(--manual-zvyrazneni) 52%);
+  padding: 0 0.1em; border-radius: 0.15em;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+/* oranžová = pozor / typická past */
+.manual-blok--oranzova {
+  --manual-pruh: var(--barva-oranzova);
+  --manual-zvyrazneni: color-mix(in srgb, var(--barva-oranzova) 38%, transparent);
+  background: var(--barva-oranzova-plocha);
+  border-color: color-mix(in srgb, var(--barva-oranzova) 35%, transparent);
+}
+.manual-blok--oranzova .manual-blok__ikona { border-color: var(--barva-oranzova-obrys); background: var(--barva-povrch); color: var(--barva-oranzova-text); }
+/* hlavní pravidlo: výrazný rámeček nahoře */
+.manual-blok--hlavni {
+  background: var(--barva-akcent-plocha);
+  border: 2px solid var(--barva-akcent);
+  box-shadow: var(--stin-1);
+}
+.manual-blok--hlavni .manual-blok__obsah { font-size: var(--pismo-stredni); line-height: 1.45; }
+.manual-blok--hlavni .manual-blok__ikona { background: var(--barva-povrch); }
+/* semafor: pruh ve třech barvách, u položek „Zelená / Oranžová / Červená" plné kolečko s ikonou + slovo (R27) */
+.manual-blok--semafor::before {
+  background: linear-gradient(var(--barva-zelena) 0 33.3%, var(--barva-oranzova) 33.3% 66.6%, var(--barva-cervena) 66.6% 100%);
+}
+.manual-blok--semafor .manual-blok__obsah ul { padding-left: 0; list-style: none; }
+.manual-blok__semafor-polozka { display: flex; align-items: flex-start; gap: var(--mezera-2); }
+.manual-blok__semafor-polozka > .semafor-znak { margin-top: 0.1rem; }
+.manual-blok__semafor-text { min-width: 0; }
+
+/* H2 — „Připrav si" (žák, před 1. úlohou): velké odškrtávací položky */
+.pripravit { max-width: 34rem; margin-inline: auto; display: flex; flex-direction: column; gap: var(--mezera-4); }
+.pripravit__hlavicka { display: flex; align-items: center; gap: var(--mezera-3); }
+.pripravit__hlavicka h2 { font-size: var(--pismo-velke); }
+.pripravit__seznam { display: flex; flex-direction: column; gap: var(--mezera-2); margin: 0; padding: 0; list-style: none; }
+.pripravit__polozka {
+  display: flex; align-items: center; gap: var(--mezera-3);
+  min-height: var(--dotyk-velky);
+  padding: var(--mezera-2) var(--mezera-4);
+  border: 2px solid var(--barva-okraj-silny);
+  border-radius: var(--polomer-m);
+  background: var(--barva-povrch);
+  font-size: var(--pismo-stredni); font-weight: var(--pismo-vaha-polotucne);
+  cursor: pointer;
+}
+.pripravit__polozka input { width: 1.5rem; height: 1.5rem; margin: 0; flex: 0 0 auto; accent-color: var(--barva-akcent-text); cursor: pointer; }
+.pripravit__polozka:has(input:checked) { border-color: var(--barva-akcent); background: var(--barva-akcent-plocha); }
+.pripravit__polozka:has(input:focus-visible) { outline: 3px solid var(--barva-fokus); outline-offset: 2px; }
+.pripravit__zbyva { margin: 0; text-align: center; font-size: var(--pismo-zaklad); color: var(--barva-text-tlumeny); }
+
+/* H4 — zlomek v žebříčku „Platí:": \displaystyle (čitatel i jmenovatel plnou velikostí), vzorec o něco menší,
+   aby se řádek žebříčku nezvětšil; číslice pak vypadají stejně velké jako ostatní znaky */
+.zebricek__znak--zlomek .katex { font-size: 0.9em; }
+
+/* B3 drobnost (B4): ve 2 sloupcích má dlaždice menší vodorovný padding (16 px místo 24 px) — P1-U3 k1 na 1280 px
+   potřebuje 199 px na vzorec a s 24 px bylo místo 191 px (1 sloupec); s 16 px je 207 px → 2 sloupce bez přetečení.
+   O sloupcích dál rozhoduje měření v rozlozDlazdice() (obsah.js). */
+.dlazdice-mrizka:not(.dlazdice-mrizka--jeden-sloupec):not(.dlazdice-mrizka--sloupec) > .dlazdice {
+  padding-inline: var(--mezera-4);
+}
+/* QA 27. 9.: dlaždice pod sebou (1 sloupec, detektiv) mají na úzkém displeji menší vodorovný padding:
+   24 px od 800 px šířky, 12 px na telefonu (3vw) — o 24 px víc místa pro vzorec, než se musí zmenšovat / zalamovat */
+.dlazdice-mrizka--jeden-sloupec:not(.dlazdice-mrizka--nahled) > .dlazdice,
+.dlazdice-mrizka--sloupec:not(.dlazdice-mrizka--nahled) > .dlazdice {
+  padding-inline: clamp(var(--mezera-3), 3vw, var(--mezera-5));
+}
+
+/* ==========================================================================
+   21. Fáze 1 (R30): vstup `vyraz` (náhled KaTeX), vstup `poradi` (klikání na operace), obrázek úlohy.
+   JS: vstupy-f1.js. Formát: kostra/03 „Doplněno 25. 9.", SABLONA §15–17, osnova §6.2–6.3.
+   ========================================================================== */
+/* vyraz: široké textové pole, pod ním „Takhle to čtu: <KaTeX>" */
+.vyraz-vstup { display: flex; flex-direction: column; flex-wrap: nowrap; align-items: stretch; gap: var(--mezera-2); min-width: 0; }
+.pole--vyraz { font-size: var(--pismo-velke); letter-spacing: 0.02em; max-width: 28rem; }
+.vyraz-nahled { margin: 0; color: var(--barva-text-tlumeny); font-size: var(--pismo-zaklad); }
+.vyraz-nahled__vzorec { color: var(--barva-text); font-size: var(--pismo-stredni); }
+.vyraz-nahled.je-nejde .vyraz-nahled__vzorec { color: var(--barva-text-tlumeny); font-style: italic; font-size: var(--pismo-zaklad); }
+
+/* poradi: výraz s klikacími operacemi; štítek s číslem nad operací; dotyk ≥ 40 × 40 px (ODPOVED-D bod 6) */
+.poradi { display: flex; flex-direction: column; flex-wrap: nowrap; align-items: stretch; gap: var(--mezera-2); min-width: 0; max-width: 100%; }
+.poradi > *, .poradi__vyraz .katex-display { min-width: 0; }   /* nowrap vzorec nesmí roztáhnout kartu — zmenší ho rozlozDlazdice() */
+.poradi__vyraz { padding-top: 1.75rem; font-size: var(--pismo-zadani); color: var(--barva-text); }
+.poradi__vyraz .katex-display { margin: var(--mezera-2) 0; }
+.poradi__vyraz .katex { font-size: calc(1.5em * var(--meritko-vzorce, 1)); }
+/* víc místa mezi operacemi, ať se dotykové plochy 40 px a štítky 1, 2, 3 nepřekrývají */
+.poradi [data-op] { margin-inline: 0.28em; }
+.poradi .msupsub [data-op] { margin-inline: 0.12em 0; }
+.poradi .katex * { pointer-events: none; }            /* klik dostanou jen místa operací (ne vrstvy KaTeX) */
+.poradi [data-op] { position: relative; border-radius: var(--polomer-s); }
+.poradi:not(.poradi--nahled):not(.je-zamceno) [data-op] { pointer-events: auto; cursor: pointer; }
+.poradi:not(.poradi--nahled):not(.je-zamceno) [data-op]::before {
+  content: ""; position: absolute; left: 50%; top: 50%;
+  width: max(100%, 40px); height: max(100%, 40px); transform: translate(-50%, -50%);
+  border: 2px dashed var(--barva-okraj-pole); border-radius: var(--polomer-m);
+  pointer-events: auto;
+}
+.poradi:not(.poradi--nahled):not(.je-zamceno) [data-op]:hover::before { border-color: var(--barva-silna); background: color-mix(in srgb, var(--barva-silna) 6%, transparent); }
+.poradi [data-op]:focus-visible { outline: 3px solid var(--barva-fokus); outline-offset: 6px; }
+.poradi [data-op].je-vybrano::before { border-style: solid; border-color: var(--barva-poradi); }
+.poradi__stitek {
+  position: absolute; left: 50%; bottom: calc(100% + 4px); transform: translateX(-50%);
+  display: grid; place-items: center; width: 24px; height: 24px;
+  border-radius: var(--polomer-kruh);
+  background: var(--barva-poradi); color: var(--barva-na-poradi);
+  font-family: var(--pismo-rodina); font-size: 14px; font-weight: var(--pismo-vaha-tucne); font-style: normal; line-height: 1;
+  pointer-events: none;
+}
+/* štítky pořadí zůstávají modré i po správném odevzdání (zelená = hotovo/semafor, R27) */
+.poradi__pata { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--mezera-2); }
+.poradi__napoveda { margin: 0; font-size: var(--pismo-zaklad); color: var(--barva-text-tlumeny); }
+.poradi--nahled .poradi__vyraz { font-size: var(--pismo-stredni); }
+.poradi__sedi > .tlacitko { flex: 1 1 0; }
+.poradi__sedi > .tlacitko[aria-pressed="true"] { background: var(--barva-inverzni); color: var(--barva-na-inverzni); border-color: var(--barva-inverzni); }
+
+/* obrázek úlohy (inline SVG, barvy currentColor → čitelný v obou motivech) */
+.obrazek-ulohy { margin: var(--mezera-3) 0 0; color: var(--barva-text); }
+.obrazek-ulohy__svg { display: block; width: 100%; max-width: 22rem; height: auto; margin-inline: auto; overflow: visible; font-family: var(--pismo-rodina); }
+.obrazek-ulohy__popis { margin-top: var(--mezera-2); font-size: var(--pismo-zaklad); color: var(--barva-text-tlumeny); text-align: center; }
+.obrazek-ulohy--nahrada { display: flex; gap: var(--mezera-2); align-items: flex-start; color: var(--barva-text-tlumeny); }
+
+/* Žebříček „Platí:" — dlouhý znak nepřeteče (R33): sloupec znaku podle nejširšího znaku (subgrid, všechny řádky
+   stejné), nejvýš 45 % šířky; když se nevejde, znak se zalomí mezi slovy („a =" / „−3"), vzorec KaTeX se nezalamuje.
+   Vodorovný padding řádku je v krajních stopách mřížky (padding subgridu Chrome do velikosti stop nezapočítá). */
+.zebricek__kroky {
+  display: grid;
+  grid-template-columns: calc(2rem + var(--mezera-3)) fit-content(45%) minmax(0, 1fr);
+  gap: var(--mezera-1) var(--mezera-3);
+}
+.zebricek__krok {
+  grid-column: 1 / -1;
+  grid-template-columns: calc(2rem + var(--mezera-3)) fit-content(45%) minmax(0, 1fr);   /* záloha bez subgrid */
+  grid-template-columns: subgrid;
+  column-gap: var(--mezera-3);
+  padding-inline: 0;
+}
+.zebricek__cislo { justify-self: end; }
+.zebricek__text { padding-right: var(--mezera-3); }
+.zebricek__znak { min-width: 3rem; white-space: normal; overflow-wrap: break-word; line-height: 1.15; }
+/* Zadavatel 27. 9. (bod E): znak širší než 35 % řádku → text pod znak, pro celý žebříček (rodic-karta.js hlidejZebricek) */
+.zebricek__znak--mereni { position: absolute; visibility: hidden; width: max-content; white-space: nowrap; }
+.zebricek--pod-sebou .zebricek__kroky { grid-template-columns: calc(2rem + var(--mezera-3)) minmax(0, 1fr); row-gap: var(--mezera-2); }
+.zebricek--pod-sebou .zebricek__krok { grid-template-columns: calc(2rem + var(--mezera-3)) minmax(0, 1fr); grid-template-columns: subgrid; row-gap: var(--mezera-1); padding-block: var(--mezera-2); }
+.zebricek--pod-sebou .zebricek__cislo { grid-row: 1 / span 2; align-self: start; }
+.zebricek--pod-sebou .zebricek__znak { grid-column: 2; text-align: left; justify-self: start; }
+.zebricek--pod-sebou .zebricek__text { grid-column: 2; }
+
+/* R34: `poradi` u rodiče — „Dítě klikalo / Typická chyba / Správně / Správně je i" (vstupy-f1.js vytvorPoradiRodic) */
+.poradi-rodic { display: flex; flex-direction: column; gap: var(--mezera-1); margin-top: var(--mezera-2); font-size: var(--pismo-zaklad); line-height: 1.4; }
+.poradi-rodic__radek { margin: 0; }
+.poradi-rodic .poradi-rodic__stitek, .stav-zaka__text .poradi-rodic__stitek { display: inline; font-weight: var(--pismo-vaha-tucne); }
+.poradi-rodic__radek--nesedi { padding: var(--mezera-1) var(--mezera-2); border-radius: var(--polomer-s); background: var(--barva-nesedi-plocha); color: var(--barva-nesedi-text); }
+.poradi-rodic__radek--chyba, .poradi-rodic__radek--i { color: var(--barva-text-tlumeny); }
+.stav-zaka:has(.poradi-rodic) { align-items: flex-start; }   /* ikona a Obnovit nahoře u dlouhého bloku */
+
+/* ==========================================================================
+   22. Diagnostika Fáze 1 (týden 0, R37): žák (lekce.js + diagnostika-zak.js), rodič (rodic-diagnostika.js)
+   ========================================================================== */
+.radek--stred { justify-content: center; }
+/* žák: tenký ukazatel průběhu po 24 dílcích pod lištou, bez barev správně/špatně (navy, ne zelená) */
+.pruh--diag { position: relative; height: 0.4rem; margin: 0 var(--mezera-4) var(--mezera-2); border-radius: var(--polomer-s); }
+.pruh--diag .pruh__vypln { background: var(--barva-silna); }
+.pruh--diag::after {
+  content: ""; position: absolute; inset: 0;
+  background: repeating-linear-gradient(90deg, transparent 0 calc(100% / 24 - 2px), var(--barva-povrch) calc(100% / 24 - 2px) calc(100% / 24));
+}
+/* rodič: průběh */
+.diag-stav__pocet { font-size: var(--pismo-velke); }
+.diag-cas { display: flex; align-items: center; gap: var(--mezera-2); margin: 0; color: var(--barva-text-tlumeny); }
+.diag-jak { margin: 0; padding-left: 1.25rem; display: flex; flex-direction: column; gap: var(--mezera-2); }
+/* rodič: výsledek — plán po týdnech (štítek = ikona + text, slabý týden oranžově, nikdy červeně) */
+.diag-vysledek__hlavicka h1 { font-size: var(--pismo-velke); }
+.diag-nadpis { font-size: var(--pismo-stredni); }
+.diag-plan { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--mezera-2); }
+.diag-plan__tyden {
+  display: flex; flex-direction: column; align-items: flex-start; gap: var(--mezera-1);
+  padding: var(--mezera-3) var(--mezera-4);
+  border: 1px solid var(--barva-okraj); border-radius: var(--polomer-l); background: var(--barva-povrch);
+  color: var(--barva-text); text-decoration: none;
+}
+.diag-plan__tyden:hover { border-color: var(--barva-silna); }
+.diag-plan__nazev { font-weight: var(--pismo-vaha-tucne); }
+.diag-plan__text { font-size: var(--pismo-zaklad); }
+.diag-plan__doplnek { font-size: var(--pismo-zaklad); color: var(--barva-text-tlumeny); }
+.diag-stitek { display: inline-flex; align-items: center; gap: var(--mezera-1); }
+.diag-stitek.stitek--oranzova { box-shadow: inset 0 0 0 1px var(--barva-oranzova-obrys); }
+.diag-chyby { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--mezera-3); }
+.diag-chyby__polozka { padding-left: var(--mezera-3); border-left: 4px solid var(--barva-oranzova); }
+.diag-chyby__text { margin: 0; font-weight: var(--pismo-vaha-polotucne); }
+.diag-chyby__pozn { margin: var(--mezera-1) 0 0; font-size: var(--pismo-zaklad); color: var(--barva-text-tlumeny); }
+.diag-kapitoly__seznam { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--mezera-3); }
+.diag-kapitola { display: flex; flex-wrap: wrap; align-items: center; gap: var(--mezera-1) var(--mezera-2); }
+.diag-kapitola__nazev { font-weight: var(--pismo-vaha-tucne); flex: 1 1 auto; }
+.diag-kapitola__nazev small { font-weight: var(--pismo-vaha-normalni); color: var(--barva-text-tlumeny); }
+.diag-kapitola__text { flex-basis: 100%; font-size: var(--pismo-zaklad); color: var(--barva-text-tlumeny); }
+/* rodič: papír — 24 polí po blocích */
+.diag-papir { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--mezera-3); }
+.diag-papir__uloha { display: flex; flex-wrap: wrap; align-items: center; gap: var(--mezera-2) var(--mezera-3); padding-bottom: var(--mezera-3); border-bottom: 1px solid var(--barva-okraj); }
+.diag-papir__cislo { flex: 0 0 5rem; font-weight: var(--pismo-vaha-tucne); }
+.diag-papir__stav { font-size: var(--pismo-zaklad); color: var(--barva-text-tlumeny); }
+.diag-papir__uloha > .pole-chyba { flex-basis: 100%; }
+.karta-lekce--diagnostika { border-left: 4px solid var(--barva-silna); }
+.karta-lekce__popis { margin: 0; font-size: var(--pismo-zaklad); }
+
+/* ==========================================================================
+   23. Fáze 2 (R38): písmena dlaždic, rýsování, blok na čas, simulace
+   (vstupy-f2.js, simulace-zak.js, rodic-simulace.js, prehled.js)
+   ========================================================================== */
+/* ukazatel po dílcích: diagnostika 24, simulace 8 (--dilky nastaví lekce.js) */
+.pruh--diag::after {
+  background: repeating-linear-gradient(90deg, transparent 0 calc(100% / var(--dilky, 24) - 2px), var(--barva-povrch) calc(100% / var(--dilky, 24) - 2px) calc(100% / var(--dilky, 24)));
+}
+/* štítek písmene A)–E), A/N, A)–F): pevné pořadí, před textem dlaždice (navy, ne zelená = hotovo) */
+.dlazdice:has(.dlazdice__pismeno) .dlazdice__text { flex-direction: row; align-items: center; gap: var(--mezera-3); }
+.dlazdice__pismeno {
+  flex: 0 0 auto;
+  display: inline-grid; place-items: center; min-width: 1.9rem; height: 1.9rem; padding: 0 0.3rem;
+  border-radius: var(--polomer-kruh); background: var(--barva-navy-plocha); color: var(--barva-silna);
+  font-size: var(--pismo-zaklad); font-weight: var(--pismo-vaha-tucne); line-height: 1;
+}
+/* rýsování u žáka: pokyn s ikonou */
+.rysovani { display: flex; align-items: center; gap: var(--mezera-4); padding: var(--mezera-4); border: 2px dashed var(--barva-okraj-silny); border-radius: var(--polomer-l); }
+.rysovani__text { margin: 0; font-size: var(--pismo-velke); font-weight: var(--pismo-vaha-polotucne); }
+.krok__postup { display: flex; align-items: center; gap: var(--mezera-2); margin: 0; color: var(--barva-text-tlumeny); }
+/* rýsování u rodiče: obrázek řešení + otázky + Sedí / Nesedí */
+.rysovani-rodic .obrazek-ulohy__svg { max-width: 100%; }
+.rysovani-rodic__otazky-nadpis { margin: 0; font-weight: var(--pismo-vaha-tucne); }
+.rysovani-rodic__otazky { margin: 0; padding-left: 1.25rem; display: flex; flex-direction: column; gap: var(--mezera-2); }
+.sedi-nesedi { gap: var(--mezera-2); }
+.sedi-nesedi > .tlacitko { flex: 1 1 8rem; }
+.sedi-nesedi > .tlacitko[aria-pressed="true"] { background: var(--barva-inverzni); color: var(--barva-na-inverzni); border-color: var(--barva-inverzni); }
+/* blok na čas: pruh u rodiče */
+.blok-pruh { border-left: 4px solid var(--barva-silna); }
+/* blok na čas (R46): rodič během bloku — čas, „Odevzdáno x ze 4", pravidlo, přechod do procházení */
+.blok-bezi__karta { display: flex; flex-direction: column; gap: var(--mezera-3); }
+.blok-bezi__nadpis { display: flex; align-items: center; gap: var(--mezera-2); margin: 0; font-size: var(--pismo-velke); }
+.blok-bezi__nadpis .ikona { color: var(--barva-akcent-text); }
+.blok-bezi__cas { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--mezera-1) var(--mezera-3); margin: 0; }
+.blok-bezi__uplynulo { font-size: var(--pismo-titulek); font-weight: var(--pismo-vaha-tucne); font-variant-numeric: tabular-nums; }
+.blok-bezi__doporuceno { color: var(--barva-text-tlumeny); }
+.blok-bezi__cas.je-vyprselo .blok-bezi__doporuceno { color: var(--barva-text); font-weight: var(--pismo-vaha-polotucne); }
+.blok-bezi__pocet { font-size: var(--pismo-stredni); white-space: nowrap; }
+.blok-bezi__dilky { display: flex; gap: var(--mezera-1); margin: var(--mezera-1) 0; padding: 0; list-style: none; }
+.blok-bezi__dilky li { width: 2.25rem; height: 0.5rem; border-radius: var(--polomer-kruh); background: var(--barva-okraj); }
+.blok-bezi__dilky li.je-hotovo { background: var(--barva-silna); }
+.blok-bezi__konec { margin: 0; }
+.blok-bezi__uvod { margin: 0; }
+/* po bloku, krok ①: co dítě zadalo (sedí / nesedí textem a ikonou, nesedí bez červené) */
+.blok-zadalo { display: flex; flex-direction: column; gap: var(--mezera-2); margin-bottom: var(--mezera-3); }
+.blok-zadalo__nadpis { margin: 0; font-weight: var(--pismo-vaha-tucne); }
+.blok-zadalo__seznam { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--mezera-2); }
+.blok-zadalo__radek {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--mezera-1) var(--mezera-3);
+  padding: var(--mezera-2) var(--mezera-3); border: 1px solid var(--barva-okraj); border-radius: var(--polomer-m);
+}
+.blok-zadalo__radek--nesedi { background: var(--barva-nesedi-plocha); border-color: transparent; }
+.blok-zadalo__krok { flex-basis: 100%; font-size: var(--pismo-maly); color: var(--barva-text-tlumeny); }
+.blok-zadalo__hodnota { font-size: var(--pismo-stredni); font-weight: var(--pismo-vaha-polotucne); overflow-wrap: anywhere; }
+.blok-zadalo__stav { display: inline-flex; align-items: center; gap: var(--mezera-1); font-size: var(--pismo-zaklad); }
+.blok-zadalo__radek--nesedi .blok-zadalo__stav { color: var(--barva-nesedi-text); }
+/* přehled: karty bloku a simulace */
+.karta-lekce--blok, .karta-lekce--simulace { border-left: 4px solid var(--barva-silna); }
+.karta-lekce--simulace + .karta-lekce--simulace { border-left-style: dashed; }
+/* žák: start, konec, zelená čísla úloh (bez počtu a procent) */
+.sim-tempo { text-align: left; max-width: 36rem; }
+.sim-tempo p { margin: 0; }
+.sim-tempo p + p { margin-top: var(--mezera-2); }
+.sim-sedi__nadpis { margin: 0; font-weight: var(--pismo-vaha-tucne); }
+.sim-sedi { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--mezera-2); margin: 0; padding: 0; list-style: none; }
+.sim-sedi__cislo {
+  display: inline-grid; place-items: center; width: 3rem; height: 3rem; border-radius: var(--polomer-kruh);
+  background: var(--barva-zelena); color: var(--barva-na-zelene); font-size: var(--pismo-velke); font-weight: var(--pismo-vaha-tucne);
+}
+/* rodič během testu */
+.sim-bezi__karta { display: flex; flex-direction: column; gap: var(--mezera-3); }
+.sim-odpocet { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--mezera-2); margin: 0; }
+.sim-odpocet .ikona { align-self: center; color: var(--barva-akcent-text); }
+.sim-odpocet__cas { font-size: var(--pismo-titulek); font-weight: var(--pismo-vaha-tucne); font-variant-numeric: tabular-nums; }
+.sim-odpocet__popis { color: var(--barva-text-tlumeny); }
+.sim-odpocet.je-vyprselo .sim-odpocet__cas { font-size: var(--pismo-nadpis); }
+.sim-citace p { margin: var(--mezera-1) 0 0; }
+/* rodič: Kontrola */
+.sim-kontrola__uloha { display: flex; flex-direction: column; gap: var(--mezera-3); }
+.sim-kontrola__cislo { display: flex; align-items: center; gap: var(--mezera-2); margin: 0; font-size: var(--pismo-stredni); }
+.sim-kontrola__kruh {
+  display: inline-grid; place-items: center; width: 2.25rem; height: 2.25rem; border: 2px solid var(--barva-silna);
+  border-radius: var(--polomer-kruh); font-size: var(--pismo-zaklad);
+}
+.sim-polozka { display: flex; flex-direction: column; gap: var(--mezera-2); padding-top: var(--mezera-3); border-top: 1px solid var(--barva-okraj); }
+.sim-polozka__hlavicka { display: flex; justify-content: space-between; align-items: center; gap: var(--mezera-2); }
+.sim-polozka__popisek { margin: 0; font-weight: var(--pismo-vaha-tucne); }
+.sim-polozka__stav { display: inline-flex; align-items: center; gap: var(--mezera-1); font-size: var(--pismo-maly); color: var(--barva-text-tlumeny); }
+.sim-polozka p { margin: 0; }
+.sim-spravne { font-size: var(--pismo-stredni); }
+.sim-uznava { color: var(--barva-text-tlumeny); }
+.sim-pismena { display: grid; grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr)); }
+.sim-pismena > .tlacitko { justify-content: flex-start; text-align: left; white-space: normal; }
+.sim-pismeno { display: inline-grid; place-items: center; min-width: 1.6rem; }
+.sim-kontrola__zbyva { margin: 0; }
+/* rodič: souhrn (body jen pro rodiče) */
+.sim-souhrn__body p { margin: var(--mezera-1) 0 0; }
+.sim-souhrn__dite { display: flex; align-items: center; gap: var(--mezera-2); margin: 0; color: var(--barva-text-tlumeny); }
+.sim-skupiny { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--mezera-3); }
+.sim-skupina { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--mezera-1) var(--mezera-3); align-items: baseline; }
+.sim-skupina__body { font-weight: var(--pismo-vaha-tucne); font-variant-numeric: tabular-nums; }
+.sim-skupina__pruh { grid-column: 1 / -1; height: 0.5rem; border-radius: var(--polomer-kruh); background: var(--barva-okraj); overflow: hidden; }
+.sim-skupina__pruh > span { display: block; height: 100%; background: var(--barva-silna); }
+
+.rysovani-rodic .obrazek-ulohy__svg { overflow: hidden; }
+
+/* =====================================================================
+   R61–R63 (zadání 30. 9., B–D): hotová lekce, „celá správně", odznaky, ukazatel postupu
+   ===================================================================== */
+:root { --barva-zlata: #F5C518; --barva-zlata-obrys: #C99A00; --barva-zlata-plocha: #FFF8DC; --barva-zlata-text: #6B4E00; }
+@media screen { :root[data-motiv="tmavy"] { --barva-zlata-obrys: #F5C518; --barva-zlata-plocha: rgb(245 197 24 / 0.14); --barva-zlata-text: #FDE68A; } }
+
+/* B: hotová lekce zřetelně jinak než rozpracovaná; celá správně ještě o stupeň výrazněji */
+.karta-lekce--hotovo { background: var(--barva-zelena-plocha); border-color: var(--barva-zelena); border-left-width: 5px; }
+.karta-lekce--hotovo .karta-lekce__tema { color: var(--barva-text); }
+.karta-lekce__roh { position: absolute; top: -12px; right: -8px; width: 44px; height: 44px; pointer-events: none; }
+.karta-lekce__roh svg { width: 100%; height: 100%; display: block; }
+.karta-lekce--hvezda { border-color: var(--barva-zlata-obrys); background: linear-gradient(135deg, var(--barva-zlata-plocha) 0%, var(--barva-zelena-plocha) 75%); }
+.stitek--hvezda { display: inline-flex; align-items: center; gap: 0.3em; padding: 0.15em 0.6em; border-radius: var(--polomer-kruh); background: #FDE68A; color: #6B4E00; font-weight: var(--pismo-vaha-tucne); font-size: 0.8125rem; }
+.stitek--hvezda .ikona { width: 1em; height: 1em; }
+
+/* C: odznaky */
+.odznak__obrazek { display: inline-block; line-height: 0; }
+.odznak__obrazek svg { width: 100%; height: 100%; }
+.odznak__obrazek--chybi svg { filter: grayscale(1); opacity: 0.35; }
+.odznaky { display: grid; grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr)); gap: var(--mezera-4); margin: var(--mezera-4) 0; }
+.odznak { display: flex; flex-direction: column; align-items: center; gap: var(--mezera-1); margin: 0; text-align: center; }
+.odznak .odznak__obrazek { width: 64px; height: 64px; }
+.odznak__nazev { font-weight: var(--pismo-vaha-tucne); font-size: 0.875rem; line-height: 1.2; }
+.odznak__popis { color: var(--barva-text-tlumeny); font-size: 0.75rem; line-height: 1.25; }
+.odznak--chybi .odznak__nazev { color: var(--barva-text-tlumeny); }
+.odznaky-radek { display: flex; flex-direction: column; gap: var(--mezera-2); width: 100%; text-align: left; font: inherit; color: inherit; cursor: pointer; }
+.odznaky-radek__hlavicka { display: flex; justify-content: space-between; align-items: baseline; gap: var(--mezera-2); }
+.odznaky-radek__pas { display: flex; gap: var(--mezera-2); overflow: hidden; }
+.odznaky-radek__pas .odznak__obrazek { width: 36px; height: 36px; flex: 0 0 auto; }
+
+/* Nový odznak: okno s lehkou animací, „Seber odznak" ho odnese */
+.novy-odznak { display: flex; flex-direction: column; align-items: center; gap: var(--mezera-3); text-align: center; max-width: 22rem; }
+.novy-odznak__stitek { margin: 0; font-weight: var(--pismo-vaha-tucne); color: var(--barva-zelena-text); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.875rem; }
+.novy-odznak__obrazek { position: relative; width: 132px; height: 132px; display: grid; place-items: center; }
+.novy-odznak__obrazek .odznak__obrazek { width: 120px; height: 120px; }
+.novy-odznak__obrazek::before { content: ""; position: absolute; inset: -8px; border-radius: 50%;
+  background: radial-gradient(circle, rgb(245 197 24 / 0.35) 0%, rgb(31 194 126 / 0.18) 45%, transparent 70%); }
+.novy-odznak__nazev { margin: 0; font-size: var(--pismo-nadpis); }
+.novy-odznak__popis { margin: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .modal--novy-odznak[open] .odznak__obrazek { animation: odznak-prilet 700ms cubic-bezier(.2, 1.4, .4, 1) both; }
+  .modal--novy-odznak[open] .novy-odznak__obrazek::before { animation: odznak-zare 1.8s ease-in-out 600ms infinite; }
+  .modal--novy-odznak.je-sebrano .odznak__obrazek { animation: odznak-sebrat 420ms ease-in forwards; }
+}
+@keyframes odznak-prilet { from { transform: scale(0.2) rotate(-25deg); opacity: 0; } 60% { transform: scale(1.12) rotate(6deg); opacity: 1; } to { transform: none; } }
+@keyframes odznak-zare { 0%, 100% { transform: scale(0.92); opacity: 0.6; } 50% { transform: scale(1.08); opacity: 1; } }
+@keyframes odznak-sebrat { to { transform: translateY(-40px) scale(0.3); opacity: 0; } }
+
+/* R63: hotové lekce fáze přes celou šířku přehledu; časová osa v hlavičce (.osa-sezony) */
+.postup-pruh { display: grid; grid-template-columns: 1fr; gap: 6px; padding: var(--mezera-3); border-radius: var(--polomer-l);
+  background: var(--barva-hlavicka); color: var(--barva-text-na-tmave); }
+.postup-pruh__cast { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.postup-pruh__popis { display: flex; justify-content: space-between; gap: var(--mezera-2); font-size: 0.6875rem; color: var(--barva-text-na-tmave-tlumeny); white-space: nowrap; }
+.postup-pruh__popis strong { color: var(--barva-text-na-tmave); }
+.postup-osa { position: relative; height: 12px; }
+.postup-osa__pruh, .postup-osa__ubehlo { position: absolute; left: 0; top: 5px; height: 2px; border-radius: 2px; }
+.postup-osa__pruh { right: 0; background: rgb(255 255 255 / 0.25); }
+.postup-osa__ubehlo { background: var(--barva-zelena); }
+.postup-osa__tik { position: absolute; top: 3px; width: 1px; height: 6px; background: rgb(255 255 255 / 0.4); }
+.postup-osa__dnes { position: absolute; top: 1px; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: var(--barva-zelena); box-shadow: 0 0 0 2px var(--barva-hlavicka); }
+.postup-osa__cil { position: absolute; right: -2px; top: -2px; width: 12px; height: 14px; }
+.postup-podil { height: 6px; margin: 3px 0; background: rgb(255 255 255 / 0.2); border-radius: 3px; overflow: hidden; }
+.postup-podil > span { display: block; height: 100%; background: var(--barva-zelena); border-radius: 3px; }
+
+.osa-sezony { flex: 1 1 auto; min-width: 7rem; max-width: 26rem; margin-inline: auto; display: flex; flex-direction: column; gap: 3px; }
+.osa-sezony__popis { display: flex; justify-content: space-between; gap: var(--mezera-2); font-size: 0.6875rem; line-height: 1.2; color: var(--barva-text-na-tmave-tlumeny); white-space: nowrap; }
+@media (max-width: 600px) { .hlavicka .logo__produkt { display: none; } }
+.postup-pruh .postup-pruh__popis { font-size: 0.8125rem; }
+.postup-pruh .postup-podil { height: 8px; margin: 0; }
+
+/* R64 „Dnes samo" */
+.volba-potvrzeni { display: flex; align-items: flex-start; gap: var(--mezera-2); margin-top: var(--mezera-3); font-size: var(--pismo-zaklad); cursor: pointer; }
+.volba-potvrzeni input { width: 1.25rem; height: 1.25rem; margin-top: 0.1em; flex: 0 0 auto; }
+.volba-karta:disabled { opacity: 0.5; cursor: not-allowed; }
+.stitek--samo { align-self: flex-start; background: var(--barva-navy-plocha); color: var(--barva-text); }
+.samo-napoveda-blok { display: flex; flex-direction: column; gap: var(--mezera-2); }
+.samo-tip { margin: var(--mezera-2) 0 0; font-weight: var(--pismo-vaha-polotucne); }
+.zpetna-vazba:has(.samo-tip) { flex-wrap: wrap; }
+.zpetna-vazba .samo-tip { flex-basis: 100%; }

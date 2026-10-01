@@ -1,0 +1,493 @@
+{
+  "id": "F2-VZOR-L1",
+  "typ": "simulace",
+  "faze": "faze2",
+  "tyden": 8,
+  "poradi": 3,
+  "tema": "Vzorová simulace — úlohy 1–8",
+  "kapitola": "simulace",
+  "varianta": "z9",
+  "cil_pro_rodice": "Dítě zvládne celý test 70 minut v klidu a zapíše odpovědi do záznamového archu.",
+  "uvod_pro_rodice": "Vzorová simulace pro test frontendu (není to obsah pro rodiny).",
+  "cas_min": 70,
+  "pomucky": [
+    "propiska",
+    "tužka",
+    "pravítko",
+    "kružítko",
+    "záznamový arch"
+  ],
+  "simulace": {
+    "cislo": 1,
+    "cast": 1,
+    "druha_cast": "F2-VZOR-L2",
+    "odpocet_min": 70
+  },
+  "ulohy": [
+    {
+      "id": "F2-VZOR-L1-U1",
+      "typ": "simulace",
+      "pozice": 1,
+      "kapitola": "jednotky",
+      "zdroj": "vlastní (vzorová lekce pro test frontendu)",
+      "zadani": "Kolik minut je $2{,}25$ hodiny?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "1",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "min"
+          },
+          "spravne": {
+            "hodnota": 135
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 225,
+              "typ_chyby": "cas-po-stovkach"
+            }
+          ],
+          "body": 1
+        }
+      ],
+      "tahak": {
+        "reseni": "$2 \\cdot 60 = 120$ (dvě celé hodiny)\n\n$0{,}25 \\cdot 60 = 15$ (čtvrt hodiny)\n\n**Výsledek:** $135$ min",
+        "typicka_chyba": "Když dítě napsalo $225$: počítalo, jako by hodina měla sto minut."
+      },
+      "tisk": {
+        "zadani": "Kolik minut je $2{,}25$ hodiny?"
+      }
+    },
+    {
+      "id": "F2-VZOR-L1-U2",
+      "typ": "simulace",
+      "pozice": 2,
+      "kapitola": "zlomky",
+      "zdroj": "vlastní (vzorová lekce pro test frontendu)",
+      "zadani": "**2.1** $$\\frac{3}{4} + \\frac{1}{6}$$\n\n**2.2** $$0{,}4 \\cdot 2{,}5 - 0{,}35$$\n\n**2.3** $$\\left(\\frac{2}{3} - \\frac{1}{2}\\right) : \\frac{5}{9}$$\n\nVýsledek zlomku zapiš v základním tvaru.",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "2.1",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 11,
+            "j": 12
+          },
+          "zname_chyby": [
+            {
+              "c": 4,
+              "j": 10,
+              "typ_chyby": "scital-citatele-i-jmenovatele"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar",
+          "body": 1
+        },
+        {
+          "id": "k2",
+          "popisek": "2.2",
+          "vstup": {
+            "typ": "cislo"
+          },
+          "spravne": {
+            "hodnota": 0.65
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 9.65,
+              "typ_chyby": "carka-pri-nasobeni"
+            }
+          ],
+          "body": 1
+        },
+        {
+          "id": "final",
+          "popisek": "2.3",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 3,
+            "j": 10
+          },
+          "zname_chyby": [
+            {
+              "c": 5,
+              "j": 54,
+              "typ_chyby": "delil-bez-prevraceni"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar",
+          "postup": true,
+          "body": 2
+        }
+      ],
+      "tahak": {
+        "reseni": "#### 2.1\n\n$\\frac{9}{12} + \\frac{2}{12} = \\frac{11}{12}$\n\n#### 2.2\n\n$1 - 0{,}35 = 0{,}65$ (nejdřív násobení)\n\n#### 2.3\n\n$\\frac{4}{6} - \\frac{3}{6} = \\frac{1}{6}$\n\n$\\frac{1}{6} \\cdot \\frac{9}{5} = \\frac{9}{30}$ (dělení = násobení převráceným zlomkem)\n\n**Výsledek:** $\\frac{3}{10}$",
+        "typicka_chyba": "Když dítě u 2.3 napsalo $\\frac{5}{54}$: dělilo bez převrácení druhého zlomku."
+      },
+      "tisk": {
+        "zadani": "**2.1** $$\\frac{3}{4} + \\frac{1}{6}$$\n\n**2.2** $$0{,}4 \\cdot 2{,}5 - 0{,}35$$\n\n**2.3** $$\\left(\\frac{2}{3} - \\frac{1}{2}\\right) : \\frac{5}{9}$$\n\nVýsledek zlomku zapište v základním tvaru. V záznamovém archu uveďte u 2.3 celý postup řešení."
+      }
+    },
+    {
+      "id": "F2-VZOR-L1-U3",
+      "typ": "simulace",
+      "pozice": 3,
+      "kapitola": "vyrazy",
+      "zdroj": "vlastní (vzorová lekce pro test frontendu)",
+      "zadani": "**3.1** Urči hodnotu výrazu $2a^2 - 3a$ pro $a = -2$.\n\n**3.2** Zapiš bez závorky: $$3x(2x - 5)$$\n\n**3.3** Zjednoduš: $$(x + 3)^2 - x(x + 4)$$",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "3.1",
+          "vstup": {
+            "typ": "cislo"
+          },
+          "spravne": {
+            "hodnota": 14
+          },
+          "zname_chyby": [
+            {
+              "hodnota": -2,
+              "typ_chyby": "zaporna-mocnina-v-zavorce"
+            }
+          ],
+          "body": 1
+        },
+        {
+          "id": "k2",
+          "popisek": "3.2",
+          "vstup": {
+            "typ": "vyraz",
+            "promenne": [
+              "x"
+            ]
+          },
+          "spravne": {
+            "vyraz": "6x^2-15x"
+          },
+          "zname_chyby": [
+            {
+              "vyraz": "6x^2-5",
+              "typ_chyby": "roznasobil-jen-prvni-clen"
+            }
+          ],
+          "kontrola_tvaru": "bez_zavorek",
+          "body": 1
+        },
+        {
+          "id": "final",
+          "popisek": "3.3",
+          "vstup": {
+            "typ": "vyraz",
+            "promenne": [
+              "x"
+            ]
+          },
+          "spravne": {
+            "vyraz": "2x+9"
+          },
+          "zname_chyby": [
+            {
+              "vyraz": "9-4x",
+              "typ_chyby": "dvojclen-na-druhou-bez-soucinu"
+            }
+          ],
+          "postup": true,
+          "body": 2
+        }
+      ],
+      "tahak": {
+        "reseni": "#### 3.1\n\n$2 \\cdot 4 + 6 = 14$ (mocnina záporného čísla v závorce je kladná)\n\n#### 3.2\n\n$6x^2 - 15x$\n\n#### 3.3\n\n$x^2 + 6x + 9 - x^2 - 4x$\n\n**Výsledek:** $2x + 9$",
+        "typicka_chyba": "Když dítě u 3.3 napsalo $9 - 4x$: umocnilo závorku bez dvojnásobného součinu."
+      },
+      "tisk": {
+        "zadani": "**3.1** Určete hodnotu výrazu $2a^2 - 3a$ pro $a = -2$.\n\n**3.2** Zapište bez závorky: $$3x(2x - 5)$$\n\n**3.3** Zjednodušte: $$(x + 3)^2 - x(x + 4)$$\n\nV záznamovém archu uveďte u 3.3 celý postup řešení."
+      }
+    },
+    {
+      "id": "F2-VZOR-L1-U4",
+      "typ": "simulace",
+      "pozice": 4,
+      "kapitola": "rovnice",
+      "zdroj": "vlastní (vzorová lekce pro test frontendu)",
+      "zadani": "**4.1** Řeš rovnici: $$\\frac{2x}{3} - \\frac{x + 1}{2} = \\frac{1}{4}$$\n\n**4.2** Řeš soustavu rovnic: $$y = 2x - 1, \\quad 3x + y = 14$$",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "4.1",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 9,
+            "j": 2
+          },
+          "zname_chyby": [
+            {
+              "c": -3,
+              "j": 2,
+              "typ_chyby": "minus-pred-zlomkem-bez-zavorky"
+            }
+          ],
+          "postup": true,
+          "body": 2
+        },
+        {
+          "id": "k2",
+          "popisek": "4.2 $x$",
+          "vstup": {
+            "typ": "cislo"
+          },
+          "spravne": {
+            "hodnota": 3
+          },
+          "postup": true,
+          "body": 1
+        },
+        {
+          "id": "final",
+          "popisek": "4.2 $y$",
+          "vstup": {
+            "typ": "cislo"
+          },
+          "spravne": {
+            "hodnota": 5
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 3,
+              "typ_chyby": "zamenil-x-a-y"
+            }
+          ],
+          "postup": true,
+          "body": 1
+        }
+      ],
+      "tahak": {
+        "reseni": "#### 4.1\n\n$8x - 6(x + 1) = 3$ (celou rovnici krát 12)\n\n$2x - 6 = 3$\n\n$x = \\frac{9}{2}$\n\n#### 4.2\n\n$3x + 2x - 1 = 14$ (dosazení za $y$)\n\n$x = 3$\n\n**Výsledek:** $x = 3$, $y = 5$",
+        "typicka_chyba": "Když dítě u 4.1 napsalo $-\\frac{3}{2}$: čitatel za mínusem nedalo do závorky."
+      },
+      "tisk": {
+        "zadani": "**4.1** Řešte rovnici: $$\\frac{2x}{3} - \\frac{x + 1}{2} = \\frac{1}{4}$$\n\n**4.2** Řešte soustavu rovnic: $$y = 2x - 1, \\quad 3x + y = 14$$\n\nV záznamovém archu uveďte v obou částech celý postup řešení."
+      }
+    },
+    {
+      "id": "F2-VZOR-L1-U5",
+      "typ": "simulace",
+      "pozice": 5,
+      "kapitola": "slovni-ulohy",
+      "zdroj": "vlastní (vzorová lekce pro test frontendu)",
+      "zadani": "Cena bundy se zvýšila o třetinu. Teď stojí $1\\,200$ Kč. Kolik stála bunda původně?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "5",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 900
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 800,
+              "typ_chyby": "o-tretinu-z-vysledku"
+            }
+          ],
+          "body": 2
+        }
+      ],
+      "tahak": {
+        "reseni": "$\\frac{4}{3}$ původní ceny je $1\\,200$ Kč (původní cena + třetina)\n\n$1\\,200 : 4 \\cdot 3 = 900$\n\n**Výsledek:** $900$ Kč",
+        "typicka_chyba": "Když dítě napsalo $800$: odečetlo třetinu z nové ceny, ne z původní."
+      },
+      "tisk": {
+        "zadani": "Cena bundy se zvýšila o třetinu. Teď stojí $1\\,200$ Kč. Kolik korun stála bunda původně?"
+      }
+    },
+    {
+      "id": "F2-VZOR-L1-U6",
+      "typ": "simulace",
+      "pozice": 6,
+      "kapitola": "slovni-ulohy",
+      "zdroj": "vlastní (vzorová lekce pro test frontendu)",
+      "zadani": "Anna má $x$ kuliček. Petr má o $5$ kuliček víc než Anna. Tom má dvakrát víc kuliček než Petr.\n\n**6.1** Kolik kuliček má Petr? Zapiš výrazem s $x$.\n\n**6.2** Kolik kuliček má Tom? Zapiš výrazem s $x$.\n\n**6.3** Všichni tři mají dohromady $75$ kuliček. Kolik jich má Anna?",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "6.1",
+          "vstup": {
+            "typ": "vyraz",
+            "promenne": [
+              "x"
+            ]
+          },
+          "spravne": {
+            "vyraz": "x+5"
+          },
+          "zname_chyby": [
+            {
+              "vyraz": "5x",
+              "typ_chyby": "zapsal-vztah-obracene"
+            }
+          ],
+          "body": 1
+        },
+        {
+          "id": "k2",
+          "popisek": "6.2",
+          "vstup": {
+            "typ": "vyraz",
+            "promenne": [
+              "x"
+            ]
+          },
+          "spravne": {
+            "vyraz": "2x+10"
+          },
+          "zname_chyby": [
+            {
+              "vyraz": "2x+5",
+              "typ_chyby": "roznasobil-jen-prvni-clen"
+            }
+          ],
+          "body": 1
+        },
+        {
+          "id": "final",
+          "popisek": "6.3",
+          "vstup": {
+            "typ": "cislo"
+          },
+          "spravne": {
+            "hodnota": 15
+          },
+          "body": 1
+        }
+      ],
+      "tahak": {
+        "reseni": "#### 6.1\n\n$x + 5$\n\n#### 6.2\n\n$2(x + 5) = 2x + 10$\n\n#### 6.3\n\n$x + x + 5 + 2x + 10 = 75$\n\n$4x = 60$\n\n**Výsledek:** $15$ kuliček",
+        "typicka_chyba": "Když dítě u 6.2 napsalo $2x + 5$: vynásobilo dvěma jen první člen."
+      },
+      "tisk": {
+        "zadani": "Anna má $x$ kuliček. Petr má o $5$ kuliček víc než Anna. Tom má dvakrát víc kuliček než Petr.\n\n**6.1** Kolik kuliček má Petr? Zapište výrazem s $x$.\n\n**6.2** Kolik kuliček má Tom? Zapište výrazem s $x$.\n\n**6.3** Všichni tři mají dohromady $75$ kuliček. Kolik jich má Anna?"
+      }
+    },
+    {
+      "id": "F2-VZOR-L1-U7",
+      "typ": "simulace",
+      "pozice": 7,
+      "kapitola": "geometrie",
+      "zdroj": "vlastní (vzorová lekce pro test frontendu)",
+      "zadani": "Obdélník má obvod $36$ cm. Jeho délka $a$ je dvakrát větší než šířka $b$.\n\n**7.1** Jak široký je obdélník?\n\n**7.2** Jaký má obdélník obsah?",
+      "obrazek": "<svg viewBox=\"0 0 120 70\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"100\" height=\"45\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"60\" y=\"66\" text-anchor=\"middle\" font-size=\"9\" fill=\"currentColor\">a</text><text x=\"115\" y=\"36\" font-size=\"9\" fill=\"currentColor\">b</text></svg>",
+      "obrazek_popis": "Obdélník se stranami a (delší, dole) a b (kratší, vpravo), bez čísel.",
+      "obrazek_mm": 50,
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "7.1",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm"
+          },
+          "spravne": {
+            "hodnota": 6
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 12,
+              "typ_chyby": "strana-z-obvodu-bez-poloviny"
+            }
+          ],
+          "body": 1
+        },
+        {
+          "id": "final",
+          "popisek": "7.2",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm²"
+          },
+          "spravne": {
+            "hodnota": 72
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 36,
+              "typ_chyby": "obvod-obsah-zamena"
+            }
+          ],
+          "body": 2
+        }
+      ],
+      "tahak": {
+        "reseni": "$2a + 2b = 36$, $a = 2b$ (obvod)\n\n$6b = 36$, $b = 6$ cm\n\n$a = 12$ cm\n\n**Výsledek:** $12 \\cdot 6 = 72\\ \\text{cm}^2$",
+        "typicka_chyba": "Když dítě u 7.1 napsalo $12$: zapomnělo, že každá strana je v obvodu dvakrát."
+      },
+      "tisk": {
+        "zadani": "Obdélník má obvod $36$ cm. Jeho délka $a$ je dvakrát větší než šířka $b$.\n\n**7.1** Určete šířku obdélníku v centimetrech.\n\n**7.2** Určete obsah obdélníku v cm²."
+      }
+    },
+    {
+      "id": "F2-VZOR-L1-U8",
+      "typ": "simulace",
+      "pozice": 8,
+      "kapitola": "geometrie",
+      "zdroj": "vlastní (vzorová lekce pro test frontendu)",
+      "zadani": "V trojúhelníku $ABC$ má úhel $\\alpha$ velikost $48°$. Úhel $\\beta$ je o $20°$ větší než $\\alpha$.\n\n**8.1** Jak velký je úhel $\\beta$?\n\n**8.2** Jak velký je úhel $\\gamma$?",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "8.1",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "°"
+          },
+          "spravne": {
+            "hodnota": 68
+          },
+          "body": 2
+        },
+        {
+          "id": "final",
+          "popisek": "8.2",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "°"
+          },
+          "spravne": {
+            "hodnota": 64
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 244,
+              "typ_chyby": "soucet-uhlu-trojuhelniku-spatne"
+            }
+          ],
+          "body": 2
+        }
+      ],
+      "tahak": {
+        "reseni": "$\\beta = 48° + 20° = 68°$\n\n$\\gamma = 180° - 48° - 68°$ (součet úhlů v trojúhelníku)\n\n**Výsledek:** $\\gamma = 64°$",
+        "typicka_chyba": "Když dítě u 8.2 napsalo $244°$: počítalo se součtem úhlů $360°$."
+      },
+      "tisk": {
+        "zadani": "V trojúhelníku $ABC$ má úhel $\\alpha$ velikost $48°$. Úhel $\\beta$ je o $20°$ větší než $\\alpha$.\n\n**8.1** Určete velikost úhlu $\\beta$.\n\n**8.2** Určete velikost úhlu $\\gamma$."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "nizka",
+    "poznamka": "Vzorová lekce jen pro test frontendu Fáze 2 (testy/data), nikdy se neseeduje. Body: 1 + 4 + 4 + 4 + 2 + 3 + 3 + 4 = 25.",
+    "zkontroloval": "frontend",
+    "datum": "2026-09-25"
+  }
+}

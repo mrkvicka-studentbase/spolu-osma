@@ -1,0 +1,15 @@
+# Spolu na přijímačky — prohlížeč si HTML, JS a CSS při každém načtení ověří (ETag → 304, levné).
+# Bez toho si prohlížeč drží staré soubory i dny a po aktualizaci webu se stránky nenačtou
+# (nový lekce.js + starý ui.js v mezipaměti = chyba). Obrázky a písma se cachují normálně.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|js|css|json)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/javascript "access plus 0 seconds"
+  ExpiresByType text/javascript "access plus 0 seconds"
+  ExpiresByType text/css "access plus 0 seconds"
+</IfModule>

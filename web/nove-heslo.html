@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nové heslo — Spolu na přijímačky</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230F172A'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11' fill='none' stroke='%231FC27E' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <!-- Motiv (R26): před CSS, ať stránka neblikne. spolu.motiv = svetly | tmavy | auto (výchozí auto = podle zařízení) -->
+  <script>(function(){var K='spolu.motiv',d=document.documentElement,mq=window.matchMedia?matchMedia('(prefers-color-scheme: dark)'):null;
+  function volba(){try{var v=localStorage.getItem(K);return v==='svetly'||v==='tmavy'?v:'auto'}catch(e){return 'auto'}}
+  function pouzij(){var v=volba();d.setAttribute('data-motiv',v==='auto'?(mq&&mq.matches?'tmavy':'svetly'):v);d.setAttribute('data-motiv-volba',v);
+  var b=document.querySelectorAll('[data-motiv-nastav]');for(var i=0;i<b.length;i++)b[i].setAttribute('aria-pressed',String(b[i].getAttribute('data-motiv-nastav')===v))}
+  function nastav(v){try{localStorage.setItem(K,v==='svetly'||v==='tmavy'?v:'auto')}catch(e){}pouzij()}
+  if(mq&&mq.addEventListener)mq.addEventListener('change',pouzij);
+  addEventListener('storage',function(e){if(e.key===K)pouzij()});
+  document.addEventListener('click',function(e){var t=e.target&&e.target.closest?e.target.closest('[data-motiv-nastav]'):null;if(t)nastav(t.getAttribute('data-motiv-nastav'))});
+  document.addEventListener('DOMContentLoaded',pouzij);
+  window.spoluMotiv={volba:volba,nastav:nastav,pouzij:pouzij};pouzij()})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
+<script type="module" src="js/nove-heslo.js"></script>
+</head>
+<body>
+<!--
+  Nové heslo po odkazu z e-mailu (R20). Odkaz z resetPasswordForEmail (supabase.js obnovitHeslo)
+  vede sem s #access_token…&type=recovery; supabase-js ho sám přihlásí (detectSessionInUrl).
+  Adresa této stránky musí být v Supabase → Authentication → URL Configuration → Redirect URLs.
+-->
+<header class="hlavicka">
+  <div class="hlavicka__vnitrek">
+    <a class="logo" href="index.html"><span class="logo__znacka">Student<span>Base</span></span><span class="logo__produkt">Spolu na přijímačky</span></a>
+  </div>
+</header>
+
+<main class="obal obal--uzky obal--stranka zasobnik zasobnik--volny" id="obsah">
+  <div class="nacitani" role="status" id="nacitani"><span class="tocitko" aria-hidden="true"></span>Ověřuji odkaz…</div>
+
+  <!-- Odkaz neplatný / vypršel -->
+  <section class="prazdny-stav prazdny-stav--plny" id="sekce-neplatny" aria-labelledby="neplatny-nadpis" hidden>
+    <span class="ikona-kruh"><svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 16H3z"/><path d="M12 10v4M12 16.8h.01"/></svg></span>
+    <h1 class="prazdny-stav__nadpis" id="neplatny-nadpis">Odkaz nefunguje</h1>
+    <p class="prazdny-stav__text" id="neplatny-text"></p>
+    <a class="tlacitko tlacitko--primarni tlacitko--velke" href="registrace.html?obnova=1">Poslat nový odkaz</a>
+  </section>
+
+  <!-- Formulář nového hesla -->
+  <section id="sekce-formular" aria-labelledby="nove-heslo-nadpis" hidden>
+    <form class="formular" id="formular-heslo" novalidate>
+      <div class="formular__uvod">
+        <h1 id="nove-heslo-nadpis" tabindex="-1">Nové heslo</h1>
+        <p class="text-tlumeny" id="nove-heslo-ucet"></p>
+      </div>
+
+      <div class="hlaska hlaska--varovani" role="alert" id="heslo-chyba" hidden>
+        <svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 16H3z"/><path d="M12 10v4M12 16.8h.01"/></svg>
+        <div class="hlaska__text"><strong data-text></strong></div>
+      </div>
+
+      <div class="hlaska hlaska--uspech" role="status" id="heslo-ok" hidden>
+        <svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+        <div class="hlaska__text"><strong data-text></strong></div>
+      </div>
+
+      <div class="pole-skupina">
+        <label class="pole-popisek" for="n-heslo">Nové heslo</label>
+        <input class="pole" id="n-heslo" name="heslo" type="password" autocomplete="new-password" aria-describedby="n-heslo-nap n-heslo-chyba">
+        <div class="radek radek--mezi">
+          <p class="pole-napoveda" id="n-heslo-nap">Alespoň 8 znaků.</p>
+          <button class="tlacitko tlacitko--tiche" type="button" id="n-zobrazit" aria-controls="n-heslo n-heslo2" aria-pressed="false"><svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span>Zobrazit heslo</span></button>
+        </div>
+        <p class="pole-chyba" id="n-heslo-chyba" hidden></p>
+      </div>
+      <div class="pole-skupina">
+        <label class="pole-popisek" for="n-heslo2">Nové heslo znovu</label>
+        <input class="pole" id="n-heslo2" name="heslo2" type="password" autocomplete="new-password" aria-describedby="n-heslo2-chyba">
+        <p class="pole-chyba" id="n-heslo2-chyba" hidden></p>
+      </div>
+
+      <button class="tlacitko tlacitko--primarni tlacitko--velke tlacitko--cela-sirka" type="submit">Uložit nové heslo</button>
+    </form>
+  </section>
+</main>
+
+<div class="toasty" aria-live="polite"></div>
+<footer class="paticka-stranky"><div class="paticka-motiv"><span>Vzhled:</span>
+    <div class="prepinac prepinac--motiv" role="group" aria-label="Vzhled">
+      <button class="prepinac__volba" type="button" data-motiv-nastav="svetly" aria-pressed="false">Světlý</button>
+      <button class="prepinac__volba" type="button" data-motiv-nastav="tmavy" aria-pressed="false">Tmavý</button>
+      <button class="prepinac__volba" type="button" data-motiv-nastav="auto" aria-pressed="true">Podle zařízení</button>
+    </div>
+  </div></footer>
+</body>
+</html>

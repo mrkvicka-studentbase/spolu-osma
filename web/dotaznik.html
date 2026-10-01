@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dotazník po pilotu — Spolu na přijímačky</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230F172A'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11' fill='none' stroke='%231FC27E' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <!-- Motiv (R26): před CSS, ať stránka neblikne. spolu.motiv = svetly | tmavy | auto (výchozí auto = podle zařízení) -->
+  <script>(function(){var K='spolu.motiv',d=document.documentElement,mq=window.matchMedia?matchMedia('(prefers-color-scheme: dark)'):null;
+  function volba(){try{var v=localStorage.getItem(K);return v==='svetly'||v==='tmavy'?v:'auto'}catch(e){return 'auto'}}
+  function pouzij(){var v=volba();d.setAttribute('data-motiv',v==='auto'?(mq&&mq.matches?'tmavy':'svetly'):v);d.setAttribute('data-motiv-volba',v);
+  var b=document.querySelectorAll('[data-motiv-nastav]');for(var i=0;i<b.length;i++)b[i].setAttribute('aria-pressed',String(b[i].getAttribute('data-motiv-nastav')===v))}
+  function nastav(v){try{localStorage.setItem(K,v==='svetly'||v==='tmavy'?v:'auto')}catch(e){}pouzij()}
+  if(mq&&mq.addEventListener)mq.addEventListener('change',pouzij);
+  addEventListener('storage',function(e){if(e.key===K)pouzij()});
+  document.addEventListener('click',function(e){var t=e.target&&e.target.closest?e.target.closest('[data-motiv-nastav]'):null;if(t)nastav(t.getAttribute('data-motiv-nastav'))});
+  document.addEventListener('DOMContentLoaded',pouzij);
+  window.spoluMotiv={volba:volba,nastav:nastav,pouzij:pouzij};pouzij()})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
+  <script type="module" src="js/dotaznik.js"></script>
+</head>
+<body>
+
+<header class="hlavicka">
+  <div class="hlavicka__vnitrek">
+    <a class="logo" href="prehled.html"><span class="logo__znacka">Student<span>Base</span></span><span class="logo__produkt">Spolu na přijímačky</span></a>
+  </div>
+</header>
+
+<main class="obal obal--uzky obal--stranka zasobnik zasobnik--volny" id="obsah">
+  <div class="nacitani" role="status"><span class="tocitko" aria-hidden="true"></span>Načítám…</div>
+  <noscript>
+    <div class="hlaska hlaska--varovani" role="alert">
+      <div class="hlaska__text"><strong>Dotazník potřebuje zapnutý JavaScript.</strong>Zapněte ho prosím v prohlížeči.</div>
+    </div>
+  </noscript>
+</main>
+
+<!-- Formulář (šablona; dotaznik.js ho vloží do <main>, když dotazník ještě není vyplněný) -->
+<template id="sablona-formular">
+  <form class="formular" id="formular-dotaznik" novalidate>
+    <div class="formular__uvod">
+      <p class="nadpis-sekce">Po pilotu · 2 minuty</p>
+      <h1>Jak se vám pilot líbil?</h1>
+      <p class="text-tlumeny">Šest krátkých otázek. Za vyplnění máte cenu 790 Kč za celou sezónu i po 1. 12.</p>
+    </div>
+
+    <div class="hlaska hlaska--varovani" role="alert" id="dotaznik-chyba" hidden>
+      <svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 16H3z"/><path d="M12 10v4M12 16.8h.01"/></svg>
+      <div class="hlaska__text"><strong data-text></strong></div>
+    </div>
+
+    <div class="pole-skupina">
+      <fieldset class="volby volby--stupnice" id="d-tahak" aria-describedby="d-tahak-chyba">
+        <legend>1. Jak srozumitelný byl pro vás tahák na telefonu?</legend>
+        <label class="volba"><input class="volba__vstup" type="radio" name="srozumitelnost_tahaku" value="1"><span class="volba__obsah">1<small>vůbec</small></span></label>
+        <label class="volba"><input class="volba__vstup" type="radio" name="srozumitelnost_tahaku" value="2"><span class="volba__obsah">2</span></label>
+        <label class="volba"><input class="volba__vstup" type="radio" name="srozumitelnost_tahaku" value="3"><span class="volba__obsah">3</span></label>
+        <label class="volba"><input class="volba__vstup" type="radio" name="srozumitelnost_tahaku" value="4"><span class="volba__obsah">4</span></label>
+        <label class="volba"><input class="volba__vstup" type="radio" name="srozumitelnost_tahaku" value="5"><span class="volba__obsah">5<small>úplně</small></span></label>
+      </fieldset>
+      <p class="pole-chyba" id="d-tahak-chyba" hidden></p>
+    </div>
+
+    <div class="pole-skupina">
+      <fieldset class="volby volby--3" id="d-delka" aria-describedby="d-delka-chyba">
+        <legend>2. Jak vám připadala délka lekce?</legend>
+        <label class="volba"><input class="volba__vstup" type="radio" name="delka_lekce" value="kratka"><span class="volba__obsah">Krátká</span></label>
+        <label class="volba"><input class="volba__vstup" type="radio" name="delka_lekce" value="akorat"><span class="volba__obsah">Akorát</span></label>
+        <label class="volba"><input class="volba__vstup" type="radio" name="delka_lekce" value="dlouha"><span class="volba__obsah">Dlouhá</span></label>
+      </fieldset>
+      <p class="pole-chyba" id="d-delka-chyba" hidden></p>
+    </div>
+
+    <div class="pole-skupina">
+      <fieldset class="volby volby--stupnice" id="d-ochota" aria-describedby="d-ochota-chyba">
+        <legend>3. Jak ochotně dítě s vámi pracovalo?</legend>
+        <label class="volba"><input class="volba__vstup" type="radio" name="ochota_ditete" value="1"><span class="volba__obsah">1<small>nerado</small></span></label>
+        <label class="volba"><input class="volba__vstup" type="radio" name="ochota_ditete" value="2"><span class="volba__obsah">2</span></label>
+        <label class="volba"><input class="volba__vstup" type="radio" name="ochota_ditete" value="3"><span class="volba__obsah">3</span></label>
+        <label class="volba"><input class="volba__vstup" type="radio" name="ochota_ditete" value="4"><span class="volba__obsah">4</span></label>
+        <label class="volba"><input class="volba__vstup" type="radio" name="ochota_ditete" value="5"><span class="volba__obsah">5<small>rádo</small></span></label>
+      </fieldset>
+      <p class="pole-chyba" id="d-ochota-chyba" hidden></p>
+    </div>
+
+    <div class="pole-skupina">
+      <fieldset class="volby volby--3" id="d-rezim" aria-describedby="d-rezim-chyba">
+        <legend>4. Jak jste lekce dělali?</legend>
+        <label class="volba"><input class="volba__vstup" type="radio" name="rezim" value="app"><span class="volba__obsah">V aplikaci</span></label>
+        <label class="volba"><input class="volba__vstup" type="radio" name="rezim" value="papir"><span class="volba__obsah">Na papír</span></label>
+        <label class="volba"><input class="volba__vstup" type="radio" name="rezim" value="oboje"><span class="volba__obsah">Obojí</span></label>
+      </fieldset>
+      <p class="pole-chyba" id="d-rezim-chyba" hidden></p>
+    </div>
+
+    <div class="pole-skupina">
+      <label class="pole-popisek" for="d-chybelo">5. Co vám chybělo? <span class="pole-popisek__volitelne">(nepovinné)</span></label>
+      <textarea class="pole" id="d-chybelo" name="co_chybelo" rows="4" maxlength="2000" aria-describedby="d-chybelo-nap"></textarea>
+      <p class="pole-napoveda" id="d-chybelo-nap">Co bylo nejasné, kde jste se zasekli, co byste přidali.</p>
+    </div>
+
+    <div class="pole-skupina">
+      <fieldset class="volby volby--3" id="d-cena" aria-describedby="d-cena-chyba">
+        <legend>6. Je pro vás cena 990 Kč za celou sezónu přijatelná?</legend>
+        <label class="volba"><input class="volba__vstup" type="radio" name="cena_990" value="ano"><span class="volba__obsah">Ano</span></label>
+        <label class="volba"><input class="volba__vstup" type="radio" name="cena_990" value="ne"><span class="volba__obsah">Ne</span></label>
+        <label class="volba"><input class="volba__vstup" type="radio" name="cena_990" value="za_790_ano"><span class="volba__obsah">Za 790 Kč ano</span></label>
+      </fieldset>
+      <p class="pole-chyba" id="d-cena-chyba" hidden></p>
+    </div>
+
+    <button class="tlacitko tlacitko--primarni tlacitko--velke tlacitko--cela-sirka" type="submit">Odeslat dotazník</button>
+    <p class="text-stred"><a href="prehled.html">Zpět na přehled</a></p>
+  </form>
+</template>
+
+<div class="toasty" aria-live="polite"></div>
+</body>
+</html>

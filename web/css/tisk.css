@@ -1,0 +1,308 @@
+/* ==========================================================================
+   Spolu na přijímačky — tisk A4 (tisk.html)
+   Načítat až PO design-system.css:
+     <link rel="stylesheet" href="css/design-system.css">
+     <link rel="stylesheet" href="css/tisk.css">
+   Na obrazovce ukazuje náhled listu A4, při tisku čistý list bez navigace.
+   Tahák rodiče se NEtiskne (není v tisk.html, a kdyby byl: .jen-obrazovka).
+   ========================================================================== */
+
+:root {
+  --tisk-okraj: 15mm;
+  --tisk-vypocet: 4cm;            /* místo na výpočet (běžná úloha) */
+  --tisk-vypocet-velky: 8cm;      /* místo na výpočet (CERMAT, slovní úloha) */
+  --tisk-pismo: 11.5pt;
+  --tisk-pismo-zadani: 12.5pt;
+}
+
+@page {
+  size: A4;
+  margin: 15mm;
+}
+
+/* --- List (na obrazovce jako náhled papíru) ---------------------------- */
+.tisk-list {
+  /* list je vždy světlý i uvnitř tmavého motivu (náhled v komponenty.html): světlé hodnoty proměnných */
+  color-scheme: light;
+  --barva-text: #0F172A; --barva-text-tlumeny: #475569; --barva-povrch: #FFFFFF; --barva-povrch-2: #F1F5F9;
+  --barva-okraj: #E2E8F0; --barva-okraj-silny: #CBD5E1; --barva-silna: #0F172A;
+  width: 210mm;
+  min-height: 297mm;
+  max-width: 100%;
+  margin: var(--mezera-5) auto;
+  padding: var(--tisk-okraj);
+  background: #FFFFFF;
+  color: #000000;
+  box-shadow: var(--stin-2);
+  font-size: var(--tisk-pismo);
+  line-height: 1.45;
+}
+
+/* Ovládání nad listem (tlačítko Vytisknout, Zpět) — jen na obrazovce */
+.tisk-ovladani {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--mezera-3);
+  justify-content: center;
+  padding: var(--mezera-4);
+}
+
+/* --- Záhlaví: jméno dítěte, lekce, datum ------------------------------- */
+.tisk-zahlavi {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 6mm;
+  padding-bottom: 3mm;
+  margin-bottom: 6mm;
+  border-bottom: 1.5pt solid #0F172A;
+}
+.tisk-zahlavi__lekce { font-size: 15pt; font-weight: 700; line-height: 1.2; }
+.tisk-zahlavi__lekce small { display: block; font-size: 10pt; font-weight: 400; color: #333333; }
+.tisk-zahlavi__jmeno { text-align: right; font-size: 10.5pt; }
+.tisk-zahlavi__jmeno strong { font-size: 12pt; }
+.tisk-linka { display: inline-block; min-width: 35mm; border-bottom: 0.75pt solid #000000; }
+/* H2: řádek „Připrav si: sešit, propiska, tužka" pod záhlavím */
+.tisk-pripravit { margin: -3mm 0 5mm; font-size: 10.5pt; color: #333333; }
+
+/* --- Úloha: nikdy nezalomit uprostřed ---------------------------------- */
+.tisk-uloha {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin-bottom: 7mm;
+}
+.tisk-uloha__hlavicka {
+  display: flex;
+  align-items: baseline;
+  gap: 3mm;
+  margin-bottom: 2mm;
+  font-weight: 700;
+}
+.tisk-uloha__cislo {
+  display: inline-grid;
+  place-items: center;
+  width: 7mm; height: 7mm;
+  border: 1pt solid #0F172A;
+  border-radius: 50%;
+  font-size: 10pt;
+}
+.tisk-uloha__typ { font-size: 9.5pt; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #333333; }
+.tisk-uloha__zadani { font-size: var(--tisk-pismo-zadani); margin-bottom: 3mm; }
+.tisk-uloha__zadani p + p { margin-top: 2mm; }
+
+/* Nabídka a) b) c) místo dlaždic */
+.tisk-moznosti { display: flex; flex-wrap: wrap; gap: 2mm 10mm; margin: 2mm 0 3mm; padding: 0; list-style: none; }
+.tisk-moznosti li::before { content: "☐ "; }
+
+/* Rámeček „Výpočet" */
+.tisk-vypocet {
+  position: relative;
+  height: var(--tisk-vypocet);
+  border: 0.75pt solid #6B7280;
+  border-radius: 2mm;
+  /* jemná čtverečkovaná síť 5 mm pro zápis */
+  background-image:
+    linear-gradient(#E5E7EB 0.5pt, transparent 0.5pt),
+    linear-gradient(90deg, #E5E7EB 0.5pt, transparent 0.5pt);
+  background-size: 5mm 5mm;
+  background-position: -0.5pt -0.5pt;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.tisk-vypocet--velky { height: var(--tisk-vypocet-velky); }
+.tisk-vypocet::before {
+  content: "Výpočet";
+  position: absolute;
+  top: 1.5mm; left: 2.5mm;
+  padding: 0 1mm;
+  background: #FFFFFF;
+  font-size: 8.5pt;
+  color: #4B5563;
+}
+
+/* Řádek „Výsledek: ________" */
+.tisk-vysledek {
+  display: flex;
+  align-items: baseline;
+  gap: 2mm;
+  margin-top: 3mm;
+  font-weight: 700;
+}
+.tisk-vysledek::after {
+  content: "";
+  flex: 0 1 60mm;
+  border-bottom: 1pt solid #000000;
+  transform: translateY(-1mm);
+}
+
+/* Patička StudentBase */
+.tisk-paticka {
+  margin-top: 8mm;
+  padding-top: 2mm;
+  border-top: 0.5pt solid #9CA3AF;
+  display: flex;
+  justify-content: space-between;
+  gap: 4mm;
+  font-size: 8.5pt;
+  color: #4B5563;
+}
+
+/* --- Tisk --------------------------------------------------------------- */
+@media print {
+  html, body { background: #FFFFFF !important; }
+  body { font-size: var(--tisk-pismo); color: #000000; }
+
+  .jen-obrazovka,
+  .tisk-ovladani,
+  .hlavicka,
+  .spodni-lista,
+  nav,
+  .toasty { display: none !important; }
+
+  .tisk-list {
+    width: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 0;         /* okraje dělá @page */
+    box-shadow: none;
+  }
+
+  /* Nový list pro každou lekci, pokud jich tisk.html vypíše víc */
+  .tisk-list + .tisk-list { break-before: page; page-break-before: always; }
+
+  .tisk-uloha,
+  .tisk-vypocet,
+  .tisk-vysledek { break-inside: avoid; page-break-inside: avoid; }
+
+  a { color: inherit; text-decoration: none; }
+}
+
+/* R23 / B3: vzorce se v tisku nezalamují; hlavní výraz ($$…$$) na vlastním řádku, větší, na středu */
+.tisk-uloha__zadani .katex { white-space: nowrap; }
+.tisk-uloha__zadani .katex-display { margin: 2mm 0; font-size: 1.15em; text-align: center; }
+/* Volby a) b) c) v zadání pro tisk — každá na vlastním řádku (tisk.js rozdelVolby) */
+.tisk-uloha__zadani .tisk-volby { list-style: none; margin: 1mm 0 2.5mm; padding: 0 0 0 6mm; display: flex; flex-direction: column; gap: 1.2mm; }
+.tisk-uloha__zadani .tisk-volby li { break-inside: avoid; }
+/* F1 poradi (osnova §6.3): `\op{id}{znak}` v tisk.zadani = prázdný kroužek (5 mm) nad operací na číslici */
+.tisk-uloha__zadani [data-op] { position: relative; }
+.tisk-uloha__zadani [data-op]::before {
+  content: ""; position: absolute; left: 50%; bottom: calc(100% + 0.6mm); transform: translateX(-50%);
+  width: 5mm; height: 5mm; border: 0.75pt solid #000000; border-radius: 50%; background: #FFFFFF;
+}
+.tisk-uloha__zadani .katex-display:has([data-op]) { padding-top: 6mm; }
+.tisk-uloha__zadani p:has([data-op]), .tisk-uloha__zadani li:has([data-op]) { padding-top: 5mm; }
+/* F1 obrázek: nejvýš 60 mm na šířku, černě */
+.obrazek-ulohy--tisk { margin: 2mm 0 3mm; color: #000000; }
+.obrazek-ulohy--tisk .obrazek-ulohy__svg { max-width: 60mm; margin: 0; }
+/* místo mezi operacemi, ať se 5mm kroužky nepřekrývají; výraz k očíslování o něco větší */
+.tisk-uloha__zadani [data-op] { margin-inline: 2.2mm; }
+.tisk-uloha__zadani .msupsub [data-op] { margin-inline: 1.5mm 0; }
+.tisk-uloha__zadani .katex-display:has([data-op]) > .katex { font-size: 1.3em; }
+
+/* Diagnostika (týden 0): menší místo na výpočet a předěl po 12. úloze s novou stranou */
+.tisk-vypocet--diag { height: 3cm; }
+.tisk-predel {
+  margin: 4mm 0 7mm; padding: 2mm 0; text-align: center; font-weight: 700;
+  border-top: 0.75pt dashed #6B7280; border-bottom: 0.75pt dashed #6B7280;
+  break-after: page; page-break-after: always;
+}
+
+/* ==========================================================================
+   Fáze 2 (osnova F2 §3.3, R38): záznamový arch, testový sešit simulace, strana se vzorci,
+   rámečky ve stylu archu u běžných lekcí Fáze 2, obrázky v mm (obrazek_mm, konstrukce 1 : 1)
+   ========================================================================== */
+/* obrázek s pevnou šířkou v mm (šířku nastaví tisk-f2.js inline, 1 : 1 u rýsovacího pole) */
+.obrazek-ulohy--mm .obrazek-ulohy__svg { max-width: none; height: auto; }
+/* běžné lekce F2: menší místo na výpočet, pod ním rámečky archu */
+.tisk-uloha--f2 .tisk-vypocet--velky { height: 5.5cm; }
+.arch-kroky { display: flex; flex-direction: column; gap: 2.5mm; margin-top: 3mm; }
+.arch-radek { display: flex; align-items: center; gap: 3mm; break-inside: avoid; page-break-inside: avoid; }
+.arch-oznaceni { min-width: 12mm; font-weight: 700; font-size: 10.5pt; }
+.arch-oznaceni--male { min-width: 0; font-weight: 600; font-size: 9pt; color: #333333; }
+.arch-ramecek { display: inline-block; width: 55mm; height: 10mm; border: 1pt solid #000000; background: #FFFFFF; }
+.arch-jednotka { font-size: 11pt; }
+/* křížková pole A–E / A/N / A–F */
+.arch-krizky { display: inline-flex; gap: 2mm; }
+.arch-krizek { display: inline-flex; flex-direction: column; align-items: center; gap: 0.5mm; }
+.arch-krizek__pismeno { font-size: 9pt; font-weight: 700; }
+.arch-krizek__pole { display: block; width: 7mm; height: 7mm; border: 1pt solid #000000; }
+/* povinný postup: rámeček přes celou šířku s linkami */
+.arch-postup { border: 1pt solid #000000; border-radius: 1.5mm; padding: 2mm 3mm 3mm; break-inside: avoid; page-break-inside: avoid; }
+.arch-postup__hlavicka { display: flex; align-items: baseline; gap: 3mm; }
+.arch-postup__nadpis { font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+.arch-postup__linky { display: flex; flex-direction: column; }
+.arch-linka { display: block; height: 8mm; border-bottom: 0.5pt solid #9CA3AF; }
+.arch-radek--vysledek { justify-content: flex-end; margin-top: 2mm; }
+/* rýsovací pole: zadané body a přímky v měřítku 1 : 1 */
+.arch-rysovani { border: 1pt solid #000000; border-radius: 1.5mm; padding: 2mm 3mm; break-inside: avoid; page-break-inside: avoid; }
+.arch-rysovani__popisek { display: block; font-size: 9pt; color: #333333; margin-bottom: 1mm; }
+.arch-rysovani .obrazek-ulohy--tisk { margin: 0; }
+.arch-rysovani__prazdne { height: 60mm; }
+/* R46: hlavička pole s kontrolní úsečkou 5 cm vpravo, pod polem pokyn o tisku 100 % */
+.arch-rysovani__hlavicka { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 2mm 6mm; margin-bottom: 1mm; }
+.arch-rysovani__hlavicka .arch-rysovani__popisek { margin-bottom: 0; }
+.arch-rysovani__pokyn { margin: 1mm 0 0; font-size: 8pt; color: #333333; }
+.tisk-pokyn--meritko { margin-top: -3mm; font-weight: 600; }
+/* nad listem (jen obrazovka): pokyn k tisku ve skutečné velikosti */
+.tisk-ovladani__pokyn { flex-basis: 100%; margin: 0; text-align: center; font-weight: var(--pismo-vaha-polotucne); }
+/* testový sešit simulace */
+.tisk-pokyn { margin: -2mm 0 5mm; padding: 2mm 3mm; border: 0.75pt solid #6B7280; border-radius: 1.5mm; font-size: 10.5pt; }
+.tisk-uloha--sesit { margin-bottom: 6mm; }
+.tisk-nabidka { list-style: none; margin: 1mm 0 2mm; padding: 0 0 0 6mm; display: flex; flex-wrap: wrap; gap: 1.5mm 8mm; font-size: var(--tisk-pismo-zadani); }
+.tisk-misto { height: 22mm; }
+/* strana se vzorci a tabulkou mocnin */
+.tisk-nadpis { font-size: 14pt; margin: 0 0 5mm; }
+.tisk-mocniny { border-collapse: collapse; margin-bottom: 6mm; font-size: 11pt; }
+.tisk-mocniny caption { text-align: left; font-weight: 700; margin-bottom: 2mm; }
+.tisk-mocniny th, .tisk-mocniny td { border: 0.75pt solid #000000; padding: 1.5mm 2.5mm; text-align: center; }
+.tisk-vzorce { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 4mm 8mm; font-size: 13pt; }
+/* záznamový arch */
+.arch-hlavicka { display: flex; flex-wrap: wrap; align-items: center; gap: 4mm 10mm; margin: -2mm 0 5mm; font-size: 10.5pt; }
+.arch-cas { display: inline-flex; align-items: center; gap: 1.5mm; font-weight: 700; }
+.arch-cas__pole { display: inline-block; width: 9mm; height: 7mm; border: 1pt solid #000000; }
+.arch-meritko { display: inline-flex; flex-direction: column; gap: 1mm; margin-left: auto; max-width: 70mm; }
+.arch-meritko__cara { display: block; width: 50mm; height: 2mm; border-left: 1pt solid #000000; border-right: 1pt solid #000000; border-bottom: 1pt solid #000000; }
+.arch-meritko small { font-size: 7.5pt; color: #333333; line-height: 1.25; }
+.arch-uloha { display: grid; grid-template-columns: 10mm minmax(0, 1fr); gap: 3mm; padding: 2.5mm 0; border-top: 0.5pt solid #9CA3AF; break-inside: avoid; page-break-inside: avoid; }
+.arch-uloha__cislo { display: inline-grid; place-items: center; width: 8mm; height: 8mm; border: 1.2pt solid #000000; border-radius: 50%; font-weight: 700; font-size: 11pt; }
+.arch-uloha .arch-kroky { margin-top: 0; }
+.arch-pokyn { margin-top: 5mm; padding-top: 2mm; border-top: 1pt solid #000000; font-size: 10pt; font-weight: 600; }
+@media print {
+  .tisk-list--vzorce, .tisk-list--arch { break-before: page; page-break-before: always; }
+  .arch-krizek__pole, .arch-ramecek, .arch-cas__pole { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+.arch-rysovani svg, .tisk-uloha svg { overflow: hidden; }
+
+/* ==========================================================================
+   Čeština (tisk-cj.js; ZADANI-CJ §6.3, §6.4, §8.2): linky diktátu, linka na písmeno (doplnit_pismeno),
+   místo na čárku (klik_ve_textu, cil „mezery"), samostatný list pro rodiče (text diktátu, přepis nahrávky)
+   ========================================================================== */
+.tisk-cj-pokyn { margin: 0 0 2.5mm; font-size: var(--tisk-pismo-zadani); font-weight: 600; }
+/* „_" v tisk.zadani = linka na jedno písmeno */
+.tisk-cj-pismeno { display: inline-block; width: 4.5mm; height: 1em; margin: 0 0.2mm; border-bottom: 1pt solid #000000; vertical-align: -0.1em; }
+/* věta, do které dítě píše čárky: širší mezery mezi slovy a vyšší řádek */
+.tisk-uloha__zadani .tisk-cj-mezery { word-spacing: 0.9em; line-height: 2.2; }
+/* diktát: u každé věty číslo a dvě linky, text věty na listu dítěte není */
+.tisk-cj-diktat__vety { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 3mm; }
+.tisk-cj-diktat__veta { display: grid; grid-template-columns: 16mm minmax(0, 1fr); gap: 2mm; break-inside: avoid; page-break-inside: avoid; }
+.tisk-cj-diktat__cislo { padding-top: 5mm; font-size: 10.5pt; font-weight: 700; }
+.tisk-cj-linka { display: block; height: 10mm; border-bottom: 0.75pt solid #000000; }
+/* list pro rodiče: vždy samostatný poslední list; na obrazovce je text skrytý (tisk otevírá i dítě) */
+.tisk-rodic__zahlavi { border-bottom-style: dashed; }
+.tisk-rodic__skryto { display: flex; flex-wrap: wrap; align-items: center; gap: 3mm 5mm; margin: 0 0 5mm; padding: 3mm; border: 0.75pt dashed #6B7280; border-radius: 1.5mm; font-size: 10.5pt; }
+.tisk-rodic__skryto p { flex: 1 1 60mm; margin: 0; }
+.tisk-list--rodic:not(.tisk-rodic--skryte) .tisk-rodic__skryto p { display: none; }
+.tisk-rodic__blok { margin-bottom: 7mm; break-inside: avoid; page-break-inside: avoid; }
+.tisk-rodic__nadpis { margin: 0 0 1mm; font-size: 13pt; }
+.tisk-rodic__pokyn { margin: 0 0 3mm; font-size: 10.5pt; color: #333333; }
+.tisk-rodic__vety { display: flex; flex-direction: column; gap: 2mm; margin: 0; padding: 0; list-style: none; font-size: 15pt; line-height: 1.5; }
+.tisk-rodic__vety li { display: grid; grid-template-columns: 18mm minmax(0, 1fr); align-items: baseline; }
+.tisk-rodic__cislo { font-size: 10.5pt; font-weight: 700; }
+.tisk-rodic__prepis { margin: 0; font-size: 14pt; line-height: 1.5; }
+@media screen {
+  .tisk-rodic--skryte .tisk-rodic__obsah { display: none; }
+}
+@media print {
+  .tisk-list--rodic { break-before: page; page-break-before: always; }
+}

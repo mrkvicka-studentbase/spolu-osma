@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sezóna skončila — Spolu na přijímačky</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230F172A'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11' fill='none' stroke='%231FC27E' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <!-- Motiv (R26): před CSS, ať stránka neblikne. spolu.motiv = svetly | tmavy | auto (výchozí auto = podle zařízení) -->
+  <script>(function(){var K='spolu.motiv',d=document.documentElement,mq=window.matchMedia?matchMedia('(prefers-color-scheme: dark)'):null;
+  function volba(){try{var v=localStorage.getItem(K);return v==='svetly'||v==='tmavy'?v:'auto'}catch(e){return 'auto'}}
+  function pouzij(){var v=volba();d.setAttribute('data-motiv',v==='auto'?(mq&&mq.matches?'tmavy':'svetly'):v);d.setAttribute('data-motiv-volba',v);
+  var b=document.querySelectorAll('[data-motiv-nastav]');for(var i=0;i<b.length;i++)b[i].setAttribute('aria-pressed',String(b[i].getAttribute('data-motiv-nastav')===v))}
+  function nastav(v){try{localStorage.setItem(K,v==='svetly'||v==='tmavy'?v:'auto')}catch(e){}pouzij()}
+  if(mq&&mq.addEventListener)mq.addEventListener('change',pouzij);
+  addEventListener('storage',function(e){if(e.key===K)pouzij()});
+  document.addEventListener('click',function(e){var t=e.target&&e.target.closest?e.target.closest('[data-motiv-nastav]'):null;if(t)nastav(t.getAttribute('data-motiv-nastav'))});
+  document.addEventListener('DOMContentLoaded',pouzij);
+  window.spoluMotiv={volba:volba,nastav:nastav,pouzij:pouzij};pouzij()})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
+</head>
+<body>
+
+<header class="hlavicka">
+  <div class="hlavicka__vnitrek">
+    <a class="logo" href="index.html"><span class="logo__znacka">Student<span>Base</span></span><span class="logo__produkt">Spolu na přijímačky</span></a>
+  </div>
+</header>
+
+<main class="obal obal--uzky obal--stranka zasobnik zasobnik--volny">
+  <!-- Texty = obsah/hlasky.md (ucet.*). Stránka funguje i bez JS; JS jen doplní e-mail z config.js a tlačítko Odhlásit. -->
+  <section class="prazdny-stav prazdny-stav--plny" aria-labelledby="uzavreno-nadpis">
+    <span class="ikona-kruh ikona-kruh--zelena"><svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+    <h1 class="prazdny-stav__nadpis prazdny-stav__nadpis--velky" id="uzavreno-nadpis">Děkujeme, že jste se připravovali s námi</h1>
+    <p class="text-stredni">Sezóna skončila 30. dubna a lekce už nejsou dostupné. Držíme palce u přijímaček!</p>
+  </section>
+
+  <section class="karta zasobnik" aria-labelledby="doucovani-nadpis">
+    <h2 id="doucovani-nadpis">Chcete pokračovat v doučování?</h2>
+    <p>Napište nám na <a id="kontakt-email" href="mailto:mrkvicka@studentbase.cz">mrkvicka@studentbase.cz</a> nebo se podívejte na studentbase.cz.</p>
+    <div class="radek">
+      <a class="tlacitko tlacitko--primarni tlacitko--velke" href="https://studentbase.cz">Přejít na studentbase.cz</a>
+      <a class="tlacitko tlacitko--sekundarni tlacitko--velke" id="kontakt-tlacitko" href="mailto:mrkvicka@studentbase.cz"><svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>Napsat e-mail</a>
+    </div>
+  </section>
+
+  <button class="tlacitko tlacitko--tiche" type="button" id="odhlasit" class="tlacitko tlacitko--tiche na-stred" hidden>Odhlásit se</button>
+</main>
+
+<footer class="paticka-stranky"><div class="paticka-motiv"><span>Vzhled:</span>
+    <div class="prepinac prepinac--motiv" role="group" aria-label="Vzhled">
+      <button class="prepinac__volba" type="button" data-motiv-nastav="svetly" aria-pressed="false">Světlý</button>
+      <button class="prepinac__volba" type="button" data-motiv-nastav="tmavy" aria-pressed="false">Tmavý</button>
+      <button class="prepinac__volba" type="button" data-motiv-nastav="auto" aria-pressed="true">Podle zařízení</button>
+    </div>
+  </div></footer>
+<script type="module">
+  import { SOS_EMAIL } from './js/config.js';
+
+  // E-mail z konfigurace (statický text výše je záloha bez JS)
+  for (const a of [document.getElementById('kontakt-email'), document.getElementById('kontakt-tlacitko')]) {
+    a.href = `mailto:${SOS_EMAIL}?subject=${encodeURIComponent('Pokračování v doučování')}`;
+  }
+  document.getElementById('kontakt-email').textContent = SOS_EMAIL;
+
+  // Odhlásit — jen když je někdo přihlášený
+  try {
+    const { aktualniUzivatel, odhlasit } = await import('./js/supabase.js');
+    if (await aktualniUzivatel()) {
+      const tlacitko = document.getElementById('odhlasit');
+      tlacitko.hidden = false;
+      tlacitko.addEventListener('click', async () => {
+        tlacitko.disabled = true;
+        try { await odhlasit(); } catch (e) { console.error(e); }
+        location.replace('index.html');
+      });
+    }
+  } catch (e) {
+    console.error(e); // bez spojení se serverem prostě bez tlačítka
+  }
+</script>
+</body>
+</html>

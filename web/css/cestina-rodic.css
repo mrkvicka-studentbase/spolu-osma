@@ -1,0 +1,194 @@
+/* ==========================================================================
+   cestina-rodic.css — bloky karty rodiče pro nové vstupy češtiny (web/js/rodic-cj.js).
+   Jen proměnné design systému (design-system.css) → tmavý motiv (R26) bez vlastních barev.
+   Prefix .cjr- (čeština, rodič): nekoliduje se vstupy dítěte (.cj-, web/css/cestina.css).
+   Bez media queries: vše se zalamuje samo, na 375 px bez vodorovného posuvníku.
+   ========================================================================== */
+
+/* ---------- věta po slovech (klik_ve_textu, oznac_role) ---------- */
+.cjr-veta {
+  margin: 0;
+  font-size: var(--pismo-stredni);
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+.cjr-veta__slovo { border-radius: var(--polomer-s); padding: 0 0.12em; }
+.cjr-veta__slovo--klikaci { border-bottom: 2px dotted var(--barva-okraj-pole); }       /* náhled: na slovo se dá kliknout */
+.cjr-veta__slovo--podtrzene { border-bottom: 2px solid var(--barva-silna); }          /* oznac_role: slovo, u kterého dítě vybírá */
+.cjr-veta__slovo--vybrano {                                                            /* co vybralo dítě (ne hodnocení) */
+  background: var(--barva-navy-plocha);
+  box-shadow: inset 0 0 0 1px var(--barva-navy-obrys);
+  font-weight: var(--pismo-vaha-polotucne);
+}
+.cjr-veta__slovo--spravne {                                                            /* papír: správná odpověď */
+  background: var(--barva-zelena-plocha);
+  box-shadow: inset 0 0 0 1px var(--barva-zelena-obrys);
+  font-weight: var(--pismo-vaha-tucne);
+}
+/* místo mezi slovy (klik_ve_textu s cil: mezery) */
+.cjr-veta__mezera {
+  display: inline-block;
+  width: 0.45em;
+  height: 1.1em;
+  margin: 0 0.1em;
+  vertical-align: -0.15em;
+}
+.cjr-veta__mezera--klikaci { border-left: 2px dotted var(--barva-okraj-pole); }
+.cjr-veta__mezera--vybrano { border-left: 3px solid var(--barva-silna); }
+.cjr-veta__mezera--spravne { border-left: 3px solid var(--barva-zelena-obrys); }
+
+/* ---------- doplnit_pismeno ---------- */
+.cjr-mezera {
+  display: inline-block;
+  min-width: 1.3em;
+  padding: 0 0.15em;
+  border-bottom: 2px solid var(--barva-okraj-pole);
+  border-radius: var(--polomer-s) var(--polomer-s) 0 0;
+  text-align: center;
+  font-weight: var(--pismo-vaha-tucne);
+  line-height: 1.3;
+}
+.cjr-mezera--prazdna { background: var(--barva-povrch-2); }
+.cjr-mezera--dite { background: var(--barva-navy-plocha); border-bottom-color: var(--barva-navy-obrys); }
+.cjr-mezera--nesedi { background: var(--barva-nesedi-plocha); color: var(--barva-nesedi-text); border-bottom-color: var(--barva-nesedi-obrys); }
+.cjr-mezera--spravne { background: var(--barva-zelena-plocha); border-bottom-color: var(--barva-zelena-obrys); }
+
+/* ---------- náhled „Co vidí dítě" ---------- */
+.cjr-nahled { display: flex; flex-direction: column; gap: var(--mezera-2); min-width: 0; }
+.cjr-nahled__popisek { margin: 0; font-size: var(--pismo-maly); color: var(--barva-text-tlumeny); }
+.cjr-nahled__kategorie { display: block; font-size: var(--pismo-maly); font-weight: var(--pismo-vaha-polotucne); margin-bottom: var(--mezera-1); }
+.cjr-nahled__poslech {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--mezera-2);
+  margin: 0;
+  padding: var(--mezera-2) var(--mezera-3);
+  border-radius: var(--polomer-m);
+  background: var(--barva-navy-plocha);
+}
+.cjr-nahled__poslech .ikona { flex: none; margin-top: 0.15em; }
+.cjr-nahled__otazka { margin: 0; font-weight: var(--pismo-vaha-polotucne); }
+
+.cjr-nabidka {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--mezera-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cjr-stitek {
+  padding: var(--mezera-1) var(--mezera-3);
+  border: 1px solid var(--barva-okraj-silny);
+  border-radius: var(--polomer-m);
+  background: var(--barva-povrch);
+  overflow-wrap: anywhere;
+}
+.cjr-pole {
+  min-height: 2.75rem;
+  padding: var(--mezera-2) var(--mezera-3);
+  border: 1px solid var(--barva-okraj-pole);
+  border-radius: var(--polomer-m);
+  background: var(--barva-povrch);
+}
+.cjr-pole__napoveda { color: var(--barva-placeholder); }
+
+/* přehrávač (jen papírový režim — rodič pouští nahrávku) */
+.cjr-audio { display: flex; flex-direction: column; gap: var(--mezera-1); min-width: 0; }
+.cjr-audio__popisek { font-size: var(--pismo-maly); color: var(--barva-text-tlumeny); }
+.cjr-audio__prehravac { width: 100%; max-width: 100%; }
+.cjr-audio-seznam { display: flex; flex-direction: column; gap: var(--mezera-2); }
+.cjr-audio-seznam > p { margin: 0; }
+
+/* diktát: text sbalený, pod ním sbalené „Číst sám" */
+.cjr-diktat-text__vety,
+.cjr-spravne__seznam { margin: 0; padding-left: 1.4em; display: flex; flex-direction: column; gap: var(--mezera-1); }
+.cjr-cist-sam-blok { margin-top: var(--mezera-3); }
+.cjr-cist-sam-blok .rozbalovaci__obsah { display: flex; flex-direction: column; gap: var(--mezera-3); align-items: flex-start; }
+.cjr-cist-sam {
+  margin: 0;
+  padding-left: 1.4em;
+  font-size: var(--pismo-velke);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: var(--mezera-3);
+  overflow-wrap: anywhere;
+}
+
+/* ---------- „Dítě odevzdalo:" ---------- */
+.stav-zaka:has(.cjr-odpoved) { align-items: flex-start; }  /* ikona a Obnovit nahoře u dlouhého bloku (jako .poradi-rodic) */
+.cjr-odpoved {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mezera-2);
+  margin-top: var(--mezera-2);
+  font-size: var(--pismo-zaklad);
+  line-height: 1.45;
+  min-width: 0;
+}
+.cjr-odpoved__krok {
+  margin: 0;
+  padding-top: var(--mezera-2);
+  border-top: 1px solid var(--barva-okraj);
+  font-size: var(--pismo-maly);
+  font-weight: var(--pismo-vaha-tucne);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--barva-text-tlumeny);
+}
+.cjr-odpoved .cjr-veta { font-size: var(--pismo-zaklad); }
+.cjr-odpoved__radek { margin: 0; overflow-wrap: anywhere; }
+.stav-zaka__text .cjr-odpoved__stitek { display: inline; }
+.cjr-odpoved__radek--nesedi {
+  padding: var(--mezera-1) var(--mezera-2);
+  border-radius: var(--polomer-s);
+  background: var(--barva-nesedi-plocha);
+  color: var(--barva-nesedi-text);
+}
+.cjr-odpoved__chyba {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mezera-1);
+  padding: var(--mezera-2) var(--mezera-3);
+  border-left: 3px solid var(--barva-oranzova-obrys);
+  border-radius: 0 var(--polomer-s) var(--polomer-s) 0;
+  background: var(--barva-oranzova-plocha);
+}
+.cjr-odpoved__chyba p { margin: 0; overflow-wrap: anywhere; }
+.stav-zaka__text .cjr-odpoved__chyba strong,
+.stav-zaka__text .cjr-diktat-porovnani strong { display: inline; }
+.cjr-odpoved__otazka { font-style: italic; }
+.cjr-odpoved__otazka strong { font-style: normal; }
+
+/* diktát: věta → dítě napsalo → má být → otázka (karty pod sebou, žádná široká tabulka) */
+.cjr-diktat-porovnani { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--mezera-2); }
+.cjr-diktat-porovnani__radek {
+  padding: var(--mezera-2) var(--mezera-3);
+  border: 1px solid var(--barva-okraj);
+  border-radius: var(--polomer-m);
+  background: var(--barva-povrch);
+}
+.cjr-diktat-porovnani__radek dl {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: var(--mezera-1) var(--mezera-3);
+  margin: 0;
+}
+.cjr-diktat-porovnani__radek dt { font-size: var(--pismo-maly); color: var(--barva-text-tlumeny); }
+.cjr-diktat-porovnani__radek dd { margin: 0; overflow-wrap: anywhere; }
+.cjr-diktat-porovnani__radek .cjr-diktat-porovnani__otazka { grid-column: 1 / -1; }   /* otázka přes celou šířku */
+dd.cjr-diktat-porovnani__otazka { font-style: italic; }
+.cjr-diktat-porovnani__dite { color: var(--barva-nesedi-text); font-weight: var(--pismo-vaha-polotucne); }
+
+/* ---------- papírový režim ---------- */
+.cjr-spravne { display: flex; flex-direction: column; gap: var(--mezera-2); min-width: 0; }
+.cjr-spravne .cjr-odpoved__radek { font-size: var(--pismo-stredni); }
+.cjr-papir__volba { flex-wrap: wrap; }
+.cjr-papir__volba .tlacitko { flex: 1 1 8rem; }
+
+/* ---------- slovníček pojmů v úvodu lekce ---------- */
+.cjr-slovnicek { margin-top: var(--mezera-3); }
+.cjr-slovnicek__seznam { margin: 0; display: flex; flex-direction: column; gap: var(--mezera-2); }
+.cjr-slovnicek__seznam dt { font-weight: var(--pismo-vaha-tucne); }
+.cjr-slovnicek__seznam dd { margin: 0 0 var(--mezera-1); color: var(--barva-text-tlumeny); overflow-wrap: anywhere; }

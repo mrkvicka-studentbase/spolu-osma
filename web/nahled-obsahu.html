@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Náhled obsahu lekce — vývoj</title>
+
+<!-- Motiv (R26): před CSS, ať stránka neblikne. spolu.motiv = svetly | tmavy | auto (výchozí auto = podle zařízení) -->
+<script>(function(){var K='spolu.motiv',d=document.documentElement,mq=window.matchMedia?matchMedia('(prefers-color-scheme: dark)'):null;
+function volba(){try{var v=localStorage.getItem(K);return v==='svetly'||v==='tmavy'?v:'auto'}catch(e){return 'auto'}}
+function pouzij(){var v=volba();d.setAttribute('data-motiv',v==='auto'?(mq&&mq.matches?'tmavy':'svetly'):v);d.setAttribute('data-motiv-volba',v);
+var b=document.querySelectorAll('[data-motiv-nastav]');for(var i=0;i<b.length;i++)b[i].setAttribute('aria-pressed',String(b[i].getAttribute('data-motiv-nastav')===v))}
+function nastav(v){try{localStorage.setItem(K,v==='svetly'||v==='tmavy'?v:'auto')}catch(e){}pouzij()}
+if(mq&&mq.addEventListener)mq.addEventListener('change',pouzij);
+addEventListener('storage',function(e){if(e.key===K)pouzij()});
+document.addEventListener('click',function(e){var t=e.target&&e.target.closest?e.target.closest('[data-motiv-nastav]'):null;if(t)nastav(t.getAttribute('data-motiv-nastav'))});
+document.addEventListener('DOMContentLoaded',pouzij);
+window.spoluMotiv={volba:volba,nastav:nastav,pouzij:pouzij};pouzij()})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/design-system.css">
+</head>
+<body>
+<!--
+  Vývojářský náhled obsahu (není odkazovaný z webu).
+  Použití: z KOŘENE repa `python -m http.server 8771 --bind 127.0.0.1`
+           → http://127.0.0.1:8771/web/nahled-obsahu.html?lekce=P1&lokalne=1
+  Bez lokalne=1 čte lekci z DB (vyžaduje přihlášení).
+-->
+<main class="obal obal--stranka zasobnik zasobnik--volny" id="obsah"></main>
+
+<script type="module">
+import { el, ikona, param, nacitani, chybaStranky } from './js/ui.js';
+import { nacistKnihovny, nactiLekciObsah, renderMarkdown, renderReseni, normalizujOtazku, rozdelKontrolu, NAZVY_TYPU, nazevKapitoly } from './js/obsah.js';
+
+const koren = document.getElementById('obsah');
+const md = (text, inline = false) => renderMarkdown(text, { inline });
+
+/** Blok s nadpisem a Markdown textem (jen když text existuje). */
+function sekce(nadpis, text, { inline = false } = {}) {
+  if (!text) return null;
+  return el('section', { class: 'zasobnik zasobnik--tesny' },
+    el('h3', { class: 'nadpis-sekce', text: nadpis }),
+    el('div', null, md(text, inline)));
+}
+
+function vstupKroku(krok) {
+  const v = krok.vstup || {};
+  if (v.typ === 'dlazdice') {
+    const sloupec = v.moznosti.some((m) => m.stitek);
+    return el('div', { class: ['dlazdice-mrizka', sloupec && 'dlazdice-mrizka--sloupec'] }, v.moznosti.map((m) =>
+      el('button', { class: ['dlazdice', sloupec && 'dlazdice--radek', m.spravne && 'je-spravne'], type: 'button', 'aria-pressed': 'false', dataset: { id: m.id } },
+        el('span', { class: 'dlazdice__text' },
+          m.stitek ? el('span', { class: 'dlazdice__stitek', text: m.stitek }) : null,
+          el('span', { class: 'dlazdice__vyraz' }, md(m.text, true))),
+        el('span', { class: 'dlazdice__znak dlazdice__znak--spravne' }, ikona('fajfka')))));
+  }
+  const spravne = krok.spravne ? JSON.stringify(krok.spravne) : '—';
+  return el('p', { class: 'text-tlumeny' }, `Vstup: ${v.typ}${v.jednotka ? ` (${v.jednotka})` : ''} · správně: ${spravne}`);
+}
+
+function semaforBlok(barva, text) {
+  const { text: proDite, kontrola } = rozdelKontrolu(text);
+  return el('div', { class: `semafor-vysledek semafor-vysledek--${barva}` },
+    el('div', { class: 'semafor-vysledek__barva', text: barva[0].toUpperCase() + barva.slice(1) }),
+    el('div', { class: 'semafor-vysledek__doporuceni' }, md(proDite)),
+    kontrola && el('details', { class: 'rozbalovaci' },
+      el('summary', null, 'Ukázat kontrolu'),
+      el('div', { class: 'rozbalovaci__obsah' }, md(kontrola))));
+}
+
+function uloha(u, i) {
+  const t = u.tahak || {};
+  return el('article', { class: 'karta zasobnik', id: u.id },
+    el('div', { class: 'radek' },
+      el('span', { class: 'stitek stitek--navy', text: `Úloha ${i + 1} · ${u.id}` }),
+      el('span', { class: 'stitek', text: NAZVY_TYPU[u.typ] || u.typ }),
+      el('span', { class: 'stitek', text: `${u.cas_min} min` }),
+      el('span', { class: 'text-tlumeny', text: u.zdroj })),
+
+    el('div', { class: 'karta-ulohy' }, el('div', { class: 'karta-ulohy__zadani zadani' }, md(u.zadani))),
+
+    u.kroky.map((k) => el('section', { class: 'krok' },
+      el('span', { class: 'krok__cislo', text: k.id }),
+      el('h3', { class: 'krok__popisek' }, md(k.popisek, true)),
+      vstupKroku(k))),
+
+    el('h2', { text: 'Tahák rodiče' }),
+    sekce('O co jde', t.vysvetleni),
+    t.otazky && el('section', { class: 'zasobnik zasobnik--tesny' },
+      el('h3', { class: 'nadpis-sekce', text: 'Otázky' }),
+      el('ol', { class: 'otazky' }, t.otazky.map(normalizujOtazku).map((o, j) =>
+        el('li', { class: 'otazka' }, el('span', { class: 'otazka__uroven' },
+          o.k ? el('span', { class: 'otazka__k', text: o.k }) : null, `Otázka ${j + 1}`),
+          el('p', { class: 'otazka__text' }, md(o.text, true)))))),
+    sekce('Otočená role', t.otocena_role),
+    sekce('Vzorová odpověď', t.otocena_role_odpoved),
+    sekce('Typická chyba', t.typicka_chyba),
+    t.reseni ? el('section', { class: 'zasobnik zasobnik--tesny' },
+      el('h3', { class: 'nadpis-sekce', text: 'Řešení' }), renderReseni(t.reseni)) : null,
+
+    el('h2', { text: 'Semafor' }),
+    ['zelena', 'oranzova', 'cervena'].map((b) => u.semafor?.[b] && semaforBlok(b, u.semafor[b])),
+
+    el('h2', { text: 'Tisk' }),
+    u.tisk?.zadani ? el('div', { class: 'karta karta--tesna' }, md(u.tisk.zadani)) : el('p', { text: '(chybí tisk.zadani)' }));
+}
+
+async function start() {
+  const id = param('lekce') || 'P1';
+  nacitani(koren, `Načítám lekci ${id}…`);
+  try {
+    const [lekce] = await Promise.all([nactiLekciObsah(id), nacistKnihovny()]);
+    koren.removeAttribute('aria-busy');
+    document.title = `Náhled ${lekce.id}: ${lekce.tema}`;
+    koren.replaceChildren(...[
+      el('header', { class: 'zasobnik zasobnik--tesny' },
+        el('p', { class: 'nadpis-sekce', text: `Náhled obsahu · ${lekce.faze} · týden ${lekce.tyden} · pořadí ${lekce.poradi}` }),
+        el('h1', { text: `${lekce.id}: ${lekce.tema}` }),
+        el('p', { class: 'text-tlumeny', text: `Kapitola: ${nazevKapitoly(lekce.kapitola)} · ${lekce.cas_min} min · varianta ${lekce.varianta}` })),
+      sekce('Cíl pro rodiče', lekce.cil_pro_rodice),
+      sekce('Než začnete (úvod pro rodiče)', lekce.uvod_pro_rodice),
+      lekce.ulohy.map(uloha),
+      lekce.kontrola && el('p', { class: 'text-tlumeny', text: `Kontrola obsahu: ${lekce.kontrola.jistota} (${lekce.kontrola.zkontroloval}, ${lekce.kontrola.datum})` }),
+    ].flat().filter(Boolean));
+  } catch (e) {
+    console.error(e);
+    chybaStranky(koren, e.message || String(e));
+  }
+}
+
+start();
+</script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+{
+  "id": "F2-VZOR-BLOK",
+  "typ": "blok",
+  "faze": "faze2",
+  "tyden": 8,
+  "poradi": 1,
+  "tema": "Blok 11 (vzor)",
+  "kapitola": "mix",
+  "varianta": "z9",
+  "cil_pro_rodice": "Dítě vyřeší 4 úlohy v tempu testu (17 minut) a pak s vámi projde, co nešlo.",
+  "uvod_pro_rodice": "Čtyři úlohy z různých částí testu za 17 minut.",
+  "uvod_pravidla": [
+    { "znak": "1.", "text": "nejdřív všechny čtyři úlohy bez otázek" },
+    { "znak": "2.", "text": "potom společné procházení s otázkami" }
+  ],
+  "cas_min": 17,
+  "pomucky": ["sešit", "propiska", "tužka", "pravítko", "kružítko"],
+  "ulohy": [
+    {
+      "id": "F2-VZOR-BLOK-U1",
+      "typ": "rozcvicka",
+      "cas_min": 3,
+      "pozice": 2,
+      "kapitola": "zlomky",
+      "zdroj": "vlastní (vzorová lekce pro test frontendu)",
+      "zadani": "Úloha jako č. 2 v testu:\n\n$$\\frac{5}{6} - \\frac{1}{4}$$\n\nVýsledek zapiš v základním tvaru.",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "2.1",
+          "vstup": { "typ": "zlomek" },
+          "spravne": { "c": 7, "j": 12 },
+          "zname_chyby": [ { "c": 4, "j": 2, "typ_chyby": "scital-citatele-i-jmenovatele" } ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Zlomky s různým jmenovatelem se odčítají až po převedení na společného jmenovatele.",
+        "reseni": "$\\frac{10}{12} - \\frac{3}{12}$ (společný jmenovatel 12)\n\n**Výsledek:** $\\frac{7}{12}$",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co máš spočítat.“",
+          "„Jaký jmenovatel mají oba zlomky společný?“",
+          "„Kolik dvanáctin je pět šestin?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč nejde odečíst čitatele a jmenovatele zvlášť.“",
+        "typicka_chyba": "Dítě odečte zvlášť čitatele a zvlášť jmenovatele. Podívejte se na obrazovku dítěte."
+      },
+      "semafor": {
+        "zelena": "Zvládnuto. Pochvalte a jděte dál.",
+        "oranzova": "Zítra 5 minut: dva rozdíly zlomků se společným jmenovatelem.",
+        "cervena": "Dnes stačí. Zítra začněte lekcí o zlomcích z Fáze 1."
+      },
+      "tisk": { "zadani": "Úloha jako č. 2 v testu: $$\\frac{5}{6} - \\frac{1}{4}$$ Výsledek zapiš v základním tvaru." }
+    },
+    {
+      "id": "F2-VZOR-BLOK-U2",
+      "typ": "detektiv",
+      "cas_min": 4,
+      "pozice": 3,
+      "kapitola": "vyrazy",
+      "zdroj": "vlastní (vzorová lekce pro test frontendu)",
+      "zadani": "Úloha jako č. 3 v testu. Petr zapsal do archu postup:\n\n1. řádek: $(x + 2)^2 - x^2$\n\n2. řádek: $x^2 + 4 - x^2$\n\n3. řádek: $4$\n\nNajdi řádek s chybou a zapiš správný výsledek.",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou.",
+          "vstup": { "typ": "dlazdice", "moznosti": [
+            { "id": "a", "stitek": "1. řádek", "text": "$(x + 2)^2 - x^2$", "spravne": false, "typ_chyby": "oznacil-radek-pred-chybou" },
+            { "id": "b", "stitek": "2. řádek", "text": "$x^2 + 4 - x^2$", "spravne": true },
+            { "id": "c", "stitek": "3. řádek", "text": "$4$", "spravne": false, "typ_chyby": "nasel-az-dusledek" }
+          ] }
+        },
+        {
+          "id": "final",
+          "popisek": "Správný výsledek",
+          "vstup": { "typ": "vyraz", "promenne": ["x"] },
+          "spravne": { "vyraz": "4x+4" },
+          "zname_chyby": [ { "vyraz": "4", "typ_chyby": "dvojclen-na-druhou-bez-soucinu" } ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Druhá mocnina závorky má tři členy: čtverec, dvojnásobný součin a čtverec. Petr vynechal prostřední.",
+        "reseni": "$x^2 + 4x + 4 - x^2$ (dvojnásobný součin $4x$)\n\n**Výsledek:** $4x + 4$",
+        "otazky": [
+          "„Co se v každém řádku stalo?“",
+          "„Kolik členů má mít $(x + 2)^2$?“",
+          "„Podívej se na vzorec na poslední straně testu. Co chybí ve 2. řádku?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč $(x + 2)^2$ není $x^2 + 4$.“",
+        "typicka_chyba": "Dítě označí 3. řádek, protože tam je špatný výsledek. Chyba ale vznikla o řádek dřív."
+      },
+      "semafor": {
+        "zelena": "Zvládnuto. Pochvalte a jděte dál.",
+        "oranzova": "Zítra 5 minut: umocnit dvě závorky podle vzorce.",
+        "cervena": "Dnes stačí. Zítra začněte lekcí o vzorcích."
+      },
+      "tisk": { "zadani": "Petr zapsal postup: 1. řádek $(x + 2)^2 - x^2$, 2. řádek $x^2 + 4 - x^2$, 3. řádek $4$. Zakroužkuj řádek s chybou a zapiš správný výsledek." }
+    },
+    {
+      "id": "F2-VZOR-BLOK-U3",
+      "typ": "cermat",
+      "cas_min": 6,
+      "pozice": 9,
+      "kapitola": "geometrie",
+      "zdroj": "vlastní (vzorová lekce pro test frontendu)",
+      "zadani": "Úloha jako č. 9 v testu: úsečka $AB$ má délku $6$ cm. Sestroj pravoúhlý trojúhelník $ABC$ s pravým úhlem u vrcholu $C$, ve kterém $|AC| = 3$ cm. Bod $C$ leží nad přímkou $AB$.",
+      "obrazek": "<svg viewBox=\"0 0 100 60\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"20\" y1=\"50\" x2=\"80\" y2=\"50\" stroke=\"currentColor\" stroke-width=\"0.6\"/><circle cx=\"20\" cy=\"50\" r=\"0.9\" fill=\"currentColor\"/><circle cx=\"80\" cy=\"50\" r=\"0.9\" fill=\"currentColor\"/><text x=\"16\" y=\"56\" font-size=\"5\" fill=\"currentColor\">A</text><text x=\"81\" y=\"56\" font-size=\"5\" fill=\"currentColor\">B</text></svg>",
+      "obrazek_popis": "Úsečka AB dlouhá 6 cm.",
+      "obrazek_mm": 100,
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Na čem leží vrchol $C$?",
+          "vstup": { "typ": "dlazdice", "moznosti": [
+            { "id": "a", "text": "jen na kružnici se středem $A$ a poloměrem $3$ cm", "spravne": false, "typ_chyby": "bod-na-jedne-care" },
+            { "id": "b", "text": "na Thaletově kružnici nad $AB$ i na kružnici se středem $A$ a poloměrem $3$ cm", "spravne": true },
+            { "id": "c", "text": "na kružnici se středem $B$ a poloměrem $6$ cm", "spravne": false, "typ_chyby": "thaletova-kruznice-spatny-stred" }
+          ] }
+        },
+        { "id": "final", "popisek": "Rýsuj na papír", "vstup": { "typ": "rysovani" } }
+      ],
+      "tahak": {
+        "vysvetleni": "Pravý úhel u C znamená, že C leží na Thaletově kružnici nad AB (střed v polovině AB). Druhá čára je kružnice kolem A s poloměrem 3 cm.",
+        "reseni": "Střed $S$ úsečky $AB$, Thaletova kružnice s poloměrem $3$ cm.\n\nKružnice se středem $A$ a poloměrem $3$ cm.\n\n**Výsledek:** $C$ je průsečík obou kružnic nad $AB$.",
+        "otazky": [
+          "„Co znamená, že je u C pravý úhel?“",
+          "„Kde má Thaletova kružnice střed?“",
+          "„Kde se protnou obě kružnice?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč bod C nestačí dát jen na jednu kružnici.“",
+        "typicka_chyba": "Dítě dá střed Thaletovy kružnice do bodu A. Podívejte se na obrazovku dítěte.",
+        "reseni_obrazek": "<svg viewBox=\"0 0 100 60\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"50\" cy=\"50\" r=\"30\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"0.3\" stroke-dasharray=\"1.5 1.5\"/><circle cx=\"20\" cy=\"50\" r=\"30\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"0.3\" stroke-dasharray=\"1.5 1.5\"/><polygon points=\"20,50 80,50 35,24.02\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"0.8\"/><circle cx=\"50\" cy=\"50\" r=\"0.7\" fill=\"currentColor\"/><text x=\"16\" y=\"56\" font-size=\"5\" fill=\"currentColor\">A</text><text x=\"81\" y=\"56\" font-size=\"5\" fill=\"currentColor\">B</text><text x=\"49\" y=\"56\" font-size=\"5\" fill=\"currentColor\">S</text><text x=\"33\" y=\"21\" font-size=\"5\" fill=\"currentColor\">C</text></svg>",
+        "reseni_obrazek_popis": "Trojúhelník ABC, bod C je průsečík Thaletovy kružnice nad AB a kružnice kolem A s poloměrem 3 cm.",
+        "kontrola_rodice": [
+          "„Leží bod C na obou kružnicích jako na obrázku?“",
+          "„Jsou vrcholy A, B, C označené písmeny?“",
+          "„Je C nad úsečkou AB?“"
+        ]
+      },
+      "semafor": {
+        "zelena": "Zvládnuto. Pochvalte a jděte dál.",
+        "oranzova": "Zítra 5 minut: jedna Thaletova kružnice nad úsečkou 8 cm.",
+        "cervena": "Dnes stačí. Zítra začněte lekcí o konstrukcích (kde leží bod)."
+      },
+      "tisk": { "zadani": "Úsečka $AB$ má délku $6$ cm. Sestroj pravoúhlý trojúhelník $ABC$ s pravým úhlem u vrcholu $C$, ve kterém $|AC| = 3$ cm. Bod $C$ leží nad přímkou $AB$." }
+    },
+    {
+      "id": "F2-VZOR-BLOK-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "pozice": 12,
+      "kapitola": "geometrie",
+      "zdroj": "vlastní (vzorová lekce pro test frontendu)",
+      "zadani": "Úloha jako č. 12 v testu: pravoúhlý trojúhelník má odvěsny $6$ cm a $8$ cm. Jak dlouhá je přepona?\n\nA) $10$ cm, B) $14$ cm, C) $48$ cm, D) $100$ cm, E) jiná hodnota",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": { "typ": "cislo", "jednotka": "cm" },
+          "spravne": { "hodnota": 10 },
+          "zname_chyby": [ { "hodnota": 14, "typ_chyby": "pythagoras-bez-ctvercu" }, { "hodnota": 100, "typ_chyby": "zapomnel-odmocninu" } ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Přepona se počítá z Pythagorovy věty: odvěsny umocnit, sečíst a odmocnit.",
+        "reseni": "$6^2 + 8^2 = 100$\n\n**Výsledek:** $\\sqrt{100} = 10$ cm",
+        "otazky": [
+          "„Která strana je přepona?“",
+          "„Co uděláš s odvěsnami jako první?“",
+          "„Jaké číslo na druhou dá 100?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč přepona není 14 cm.“",
+        "typicka_chyba": "Dítě sečte odvěsny bez umocnění ($14$)."
+      },
+      "semafor": {
+        "zelena": "Zvládnuto. Pochvalte a jděte dál.",
+        "oranzova": "Zítra 5 minut: přepona pro odvěsny 5 a 12.",
+        "cervena": "Dnes stačí. Zítra začněte lekcí o Pythagorově větě."
+      },
+      "tisk": { "zadani": "Pravoúhlý trojúhelník má odvěsny $6$ cm a $8$ cm. Jak dlouhá je přepona? a) $10$ cm b) $14$ cm c) $48$ cm d) $100$ cm e) jiná hodnota" }
+    }
+  ],
+  "kontrola": {
+    "jistota": "nizka",
+    "poznamka": "Vzorová lekce jen pro test frontendu Fáze 2 (blok na čas, testy/data), nikdy se neseeduje.",
+    "zkontroloval": "frontend",
+    "datum": "2026-09-25"
+  }
+}

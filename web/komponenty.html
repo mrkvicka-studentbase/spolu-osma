@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Komponenty — Spolu na přijímačky</title>
+
+  <!-- Motiv (R26): před CSS, ať stránka neblikne. spolu.motiv = svetly | tmavy | auto (výchozí auto = podle zařízení) -->
+  <script>(function(){var K='spolu.motiv',d=document.documentElement,mq=window.matchMedia?matchMedia('(prefers-color-scheme: dark)'):null;
+  function volba(){try{var v=localStorage.getItem(K);return v==='svetly'||v==='tmavy'?v:'auto'}catch(e){return 'auto'}}
+  function pouzij(){var v=volba();d.setAttribute('data-motiv',v==='auto'?(mq&&mq.matches?'tmavy':'svetly'):v);d.setAttribute('data-motiv-volba',v);
+  var b=document.querySelectorAll('[data-motiv-nastav]');for(var i=0;i<b.length;i++)b[i].setAttribute('aria-pressed',String(b[i].getAttribute('data-motiv-nastav')===v))}
+  function nastav(v){try{localStorage.setItem(K,v==='svetly'||v==='tmavy'?v:'auto')}catch(e){}pouzij()}
+  if(mq&&mq.addEventListener)mq.addEventListener('change',pouzij);
+  addEventListener('storage',function(e){if(e.key===K)pouzij()});
+  document.addEventListener('click',function(e){var t=e.target&&e.target.closest?e.target.closest('[data-motiv-nastav]'):null;if(t)nastav(t.getAttribute('data-motiv-nastav'))});
+  document.addEventListener('DOMContentLoaded',pouzij);
+  window.spoluMotiv={volba:volba,nastav:nastav,pouzij:pouzij};pouzij()})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/tisk.css">
+  <style>
+    /* ---- Jen pro tuto ukázkovou stránku (vitrína), do aplikace nepatří ---- */
+    .vitrina { padding: var(--mezera-7) 0; border-bottom: 1px solid var(--barva-okraj); }
+    .vitrina > .obal > h2 { font-size: var(--pismo-nadpis); margin-bottom: var(--mezera-2); }
+    .vitrina__popis { color: var(--barva-text-tlumeny); max-width: 70ch; margin-bottom: var(--mezera-5); }
+    .vitrina__trida { font-family: ui-monospace, Consolas, monospace; font-size: 0.875rem; background: var(--barva-povrch-2); padding: 0.1em 0.4em; border-radius: 0.3em; color: var(--barva-navy); }
+    .vitrina__blok { margin-bottom: var(--mezera-6); }
+    .vitrina__blok > h3 { margin-bottom: var(--mezera-3); display: flex; flex-wrap: wrap; gap: var(--mezera-2); align-items: baseline; }
+    .vitrina__mrizka { display: grid; gap: var(--mezera-5); grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); align-items: start; }
+    .vitrina__obsah-nav { display: flex; flex-wrap: wrap; gap: var(--mezera-2); margin-top: var(--mezera-4); }
+    .vitrina__obsah-nav a { color: var(--barva-text-na-tmave); background: rgb(255 255 255 / 0.08); padding: 0.4rem 0.8rem; border-radius: 999px; text-decoration: none; font-size: 0.9375rem; }
+    .vitrina__obsah-nav a:hover { background: rgb(255 255 255 / 0.18); color: #fff; }
+    .vitrina-uvod { background: var(--barva-hlavicka); color: var(--barva-text-na-tmave); padding: var(--mezera-7) 0; }
+    .vitrina-uvod h1 { font-size: var(--pismo-titulek); }
+    .vitrina-uvod p { color: var(--barva-text-na-tmave-tlumeny); max-width: 70ch; margin-top: var(--mezera-3); }
+
+    .ramecky { display: flex; flex-wrap: wrap; gap: var(--mezera-6); align-items: flex-start; }
+    .ramec { display: flex; flex-direction: column; gap: var(--mezera-2); }
+    .ramec__stitek { font-size: 0.875rem; font-weight: 600; color: var(--barva-text-tlumeny); }
+    .ramec-telefon {
+      box-sizing: content-box;
+      width: 390px; height: 780px;
+      overflow: auto;
+      border: 10px solid #0F172A;
+      border-radius: 36px;
+      background: var(--barva-pozadi);
+      box-shadow: var(--stin-3);
+      position: relative;
+    }
+    .ramec-telefon--360 { width: 360px; }
+
+    /* ---- NÁVRH 30. 9. (zadání motivace B–D) — jen vitrína, do aplikace až po schválení ---- */
+    .navrh-karta--hotovo { background: var(--barva-zelena-plocha); border-color: var(--barva-zelena); border-left-width: 5px; }
+    .navrh-karta--hotovo .karta-lekce__tema { color: var(--barva-text); }
+    :root { --navrh-zlata-plocha: #FFF8DC; --navrh-zlata-obrys: #E0A800; }
+    :root[data-motiv="tmavy"] { --navrh-zlata-plocha: rgb(245 197 24 / 0.14); --navrh-zlata-obrys: #F5C518; }
+    .navrh-karta--hvezda { border-color: var(--navrh-zlata-obrys); background: linear-gradient(135deg, var(--navrh-zlata-plocha) 0%, var(--barva-zelena-plocha) 75%); }
+    .navrh-roh { position: absolute; top: -12px; right: -8px; width: 44px; height: 44px; }
+    .navrh-karta { position: relative; }
+    .navrh-stitek-hvezda { display: inline-flex; align-items: center; gap: 0.3em; padding: 0.15em 0.6em; border-radius: 999px; background: #FDE68A; color: #6B4E00; font-weight: 700; font-size: 0.8125rem; }
+    .navrh-odznaky { display: grid; grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr)); gap: var(--mezera-4); }
+    .navrh-odznak { display: flex; flex-direction: column; align-items: center; gap: var(--mezera-1); text-align: center; margin: 0; }
+    .navrh-odznak svg { width: 72px; height: 72px; }
+    .navrh-odznak figcaption { font-weight: 700; font-size: 0.875rem; line-height: 1.2; }
+    .navrh-odznak small { color: var(--barva-text-tlumeny); font-size: 0.75rem; line-height: 1.25; }
+    .navrh-odznak--chybi svg { filter: grayscale(1); opacity: 0.35; }
+    .navrh-odznak--chybi figcaption { color: var(--barva-text-tlumeny); }
+    .navrh-pas-odznaku { display: flex; gap: var(--mezera-2); align-items: center; overflow: hidden; }
+    .navrh-pas-odznaku svg { width: 36px; height: 36px; flex: 0 0 auto; }
+    .navrh-novy { display: flex; gap: var(--mezera-3); align-items: center; padding: var(--mezera-3) var(--mezera-4); border-radius: var(--polomer-l); background: var(--navrh-zlata-plocha); border: 2px solid var(--navrh-zlata-obrys); }
+    .navrh-novy svg { width: 64px; height: 64px; flex: 0 0 auto; }
+    .navrh-hl { width: 375px; box-sizing: border-box; background: var(--barva-hlavicka); color: #fff; padding: 8px 16px; display: flex; align-items: center; gap: 10px; border-radius: 8px; }
+    .navrh-hl .logo__znacka { font-size: 1.05rem; }
+    .navrh-hl__stred { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+    .navrh-hl__popis { font-size: 0.6875rem; color: var(--barva-text-na-tmave-tlumeny); display: flex; justify-content: space-between; white-space: nowrap; }
+    .navrh-osa { position: relative; height: 10px; }
+    .navrh-osa__pruh { position: absolute; left: 0; right: 0; top: 4px; height: 2px; background: rgb(255 255 255 / 0.25); border-radius: 2px; }
+    .navrh-osa__ubehlo { position: absolute; left: 0; top: 4px; height: 2px; background: var(--barva-zelena); border-radius: 2px; }
+    .navrh-osa__tik { position: absolute; top: 2px; width: 1px; height: 6px; background: rgb(255 255 255 / 0.4); }
+    .navrh-osa__dnes { position: absolute; top: 0; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: var(--barva-zelena); box-shadow: 0 0 0 2px var(--barva-hlavicka); }
+    .navrh-osa__cil { position: absolute; right: -2px; top: -3px; font-size: 12px; line-height: 1; }
+    .navrh-podil { height: 6px; background: rgb(255 255 255 / 0.2); border-radius: 3px; overflow: hidden; }
+    .navrh-podil > span { display: block; height: 100%; background: var(--barva-zelena); border-radius: 3px; }
+    .posuv { overflow-x: auto; padding-bottom: var(--mezera-3); width: min(1300px, calc(100vw - 48px)); position: relative; left: 50%; transform: translateX(-50%); }
+    .ramec-telefon { scrollbar-width: thin; }
+    .ramec-desktop {
+      width: 1280px;
+      border: 1px solid var(--barva-okraj-silny);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--barva-pozadi);
+      box-shadow: var(--stin-3);
+    }
+    .ramec-desktop__lista { height: 28px; background: var(--barva-okraj); display: flex; align-items: center; gap: 6px; padding: 0 12px; }
+    .ramec-desktop__lista i { width: 10px; height: 10px; border-radius: 50%; background: var(--barva-okraj-silny); display: block; }
+
+    .vzorek-barvy { display: grid; gap: var(--mezera-3); grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); }
+    .vzorek { border: 1px solid var(--barva-okraj); border-radius: var(--polomer-m); overflow: hidden; background: var(--barva-povrch); }
+    .vzorek__barva { height: 4rem; display: flex; align-items: flex-end; padding: var(--mezera-2); font-weight: 600; }
+    .vzorek__popis { padding: var(--mezera-2) var(--mezera-3); font-size: 0.875rem; line-height: 1.4; }
+    .vzorek__popis code { font-size: 0.8125rem; }
+
+    .vitrina-zaclona { min-height: 100%; background: var(--barva-zaclona); display: flex; align-items: flex-end; }
+    .vitrina-zaclona .modal__panel { width: 100%; border-radius: var(--polomer-xl) var(--polomer-xl) 0 0; box-shadow: var(--stin-3); }
+    .vitrina-modal-desktop { max-width: 40rem; box-shadow: var(--stin-3); }
+    .vitrina-toast { position: static; transform: none; width: 100%; max-width: 28rem; }
+    .typo-ukazka > * + * { margin-top: var(--mezera-3); }
+  </style>
+</head>
+<body>
+
+<!-- ==== Sada ikon (v aplikaci vkládejte cesty přímo, viz DESIGN.md) ==== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-fajfka" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-zamek" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-hodiny" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-sipka-vpravo" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-sipka-vlevo" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-obnovit" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v5h-5"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5h.01"/></symbol>
+  <symbol id="i-pozor" viewBox="0 0 24 24"><path d="M12 3.5l9 16H3z"/><path d="M12 10v4M12 16.8h.01"/></symbol>
+  <symbol id="i-bublina" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-5 4v-4H4z"/><path d="M10 9a2 2 0 1 1 2.6 1.9c-.4.2-.6.5-.6.9v.2M12 13.6h.01"/></symbol>
+  <symbol id="i-krizek" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-tiskarna" viewBox="0 0 24 24"><path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/></symbol>
+  <symbol id="i-obrazovka" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></symbol>
+  <symbol id="i-telefon" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18h2"/></symbol>
+  <symbol id="i-smazat" viewBox="0 0 24 24"><path d="M9 5h11v14H9l-6-7z"/><path d="M12 9.5l5 5M17 9.5l-5 5"/></symbol>
+  <symbol id="i-opakovat" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v5h-5"/></symbol>
+  <symbol id="i-stop" viewBox="0 0 24 24"><path d="M8 8h8v8H8z"/></symbol>
+  <symbol id="i-hledat" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.3-4.3"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></symbol>
+  <symbol id="i-prazdno" viewBox="0 0 24 24"><path d="M3 13l3-8h12l3 8v6H3z"/><path d="M3 13h5l1 2h6l1-2h5"/></symbol>
+  <symbol id="i-zarovka" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></symbol>
+  <symbol id="i-otocit" viewBox="0 0 24 24"><path d="M4 8h15l-3.5-3.5M20 16H5l3.5 3.5"/></symbol>
+  <symbol id="i-oko" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-dolu" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-sos" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M5.6 5.6l3.6 3.6M14.8 14.8l3.6 3.6M18.4 5.6l-3.6 3.6M9.2 14.8l-3.6 3.6"/></symbol>
+  <symbol id="i-uzivatel" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-kniha" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M8 7h8"/></symbol>
+  <symbol id="i-stahnout" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-tuzka" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></symbol>
+  <symbol id="i-kalkulacka" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01"/></symbol>
+</svg>
+
+<!-- ==== Úvod ==== -->
+<header class="vitrina-uvod hlavicka">
+  <div class="obal">
+    <p class="nadpis-sekce" style="color:var(--barva-zelena)">StudentBase.cz · design systém</p>
+    <h1>Spolu na přijímačky — komponenty</h1>
+    <p>Živá ukázka všech komponent. Styl: <span class="vitrina__trida" style="color:#fff;background:rgb(255 255 255 / .1)">css/design-system.css</span>, tisk: <span class="vitrina__trida" style="color:#fff;background:rgb(255 255 255 / .1)">css/tisk.css</span>. HTML vzory k okopírování jsou v <strong style="color:#fff">DESIGN.md</strong>. Rámeček telefonu má šířku 390 px (jeden 360 px), rámeček desktopu 1280 px.</p>
+    <nav class="vitrina__obsah-nav" aria-label="Obsah">
+      <a href="#zaklad">Barvy a písmo</a>
+      <a href="#tlacitka">Tlačítka a štítky</a>
+      <a href="#prehled">Přehled a karty lekcí</a>
+      <a href="#zak">Žák: úloha a vstupy</a>
+      <a href="#rodic">Rodič: tahák a semafor</a>
+      <a href="#motivace">NÁVRH 30. 9.: motivace (B–D)</a>
+      <a href="#revize">Po revizi C</a>
+      <a href="#modal">Modal režimu</a>
+      <a href="#registrace">Registrace</a>
+      <a href="#admin">Admin</a>
+      <a href="#stavy">Hlášky a stavy</a>
+      <a href="#tisk">Tisk A4</a>
+    </nav>
+    <div class="paticka-motiv" style="margin-top:var(--mezera-4)"><span>Motiv (R26):</span>
+      <div class="prepinac prepinac--motiv" role="group" aria-label="Vzhled">
+        <button class="prepinac__volba" type="button" data-motiv-nastav="svetly" aria-pressed="false">Světlý</button>
+        <button class="prepinac__volba" type="button" data-motiv-nastav="tmavy" aria-pressed="false">Tmavý</button>
+        <button class="prepinac__volba" type="button" data-motiv-nastav="auto" aria-pressed="true">Podle zařízení</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- =================================================================== -->
+<section class="vitrina" id="zaklad">
+  <div class="obal">
+    <h2>Barvy a písmo</h2>
+    <p class="vitrina__popis">Na zelené ploše vždy navy text (bílý na #1FC27E má jen 2,3 : 1). Pro zelený/oranžový/červený text se používají tmavé odstíny <span class="vitrina__trida">--barva-*-text</span>. Červená existuje jen v semaforu u rodiče; dítě vidí při chybě neutrální šedomodrou.</p>
+
+    <div class="vzorek-barvy">
+      <div class="vzorek"><div class="vzorek__barva" style="background:var(--barva-navy);color:#fff">Navy</div><div class="vzorek__popis"><code>--barva-navy</code> #0F172A<br>bílý text 17,9 : 1</div></div>
+      <div class="vzorek"><div class="vzorek__barva" style="background:var(--barva-zelena);color:var(--barva-navy)">Zelená</div><div class="vzorek__popis"><code>--barva-zelena</code> #1FC27E<br>navy text 7,7 : 1</div></div>
+      <div class="vzorek"><div class="vzorek__barva" style="background:var(--barva-zelena-plocha);color:var(--barva-zelena-text)">Zelený text</div><div class="vzorek__popis"><code>--barva-zelena-text</code> #0B7A4B<br><code>--barva-zelena-plocha</code> #E8F8F0</div></div>
+      <div class="vzorek"><div class="vzorek__barva" style="background:var(--barva-oranzova);color:var(--barva-navy)">Oranžová</div><div class="vzorek__popis"><code>--barva-oranzova</code> #F5A623<br>navy text 8,8 : 1</div></div>
+      <div class="vzorek"><div class="vzorek__barva" style="background:var(--barva-oranzova-plocha);color:var(--barva-oranzova-text)">Oranžový text</div><div class="vzorek__popis"><code>--barva-oranzova-text</code> #8A5300<br><code>--barva-oranzova-plocha</code> #FEF4E2</div></div>
+      <div class="vzorek"><div class="vzorek__barva" style="background:var(--barva-cervena);color:var(--barva-navy)">Červená</div><div class="vzorek__popis"><code>--barva-cervena</code> #E5484D<br>jen semafor rodiče</div></div>
+      <div class="vzorek"><div class="vzorek__barva" style="background:var(--barva-cervena-plocha);color:var(--barva-cervena-text)">Červený text</div><div class="vzorek__popis"><code>--barva-cervena-text</code> #B42318<br><code>--barva-cervena-plocha</code> #FDECEC</div></div>
+      <div class="vzorek"><div class="vzorek__barva" style="background:var(--barva-nesedi-plocha);color:var(--barva-nesedi-text)">Nesedí (dítě)</div><div class="vzorek__popis"><code>--barva-nesedi-text</code> #3E5170<br><code>--barva-nesedi-plocha</code> #EEF2F7</div></div>
+      <div class="vzorek"><div class="vzorek__barva" style="background:var(--barva-pozadi);color:var(--barva-text-tlumeny)">Pozadí</div><div class="vzorek__popis"><code>--barva-pozadi</code> #F8FAFC<br>tlumený text #475569 7,2 : 1</div></div>
+    </div>
+
+    <div class="vitrina__blok" style="margin-top:var(--mezera-6)">
+      <h3>Písmo Sora (400 / 600 / 700)</h3>
+      <div class="karta typo-ukazka">
+        <p style="font-size:var(--pismo-titulek);font-weight:700;line-height:1.2">Titulek 36 px — Připravíme to spolu</p>
+        <h1>Nadpis 28 px — Týden 1: Pilot</h1>
+        <h2>Nadpis 22 px — Pořadí operací</h2>
+        <p style="font-size:var(--pismo-zadani)">Zadání žáka 24 px — Karel koupil 3 sešity po 24 Kč.</p>
+        <p style="font-size:var(--pismo-stredni)">Tahák 18 px — „Řekni mi vlastními slovy, co po tobě chtějí."</p>
+        <p>Základ 16 px — minimum pro text u rodiče. Čísla: 0 1 2 3 4 5 6 7 8 9, 3,75 · ½</p>
+        <p class="nadpis-sekce">Nadpis sekce · 14 px</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<section class="vitrina" id="tlacitka">
+  <div class="obal">
+    <h2>Tlačítka, štítky, semafor znaky, průběh, odpočet</h2>
+    <p class="vitrina__popis">Min. výška 44 px (<span class="vitrina__trida">--dotyk-min</span>), velká 56 px pro hlavní akce rodiče a klávesnici.</p>
+
+    <div class="vitrina__mrizka">
+      <div class="vitrina__blok">
+        <h3>Tlačítka <span class="vitrina__trida">.tlacitko</span></h3>
+        <div class="zasobnik">
+          <div class="radek">
+            <button class="tlacitko tlacitko--primarni">Začít lekci</button>
+            <button class="tlacitko tlacitko--sekundarni">Zpět</button>
+            <button class="tlacitko tlacitko--tiche">Zrušit</button>
+          </div>
+          <div class="radek">
+            <button class="tlacitko tlacitko--navy">Přihlásit se</button>
+            <button class="tlacitko tlacitko--primarni" disabled>Neaktivní</button>
+            <button class="tlacitko tlacitko--sekundarni tlacitko--ikona" aria-label="Obnovit"><svg class="ikona" aria-hidden="true"><use href="#i-obnovit"/></svg></button>
+          </div>
+          <button class="tlacitko tlacitko--primarni tlacitko--velke tlacitko--cela-sirka">Další úloha <svg class="ikona" aria-hidden="true"><use href="#i-sipka-vpravo"/></svg></button>
+          <div class="radek">
+            <button class="tlacitko tlacitko--primarni je-nacitani"><span class="tocitko" aria-hidden="true"></span> Ukládám…</button>
+            <button class="tlacitko tlacitko--male tlacitko--sekundarni">Malé (admin)</button>
+          </div>
+          <div class="radek" style="background:var(--barva-navy);padding:var(--mezera-3);border-radius:var(--polomer-m)">
+            <button class="tlacitko tlacitko--na-tmave">Na tmavém</button>
+            <button class="tlacitko tlacitko--primarni">Registrace</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="vitrina__blok">
+        <h3>Štítky <span class="vitrina__trida">.stitek</span></h3>
+        <div class="radek" style="margin-bottom:var(--mezera-5)">
+          <span class="stitek">Nezačato</span>
+          <span class="stitek stitek--navy">Probíhá · 2/4</span>
+          <span class="stitek stitek--zelena"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg>Hotovo</span>
+          <span class="stitek stitek--oranzova">Oranžová</span>
+          <span class="stitek stitek--cervena">Červená</span>
+          <span class="stitek stitek--tmavy">Pilot</span>
+        </div>
+
+        <h3>Semafor znaky <span class="vitrina__trida">.semafor-znak</span></h3>
+        <div class="radek" style="margin-bottom:var(--mezera-3)">
+          <span class="semafor-znak semafor-znak--zelena" role="img" aria-label="Zelená"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg></span>
+          <span class="semafor-znak semafor-znak--oranzova" role="img" aria-label="Oranžová"><svg class="ikona" aria-hidden="true"><use href="#i-opakovat"/></svg></span>
+          <span class="semafor-znak semafor-znak--cervena" role="img" aria-label="Červená"><svg class="ikona ikona--plna" aria-hidden="true"><use href="#i-stop"/></svg></span>
+          <span class="semafor-znak semafor-znak--zadna" role="img" aria-label="Zatím bez barvy"></span>
+          <span class="semafor-znak semafor-znak--velka semafor-znak--zelena" role="img" aria-label="Zelená"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg></span>
+        </div>
+        <div class="semafor-tecky" role="img" aria-label="Úlohy: zelená, zelená, oranžová, zelená" style="margin-bottom:var(--mezera-5)">
+          <span class="semafor-znak semafor-znak--mala semafor-znak--zelena"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg></span>
+          <span class="semafor-znak semafor-znak--mala semafor-znak--zelena"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg></span>
+          <span class="semafor-znak semafor-znak--mala semafor-znak--oranzova"><svg class="ikona" aria-hidden="true"><use href="#i-opakovat"/></svg></span>
+          <span class="semafor-znak semafor-znak--mala semafor-znak--zelena"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg></span>
+        </div>
+      </div>
+
+      <div class="vitrina__blok">
+        <h3>Průběh <span class="vitrina__trida">.prubeh</span></h3>
+        <div class="prubeh" style="margin-bottom:var(--mezera-5)">
+          <span>Úloha 2/4</span>
+          <ol class="prubeh__kroky" aria-hidden="true">
+            <li class="prubeh__krok je-hotovo"></li>
+            <li class="prubeh__krok je-aktualni"></li>
+            <li class="prubeh__krok"></li>
+            <li class="prubeh__krok"></li>
+          </ol>
+        </div>
+
+        <h3>Odpočet <span class="vitrina__trida">.odpocet</span></h3>
+        <div class="zasobnik zasobnik--tesny">
+          <div class="radek">
+            <div class="odpocet" role="timer" aria-label="Zbývá 14 minut 32 sekund"><svg class="ikona" aria-hidden="true"><use href="#i-hodiny"/></svg><span class="odpocet__cas">14:32</span></div>
+            <div class="odpocet je-vyprselo"><svg class="ikona" aria-hidden="true"><use href="#i-hodiny"/></svg><span>Čas vypršel</span></div>
+          </div>
+          <div class="hlaska hlaska--info">
+            <svg class="ikona" aria-hidden="true"><use href="#i-info"/></svg>
+            <div class="hlaska__text">Doporučený čas vypršel — můžete dokončit nebo zavřít.</div>
+          </div>
+          <div class="radek">
+            <div class="odpocet" id="ukazkaOdpocet" role="timer"><svg class="ikona" aria-hidden="true"><use href="#i-hodiny"/></svg><span class="odpocet__cas">0:10</span></div>
+            <button class="tlacitko tlacitko--tiche" id="spustitOdpocet">Spustit ukázku 10 s</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<section class="vitrina" id="prehled">
+  <div class="obal">
+    <h2>Týdenní přehled a karty lekcí</h2>
+    <p class="vitrina__popis">Karta lekce <span class="vitrina__trida">.karta-lekce</span> se stavy <span class="vitrina__trida">--nezacato</span>, <span class="vitrina__trida">--probiha</span>, <span class="vitrina__trida">--hotovo</span>, <span class="vitrina__trida">--zamceno</span>. Mřížka <span class="vitrina__trida">.mrizka-karet</span> je na telefonu jednosloupcová, na PC víc sloupců — bez media queries.</p>
+
+    <div class="ramecky">
+      <!-- ---- Telefon: přehled rodiče ---- -->
+      <div class="ramec">
+        <span class="ramec__stitek">Telefon 390 px — rodič, přehled</span>
+        <div class="ramec-telefon">
+          <div class="stranka-rodic">
+            <header class="hlavicka">
+              <div class="hlavicka__vnitrek">
+                <a class="logo" href="#"><span class="logo__znacka">Student<span>Base</span></span></a>
+                <button class="tlacitko tlacitko--na-tmave tlacitko--ikona" aria-label="Menu"><svg class="ikona" aria-hidden="true"><use href="#i-menu"/></svg></button>
+              </div>
+            </header>
+            <div class="stranka-rodic__obsah">
+              <div class="prehled-hlavicka">
+                <div class="prepinac" role="group" aria-label="Dítě">
+                  <button class="prepinac__volba" aria-pressed="true">Eliška</button>
+                  <button class="prepinac__volba" aria-pressed="false">Tomáš</button>
+                </div>
+                <p class="nadpis-sekce">Pilot · týden 1</p>
+                <h1>Eliščin týden</h1>
+                <div class="prehled-hlavicka__tyden">
+                  <div class="radek radek--mezi"><span>Tento týden: 4 lekce, hotovo 1</span></div>
+                  <div class="pruh" role="progressbar" aria-valuemin="0" aria-valuemax="4" aria-valuenow="1" aria-label="Hotovo 1 ze 4 lekcí"><span class="pruh__vypln" style="width:25%"></span></div>
+                </div>
+              </div>
+
+              <a class="karta karta--tesna radek radek--nezalamovat" href="#" style="text-decoration:none;color:inherit">
+                <span class="ikona-kruh"><svg class="ikona" aria-hidden="true"><use href="#i-kniha"/></svg></span>
+                <span><strong>Jak vést lekci</strong><br><span class="text-tlumeny">Přečtěte si jednou, 3 minuty.</span></span>
+              </a>
+
+              <div class="hlaska hlaska--info">
+                <svg class="ikona" aria-hidden="true"><use href="#i-info"/></svg>
+                <div class="hlaska__text">Doporučujeme nejvýš 1 lekci denně. Tempo si volíte sami.</div>
+              </div>
+
+              <div class="mrizka-karet">
+                <article class="karta-lekce karta-lekce--hotovo">
+                  <div class="karta-lekce__hlavicka">
+                    <span class="karta-lekce__poradi">Lekce 1</span>
+                    <span class="stitek stitek--zelena"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg>Hotovo</span>
+                  </div>
+                  <h2 class="karta-lekce__tema">Pořadí operací</h2>
+                  <div class="karta-lekce__vysledek">
+                    <span class="semafor-znak semafor-znak--zelena" aria-hidden="true"><svg class="ikona"><use href="#i-fajfka"/></svg></span>
+                    <span><strong>Zelená</strong> — zvládnuto</span>
+                  </div>
+                  <div class="karta-lekce__akce"><button class="tlacitko tlacitko--tiche">Zobrazit souhrn</button></div>
+                </article>
+
+                <article class="karta-lekce karta-lekce--probiha">
+                  <div class="karta-lekce__hlavicka">
+                    <span class="karta-lekce__poradi">Lekce 2</span>
+                    <span class="stitek stitek--navy">Probíhá · 2/4</span>
+                  </div>
+                  <h2 class="karta-lekce__tema">Celá čísla</h2>
+                  <div class="karta-lekce__meta"><span><svg class="ikona" aria-hidden="true"><use href="#i-hodiny"/></svg>20 min</span><span>4 úlohy</span></div>
+                  <div class="karta-lekce__akce"><button class="tlacitko tlacitko--primarni tlacitko--velke">Pokračovat</button></div>
+                </article>
+
+                <article class="karta-lekce karta-lekce--nezacato">
+                  <div class="karta-lekce__hlavicka">
+                    <span class="karta-lekce__poradi">Lekce 3</span>
+                    <span class="stitek">Nezačato</span>
+                  </div>
+                  <h2 class="karta-lekce__tema">Zlomky</h2>
+                  <div class="karta-lekce__meta"><span><svg class="ikona" aria-hidden="true"><use href="#i-hodiny"/></svg>20 min</span><span>4 úlohy</span></div>
+                  <div class="karta-lekce__akce">
+                    <button class="tlacitko tlacitko--primarni tlacitko--velke">Začít lekci</button>
+                    <a class="tlacitko tlacitko--tiche" href="#"><svg class="ikona" aria-hidden="true"><use href="#i-sos"/></svg>SOS</a>
+                  </div>
+                </article>
+
+                <article class="karta-lekce karta-lekce--zamceno" aria-disabled="true">
+                  <div class="karta-lekce__hlavicka">
+                    <span class="karta-lekce__poradi">Týden 2 · Lekce 1</span>
+                    <span class="stitek"><svg class="ikona" aria-hidden="true"><use href="#i-zamek"/></svg>Zamčeno</span>
+                  </div>
+                  <h2 class="karta-lekce__tema">Desetinná čísla</h2>
+                  <p class="karta-lekce__zamek"><svg class="ikona" aria-hidden="true"><use href="#i-zamek"/></svg>Otevře se 1. 12.</p>
+                </article>
+
+                <article class="karta-lekce karta-lekce--zamceno" aria-disabled="true">
+                  <div class="karta-lekce__hlavicka">
+                    <span class="karta-lekce__poradi">Fáze 1 · Základy</span>
+                    <span class="stitek"><svg class="ikona" aria-hidden="true"><use href="#i-zamek"/></svg>Zamčeno</span>
+                  </div>
+                  <h2 class="karta-lekce__tema">32 lekcí + diagnostika</h2>
+                  <p class="karta-lekce__zamek"><svg class="ikona" aria-hidden="true"><use href="#i-zamek"/></svg>Odemkne se po platbě — 790 Kč v předprodeji</p>
+                </article>
+              </div>
+
+              <div class="karta karta--tesna">
+                <div class="zasobnik zasobnik--tesny">
+                  <strong>Dotazník po pilotu</strong>
+                  <span class="text-tlumeny">6 otázek, 2 minuty. Za vyplnění máte nárok na cenu 790 Kč.</span>
+                  <button class="tlacitko tlacitko--sekundarni tlacitko--cela-sirka">Vyplnit dotazník</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="vitrina__blok" style="margin-top:var(--mezera-6)">
+      <span class="ramec__stitek">Desktop 1280 px — žák, přehled</span>
+      <div class="posuv">
+        <div class="ramec-desktop">
+          <div class="ramec-desktop__lista"><i></i><i></i><i></i></div>
+          <header class="hlavicka">
+            <div class="hlavicka__vnitrek">
+              <a class="logo" href="#"><span class="logo__znacka">Student<span>Base</span></span><span class="logo__produkt">Spolu na přijímačky</span></a>
+              <div class="radek"><span style="color:var(--barva-text-na-tmave-tlumeny)">Eliška</span><button class="tlacitko tlacitko--na-tmave">Odhlásit</button></div>
+            </div>
+          </header>
+          <div class="obal" style="padding-block:var(--mezera-6)">
+            <div class="zasobnik zasobnik--volny">
+              <div class="prehled-hlavicka">
+                <p class="nadpis-sekce">Pilot · týden 1</p>
+                <h1>Ahoj Eliško, tady jsou tvoje lekce</h1>
+                <div class="prehled-hlavicka__tyden" style="max-width:24rem">
+                  <span>Tento týden: 4 lekce, hotovo 1</span>
+                  <div class="pruh" role="progressbar" aria-valuemin="0" aria-valuemax="4" aria-valuenow="1" aria-label="Hotovo 1 ze 4 lekcí"><span class="pruh__vypln" style="width:25%"></span></div>
+                </div>
+              </div>
+              <div class="mrizka-karet">
+                <article class="karta-lekce karta-lekce--hotovo">
+                  <div class="karta-lekce__hlavicka"><span class="karta-lekce__poradi">Lekce 1</span><span class="stitek stitek--zelena"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg>Hotovo</span></div>
+                  <h2 class="karta-lekce__tema">Pořadí operací</h2>
+                  <div class="karta-lekce__meta"><span><svg class="ikona" aria-hidden="true"><use href="#i-hodiny"/></svg>20 min</span><span>4 úlohy</span></div>
+                </article>
+                <article class="karta-lekce karta-lekce--probiha">
+                  <div class="karta-lekce__hlavicka"><span class="karta-lekce__poradi">Lekce 2</span><span class="stitek stitek--navy">Probíhá · 2/4</span></div>
+                  <h2 class="karta-lekce__tema">Celá čísla</h2>
+                  <div class="karta-lekce__meta"><span><svg class="ikona" aria-hidden="true"><use href="#i-hodiny"/></svg>20 min</span><span>4 úlohy</span></div>
+                  <div class="karta-lekce__akce"><button class="tlacitko tlacitko--primarni tlacitko--velke">Pokračovat</button></div>
+                </article>
+                <article class="karta-lekce karta-lekce--nezacato">
+                  <div class="karta-lekce__hlavicka"><span class="karta-lekce__poradi">Lekce 3</span><span class="stitek">Nezačato</span></div>
+                  <h2 class="karta-lekce__tema">Zlomky</h2>
+                  <div class="karta-lekce__meta"><span><svg class="ikona" aria-hidden="true"><use href="#i-hodiny"/></svg>20 min</span><span>4 úlohy</span></div>
+                  <div class="karta-lekce__akce"><button class="tlacitko tlacitko--primarni tlacitko--velke">Začít lekci</button></div>
+                </article>
+                <article class="karta-lekce karta-lekce--zamceno" aria-disabled="true">
+                  <div class="karta-lekce__hlavicka"><span class="karta-lekce__poradi">Lekce 4</span><span class="stitek"><svg class="ikona" aria-hidden="true"><use href="#i-zamek"/></svg>Zamčeno</span></div>
+                  <h2 class="karta-lekce__tema">Složitější zlomky</h2>
+                  <p class="karta-lekce__zamek"><svg class="ikona" aria-hidden="true"><use href="#i-zamek"/></svg>Otevře se 1. 12.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="vitrina__blok">
+      <h3>Volba role <span class="vitrina__trida">.volby-karet</span> + <span class="vitrina__trida">.volba-karta</span></h3>
+      <div class="volby-karet" style="max-width:44rem">
+        <button class="volba-karta">
+          <span class="ikona-kruh"><svg class="ikona" aria-hidden="true"><use href="#i-telefon"/></svg></span>
+          <span class="volba-karta__nazev">Jsem rodič</span>
+          <span class="volba-karta__popis">Mám telefon s tahákem.</span>
+        </button>
+        <button class="volba-karta">
+          <span class="ikona-kruh"><svg class="ikona" aria-hidden="true"><use href="#i-obrazovka"/></svg></span>
+          <span class="volba-karta__nazev">Jsem žák</span>
+          <span class="volba-karta__popis">Mám počítač nebo tablet.</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<section class="vitrina" id="zak">
+  <div class="obal">
+    <h2>Žák: karta úlohy, dlaždice, vstupy, klávesnice</h2>
+    <p class="vitrina__popis">Velká obrazovka (≥ 1024 px). Po odevzdání: správně = zelená fajfka; nesedí = neutrální šedomodrá s textem „Zkus to ještě jednou" — nikdy červená. Klikni na slovo nebo číslo v zadání → žluté podtržení.</p>
+
+    <div class="vitrina__blok">
+      <span class="ramec__stitek">Desktop 1280 px — žák, lekce</span>
+      <div class="posuv">
+        <div class="ramec-desktop">
+          <div class="ramec-desktop__lista"><i></i><i></i><i></i></div>
+          <div class="lista-lekce">
+            <div class="lista-lekce__tema">Pořadí operací<span class="lista-lekce__podtitul">Lekce 1 · CERMAT úloha</span></div>
+            <div class="lista-lekce__stav">
+              <div class="odpocet" role="timer" aria-label="Zbývá 11 minut 5 sekund"><svg class="ikona" aria-hidden="true"><use href="#i-hodiny"/></svg><span class="odpocet__cas">11:05</span></div>
+              <div class="prubeh">
+                <span>Úloha 3/4</span>
+                <ol class="prubeh__kroky" aria-hidden="true"><li class="prubeh__krok je-hotovo"></li><li class="prubeh__krok je-hotovo"></li><li class="prubeh__krok je-aktualni"></li><li class="prubeh__krok"></li></ol>
+              </div>
+            </div>
+          </div>
+
+          <div class="stranka-zak">
+            <div class="lekce-zak">
+              <article class="karta-ulohy">
+                <div class="karta-ulohy__hlavicka"><span class="stitek stitek--navy">Úloha 3</span><span class="stitek">CERMAT</span></div>
+                <div class="karta-ulohy__zadani" data-ukazka="zvyrazneni">
+                  <p><span class="zvyraznitelne">Karel</span> koupil <span class="zvyraznitelne">3 sešity</span> po <span class="zvyraznitelne">24 Kč</span> a <span class="zvyraznitelne">2 pera</span> po <span class="zvyraznitelne">15 Kč</span>. Platil <span class="zvyraznitelne">pětistovkou</span>.</p>
+                  <p><span class="zvyraznitelne">Kolik korun mu prodavačka vrátila?</span></p>
+                </div>
+                <p class="karta-ulohy__napoveda">Klikni na slovo nebo číslo a podtrhni si ho.</p>
+              </article>
+
+              <div class="zasobnik">
+                <section class="krok krok--hotovy" aria-label="Krok 1, hotovo">
+                  <span class="krok__cislo">Krok 1</span>
+                  <h3 class="krok__popisek">Co potřebuješ zjistit nejdřív?</h3>
+                  <div class="zpetna-vazba zpetna-vazba--spravne"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg><span>Kolik stálo všechno dohromady — sedí!</span></div>
+                </section>
+
+                <section class="krok" data-ukazka="krok-dlazdice" aria-labelledby="krok2popisek">
+                  <span class="krok__cislo">Krok 2</span>
+                  <h3 class="krok__popisek" id="krok2popisek">Vyber, co platí</h3>
+                  <div class="dlazdice-mrizka">
+                    <button class="dlazdice" aria-pressed="false" data-spravne="0">3 · 24 + 2 · 15<span class="dlazdice__znak dlazdice__znak--spravne"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg></span><span class="dlazdice__znak dlazdice__znak--nesedi"><svg class="ikona" aria-hidden="true"><use href="#i-opakovat"/></svg></span></button>
+                    <button class="dlazdice" aria-pressed="false" data-spravne="0">(3 + 2) · (24 + 15)<span class="dlazdice__znak dlazdice__znak--spravne"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg></span><span class="dlazdice__znak dlazdice__znak--nesedi"><svg class="ikona" aria-hidden="true"><use href="#i-opakovat"/></svg></span></button>
+                    <button class="dlazdice" aria-pressed="false" data-spravne="1">500 − (3 · 24 + 2 · 15)<span class="dlazdice__znak dlazdice__znak--spravne"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg></span><span class="dlazdice__znak dlazdice__znak--nesedi"><svg class="ikona" aria-hidden="true"><use href="#i-opakovat"/></svg></span></button>
+                    <button class="dlazdice" aria-pressed="false" data-spravne="0">500 − 3 · 24 + 2 · 15<span class="dlazdice__znak dlazdice__znak--spravne"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg></span><span class="dlazdice__znak dlazdice__znak--nesedi"><svg class="ikona" aria-hidden="true"><use href="#i-opakovat"/></svg></span></button>
+                  </div>
+                  <div class="zpetna-vazba" role="status" hidden></div>
+                  <div class="krok__akce"><button class="tlacitko tlacitko--primarni tlacitko--velke" data-akce="odevzdat">Odevzdat krok</button></div>
+                </section>
+
+                <section class="krok" aria-labelledby="krok3popisek">
+                  <span class="krok__cislo">Krok 3</span>
+                  <h3 class="krok__popisek" id="krok3popisek">Výsledek</h3>
+                  <div class="krok__vstup">
+                    <div class="pole-cislo">
+                      <input class="pole pole--cislo" inputmode="decimal" autocomplete="off" aria-labelledby="krok3popisek" data-klavesnice>
+                      <span class="pole-cislo__jednotka">Kč</span>
+                    </div>
+                  </div>
+                  <div class="klavesnice" role="group" aria-label="Matematická klávesnice">
+                    <button class="klavesnice__klavesa" data-znak="7">7</button>
+                    <button class="klavesnice__klavesa" data-znak="8">8</button>
+                    <button class="klavesnice__klavesa" data-znak="9">9</button>
+                    <button class="klavesnice__klavesa klavesnice__klavesa--operator" data-znak="(" aria-label="levá závorka">(</button>
+                    <button class="klavesnice__klavesa klavesnice__klavesa--operator" data-znak=")" aria-label="pravá závorka">)</button>
+                    <button class="klavesnice__klavesa" data-znak="4">4</button>
+                    <button class="klavesnice__klavesa" data-znak="5">5</button>
+                    <button class="klavesnice__klavesa" data-znak="6">6</button>
+                    <button class="klavesnice__klavesa klavesnice__klavesa--operator" data-znak="·" aria-label="krát">·</button>
+                    <button class="klavesnice__klavesa klavesnice__klavesa--operator" data-znak=":" aria-label="děleno">:</button>
+                    <button class="klavesnice__klavesa" data-znak="1">1</button>
+                    <button class="klavesnice__klavesa" data-znak="2">2</button>
+                    <button class="klavesnice__klavesa" data-znak="3">3</button>
+                    <button class="klavesnice__klavesa klavesnice__klavesa--operator" data-znak="+" aria-label="plus">+</button>
+                    <button class="klavesnice__klavesa klavesnice__klavesa--operator" data-znak="−" aria-label="minus">−</button>
+                    <button class="klavesnice__klavesa" data-znak="0">0</button>
+                    <button class="klavesnice__klavesa" data-znak="," aria-label="desetinná čárka">,</button>
+                    <button class="klavesnice__klavesa klavesnice__klavesa--operator" data-znak="x">x</button>
+                    <button class="klavesnice__klavesa klavesnice__klavesa--operator" data-znak="²" aria-label="na druhou"><span>x<sup>2</sup></span></button>
+                    <button class="klavesnice__klavesa klavesnice__klavesa--operator" data-znak="√" aria-label="odmocnina">√</button>
+                    <button class="klavesnice__klavesa klavesnice__klavesa--funkce klavesnice__klavesa--siroka" data-akce="zlomek">a/b&nbsp;Zlomek</button>
+                    <button class="klavesnice__klavesa klavesnice__klavesa--smazat" data-akce="smazat">Smazat</button>
+                    <button class="klavesnice__klavesa klavesnice__klavesa--hotovo klavesnice__klavesa--siroka" data-akce="hotovo">Hotovo</button>
+                  </div>
+                  <div class="krok__akce"><button class="tlacitko tlacitko--primarni tlacitko--velke">Odevzdat krok</button></div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="vitrina__mrizka">
+      <div class="vitrina__blok">
+        <h3>Dlaždice — stavy <span class="vitrina__trida">.dlazdice</span></h3>
+        <div class="dlazdice-mrizka" style="grid-template-columns:1fr 1fr">
+          <button class="dlazdice">Klid</button>
+          <button class="dlazdice je-vybrano" aria-pressed="true">Vybráno</button>
+          <button class="dlazdice je-spravne" disabled>Správně<span class="dlazdice__znak dlazdice__znak--spravne"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg></span></button>
+          <button class="dlazdice je-nesedi">Nesedí<span class="dlazdice__znak dlazdice__znak--nesedi"><svg class="ikona" aria-hidden="true"><use href="#i-opakovat"/></svg></span></button>
+        </div>
+        <div class="zasobnik zasobnik--tesny" style="margin-top:var(--mezera-4)">
+          <button class="dlazdice dlazdice--radek">2. řádek: 500 − 72 + 30</button>
+          <div class="zpetna-vazba zpetna-vazba--spravne"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg><span>Sedí!</span></div>
+          <div class="zpetna-vazba zpetna-vazba--nesedi"><svg class="ikona" aria-hidden="true"><use href="#i-opakovat"/></svg><span>Zkus to ještě jednou.</span></div>
+          <div class="zpetna-vazba zpetna-vazba--nesedi"><svg class="ikona" aria-hidden="true"><use href="#i-sipka-vpravo"/></svg><span>Tohle zatím nesedí. Jdeme dál — rodič ví, jak na to.</span></div>
+          <div class="zpetna-vazba zpetna-vazba--poznamka"><svg class="ikona" aria-hidden="true"><use href="#i-info"/></svg><span>Výsledek je správně, ale uprav ho do základního tvaru.</span></div>
+        </div>
+      </div>
+
+      <div class="vitrina__blok">
+        <h3>Vstupy</h3>
+        <div class="zasobnik zasobnik--volny">
+          <div class="pole-skupina">
+            <span class="pole-popisek" id="p-cislo">Číslo s jednotkou <span class="vitrina__trida">.pole-cislo</span></span>
+            <div class="radek">
+              <div class="pole-cislo"><input class="pole pole--cislo" inputmode="decimal" aria-labelledby="p-cislo" value="12,5"><span class="pole-cislo__jednotka">cm</span></div>
+              <input class="pole pole--cislo" inputmode="decimal" aria-label="Číslo bez jednotky" placeholder="0">
+            </div>
+          </div>
+
+          <div class="pole-skupina">
+            <span class="pole-popisek">Zlomek <span class="vitrina__trida">.zlomek-vstup</span></span>
+            <div class="radek" style="--radek-mezera:var(--mezera-6)">
+              <div class="zlomek-vstup" role="group" aria-label="Zlomek">
+                <input class="pole pole--cislo" inputmode="numeric" aria-label="Čitatel" value="3">
+                <span class="zlomek-vstup__cara" aria-hidden="true"></span>
+                <input class="pole pole--cislo" inputmode="numeric" aria-label="Jmenovatel" value="4">
+              </div>
+              <div class="zlomek-vstup je-spravne" role="group" aria-label="Zlomek, správně">
+                <input class="pole pole--cislo" inputmode="numeric" aria-label="Čitatel" value="3" readonly>
+                <span class="zlomek-vstup__cara" aria-hidden="true"></span>
+                <input class="pole pole--cislo" inputmode="numeric" aria-label="Jmenovatel" value="4" readonly>
+              </div>
+              <div class="zlomek-vstup je-nesedi" role="group" aria-label="Zlomek, nesedí">
+                <input class="pole pole--cislo" inputmode="numeric" aria-label="Čitatel" value="4" readonly>
+                <span class="zlomek-vstup__cara" aria-hidden="true"></span>
+                <input class="pole pole--cislo" inputmode="numeric" aria-label="Jmenovatel" value="3" readonly>
+              </div>
+            </div>
+          </div>
+
+          <div class="pole-skupina">
+            <span class="pole-popisek">Smíšené číslo <span class="vitrina__trida">.smisene-vstup</span></span>
+            <div class="smisene-vstup" role="group" aria-label="Smíšené číslo">
+              <input class="pole pole--cislo smisene-vstup__cela" inputmode="numeric" aria-label="Celá část" value="2">
+              <div class="zlomek-vstup">
+                <input class="pole pole--cislo" inputmode="numeric" aria-label="Čitatel" value="1">
+                <span class="zlomek-vstup__cara" aria-hidden="true"></span>
+                <input class="pole pole--cislo" inputmode="numeric" aria-label="Jmenovatel" value="3">
+              </div>
+            </div>
+          </div>
+
+          <div class="pole-skupina">
+            <label class="pole-popisek" for="p-text">Krátký text</label>
+            <input class="pole" id="p-text" placeholder="Napiš příběh úlohy bez čísel">
+          </div>
+        </div>
+      </div>
+
+      <div class="vitrina__blok">
+        <h3>Konec lekce u žáka</h3>
+        <div class="karta konec-lekce">
+          <span class="ikona-kruh ikona-kruh--zelena"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg></span>
+          <h2>Hotovo, ukaž telefon rodiči</h2>
+          <p class="text-tlumeny">Souhrn dnešní lekce udělá rodič. Díky, dnes jsi zabral(a).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<section class="vitrina" id="rodic">
+  <div class="obal">
+    <h2>Rodič: tahák, semafor, souhrn</h2>
+    <p class="vitrina__popis">Telefon na výšku, jedna ruka. Hlavní akce ve spodní liště <span class="vitrina__trida">.spodni-lista</span> (sticky). Otázky L1→L3 postupně, řešení sbalené. Semafor: 4 tlačítka, aplikace určí barvu (ve vitríně: sám = zelená, otázka / spletl se = oranžová, nevěděl = červená).</p>
+
+    <div class="ramecky">
+      <!-- ---- Telefon: úloha u rodiče ---- -->
+      <div class="ramec">
+        <span class="ramec__stitek">Telefon 390 px — rodič, úloha</span>
+        <div class="ramec-telefon">
+          <div class="stranka-rodic">
+            <div class="lista-lekce">
+              <div class="lista-lekce__tema">Pořadí operací<span class="lista-lekce__podtitul">Lekce 1</span></div>
+              <div class="odpocet" role="timer" aria-label="Zbývá 11 minut 5 sekund"><svg class="ikona" aria-hidden="true"><use href="#i-hodiny"/></svg><span class="odpocet__cas">11:05</span></div>
+            </div>
+            <div class="stranka-rodic__obsah">
+              <nav class="prepinac-uloh" aria-label="Úlohy">
+                <button class="tlacitko tlacitko--sekundarni tlacitko--ikona" aria-label="Předchozí úloha"><svg class="ikona" aria-hidden="true"><use href="#i-sipka-vlevo"/></svg></button>
+                <div class="prepinac-uloh__nazev"><strong>Úloha 3 ze 4</strong><span>CERMAT úloha</span></div>
+                <button class="tlacitko tlacitko--sekundarni tlacitko--ikona" aria-label="Další úloha"><svg class="ikona" aria-hidden="true"><use href="#i-sipka-vpravo"/></svg></button>
+              </nav>
+
+              <div class="stav-zaka" role="status">
+                <svg class="ikona ikona--velka stav-zaka__fajfka" aria-hidden="true"><use href="#i-fajfka"/></svg>
+                <div class="stav-zaka__text"><strong>Dítě odevzdalo: krok 1</strong><small>Aktualizováno před 12 s</small></div>
+                <button class="tlacitko tlacitko--tiche tlacitko--ikona" aria-label="Obnovit stav dítěte"><svg class="ikona" aria-hidden="true"><use href="#i-obnovit"/></svg></button>
+              </div>
+
+              <div class="tahak">
+                <section class="tahak__sekce">
+                  <h2 class="tahak__nadpis"><svg class="ikona" aria-hidden="true"><use href="#i-zarovka"/></svg>O co jde</h2>
+                  <p>Slovní úloha na pořadí operací. Dítě musí nejdřív sečíst, kolik stál celý nákup, a teprve pak odečíst od 500. Častá past: odečte jen sešity a pera přičte.</p>
+                </section>
+
+                <section class="tahak__sekce" data-ukazka="otazky">
+                  <h2 class="tahak__nadpis"><svg class="ikona" aria-hidden="true"><use href="#i-bublina"/></svg>Otázky pro dítě</h2>
+                  <ol class="otazky">
+                    <li class="otazka"><span class="otazka__uroven">Otázka 1 · vlastními slovy</span><p class="otazka__text">„Řekni mi vlastními slovy, co po tobě chtějí."</p></li>
+                    <li class="otazka" hidden><span class="otazka__uroven">Otázka 2 · první krok</span><p class="otazka__text">„Co bys spočítal jako první a proč?"</p></li>
+                    <li class="otazka" hidden><span class="otazka__uroven">Otázka 3 · mezikrok</span><p class="otazka__text">„Kolik stály jen sešity? A kolik pera?"</p></li>
+                  </ol>
+                  <button class="tlacitko tlacitko--sekundarni tlacitko--cela-sirka" data-akce="dalsi-otazka">Další otázka</button>
+                </section>
+
+                <details class="rozbalovaci">
+                  <summary><svg class="ikona" aria-hidden="true"><use href="#i-otocit"/></svg>Otočená role<svg class="ikona rozbalovaci__sipka" aria-hidden="true"><use href="#i-dolu"/></svg></summary>
+                  <div class="rozbalovaci__obsah"><p>„Vysvětli mi, proč jsi nejdřív sčítal a až pak odečítal."</p></div>
+                </details>
+                <details class="rozbalovaci">
+                  <summary><svg class="ikona" aria-hidden="true"><use href="#i-pozor"/></svg>Typická chyba<svg class="ikona rozbalovaci__sipka" aria-hidden="true"><use href="#i-dolu"/></svg></summary>
+                  <div class="rozbalovaci__obsah"><p>Dítě napíše 500 − 72 + 30 = 458. Poznáte to podle výsledku vyššího než 400.</p></div>
+                </details>
+                <details class="rozbalovaci rozbalovaci--reseni">
+                  <summary><svg class="ikona" aria-hidden="true"><use href="#i-oko"/></svg>Ukázat řešení<svg class="ikona rozbalovaci__sipka" aria-hidden="true"><use href="#i-dolu"/></svg></summary>
+                  <div class="rozbalovaci__obsah">
+                    <ol class="postup">
+                      <li>Sešity: 3 · 24 = 72 Kč</li>
+                      <li>Pera: 2 · 15 = 30 Kč</li>
+                      <li>Celkem: 72 + 30 = 102 Kč</li>
+                      <li>Vráceno: 500 − 102 = <strong>398 Kč</strong></li>
+                    </ol>
+                  </div>
+                </details>
+              </div>
+
+              <section class="zasobnik zasobnik--tesny" data-ukazka="semafor" aria-labelledby="semaforNadpis">
+                <h2 id="semaforNadpis" style="margin-top:var(--mezera-3)">Jak to šlo?</h2>
+                <p class="text-tlumeny">Klikněte, co jste viděli. Volbu můžete změnit.</p>
+                <div class="semafor-volby">
+                  <button class="semafor-volba" aria-pressed="false" data-barva="zelena"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg>Vyřešil(a) sám/sama<svg class="ikona semafor-volba__zaskrt" aria-hidden="true"><use href="#i-fajfka"/></svg></button>
+                  <button class="semafor-volba" aria-pressed="false" data-barva="oranzova"><svg class="ikona" aria-hidden="true"><use href="#i-bublina"/></svg>Potřeboval(a) otázku<svg class="ikona semafor-volba__zaskrt" aria-hidden="true"><use href="#i-fajfka"/></svg></button>
+                  <button class="semafor-volba" aria-pressed="false" data-barva="oranzova"><svg class="ikona" aria-hidden="true"><use href="#i-kalkulacka"/></svg>Spletl(a) se<svg class="ikona semafor-volba__zaskrt" aria-hidden="true"><use href="#i-fajfka"/></svg></button>
+                  <button class="semafor-volba" aria-pressed="false" data-barva="cervena"><svg class="ikona" aria-hidden="true"><use href="#i-stop"/></svg>Nevěděl(a), jak začít<svg class="ikona semafor-volba__zaskrt" aria-hidden="true"><use href="#i-fajfka"/></svg></button>
+                </div>
+                <div class="semafor-vysledek" role="status" hidden></div>
+              </section>
+            </div>
+
+            <div class="spodni-lista">
+              <button class="tlacitko tlacitko--sekundarni tlacitko--ikona" aria-label="Předchozí úloha"><svg class="ikona" aria-hidden="true"><use href="#i-sipka-vlevo"/></svg></button>
+              <button class="tlacitko tlacitko--primarni">Další úloha <svg class="ikona" aria-hidden="true"><use href="#i-sipka-vpravo"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- Telefon: souhrn lekce ---- -->
+      <div class="ramec">
+        <span class="ramec__stitek">Telefon 390 px — rodič, souhrn lekce</span>
+        <div class="ramec-telefon">
+          <div class="stranka-rodic">
+            <div class="lista-lekce">
+              <div class="lista-lekce__tema">Pořadí operací<span class="lista-lekce__podtitul">Lekce 1 · souhrn</span></div>
+              <div class="odpocet je-vyprselo"><svg class="ikona" aria-hidden="true"><use href="#i-hodiny"/></svg><span>22 min</span></div>
+            </div>
+            <div class="stranka-rodic__obsah">
+              <h1>Lekce je hotová</h1>
+              <div class="souhrn">
+                <ol class="souhrn__ulohy">
+                  <li class="souhrn__uloha">
+                    <span class="semafor-znak semafor-znak--zelena" aria-hidden="true"><svg class="ikona"><use href="#i-fajfka"/></svg></span>
+                    <span class="souhrn__uloha-nazev">Rozcvička</span><span class="souhrn__uloha-barva">Zelená</span>
+                  </li>
+                  <li class="souhrn__uloha">
+                    <span class="semafor-znak semafor-znak--oranzova" aria-hidden="true"><svg class="ikona"><use href="#i-opakovat"/></svg></span>
+                    <span class="souhrn__uloha-nazev">Detektiv</span><span class="souhrn__uloha-barva">Oranžová</span>
+                  </li>
+                  <li class="souhrn__uloha">
+                    <span class="semafor-znak semafor-znak--zelena" aria-hidden="true"><svg class="ikona"><use href="#i-fajfka"/></svg></span>
+                    <span class="souhrn__uloha-nazev">CERMAT</span><span class="souhrn__uloha-barva">Zelená</span>
+                  </li>
+                  <li class="souhrn__uloha souhrn__uloha--hlavni">
+                    <span class="semafor-znak semafor-znak--velka semafor-znak--oranzova" aria-hidden="true"><svg class="ikona"><use href="#i-opakovat"/></svg></span>
+                    <span><span class="souhrn__stitek-hlavni">Hlavní barva lekce</span><span class="souhrn__uloha-nazev">Samostatná úloha</span><span class="souhrn__uloha-barva" style="display:block">Oranžová — skoro to je</span></span>
+                  </li>
+                </ol>
+
+                <div class="semafor-vysledek semafor-vysledek--oranzova">
+                  <div class="semafor-vysledek__barva"><svg class="ikona" aria-hidden="true"><use href="#i-opakovat"/></svg>Na zítra</div>
+                  <p class="semafor-vysledek__doporuceni">Zítra jedno 5minutové cvičení: 3 příklady se závorkami, pak další lekce.</p>
+                </div>
+
+                <div class="hlaska hlaska--info">
+                  <svg class="ikona" aria-hidden="true"><use href="#i-sos"/></svg>
+                  <div class="hlaska__text"><strong>Druhá červená v řadě u zlomků</strong>Chcete to probrat s lektorem? 30 minut online, 150 Kč.
+                    <div class="hlaska__akce"><a class="tlacitko tlacitko--sekundarni" href="mailto:?subject=Pot%C5%99ebujeme%20pomoc%3A%20zlomky"><svg class="ikona" aria-hidden="true"><use href="#i-mail"/></svg>Napsat e-mail</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="spodni-lista">
+              <button class="tlacitko tlacitko--primarni">Ukončit lekci</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- Telefon: výsledná barva + úvod + papírový režim ---- -->
+      <div class="ramec">
+        <span class="ramec__stitek">Telefon 390 px — výsledky semaforu, úvod, papír</span>
+        <div class="ramec-telefon">
+          <div class="stranka-rodic">
+            <div class="stranka-rodic__obsah">
+              <section class="tahak__sekce tahak__sekce--uvod" style="font-size:var(--pismo-stredni)">
+                <h2 class="tahak__nadpis"><svg class="ikona" aria-hidden="true"><use href="#i-info"/></svg>Než začnete</h2>
+                <p>Dnes jde o to, co počítat dřív. Nechte dítě mluvit, vy se jen ptejte. Řešení máte schované dole.</p>
+              </section>
+
+              <div class="semafor-vysledek semafor-vysledek--zelena">
+                <div class="semafor-vysledek__barva"><span class="semafor-znak semafor-znak--zelena" aria-hidden="true"><svg class="ikona"><use href="#i-fajfka"/></svg></span>Zelená</div>
+                <p class="semafor-vysledek__doporuceni">Zvládnuto. Pochvalte a jděte dál.</p>
+                <p class="semafor-vysledek__zmena">Volbu můžete změnit.</p>
+              </div>
+              <div class="semafor-vysledek semafor-vysledek--oranzova">
+                <div class="semafor-vysledek__barva"><span class="semafor-znak semafor-znak--oranzova" aria-hidden="true"><svg class="ikona"><use href="#i-opakovat"/></svg></span>Oranžová</div>
+                <p class="semafor-vysledek__doporuceni">Zítra jedno 5minutové cvičení na závorky.</p>
+                <p class="semafor-vysledek__zmena">Volbu můžete změnit.</p>
+              </div>
+              <div class="semafor-vysledek semafor-vysledek--cervena">
+                <div class="semafor-vysledek__barva"><span class="semafor-znak semafor-znak--cervena" aria-hidden="true"><svg class="ikona ikona--plna"><use href="#i-stop"/></svg></span>Červená</div>
+                <p class="semafor-vysledek__doporuceni">Dnes zavřít. Zítra začněte znovu od obrázku s nákupem.</p>
+                <p class="semafor-vysledek__zmena">Volbu můžete změnit.</p>
+              </div>
+
+              <section class="tahak__sekce">
+                <h2 class="tahak__nadpis"><svg class="ikona" aria-hidden="true"><use href="#i-tuzka"/></svg>Výsledek dítěte (papír)</h2>
+                <p class="text-tlumeny" style="font-size:var(--pismo-zaklad)">Opište, co má dítě na papíře.</p>
+                <div class="smisene-vstup" role="group" aria-label="Výsledek dítěte, smíšené číslo">
+                  <input class="pole pole--cislo smisene-vstup__cela" inputmode="numeric" aria-label="Celá část">
+                  <div class="zlomek-vstup">
+                    <input class="pole pole--cislo" inputmode="numeric" aria-label="Čitatel">
+                    <span class="zlomek-vstup__cara" aria-hidden="true"></span>
+                    <input class="pole pole--cislo" inputmode="numeric" aria-label="Jmenovatel">
+                  </div>
+                </div>
+                <button class="tlacitko tlacitko--navy tlacitko--cela-sirka">Vyhodnotit</button>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<section class="vitrina" id="motivace">
+  <div class="obal">
+    <h2>NÁVRH 30. 9.: hotová lekce, odznaky, ukazatel postupu (zadání B–D)</h2>
+    <p class="vitrina__popis"><strong>Jen návrh ke schválení, v aplikaci zatím není.</strong> Třídy s předponou <span class="vitrina__trida">.navrh-</span> platí jen v této vitríně. Odznaky jsou SVG přímo v repozitáři, počítají se z uložených dat při načtení přehledu. Definice a pracnost jsou v reportu <span class="vitrina__trida">reporty/2026-09-30-motivace-a-zamky.md</span>.</p>
+
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <symbol id="od-zelena" viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#0F172A"/><circle cx="36" cy="36" r="29" fill="#1FC27E"/><circle cx="36" cy="36" r="25" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="3 3"/></symbol>
+        <symbol id="od-zlata" viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#0F172A"/><circle cx="36" cy="36" r="29" fill="#F5C518"/><circle cx="36" cy="36" r="25" fill="none" stroke="#0F172A" stroke-opacity=".25" stroke-width="1.5" stroke-dasharray="3 3"/></symbol>
+        <symbol id="od-prvni" viewBox="0 0 72 72"><use href="#od-zelena"/><text x="36" y="47" text-anchor="middle" font-family="Sora, sans-serif" font-weight="700" font-size="30" fill="#fff">1</text></symbol>
+        <symbol id="od-spravne" viewBox="0 0 72 72"><use href="#od-zlata"/><path d="M36 17l5.6 11.6 12.7 1.8-9.2 8.9 2.2 12.6L36 46l-11.3 5.9 2.2-12.6-9.2-8.9 12.7-1.8z" fill="#0F172A"/></symbol>
+        <symbol id="od-tyden" viewBox="0 0 72 72"><use href="#od-zelena"/><rect x="21" y="23" width="30" height="27" rx="4" fill="none" stroke="#fff" stroke-width="3"/><path d="M21 31h30M28 19v7M44 19v7" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M28 40l5 5 9-9" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+        <symbol id="od-rada3" viewBox="0 0 72 72"><use href="#od-zelena"/><text x="36" y="41" text-anchor="middle" font-family="Sora, sans-serif" font-weight="700" font-size="24" fill="#fff">3</text><path d="M26 49l4 3-4 3M34 49l4 3-4 3M42 49l4 3-4 3" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+        <symbol id="od-rada5" viewBox="0 0 72 72"><use href="#od-zelena"/><text x="36" y="41" text-anchor="middle" font-family="Sora, sans-serif" font-weight="700" font-size="24" fill="#fff">5</text><path d="M26 49l4 3-4 3M34 49l4 3-4 3M42 49l4 3-4 3" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+        <symbol id="od-rada10" viewBox="0 0 72 72"><use href="#od-zelena"/><text x="36" y="41" text-anchor="middle" font-family="Sora, sans-serif" font-weight="700" font-size="22" fill="#fff">10</text><path d="M26 49l4 3-4 3M34 49l4 3-4 3M42 49l4 3-4 3" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+        <symbol id="od-pilot" viewBox="0 0 72 72"><use href="#od-zlata"/><path d="M26 54V18" stroke="#0F172A" stroke-width="3.4" stroke-linecap="round"/><path d="M27 20h21l-5 7 5 7H27z" fill="#0F172A"/></symbol>
+        <symbol id="od-faze1" viewBox="0 0 72 72"><use href="#od-zlata"/><path d="M25 20h22v8a11 11 0 0 1-22 0z" fill="#0F172A"/><path d="M25 23h-5a5 5 0 0 0 5 8M47 23h5a5 5 0 0 1-5 8" fill="none" stroke="#0F172A" stroke-width="2.6"/><path d="M36 39v7M28 52h16M31 46h10" stroke="#0F172A" stroke-width="3.4" stroke-linecap="round"/></symbol>
+        <symbol id="i-hvezda" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.9-4.3 4.1 1 5.9L12 17l-5.2 2.8 1-5.9-4.3-4.1 5.9-.9z" fill="currentColor" stroke="none"/></symbol>
+      </defs>
+    </svg>
+
+    <!-- ===== B: hotová lekce ===== -->
+    <div class="vitrina__blok">
+      <h3>B · Hotová lekce na přehledu (rodič i žák) <span class="vitrina__trida">--hotovo</span> <span class="vitrina__trida">--hvezda</span></h3>
+      <div class="ramecky">
+        <div class="ramec">
+          <span class="ramec__stitek">Telefon 390 px — přehled s odznaky</span>
+          <div class="ramec-telefon">
+            <div class="stranka-rodic">
+              <header class="hlavicka"><div class="hlavicka__vnitrek"><a class="logo" href="#"><span class="logo__znacka">Student<span>Base</span></span></a><button class="tlacitko tlacitko--na-tmave tlacitko--ikona" aria-label="Menu"><svg class="ikona" aria-hidden="true"><use href="#i-menu"/></svg></button></div></header>
+              <div class="stranka-rodic__obsah">
+                <div class="prehled-hlavicka">
+                  <p class="nadpis-sekce">Pilot · týden 1</p>
+                  <h1>Eliščin týden</h1>
+                  <div class="prehled-hlavicka__tyden">
+                    <div class="radek radek--mezi"><span>Tento týden: 4 lekce, hotovo 2</span></div>
+                    <div class="pruh" role="progressbar" aria-valuemin="0" aria-valuemax="4" aria-valuenow="2"><span class="pruh__vypln" style="width:50%"></span></div>
+                  </div>
+                </div>
+                <a class="karta karta--tesna" href="#motivace-odznaky" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:var(--mezera-2)">
+                  <span class="radek radek--mezi"><strong>Odznaky: 3 z 8</strong><span class="text-tlumeny">Zobrazit</span></span>
+                  <span class="navrh-pas-odznaku">
+                    <svg aria-label="První lekce"><use href="#od-prvni"/></svg><svg aria-label="Celá správně"><use href="#od-spravne"/></svg><svg aria-label="Řada 3"><use href="#od-rada3"/></svg>
+                    <svg style="filter:grayscale(1);opacity:.3"><use href="#od-tyden"/></svg><svg style="filter:grayscale(1);opacity:.3"><use href="#od-rada5"/></svg>
+                  </span>
+                </a>
+                <div class="mrizka-karet">
+                  <article class="karta-lekce navrh-karta navrh-karta--hotovo navrh-karta--hvezda">
+                    <svg class="navrh-roh" aria-hidden="true"><use href="#od-spravne"/></svg>
+                    <div class="karta-lekce__hlavicka"><span class="karta-lekce__poradi">Lekce 1</span><span class="navrh-stitek-hvezda"><svg class="ikona" aria-hidden="true" style="width:1em;height:1em"><use href="#i-hvezda"/></svg>Celá správně</span></div>
+                    <h2 class="karta-lekce__tema">Pořadí operací</h2>
+                    <div class="karta-lekce__vysledek"><span class="semafor-znak semafor-znak--zelena" aria-hidden="true"><svg class="ikona"><use href="#i-fajfka"/></svg></span><span><strong>4 ze 4 zelené</strong></span></div>
+                    <div class="karta-lekce__akce"><button class="tlacitko tlacitko--tiche">Zobrazit souhrn</button></div>
+                  </article>
+                  <article class="karta-lekce navrh-karta navrh-karta--hotovo">
+                    <svg class="navrh-roh" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="#1FC27E" stroke="#0F172A" stroke-width="3"/><path d="M13 22.5l6 6 12-12" fill="none" stroke="#0F172A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <div class="karta-lekce__hlavicka"><span class="karta-lekce__poradi">Lekce 2</span><span class="stitek stitek--zelena"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg>Hotovo</span></div>
+                    <h2 class="karta-lekce__tema">Celá čísla</h2>
+                    <div class="karta-lekce__vysledek"><span class="semafor-znak semafor-znak--oranzova" aria-hidden="true"><svg class="ikona"><use href="#i-hodiny"/></svg></span><span><strong>Oranžová</strong> — zítra 5 minut</span></div>
+                    <div class="karta-lekce__akce"><button class="tlacitko tlacitko--tiche">Zobrazit souhrn</button></div>
+                  </article>
+                  <article class="karta-lekce karta-lekce--probiha">
+                    <div class="karta-lekce__hlavicka"><span class="karta-lekce__poradi">Lekce 3</span><span class="stitek stitek--navy">Probíhá · 2/4</span></div>
+                    <h2 class="karta-lekce__tema">Zlomky — základ</h2>
+                    <div class="karta-lekce__akce"><button class="tlacitko tlacitko--primarni tlacitko--velke">Pokračovat</button></div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ramec">
+          <span class="ramec__stitek">Počítač žáka — obrazovka „Hotovo“ po lekci (+ nový odznak)</span>
+          <div class="karta" style="width:420px;display:flex;flex-direction:column;gap:var(--mezera-4);align-items:center;text-align:center;padding:var(--mezera-6)">
+            <span class="ikona-kruh" style="width:64px;height:64px"><svg class="ikona" aria-hidden="true" style="width:32px;height:32px"><use href="#i-fajfka"/></svg></span>
+            <h2 style="margin:0">Hotovo, dnešní lekce je za tebou!</h2>
+            <p class="text-tlumeny" style="margin:0">Zavolej rodiče, na telefonu teď dokončí semafor.</p>
+            <div class="navrh-novy" style="text-align:left">
+              <svg aria-hidden="true"><use href="#od-rada3"/></svg>
+              <div><strong>Nový odznak: Řada 3</strong><br><span class="text-tlumeny">Tři lekce za sebou. Další je Řada 5.</span></div>
+            </div>
+          </div>
+          <p class="vitrina__popis" style="max-width:420px;margin-top:var(--mezera-2)">Hvězda „celá správně“ se u žáka neukazuje hned po lekci, protože závisí na semaforu, který kliká rodič. Na přehledu se objeví při dalším načtení.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== C: odznaky ===== -->
+    <div class="vitrina__blok" id="motivace-odznaky">
+      <h3>C · Odznaky (8 kusů: 7 za vytrvalost a dokončení, 1 za přesnost)</h3>
+      <div class="karta" style="max-width:760px">
+        <div class="navrh-odznaky">
+          <figure class="navrh-odznak"><svg aria-hidden="true"><use href="#od-prvni"/></svg><figcaption>První lekce</figcaption><small>dokončená první lekce</small></figure>
+          <figure class="navrh-odznak"><svg aria-hidden="true"><use href="#od-spravne"/></svg><figcaption>Celá správně</figcaption><small>první lekce se všemi úlohami zelenými</small></figure>
+          <figure class="navrh-odznak"><svg aria-hidden="true"><use href="#od-rada3"/></svg><figcaption>Řada 3</figcaption><small>3 lekce za sebou</small></figure>
+          <figure class="navrh-odznak navrh-odznak--chybi"><svg aria-hidden="true"><use href="#od-tyden"/></svg><figcaption>Celý týden</figcaption><small>všechny lekce jednoho týdne hotové</small></figure>
+          <figure class="navrh-odznak navrh-odznak--chybi"><svg aria-hidden="true"><use href="#od-rada5"/></svg><figcaption>Řada 5</figcaption><small>5 lekcí za sebou</small></figure>
+          <figure class="navrh-odznak navrh-odznak--chybi"><svg aria-hidden="true"><use href="#od-rada10"/></svg><figcaption>Řada 10</figcaption><small>10 lekcí za sebou</small></figure>
+          <figure class="navrh-odznak navrh-odznak--chybi"><svg aria-hidden="true"><use href="#od-pilot"/></svg><figcaption>Pilot hotový</figcaption><small>všechny 4 pilotní lekce</small></figure>
+          <figure class="navrh-odznak navrh-odznak--chybi"><svg aria-hidden="true"><use href="#od-faze1"/></svg><figcaption>Fáze 1 hotová</figcaption><small>všech 32 lekcí Fáze 1</small></figure>
+        </div>
+      </div>
+      <p class="vitrina__popis" style="margin-top:var(--mezera-3)">Zelené odznaky jsou za vytrvalost (lekce, týden, řady), zlaté za milník (pilot, Fáze 1) a za přesnost (celá správně). Nezískané odznaky jsou šedé s popisem, co pro ně udělat. Pro dítě i rodiče je to stejná sada, nový odznak se ukáže po dokončení lekce. Nic se nesrovnává s jinými rodinami.</p>
+    </div>
+
+    <!-- ===== D: ukazatel postupu v hlavičce ===== -->
+    <div class="vitrina__blok">
+      <h3>D · Ukazatel postupu v hlavičce (375 px, místo podtitulu „Spolu na přijímačky“)</h3>
+      <div style="display:flex;flex-direction:column;gap:var(--mezera-5)">
+        <div>
+          <p class="ramec__stitek" style="margin-bottom:var(--mezera-2)">Varianta 1 — osa listopad → duben, dnešek a přijímačky 12. 4.</p>
+          <div class="navrh-hl">
+            <span class="logo__znacka">Student<span>Base</span></span>
+            <div class="navrh-hl__stred" aria-label="Dnes 30. listopadu, do přijímaček 19 týdnů">
+              <div class="navrh-hl__popis" style="display:grid;grid-template-columns:30fr 31fr 31fr 28fr 31fr 11fr"><span>lis</span><span>pro</span><span>led</span><span>úno</span><span>bře</span><span>dub</span></div>
+              <div class="navrh-osa">
+                <span class="navrh-osa__pruh"></span><span class="navrh-osa__ubehlo" style="width:18%"></span>
+                <span class="navrh-osa__tik" style="left:18.5%"></span><span class="navrh-osa__tik" style="left:37.7%"></span><span class="navrh-osa__tik" style="left:56.8%"></span><span class="navrh-osa__tik" style="left:74.1%"></span><span class="navrh-osa__tik" style="left:93.2%"></span>
+                <span class="navrh-osa__dnes" style="left:18%"></span><svg class="navrh-osa__cil" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><path d="M1.5 14V1" stroke="#F5C518" stroke-width="2"/><path d="M2 1h9l-2.5 3L11 7H2z" fill="#F5C518"/></svg>
+              </div>
+              <div class="navrh-hl__popis"><span>dnes</span><span>12. 4. · za 19 týdnů</span></div>
+            </div>
+            <button class="tlacitko tlacitko--na-tmave tlacitko--ikona" aria-label="Menu"><svg class="ikona" aria-hidden="true"><use href="#i-menu"/></svg></button>
+          </div>
+        </div>
+        <div>
+          <p class="ramec__stitek" style="margin-bottom:var(--mezera-2)">Varianta 2 — podíl dokončených lekcí (sezóna / aktuální fáze)</p>
+          <div class="navrh-hl">
+            <span class="logo__znacka">Student<span>Base</span></span>
+            <div class="navrh-hl__stred" aria-label="Hotovo 14 ze 79 lekcí sezóny">
+              <div class="navrh-hl__popis"><span>Eliška</span><span><strong style="color:#fff">14</strong> ze 79 lekcí</span></div>
+              <div class="navrh-podil"><span style="width:18%"></span></div>
+              <div class="navrh-hl__popis"><span>Fáze 1: 10 z 33</span><span>přijímačky 12. 4.</span></div>
+            </div>
+            <button class="tlacitko tlacitko--na-tmave tlacitko--ikona" aria-label="Menu"><svg class="ikona" aria-hidden="true"><use href="#i-menu"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <p class="vitrina__popis" style="margin-top:var(--mezera-3)">Varianta 1 ukazuje čas, a tedy i tlak termínu, bez ohledu na to, kolik toho dítě udělalo. Varianta 2 ukazuje práci a roste jen s dokončenými lekcemi. Doporučuji variantu 2 (motivuje prací a neukazuje „zbývá málo času“), s termínem 12. 4. jako malým textem.</p>
+    </div>
+  </div>
+</section>
+
+<section class="vitrina" id="revize">
+  <div class="obal">
+    <h2>Rodič a žák po revizi C (24. 9.)</h2>
+    <p class="vitrina__popis">Úvod lekce v blocích (<span class="vitrina__trida">.uvod-lekce</span>, žebříček <span class="vitrina__trida">.zebricek</span>, <span class="vitrina__trida">.pravidla-rodic</span>), karta úlohy jako postup 1–4 (<span class="vitrina__trida">.postup-rodice</span>), řešení jako výpočet (<span class="vitrina__trida">.reseni</span>), detektivní řádky v zadání (<span class="vitrina__trida">.zadani ol</span>) a dlaždice se štítkem. Zelený <strong>akcent</strong> = linky, prstence a jemné podklady; semaforová zelená = plné kolečko s fajfkou a slovem „Zelená". Vyzkoušejte přepínač motivu nahoře.</p>
+
+    <div class="ramecky">
+      <div class="ramec">
+        <span class="ramec__stitek">Telefon 390 px — rodič, úloha 1</span>
+        <div class="ramec-telefon">
+          <div class="stranka-rodic">
+            <div class="stranka-rodic__obsah">
+              <div class="tahak">
+                <section class="uvod-lekce" aria-labelledby="k-uvod">
+                  <h2 class="uvod-lekce__nadpis" id="k-uvod">Než začnete</h2>
+                  <div class="uvod-lekce__veta"><p>Dnes jde o pořadí: co se v příkladu počítá jako první.</p></div>
+                  <div class="zebricek">
+                    <p class="zebricek__nadpis">Platí:</p>
+                    <ol class="zebricek__kroky">
+                      <li class="zebricek__krok"><span class="zebricek__cislo" aria-hidden="true">1</span><span class="zebricek__znak">( )</span><span class="zebricek__text">závorky</span></li>
+                      <li class="zebricek__krok"><span class="zebricek__cislo" aria-hidden="true">2</span><span class="zebricek__znak">x²</span><span class="zebricek__text">mocniny</span></li>
+                      <li class="zebricek__krok"><span class="zebricek__cislo" aria-hidden="true">3</span><span class="zebricek__znak">· :</span><span class="zebricek__text">násobení a dělení</span></li>
+                      <li class="zebricek__krok"><span class="zebricek__cislo" aria-hidden="true">4</span><span class="zebricek__znak">+ −</span><span class="zebricek__text">sčítání a odčítání</span></li>
+                    </ol>
+                  </div>
+                  <div class="pravidla-rodic">
+                    <p class="pravidla-rodic__nadpis"><svg class="ikona" aria-hidden="true"><use href="#i-info"/></svg>Pravidla pro vás</p>
+                    <ul class="pravidla-rodic__seznam"><li>Nic nepočítáte ani nepíšete.</li><li>Ptáte se otázkami z taháku.</li><li>Chválíte snahu a postup, ne výsledek.</li></ul>
+                  </div>
+                </section>
+
+                <section class="tahak__sekce tahak__sekce--vysvetleni">
+                  <h2 class="tahak__nadpis"><svg class="ikona" aria-hidden="true"><use href="#i-zarovka"/></svg>O co jde</h2>
+                  <p>Dítě tu nic celé nepočítá, jen ukazuje, čím začne.</p>
+                </section>
+
+                <ol class="postup-rodice">
+                  <li class="postup-rodice__krok">
+                    <div class="postup-rodice__hlavicka"><span class="postup-rodice__cislo" aria-hidden="true">1</span><h2 class="postup-rodice__nadpis">Dítě čte a řeší. Vy mlčíte.</h2></div>
+                    <div class="postup-rodice__obsah">
+                      <details class="rozbalovaci"><summary><svg class="ikona" aria-hidden="true"><use href="#i-obrazovka"/></svg>Co vidí dítě<svg class="ikona rozbalovaci__sipka" aria-hidden="true"><use href="#i-dolu"/></svg></summary><div class="rozbalovaci__obsah zadani"><p>U každého příkladu vyber, co se počítá jako první.</p></div></details>
+                    </div>
+                  </li>
+                  <li class="postup-rodice__krok">
+                    <div class="postup-rodice__hlavicka"><span class="postup-rodice__cislo" aria-hidden="true">2</span><h2 class="postup-rodice__nadpis">Zasekne se? Přečtěte otázku.</h2></div>
+                    <div class="postup-rodice__obsah">
+                      <p class="postup-rodice__pozn">Další otázku čtěte, až když předchozí nepomůže.</p>
+                      <ol class="otazky"><li class="otazka"><span class="otazka__uroven"><span class="otazka__k">A</span>Otázka 1 · vlastními slovy</span><p class="otazka__text">„Je tam plus i krát. Co z toho má podle pravidla přednost?"</p></li></ol>
+                      <button class="tlacitko tlacitko--sekundarni tlacitko--cela-sirka" type="button">Další otázka</button>
+                    </div>
+                  </li>
+                  <li class="postup-rodice__krok">
+                    <div class="postup-rodice__hlavicka"><span class="postup-rodice__cislo" aria-hidden="true">3</span><h2 class="postup-rodice__nadpis">Hotovo? Zeptejte se:</h2></div>
+                    <div class="postup-rodice__obsah"><div class="otazka otazka--otocena"><p class="otazka__text">„Vysvětli mi, proč u příkladu A nezačneš tím, co je vlevo."</p></div></div>
+                  </li>
+                  <li class="postup-rodice__krok">
+                    <div class="postup-rodice__hlavicka"><span class="postup-rodice__cislo" aria-hidden="true">4</span><h2 class="postup-rodice__nadpis">Klikněte, jak to šlo</h2></div>
+                    <div class="postup-rodice__obsah">
+                      <div class="semafor-volby">
+                        <button class="semafor-volba" aria-pressed="true" type="button"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg>Vyřešil(a) sám/sama<svg class="ikona semafor-volba__zaskrt" aria-hidden="true"><use href="#i-fajfka"/></svg></button>
+                        <button class="semafor-volba" aria-pressed="false" type="button"><svg class="ikona" aria-hidden="true"><use href="#i-bublina"/></svg>Potřeboval(a) otázku<svg class="ikona semafor-volba__zaskrt" aria-hidden="true"><use href="#i-fajfka"/></svg></button>
+                      </div>
+                      <div class="semafor-vysledek semafor-vysledek--zelena"><div class="semafor-vysledek__barva"><span class="semafor-znak semafor-znak--zelena" aria-hidden="true"><svg class="ikona"><use href="#i-fajfka"/></svg></span>Zelená: zvládnuto</div><p class="semafor-vysledek__doporuceni">Výborně. Pochvalte a jděte dál.</p></div>
+                    </div>
+                  </li>
+                </ol>
+
+                <section class="tahak__pomucky">
+                  <h2 class="nadpis-sekce">Pro jistotu</h2>
+                  <details class="rozbalovaci rozbalovaci--reseni" open>
+                    <summary><svg class="ikona" aria-hidden="true"><use href="#i-oko"/></svg>Ukázat řešení<svg class="ikona rozbalovaci__sipka" aria-hidden="true"><use href="#i-dolu"/></svg></summary>
+                    <div class="rozbalovaci__obsah">
+                      <div class="reseni">
+                        <div class="reseni__oddil"><h4 class="reseni__oddil-nadpis">A) 5 + 3 · 4</h4></div>
+                        <div class="reseni__vypocet"><div class="reseni__radek">První: 3 · 4</div><div class="reseni__vysvetlivka">násobení má přednost před sčítáním</div></div>
+                        <div class="reseni__vypocet"><div class="reseni__radek">5 + 12 = 17</div></div>
+                        <div class="reseni__vysledek"><span class="reseni__vysledek-stitek">Výsledek</span><div class="reseni__radek">A) 3 · 4</div></div>
+                      </div>
+                    </div>
+                  </details>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ramec" style="flex:1;min-width:min(100%,30rem)">
+        <span class="ramec__stitek">Žák — detektiv: řádky v zadání a dlaždice se štítkem</span>
+        <div class="lekce-zak">
+          <article class="karta-ulohy">
+            <div class="karta-ulohy__hlavicka"><span class="stitek stitek--navy">Úloha 2</span><span class="stitek">Detektiv</span></div>
+            <div class="karta-ulohy__zadani zadani">
+              <p>Petr počítal příklad</p>
+              <p style="text-align:center;font-size:1.25em">90 − 2 · (1 + 2)²</p>
+              <p>a udělal <strong>jednu</strong> chybu. Najdi ji.</p>
+              <ol><li><p><span class="zvyraznitelne">řádek:</span> = 90 − 2 · 3²</p></li><li><p><span class="zvyraznitelne">řádek:</span> = 90 − 6²</p></li><li><p><span class="zvyraznitelne">řádek:</span> = 90 − 36</p></li><li><p><span class="zvyraznitelne">řádek:</span> = 54</p></li></ol>
+            </div>
+          </article>
+          <section class="krok" aria-label="Krok 1">
+            <span class="krok__cislo">Krok 1</span>
+            <h3 class="krok__popisek">Klikni na řádek s chybou</h3>
+            <div class="dlazdice-mrizka dlazdice-mrizka--sloupec">
+              <button class="dlazdice dlazdice--radek" type="button"><span class="dlazdice__text"><span class="dlazdice__stitek">1. řádek</span><span class="dlazdice__vyraz">= 90 − 2 · 3²</span></span></button>
+              <button class="dlazdice dlazdice--radek je-vybrano" aria-pressed="true" type="button"><span class="dlazdice__text"><span class="dlazdice__stitek">2. řádek</span><span class="dlazdice__vyraz">= 90 − 6²</span></span></button>
+              <button class="dlazdice dlazdice--radek je-nesedi" type="button"><span class="dlazdice__text"><span class="dlazdice__stitek">3. řádek</span><span class="dlazdice__vyraz">= 90 − 36</span></span><span class="dlazdice__znak dlazdice__znak--nesedi"><svg class="ikona" aria-hidden="true"><use href="#i-opakovat"/></svg></span></button>
+            </div>
+            <div class="zpetna-vazba zpetna-vazba--nesedi"><svg class="ikona" aria-hidden="true"><use href="#i-opakovat"/></svg><span>Zkus to ještě jednou.</span></div>
+            <div class="krok__akce"><button class="tlacitko tlacitko--primarni tlacitko--velke" type="button">Odevzdat krok</button></div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<section class="vitrina" id="modal">
+  <div class="obal">
+    <h2>Modal volby režimu <span class="vitrina__trida">&lt;dialog class="modal"&gt;</span></h2>
+    <p class="vitrina__popis">Na telefonu vyjede zespodu (šířka ≤ 640 px), na PC uprostřed. Tlačítko níže otevře skutečný dialog.</p>
+    <div class="ramecky">
+      <div class="ramec">
+        <span class="ramec__stitek">Telefon 360 px — nejužší podporovaná šířka</span>
+        <div class="ramec-telefon ramec-telefon--360">
+          <div class="vitrina-zaclona">
+            <div class="modal__panel">
+              <h2 class="modal__nadpis">Jak dnes budete pracovat?</h2>
+              <button class="tlacitko tlacitko--tiche tlacitko--ikona modal__zavrit" aria-label="Zavřít"><svg class="ikona" aria-hidden="true"><use href="#i-krizek"/></svg></button>
+              <div class="volby-karet">
+                <button class="volba-karta"><span class="ikona-kruh"><svg class="ikona" aria-hidden="true"><use href="#i-obrazovka"/></svg></span><span class="volba-karta__nazev">V aplikaci</span><span class="volba-karta__popis">Dítě řeší na počítači nebo tabletu.</span></button>
+                <button class="volba-karta"><span class="ikona-kruh"><svg class="ikona" aria-hidden="true"><use href="#i-tiskarna"/></svg></span><span class="volba-karta__nazev">Na papír</span><span class="volba-karta__popis">Vytisknete úlohy, výsledky zadáte vy.</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ramec" style="flex:1;min-width:min(100%,30rem)">
+        <span class="ramec__stitek">Desktop — panel modalu</span>
+        <div class="modal__panel vitrina-modal-desktop">
+          <h2 class="modal__nadpis">Jak dnes budete pracovat?</h2>
+          <button class="tlacitko tlacitko--tiche tlacitko--ikona modal__zavrit" aria-label="Zavřít"><svg class="ikona" aria-hidden="true"><use href="#i-krizek"/></svg></button>
+          <div class="volby-karet">
+            <button class="volba-karta"><span class="ikona-kruh"><svg class="ikona" aria-hidden="true"><use href="#i-obrazovka"/></svg></span><span class="volba-karta__nazev">V aplikaci</span><span class="volba-karta__popis">Dítě řeší na počítači nebo tabletu.</span></button>
+            <button class="volba-karta"><span class="ikona-kruh"><svg class="ikona" aria-hidden="true"><use href="#i-tiskarna"/></svg></span><span class="volba-karta__nazev">Na papír</span><span class="volba-karta__popis">Vytisknete úlohy, výsledky zadáte vy.</span></button>
+          </div>
+        </div>
+        <p style="margin-top:var(--mezera-4)"><button class="tlacitko tlacitko--navy" data-akce="otevrit-modal">Otevřít skutečný dialog</button></p>
+      </div>
+    </div>
+
+    <dialog class="modal" id="modalRezim" aria-labelledby="modalRezimNadpis">
+      <div class="modal__panel">
+        <h2 class="modal__nadpis" id="modalRezimNadpis">Jak dnes budete pracovat?</h2>
+        <button class="tlacitko tlacitko--tiche tlacitko--ikona modal__zavrit" aria-label="Zavřít" data-zavrit><svg class="ikona" aria-hidden="true"><use href="#i-krizek"/></svg></button>
+        <div class="volby-karet">
+          <button class="volba-karta" data-zavrit><span class="ikona-kruh"><svg class="ikona" aria-hidden="true"><use href="#i-obrazovka"/></svg></span><span class="volba-karta__nazev">V aplikaci</span><span class="volba-karta__popis">Dítě řeší na počítači nebo tabletu.</span></button>
+          <button class="volba-karta" data-zavrit><span class="ikona-kruh"><svg class="ikona" aria-hidden="true"><use href="#i-tiskarna"/></svg></span><span class="volba-karta__nazev">Na papír</span><span class="volba-karta__popis">Vytisknete úlohy, výsledky zadáte vy.</span></button>
+        </div>
+      </div>
+    </dialog>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<section class="vitrina" id="registrace">
+  <div class="obal">
+    <h2>Formulář registrace <span class="vitrina__trida">.formular</span></h2>
+    <p class="vitrina__popis">Chyby ve formuláři jsou oranžové s ikonou (červená je vyhrazená semaforu). Volby jako velké dlaždice <span class="vitrina__trida">.volby</span> / <span class="vitrina__trida">.volba</span>.</p>
+    <div class="ramecky">
+      <div class="ramec">
+        <span class="ramec__stitek">Telefon 390 px — registrace</span>
+        <div class="ramec-telefon">
+          <header class="hlavicka"><div class="hlavicka__vnitrek"><a class="logo" href="#"><span class="logo__znacka">Student<span>Base</span></span><span class="logo__produkt">Spolu na přijímačky</span></a></div></header>
+          <div style="padding:var(--mezera-5) var(--mezera-4) var(--mezera-7)">
+            <form class="formular" onsubmit="return false" novalidate>
+              <div>
+                <h1>Registrace do pilotu</h1>
+                <p class="text-tlumeny" style="margin-top:var(--mezera-2)">4 lekce zdarma. Zabere to 2 minuty.</p>
+              </div>
+
+              <fieldset class="formular__sekce">
+                <legend class="formular__nadpis-sekce">Vy</legend>
+                <div class="pole-skupina">
+                  <label class="pole-popisek" for="r-jmeno">Vaše jméno</label>
+                  <input class="pole" id="r-jmeno" autocomplete="name" value="Jana Nováková">
+                </div>
+                <div class="pole-skupina">
+                  <label class="pole-popisek" for="r-email">E-mail</label>
+                  <input class="pole" id="r-email" type="email" autocomplete="email" inputmode="email" value="jana@seznam" aria-invalid="true" aria-describedby="r-email-chyba">
+                  <p class="pole-chyba" id="r-email-chyba"><svg class="ikona" aria-hidden="true"><use href="#i-pozor"/></svg>Zkontrolujte prosím e-mail, chybí v něm tečka a koncovka (např. .cz).</p>
+                </div>
+                <div class="pole-skupina">
+                  <label class="pole-popisek" for="r-heslo">Heslo</label>
+                  <input class="pole" id="r-heslo" type="password" autocomplete="new-password" aria-describedby="r-heslo-nap">
+                  <p class="pole-napoveda" id="r-heslo-nap">Alespoň 8 znaků.</p>
+                </div>
+              </fieldset>
+
+              <fieldset class="formular__sekce">
+                <legend class="formular__nadpis-sekce">Dítě</legend>
+                <div class="pole-skupina">
+                  <label class="pole-popisek" for="r-dite">Křestní jméno dítěte</label>
+                  <input class="pole" id="r-dite" autocomplete="off">
+                </div>
+                <fieldset class="volby">
+                  <legend>Na jakou školu se hlásí?</legend>
+                  <label class="volba"><input class="volba__vstup" type="radio" name="skola" value="gymnazium" checked><span class="volba__obsah">Gymnázium</span></label>
+                  <label class="volba"><input class="volba__vstup" type="radio" name="skola" value="ss"><span class="volba__obsah">SŠ s maturitou</span></label>
+                </fieldset>
+                <fieldset class="volby volby--stupnice">
+                  <legend>Známka z matematiky na konci 8. třídy</legend>
+                  <label class="volba"><input class="volba__vstup" type="radio" name="znamka" value="1"><span class="volba__obsah">1</span></label>
+                  <label class="volba"><input class="volba__vstup" type="radio" name="znamka" value="2"><span class="volba__obsah">2</span></label>
+                  <label class="volba"><input class="volba__vstup" type="radio" name="znamka" value="3" checked><span class="volba__obsah">3</span></label>
+                  <label class="volba"><input class="volba__vstup" type="radio" name="znamka" value="4"><span class="volba__obsah">4</span></label>
+                  <label class="volba"><input class="volba__vstup" type="radio" name="znamka" value="5"><span class="volba__obsah">5</span></label>
+                </fieldset>
+              </fieldset>
+
+              <div class="pole-skupina">
+                <label class="pole-popisek" for="r-odkud">Odkud o nás víte? <span class="pole-popisek__volitelne">(nepovinné)</span></label>
+                <select class="pole" id="r-odkud">
+                  <option value="">Vyberte…</option>
+                  <option>Facebook / Instagram</option>
+                  <option>Od známých</option>
+                  <option>Doučování StudentBase</option>
+                  <option>Vyhledávač</option>
+                  <option>Jinde</option>
+                </select>
+              </div>
+
+              <label class="zaskrtavatko">
+                <input type="checkbox" required>
+                <span>Souhlasím s <a href="#">obchodními podmínkami</a> a zpracováním osobních údajů.</span>
+              </label>
+
+              <button class="tlacitko tlacitko--primarni tlacitko--velke tlacitko--cela-sirka" type="submit">Zaregistrovat se</button>
+              <p class="text-stred text-tlumeny">Už máte účet? <a href="#">Přihlaste se</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<section class="vitrina" id="admin">
+  <div class="obal">
+    <h2>Admin: filtry a tabulka <span class="vitrina__trida">.filtry</span> <span class="vitrina__trida">.tabulka</span></h2>
+    <p class="vitrina__popis">Jen desktop (Pavel, myš) — hustší řádky, malá tlačítka jsou tu povolená. Tabulka se na úzké obrazovce posouvá uvnitř <span class="vitrina__trida">.tabulka-obal</span>, stránka ne.</p>
+    <div class="posuv">
+      <div class="ramec-desktop">
+        <div class="ramec-desktop__lista"><i></i><i></i><i></i></div>
+        <header class="hlavicka"><div class="hlavicka__vnitrek"><a class="logo" href="#"><span class="logo__znacka">Student<span>Base</span></span><span class="logo__produkt">Admin</span></a><span class="stitek stitek--tmavy" style="background:rgb(255 255 255 / .12)">Pavel</span></div></header>
+        <div class="obal" style="padding-block:var(--mezera-6)">
+          <div class="zasobnik">
+            <div class="radek radek--mezi"><h1>Rodiny</h1><span class="text-tlumeny">128 rodin · 97 pilot · 29 aktivní · 2 uzavřené</span></div>
+            <form class="filtry" onsubmit="return false" role="search">
+              <div class="filtry__pole filtry__pole--hledat">
+                <label for="a-hledat">Hledat</label>
+                <div class="pole-hledat"><svg class="ikona" aria-hidden="true"><use href="#i-hledat"/></svg><input class="pole" id="a-hledat" type="search" placeholder="Jméno, e-mail, dítě"></div>
+              </div>
+              <div class="filtry__pole">
+                <label for="a-stav">Stav</label>
+                <select class="pole" id="a-stav"><option>Všechny</option><option>Pilot</option><option>Aktivní</option><option>Uzavřené</option></select>
+              </div>
+              <div class="filtry__pole">
+                <label for="a-razeni">Řadit</label>
+                <select class="pole" id="a-razeni"><option>Poslední aktivita</option><option>Datum registrace</option><option>Počet lekcí</option></select>
+              </div>
+              <div class="filtry__akce"><button class="tlacitko tlacitko--sekundarni" type="button"><svg class="ikona" aria-hidden="true"><use href="#i-stahnout"/></svg>Export CSV</button></div>
+            </form>
+
+            <div class="tabulka-obal">
+              <table class="tabulka">
+                <thead>
+                  <tr>
+                    <th scope="col">Rodina</th>
+                    <th scope="col">Děti</th>
+                    <th scope="col">Stav</th>
+                    <th scope="col" class="tabulka__cislo">Lekce</th>
+                    <th scope="col">Poslední semafory</th>
+                    <th scope="col" aria-sort="descending"><button class="tabulka__razeni" type="button" aria-sort="descending">Poslední aktivita <svg class="ikona ikona--mala" aria-hidden="true"><use href="#i-dolu"/></svg></button></th>
+                    <th scope="col">Poznámka</th>
+                    <th scope="col"><span class="jen-ctecka">Akce</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Jana Nováková</strong><span class="tabulka__sekundarni">jana.novakova@seznam.cz</span></td>
+                    <td>Eliška, Tomáš</td>
+                    <td><span class="stitek stitek--navy">Pilot</span></td>
+                    <td class="tabulka__cislo">3 / 4</td>
+                    <td><div class="semafor-tecky" role="img" aria-label="zelená, oranžová, zelená"><span class="semafor-znak semafor-znak--mala semafor-znak--zelena"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg></span><span class="semafor-znak semafor-znak--mala semafor-znak--oranzova"><svg class="ikona" aria-hidden="true"><use href="#i-opakovat"/></svg></span><span class="semafor-znak semafor-znak--mala semafor-znak--zelena"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg></span></div></td>
+                    <td class="tabulka__nezalamovat">dnes 19:42</td>
+                    <td class="text-tlumeny">—</td>
+                    <td><div class="tabulka__akce"><button class="tlacitko tlacitko--male tlacitko--primarni">Odemknout</button><button class="tlacitko tlacitko--male tlacitko--tiche">Poznámka</button></div></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Petr Dvořák</strong><span class="tabulka__sekundarni">p.dvorak@gmail.com</span></td>
+                    <td>Adam</td>
+                    <td><span class="stitek stitek--zelena">Aktivní</span></td>
+                    <td class="tabulka__cislo">11</td>
+                    <td><div class="semafor-tecky" role="img" aria-label="červená, červená, oranžová"><span class="semafor-znak semafor-znak--mala semafor-znak--cervena"><svg class="ikona ikona--plna" aria-hidden="true"><use href="#i-stop"/></svg></span><span class="semafor-znak semafor-znak--mala semafor-znak--cervena"><svg class="ikona ikona--plna" aria-hidden="true"><use href="#i-stop"/></svg></span><span class="semafor-znak semafor-znak--mala semafor-znak--oranzova"><svg class="ikona" aria-hidden="true"><use href="#i-opakovat"/></svg></span></div></td>
+                    <td class="tabulka__nezalamovat">včera 20:15</td>
+                    <td>Zaplaceno 790 (Revolut 2. 10.)</td>
+                    <td><div class="tabulka__akce"><button class="tlacitko tlacitko--male tlacitko--sekundarni">Uzavřít</button><button class="tlacitko tlacitko--male tlacitko--tiche">Poznámka</button></div></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Lucie Malá</strong><span class="tabulka__sekundarni">lucie.mala@email.cz</span></td>
+                    <td>Klára</td>
+                    <td><span class="stitek">Uzavřeno</span></td>
+                    <td class="tabulka__cislo">0</td>
+                    <td><span class="text-tlumeny">—</span></td>
+                    <td>28. 9.</td>
+                    <td class="text-tlumeny">—</td>
+                    <td><div class="tabulka__akce"><button class="tlacitko tlacitko--male tlacitko--tiche">Poznámka</button></div></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="prazdny-stav">
+              <span class="ikona-kruh"><svg class="ikona" aria-hidden="true"><use href="#i-hledat"/></svg></span>
+              <h2 class="prazdny-stav__nadpis">Nic nenalezeno</h2>
+              <p class="prazdny-stav__text">Žádná rodina neodpovídá filtru „Uzavřené" a hledání „novák".</p>
+              <button class="tlacitko tlacitko--sekundarni">Zrušit filtry</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<section class="vitrina" id="stavy">
+  <div class="obal">
+    <h2>Hlášky, toast, prázdný stav, načítání</h2>
+    <p class="vitrina__popis">Systémová chyba je oranžová s ikonou a akcí „Obnovit" (<span class="vitrina__trida">.hlaska--varovani</span>, <span class="vitrina__trida">role="alert"</span>).</p>
+    <div class="vitrina__mrizka">
+      <div class="vitrina__blok">
+        <h3>Hlášky <span class="vitrina__trida">.hlaska</span></h3>
+        <div class="zasobnik">
+          <div class="hlaska hlaska--varovani" role="alert">
+            <svg class="ikona" aria-hidden="true"><use href="#i-pozor"/></svg>
+            <div class="hlaska__text"><strong>Nepodařilo se uložit, zkuste obnovit.</strong>Odpovědi držíme v paměti a zkusíme je uložit znovu.
+              <div class="hlaska__akce"><button class="tlacitko tlacitko--sekundarni" onclick="location.reload()"><svg class="ikona" aria-hidden="true"><use href="#i-obnovit"/></svg>Obnovit</button></div>
+            </div>
+          </div>
+          <div class="hlaska hlaska--info">
+            <svg class="ikona" aria-hidden="true"><use href="#i-info"/></svg>
+            <div class="hlaska__text">Lekce 5 se otevře 1. 12.</div>
+          </div>
+          <div class="hlaska hlaska--uspech">
+            <svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg>
+            <div class="hlaska__text"><strong>Máte nárok na 790 Kč</strong>Děkujeme za vyplnění dotazníku. Platební údaje vám pošleme e-mailem.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="vitrina__blok">
+        <h3>Toast <span class="vitrina__trida">.toast</span></h3>
+        <div class="zasobnik">
+          <div class="toast vitrina-toast"><svg class="ikona" aria-hidden="true"><use href="#i-fajfka"/></svg><span class="toast__text">Uloženo</span></div>
+          <div class="toast toast--varovani vitrina-toast"><svg class="ikona" aria-hidden="true"><use href="#i-pozor"/></svg><span class="toast__text">Jste offline, uložíme později</span></div>
+          <div><button class="tlacitko tlacitko--navy" data-akce="toast">Ukázat toast</button></div>
+        </div>
+        <h3 style="margin-top:var(--mezera-5)">Načítání <span class="vitrina__trida">.nacitani</span></h3>
+        <div class="nacitani"><span class="tocitko" aria-hidden="true"></span>Načítám lekci…</div>
+      </div>
+
+      <div class="vitrina__blok">
+        <h3>Prázdný stav <span class="vitrina__trida">.prazdny-stav</span></h3>
+        <div class="prazdny-stav">
+          <span class="ikona-kruh"><svg class="ikona" aria-hidden="true"><use href="#i-prazdno"/></svg></span>
+          <h2 class="prazdny-stav__nadpis">Zatím žádná lekce</h2>
+          <p class="prazdny-stav__text">Až dokončíte první lekci, uvidíte tady barvy semaforu.</p>
+          <button class="tlacitko tlacitko--primarni">Začít první lekci</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<section class="vitrina" id="tisk">
+  <div class="obal">
+    <h2>Tisk A4 <span class="vitrina__trida">css/tisk.css</span></h2>
+    <p class="vitrina__popis">Náhled listu. Úloha se nikdy nerozdělí mezi stránky, rámeček „Výpočet" 4 cm (<span class="vitrina__trida">.tisk-vypocet</span>) nebo 8 cm (<span class="vitrina__trida">--velky</span>), řádek „Výsledek".</p>
+    <div class="posuv">
+      <article class="tisk-list">
+        <header class="tisk-zahlavi">
+          <div class="tisk-zahlavi__lekce">Lekce 1: Pořadí operací<small>Spolu na přijímačky · Pilot</small></div>
+          <div class="tisk-zahlavi__jmeno">Jméno: <strong>Eliška</strong><br>Datum: <span class="tisk-linka"></span></div>
+        </header>
+
+        <section class="tisk-uloha">
+          <div class="tisk-uloha__hlavicka"><span class="tisk-uloha__cislo">1</span><span class="tisk-uloha__typ">Rozcvička</span></div>
+          <div class="tisk-uloha__zadani"><p>Co se počítá jako první v příkladu 8 + 2 · 5?</p></div>
+          <ul class="tisk-moznosti"><li>a) 8 + 2</li><li>b) 2 · 5</li><li>c) je to jedno</li></ul>
+          <div class="tisk-vysledek">Výsledek:</div>
+        </section>
+
+        <section class="tisk-uloha">
+          <div class="tisk-uloha__hlavicka"><span class="tisk-uloha__cislo">3</span><span class="tisk-uloha__typ">CERMAT úloha</span></div>
+          <div class="tisk-uloha__zadani"><p>Karel koupil 3 sešity po 24 Kč a 2 pera po 15 Kč. Platil pětistovkou. Kolik korun mu prodavačka vrátila?</p></div>
+          <div class="tisk-vypocet tisk-vypocet--velky"></div>
+          <div class="tisk-vysledek">Výsledek:</div>
+        </section>
+
+        <footer class="tisk-paticka"><span>StudentBase.cz · Spolu na přijímačky</span><span>Tahák má rodič v telefonu.</span></footer>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="toasty" aria-live="polite"></div>
+
+<script>
+  /* Jen ukázka interakcí na této stránce. V aplikaci to řeší web/js/*.js. */
+  (function () {
+    var ikona = function (id, trida) {
+      return '<svg class="ikona' + (trida ? ' ' + trida : '') + '" aria-hidden="true"><use href="#' + id + '"/></svg>';
+    };
+
+    /* Výběr dlaždice + odevzdání kroku (max 2 pokusy, pak neutrální „nesedí") */
+    document.querySelectorAll('[data-ukazka="krok-dlazdice"]').forEach(function (krok) {
+      var pokusy = 0;
+      var vazba = krok.querySelector('.zpetna-vazba');
+      krok.addEventListener('click', function (e) {
+        var d = e.target.closest('.dlazdice');
+        if (d && !d.disabled) {
+          krok.querySelectorAll('.dlazdice').forEach(function (x) {
+            x.classList.remove('je-vybrano', 'je-nesedi');
+            x.setAttribute('aria-pressed', x === d ? 'true' : 'false');
+            if (x === d) x.classList.add('je-vybrano');
+          });
+          return;
+        }
+        if (e.target.closest('[data-akce="odevzdat"]')) {
+          var vybrana = krok.querySelector('.dlazdice.je-vybrano');
+          if (!vybrana) return;
+          vybrana.classList.remove('je-vybrano');
+          vazba.hidden = false;
+          if (vybrana.dataset.spravne === '1') {
+            vybrana.classList.add('je-spravne');
+            krok.querySelectorAll('.dlazdice').forEach(function (x) { x.disabled = true; });
+            vazba.className = 'zpetna-vazba zpetna-vazba--spravne';
+            vazba.innerHTML = ikona('i-fajfka') + '<span>Sedí! Pokračuj dalším krokem.</span>';
+          } else {
+            pokusy++;
+            vybrana.classList.add('je-nesedi');
+            vazba.className = 'zpetna-vazba zpetna-vazba--nesedi';
+            vazba.innerHTML = pokusy < 2
+              ? ikona('i-opakovat') + '<span>Zkus to ještě jednou.</span>'
+              : ikona('i-sipka-vpravo') + '<span>Tohle zatím nesedí. Jdeme dál — rodič ví, jak na to.</span>';
+            if (pokusy >= 2) krok.querySelectorAll('.dlazdice').forEach(function (x) { x.disabled = true; });
+          }
+        }
+      });
+    });
+
+    /* Zvýraznění slova v zadání */
+    document.querySelectorAll('[data-ukazka="zvyrazneni"]').forEach(function (z) {
+      z.addEventListener('click', function (e) {
+        var s = e.target.closest('.zvyraznitelne');
+        if (s) s.classList.toggle('je-zvyrazneno');
+      });
+    });
+
+    /* Další otázka L1 → L3 */
+    document.querySelectorAll('[data-akce="dalsi-otazka"]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var sekce = b.closest('[data-ukazka="otazky"]');
+        var dalsi = sekce.querySelector('.otazka[hidden]');
+        if (dalsi) { dalsi.hidden = false; dalsi.classList.add('je-nova'); }
+        if (!sekce.querySelector('.otazka[hidden]')) { b.disabled = true; b.textContent = 'To jsou všechny otázky'; }
+      });
+    });
+
+    /* Semafor: výběr volby → barva + doporučení */
+    var texty = {
+      zelena: ['Zelená', 'i-fajfka', 'Zvládnuto. Pochvalte a jděte dál.', ''],
+      oranzova: ['Oranžová', 'i-opakovat', 'Zítra jedno 5minutové cvičení na závorky.', ''],
+      cervena: ['Červená', 'i-stop', 'Dnes zavřít. Zítra začněte znovu od obrázku s nákupem.', 'ikona--plna']
+    };
+    document.querySelectorAll('[data-ukazka="semafor"]').forEach(function (s) {
+      var vysledek = s.querySelector('.semafor-vysledek');
+      s.addEventListener('click', function (e) {
+        var v = e.target.closest('.semafor-volba');
+        if (!v) return;
+        s.querySelectorAll('.semafor-volba').forEach(function (x) { x.setAttribute('aria-pressed', x === v ? 'true' : 'false'); });
+        var b = v.dataset.barva, t = texty[b];
+        vysledek.hidden = false;
+        vysledek.className = 'semafor-vysledek semafor-vysledek--' + b;
+        vysledek.innerHTML = '<div class="semafor-vysledek__barva"><span class="semafor-znak semafor-znak--' + b + '" aria-hidden="true">' + ikona(t[1], t[3]) + '</span>' + t[0] + '</div>' +
+          '<p class="semafor-vysledek__doporuceni">' + t[2] + '</p><p class="semafor-vysledek__zmena">Volbu můžete změnit.</p>';
+      });
+    });
+
+    /* Přepínač (segmenty) */
+    document.querySelectorAll('.prepinac').forEach(function (p) {
+      p.addEventListener('click', function (e) {
+        var v = e.target.closest('.prepinac__volba');
+        if (!v) return;
+        p.querySelectorAll('.prepinac__volba').forEach(function (x) { x.setAttribute('aria-pressed', x === v ? 'true' : 'false'); });
+      });
+    });
+
+    /* Klávesnice: píše do posledního pole označeného data-klavesnice */
+    var aktivniPole = document.querySelector('[data-klavesnice]');
+    document.addEventListener('focusin', function (e) { if (e.target.matches('[data-klavesnice]')) aktivniPole = e.target; });
+    document.querySelectorAll('.klavesnice').forEach(function (k) {
+      k.addEventListener('click', function (e) {
+        var kl = e.target.closest('.klavesnice__klavesa');
+        if (!kl || !aktivniPole) return;
+        if (kl.dataset.znak) aktivniPole.value += kl.dataset.znak;
+        else if (kl.dataset.akce === 'smazat') aktivniPole.value = aktivniPole.value.slice(0, -1);
+        else if (kl.dataset.akce === 'zlomek') aktivniPole.value += '/';
+      });
+    });
+
+    /* Modal */
+    var modal = document.getElementById('modalRezim');
+    document.querySelectorAll('[data-akce="otevrit-modal"]').forEach(function (b) {
+      b.addEventListener('click', function () { if (modal.showModal) modal.showModal(); });
+    });
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal || e.target.closest('[data-zavrit]')) modal.close();
+    });
+
+    /* Toast */
+    var toasty = document.querySelector('.toasty');
+    document.querySelectorAll('[data-akce="toast"]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var t = document.createElement('div');
+        t.className = 'toast';
+        t.innerHTML = ikona('i-fajfka') + '<span class="toast__text">Uloženo</span>';
+        toasty.appendChild(t);
+        setTimeout(function () { t.classList.add('je-odchazi'); setTimeout(function () { t.remove(); }, 200); }, 2800);
+      });
+    });
+
+    /* Odpočet — ukázka 10 s, po vypršení klidná změna */
+    var odp = document.getElementById('ukazkaOdpocet');
+    document.getElementById('spustitOdpocet').addEventListener('click', function () {
+      var zbyva = 10, cas = odp.querySelector('.odpocet__cas');
+      odp.classList.remove('je-vyprselo'); cas.textContent = '0:10';
+      var t = setInterval(function () {
+        zbyva--;
+        cas.textContent = '0:' + String(Math.max(zbyva, 0)).padStart(2, '0');
+        if (zbyva <= 0) { clearInterval(t); odp.classList.add('je-vyprselo'); cas.textContent = 'Čas vypršel'; }
+      }, 1000);
+    });
+  })();
+</script>
+</body>
+</html>

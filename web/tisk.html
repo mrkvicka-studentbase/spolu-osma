@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tisk lekce — Spolu na přijímačky</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/design-system.css">
+<link rel="stylesheet" href="css/tisk.css">
+</head>
+<body>
+<!--
+  Tisková verze lekce (na papír). Bez navigace — viz kostra/04-obrazovky.md bod 8, agenti/09-tisk.md.
+  URL: tisk.html?lekce=P1[&dite=<id-ditete>][&zpet=rodic.html%3F…][&lokalne=1]
+    Otevírá se VE STEJNÉ KARTĚ (R29/H3, žádné window.open). zpet = kam vede „Zpět k lekci".
+    lokalne=1 = jen vývoj bez přihlášení (čte obsah/lekce/<id>.json místo Supabase), viz js/tisk.js.
+  Ovládání je v HTML hned (ne až z JS), aby stránka nikdy nebyla bílá; tisk.js ho jen napojí.
+-->
+<div class="tisk-ovladani jen-obrazovka" id="ovladani">
+  <a class="tlacitko tlacitko--sekundarni" id="tiskZpet" href="prehled.html"><svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span id="tiskZpetText">Zpět na přehled</span></a>
+  <button class="tlacitko tlacitko--primarni" id="tiskTlacitko" type="button" disabled><svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/></svg>Vytisknout / Uložit jako PDF</button>
+</div>
+<main id="obsah" aria-busy="true"><div class="nacitani" role="status"><span class="tocitko" aria-hidden="true"></span>Připravuji tiskovou verzi…</div></main>
+<script>
+  // Pojistka proti bílé stránce (H3): když se modul tisk.js vůbec nespustí (síť, starý prohlížeč),
+  // za 12 s se místo točítka ukáže čitelná hláška. tisk.js při startu nastaví window.spoluTiskBezi.
+  setTimeout(function () {
+    if (window.spoluTiskBezi) return;
+    var m = document.getElementById('obsah');
+    m.removeAttribute('aria-busy');
+    m.innerHTML = '<div class="hlaska hlaska--varovani" role="alert"><div class="hlaska__text"><strong>Tiskovou verzi se nepodařilo načíst.</strong> Zkontrolujte připojení a obnovte stránku.<div class="hlaska__akce"><button class="tlacitko tlacitko--sekundarni" type="button" onclick="location.reload()">Obnovit stránku</button></div></div></div>';
+  }, 12000);
+</script>
+<script type="module" src="js/tisk.js"></script>
+</body>
+</html>
