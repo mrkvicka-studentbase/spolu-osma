@@ -133,17 +133,27 @@ function vytvorNapovedy(uloha) {
       const idx = otazky.findIndex((o, i) => !ukazane.includes(i) && pismeno && new RegExp(`(^|[^A-Z])${pismeno}([^A-Z]|$)`).test(o.k || '')); // i „A a B“, „C–D“
       if (idx >= 0) return idx;
     }
-    return otazky.findIndex((_, i) => !ukazane.includes(i));
+    // detektiv: poslední otázka patří ke kroku 2 (proč / oprava) a může ukázat na chybné slovo → až po vyřešení kroku 1
+    const zamcenaPosledni = uloha.typ === 'detektiv' && uloha.kroky.length > 1 && !zaznam(uloha, uloha.kroky[0]).hotovo;
+    return otazky.findIndex((_, i) => !ukazane.includes(i) && !(zamcenaPosledni && i === otazky.length - 1));
   };
+  // tlačítko nápovědy: neaktivní, když teď další nápověda není (detektiv před vyřešením kroku 1); po pokusu znovu
+  const obnovTlacitko = () => {
+    const { i: ukazane } = napovedyUlohy(uloha);
+    if (ukazane.length < otazky.length) tlacitko.disabled = dalsiIndex(ukazane) < 0;
+  };
+  document.addEventListener('spolu:pokus', (e) => { if (e.detail?.ulohaId === uloha.id) setTimeout(obnovTlacitko, 0); }); // hotovo se nastaví až po události
   tlacitko.addEventListener('click', () => {
     const st = napovedyUlohy(uloha);
     const idx = dalsiIndex(st.i);
     if (idx < 0) return;
     ulozNapovedy(uloha, { n: st.n + 1, i: [...st.i, idx] });
     vykresli();
+    obnovTlacitko();
     seznam.lastElementChild?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   });
   vykresli();
+  obnovTlacitko();
   if (!otazky.length) tlacitko.hidden = true;
   // kontrolní / samostatná úloha: nápovědy až po prvním odevzdání (událost spolu:pokus z odevzdat())
   const ceka = el('p', { class: 'text-tlumeny samo-ceka', text: h('samo.kontrolni_ceka') });
