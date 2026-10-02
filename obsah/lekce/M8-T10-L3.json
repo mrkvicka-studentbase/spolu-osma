@@ -14,7 +14,7 @@
       "text": "podstava krát výška"
     },
     {
-      "znak": "$S = 2 \\cdot 10 + 84$",
+      "znak": "$S = 2 \\cdot 10 + 84 = 104$",
       "text": "dvě podstavy a plášť"
     },
     {
@@ -137,7 +137,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč podstava ležícího hranolu není stěna, na které leží.“",
         "otocena_role_odpoved": "Podstavy jsou dvě stejné stěny naproti sobě a mezi nimi vedou boční stěny. U ležícího hranolu jsou to trojúhelníky vpředu a vzadu. Stěna na zemi je jen jedna z bočních stěn.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. A $12$: zapomene dělit dvěma. Zeptejte se: „Kolikátá část obdélníku je trojúhelník?“ (Polovina.) A $60$: počítá objem. B $1$ trojúhelník: chybí jedna podstava; $2$ obdélníky: chybí boční stěna. „Kolik je stěn kolem dokola?“ (Tři.) C $60$: dělí dvěma znovu; $23$: sčítá. „Co znamená patnáct centimetrů čtverečních?“ (Hotový obsah podstavy.)"
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. A $12$: nedělí dvěma. Zeptejte se: „Kolikátá část obdélníku je trojúhelník?“ (Polovina.) A $60$: objem. B $1$ trojúhelník nebo $2$ obdélníky: „Kolik podstav a bočních stěn má hranol?“ (Dvě a tři.) C $60$: dělí dvěma znovu; $23$: sčítá. „Co znamená patnáct centimetrů čtverečních?“ (Obsah podstavy.)"
       },
       "semafor": {
         "zelena": "Výborně — podstavu i plášť rozlišuje. Pochvalte, že dítě našlo podstavu i u ležícího hranolu, a jděte dál.",
@@ -325,7 +325,7 @@
         },
         {
           "id": "final",
-          "popisek": "Výsledek",
+          "popisek": "Výsledek: počet aut",
           "vstup": {
             "typ": "cislo",
             "jednotka": "aut"
@@ -368,7 +368,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč u lichoběžníku nestačí vynásobit spodní stranu výškou.“",
         "otocena_role_odpoved": "Lichoběžník je nahoře užší než dole. Se spodní stranou bych počítal(a) větší obdélník. Proto se bere polovina součtu obou základen a teprve ta se násobí výškou.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. Krok 1 $24$, pak $480$ a $60$: nevydělí součet dvěma. Zeptejte se: „Kolik je polovina součtu základen?“ (Šest metrů.) $16$ nebo $8$, pak $320$ a $40$: bere jen jednu základnu. „Jak dlouhá je horní základna?“ (Čtyři metry.) Výsledek $240$: odpoví objemem. „Na co se ptá poslední otázka?“ (Na počet aut.)"
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Krok 1 $24$ (pak $480$, $60$): nedělí dvěma. Zeptejte se: „Kolik je polovina součtu základen?“ (Šest metrů.) $16$ (pak $320$, $40$) nebo $8$: jen jedna základna. „Jak dlouhé jsou základny?“ (Osm a čtyři.) Výsledek $240$: objem. „Na co se úloha ptá nakonec?“ (Na počet aut.)"
       },
       "semafor": {
         "zelena": "Výborně — lichoběžník i objem sedí. Pochvalte, že dítě vzalo obě základny a hlídalo, na co se úloha ptá, a jděte dál.",
@@ -424,7 +424,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč do povrchu patří dva trojúhelníky, i když klín leží na obdélníku.“",
         "otocena_role_odpoved": "Povrch jsou všechny stěny klínu. Trojúhelníky jsou vpředu a vzadu a obalit papírem se dají taky. Na které stěně klín leží, na tom nezáleží.",
-        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte: $96$: jen plášť. Zeptejte se: „Kde jsou trojúhelníky vpředu a vzadu?“ (V součtu chybí.) $120$: trojúhelníky nevydělí dvěma. „Kolikátá část obdélníku je trojúhelník?“ (Polovina.) $48$: objem. „Obaluješ, nebo plníš?“ (Obaluji.) Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte: $96$: jen plášť. Zeptejte se: „Kde jsou trojúhelníky vpředu a vzadu?“ (V součtu chybí.) $120$: trojúhelníky nevydělí dvěma. „Kolikátá část obdélníku je trojúhelník?“ (Polovina.) $48$: objem. „Obaluješ, nebo plníš?“ (Obaluji.)"
       },
       "semafor": {
         "zelena": "Výborně — povrch hranolu zvládá samo. Pochvalte, že dítě počítalo podstavy i plášť. Zítra můžete pokračovat další lekcí.",
@@ -437,9 +437,9 @@
     }
   ],
   "kontrola": {
-    "jistota": "stredni",
-    "poznamka": "Autor 1. 10.: čísla ověřena skriptem (python, zlomky) i přes web/js/vyhodnoceni.js. U1 4 · 3 : 2 = 6 (12, 60); 2 trojúhelníky a 3 obdélníky; 15 · 8 = 120 (60, 23). U2 6 · 4 : 2 = 12, 12 · 20 = 240 (480, 300, 320; k2 16, 15). U3 (8 + 4) : 2 · 2 = 12 m², 240 m³, 30 aut (k1 24, 16, 8; k2 480, 320; final 60, 40, 240). U4 2 · 6 + 12 · 8 = 108 (96, 120, 48). Sporné: 1) U1 A: osnova chce „který obrazec je podstava (ležící hranol)“; pro volbu „stěna, na které leží“ ve slovníku chyb kód není, proto je A jako obsah podstavy ležícího hranolu (distraktory 12 bez dělení dvěma, 60 objem = odpovida-na-jinou-otazku). Navrhuji nový kód, např. podstava-jako-dolni-stena. 2) U1 B místo „kolik stěn“ výběr složení povrchu (kódy povrch-bez-podstav, plast-jen-cast-sten). 3) U1 C 60 kódem trojuhelnik-deleni-dvema-dvakrat. 4) U3 k1 tři známé chyby se stejným kódem lichobeznik-jedna-zakladna (bez dělení dvěma, jen spodní, jen horní základna). 5) U4 klín: šířka klínu = výška hranolu, ležící hranol je záměrně i v semaforu (téma lekce). 6) Platí: příklad hranolu s podstavou obdélník 2 × 5 cm (obsah 10, obvod 14), výška 6 cm. 7) otocena_role_odpoved U3 „počítal(a)“ (řeč dítěte).",
-    "zkontroloval": "autor",
+    "jistota": "jista",
+    "poznamka": "Recenze: vše přepočítáno skriptem (Python Fraction: správné odpovědi, mezivýsledky, každá známá chyba a dlaždice, Platí, oranžová a červená) a přes vyhodnotKrok (správně s tečkou i čárkou, každá známá chyba vrací svůj kód); obrázky zkontrolovány vykreslením (kóty sedí se zadáním). Věcné chyby: žádné. Texty: popisek final U3 „Výsledek: počet aut“ (úloha se ptá na tři věci); typická chyba U1, U3, U4 zkrácena pod 50 slov (U4 bez věty o volbě semaforu, tu dává klíč pod tlačítky); Platí řádek 2 doplněn na $S = 2 \\cdot 10 + 84 = 104$. Odchylka od osnovy přijata: U1 A místo „který obrazec je podstava“ počítá obsah podstavy ležícího hranolu (pro volbu dolní stěny ve slovníku chyb kód není; distraktory 12 a 60 jsou skutečné chyby). Beze změny: U1 6 (12, 60), 2 trojúhelníky a 3 obdélníky, 120 (60, 23); U2 240 (480, 300, 320); U3 12 m² (24, 16, 8), 240 m³ (480, 320), 30 aut (60, 40, 240); U4 108 (96, 120, 48).",
+    "zkontroloval": "recenzent",
     "datum": "2026-10-01"
   }
 }

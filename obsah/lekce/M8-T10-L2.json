@@ -135,7 +135,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč dva a půl tisíce centimetrů krychlových nejsou dva a půl tisíce litrů.“",
         "otocena_role_odpoved": "Centimetr krychlový je malinká kostička. Litr je kostka deset krát deset krát deset centimetrů, vejde se do něj tisíc kostiček. Dva a půl tisíce kostiček jsou proto jen dva a půl litru.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. A $12$: sčítá hrany. Zeptejte se: „Kolik krychliček je v jedné vrstvě?“ (Šestnáct.) A $96$: počítá povrch. B $2\\,500$ l nebo C $1{,}5$ l: neví, kolik je litr. „Kolik centimetrů krychlových má litr?“ (Tisíc.) B $25$ nebo C $150$: převádí po stovkách jako u obsahu. „Kolik litrů je kubík?“ (Tisíc.)"
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. A $12$ (sčítá hrany) nebo $96$ (povrch): „Kolik krychliček je v jedné vrstvě a kolik je vrstev?“ (Šestnáct, čtyři.) B $2\\,500$ l nebo $25$ l: „Kolik centimetrů krychlových má litr?“ (Tisíc.) C $1{,}5$ l nebo $150$ l: „Kolik litrů je kubík?“ (Tisíc.)"
       },
       "semafor": {
         "zelena": "Výborně — objem i litry sedí. Pochvalte, že dítě hlídalo, kolik centimetrů krychlových má litr, a jděte dál.",
@@ -275,7 +275,7 @@
       "id": "M8-T10-L2-U3",
       "typ": "cermat",
       "cas_min": 7,
-      "zadani": "Bazén tvaru kvádru je dlouhý $8$ m, široký $5$ m a hluboký $1{,}5$ m. Napustí se jen do výšky $1{,}2$ m. Do bazénu přitéká $400$ litrů vody za minutu.\n\nVypočítej, kolik $\\text{m}^3$ vody bude v bazénu, kolik je to litrů a za kolik hodin se bazén napustí.",
+      "zadani": "Bazén tvaru kvádru je dlouhý $8$ m, široký $5$ m a hluboký $1{,}5$ m. Napustí se jen do výšky $1{,}2$ m. Čerpadlo do něj načerpá $4\\,000$ litrů vody za hodinu.\n\nVypočítej, kolik $\\text{m}^3$ vody bude v bazénu, kolik je to litrů a za kolik hodin se bazén napustí.",
       "zdroj": "vlastni",
       "obrazek": "<svg viewBox=\"0 0 370 170\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"90,140 290,140 350,95 350,47 290,92 90,92\" fill=\"currentColor\" fill-opacity=\"0.15\" stroke=\"none\"/><line x1=\"90\" y1=\"140\" x2=\"150\" y2=\"95\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><line x1=\"150\" y1=\"95\" x2=\"350\" y2=\"95\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><line x1=\"150\" y1=\"95\" x2=\"150\" y2=\"35\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><polygon points=\"90,140 290,140 290,80 90,80\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"90,80 290,80 350,35 150,35\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"290,140 350,95 350,35 290,80\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"90\" y1=\"92\" x2=\"290\" y2=\"92\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"290\" y1=\"92\" x2=\"350\" y2=\"47\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"70\" y1=\"80\" x2=\"70\" y2=\"140\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"64\" y1=\"80\" x2=\"76\" y2=\"80\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"64\" y1=\"140\" x2=\"76\" y2=\"140\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"62\" y=\"115\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">1,5 m</text><line x1=\"274\" y1=\"92\" x2=\"274\" y2=\"140\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"269\" y1=\"92\" x2=\"279\" y2=\"92\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"269\" y1=\"140\" x2=\"279\" y2=\"140\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"266\" y=\"122\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">1,2 m</text><text x=\"190\" y=\"160\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">8 m</text><text x=\"328\" y=\"130\" text-anchor=\"start\" font-size=\"14\" fill=\"currentColor\">5 m</text></svg>",
       "obrazek_popis": "Bazén tvaru kvádru: délka 8 m, šířka 5 m, hloubka 1,5 m; voda sahá do výšky 1,2 m.",
@@ -328,33 +328,29 @@
         },
         {
           "id": "final",
-          "popisek": "Výsledek",
+          "popisek": "Výsledek: počet hodin",
           "vstup": {
             "typ": "cislo",
             "jednotka": "h"
           },
           "spravne": {
-            "hodnota": 2
+            "hodnota": 12
           },
           "zname_chyby": [
             {
-              "hodnota": 120,
-              "typ_chyby": "jednotka-ve-vysledku-spatne"
+              "hodnota": 15,
+              "typ_chyby": "prehledl-udaj"
             },
             {
               "hodnota": 1.2,
-              "typ_chyby": "cas-po-stovkach"
-            },
-            {
-              "hodnota": 2.5,
-              "typ_chyby": "prehledl-udaj"
+              "typ_chyby": "objem-po-desitkach-nebo-stovkach"
             }
           ]
         }
       ],
       "tahak": {
-        "vysvetleni": "Bazén je hluboký $1{,}5$ m, ale voda sahá jen do $1{,}2$ m: počítá se s výškou vody. Kubík je tisíc litrů. Výsledek se chce v hodinách, hodina má šedesát minut. Čte se: $1{,}2$ m „jedna celá dva metru“ (metr dvacet), $1{,}5$ m „jedna celá pět metru“ (metr a půl).",
-        "reseni": "$8 \\cdot 5 = 40\\ \\text{m}^2$ (dno bazénu)\n\n$40 \\cdot 1{,}2 = 48\\ \\text{m}^3$ (voda, počítá se výška vody)\n\n$48 \\cdot 1\\,000 = 48\\,000$ l (kubík je tisíc litrů)\n\n$48\\,000 : 400 = 120$ min (každou minutu přiteče čtyři sta litrů)\n\n$120 : 60 = 2$ h (hodina má šedesát minut)\n\n**Výsledek:** $48\\ \\text{m}^3$, $48\\,000$ l, $2$ h",
+        "vysvetleni": "Bazén je hluboký $1{,}5$ m, ale voda sahá jen do $1{,}2$ m: počítá se s výškou vody. Kubík je tisíc litrů. Čerpadlo dodá čtyři tisíce litrů za hodinu, takže doba vyjde rovnou v hodinách. Čte se: $1{,}2$ m „jedna celá dva metru“ (metr dvacet), $1{,}5$ m „jedna celá pět metru“ (metr a půl).",
+        "reseni": "$8 \\cdot 5 = 40\\ \\text{m}^2$ (dno bazénu)\n\n$40 \\cdot 1{,}2 = 48\\ \\text{m}^3$ (voda, počítá se výška vody)\n\n$48 \\cdot 1\\,000 = 48\\,000$ l (kubík je tisíc litrů)\n\n$48\\,000 : 4\\,000 = 12$ h (každou hodinu přiteče čtyři tisíce litrů)\n\n**Výsledek:** $48\\ \\text{m}^3$, $48\\,000$ l, $12$ h",
         "otazky": [
           {
             "k": "Celá úloha",
@@ -366,20 +362,20 @@
           },
           {
             "k": "Krok 2 a výsledek",
-            "text": "„Tady máš začátek: jeden kubík je tisíc litrů. Kolik minut poteče voda? Kolik je to hodin?“"
+            "text": "„Tady máš začátek: jeden kubík je tisíc litrů. Kolik litrů přiteče za jednu hodinu? Kolikrát se to vejde do vody v bazénu?“"
           }
         ],
         "otocena_role": "„Vysvětli mi, proč nepočítáš s hloubkou bazénu jedna celá pět metru.“",
         "otocena_role_odpoved": "Bazén se nenapouští až po okraj, voda sahá jen do výšky metr dvacet. Objem vody se proto počítá s výškou vody, ne s hloubkou bazénu.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. $60$, $60\\,000$ a $2{,}5$: počítá s hloubkou bazénu. Zeptejte se: „Do jaké výšky sahá voda?“ (Metr dvacet.) $14{,}2$: sčítá rozměry. Krok 2 $4\\,800$ nebo $48$: „Kolik litrů je kubík?“ (Tisíc.) Výsledek $120$: minuty místo hodin; $1{,}2$: dělí stem. „Kolik minut má hodina?“ (Šedesát.)"
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. $60$, $60\\,000$ a $15$: počítá s hloubkou bazénu. Zeptejte se: „Do jaké výšky sahá voda?“ (Metr dvacet.) $14{,}2$: sčítá rozměry. „Které tři délky násobíš?“ (Osm, pět a metr dvacet.) Krok 2 $4\\,800$ nebo $48$ (pak $1{,}2$ h): „Kolik litrů je kubík?“ (Tisíc.)"
       },
       "semafor": {
-        "zelena": "Výborně — objem, litry i čas sedí. Pochvalte, že dítě počítalo s výškou vody a hlídalo jednotky, a jděte dál.",
-        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: „Nádrž má dno $2$ m krát $3$ m, voda sahá do výšky $1$ m. Za minutu přiteče $200$ litrů. Za kolik minut je napuštěná?“ Ať nahlas řekne objem, litry a minuty. Kontrola pro vás: $6\\ \\text{m}^3$, $6\\,000$ l, $30$ minut.",
+        "zelena": "Výborně — objem, litry i doba sedí. Pochvalte, že dítě počítalo s výškou vody a hlídalo jednotky, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: „Nádrž má dno $2$ m krát $3$ m, voda sahá do výšky $1$ m. Za hodinu přiteče $2\\,000$ litrů. Za kolik hodin je napuštěná?“ Ať nahlas řekne objem, litry a hodiny. Kontrola pro vás: $6\\ \\text{m}^3$, $6\\,000$ l, $3$ hodiny.",
         "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: čtverečkovaný papír a pravítko. Zítra ať dítě nakreslí na papír čtverec $10$ cm krát $10$ cm a řekne, kolik kostiček po centimetru by se vešlo do krychle s touto stěnou: jedna vrstva, pak deset vrstev. Pak ať samo zapíše $10 \\cdot 10 \\cdot 10 = 1\\,000\\ \\text{cm}^3 = 1$ l. Potom zopakujte lekci „Objem a litry“. Kontrola pro vás: vrstva $100$, celkem $1\\,000$ kostiček, to je litr."
       },
       "tisk": {
-        "zadani": "Bazén tvaru kvádru je dlouhý $8$ m, široký $5$ m a hluboký $1{,}5$ m. Napustí se jen do výšky $1{,}2$ m. Do bazénu přitéká $400$ litrů vody za minutu.\n\nVypočítej, kolik $\\text{m}^3$ vody bude v bazénu, kolik je to litrů a za kolik hodin se bazén napustí.\n\nA) Voda: ______ $\\text{m}^3$\n\nB) Voda: ______ l\n\nC) Bazén se napustí za ______ h"
+        "zadani": "Bazén tvaru kvádru je dlouhý $8$ m, široký $5$ m a hluboký $1{,}5$ m. Napustí se jen do výšky $1{,}2$ m. Čerpadlo do něj načerpá $4\\,000$ litrů vody za hodinu.\n\nVypočítej, kolik $\\text{m}^3$ vody bude v bazénu, kolik je to litrů a za kolik hodin se bazén napustí.\n\nA) Voda: ______ $\\text{m}^3$\n\nB) Voda: ______ l\n\nC) Bazén se napustí za ______ h"
       }
     },
     {
@@ -425,7 +421,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč nestačí vynásobit jedna celá pět krát jedna krát osmdesát.“",
         "otocena_role_odpoved": "Ta čísla jsou v různých jednotkách, v metrech a centimetrech. Převedu je na stejnou jednotku, nejlépe na decimetry, protože decimetr krychlový je litr. Správně je i: všechno v metrech, jedna celá dva kubíku, to je tisíc dvě stě litrů.",
-        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte: $120$: násobí metry s centimetry. Zeptejte se: „V jakých jednotkách jsou rozměry?“ (Metry a centimetry.) $1{,}2$: spočítá kubíky a nepřevede. „Kolik litrů je kubík?“ (Tisíc.) $12\\,000$: převádí po stovkách. Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte: $120$: nepřevede centimetry. Zeptejte se: „V jakých jednotkách jsou rozměry?“ (Metry a centimetry.) $1{,}2$: kubíky nepřevede na litry. „Kolik litrů je kubík?“ (Tisíc.) $12\\,000$: převádí po stovkách. „Kolik centimetrů krychlových má litr?“ (Tisíc.)"
       },
       "semafor": {
         "zelena": "Výborně — objem v litrech zvládá samo. Pochvalte, že dítě nejdřív sjednotilo jednotky. Zítra můžete pokračovat další lekcí.",
@@ -438,9 +434,9 @@
     }
   ],
   "kontrola": {
-    "jistota": "stredni",
-    "poznamka": "Autor 1. 10.: čísla ověřena skriptem (python, zlomky) i přes web/js/vyhodnoceni.js. U1 64 (12, 96); 2,5 l (2 500, 25); 1 500 l (1,5, 150). U2 6 · 3 · 4 = 72 l (720, 72 000, 7 200; k2 13, 7 200). U3 8 · 5 · 1,2 = 48 m³, 48 000 l, 120 min = 2 h (k1 60, 14,2; k2 4 800, 48, 60 000; final 120, 1,2, 2,5). U4 15 · 10 · 8 = 1 200 l (120, 12 000, 1,2). Sporné: 1) U3 má 5 výpočtů (dno, objem, litry, minuty, hodiny), limit je 4; krok na hodiny je jednoduchý, ale recenzent posoudí. 2) U3 final 120 kódem jednotka-ve-vysledku-spatne (minuty místo hodin), 1,2 kódem cas-po-stovkach (120 min děleno 100). 3) U1 C 1,5 l kódem litr-zamena (litr jako kubík). 4) U2 7 200 kódem prevod-spatnym-smerem (40 cm = 400 dm).",
-    "zkontroloval": "autor",
+    "jistota": "jista",
+    "poznamka": "Recenze: vše přepočítáno skriptem (Python Fraction: správné odpovědi, mezivýsledky, každá známá chyba a dlaždice, oranžová a červená) a přes vyhodnotKrok (správně s tečkou i čárkou, každá známá chyba vrací svůj kód). Věcná oprava (1): U3 měla 5 výpočtů (dno, objem, litry, minuty, hodiny) proti limitu 4 (osnova §1, SABLONA §21.9) a přítok 400 l za minutu byl nereálný; přítok změněn na čerpadlo 4 000 l za hodinu, final 48 000 : 4 000 = 12 h (známé chyby 15 = s hloubkou bazénu, 1,2 = 4 800 l převedené po stovkách; 120 a cas-po-stovkach odpadly). Upraveny vysvětlení, řešení, L3, typická chyba, zelená, oranžová (3 hodiny) a tisk. Texty: popisek final U3 „Výsledek: počet hodin“ (úloha se ptá na tři věci); typická chyba U1 a U4 zkrácena pod 50 slov (U4 bez věty o volbě semaforu, tu dává klíč pod tlačítky), U1 B a C mají každá svou otázku, U4 12 000 otázku o litru. Beze změny: U1 64 (12, 96), 2,5 l (2 500, 25), 1 500 l (1,5, 150); U2 72 l (720, 72 000, 7 200); U3 48 m³ (60, 14,2), 48 000 l (4 800, 48, 60 000); U4 1 200 l (120, 12 000, 1,2).",
+    "zkontroloval": "recenzent",
     "datum": "2026-10-01"
   }
 }
