@@ -372,7 +372,7 @@
           },
           {
             "k": "Krok 2 a výsledek",
-            "text": "„Tady máš začátek: pozemek má dvě stě čtyřicet arů. Kolik arů z něj zbude, když se postaví cesty a parkoviště?“"
+            "text": "„Tady máš začátek: hektar je sto arů, takže dva hektary jsou dvě stě arů. Kolik arů zbude na zahrádky? Kolik zahrádek to bude?“"
           }
         ],
         "otocena_role": "„Vysvětli mi, proč nestačí vydělit dvě stě čtyřicet arů čtyřmi.“",
@@ -431,7 +431,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč nemůžeš rovnou vydělit šest čtyřmi.“",
         "otocena_role_odpoved": "Protože podlaha je v metrech čtverečních a dlaždice v decimetrech čtverečních. Šest metrů čtverečních je šest set decimetrů čtverečních a teprve to se dělí čtyřmi.",
-        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nepíše nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: $15$: převádí po deseti. Zeptejte se: „Kolik decimetrů čtverečních má metr čtvereční?“ (Sto.) $1\\,500$: převede o jiný počet míst; $1{,}5$: nepřevede vůbec. Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $15$: převádí po deseti. Zeptejte se: „Kolik decimetrů čtverečních má metr čtvereční?“ (Sto.) $1\\,500$: převede o jiný počet míst; $1{,}5$: nepřevede vůbec."
       },
       "semafor": {
         "zelena": "Výborně — převod obsahu zvládá samo. Pochvalte, že si nejdřív sjednotilo jednotky. Zítra můžete pokračovat další lekcí.",
@@ -444,9 +444,9 @@
     }
   ],
   "kontrola": {
-    "jistota": "stredni",
-    "poznamka": "Autor 1. 10. 2026, čísla a známé chyby přepočítané skriptem (python) a vyhodnocení přes web/js/vyhodnoceni.js. U1 300 cm²; 250 dm²; 4 000 m². U2 3,5 · 10 000 = 35 000 m² (3 500 Petr; 350 v arech). U3 240 − 40 = 200 a, 200 : 4 = 50 (60 bez cest; 2 400 a → 2 360 → 590; 24 000 − 4 000 = 20 000 m² : 4 = 5 000). U4 600 : 4 = 150 (15; 1 500; 1,5). Sporné pro recenzenta: (1) U2 výsledek 350 vzniká dvěma chybami (odpověď v arech i převod po deseti ha → a → m²); kód jednotka-ve-vysledku-spatne, v taháku zmíněné obě. (2) U3 je proti osnově o krok bohatší (cesty a parkoviště 40 a), aby k2 nebyl jen opis k1; zůstávají 3 výpočty. (3) U1-C distraktor 400 m² (hektar jako tisíc) kódem posun-carky-o-spatny-pocet podle oddílu AE. (4) U2 má jen 2 známé chyby ve final.",
-    "zkontroloval": "autor",
+    "jistota": "jista",
+    "poznamka": "Recenzent 1. 10. 2026: všechna čísla, mezivýsledky a známé chyby přepočítány nezávisle (python Fraction), správné odpovědi a známé chyby ověřeny přes vyhodnotKrok. U1 300 cm²; 250 dm²; 4 000 m². U2 3,5 · 10 000 = 35 000 m² (3 500; 350). U3 240 − 40 = 200 a, 200 : 4 = 50 (240, 2 360; 60, 590, 5 000). U4 600 : 4 = 150 (15; 1 500; 1,5). Opraveno: U3 otázka 3 prozrazovala hodnotu kroku 1 (240 a, dlaždice), nově ukazuje jen, jak začít; U4 typická chyba zkrácena pod 50 slov (vzor T09). Body autora: 350 v U2 vzniká odpovědí v arech i převodem po deseti, kód jednotka-ve-vysledku-spatne, tahák zmiňuje obě cesty; U3 s cestami drží 3 výpočty a k2 tím není opis k1; 400 m² kódem posun-carky-o-spatny-pocet odpovídá slovníku (ha ↔ m²); 2 známé chyby v U2 stačí.",
+    "zkontroloval": "recenzent",
     "datum": "2026-10-01"
   }
 }

@@ -140,7 +140,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč u převodu gramů na kilogramy dělíš, a ne násobíš.“",
         "otocena_role_odpoved": "Kilogram je větší jednotka, vejde se do něj tisíc gramů. Kilogramů proto vyjde méně než gramů, a tak se dělí tisícem. Sedm set padesát gramů je necelý kilogram.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. $0{,}0024$ m, $750\\,000$ kg nebo $8\\,500$ m: plete si směr. Zeptejte se: „Bude čísel víc, nebo míň?“ (U A víc, u B a C míň.) $240$ m, $7{,}5$ kg nebo $8{,}5$ m: posune čárku o jiný počet míst. $0{,}0085$ m: převádí délku po stovkách."
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. $0{,}0024$ m, $750\\,000$ kg nebo $8\\,500$ m: plete si směr. Zeptejte se: „Vyjde větší, nebo menší číslo?“ (U A větší, u B a C menší.) $240$ m, $7{,}5$ kg nebo $8{,}5$ m: posune čárku o jiný počet míst. $0{,}0085$ m: převádí délku po stovkách."
       },
       "semafor": {
         "zelena": "Výborně — směr i počet míst sedí. Pochvalte, že se dítě nejdřív ptalo, která jednotka je větší, a jděte dál.",
@@ -384,12 +384,12 @@
           },
           {
             "k": "Krok 2 a výsledek",
-            "text": "„Tady máš začátek: výtah uveze šest set kilogramů. Kolik z toho zaberou Tomáš s tátou? Kolik kilogramů zbude na bedny?“"
+            "text": "„Tady máš začátek: desetina tuny je sto kilogramů. Kolik kilogramů zbude na bedny, když jedou i Tomáš s tátou? Kolik beden to je?“"
           }
         ],
         "otocena_role": "„Vysvětli mi, proč nestačí vydělit šest set kilogramů dvaceti.“",
         "otocena_role_odpoved": "Protože ve výtahu jedou i Tomáš s tátou a ti váží dohromady sto čtyřicet kilogramů. Na bedny zbývá jen čtyři sta šedesát kilogramů, a to je dvacet tři beden.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. Výsledek $30$: zapomene na lidi. Zeptejte se: „Kdo všechno pojede ve výtahu?“ (Tomáš, táta, bedny.) V kroku 2 $545$ nebo $515$: odečte jen jednoho; $140$ (pak $7$): hmotnost lidí. V kroku 1 jiná než $600$ kg (pak $5\\,860$ a $293$): „Kolik kilogramů má tuna?“ (Tisíc.)"
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Výsledek $30$: zapomene na lidi. Zeptejte se: „Kdo pojede ve výtahu?“ (Tomáš, táta, bedny.) V kroku 2 $545$, $515$: odečte jen jednoho; $140$ (pak $7$): hmotnost lidí. V kroku 1 jiná než $600$ kg: „Kolik kilogramů má tuna?“ (Tisíc.) Z $6\\,000$ pak $5\\,860$ a $293$."
       },
       "semafor": {
         "zelena": "Výborně — převod i hmotnost lidí ohlídalo. Pochvalte, že si dítě nejdřív převedlo tuny na kilogramy, a jděte dál.",
@@ -443,7 +443,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč nemůžeš rovnou dělit čtyři celé pět dvěma sty padesáti.“",
         "otocena_role_odpoved": "Protože ořechy jsou v kilogramech a sáček v gramech. Nejdřív musí být obojí v gramech: čtyři a půl kilogramu je čtyři tisíce pět set gramů. Pak vyjde osmnáct sáčků.",
-        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nepíše nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: $180$ nebo $1{,}8$: převede o jiný počet míst. Zeptejte se: „Kolik gramů má kilogram?“ (Tisíc.) $0{,}018$: nepřevede vůbec. Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $180$ nebo $1{,}8$: převede o jiný počet míst. Zeptejte se: „Kolik gramů má kilogram?“ (Tisíc.) $0{,}018$: nepřevede vůbec a dělí rovnou čtyři celé pět."
       },
       "semafor": {
         "zelena": "Výborně — převod i dělení zvládá samo. Pochvalte, že si nejdřív sjednotilo jednotky. Zítra můžete pokračovat další lekcí.",
@@ -456,9 +456,9 @@
     }
   ],
   "kontrola": {
-    "jistota": "stredni",
-    "poznamka": "Autor 1. 10. 2026, čísla a známé chyby přepočítané skriptem (python) a vyhodnocení přes web/js/vyhodnoceni.js. U1 2 400 m; 0,75 kg; 0,85 m. U2 150 + 65 + 2,5 = 217,5 m (240 Petr; 465 cm nepřevedené; 21 750 v cm). U3 600 − 140 = 460 kg, 460 : 20 = 23 (30 bez lidí; 6 000 kg → 5 860 → 293; 140 → 7). U4 4 500 : 250 = 18 (180; 1,8; 0,018). Sporné pro recenzenta: (1) U1-C distraktor 0,0085 m kódem delka-po-stovkach (cm → dm → m po stovkách) — je to dost časté, nebo nahradit? (2) U3 k2 má 4 známé chyby (545 a 515 = zapomněl jednoho z lidí, oba prehledl-udaj). (3) U3 slovo „váží“ místo „má hmotnost“ (hovorově). (4) U2 výsledek 217,5 je desetinný, záměr (převod cm → m); 0,0024 m v U1-A je hodně malé číslo, ale je to skutečná chyba směru. (5) Červená U3 cvičí jen „lidé zabírají místo“, ne převod.",
-    "zkontroloval": "autor",
+    "jistota": "jista",
+    "poznamka": "Recenzent 1. 10. 2026: všechna čísla, mezivýsledky a známé chyby přepočítány nezávisle (python Fraction), správné odpovědi a známé chyby ověřeny přes vyhodnotKrok. U1 2 400 m; 0,75 kg; 0,85 m. U2 150 + 65 + 2,5 = 217,5 m (240; 465; 21 750). U3 600 − 140 = 460 kg, 460 : 20 = 23 (545, 515, 140, 5 860; 30, 293, 7). U4 4 500 : 250 = 18 (180; 1,8; 0,018). Opraveno: U3 otázka 3 prozrazovala hodnotu kroku 1 (600 kg, dlaždice; v režimu samo jde nápověda 1 → 3 i během kroku 1), nově ukazuje jen, jak začít; U3 typická chyba přesněji (5 860 a 293 vznikají jen z 6 000 kg); U1 otázka v typické chybě srozumitelněji; U4 typická chyba zkrácena pod 50 slov (vzor T09). Body autora: distraktor 0,0085 m (cm → m po stovkách) je skutečná chyba podle slovníku, ponechán; 4 známé chyby v U3 k2 jsou povolená výjimka (545 a 515 stejná chyba, různá čísla); „váží“ je přirozené; červená U3 cvičí hlavní past úlohy, převod cvičí červené U1 a U4.",
+    "zkontroloval": "recenzent",
     "datum": "2026-10-01"
   }
 }
