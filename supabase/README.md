@@ -1,27 +1,29 @@
-# Supabase — Spolu na přijímačky
+# Supabase — Spolu 8 (opakování 8. třídy)
+
+> Spolu 8 má **novou** databázi (nový Supabase projekt, zatím nezaložený). Migrace 0001–0005 jsou čistá konsolidovaná sada (Spolu 0001–0007 + změny Spolu 8), viz `TECHNIKA-OSMA.md`. Lokální ověření: `bash supabase/test/over-migrace.sh` (PostgreSQL 16, nic nejde do Supabase).
 
 Databáze, zabezpečení (RLS), nahrávání lekcí a klientský modul `web/js/supabase.js`.
-Projekt: samostatný Supabase projekt jen pro tento produkt (`ruogwpyayxgclcwnaxky`). Na jiné projekty se nesahá.
+Projekt: samostatný Supabase projekt jen pro tento produkt (pro Spolu 8 se teprve založí; projekt Spolu `ruogwpyayxgclcwnaxky` se nepoužívá). Na jiné projekty se nesahá.
 
 ## Obsah složky
 
 | Soubor | K čemu |
 |---|---|
-| `migrations/0001_schema.sql` | tabulky, kontroly hodnot, indexy, GRANTy |
-| `migrations/0002_rls.sql` | pomocné funkce (`je_admin`, `duvod_zamceni`, …) + RLS politiky |
+| `migrations/0001_schema.sql` | tabulky, kontroly hodnot, indexy, GRANTy (`lekce.predmet`, fáze `osma`, `deti.predmety`, `sezeni.rezim` vč. `samo`) |
+| `migrations/0002_rls.sql` | pomocné funkce (`je_admin`, `duvod_zamceni`, `dite_ma_predmet_lekce`, …) + RLS politiky |
 | `migrations/0003_views.sql` | pohledy pro admin (`v_prehled_rodin`, `v_semafory_dle_kapitoly`, `v_cas_na_ulohu`, `v_cervene`, `v_alarm`) + funkce `katalog_lekci()` |
-| `migrations/0004_triggers.sql` | registrace → rodina + 1. dítě; max 2 děti; ochrana sloupců rodiny; dotazník → nárok; konec sezení |
+| `migrations/0004_triggers.sql` | registrace → rodina (`aktivni`) + 1. dítě; max 2 děti; ochrana sloupců rodiny; konec sezení |
 | `migrations/0005_admin.sql` | návod + zakomentovaný insert admina |
 | `vse-v-jednom.sql` | všechny migrace za sebou v jedné transakci (vygenerováno) |
 | `skripty/migrovat.mjs` | aplikuje migrace přes Node + pg, eviduje je v `_migrace` (primární cesta) |
 | `skripty/sql.mjs` | spustí SQL z argumentu / souboru, volitelně jako konkrétní uživatel (test RLS) |
 | `skripty/env.mjs` | společné: načtení `.env`, připojení k DB |
 | `skripty/spoj-migrace.mjs` | přegeneruje `vse-v-jednom.sql` (záloha pro SQL Editor) |
-| `skripty/odemknout-rodinu.sql` | ruční odemčení rodiny (záloha k tlačítku v adminu) |
-| `skripty/uzavrit-sezonu.sql` | 1. 5. 2027: všechny rodiny → `uzavreny` |
+| `skripty/odemknout-rodinu.sql` | ruční změna stavu rodiny (`aktivni` / `uzavreny`) |
+| `skripty/uzavrit-sezonu.sql` | konec provozu: všechny rodiny → `uzavreny` |
 | `seed/seed-lekce.mjs` | validace a nahrání `obsah/lekce/*.json` do tabulky `lekce` |
 | `seed/validator.mjs` | validace lekcí: `obsah/schema.json` + doménové kontroly (slovník `typy-chyb.md`, zlomky jen `\frac`, `poradi`, `vyraz`, bezpečné SVG); testy v `testy/validator.test.js` |
-| `testy-rls.sql` | ruční test RLS (vše se na konci vrátí zpět) |
+| `test/over-migrace.sh` + `test/test-zamek.sql` | lokální test migrací a zámku na PostgreSQL 16 (stuby auth v `test/stuby-supabase.sql`) |
 
 ## 1. Aplikace migrací
 
@@ -48,12 +50,11 @@ Migrace jsou psané tak, aby šly spustit opakovaně (`if not exists`, `create o
 
 ```
 npm run sql -- "select stav, count(*) from rodiny group by stav"     # jako postgres (obchází RLS)
-npm run sql -- --soubor supabase/testy-rls.sql                        # celý test RLS
 npm run sql -- --jako-uzivatel <uuid> "select id from lekce"          # jako přihlášená rodina, pak rollback
 ```
 - Výsledky se vypíší jako tabulky, `raise notice` jako `NOTICE: …`. Více příkazů najednou je povoleno.
-- `--jako-uzivatel` obalí vstup do transakce (`set local role authenticated` + JWT claims se `sub`) a vždy ji vrátí — nic nezapíše. Nepoužívat se soubory, které mají vlastní `begin`/`rollback` (např. `testy-rls.sql`).
-- `testy-rls.sql`: musí vypsat jen řádky `NOTICE: OK: …` a na konci `VŠECHNY TESTY RLS PROŠLY`. Založí dočasné testovací uživatele a lekce a na konci vše vrátí (`rollback`). Záloha: vložit ho do SQL Editoru.
+- `--jako-uzivatel` obalí vstup do transakce (`set local role authenticated` + JWT claims se `sub`) a vždy ji vrátí — nic nezapíše. Nepoužívat se soubory, které mají vlastní `begin`/`rollback`.
+- Test RLS a zámku: `bash supabase/test/over-migrace.sh` (lokální PostgreSQL 16; `testy-rls.sql` ze Spolu byl nahrazen `supabase/test/test-zamek.sql`).
 
 ## 3. Admin (Pavel)
 
@@ -84,7 +85,7 @@ npm run seed                            # nahraje nové a změněné lekce
 ```
 - Validuje proti `obsah/schema.json` + doménové kontroly (dlaždice právě 1 správná, každá špatná má `typ_chyby`, poslední krok `final`, unikátní id, pořadí typů úloh…).
 - Nahraje jen lekce, jejichž obsah se změnil; `verze` se zvýší o 1.
-- `otevrit_od` podle fáze: pilot 1. 10. 2026, faze1 1. 12. 2026, faze2 1. 2. 2027 (posun 25. 9.); `verejna` = jen pilot.
+- Spolu 8: `otevrit_od` = parametr `--otevrit-od RRRR-MM-DD` (všechny lekce obou předmětů najednou), `verejna` = volba `--verejna`. Jedna lekce: `--lekce M8-T03-L2`, soubor: `--soubor <cesta>`.
 - Lekce s `kontrola.jistota` = `nizka` / `neurceno` se **nenahrají** (obsah bez kontroly nejde ven). Pro testovací projekt: `--vcetne-nezkontrolovanych`.
 - Oprava obsahu = úprava JSON + znovu seed. Web není třeba nahrávat znovu.
 
@@ -92,7 +93,7 @@ npm run seed                            # nahraje nové a změněné lekce
 
 - Authentication → URL Configuration: **Site URL** `https://spolu.studentbase.cz`, **Redirect URLs** přidat `https://spolu.studentbase.cz/prehled.html` (a pro testování např. `http://localhost:8080/**`). Jinak odkaz z potvrzovacího e-mailu nepřesměruje na přehled.
 - Potvrzení e-mailu je zapnuté (R6). Texty e-mailů (Authentication → Email Templates) přeložit do češtiny.
-- Registrace: trigger `po_registraci` založí rodinu (stav `pilot`) i 1. dítě z metadat. Chyba v datech dítěte registraci neshodí — dítě se jen nezaloží a web nabídne jeho přidání.
+- Registrace: trigger `po_registraci` založí rodinu (stav `aktivni`) i 1. dítě z metadat (`dite_jmeno`, volitelně `predmety`). Chyba v datech dítěte registraci neshodí — dítě se jen nezaloží a web nabídne jeho přidání.
 
 ## 7. Provoz — důležité termíny
 
@@ -103,8 +104,8 @@ npm run seed                            # nahraje nové a změněné lekce
 ## 8. Přehled zabezpečení (pro kontrolu)
 
 - RLS zapnuté na všech tabulkách. Rodina vidí jen své řádky; admin (tabulka `admini`) vše.
-- `lekce`: čtení jen pilot (veřejné) nebo stav `aktivni` + po datu otevření; stav `uzavreny` nečte nic. Klient do `lekce` nikdy nezapisuje (nemá ani grant); seed jde přes secret key.
-- `rodiny`: klient smí změnit jen `jmeno_rodice`, `telefon`, `zdroj`; `stav`, `odemknuto_at`, `poznamka_admin`, `dotaznik_vyplnen` jen admin nebo triggery (trigger `rodiny_ochrana`).
+- `lekce`: čtení pro každou přihlášenou rodinu od `otevrit_od` (nebo `verejna`); stav `uzavreny` nečte nic. Sezení jen dítěti, které má předmět lekce v `deti.predmety`. Klient do `lekce` nikdy nezapisuje (nemá ani grant); seed jde přes secret key.
+- `rodiny`: klient smí změnit jen `jmeno_rodice`, `telefon`, `zdroj`; `stav`, `odemknuto_at`, `poznamka_admin` jen admin nebo triggery (trigger `rodiny_ochrana`).
 - `deti`: max 2 na rodinu (trigger + `unique (rodina_id, poradi)` + `check poradi between 1 and 2`); mazání jen ručně v SQL.
 - `odpovedi`: jen vkládání (append-only); opakované odeslání téhož pokusu se nezdvojí.
 - Připravený (vypnutý) zámek „jedno sezení najednou" — zakomentovaný index v `0001_schema.sql`.

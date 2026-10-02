@@ -24,7 +24,17 @@ import {
 } from '../web/js/vyhodnoceni.js';
 
 const TENTO_ADRESAR = path.dirname(fileURLToPath(import.meta.url));
-const ADRESAR_LEKCI = path.join(TENTO_ADRESAR, '..', 'obsah', 'lekce');
+// Spolu 8: lekce matematiky z obsah/lekce (M8-*.json, jak je autoři dopíší) + syntetické v testy/data/osma/lekce
+const ADRESARE_LEKCI = [path.join(TENTO_ADRESAR, '..', 'obsah', 'lekce'), path.join(TENTO_ADRESAR, 'data', 'osma', 'lekce')];
+async function souboryLekci() {
+  const vse = [];
+  for (const adr of ADRESARE_LEKCI) {
+    let nazvy = [];
+    try { nazvy = await readdir(adr); } catch { continue; }
+    for (const n of nazvy.filter((f) => /^M8-T\d{2}-(L\d|DIAG)\.json$/.test(f)).sort()) vse.push(path.join(adr, n));
+  }
+  return vse;
+}
 
 // ---------------------------------------------------------------------
 // normalizujCislo / naRacionalni
@@ -433,10 +443,9 @@ describe('spravnostUlohy', () => {
 // Reálný obsah: obsah/lekce/P*.json — každý krok musí sedět s vyhodnotKrok()
 // ---------------------------------------------------------------------
 
-describe('obsah/lekce/P*.json odpovídá vyhodnotKrok()', () => {
-  test('adresář s pilotními lekcemi existuje a obsahuje P*.json', async () => {
-    const soubory = (await readdir(ADRESAR_LEKCI)).filter((f) => /^P\d+\.json$/.test(f));
-    assert.ok(soubory.length >= 4, 'očekávám aspoň P1–P4.json');
+describe('lekce matematiky Spolu 8 (obsah/lekce + testy/data/osma) odpovídají vyhodnotKrok()', () => {
+  test('aspoň syntetické lekce M8-* existují', async () => {
+    assert.ok((await souboryLekci()).length >= 5, 'očekávám aspoň testy/data/osma/lekce/M8-*.json');
   });
 
   const hodnotaProTyp = (typ, zaznam) => {
@@ -447,11 +456,11 @@ describe('obsah/lekce/P*.json odpovídá vyhodnotKrok()', () => {
   };
 
   test('všechny lekce: dlaždice, správné hodnoty i známé chyby vyhodnotí vyhodnotKrok() podle JSON', async (t) => {
-    const soubory = (await readdir(ADRESAR_LEKCI)).filter((f) => /^P\d+\.json$/.test(f)).sort();
+    const soubory = await souboryLekci();
     assert.ok(soubory.length > 0);
 
     for (const soubor of soubory) {
-      const lekce = JSON.parse(await readFile(path.join(ADRESAR_LEKCI, soubor), 'utf8'));
+      const lekce = JSON.parse(await readFile(soubor, 'utf8'));
       await t.test(`lekce ${lekce.id} (${soubor})`, async (t2) => {
         for (const uloha of lekce.ulohy) {
           for (const krok of uloha.kroky) {
@@ -485,6 +494,19 @@ describe('obsah/lekce/P*.json odpovídá vyhodnotKrok()', () => {
                   }
                 });
               }
+              continue;
+            }
+
+            if (typ === 'vyraz' || typ === 'poradi') {
+              await t2.test(`${popis} — správná hodnota a známé chyby`, () => {
+                const sp = typ === 'vyraz' ? krok.spravne.vyraz : krok.spravne.poradi[0];
+                assert.equal(vyhodnotKrok(krok, sp).spravne, true, `správná hodnota v ${popis}`);
+                for (const z of krok.zname_chyby || []) {
+                  const v = vyhodnotKrok(krok, typ === 'vyraz' ? z.vyraz : z.poradi);
+                  assert.equal(v.spravne, false, popis);
+                  assert.equal(v.typ_chyby, z.typ_chyby, popis);
+                }
+              });
               continue;
             }
 

@@ -9,14 +9,21 @@ export const MAX_NAPOVED = 3;
 
 /**
  * Jde lekce udělat samo? Jen běžná lekce (ne blok, simulace, diagnostika) a bez kroků,
- * které hodnotí rodič pohledem (rýsování, volný text).
+ * které hodnotí rodič pohledem (rýsování, volný text). Spolu 8: oba předměty — i čeština
+ * (poslech a diktát čte nahrávka a vyhodnocuje aplikace, nápovědy z tahak.otazky).
  * @param {object} lekce  obsah lekce (ulohy[].kroky[].vstup.typ, typ)
  */
 export function lzeSamo(lekce) {
   if (!lekce || (lekce.typ && lekce.typ !== 'bezna')) return false;
-  if (lekce.predmet === 'cestina') return false; // čeština zatím jen s rodičem: poslech, diktát, tahák (R66)
   return (lekce.ulohy || []).every((u) => (u.kroky || []).every((k) => !['rysovani', 'text'].includes(k.vstup?.typ)));
 }
+
+/**
+ * Hlavní samostatná úloha lekce (matematika `semafor`, čeština `kontrolni`): v režimu samo se nápovědy
+ * odemknou až po prvním odevzdání (R55 „rodič mlčí do odevzdání“ v samo neplatí, ale nápověda předem taky ne).
+ * @param {{typ?: string}} uloha
+ */
+export const napovedyAzPoPokusu = (uloha) => uloha?.typ === 'kontrolni' || uloha?.typ === 'semafor';
 
 /**
  * Volba semaforu, kterou by jinak klikl rodič — z průběhu úlohy (klíč R34):

@@ -6,7 +6,7 @@
 
 -- ---------------------------------------------------------------------
 -- v_prehled_rodin — rodina, děti, stav, poslední aktivita, dokončené lekce,
--- aktuální týden (max tyden dokončené lekce), červené za 7 dní
+-- aktuální téma (max tyden dokončené lekce), červené za 7 dní
 -- ---------------------------------------------------------------------
 create or replace view public.v_prehled_rodin
 with (security_invoker = true)
@@ -18,11 +18,10 @@ select
   r.telefon,
   r.stav,
   r.zdroj,
-  r.dotaznik_vyplnen,
   r.poznamka_admin,
   r.odemknuto_at,
   r.created_at                           as registrace_at,
-  coalesce(d.deti, '[]'::jsonb)          as deti,          -- [{id, krestni_jmeno, typ_skoly, znamka_8, poradi}]
+  coalesce(d.deti, '[]'::jsonb)          as deti,          -- [{id, krestni_jmeno, predmety, poradi}]
   d.deti_jmena,                                           -- „Anna, Petr" (pro hledání / CSV)
   s.posledni_aktivita,
   coalesce(s.dokonceno_lekci, 0)         as dokonceno_lekci,
@@ -33,8 +32,8 @@ from public.rodiny r
 left join lateral (
   select
     jsonb_agg(jsonb_build_object(
-      'id', x.id, 'krestni_jmeno', x.krestni_jmeno, 'typ_skoly', x.typ_skoly,
-      'znamka_8', x.znamka_8, 'poradi', x.poradi) order by x.poradi) as deti,
+      'id', x.id, 'krestni_jmeno', x.krestni_jmeno, 'predmety', x.predmety,
+      'poradi', x.poradi) order by x.poradi) as deti,
     string_agg(x.krestni_jmeno, ', ' order by x.poradi)              as deti_jmena
   from public.deti x
   where x.rodina_id = r.id
@@ -69,6 +68,7 @@ create or replace view public.v_semafory_dle_kapitoly
 with (security_invoker = true)
 as
 select
+  l.predmet,
   l.kapitola,
   sm.barva,
   se.dite_id,
@@ -80,8 +80,8 @@ join public.sezeni se on se.id = sm.sezeni_id
 join public.deti d    on d.id = se.dite_id
 join public.lekce l   on l.id = se.lekce_id
 group by grouping sets (
-  (l.kapitola, sm.barva),
-  (l.kapitola, sm.barva, se.dite_id, d.krestni_jmeno)
+  (l.predmet, l.kapitola, sm.barva),
+  (l.predmet, l.kapitola, sm.barva, se.dite_id, d.krestni_jmeno)
 );
 
 -- ---------------------------------------------------------------------
@@ -135,6 +135,7 @@ select
   d.krestni_jmeno,
   se.id              as sezeni_id,
   se.lekce_id,
+  l.predmet,
   l.tema,
   l.kapitola,
   sm.uloha_id,
@@ -150,7 +151,7 @@ order by sm.created_at desc;
 
 -- ---------------------------------------------------------------------
 -- v_alarm — dítě, které má za posledních 7 dní ≥ 3 lekce (sezení se semaforem)
--- a v KAŽDÉ z nich aspoň jednu červenou. Jen pro přehled; e-mail až ve Fázi 1.
+-- a v KAŽDÉ z nich aspoň jednu červenou. Jen pro přehled admina.
 -- ---------------------------------------------------------------------
 create or replace view public.v_alarm
 with (security_invoker = true)
@@ -188,13 +189,15 @@ grant select on public.v_prehled_rodin, public.v_semafory_dle_kapitoly, public.v
 
 -- ---------------------------------------------------------------------
 -- katalog_lekci() — metadata VŠECH lekcí (bez obsahu) pro přihlášené.
--- RLS zamčené lekce z tabulky nevrátí; přehled ale musí ukázat i zamčené karty
--- („Otevře se 1. 11." / „Odemkne se po platbě"). Obsah (jsonb) se nevrací.
--- zamceno: null = přístupná | 'platba' | 'datum' | 'uzavreno' (viz duvod_zamceni v 0002)
+-- RLS zamčené lekce z tabulky nevrátí; přehled ale ukazuje i zamčené karty („Otevře se …“).
+-- Obsah (jsonb) se nevrací; pocet_uloh = počet úloh v obsahu (matematika 4, čeština 5, diagnostika 20–25).
+-- zamceno: null = přístupná | 'datum' | 'uzavreno' (viz duvod_zamceni v 0002)
 -- ---------------------------------------------------------------------
-create or replace function public.katalog_lekci()
+drop function if exists public.katalog_lekci();
+create function public.katalog_lekci()
 returns table (
   id          text,
+  predmet     text,
   faze        text,
   tyden       smallint,
   poradi      smallint,
@@ -202,6 +205,7 @@ returns table (
   kapitola    text,
   varianta    text,
   cas_min     integer,
+  pocet_uloh  integer,
   otevrit_od  timestamptz,
   verejna     boolean,
   verze       integer,
@@ -213,15 +217,14 @@ security definer
 set search_path = ''
 as $$
   select
-    l.id, l.faze, l.tyden, l.poradi, l.tema, l.kapitola, l.varianta,
+    l.id, l.predmet, l.faze, l.tyden, l.poradi, l.tema, l.kapitola, l.varianta,
     case when (l.obsah ->> 'cas_min') ~ '^[0-9]+$' then (l.obsah ->> 'cas_min')::integer end,
+    case when jsonb_typeof(l.obsah -> 'ulohy') = 'array' then jsonb_array_length(l.obsah -> 'ulohy') end,
     l.otevrit_od, l.verejna, l.verze,
     public.duvod_zamceni(l.verejna, l.otevrit_od)
   from public.lekce l
   where (select auth.uid()) is not null
-  order by
-    case l.faze when 'pilot' then 1 when 'faze1' then 2 else 3 end,
-    l.tyden, l.poradi, l.id;
+  order by l.predmet, l.tyden, l.poradi, l.id;
 $$;
 
 revoke execute on function public.katalog_lekci() from public, anon;

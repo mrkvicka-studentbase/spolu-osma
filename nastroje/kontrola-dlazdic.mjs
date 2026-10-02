@@ -3,7 +3,7 @@
 // kontrola-dlazdic.mjs — automatická kontrola E1 (25. 9.): žádný posuvník ani zalomený vzorec
 // v dlaždicích, v zadání a v tisku. Jen pro vývoj, nenasazuje se. Bez přihlášení (?lokalne=1).
 //
-//   node nastroje/kontrola-dlazdic.mjs            → všechny lekce obsah/lekce/P*.json
+//   node nastroje/kontrola-dlazdic.mjs            → všechny lekce obsah/lekce/M8-*.json (Spolu 8; Chrome přes CHROME=…)
 //   volby: --sirky=1280,1024,800,375  --lekce=P1,P2
 //
 // Co dělá: Chrome headless + CDP (stejně jako screenshoty.mjs). Na stránce nahled-obsahu.html načte
@@ -35,7 +35,7 @@ const arg = (k) => argv.find((a) => a.startsWith(`--${k}=`))?.split('=')[1];
 const SIRKY = (arg('sirky') || '1280,1024,800,375').split(',').map(Number);
 const MOTIVY = ['svetly', 'tmavy'];
 const LEKCE = arg('lekce')?.split(',')
-  || (await readdir(join(KOREN, 'obsah', 'lekce'))).filter((f) => /^P\d+\.json$/.test(f)).map((f) => f.replace('.json', '')).sort();
+  || (await readdir(join(KOREN, 'obsah', 'lekce'))).filter((f) => /^M8-T\d{2}-L\d\.json$/.test(f)).map((f) => f.replace('.json', '')).sort();
 const cekej = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // --- statický server z kořene repa -------------------------------------------------------------

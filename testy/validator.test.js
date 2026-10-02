@@ -127,9 +127,12 @@ describe('platné lekce', () => {
     assert.deepEqual(varovani, []);
   });
 
-  test('nové kapitoly pomer a slovni-ulohy jsou povolené, neznámá ne', () => {
-    for (const k of ['pomer', 'slovni-ulohy']) assert.deepEqual(over({ ...kopie(ZAKLAD), kapitola: k }).chyby, []);
-    assert.ok(obsahuje(over({ ...kopie(ZAKLAD), kapitola: 'pomery' }).chyby, 'kapitola'));
+  test('kapitoly pomer a slovni-ulohy jsou povolené; neznámý kód = varování (Spolu 8), nesmyslný tvar = chyba', () => {
+    for (const k of ['pomer', 'slovni-ulohy']) assert.deepEqual(over({ ...kopie(ZAKLAD), kapitola: k }), { chyby: [], varovani: [] });
+    const v = over({ ...kopie(ZAKLAD), kapitola: 'pomery' });
+    assert.deepEqual(v.chyby, []);
+    assert.ok(obsahuje(v.varovani, 'pomery'));
+    assert.ok(obsahuje(over({ ...kopie(ZAKLAD), kapitola: 'Poměry 2' }).chyby, 'kapitola'));
   });
 
   test('uvod_pravidla.znak do 36 znaků zdroje (R42; delší ne)', () => {

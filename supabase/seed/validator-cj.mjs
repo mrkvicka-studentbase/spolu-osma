@@ -9,6 +9,7 @@
 
 import { vyhodnotKrok } from '../../web/js/vyhodnoceni.js';
 import { tokenizuj, pocetMezer, vzorovaOdpoved } from '../../web/js/vyhodnoceni-cj.js';
+import { KAPITOLY } from '../../web/js/hlasky.js';
 
 /**
  * Kódy chyb ze slovníku češtiny (cestina/Obsah/TYPY-CHYB.md). Oproti parsujSlovnikChyb (Matematika) zná i buňky
@@ -31,6 +32,11 @@ export function parsujSlovnikChybCj(md) {
 }
 
 export const PORADI_TYPU_ULOH_CJ = ['rozcvicka', 'nova', 'nova', 'nova', 'detektiv', 'kontrolni'];
+/** Spolu 8 (ZADANI-OSMA §2): 5 úloh — odpadá jedna „nova“. */
+export const PORADI_TYPU_ULOH_CJ_OSMA = ['rozcvicka', 'nova', 'nova', 'detektiv', 'kontrolni'];
+/** Pořadí typů úloh podle fáze lekce. */
+export const poradiTypuCj = (faze) => (faze === 'osma' ? PORADI_TYPU_ULOH_CJ_OSMA : PORADI_TYPU_ULOH_CJ);
+const TEMAT_OSMA = 10;
 
 const jeObjekt = (h) => h !== null && typeof h === 'object' && !Array.isArray(h);
 const pocetSlov = (s) => (typeof s === 'string' ? s.trim().split(/\s+/).filter(Boolean).length : 0);
@@ -65,28 +71,36 @@ export function domenoveKontrolyCj(l, nazevSouboru, { slovnik = null, audioMd = 
   const var_ = (m) => varovani.push(m);
 
   if (nazevSouboru !== `${l.id}.json`) chyba(`název souboru má být "${l.id}.json"`);
+  if (l.typ === 'diagnostika' || l.id === 'cj-t0-diag') return diagnostikaCj(l, { chyba, var_, slovnik, chyby, varovani });
+  const osma = l.faze === 'osma';
   const m = /^cj-t(\d+)-l(\d+)$/.exec(String(l.id));
   if (m) {
     const [t, n] = [Number(m[1]), Number(m[2])];
     if (l.tyden !== t) chyba(`id ${l.id}: tyden musí být ${t}`);
     if (Math.ceil(n / 4) !== t) chyba(`id ${l.id}: lekce ${n} nepatří do týdne ${t} (4 lekce na týden)`);
     if (l.poradi !== ((n - 1) % 4) + 1) chyba(`id ${l.id}: poradi (v týdnu) musí být ${((n - 1) % 4) + 1}`);
+    if (!osma && t > 8) chyba(`id ${l.id}: fáze zaklady má týdny 1–8 (10 témat má jen fáze osma)`);
   }
+  const vk = varovaniKapitolyCj(l.kapitola);
+  if (vk) var_(vk);
 
   const ulohy = Array.isArray(l.ulohy) ? l.ulohy : [];
+  const poradiTypu = poradiTypuCj(l.faze);
   const typy = ulohy.map((u) => u?.typ);
-  if (typy.join() !== PORADI_TYPU_ULOH_CJ.join()) chyba(`pořadí typů úloh musí být ${PORADI_TYPU_ULOH_CJ.join(' → ')}, je ${typy.join(' → ')}`);
+  if (typy.join() !== poradiTypu.join()) chyba(`pořadí typů úloh musí být ${poradiTypu.join(' → ')}, je ${typy.join(' → ')}`);
   const soucet = ulohy.reduce((s, u) => s + (Number.isInteger(u?.cas_min) ? u.cas_min : 0), 0);
   if (soucet !== l.cas_min) var_(`součet cas_min úloh (${soucet}) ≠ cas_min lekce (${l.cas_min})`);
+  if (osma && Number.isInteger(l.cas_min) && (l.cas_min < 22 || l.cas_min > 27)) var_(`cas_min lekce je ${l.cas_min} (Spolu 8: čeština ~25 min)`);
   if (pocetSlov(l.uvod_pro_rodice) > 60) var_(`uvod_pro_rodice má ${pocetSlov(l.uvod_pro_rodice)} slov (max 60)`);
   const tydenniLekce = l.poradi === 4;
+  const iKontrolni = poradiTypu.length - 1; // týdenní kontrola = poslední (kontrolní) úloha lekce s poradi 4
 
   ulohy.forEach((u, i) => {
     if (!jeObjekt(u)) return;
     const kde = `ulohy[${i}] (${u.id})`;
     if (u.id !== `${l.id}-U${i + 1}`) chyba(`${kde}: id úlohy má být "${l.id}-U${i + 1}"`);
-    if (i === 5 && Boolean(u.tydenni) !== tydenniLekce) chyba(`${kde}: tydenni má být ${tydenniLekce} (týdenní kontrola je úloha 6 lekce 4 v týdnu)`);
-    if (i !== 5 && u.tydenni) chyba(`${kde}: tydenni jen u úlohy 6`);
+    if (i === iKontrolni && Boolean(u.tydenni) !== tydenniLekce) chyba(`${kde}: tydenni má být ${tydenniLekce} (týdenní kontrola je úloha ${iKontrolni + 1} lekce 4 v týdnu)`);
+    if (i !== iKontrolni && u.tydenni) chyba(`${kde}: tydenni jen u úlohy ${iKontrolni + 1}`);
     if (u.tydenni && !u.semafor_tydne) chyba(`${kde}: týdenní kontrola potřebuje semafor_tydne`);
 
     const kroky = Array.isArray(u.kroky) ? u.kroky : [];
@@ -105,6 +119,12 @@ export function domenoveKontrolyCj(l, nazevSouboru, { slovnik = null, audioMd = 
         const idSouboru = a.replace(/^audio\/cestina\//, '');
         if (audioMd !== null && !audioMd.includes('`' + idSouboru + '`')) chyba(`${kk}: nahrávka ${idSouboru} nemá řádek v cestina/Obsah/AUDIO.md`);
         if (audioExistuje && !audioExistuje(a)) var_(`${kk}: soubor web/${a} zatím není (čeká na Pavla, AUDIO.md)`);
+      }
+      if (osma && k.vstup.typ === 'diktat' && k.vstup.hodnotit_interpunkci !== false) chyba(`${kk}: Spolu 8: diktát interpunkci nehodnotí ("hodnotit_interpunkci": false, ZADANI-OSMA §8 bod 4)`);
+      if (osma && k.vstup.typ === 'oznac_role') {
+        // nejvýš 8 tlačítek v jedné skupině (u kategorií se každá kategorie ukazuje jako samostatná skupina)
+        const pocetRoli = Array.isArray(k.vstup.role) ? k.vstup.role.length : Math.max(0, ...Object.values(k.vstup.role || {}).map((r) => r?.length || 0));
+        if (pocetRoli > 8) chyba(`${kk}: oznac_role má ${pocetRoli} rolí (nejvýš 8; rozděl na kroky po skupinách, ZADANI-OSMA §8 bod 8)`);
       }
       if (k.vstup.typ === 'diktat') {
         const slov = k.vstup.vety.reduce((s, v) => s + tokenizuj(v.text).length, 0);
@@ -156,6 +176,61 @@ export function domenoveKontrolyCj(l, nazevSouboru, { slovnik = null, audioMd = 
     }
   });
 
+  const kon = l.kontrola || {};
+  if (kon.jistota === 'nizka' || kon.jistota === 'neurceno') var_(`kontrola.jistota = "${kon.jistota}" — lekce ještě neprošla kontrolou`);
+  if (kon.jistota === 'stredni') var_('kontrola.jistota = "stredni" — vedoucí ji má dořešit na "jista"');
+  return { chyby, varovani };
+}
+
+/** Kapitola mimo obsah/hlasky.md (Názvy kapitol) = varování, ne chyba (osnovy Spolu 8 se ještě píšou). */
+function varovaniKapitolyCj(kod, kde = 'kapitola') {
+  if (typeof kod !== 'string' || !/^[a-z][a-z-]+$/.test(kod) || kod === 'diagnostika') return null;
+  if (Object.prototype.hasOwnProperty.call(KAPITOLY, kod)) return null;
+  return `${kde}: kapitola "${kod}" zatím není v obsah/hlasky.md (tabulka „Názvy kapitol“) — doplň řádek a spusť node nastroje/generuj-hlasky.mjs`;
+}
+
+/**
+ * Diagnostika češtiny Spolu 8 (cj-t0-diag): jako diagnostika matematiky — jen krok final, bez taháku a semaforu,
+ * každá úloha s kapitolou (a číslem tématu `tema`), automaticky vyhodnotitelná (žádný diktát), známé chyby s kódy.
+ */
+function diagnostikaCj(l, { chyba, var_, slovnik, chyby, varovani }) {
+  if (l.id !== 'cj-t0-diag') chyba(`diagnostika češtiny má id "cj-t0-diag", je ${l.id}`);
+  if (l.typ !== 'diagnostika') chyba('cj-t0-diag musí mít "typ": "diagnostika"');
+  if (l.faze !== 'osma') chyba('cj-t0-diag musí mít "faze": "osma"');
+  const ulohy = Array.isArray(l.ulohy) ? l.ulohy : [];
+  if (ulohy.length < 20 || ulohy.length > 25) var_(`diagnostika má ${ulohy.length} úloh (Spolu 8: 20–25)`);
+  if (Number.isInteger(l.cas_min) && Math.abs(l.cas_min - 25) > 5) var_(`diagnostika má cas_min ${l.cas_min} (Spolu 8: ~25 min)`);
+  const temata = new Set();
+  ulohy.forEach((u, i) => {
+    if (!jeObjekt(u)) return;
+    const kde = `ulohy[${i}] (${u.id})`;
+    if (u.id !== `${l.id}-U${i + 1}`) chyba(`${kde}: id úlohy má být "${l.id}-U${i + 1}"`);
+    const vk = varovaniKapitolyCj(u.kapitola, kde);
+    if (vk) var_(vk);
+    if (Number.isInteger(u.tema)) temata.add(u.tema);
+    else chyba(`${kde}: chybí „tema“ (číslo tématu 1–${TEMAT_OSMA}) — bez něj se výsledek nedá přiřadit k tématu`);
+    const kroky = Array.isArray(u.kroky) ? u.kroky : [];
+    kroky.forEach((k, j) => {
+      if (!jeObjekt(k) || !jeObjekt(k.vstup)) return;
+      const kk = `${kde}.kroky[${j}] (${k.id})`;
+      if (k.id !== 'final') chyba(`${kk}: úloha diagnostiky má jen krok "final"`);
+      const v = k.vstup.typ === 'poslech' ? k.vstup.vnoreny_vstup : k.vstup;
+      if (k.vstup.typ === 'diktat' || (v?.typ === 'kratky_text' && !k.spravne)) chyba(`${kk}: diagnostika se vyhodnocuje automaticky — diktát ani text bez správné odpovědi do ní nepatří`);
+      if (v && v.typ !== 'dlazdice' && !(Array.isArray(k.zname_chyby) && k.zname_chyby.length)) {
+        chyba(`${kk}: úloha diagnostiky musí mít zname_chyby s typ_chyby (report rodiči)`);
+      }
+      if (v?.typ === 'dlazdice' && (v.moznosti || []).some((x) => x && x.spravne === false && !x.typ_chyby)) {
+        chyba(`${kk}: v diagnostice má každá špatná dlaždice typ_chyby (report rodiči)`);
+      }
+      kontrolaKroku(k, kk, chyba, var_, slovnik);
+      kontrolaPruchodu(k, kk, chyba);
+    });
+  });
+  if (temata.size) {
+    const chybi = [];
+    for (let t = 1; t <= TEMAT_OSMA; t++) if (!temata.has(t)) chybi.push(t);
+    if (chybi.length) var_(`diagnostika: témata bez úlohy: ${chybi.join(', ')} (o nich diagnostika nic neřekne)`);
+  }
   const kon = l.kontrola || {};
   if (kon.jistota === 'nizka' || kon.jistota === 'neurceno') var_(`kontrola.jistota = "${kon.jistota}" — lekce ještě neprošla kontrolou`);
   if (kon.jistota === 'stredni') var_('kontrola.jistota = "stredni" — vedoucí ji má dořešit na "jista"');

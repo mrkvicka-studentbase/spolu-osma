@@ -1,17 +1,8 @@
 // Seed češtiny: datum otevření fáze zaklady (supabase/seed/otevreni-cj.mjs) a pojistky v seed-lekce.mjs.
-// Síť jen proti lokálnímu falešnému PostgRESTu na 127.0.0.1 — do Supabase se nic nezapisuje.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { createServer } from 'node:http';
-import { spawn } from 'node:child_process';
-import { readdirSync } from 'node:fs';
-import { join, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { parsujDatum, pulnocVPraze, denOtevreniZaklady, otevritOdZaklady } from '../supabase/seed/otevreni-cj.mjs';
 
-const koren = join(dirname(fileURLToPath(import.meta.url)), '..');
-const LEKCE_CJ = readdirSync(join(koren, 'obsah', 'cestina', 'lekce')).filter((n) => /^cj-t\d+-l\d+\.json$/.test(n))
-  .map((n) => n.replace('.json', '')).sort((a, b) => a.localeCompare(b, 'cs', { numeric: true }));
 
 test('parsujDatum: jen platné RRRR-MM-DD', () => {
   assert.equal(parsujDatum('2026-10-05').toISOString(), '2026-10-05T00:00:00.000Z');
@@ -45,83 +36,5 @@ test('týden 1 v den spuštění, další týdny v pondělí (KONTROLA-2026-09-3
   assert.throws(() => denOtevreniZaklady(1, null));
 });
 
-/** Falešný PostgREST: `migrace` = zda tabulka lekce má sloupec predmet. Zapisuje POST těla do `zapisy`. */
-function falesnaDb({ migrace }) {
-  const zapisy = [];
-  const dotazy = [];
-  const server = createServer((req, res) => {
-    let telo = '';
-    req.on('data', (c) => { telo += c; });
-    req.on('end', () => {
-      dotazy.push(`${req.method} ${decodeURIComponent(req.url)}`);
-      const url = new URL(req.url, 'http://x');
-      const select = url.searchParams.get('select') || '';
-      if (req.method === 'GET' && !migrace && select.split(',').includes('predmet')) {
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        res.end('{"code":"42703","message":"column lekce.predmet does not exist"}');
-        return;
-      }
-      if (req.method === 'POST') zapisy.push(JSON.parse(telo));
-      res.writeHead(req.method === 'POST' ? 201 : 200, { 'Content-Type': 'application/json' });
-      res.end(req.method === 'POST' ? '' : '[]');
-    });
-  });
-  return new Promise((ok) => server.listen(0, '127.0.0.1', () => ok({ server, zapisy, dotazy, port: server.address().port })));
-}
-
-function seed(argumenty, port) {
-  return new Promise((ok) => {
-    const p = spawn(process.execPath, ['supabase/seed/seed-lekce.mjs', '--adresar', 'obsah/cestina/lekce', ...argumenty], {
-      cwd: koren,
-      env: { ...process.env, SUPABASE_URL: `http://127.0.0.1:${port}`, SUPABASE_SERVICE_KEY: 'sb_secret_test', NO_PROXY: '127.0.0.1' },
-    });
-    let vystup = '';
-    p.stdout.on('data', (c) => { vystup += c; });
-    p.stderr.on('data', (c) => { vystup += c; });
-    p.on('close', (kod) => ok({ kod, vystup }));
-  });
-}
-
-test('seed češtiny: bez data spuštění nic nenahraje ani se nepřipojí', async () => {
-  const db = await falesnaDb({ migrace: true });
-  try {
-    const { kod, vystup } = await seed([], db.port);
-    assert.equal(kod, 1);
-    assert.match(vystup, /--otevrit-od-zaklady/);
-    assert.deepEqual(db.dotazy, []);
-  } finally { db.server.close(); }
-});
-
-test('seed češtiny: bez migrace 0007 nic nezapíše', async () => {
-  const db = await falesnaDb({ migrace: false });
-  try {
-    const { kod, vystup } = await seed(['--otevrit-od-zaklady', '2026-10-01'], db.port);
-    assert.equal(kod, 1);
-    assert.match(vystup, /0007_predmet/);
-    assert.deepEqual(db.zapisy, []);
-  } finally { db.server.close(); }
-});
-
-test('seed češtiny: suchý běh nezapisuje, ostrý posílá predmet a otevrit_od týdne', async () => {
-  const db = await falesnaDb({ migrace: true });
-  try {
-    const sucho = await seed(['--suchy-beh', '--otevrit-od-zaklady', '2026-10-01'], db.port);
-    assert.equal(sucho.kod, 0, sucho.vystup);
-    assert.match(sucho.vystup, new RegExp(`nahrálo by se ${LEKCE_CJ.length} lekcí`));
-    assert.deepEqual(db.zapisy, []);
-
-    const ostre = await seed(['--otevrit-od-zaklady=2026-10-01'], db.port);
-    assert.equal(ostre.kod, 0, ostre.vystup);
-    assert.equal(db.zapisy.length, 1);
-    const radky = db.zapisy[0];
-    assert.deepEqual(radky.map((r) => r.id).sort(), [...LEKCE_CJ].sort());
-    const otevreni = { 1: '2026-10-01T00:00:00+02:00', 2: '2026-10-05T00:00:00+02:00', 3: '2026-10-12T00:00:00+02:00' };
-    for (const r of radky) {
-      assert.equal(r.predmet, 'cestina');
-      assert.equal(r.faze, 'zaklady');
-      assert.equal(r.verejna, false);
-      assert.equal(r.otevrit_od, otevreni[r.tyden] ?? otevritOdZaklady(r.tyden, parsujDatum('2026-10-01')));
-      assert.equal(r.verze, 1);
-    }
-  } finally { db.server.close(); }
-});
+// Seed proti falešnému PostgRESTu (zápis, predmet, otevrit_od, verejna) pro Spolu 8: testy/osma-validator.test.js.
+// Testy fáze zaklady se Spolu lekcemi (obsah/cestina/lekce) byly odstraněny: Spolu 8 v obsah/ fázi zaklady nemá.

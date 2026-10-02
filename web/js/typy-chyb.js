@@ -227,6 +227,23 @@ export const POPISY_TYPU_CHYB = Object.freeze({
   "odpoved-do-spatneho-policka": "Odpověď zapsal nebo zakřížkoval do políčka jiné podúlohy",
   "oprava-bez-preskrtnuti": "Opravu v poli s postupem udělal bez přeškrtnutí: přepsal číslice přes původní zápis, nebo původní nechal a nový napsal vedle",
   "dva-krizky": "Zakřížkoval dvě možnosti, nebo opravu udělal bez zabarvení původního křížku (neplatná odpověď)",
+  "delitelnost-4-podle-posledni-cislice": "O dělitelnosti čtyřmi rozhodl podle poslední číslice (4 nebo 8 na konci, nebo jen sudé), ne podle posledního dvojčíslí",
+  "delitelnost-slozena-jedna-podminka": "U dělitelnosti 6, 12, 15 nebo 18 ověřil jen jednu ze dvou podmínek (např",
+  "nsn-soucin-cisel": "Za nejmenší společný násobek vzal součin obou čísel, i když mají společného dělitele",
+  "rad-cislice-zamena": "Zaměnil řády za desetinnou čárkou (desetiny, setiny, tisíciny) při zápisu nebo čtení čísla",
+  "obvod-slozeneho-chybi-strany": "U obvodu složeného útvaru vynechal strany bez popisku, nebo započítal vnitřní čáru (osu, dělicí čáru)",
+  "porovnal-podle-rozdilu": "Zlomky porovnal podle toho, kolik čitateli chybí do jmenovatele („oběma chybí jeden díl, jsou stejné“)",
+  "odcital-zlomek-od-celeho-spatne": "Při odčítání zlomku od celého (nebo smíšeného) čísla ubral celou jedničku a zlomek ponechal",
+  "opacne-prevracene-zamena": "Zaměnil opačné a převrácené číslo",
+  "ruzna-znamenka-secetl": "U součtu čísel s různými znaménky sečetl jejich velikosti místo odečtení",
+  "stupne-minuty-po-stovkach": "U úhlů ve stupních a minutách přenáší po 100 minutách místo po 60",
+  "rovnobeznik-uhly-zamena": "U rovnoběžníku zaměnil protější úhly (jsou shodné) a sousední úhly (dávají dohromady 180°)",
+  "osova-stredova-zamena": "Zaměnil osovou a středovou souměrnost (překlopil místo otočení nebo naopak), nebo osově souměrný útvar označil za středově souměrný",
+  "pocet-os-spatne": "Špatně určil počet os souměrnosti (u obdélníku přidal úhlopříčky, u čtverce na ně zapomněl)",
+  "vyska-k-jine-strane": "Obsah spočítal se stranou a výškou, která k ní nepatří (výška na jinou stranu)",
+  "meritko-obracene": "Při převodu podle měřítka dělil místo násobení (z mapy na skutečnost) nebo naopak; nebo považuje mapu s větším číslem v měřítku za podrobnější",
+  "urok-cely-rok-misto-casti": "U úroku za část roku spočítal úrok za celý rok",
+  "povrch-jen-tri-steny": "U povrchu kvádru sečetl jen tři různé stěny a nevynásobil je dvěma",
 });
 
 /** Detektivní kódy (oddíl B) — ve statistikách zvlášť. */

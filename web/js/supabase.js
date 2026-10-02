@@ -27,7 +27,7 @@ export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
 // ---------------------------------------------------------------------
 
 /**
- * @typedef {'pilot'|'aktivni'|'uzavreny'} StavRodiny
+ * @typedef {'aktivni'|'uzavreny'} StavRodiny  Spolu 8 v1 bez platby (pilot zrušen)
  * @typedef {'gymnazium'|'ss_maturita'} TypSkoly
  * @typedef {'app'|'papir'} Rezim
  * @typedef {'sam'|'s_otazkou'|'chyba_pocty'|'nevedel'} VolbaRodice
@@ -41,7 +41,6 @@ export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
  * @property {string|null} telefon
  * @property {StavRodiny} stav
  * @property {string|null} zdroj
- * @property {boolean} dotaznik_vyplnen
  * @property {string|null} odemknuto_at
  * @property {string} created_at
  *
@@ -234,8 +233,7 @@ export async function odhlasit() {
  * @param {string} [udaje.zdroj]            odkud přišli: 'fb' | 'ig' | 'web' | 'jine' | vlastní text
  * @param {Object} udaje.dite
  * @param {string} udaje.dite.jmeno         křestní jméno
- * @param {TypSkoly} udaje.dite.typSkoly
- * @param {number|null} [udaje.dite.znamka8] 1–5
+ * @param {string[]} [udaje.dite.predmety]  'matematika' / 'cestina' (výchozí oba)
  * @returns {Promise<{uzivatel: object, potvrditEmail: boolean}>}
  *   potvrditEmail = true → ukažte „Poslali jsme vám e-mail, klikněte na odkaz" (session zatím není).
  * @throws {ChybaSpolu} kod: email_existuje | slabe_heslo | spatny_email | limit | sit
@@ -251,8 +249,8 @@ export async function registrovat({ jmenoRodice, email, heslo, zdroj = null, dit
         jmeno_rodice: String(jmenoRodice || '').trim(),
         zdroj: zdroj || null,
         dite_jmeno: String(dite?.jmeno || '').trim(),
-        typ_skoly: dite?.typSkoly || null,
-        znamka_8: dite?.znamka8 ?? null,
+        // Spolu 8: předměty dítěte (výchozí oba; DB trigger po_registraci je doplní, když chybí)
+        ...(Array.isArray(dite?.predmety) ? { predmety: dite.predmety } : {}),
       },
     },
   }));
@@ -350,9 +348,9 @@ export async function mojeDeti() {
  * @returns {Promise<Dite>}
  * @throws {ChybaSpolu} kod: max_2_deti | neplatna_data
  */
-export async function pridatDite({ jmeno, typSkoly, znamka8 = null, predmety }) {
+export async function pridatDite({ jmeno, typSkoly = null, znamka8 = null, predmety }) {
   const uid = await mojeUid();
-  const radek = { rodina_id: uid, krestni_jmeno: String(jmeno || '').trim(), typ_skoly: typSkoly, znamka_8: znamka8 || null };
+  const radek = { rodina_id: uid, krestni_jmeno: String(jmeno || '').trim(), typ_skoly: typSkoly || null, znamka_8: znamka8 || null };
   if (predmety !== undefined) radek.predmety = predmety;
   return vysledek(await supabase.from('deti').insert(radek).select().single(), 'Profil dítěte se nepodařilo uložit.');
 }
@@ -763,7 +761,7 @@ export async function ulozSemafor({ sezeniId, ulohaId, volbaRodice, spravneAuto,
 }
 
 // =====================================================================
-// Historie (SOS) a dotazník
+// Historie (SOS)
 // =====================================================================
 
 /**
@@ -805,20 +803,6 @@ export function dveCerveneVRade(historie, kapitola, predmet = null) {
   return posledni.length === 2 && posledni.every((x) => x.hlavniBarva === 'cervena');
 }
 
-/**
- * Odešle dotazník (jednou za rodinu). DB pak nastaví rodiny.dotaznik_vyplnen = true (nárok na 790 Kč).
- * Opakované odeslání není chyba: vrátí {uzOdeslany: true}.
- * @param {object} odpovedi  libovolný JSON s odpověďmi (strukturu určuje dotaznik.js)
- * @returns {Promise<{uzOdeslany: boolean}>}
- */
-export async function odeslatDotaznik(odpovedi) {
-  const uid = await mojeUid();
-  const { error, status } = await supabase.from('dotazniky').insert({ rodina_id: uid, odpovedi });
-  if (!error) return { uzOdeslany: false };
-  if (error.code === '23505') return { uzOdeslany: true };
-  throw prelozChybu(error, status, 'Dotazník se nepodařilo odeslat.');
-}
-
 // =====================================================================
 // Admin (RLS pustí jen uid z tabulky admini)
 // =====================================================================
@@ -843,7 +827,7 @@ export const admin = {
    * Přehled rodin (v_prehled_rodin), seřazeno podle poslední aktivity (nejnovější nahoře).
    * @param {{stav?: StavRodiny, hledat?: string}} [filtr]  hledat = e-mail / jméno rodiče / jméno dítěte
    * @returns {Promise<Array<{rodina_id: string, jmeno_rodice: string, email: string, telefon: string|null,
-   *   stav: StavRodiny, zdroj: string|null, dotaznik_vyplnen: boolean, poznamka_admin: string|null,
+   *   stav: StavRodiny, zdroj: string|null, poznamka_admin: string|null,
    *   odemknuto_at: string|null, registrace_at: string, deti: Array<object>, deti_jmena: string|null,
    *   posledni_aktivita: string|null, dokonceno_lekci: number, aktualni_tyden: number|null,
    *   posledni_lekce_id: string|null, cervene_7d: number}>>}
@@ -883,7 +867,7 @@ export const admin = {
   },
 
   /**
-   * Odemkne rodinu (stav 'aktivni' → přístup k Fázi 1/2; odemknuto_at doplní DB).
+   * Znovu otevře uzavřený účet (stav 'aktivni'; odemknuto_at doplní DB).
    * @param {string} rodinaId
    * @returns {Promise<Rodina>}
    */
@@ -900,16 +884,6 @@ export const admin = {
   async uzavrit(rodinaId) {
     return vysledek(await supabase.from('rodiny').update({ stav: 'uzavreny' }).eq('id', rodinaId).select().single(),
       'Účet se nepodařilo uzavřít.');
-  },
-
-  /**
-   * Vrátí rodinu do stavu 'pilot' (omylem odemčená / uzavřená).
-   * @param {string} rodinaId
-   * @returns {Promise<Rodina>}
-   */
-  async vratitDoPilotu(rodinaId) {
-    return vysledek(await supabase.from('rodiny').update({ stav: 'pilot' }).eq('id', rodinaId).select().single(),
-      'Stav se nepodařilo změnit.');
   },
 
   /**
@@ -983,10 +957,10 @@ export const admin = {
   },
 
   /**
-   * Souhrnné statistiky: rodiny dle stavu, konverze pilot → aktivní, dokončené lekce po týdnech.
-   * @returns {Promise<{rodinyDleStavu: {pilot: number, aktivni: number, uzavreny: number}, celkem: number,
-   *   konverzeProcenta: number|null, dokoncenoPoTydnech: Array<{tyden: string, pocet: number}>}>}
-   *   tyden = pondělí týdne 'RRRR-MM-DD'; konverze = aktivni / (pilot + aktivni) × 100
+   * Souhrnné statistiky: rodiny dle stavu, dokončené lekce po týdnech.
+   * @returns {Promise<{rodinyDleStavu: {aktivni: number, uzavreny: number}, celkem: number,
+   *   dokoncenoPoTydnech: Array<{tyden: string, pocet: number}>}>}
+   *   tyden = pondělí týdne 'RRRR-MM-DD'
    */
   async statistiky() {
     const [rodiny, sezeni] = await Promise.all([
@@ -994,9 +968,8 @@ export const admin = {
       supabase.from('sezeni').select('konec').eq('stav', 'dokonceno').not('konec', 'is', null)
         .then((o) => vysledek(o, 'Statistiky se nepodařilo načíst.')),
     ]);
-    const rodinyDleStavu = { pilot: 0, aktivni: 0, uzavreny: 0 };
+    const rodinyDleStavu = { aktivni: 0, uzavreny: 0 };
     for (const r of rodiny) rodinyDleStavu[r.stav] = (rodinyDleStavu[r.stav] || 0) + 1;
-    const zaklad = rodinyDleStavu.pilot + rodinyDleStavu.aktivni;
     const tydny = new Map();
     for (const s of sezeni) {
       const t = zacatekTydne(s.konec);
@@ -1005,23 +978,22 @@ export const admin = {
     return {
       rodinyDleStavu,
       celkem: rodiny.length,
-      konverzeProcenta: zaklad ? Math.round((rodinyDleStavu.aktivni / zaklad) * 1000) / 10 : null,
       dokoncenoPoTydnech: [...tydny.entries()].sort().map(([tyden, pocet]) => ({ tyden, pocet })),
     };
   },
 
   /**
-   * Data pro export CSV rodin (e-maily pro předprodej). CSV je pro český Excel:
+   * Data pro export CSV rodin . CSV je pro český Excel:
    * oddělovač středník, UTF-8 s BOM. Stažení (Blob) řeší admin.js.
    * @param {{stav?: StavRodiny}} [filtr]
    * @returns {Promise<{hlavicka: string[], radky: Array<Array<any>>, csv: string}>}
    */
   async exportCsvData({ stav } = {}) {
     const rodiny = await admin.prehledRodin({ stav });
-    const hlavicka = ['email', 'jmeno_rodice', 'telefon', 'stav', 'deti', 'zdroj', 'dotaznik_vyplnen',
+    const hlavicka = ['email', 'jmeno_rodice', 'telefon', 'stav', 'deti', 'zdroj',
       'registrace', 'odemknuto', 'posledni_aktivita', 'dokonceno_lekci', 'poznamka'];
     const radky = rodiny.map((r) => [r.email, r.jmeno_rodice, r.telefon, r.stav, r.deti_jmena, r.zdroj,
-      r.dotaznik_vyplnen ? 'ano' : 'ne', r.registrace_at, r.odemknuto_at, r.posledni_aktivita,
+      r.registrace_at, r.odemknuto_at, r.posledni_aktivita,
       r.dokonceno_lekci, r.poznamka_admin]);
     const csv = '﻿' + [hlavicka, ...radky].map((r) => r.map(csvBunka).join(';')).join('\r\n');
     return { hlavicka, radky, csv };

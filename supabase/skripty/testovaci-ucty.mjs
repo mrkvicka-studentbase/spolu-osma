@@ -1,5 +1,5 @@
 // Založí (nebo smaže) testovací účty pro vývoj a QA. Přihlašovací údaje uloží do
-// testy/testovaci-ucty.local.json (v .gitignore). PŘED SPUŠTĚNÍM PILOTU SMAZAT: --smazat
+// testy/testovaci-ucty.local.json (v .gitignore). PŘED SPUŠTĚNÍM SPOLU 8 SMAZAT: --smazat
 //
 //   node supabase/skripty/testovaci-ucty.mjs            založí chybějící účty
 //   node supabase/skripty/testovaci-ucty.mjs --smazat   smaže všechny účty @example.com z tohoto skriptu
@@ -10,11 +10,13 @@ import path from 'node:path';
 import { nactiEnv, pripojDb, KOREN_REPA } from './env.mjs';
 
 const UCTY = [
-  { klic: 'rodina_pilot', email: 'test-pilot@example.com', jmeno_rodice: 'Test Pilotní',
-    dite: { dite_jmeno: 'Adam', typ_skoly: 'gymnazium', znamka_8: '3' }, stav: 'pilot' },
-  { klic: 'rodina_aktivni', email: 'test-aktivni@example.com', jmeno_rodice: 'Test Aktivní',
-    dite: { dite_jmeno: 'Bára', typ_skoly: 'ss_maturita', znamka_8: '2' }, stav: 'aktivni',
-    druheDite: { krestni_jmeno: 'Cyril', typ_skoly: 'gymnazium', znamka_8: 4 } },
+  { klic: 'rodina_jedno', email: 'test-osma-1@example.com', jmeno_rodice: 'Test Jedno dítě',
+    dite: { dite_jmeno: 'Adam' } },
+  { klic: 'rodina_dve', email: 'test-osma-2@example.com', jmeno_rodice: 'Test Dvě děti',
+    dite: { dite_jmeno: 'Bára', predmety: ['matematika'] },
+    druheDite: { krestni_jmeno: 'Cyril', predmety: ['matematika', 'cestina'] } },
+  { klic: 'rodina_uzavrena', email: 'test-osma-u@example.com', jmeno_rodice: 'Test Uzavřená',
+    dite: { dite_jmeno: 'Dana' }, stav: 'uzavreny' },
   { klic: 'admin', email: 'test-admin@example.com', jmeno_rodice: 'Test Admin', admin: true },
 ];
 
@@ -52,11 +54,11 @@ try {
         if (!o.ok) throw new Error(`Založení ${u.email}: HTTP ${o.status} ${await o.text()}`);
         id = (await o.json()).id;
       }
-      if (u.stav && u.stav !== 'pilot') await db.query('update public.rodiny set stav = $2 where id = $1', [id, u.stav]);
+      if (u.stav && u.stav !== 'aktivni') await db.query('update public.rodiny set stav = $2 where id = $1', [id, u.stav]);
       if (u.druheDite) {
-        await db.query(`insert into public.deti (rodina_id, krestni_jmeno, typ_skoly, znamka_8)
-                        select $1, $2, $3, $4 where not exists (select 1 from public.deti where rodina_id = $1 and poradi = 2)`,
-          [id, u.druheDite.krestni_jmeno, u.druheDite.typ_skoly, u.druheDite.znamka_8]);
+        await db.query(`insert into public.deti (rodina_id, krestni_jmeno, predmety)
+                        select $1, $2, $3 where not exists (select 1 from public.deti where rodina_id = $1 and poradi = 2)`,
+          [id, u.druheDite.krestni_jmeno, u.druheDite.predmety]);
       }
       if (u.admin) await db.query('insert into public.admini (uid) values ($1) on conflict do nothing', [id]);
       vystup[u.klic] = { email: u.email, heslo, id };

@@ -1,12 +1,13 @@
 -- =====================================================================
 -- 0004_triggers.sql — triggery: registrace (rodina + 1. dítě, R6), max 2 děti,
--- ochrana sloupců rodiny, dotazník → nárok, konec sezení.
+-- ochrana sloupců rodiny, konec sezení. (Spolu 8: bez dotazníku a platby.)
 -- =====================================================================
 
 -- ---------------------------------------------------------------------
 -- Po registraci (after insert on auth.users): založí rodiny a (R6) první dítě.
 -- Metadata (options.data v supabase.auth.signUp):
---   jmeno_rodice, zdroj, dite_jmeno, typ_skoly ('gymnazium'|'ss_maturita'), znamka_8 (1–5)
+--   jmeno_rodice, zdroj, dite_jmeno; volitelně predmety (pole 'matematika'/'cestina', výchozí oba)
+--   Spolu 8 typ školy ani známku nevyžaduje (sloupce zůstaly, plní se null).
 -- Zásada: chyba v datech dítěte NESMÍ shodit registraci (jinak Supabase vrátí
 -- „Database error saving new user"). Dítě se pak jen nezaloží a klient nabídne
 -- přidání dítěte (mojeDeti() vrátí []).
@@ -22,26 +23,26 @@ declare
   v_jmeno  text;
   v_zdroj  text;
   v_dite   text;
-  v_typ    text;
-  v_znamka smallint;
+  v_predm  text[];
 begin
   m := coalesce(new.raw_user_meta_data, '{}'::jsonb);
   v_jmeno := left(btrim(coalesce(m ->> 'jmeno_rodice', '')), 100);
   v_zdroj := nullif(left(btrim(coalesce(m ->> 'zdroj', '')), 50), '');
 
   insert into public.rodiny (id, email, jmeno_rodice, zdroj, stav)
-  values (new.id, new.email, v_jmeno, v_zdroj, 'pilot')
+  values (new.id, new.email, v_jmeno, v_zdroj, 'aktivni')
   on conflict (id) do nothing;
 
   v_dite := nullif(left(btrim(coalesce(m ->> 'dite_jmeno', '')), 50), '');
   if v_dite is not null then
-    v_typ := m ->> 'typ_skoly';
-    if (m ->> 'znamka_8') ~ '^[1-5]$' then
-      v_znamka := (m ->> 'znamka_8')::smallint;
+    if jsonb_typeof(m -> 'predmety') = 'array' then
+      select array_agg(distinct x) into v_predm
+      from jsonb_array_elements_text(m -> 'predmety') as x
+      where x in ('matematika', 'cestina');
     end if;
     begin
-      insert into public.deti (rodina_id, krestni_jmeno, typ_skoly, znamka_8, poradi)
-      values (new.id, v_dite, v_typ, v_znamka, 1);
+      insert into public.deti (rodina_id, krestni_jmeno, poradi, predmety)
+      values (new.id, v_dite, 1, coalesce(v_predm, '{matematika,cestina}'));
     exception when others then
       raise warning 'po_registraci: dite pro % se nepodarilo zalozit: % (%)', new.id, sqlerrm, sqlstate;
     end;
@@ -117,10 +118,9 @@ create trigger deti_pred_vlozenim
 -- ---------------------------------------------------------------------
 -- rodiny: ochrana sloupců. Klient (role authenticated/anon) nesmí měnit
 --   id, email, created_at               — nikdo z klienta
---   stav, odemknuto_at, poznamka_admin,
---   dotaznik_vyplnen                    — jen admin (je_admin())
+--   stav, odemknuto_at, poznamka_admin  — jen admin (je_admin())
 -- Funkce je SECURITY INVOKER: current_user je volající role. Triggery/skripty
--- běžící jako postgres/service_role (po_dotazniku, SQL Editor, seed) projdou.
+-- běžící jako postgres/service_role (SQL Editor, seed) projdou.
 -- Navíc: při změně stavu na 'aktivni' se doplní odemknuto_at = now().
 -- ---------------------------------------------------------------------
 create or replace function public.rodiny_ochrana()
@@ -146,8 +146,7 @@ begin
     if not public.je_admin() and (
          new.stav             is distinct from old.stav
       or new.odemknuto_at     is distinct from old.odemknuto_at
-      or new.poznamka_admin   is distinct from old.poznamka_admin
-      or new.dotaznik_vyplnen is distinct from old.dotaznik_vyplnen) then
+      or new.poznamka_admin   is distinct from old.poznamka_admin) then
       raise exception 'Tento údaj může změnit jen administrátor.' using errcode = '42501';
     end if;
   end if;
@@ -160,44 +159,6 @@ drop trigger if exists rodiny_ochrana on public.rodiny;
 create trigger rodiny_ochrana
   before update on public.rodiny
   for each row execute function public.rodiny_ochrana();
-
--- ---------------------------------------------------------------------
--- dotazniky: po vložení nastav rodiny.dotaznik_vyplnen = true (nárok na 790 Kč).
--- Security definer → update běží jako vlastník (postgres) a projde ochranou.
--- ---------------------------------------------------------------------
-create or replace function public.po_dotazniku()
-returns trigger
-language plpgsql
-security definer
-set search_path = ''
-as $$
-begin
-  update public.rodiny set dotaznik_vyplnen = true where id = new.rodina_id;
-  return new;
-end;
-$$;
-
-drop trigger if exists po_dotazniku on public.dotazniky;
-create trigger po_dotazniku
-  after insert on public.dotazniky
-  for each row execute function public.po_dotazniku();
-
--- Čas vyplnění dotazníku určuje server, ne klient
-create or replace function public.dotaznik_pred_vlozenim()
-returns trigger
-language plpgsql
-set search_path = ''
-as $$
-begin
-  new.vyplneno_at := now();
-  return new;
-end;
-$$;
-
-drop trigger if exists dotaznik_pred_vlozenim on public.dotazniky;
-create trigger dotaznik_pred_vlozenim
-  before insert on public.dotazniky
-  for each row execute function public.dotaznik_pred_vlozenim();
 
 -- ---------------------------------------------------------------------
 -- sezeni: při ukončení (dokonceno/preruseno) doplň konec, pokud chybí

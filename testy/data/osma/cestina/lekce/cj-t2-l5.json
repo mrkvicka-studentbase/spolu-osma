@@ -1,0 +1,647 @@
+{
+  "id": "cj-t2-l5",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 2,
+  "poradi": 1,
+  "tema": "Rod a číslo podstatných jmen",
+  "kapitola": "podstatna-jmena",
+  "cil_pro_rodice": "Dítě určí rod podstatného jména podle toho, jestli před něj řekne *ten, ta*, nebo *to* (i u slov *táta, postel, moře* a u tvarů ve větě jako *k večeři, kuřata*), a pozná, jestli slovo mluví o jednom (číslo jednotné), nebo o více (číslo množné).",
+  "uvod_pro_rodice": "Dnes se dítě učí určit rod podstatného jména jedním testem: řekne před slovo *ten, ta*, nebo *to*; a pozná, jestli slovo mluví o jednom, nebo o více.",
+  "uvod_pravidla": [
+    {
+      "znak": "Rod: ten/ta/to · číslo: jeden/víc",
+      "text": "co to je"
+    },
+    {
+      "znak": "ten mužský · ta ženský · to střední",
+      "text": "test"
+    },
+    {
+      "znak": "ten táta → mužský, jednotné číslo",
+      "text": "příklad"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "rod": "skupina, do které podstatné jméno patří. Pozná se podle toho, jestli před něj (o jedné věci) jde říct ten, ta, nebo to. Nezáleží na tom, jak slovo končí",
+    "rod mužský, ženský, střední": "mužský: jde říct ten (ten táta, ten stůl); ženský: jde říct ta (ta židle, ta postel); střední: jde říct to (to moře, to kuře)",
+    "číslo jednotné, množné": "jednotné: slovo mluví o jednom (kuře, třída — i když je ve třídě hodně dětí, je to jedna třída); množné: o více (kuřata, králíci)",
+    "podstatné jméno": "název osoby, zvířete, věci, vlastnosti nebo činnosti; jde před něj říct ten, ta, to (týden 1)",
+    "přídavné jméno": "slovo, které říká, jaký kdo nebo co je (pohodlný, ospalý); dnes jen past v rozcvičce (týden 1)",
+    "sloveso": "slovo, které říká, co kdo dělá nebo co se děje (sedí, spí); dnes jen past v rozcvičce (týden 1)"
+  },
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "cas_min": 25,
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t2-l5-U1",
+      "typ": "rozcvicka",
+      "cil": "Ledoborec z týdne 1: v řadě tří slov najít podstatné jméno testem ten/ta/to; čtyři vybraná slova (židle, moře, postel, táta) jsou pak v úloze 2.",
+      "cas_min": 4,
+      "zadani": "V každé řadě vyber podstatné jméno.\n\nA) sedí · židle · pohodlný\n\nB) mořský · plave · moře\n\nC) postel · spí · ospalý\n\nD) pracovitý · táta · pracuje",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "sedí",
+                "spravne": false,
+                "typ_chyby": "sd-sloveso-za-podstatne"
+              },
+              {
+                "id": "b",
+                "text": "židle",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "pohodlný",
+                "spravne": false,
+                "typ_chyby": "sd-pridavne-za-podstatne"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "mořský",
+                "spravne": false,
+                "typ_chyby": "sd-pridavne-za-podstatne"
+              },
+              {
+                "id": "b",
+                "text": "plave",
+                "spravne": false,
+                "typ_chyby": "sd-sloveso-za-podstatne"
+              },
+              {
+                "id": "c",
+                "text": "moře",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "postel",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "spí",
+                "spravne": false,
+                "typ_chyby": "sd-sloveso-za-podstatne"
+              },
+              {
+                "id": "c",
+                "text": "ospalý",
+                "spravne": false,
+                "typ_chyby": "sd-pridavne-za-podstatne"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "pracovitý",
+                "spravne": false,
+                "typ_chyby": "sd-pridavne-za-podstatne"
+              },
+              {
+                "id": "b",
+                "text": "táta",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "pracuje",
+                "spravne": false,
+                "typ_chyby": "sd-sloveso-za-podstatne"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Opakování z týdne 1. V každé řadě je název (podstatné jméno), slovo, které říká, co kdo dělá (sloveso), a slovo, které říká, jaký kdo je (přídavné jméno). Dítě hledá název testem *ten, ta, to*. Vybraná slova jsou pak v úloze 2. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) sedí · židle · pohodlný\n\n*židle* (ta židle; *sedí* říká, co kdo dělá, *pohodlný* říká, jaký kdo je)\n\n#### B) mořský · plave · moře\n\n*moře* (to moře; *mořský* říká jaký, *plave* říká, co kdo dělá)\n\n#### C) postel · spí · ospalý\n\n*postel* (ta postel; *spí* říká, co kdo dělá, *ospalý* říká jaký)\n\n#### D) pracovitý · táta · pracuje\n\n*táta* (ten táta, i když končí na -a jako *škola*; *pracovitý* říká jaký, *pracuje* říká, co kdo dělá)\n\n**Výsledek:** A) *židle*, B) *moře*, C) *postel*, D) *táta*",
+        "otazky": [
+          {
+            "k": "A a B",
+            "text": "„Řekni před každé slovo *ten, ta* nebo *to*. Po kterém ještě čekáš další slovo?“"
+          },
+          {
+            "k": "C",
+            "text": "„Řekni před každé slovo z řady C *ten, ta* nebo *to*. Které z nich pak stojí samo a dává smysl?“"
+          },
+          {
+            "k": "D",
+            "text": "„*Táta* končí jako *škola*. Řekni před něj *ten, ta, to*. Co zní česky?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, jak v řadě poznáš podstatné jméno, ať to umím taky.“",
+        "otocena_role_odpoved": "Před podstatné jméno jde říct *ten, ta* nebo *to* a slovo pak stojí samo: ta židle, ten táta. Po *ten pohodlný* čekám další slovo a *ta sedí* nezní česky.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Vybere slovo, které říká, jaký kdo je (*pohodlný, mořský, ospalý, pracovitý*). Zeptejte se: „Ten pohodlný… co? Chybí tam něco?“ (Chybí věc.) Vybere *sedí, plave, spí* nebo *pracuje*: „Jde říct *ta sedí*? Nebo to někdo dělá?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — ve všech čtyřech řadách sedí název. Pochvalte, že dítě zkoušelo *ten, ta, to* nahlas, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti tři trojice slov: *učí, přísný, učitel* · *koláč, voňavý, peče* · *šikovný, babička, zpívá*. Z každé trojice řekne slovo, před které jde říct *ten, ta* nebo *to*. Kontrola pro vás: *učitel, koláč, babička* (ten učitel, ten koláč, ta babička); ostatní slova říkají, co kdo dělá, nebo jaký kdo je.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše pod sebe slova *strom, stojí, starý* a před každé zkusí napsat *ten, ta* nebo *to*. Nahlas řekne, u kterého slova to dává smysl samo. Potom zopakujte lekci „Rod a číslo podstatných jmen“. Kontrola pro vás: jen *ten strom* (název); *stojí* říká, co kdo dělá, *starý*, jaký kdo je."
+      },
+      "tisk": {
+        "zadani": "V každé řadě zakroužkuj podstatné jméno.\n\nŘada A: a) sedí b) židle c) pohodlný\n\nŘada B: a) mořský b) plave c) moře\n\nŘada C: a) postel b) spí c) ospalý\n\nŘada D: a) pracovitý b) táta c) pracuje"
+      }
+    },
+    {
+      "id": "cj-t2-l5-U2",
+      "typ": "nova",
+      "cil": "Určit rod podle testu ten/ta/to, ne podle toho, jak slovo končí (táta, moře, postel).",
+      "cas_min": 5,
+      "zadani": "Řekni před slovo *ten, ta*, nebo *to*. Jaký má rod?\n\nA) židle\n\nB) moře\n\nC) táta\n\nD) postel",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "A) židle",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "mužský",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "ženský",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "střední",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "B) moře",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "mužský",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "ženský",
+                "spravne": false,
+                "typ_chyby": "rod-podle-koncovky"
+              },
+              {
+                "id": "c",
+                "text": "střední",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "C) táta",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "mužský",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "ženský",
+                "spravne": false,
+                "typ_chyby": "rod-podle-koncovky"
+              },
+              {
+                "id": "c",
+                "text": "střední",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "D) postel",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "mužský",
+                "spravne": false,
+                "typ_chyby": "rod-podle-koncovky"
+              },
+              {
+                "id": "b",
+                "text": "ženský",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "střední",
+                "spravne": false
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě u čtyř slov vybírá rod ze tří možností. Rod se pozná jen testem: dítě řekne slovo nahlas s *ten*, s *ta* a s *to* a poslouchá, co zní česky. Pasti: *táta* končí na -a jako *škola*, *moře* na -e jako *židle*, *postel* souhláskou jako *stůl*. Rozhoduje test, ne konec slova.",
+        "reseni": "A) *židle*: ženský (ta židle)\n\nB) *moře*: střední (to moře, i když končí na -e jako *židle*)\n\nC) *táta*: mužský (ten táta, i když končí na -a jako *škola*)\n\nD) *postel*: ženský (ta postel, i když končí souhláskou jako *stůl*)\n\n**Výsledek:** A) ženský, B) střední, C) mužský, D) ženský",
+        "otazky": [
+          "„Co je rod? Řekni vlastními slovy, jak ho poznáš.“",
+          "„Řekni to slovo nahlas s *ten*, s *ta* a s *to*. Které zní česky?“",
+          "„Neřeš, jak slovo končí. Řekni nahlas *ten táta, ta táta, to táta*. Které z toho slyšíš běžně?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč *táta* není ženský rod, i když končí jako *škola*.“",
+        "otocena_role_odpoved": "Protože se říká *ten táta*, ne *ta táta*. Rod poznám podle *ten, ta, to*, ne podle konce slova. Stejně *to moře* a *ta postel*.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U *táta* vybere ženský. Zeptejte se: „Řekneš *ta táta*, nebo *ten táta*?“ (Rozhoduje test, ne konec slova.) U *moře* vybere ženský, u *postel* mužský, nebo jinde jiný rod: „Řekni to slovo nahlas s *ten*, s *ta* a s *to*. Které zní česky?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — všechna čtyři slova mají správný rod. Pochvalte, že dítě zkoušelo *ten, ta, to* nahlas, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti čtyři slova: *hokejista, myš, slunce, kolo*. U každého řekne nahlas *ten, ta* nebo *to* a rod. Kontrola pro vás: ten hokejista (mužský, i když končí na -a), ta myš (ženský), to slunce (střední), to kolo (střední).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše tři sloupce s nadpisy *ten, ta, to*. Řekněte mu slova *táta, židle, moře, postel*. Dítě každé napíše do sloupce, který před něj pasuje, a řekne to nahlas. Potom zopakujte lekci „Rod a číslo podstatných jmen“. Kontrola pro vás: ten táta (mužský); ta židle, ta postel (ženský); to moře (střední)."
+      },
+      "tisk": {
+        "zadani": "U každého slova zakroužkuj jeho rod. Nejdřív před slovo řekni ten, ta, nebo to.\n\nA) židle — a) mužský b) ženský c) střední\n\nB) moře — a) mužský b) ženský c) střední\n\nC) táta — a) mužský b) ženský c) střední\n\nD) postel — a) mužský b) ženský c) střední"
+      }
+    },
+    {
+      "id": "cj-t2-l5-U3",
+      "typ": "nova",
+      "cil": "Určit rod u slov, která mají ve větě jiný tvar (k večeři, s rýží): slovo říct samotné, tak aby před něj šlo říct ten/ta/to.",
+      "cas_min": 5,
+      "zadani": "U každého označeného slova vyber rod: mužský, ženský, nebo střední.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Táta uvařil k večeři kuře s rýží.",
+            "slova": [
+              0,
+              3,
+              4,
+              6
+            ],
+            "role": [
+              "mužský",
+              "ženský",
+              "střední"
+            ]
+          },
+          "spravne": {
+            "0": "mužský",
+            "3": "ženský",
+            "4": "střední",
+            "6": "ženský"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "0": "ženský"
+              },
+              "typ_chyby": "rod-podle-koncovky"
+            },
+            {
+              "hodnota": {
+                "4": "ženský"
+              },
+              "typ_chyby": "rod-podle-koncovky"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Ve větě jsou čtyři označená slova. Dvě mají jiný tvar, než kdyby stála samotná (*k večeři, s rýží*): dítě je musí říct samotná, a teprve pak zkusit *ten, ta, to* (ta večeře, ta rýže). Pasti: *Táta* končí na -a, *kuře* na -e jako *židle*.",
+        "reseni": "*Táta*: mužský (ten táta)\n\n*večeři*: ženský (ta večeře; ve větě je tvar k večeři)\n\n*kuře*: střední (to kuře)\n\n*rýží*: ženský (ta rýže; ve větě je tvar s rýží)\n\n**Výsledek:** *Táta* mužský, *večeři* ženský, *kuře* střední, *rýží* ženský",
+        "otazky": [
+          "„Jak poznáš rod podstatného jména? Řekni to vlastními slovy.“",
+          "„Vezmi slovo *večeři*. Řekni ho tak, aby před něj šlo říct *ten, ta* nebo *to*. Které pasuje?“",
+          "„K čemu táta vařil? S čím? Řekni každé to slovo samotné, bez *k* a *s*, a přidej *ten, ta* nebo *to*.“"
+        ],
+        "otocena_role": "„Vysvětli mi, jak určíš rod slova *rýží*, když před něj nejde říct ani *ta*.“",
+        "otocena_role_odpoved": "Řeknu to slovo samotné, jak by stálo bez věty: rýže. Pak zkusím *ten, ta, to*: ta rýže, takže ženský. Stejně *k večeři*: ta večeře.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U *večeři* nebo *rýží* dá mužský („ta večeři?“). Zeptejte se: „Co táta uvařil? K čemu? Řekni to slovo samo: ta…, ten…, to…?“ (ta večeře, ta rýže). U *Táta* nebo *kuře* dá ženský: „Řekneš *ta táta*, nebo *ten táta*? A *ta kuře*, nebo *to kuře*?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — rod sedí u všech čtyř slov, i u *večeři* a *rýží*. Pochvalte, že dítě slova říkalo samotná, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti větu: *Tomáš jde se psem k moři.* U slov *Tomáš, psem, moři* řekne, jak slovo zní samotné, a rod. Kontrola pro vás: ten Tomáš (mužský), ten pes (mužský), to moře (střední).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra řekněte dítěti tři slova, jak jsou ve větě: *k večeři, s rýží, na moři*. Dítě každé napíše samotné a před něj napíše *ten, ta* nebo *to*. Potom zopakujte lekci „Rod a číslo podstatných jmen“. Kontrola pro vás: ta večeře, ta rýže (ženský), to moře (střední)."
+      },
+      "tisk": {
+        "zadani": "Nad každé tučné slovo napiš jeho rod: **M** = mužský, **Ž** = ženský, **S** = střední.\n\n**Táta** uvařil k **večeři** **kuře** s **rýží**."
+      }
+    },
+    {
+      "id": "cj-t2-l5-U4",
+      "typ": "detektiv",
+      "cil": "Najít u spolužáka rod určený podle konce slova (Táta → ženský) a říct, proč chyba vznikla.",
+      "cas_min": 5,
+      "zadani": "Petr určil rod podstatných jmen ve větě\n\n**Táta opravuje v garáži kolo.**\n\nNapsal: *Táta* – ženský, *garáži* – ženský, *kolo* – střední. Udělal **jednu** chybu. Najdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na slovo, které Petr určil špatně.",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Táta opravuje v garáži kolo.",
+            "cil": "slova",
+            "min": 1,
+            "max": 1
+          },
+          "spravne": [
+            0
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                3,
+                4
+              ],
+              "typ_chyby": "detektiv-jine-slovo"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Proč se Petr spletl?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Řídil se tím, jak slovo končí",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "Spletl si jednu věc a víc věcí",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "c",
+                "text": "Řídil se tím, kde slovo ve větě stojí",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák: hledat cizí chybu je snazší než přiznat vlastní. Petr určil rod tří slov a jedno má špatně. Dítě má před každé Petrovo slovo říct *ten, ta* nebo *to*. Past je *garáži*: končí souhláskou jako *stůl*, ale Petr ji má dobře (ta garáž). V kroku 2 (Proč se Petr spletl?) dítě vybere důvod.",
+        "reseni": "Chyba je *Táta*: Petr napsal ženský, správně je mužský (ten táta)\n\n*garáži*: ženský, Petr má správně (ta garáž)\n\n*kolo*: střední, Petr má správně (to kolo)\n\nDůvod: Řídil se tím, jak slovo končí (*táta* končí na -a jako *škola*)\n\n**Výsledek:** *Táta*; důvod „Řídil se tím, jak slovo končí“",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Petr udělal a co máš najít.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrova slova jedno po druhém a řekni před každé *ten, ta* nebo *to*.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Řekni nahlas, co Petr napsal, třeba *ta táta*, *ta garáž*. Kde to nezní česky? Podle čeho to Petr mohl napsat?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Řekni mi, kde mám chybu a jak si to příště ohlídám.“",
+        "otocena_role_odpoved": "Máš špatně *Táta*: říká se *ten táta*, takže mužský. Spletl ses, protože končí na -a jako *škola*. Příště řekni před slovo *ten, ta, to*, konec slova nerozhoduje.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 klikne na *garáži* (končí jako *stůl*). Zeptejte se: „Řekneš *ten garáž*, nebo *ta garáž*?“ (Petr to má dobře.) Klikne na *kolo*: „Ten, ta, nebo to kolo?“ V kroku 2 vybere jiný důvod: „Je *Táta* jeden, nebo víc? Kde ve větě stojí?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — dítě našlo Petrovu chybu i důvod. Pochvalte, že zkoušelo *ten, ta, to* u každého Petrova slova, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr napsal: *kolega* – ženský, *postel* – mužský, *moře* – střední.“ Zeptejte se: „Kde všude se Petr spletl? Jak to ověříš?“ Kontrola pro vás: u *kolega* (ten kolega, mužský) a u *postel* (ta postel, ženský); *moře* má dobře (to moře).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše slova *táta, škola, židle, moře* a před každé napíše *ten, ta* nebo *to*. Pak řekne, která dvě slova končí stejně, a jestli mají stejný rod. Potom zopakujte lekci „Rod a číslo podstatných jmen“. Kontrola pro vás: ten táta, ta škola (obě končí na -a, rod jiný); ta židle, to moře (obě na -e, rod jiný)."
+      },
+      "tisk": {
+        "zadani": "Petr určil rod podstatných jmen ve větě\n\nTáta opravuje v garáži kolo.\n\nNapsal: Táta – ženský, garáži – ženský, kolo – střední. Udělal jednu chybu.\n\nA) Podtrhni slovo, které Petr určil špatně.\n\nB) Proč se Petr spletl? Zakroužkuj: a) Řídil se tím, jak slovo končí b) Spletl si jednu věc a víc věcí c) Řídil se tím, kde slovo ve větě stojí"
+      }
+    },
+    {
+      "id": "cj-t2-l5-U5",
+      "typ": "kontrolni",
+      "cil": "Samostatně určit rod a číslo šesti podstatných jmen ve dvou větách, včetně slova typu táta (Děda), jedné skupiny lidí (rodinou) a rodu slova v množném čísle (kachňata).",
+      "cas_min": 6,
+      "zadani": "U každého označeného slova v obou větách vyber rod (mužský, ženský, střední) a číslo (jednotné, množné).",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Děda jde ráno s celou rodinou k rybníku. U břehu plavou kachny a malá kachňata.",
+            "slova": [
+              0,
+              5,
+              7,
+              9,
+              11,
+              14
+            ],
+            "role": {
+              "rod": [
+                "mužský",
+                "ženský",
+                "střední"
+              ],
+              "cislo": [
+                "jednotné",
+                "množné"
+              ]
+            }
+          },
+          "spravne": {
+            "0": {
+              "rod": "mužský",
+              "cislo": "jednotné"
+            },
+            "5": {
+              "rod": "ženský",
+              "cislo": "jednotné"
+            },
+            "7": {
+              "rod": "mužský",
+              "cislo": "jednotné"
+            },
+            "9": {
+              "rod": "mužský",
+              "cislo": "jednotné"
+            },
+            "11": {
+              "rod": "ženský",
+              "cislo": "množné"
+            },
+            "14": {
+              "rod": "střední",
+              "cislo": "množné"
+            }
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "0": {
+                  "rod": "ženský"
+                }
+              },
+              "typ_chyby": "rod-podle-koncovky"
+            },
+            {
+              "hodnota": {
+                "5": {
+                  "cislo": "množné"
+                }
+              },
+              "typ_chyby": "cislo-zamena"
+            },
+            {
+              "hodnota": {
+                "14": {
+                  "rod": "ženský"
+                }
+              },
+              "typ_chyby": "rod-z-mnozneho-cisla"
+            },
+            {
+              "hodnota": {
+                "11": {
+                  "cislo": "jednotné"
+                },
+                "14": {
+                  "cislo": "jednotné"
+                }
+              },
+              "typ_chyby": "cislo-zamena"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Šest slov, u každého rod a číslo (12 odpovědí). Pasti: *Děda* končí na -a, *rodinou* je jedna rodina, i když je v ní víc lidí, a *kachňata* se zkoušejí na jednom kusu.",
+        "reseni": "*Děda*: mužský, jednotné (ten děda)\n\n*rodinou*: ženský, jednotné (ta rodina; je jedna, i když je v ní víc lidí)\n\n*rybníku*: mužský, jednotné (ten rybník)\n\n*břehu*: mužský, jednotné (ten břeh)\n\n*kachny*: ženský, množné (ta kachna → víc kachen)\n\n*kachňata*: střední, množné (to kachně → víc kachňat)\n\n**Výsledek:** 12 údajů: *Děda, rybníku, břehu* mužský, jednotné; *rodinou* ženský, jednotné; *kachny* ženský, množné; *kachňata* střední, množné",
+        "otazky": [
+          "„Jak poznáš rod a jak číslo? Řekni mi oba testy vlastními slovy.“",
+          "„Vezmi slovo *Děda*. Řekni před něj *ten*, *ta* i *to*. Co zní česky?“",
+          "„U slov, kterých je víc, řekni jeden kus: ten, ta, nebo to? A u *rodinou*: jde říct *jedna rodina*?“"
+        ],
+        "otocena_role": "„Vyber si z vět jedno slovo, kterého je víc, a vysvětli mi, jak u něj poznáš rod.“",
+        "otocena_role_odpoved": "Třeba *kachňata*: je jich víc, takže množné. Rod zkusím na jednom: to kachně, takže střední. *Ta kachňata* by mě spletla.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: *Děda* jako ženský: „Ten děda, nebo ta děda?“ *rodinou* jako množné: „Jde říct *jedna rodina*?“ *kachňata* jako ženský: „Řekni jedno: ten, ta, nebo to kachně?“ *kachny, kachňata* jako jednotné: „Je to jedno, nebo víc?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — rod i číslo sedí u všech šesti slov. Pochvalte, že dítě zkoušelo *ten, ta, to* u každého slova. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti tři slova: *táta, třída, kuřata*. U každého řekne rod a číslo. Kontrola pro vás: ten táta (mužský, jednotné); ta třída (ženský, jednotné; je jedna, i když je v ní víc dětí); kuřata jsou množné, rod střední (to kuře).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě nakreslí rybník, na něm jednu kachnu a vedle tři kachňata. U každého obrázku napíše, co řekne před jeden kus (*ten, ta, to*), a jestli je jich jeden, nebo víc. Potom zopakujte lekci „Rod a číslo podstatných jmen“. Kontrola pro vás: ta kachna (ženský, jednotné); kachňata jsou množné, rod střední (to kachně); ten rybník (mužský, jednotné)."
+      },
+      "tisk": {
+        "zadani": "Nad každé tučné slovo napiš jeho rod a číslo. Rod: **M** = mužský, **Ž** = ženský, **S** = střední. Číslo: **j** = jednotné, **mn** = množné.\n\n**Děda** jde ráno s celou **rodinou** k **rybníku**. U **břehu** plavou **kachny** a malá **kachňata**."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "SYNTETICKÁ testovací lekce (testy/data/osma) převedená ze Spolu — jen pro testy a QA, není to obsah Spolu 8.",
+    "zkontroloval": "vedouci",
+    "datum": "2026-09-30",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?slovo=t%C3%A1ta",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%BEidle",
+      "https://prirucka.ujc.cas.cz/?slovo=mo%C5%99e",
+      "https://prirucka.ujc.cas.cz/?slovo=postel",
+      "https://prirucka.ujc.cas.cz/?slovo=pohodln%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=ve%C4%8De%C5%99e",
+      "https://prirucka.ujc.cas.cz/?slovo=ku%C5%99e",
+      "https://prirucka.ujc.cas.cz/?slovo=r%C3%BD%C5%BEe",
+      "https://prirucka.ujc.cas.cz/?slovo=t%C5%99%C3%ADda",
+      "https://prirucka.ujc.cas.cz/?slovo=farma",
+      "https://prirucka.ujc.cas.cz/?slovo=kr%C3%A1l%C3%ADk",
+      "https://prirucka.ujc.cas.cz/?slovo=gar%C3%A1%C5%BE",
+      "https://prirucka.ujc.cas.cz/?slovo=kolo",
+      "https://prirucka.ujc.cas.cz/?slovo=d%C4%9Bda",
+      "https://prirucka.ujc.cas.cz/?slovo=rodina",
+      "https://prirucka.ujc.cas.cz/?slovo=rybn%C3%ADk",
+      "https://prirucka.ujc.cas.cz/?slovo=b%C5%99eh",
+      "https://prirucka.ujc.cas.cz/?slovo=kachna",
+      "https://prirucka.ujc.cas.cz/?slovo=kachn%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=sed%C4%9Bt",
+      "https://prirucka.ujc.cas.cz/?slovo=plavat",
+      "https://prirucka.ujc.cas.cz/?slovo=sp%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?slovo=pracovat",
+      "https://prirucka.ujc.cas.cz/?slovo=ospal%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=pracovit%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1kola",
+      "https://prirucka.ujc.cas.cz/?slovo=hokejista",
+      "https://prirucka.ujc.cas.cz/?slovo=my%C5%A1",
+      "https://prirucka.ujc.cas.cz/?slovo=slunce",
+      "https://prirucka.ujc.cas.cz/?slovo=hrad",
+      "https://prirucka.ujc.cas.cz/?slovo=zv%C3%AD%C5%99e",
+      "https://prirucka.ujc.cas.cz/?slovo=kolega",
+      "https://prirucka.ujc.cas.cz/?slovo=pes",
+      "https://prirucka.ujc.cas.cz/?slovo=Tom%C3%A1%C5%A1",
+      "https://prirucka.ujc.cas.cz/?slovo=st%C5%AFl",
+      "https://prirucka.ujc.cas.cz/?slovo=strom",
+      "https://prirucka.ujc.cas.cz/?slovo=u%C4%8Dit",
+      "https://prirucka.ujc.cas.cz/?slovo=u%C4%8Ditel",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C5%99%C3%ADsn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=kol%C3%A1%C4%8D",
+      "https://prirucka.ujc.cas.cz/?slovo=vo%C5%88av%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C3%A9ct",
+      "https://prirucka.ujc.cas.cz/?slovo=babi%C4%8Dka",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1ikovn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=zp%C3%ADvat",
+      "https://prirucka.ujc.cas.cz/?id=st%C3%A1t_1",
+      "https://prirucka.ujc.cas.cz/?id=200",
+      "https://prirucka.ujc.cas.cz/?id=star%C3%BD_1"
+    ],
+    "testovaci_rodic": null
+  }
+}

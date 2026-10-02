@@ -53,10 +53,11 @@ $$;
 
 -- Proč je lekce pro přihlášeného zamčená? null = přístupná.
 -- Jediné místo s pravidlem přístupu k obsahu: používá ho RLS na lekce i katalog_lekci() (0003).
+-- Spolu 8 v1: žádná platba ani zámek podle předmětu — lekce vidí každá přihlášená rodina od otevrit_od
+-- (seed --otevrit-od, všechny lekce najednou). Předmět dítěte hlídá až založení sezení (sezeni_insert).
 --   'neprihlaseno' — bez session
---   'uzavreno'     — rodina ve stavu uzavreny (od 1. 5.): nečte nic, ani pilot (kostra 01)
---   'platba'       — neveřejná lekce a rodina není aktivni (čeká na platbu)
---   'datum'        — rodina aktivni, ale now() < otevrit_od
+--   'uzavreno'     — rodina ve stavu uzavreny: nečte nic
+--   'datum'        — now() < otevrit_od (a lekce není verejna)
 create or replace function public.duvod_zamceni(p_verejna boolean, p_otevrit_od timestamptz)
 returns text
 language sql
@@ -65,16 +66,30 @@ security definer
 set search_path = ''
 as $$
   select case
-    when (select auth.uid()) is null            then 'neprihlaseno'
-    when public.je_admin()                      then null
-    when coalesce(r.stav, 'pilot') = 'uzavreny' then 'uzavreno'
-    when p_verejna                              then null
-    when coalesce(r.stav, 'pilot') <> 'aktivni' then 'platba'
-    when now() < p_otevrit_od                   then 'datum'
+    when (select auth.uid()) is null              then 'neprihlaseno'
+    when public.je_admin()                        then null
+    when coalesce(r.stav, 'aktivni') = 'uzavreny' then 'uzavreno'
+    when p_verejna                                then null
+    when now() < p_otevrit_od                     then 'datum'
     else null
   end
   from (select 1) as jeden
   left join public.rodiny r on r.id = (select auth.uid());
+$$;
+
+-- Má dítě daný předmět zapnutý? (deti.predmety; sezení jen pro dítě s předmětem lekce)
+create or replace function public.dite_ma_predmet_lekce(p_dite_id uuid, p_lekce_id text)
+returns boolean
+language sql
+stable
+security definer
+set search_path = ''
+as $$
+  select exists (
+    select 1 from public.deti d
+    join public.lekce l on l.id = p_lekce_id
+    where d.id = p_dite_id and l.predmet = any (d.predmety)
+  );
 $$;
 
 -- Práva na funkce: nikdy anon/public; authenticated je potřebuje pro politiky a RPC.
@@ -82,10 +97,12 @@ revoke execute on function public.je_admin()                              from p
 revoke execute on function public.moje_dite(uuid)                         from public, anon;
 revoke execute on function public.moje_sezeni(uuid)                       from public, anon;
 revoke execute on function public.duvod_zamceni(boolean, timestamptz)     from public, anon;
+revoke execute on function public.dite_ma_predmet_lekce(uuid, text)       from public, anon;
 grant  execute on function public.je_admin()                              to authenticated, service_role;
 grant  execute on function public.moje_dite(uuid)                         to authenticated, service_role;
 grant  execute on function public.moje_sezeni(uuid)                       to authenticated, service_role;
 grant  execute on function public.duvod_zamceni(boolean, timestamptz)     to authenticated, service_role;
+grant  execute on function public.dite_ma_predmet_lekce(uuid, text)       to authenticated, service_role;
 
 -- ---------------------------------------------------------------------
 -- Zapnutí RLS všude
@@ -96,12 +113,11 @@ alter table public.lekce     enable row level security;
 alter table public.sezeni    enable row level security;
 alter table public.odpovedi  enable row level security;
 alter table public.semafory  enable row level security;
-alter table public.dotazniky enable row level security;
 alter table public.admini    enable row level security;
 
 -- ---------------------------------------------------------------------
 -- rodiny: select/update vlastní; admin vše. Insert jen trigger po registraci.
--- Chráněné sloupce (stav, odemknuto_at, poznamka_admin, dotaznik_vyplnen) hlídá
+-- Chráněné sloupce (stav, odemknuto_at, poznamka_admin) hlídá
 -- trigger rodiny_ochrana (0004) — RLS neumí omezit sloupce.
 -- ---------------------------------------------------------------------
 drop policy if exists rodiny_select on public.rodiny;
@@ -135,8 +151,8 @@ create policy deti_update on public.deti
   with check (rodina_id = (select auth.uid()));
 
 -- ---------------------------------------------------------------------
--- lekce: select dle duvod_zamceni() (verejna OR (aktivni AND now() >= otevrit_od) OR admin;
--- uzavreny nečte nic). Žádná politika pro insert/update/delete = klient nezapisuje.
+-- lekce: select dle duvod_zamceni() (verejna OR now() >= otevrit_od OR admin; uzavreny nečte nic).
+-- Žádná politika pro insert/update/delete = klient nezapisuje.
 -- ---------------------------------------------------------------------
 drop policy if exists lekce_select on public.lekce;
 create policy lekce_select on public.lekce
@@ -145,7 +161,8 @@ create policy lekce_select on public.lekce
 
 -- ---------------------------------------------------------------------
 -- sezeni: rodina své (přes dite_id); admin select vše.
--- Insert jen pro lekci, kterou rodina smí číst (poddotaz podléhá RLS na lekce).
+-- Insert jen pro lekci, kterou rodina smí číst (poddotaz podléhá RLS na lekce),
+-- a jen dítěti, které má předmět lekce v deti.predmety.
 -- ---------------------------------------------------------------------
 drop policy if exists sezeni_select on public.sezeni;
 create policy sezeni_select on public.sezeni
@@ -158,6 +175,7 @@ create policy sezeni_insert on public.sezeni
   with check (
     public.moje_dite(dite_id)
     and exists (select 1 from public.lekce l where l.id = lekce_id)
+    and public.dite_ma_predmet_lekce(dite_id, lekce_id)
   );
 
 drop policy if exists sezeni_update on public.sezeni;
@@ -197,19 +215,6 @@ create policy semafory_update on public.semafory
   for update to authenticated
   using (public.moje_sezeni(sezeni_id))
   with check (public.moje_sezeni(sezeni_id));
-
--- ---------------------------------------------------------------------
--- dotazniky: rodina insert/select vlastní; admin select
--- ---------------------------------------------------------------------
-drop policy if exists dotazniky_select on public.dotazniky;
-create policy dotazniky_select on public.dotazniky
-  for select to authenticated
-  using (rodina_id = (select auth.uid()) or public.je_admin());
-
-drop policy if exists dotazniky_insert on public.dotazniky;
-create policy dotazniky_insert on public.dotazniky
-  for insert to authenticated
-  with check (rodina_id = (select auth.uid()));
 
 -- ---------------------------------------------------------------------
 -- admini: select jen sám sebe; zápis jen ručně v SQL (žádná politika)

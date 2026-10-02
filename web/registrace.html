@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Registrace — Spolu na přijímačky</title>
-  <meta name="description" content="Registrace do pilotu Spolu na přijímačky (4 lekce zdarma) a přihlášení do účtu.">
+  <title>Registrace — Spolu 8</title>
+  <meta name="description" content="Registrace do Spolu 8 — opakování 8. třídy — a přihlášení do účtu.">
   <meta name="robots" content="noindex">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230F172A'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11' fill='none' stroke='%231FC27E' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
@@ -29,7 +29,7 @@
 
 <header class="hlavicka">
   <div class="hlavicka__vnitrek">
-    <a class="logo" href="index.html"><span class="logo__znacka">Student<span>Base</span></span><span class="logo__produkt">Spolu na přijímačky</span></a>
+    <a class="logo" href="index.html"><span class="logo__znacka">Student<span>Base</span></span><span class="logo__produkt">Spolu 8</span></a>
   </div>
 </header>
 
@@ -50,8 +50,8 @@
   <section id="sekce-registrace" aria-labelledby="registrace-nadpis">
     <form class="formular" id="formular-registrace" novalidate>
       <div class="formular__uvod">
-        <h1 id="registrace-nadpis">Registrace do pilotu</h1>
-        <p class="text-tlumeny">4 lekce zdarma od 1. 10. Zabere to 2 minuty.</p>
+        <h1 id="registrace-nadpis">Registrace</h1>
+        <p class="text-tlumeny">Spolu 8 — opakování 8. třídy. Zabere to 2 minuty.</p>
       </div>
 
       <div class="hlaska hlaska--varovani" role="alert" id="registrace-chyba" hidden>
@@ -87,27 +87,8 @@
         <div class="pole-skupina">
           <label class="pole-popisek" for="r-dite">Křestní jméno dítěte</label>
           <input class="pole" id="r-dite" name="dite" autocomplete="off" maxlength="50" aria-describedby="r-dite-nap r-dite-chyba">
-          <p class="pole-napoveda" id="r-dite-nap">Druhé dítě můžete přidat později, je zdarma.</p>
+          <p class="pole-napoveda" id="r-dite-nap">Druhé dítě můžete přidat později.</p>
           <p class="pole-chyba" id="r-dite-chyba" hidden></p>
-        </div>
-        <div class="pole-skupina">
-          <fieldset class="volby" id="r-skola" aria-describedby="r-skola-chyba">
-            <legend>Na jakou školu se hlásí?</legend>
-            <label class="volba"><input class="volba__vstup" type="radio" name="typ_skoly" value="gymnazium"><span class="volba__obsah">Gymnázium</span></label>
-            <label class="volba"><input class="volba__vstup" type="radio" name="typ_skoly" value="ss_maturita"><span class="volba__obsah">SŠ s maturitou</span></label>
-          </fieldset>
-          <p class="pole-chyba" id="r-skola-chyba" hidden></p>
-        </div>
-        <div class="pole-skupina">
-          <fieldset class="volby volby--stupnice" id="r-znamka" aria-describedby="r-znamka-chyba">
-            <legend>Známka z matematiky na konci 8. třídy</legend>
-            <label class="volba"><input class="volba__vstup" type="radio" name="znamka" value="1"><span class="volba__obsah">1</span></label>
-            <label class="volba"><input class="volba__vstup" type="radio" name="znamka" value="2"><span class="volba__obsah">2</span></label>
-            <label class="volba"><input class="volba__vstup" type="radio" name="znamka" value="3"><span class="volba__obsah">3</span></label>
-            <label class="volba"><input class="volba__vstup" type="radio" name="znamka" value="4"><span class="volba__obsah">4</span></label>
-            <label class="volba"><input class="volba__vstup" type="radio" name="znamka" value="5"><span class="volba__obsah">5</span></label>
-          </fieldset>
-          <p class="pole-chyba" id="r-znamka-chyba" hidden></p>
         </div>
       </fieldset>
 
@@ -126,7 +107,7 @@
         <!-- TODO Pavel: konkrétní URL obchodních podmínek StudentBase (zatím odkaz na web) -->
         <label class="zaskrtavatko">
           <input type="checkbox" id="r-souhlas" name="souhlas" aria-describedby="r-souhlas-chyba">
-          <span>Souhlasím s <a href="https://studentbase.cz" target="_blank" rel="noopener">obchodními podmínkami</a> a zpracováním osobních údajů.</span>
+          <span>Souhlasím s <a href="https://studentbase.cz" target="_blank" rel="noopener">podmínkami používání</a> a zpracováním osobních údajů.</span>
         </label>
         <p class="pole-chyba" id="r-souhlas-chyba" hidden></p>
       </div>

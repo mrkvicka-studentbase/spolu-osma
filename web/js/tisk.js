@@ -23,7 +23,7 @@ import { el, param, chybaStranky, chranStranku, bezpecnyZpet } from './ui.js';
 import { h } from './hlasky.js';
 import { vytvorObrazek } from './vstupy-f1.js';
 import { jeDiagnostika } from './diagnostika.js';
-import { PRESTAVKA_PO } from './diagnostika-zak.js';
+import { prestavkaPo } from './diagnostika-zak.js';
 import { nacistKnihovny, nactiLekciObsah, renderMarkdown, rozlozDlazdice, NAZVY_TYPU, pomuckyLekce } from './obsah.js';
 import { jeSimulace } from './simulace.js';
 import { archKroky, obrazekTisk, sesitSimulace, stranaVzorcu, archSimulace, lekceMaRysovani } from './tisk-f2.js';
@@ -137,7 +137,7 @@ function vytvorList(lekce, jmeno) {
     el('article', { class: 'tisk-list' },
       el('header', { class: 'tisk-zahlavi' },
         el('div', { class: 'tisk-zahlavi__lekce' },
-          jeDiagnostika(lekce) ? `Spolu na přijímačky — ${lekce.tema}` : `Spolu na přijímačky — Lekce ${lekce.id}: ${lekce.tema}`,
+          jeDiagnostika(lekce) ? `Spolu 8 — ${lekce.tema}` : `Spolu 8 — Lekce ${lekce.id}: ${lekce.tema}`,
           el('small', { text: `Doporučený čas ${lekce.cas_min ?? 20} min` })),
         el('div', { class: 'tisk-zahlavi__jmeno' },
           'Jméno: ', jmeno ? el('strong', { text: jmeno }) : el('span', { class: 'tisk-linka' }),
@@ -149,7 +149,7 @@ function vytvorList(lekce, jmeno) {
       lekce.ulohy.map((u, i) => [
         blokUlohy(u, i, lekce),
         // diagnostika: předěl po 12. úloze + nová strana (obrazovka §5)
-        jeDiagnostika(lekce) && i === PRESTAVKA_PO - 1 && lekce.ulohy.length > PRESTAVKA_PO
+        jeDiagnostika(lekce) && i === prestavkaPo(lekce.ulohy.length) - 1 && lekce.ulohy.length > prestavkaPo(lekce.ulohy.length)
           ? el('div', { class: 'tisk-predel' }, h('diag.tisk_prestavka')) : null,
       ]),
       el('footer', { class: 'tisk-paticka' },

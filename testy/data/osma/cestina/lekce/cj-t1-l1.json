@@ -1,0 +1,641 @@
+{
+  "id": "cj-t1-l1",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 1,
+  "poradi": 1,
+  "tema": "Podstatné jméno: poznám ho",
+  "kapitola": "slovni-druhy",
+  "cil_pro_rodice": "Dítě ve větě najde všechna podstatná jména testem „ten, ta, to“, i když jde o pocit nebo vlastnost (radost, rychlost) nebo o činnost (plavání).",
+  "uvod_pro_rodice": "Dnes se dítě učí poznat podstatné jméno jedním testem: dá se před něj říct „ten, ta, to“ a ukázat na to?",
+  "uvod_pravidla": [
+    {
+      "znak": "Podstatné jméno = název",
+      "text": "co to je"
+    },
+    {
+      "znak": "Jde před něj říct ten/ta/to?",
+      "text": "test"
+    },
+    {
+      "znak": "ten pes, ta radost, to plavání",
+      "text": "příklad"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "podstatné jméno": "název osoby, zvířete nebo věci, ale i pocitu či vlastnosti (radost, rychlost) nebo činnosti (plavání); jde před něj říct ten, ta nebo to",
+    "přídavné jméno": "slovo, které říká, jaký kdo nebo co je (malý, veselý); dnes je to v úlohách jen past",
+    "sloveso": "slovo, které říká, co kdo dělá nebo co se děje (běží, peče); dnes je to v úlohách jen past",
+    "jiný tvar slova": "totéž slovo, jen změněné podle věty (zahrada → po zahradě); test ten, ta, to se zkouší se slovem, jak by stálo samo"
+  },
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "cas_min": 25,
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t1-l1-U1",
+      "typ": "rozcvicka",
+      "cil": "Ledoborec: v řadě čtyř slov poznat to, před které jde říct ten/ta/to.",
+      "cas_min": 4,
+      "zadani": "V každé řadě je jedno slovo, před které jde říct „ten“, „ta“ nebo „to“ a ukázat na to. Najdi ho.\n\nA) stůl, sedí, velký, rychle\n\nB) běží, kočka, modrý, včera\n\nC) krásný, zpívá, škola, tiše\n\nD) veselý, raduje se, vesele, radost",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "stůl",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "sedí",
+                "spravne": false,
+                "typ_chyby": "sd-sloveso-za-podstatne"
+              },
+              {
+                "id": "c",
+                "text": "velký",
+                "spravne": false,
+                "typ_chyby": "sd-pridavne-za-podstatne"
+              },
+              {
+                "id": "d",
+                "text": "rychle",
+                "spravne": false,
+                "typ_chyby": "sd-prislovce-za-podstatne"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "běží",
+                "spravne": false,
+                "typ_chyby": "sd-sloveso-za-podstatne"
+              },
+              {
+                "id": "b",
+                "text": "kočka",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "modrý",
+                "spravne": false,
+                "typ_chyby": "sd-pridavne-za-podstatne"
+              },
+              {
+                "id": "d",
+                "text": "včera",
+                "spravne": false,
+                "typ_chyby": "sd-prislovce-za-podstatne"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "krásný",
+                "spravne": false,
+                "typ_chyby": "sd-pridavne-za-podstatne"
+              },
+              {
+                "id": "b",
+                "text": "zpívá",
+                "spravne": false,
+                "typ_chyby": "sd-sloveso-za-podstatne"
+              },
+              {
+                "id": "c",
+                "text": "škola",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "tiše",
+                "spravne": false,
+                "typ_chyby": "sd-prislovce-za-podstatne"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "veselý",
+                "spravne": false,
+                "typ_chyby": "sd-pridavne-za-podstatne"
+              },
+              {
+                "id": "b",
+                "text": "raduje se",
+                "spravne": false,
+                "typ_chyby": "sd-sloveso-za-podstatne"
+              },
+              {
+                "id": "c",
+                "text": "vesele",
+                "spravne": false,
+                "typ_chyby": "sd-prislovce-za-podstatne"
+              },
+              {
+                "id": "d",
+                "text": "radost",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě tu jen vybírá jedno slovo z každé řady. Pasti jsou slova, která říkají, co kdo dělá (sedí), jaký je (velký) nebo jak a kdy (rychle, včera). V řadě D dítě často zaváhá: radost není věc, a přesto je to název. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) stůl, sedí, velký, rychle\n\nten stůl (sedí říká, co kdo dělá; velký říká jaký; rychle říká jak)\n\n#### B) běží, kočka, modrý, včera\n\nta kočka (běží říká, co kdo dělá; modrý říká jaký; včera říká kdy)\n\n#### C) krásný, zpívá, škola, tiše\n\nta škola (krásný říká jaký; zpívá říká, co kdo dělá; tiše říká jak)\n\n#### D) veselý, raduje se, vesele, radost\n\nta radost (název pocitu; veselý říká jaký; raduje se říká, co kdo dělá; vesele říká jak)\n\n**Výsledek:** A) stůl, B) kočka, C) škola, D) radost",
+        "otazky": [
+          {
+            "k": "A a B",
+            "text": "„Řekni před každé slovo ‚ten‘, ‚ta‘ nebo ‚to‘. Které z nich pak stojí samo a dává smysl?“"
+          },
+          {
+            "k": "C",
+            "text": "„Zkus ‚ten krásný‘. Na co ukazuješ? Chybí tam něco? A jak je to u ostatních slov v řadě?“"
+          },
+          {
+            "k": "D",
+            "text": "„Tady je past: hledané slovo není věc, kterou vezmeš do ruky. Zkus test u všech čtyř slov.“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč ‚radost‘ patří mezi názvy stejně jako ‚stůl‘, i když ji nevezmeš do ruky.“",
+        "otocena_role_odpoved": "Před obě slova jde říct ten nebo ta: ten stůl, ta radost. Obě jsou názvy něčeho, jen radost je pocit, ne věc. U slov veselý nebo vesele to nejde.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Vybere slovo, které říká jaký (velký, modrý, krásný, veselý) nebo co kdo dělá (sedí, běží, zpívá, raduje se). Zeptejte se: „Ten velký… co? Chybí tam něco?“ (Chybí věc, velký říká jen jaký.) U řady D: „Jde říct ‚ta radost‘?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — všechny čtyři řady sedí. Pochvalte, že dítě zkoušelo ten, ta, to u každého slova, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti dvě řady: „zelený, zeleň, zelená se“ a „chytrý, chytrost, chytře“. V každé řadě ať najde slovo, před které jde říct ten, ta nebo to. Kontrola pro vás: ta zeleň, ta chytrost; ostatní slova říkají jaký, jak nebo co se děje.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě nakreslí smutný obličej. Pak řekněte tři slova: smutný, smutek, smutně. Ať před každé zkusí říct ten, ta nebo to. U kterého to dává smysl? Potom zopakujte lekci „Podstatné jméno: poznám ho“. Kontrola pro vás: jen ten smutek, je to název pocitu; smutný říká jaký, smutně jak."
+      },
+      "tisk": {
+        "zadani": "V každé řadě zakroužkuj slovo, před které jde říct „ten“, „ta“ nebo „to“ a ukázat na to.\n\nŘada A — a) stůl b) sedí c) velký d) rychle\n\nŘada B — a) běží b) kočka c) modrý d) včera\n\nŘada C — a) krásný b) zpívá c) škola d) tiše\n\nŘada D — a) veselý b) raduje se c) vesele d) radost"
+      }
+    },
+    {
+      "id": "cj-t1-l1-U2",
+      "typ": "nova",
+      "cil": "Najít všechna podstatná jména v jedné krátké větě testem ten/ta/to.",
+      "cas_min": 5,
+      "zadani": "Přečti si větu. Klikni na všechna podstatná jména.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Malý pes běží po zahradě.",
+            "cil": "slova",
+            "min": 1,
+            "max": 5
+          },
+          "spravne": [
+            1,
+            4
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                0
+              ],
+              "typ_chyby": "sd-pridavne-za-podstatne"
+            },
+            {
+              "navic": [
+                2
+              ],
+              "typ_chyby": "sd-sloveso-za-podstatne"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě kliká na slova ve větě a může označit víc slov. Pasti: „Malý“ (říká jen, jaký pes je), „běží“ (co pes dělá) a „zahradě“, kterou dítě přeskočí, protože má jiný tvar. Test se zkouší se slovem, jak by stálo samo: ta zahrada.",
+        "reseni": "pes (ten pes)\n\nzahradě (ta zahrada, jen jiný tvar: po zahradě)\n\nMalý, běží, po: ne (malý říká jaký, běží říká, co pes dělá, po je jen malé slovo před zahradě)\n\n**Výsledek:** pes, zahradě",
+        "otazky": [
+          "„Co je podstatné jméno? Řekni mi to vlastními slovy.“",
+          "„Vezmi slovo ‚běží‘. Jde před něj říct ‚ten‘, ‚ta‘ nebo ‚to‘ a ukázat na to?“",
+          "„Zkus každé slovo zvlášť: ‚ten malý‘ – ukazuješ na něco, nebo chybí věc? A poslední slovo řekni tak, jak by stálo samo.“"
+        ],
+        "otocena_role": "„Vysvětli mi ten test s ‚ten, ta, to‘, ať ho umím taky. Proč neprojde slovo ‚malý‘?“",
+        "otocena_role_odpoved": "Před podstatné jméno jde říct ten, ta nebo to a ukázat na to: ten pes, ta zahrada. U slova malý to nejde, ten malý… co? Chybí věc, malý říká jen jaký.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne i na „Malý“: „Ten malý… co? Chybí tam něco?“ Klikne na „běží“: „Dá se říct ‚to běží‘ jako věc? Nebo to někdo dělá?“ Vynechá „zahradě“: „Jak by to slovo znělo samo? Jde před něj říct ‚ta‘?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — obě podstatná jména a nic navíc. Pochvalte, že dítě poznalo i „zahradě“ v jiném tvaru, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti větu: „Velký pes hlídá starý dům.“ Ať řekne všechna slova, před která jde říct ten, ta nebo to. Kontrola pro vás: pes a dům (ten pes, ten dům); velký a starý říkají jaký, hlídá říká, co pes dělá.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: malou knihu. Zítra ať na ni dítě ukáže a řekne „ta malá kniha“, pak jen „ta malá“. Na co ukazuje? Pak ať knihu položí na stůl a řekne „na stole“. Jde říct „ten stůl“? Potom zopakujte lekci „Podstatné jméno: poznám ho“. Kontrola pro vás: názvy jsou kniha a stůl (ta kniha, ten stůl); malá říká jen jaká, stole je jiný tvar slova stůl."
+      },
+      "tisk": {
+        "zadani": "Podtrhni všechna podstatná jména ve větě:\n\nMalý pes běží po zahradě."
+      }
+    },
+    {
+      "id": "cj-t1-l1-U3",
+      "typ": "nova",
+      "cil": "Natrénovat samotný test: ke slovu říct správně ten, ta nebo to.",
+      "cas_min": 5,
+      "zadani": "U každého slova zkus nahlas „ten“, „ta“ i „to“. Vyber, co k němu pasuje.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "kniha",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "ten",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "ta",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "to",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "auto",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "ten",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "ta",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "to",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "učitel",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "ten",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "ta",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "to",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "plavání",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "ten",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "ta",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "to",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě tu trénuje samotný test: ke každému slovu řekne nahlas ten, ta i to a vybere, co zní česky. Poslední slovo „plavání“ je činnost, a přesto před něj jde říct „to“. Tak se ukáže, že i činnost má svůj název, tedy podstatné jméno.",
+        "reseni": "ta kniha\n\nto auto\n\nten učitel\n\nto plavání (činnost, a přesto název)\n\n**Výsledek:** ta, to, ten, to",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Jak se rozhoduješ mezi ‚ten‘, ‚ta‘ a ‚to‘? Řekni mi to vlastními slovy.“"
+          },
+          {
+            "k": "Kroky 1–3",
+            "text": "„Řekni slovo nahlas se všemi třemi, třeba ‚ten auto, ta auto, to auto‘. Které zní česky?“"
+          },
+          {
+            "k": "Krok 4",
+            "text": "„U slova ‚plavání‘ neřeš, jestli je to věc. Řekni před něj všechna tři slova a poslouchej, co zní česky.“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč je ‚plavání‘ podstatné jméno, i když je to něco, co se dělá.“",
+        "otocena_role_odpoved": "Protože před něj jde říct to: to plavání. Je to název činnosti, stejně jako ta radost je název pocitu. Rozhoduje test, ne to, jestli to jde vzít do ruky.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 4 (plavání) vybere „ten“ nebo „ta“, nebo řekne: „To není věc, to se dělá.“ Zeptejte se: „Řekni všechna tři nahlas. Které zní česky?“ (Rozhoduje test, ne to, jestli je to věc.) U ostatních slov bývá chyba jen rychlé klikání: zeptejte se stejně."
+      },
+      "semafor": {
+        "zelena": "Výborně — všechna čtyři slova sedí. Pochvalte, že dítě zkoušelo ten, ta, to nahlas, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti čtyři slova: kolo, tráva, strom, učení. U každého řekne nahlas ten, ta nebo to. Kontrola pro vás: to kolo, ta tráva, ten strom, to učení (i činnost má svůj název).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a pastelky. Zítra ať dítě nakreslí psa, kočku a kolo a ke každému obrázku připíše ten, ta nebo to. Pak ať rukama předvede plavání a řekne, co pasuje před slovo plavání. Potom zopakujte lekci „Podstatné jméno: poznám ho“. Kontrola pro vás: ten pes, ta kočka, to kolo, to plavání."
+      },
+      "tisk": {
+        "zadani": "Ke každému slovu zakroužkuj, co před něj pasuje.\n\nkniha — a) ten b) ta c) to\n\nauto — a) ten b) ta c) to\n\nučitel — a) ten b) ta c) to\n\nplavání — a) ten b) ta c) to"
+      }
+    },
+    {
+      "id": "cj-t1-l1-U4",
+      "typ": "detektiv",
+      "cil": "Najít u spolužáka slovo, které za podstatné jméno označil omylem, a říct proč.",
+      "cas_min": 5,
+      "zadani": "Petr hledal ve větě všechna podstatná jména:\n\n**Děti na hřišti hrají fotbal.**\n\nOznačil slova: Děti, hřišti, hrají, fotbal.\n\nUdělal **jednu** chybu. Najdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na slovo, které Petr označil špatně.",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Děti na hřišti hrají fotbal.",
+            "cil": "slova",
+            "min": 1,
+            "max": 1
+          },
+          "spravne": [
+            3
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                0,
+                2,
+                4
+              ],
+              "typ_chyby": "detektiv-jine-slovo"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Co slovo „hrají“ říká?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "co kdo dělá",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "na co jde ukázat",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "c",
+                "text": "jaký kdo je",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Hledat cizí chybu je snazší než přiznat vlastní. Petr označil o jedno slovo víc: slovo, které říká, co děti dělají. Dítě má projít testem všechna čtyři označená slova a pak říct, co chybné slovo říká. Past je „hřišti“: má jiný tvar, ale test platí i tak (to hřiště).",
+        "reseni": "Chyba je „hrají“: nejde před něj říct ten, ta, to a ukázat na to. Říká, co děti dělají.\n\nDěti: správně (ty děti, jedno to dítě)\n\nhřišti: správně (to hřiště, jen jiný tvar)\n\nfotbal: správně (ten fotbal)\n\n**Výsledek:** krok 1 „hrají“, krok 2 „co kdo dělá“",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Petr dělal a co máš najít ty.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Vezmi Petrova slova jedno po druhém a u každého zkus ‚ten‘, ‚ta‘ nebo ‚to‘. Začni slovem ‚fotbal‘.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Slovo v jiném tvaru řekni tak, jak by stálo samo: na hřišti, hřiště. Které slovo test neprojde a proč?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, které slovo mám špatně a jak si to příště ohlídám.“",
+        "otocena_role_odpoved": "Špatně je hrají. Nejde říct ten hrají, ta hrají ani to hrají a ukázat na to, to slovo říká, co děti dělají. Příště u každého slova zkus ten, ta, to.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na „hřišti“, „Děti“ nebo „fotbal“. Zeptejte se: „Jak by to slovo znělo samo? Jde před něj ten, ta, to?“ (Jde: to hřiště, to dítě, ten fotbal.) V kroku 2 vybere „na co jde ukázat“ nebo „jaký kdo je“: „Co děti na hřišti dělají?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — slovo i důvod sedí. Pochvalte, že dítě prošlo testem všechna Petrova slova, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Věta zní: Kočka spí na gauči. Petr v ní jako podstatná jména označil kočka, spí, gauči. Které slovo má špatně a proč?“ Kontrola pro vás: spí (nejde říct ten spí a ukázat na to, říká, co kdo dělá); ta kočka a ten gauč jsou správně.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše větu „Táta včera koupil nové kolo.“ Řekněte: „Petr tu jako podstatná jména označil táta, koupil, kolo.“ Ať dítě ta tři slova podtrhne a u každého zkusí ten, ta, to. Potom zopakujte lekci „Podstatné jméno: poznám ho“. Kontrola pro vás: Petr se spletl u „koupil“ (říká, co kdo udělal); ten táta a to kolo jsou správně."
+      },
+      "tisk": {
+        "zadani": "Petr hledal ve větě všechna podstatná jména. Označil: Děti, hřišti, hrají, fotbal. Udělal jednu chybu.\n\nDěti na hřišti hrají fotbal.\n\nA) Podtrhni ve větě slovo, které Petr označil špatně.\n\nB) Co slovo „hrají“ říká? Zakroužkuj: a) co kdo dělá b) na co jde ukázat c) jaký kdo je"
+      }
+    },
+    {
+      "id": "cj-t1-l1-U5",
+      "typ": "kontrolni",
+      "cil": "Najít samostatně všechna podstatná jména ve dvou větách, včetně vlastnosti (vůně), a nenechat se zmást přídavnými jmény.",
+      "cas_min": 6,
+      "zadani": "Přečti si obě věty. Klikni na všechna podstatná jména.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Babička peče v kuchyni voňavý koláč. Vůně se šíří po celém domě.",
+            "cil": "slova",
+            "min": 1,
+            "max": 8
+          },
+          "spravne": [
+            0,
+            3,
+            5,
+            6,
+            11
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                4,
+                10
+              ],
+              "typ_chyby": "sd-pridavne-za-podstatne"
+            },
+            {
+              "chybi": [
+                6
+              ],
+              "typ_chyby": "sd-vlastnost-neni-podstatne"
+            },
+            {
+              "navic": [
+                1,
+                8
+              ],
+              "typ_chyby": "sd-sloveso-za-podstatne"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Ve dvou větách je pět podstatných jmen, mezi nimi „Vůně“ (to, co cítíme nosem). Pasti: „voňavý“ a „celém“ (říkají jaký), „peče“ a „šíří“ (co se děje).",
+        "reseni": "Babička (ta babička)\n\nkuchyni (ta kuchyně, jen jiný tvar)\n\nkoláč (ten koláč)\n\nVůně (ta vůně, i když ji nejde vzít do ruky)\n\ndomě (ten dům, jen jiný tvar)\n\npeče, šíří: ne (říkají, co se děje); voňavý, celém: ne (říkají jaký); v, se, po: ne (malá pomocná slova)\n\n**Výsledek:** Babička, kuchyni, koláč, Vůně, domě",
+        "otazky": [
+          "„Co je podstatné jméno? Řekni mi ten test vlastními slovy.“",
+          "„Vezmi první slovo druhé věty. Jde před něj říct ‚ten‘, ‚ta‘ nebo ‚to‘?“",
+          "„Slovo v jiném tvaru řekni tak, jak by stálo samo: v kuchyni, kuchyně. Pak zkus test u všech slov obou vět.“"
+        ],
+        "otocena_role": "„Najdi v těch větách slovo, které vypadá jako podstatné jméno, ale není. Vysvětli mi proč.“",
+        "otocena_role_odpoved": "Třeba voňavý nebo celém. Nejde říct ten voňavý a ukázat na to, chybí věc. Ta slova jen říkají, jaký je koláč a jaký dům.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: chybí „Vůně“: „Jde říct ‚ta vůně‘?“ Navíc „voňavý“ nebo „celém“: „Ten voňavý… co? Chybí tam něco?“ Navíc „peče“ nebo „šíří“: „Dá se říct ‚to peče‘ jako věc? Nebo to někdo dělá?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — všech pět podstatných jmen a nic navíc. Pochvalte, že dítě zkoušelo test u každého slova. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti dvě věty: „Malá kočka spí na teplé peci.“ a „Máma měla radost.“ Ať řekne všechna slova, před která jde říct ten, ta nebo to. Kontrola pro vás: kočka, peci (ta pec), Máma, radost; malá a teplé říkají jaká, spí a měla, co kdo dělá.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: mýdlo nebo čaj, který voní. Zítra ať na něj dítě ukáže a řekne před něj ten, ta nebo to. Pak ať přičichne a řekne, co cítí. Jde před slovo vůně říct ten, ta, to? Potom zopakujte lekci „Podstatné jméno: poznám ho“. Kontrola pro vás: jde to před věc i před vůni (ta vůně); vůně je název, i když ji nejde vzít do ruky."
+      },
+      "tisk": {
+        "zadani": "Podtrhni všechna podstatná jména v obou větách:\n\nBabička peče v kuchyni voňavý koláč. Vůně se šíří po celém domě."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "SYNTETICKÁ testovací lekce (testy/data/osma) převedená ze Spolu — jen pro testy a QA, není to obsah Spolu 8.",
+    "zkontroloval": "vedouci",
+    "datum": "2026-09-30",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?id=200",
+      "https://prirucka.ujc.cas.cz/?slovo=st%C5%AFl",
+      "https://prirucka.ujc.cas.cz/?slovo=sed%C4%9Bt",
+      "https://prirucka.ujc.cas.cz/?slovo=velk%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=b%C4%9B%C5%BEet",
+      "https://prirucka.ujc.cas.cz/?slovo=ko%C4%8Dka",
+      "https://prirucka.ujc.cas.cz/?slovo=modr%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=kr%C3%A1sn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=zp%C3%ADvat",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1kola",
+      "https://prirucka.ujc.cas.cz/?slovo=vesel%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=radovat",
+      "https://prirucka.ujc.cas.cz/?slovo=radost",
+      "https://prirucka.ujc.cas.cz/?id=mal%C3%BD_1",
+      "https://prirucka.ujc.cas.cz/?slovo=pes",
+      "https://prirucka.ujc.cas.cz/?slovo=zahrada",
+      "https://prirucka.ujc.cas.cz/?slovo=kniha",
+      "https://prirucka.ujc.cas.cz/?slovo=auto",
+      "https://prirucka.ujc.cas.cz/?slovo=u%C4%8Ditel",
+      "https://prirucka.ujc.cas.cz/?slovo=plav%C3%A1n%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=ten",
+      "https://prirucka.ujc.cas.cz/?slovo=b%C4%9Bh%C3%A1n%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=b%C4%9B%C5%BEec",
+      "https://prirucka.ujc.cas.cz/?slovo=rychl%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=rychlost",
+      "https://prirucka.ujc.cas.cz/?slovo=d%C3%ADt%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=h%C5%99i%C5%A1t%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=hr%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?slovo=fotbal",
+      "https://prirucka.ujc.cas.cz/?slovo=babi%C4%8Dka",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C3%A9ct",
+      "https://prirucka.ujc.cas.cz/?slovo=kuchyn%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=vo%C5%88av%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=kol%C3%A1%C4%8D",
+      "https://prirucka.ujc.cas.cz/?slovo=v%C5%AFn%C4%9B",
+      "https://prirucka.ujc.cas.cz/?id=se",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1%C3%AD%C5%99it",
+      "https://prirucka.ujc.cas.cz/?slovo=cel%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=d%C5%AFm",
+      "https://prirucka.ujc.cas.cz/?slovo=rychle",
+      "https://prirucka.ujc.cas.cz/?slovo=v%C4%8Dera",
+      "https://prirucka.ujc.cas.cz/?slovo=ti%C5%A1e",
+      "https://prirucka.ujc.cas.cz/?slovo=vesele",
+      "https://prirucka.ujc.cas.cz/?slovo=smutn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=smutek",
+      "https://prirucka.ujc.cas.cz/?slovo=smutn%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=zelen%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=zele%C5%88",
+      "https://prirucka.ujc.cas.cz/?slovo=zelenat",
+      "https://prirucka.ujc.cas.cz/?slovo=chytr%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=chytrost",
+      "https://prirucka.ujc.cas.cz/?slovo=chyt%C5%99e",
+      "https://prirucka.ujc.cas.cz/?slovo=kolo",
+      "https://prirucka.ujc.cas.cz/?slovo=tr%C3%A1va",
+      "https://prirucka.ujc.cas.cz/?slovo=strom",
+      "https://prirucka.ujc.cas.cz/?slovo=u%C4%8Den%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=hra",
+      "https://prirucka.ujc.cas.cz/?slovo=hrav%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=sp%C3%A1nek",
+      "https://prirucka.ujc.cas.cz/?slovo=sp%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?slovo=ospal%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=zp%C4%9Bv",
+      "https://prirucka.ujc.cas.cz/?slovo=zp%C4%9Bvn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=hl%C3%ADdat",
+      "https://prirucka.ujc.cas.cz/?slovo=gau%C4%8D",
+      "https://prirucka.ujc.cas.cz/?slovo=t%C3%A1ta",
+      "https://prirucka.ujc.cas.cz/?slovo=koupit",
+      "https://prirucka.ujc.cas.cz/?slovo=nov%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=m%C3%A1ma",
+      "https://prirucka.ujc.cas.cz/?slovo=m%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=tepl%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=pec",
+      "https://prirucka.ujc.cas.cz/?id=star%C3%BD_1"
+    ],
+    "testovaci_rodic": null
+  }
+}

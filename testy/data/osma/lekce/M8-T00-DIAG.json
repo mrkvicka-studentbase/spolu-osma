@@ -1,0 +1,939 @@
+{
+  "id": "M8-T00-DIAG",
+  "typ": "diagnostika",
+  "faze": "osma",
+  "tyden": 0,
+  "poradi": 1,
+  "tema": "Úvodní test",
+  "kapitola": "diagnostika",
+  "varianta": "z8",
+  "cil_pro_rodice": "Zjistíte, které základy z 6. až 8. třídy dítě už má a kterým tématům dát víc času.",
+  "uvod_pro_rodice": "Dítě samo vyřeší 24 krátkých úloh (asi 40 minut, v polovině může mít přestávku), vy nenapovídáte a po dokončení uvidíte, na které týdny dát důraz.",
+  "cas_min": 25,
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "ulohy": [
+    {
+      "id": "M8-T00-DIAG-U1",
+      "typ": "diagnostika",
+      "kapitola": "pocetni-operace",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Vypočítej:\n\n$$3 \\cdot 4^2 - \\sqrt{81}$$",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 39
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 135,
+              "typ_chyby": "nasobil-pred-mocninou"
+            },
+            {
+              "hodnota": 15,
+              "typ_chyby": "mocnina-jako-dvojnasobek"
+            },
+            {
+              "hodnota": 7.5,
+              "typ_chyby": "odmocnina-jako-deleni-dvema"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Vypočítej:\n\n$$3 \\cdot 4^2 - \\sqrt{81}$$\n\nVýsledek: ______"
+      },
+      "tema": 1
+    },
+    {
+      "id": "M8-T00-DIAG-U2",
+      "typ": "diagnostika",
+      "kapitola": "pocetni-operace",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Najdi největšího společného dělitele čísel $24$ a $36$, tedy největší číslo, kterým jdou obě čísla vydělit beze zbytku.",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 12
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 72,
+              "typ_chyby": "nsd-nsn-zamena"
+            },
+            {
+              "hodnota": 6,
+              "typ_chyby": "rozklad-bez-opakovani"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Najdi největšího společného dělitele čísel $24$ a $36$, tedy největší číslo, kterým jdou obě čísla vydělit beze zbytku.\n\nVýsledek: ______"
+      },
+      "tema": 1
+    },
+    {
+      "id": "M8-T00-DIAG-U3",
+      "typ": "diagnostika",
+      "kapitola": "cela-cisla",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Vypočítej:\n\n$$-3 \\cdot (-4) + 5 \\cdot (-2) - (-6)$$",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 8
+          },
+          "zname_chyby": [
+            {
+              "hodnota": -16,
+              "typ_chyby": "minus-krat-minus"
+            },
+            {
+              "hodnota": 28,
+              "typ_chyby": "plus-krat-minus"
+            },
+            {
+              "hodnota": -4,
+              "typ_chyby": "odcitani-zaporneho"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Vypočítej:\n\n$$-3 \\cdot (-4) + 5 \\cdot (-2) - (-6)$$\n\nVýsledek: ______"
+      },
+      "tema": 1
+    },
+    {
+      "id": "M8-T00-DIAG-U4",
+      "typ": "diagnostika",
+      "kapitola": "cela-cisla",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Vypočítej:\n\n$$-5^2 + (-3)^2$$",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": -16
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 34,
+              "typ_chyby": "mocnina-zaporneho-bez-zavorky"
+            },
+            {
+              "hodnota": -34,
+              "typ_chyby": "zaporna-mocnina-v-zavorce"
+            },
+            {
+              "hodnota": -4,
+              "typ_chyby": "mocnina-jako-dvojnasobek"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Vypočítej:\n\n$$-5^2 + (-3)^2$$\n\nVýsledek: ______"
+      },
+      "tema": 1
+    },
+    {
+      "id": "M8-T00-DIAG-U5",
+      "typ": "diagnostika",
+      "kapitola": "zlomky",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Babička upekla $40$ perníčků. Čtvrtinu z nich snědla rodina hned první den. Ze zbytku dala babička dvě pětiny sousedům.\n\nKolik perníčků dala babička sousedům?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "perníčků"
+          },
+          "spravne": {
+            "hodnota": 12
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 16,
+              "typ_chyby": "z-celku-misto-ze-zbytku"
+            },
+            {
+              "hodnota": 6,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            },
+            {
+              "hodnota": 18,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Babička upekla $40$ perníčků. Čtvrtinu z nich snědla rodina hned první den. Ze zbytku dala babička dvě pětiny sousedům.\n\nKolik perníčků dala babička sousedům?\n\nVýsledek: ______ perníčků"
+      },
+      "tema": 2
+    },
+    {
+      "id": "M8-T00-DIAG-U6",
+      "typ": "diagnostika",
+      "kapitola": "zlomky",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Vypočítej a výsledek zapiš smíšeným číslem:\n\n$$2\\frac{1}{3} \\cdot 1\\frac{1}{2}$$",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "smisene"
+          },
+          "spravne": {
+            "cela": 3,
+            "c": 1,
+            "j": 2
+          },
+          "zname_chyby": [
+            {
+              "cela": 2,
+              "c": 1,
+              "j": 6,
+              "typ_chyby": "smisene-nasobil-po-castech"
+            },
+            {
+              "cela": 0,
+              "c": 1,
+              "j": 3,
+              "typ_chyby": "smisene-jako-soucin"
+            },
+            {
+              "cela": 1,
+              "c": 0,
+              "j": 1,
+              "typ_chyby": "smisene-scital-celou-cast"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Vypočítej a výsledek zapiš smíšeným číslem:\n\n$$2\\frac{1}{3} \\cdot 1\\frac{1}{2}$$\n\nVýsledek: ______"
+      },
+      "tema": 2
+    },
+    {
+      "id": "M8-T00-DIAG-U7",
+      "typ": "diagnostika",
+      "kapitola": "zlomky",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Vypočítej a výsledek zapiš zlomkem v základním tvaru:\n\n$$\\frac{5}{6} - \\frac{1}{3} : \\frac{4}{3}$$",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 7,
+            "j": 12
+          },
+          "zname_chyby": [
+            {
+              "c": 3,
+              "j": 8,
+              "typ_chyby": "scital-pred-nasobenim"
+            },
+            {
+              "c": 7,
+              "j": 18,
+              "typ_chyby": "delil-bez-prevraceni"
+            },
+            {
+              "c": 1,
+              "j": 3,
+              "typ_chyby": "neprepocital-citatel"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tisk": {
+        "zadani": "Vypočítej a výsledek zapiš zlomkem v základním tvaru:\n\n$$\\frac{5}{6} - \\frac{1}{3} : \\frac{4}{3}$$\n\nVýsledek: ______"
+      },
+      "tema": 2
+    },
+    {
+      "id": "M8-T00-DIAG-U8",
+      "typ": "diagnostika",
+      "kapitola": "zlomky",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Na školní ples přišlo letos $420$ hostů. To je o třetinu víc než loni.\n\nKolik hostů přišlo na ples loni?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "hostů"
+          },
+          "spravne": {
+            "hodnota": 315
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 280,
+              "typ_chyby": "o-tretinu-z-vysledku"
+            },
+            {
+              "hodnota": 140,
+              "typ_chyby": "jen-cast-bez-celku"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Na školní ples přišlo letos $420$ hostů. To je o třetinu víc než loni.\n\nKolik hostů přišlo na ples loni?\n\nVýsledek: ______ hostů"
+      },
+      "tema": 2
+    },
+    {
+      "id": "M8-T00-DIAG-U9",
+      "typ": "diagnostika",
+      "kapitola": "desetinna-cisla",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Vypočítej:\n\n$$0{,}4 \\cdot 0{,}3 : 0{,}06$$",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 2
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 20,
+              "typ_chyby": "carka-pri-nasobeni"
+            },
+            {
+              "hodnota": 0.02,
+              "typ_chyby": "carka-pri-deleni"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Vypočítej:\n\n$$0{,}4 \\cdot 0{,}3 : 0{,}06$$\n\nVýsledek: ______"
+      },
+      "tema": 3
+    },
+    {
+      "id": "M8-T00-DIAG-U10",
+      "typ": "diagnostika",
+      "kapitola": "desetinna-cisla",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Vypočítej a výsledek zapiš desetinným číslem:\n\n$$\\frac{3}{4} + 0{,}35$$",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 1.1
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 3.75,
+              "typ_chyby": "zlomek-jako-cislice-s-carkou"
+            },
+            {
+              "hodnota": 4.25,
+              "typ_chyby": "desetinne-jako-zlomek-spatne"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Vypočítej a výsledek zapiš desetinným číslem:\n\n$$\\frac{3}{4} + 0{,}35$$\n\nVýsledek: ______"
+      },
+      "tema": 3
+    },
+    {
+      "id": "M8-T00-DIAG-U11",
+      "typ": "diagnostika",
+      "kapitola": "pomer",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Jana a Ondra si rozdělili $450$ Kč v poměru $4 : 5$ (Jana : Ondra).\n\nKolik korun dostal Ondra?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 250
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 225,
+              "typ_chyby": "deleni-v-pomeru-bez-souctu-dilu"
+            },
+            {
+              "hodnota": 200,
+              "typ_chyby": "deleni-v-pomeru-prohodil"
+            },
+            {
+              "hodnota": 5,
+              "typ_chyby": "pomer-jako-hodnoty"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Jana a Ondra si rozdělili $450$ Kč v poměru $4 : 5$ (Jana : Ondra).\n\nKolik korun dostal Ondra?\n\nVýsledek: ______ Kč"
+      },
+      "tema": 3
+    },
+    {
+      "id": "M8-T00-DIAG-U12",
+      "typ": "diagnostika",
+      "kapitola": "pomer",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Tři malíři by vymalovali školu za $12$ dní.\n\nZa kolik dní by školu vymalovali čtyři malíři, kdyby všichni pracovali stejně rychle?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "dní"
+          },
+          "spravne": {
+            "hodnota": 9
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 16,
+              "typ_chyby": "neprima-jako-prima"
+            },
+            {
+              "hodnota": 11,
+              "typ_chyby": "umera-jako-soucet"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Tři malíři by vymalovali školu za $12$ dní.\n\nZa kolik dní by školu vymalovali čtyři malíři, kdyby všichni pracovali stejně rychle?\n\nVýsledek: ______ dní"
+      },
+      "tema": 3
+    },
+    {
+      "id": "M8-T00-DIAG-U13",
+      "typ": "diagnostika",
+      "kapitola": "procenta",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Vstupenka do kina stála $180$ Kč. Kino ji zdražilo o $15\\,\\%$.\n\nKolik korun stojí vstupenka teď?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 207
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 27,
+              "typ_chyby": "jen-cast-bez-celku"
+            },
+            {
+              "hodnota": 450,
+              "typ_chyby": "procento-jako-desetina"
+            },
+            {
+              "hodnota": 153,
+              "typ_chyby": "zdrazeni-sleva-zamena"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Vstupenka do kina stála $180$ Kč. Kino ji zdražilo o $15\\,\\%$.\n\nKolik korun stojí vstupenka teď?\n\nVýsledek: ______ Kč"
+      },
+      "tema": 4
+    },
+    {
+      "id": "M8-T00-DIAG-U14",
+      "typ": "diagnostika",
+      "kapitola": "procenta",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Divadlo má $60$ míst. Na představení se prodalo $45$ vstupenek.\n\nKolik procent míst bylo obsazeno?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "%"
+          },
+          "spravne": {
+            "hodnota": 75
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 0.75,
+              "typ_chyby": "vysledek-bez-prevodu-na-procenta"
+            },
+            {
+              "hodnota": 25,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Divadlo má $60$ míst. Na představení se prodalo $45$ vstupenek.\n\nKolik procent míst bylo obsazeno?\n\nVýsledek: ______ $\\%$"
+      },
+      "tema": 4
+    },
+    {
+      "id": "M8-T00-DIAG-U15",
+      "typ": "diagnostika",
+      "kapitola": "procenta",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Po slevě o $20\\,\\%$ stojí bunda $960$ Kč.\n\nKolik korun stála bunda před slevou?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 1200
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 1152,
+              "typ_chyby": "o-tretinu-z-vysledku"
+            },
+            {
+              "hodnota": 192,
+              "typ_chyby": "jen-cast-bez-celku"
+            },
+            {
+              "hodnota": 768,
+              "typ_chyby": "zdrazeni-sleva-zamena"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Po slevě o $20\\,\\%$ stojí bunda $960$ Kč.\n\nKolik korun stála bunda před slevou?\n\nVýsledek: ______ Kč"
+      },
+      "tema": 4
+    },
+    {
+      "id": "M8-T00-DIAG-U16",
+      "typ": "diagnostika",
+      "kapitola": "jednotky",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Kolik centimetrů čtverečních je dohromady?\n\n$$2{,}5\\ \\text{dm}^2 + 30\\ \\text{cm}^2$$",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm²"
+          },
+          "spravne": {
+            "hodnota": 280
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 55,
+              "typ_chyby": "obsah-po-desitkach"
+            },
+            {
+              "hodnota": 32.5,
+              "typ_chyby": "zapomnel-prevest-jednotky"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Kolik centimetrů čtverečních je dohromady?\n\n$$2{,}5\\ \\text{dm}^2 + 30\\ \\text{cm}^2$$\n\nVýsledek: ______ $\\text{cm}^2$"
+      },
+      "tema": 5
+    },
+    {
+      "id": "M8-T00-DIAG-U17",
+      "typ": "diagnostika",
+      "kapitola": "jednotky",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Kolik litrů je dohromady?\n\n$$1\\,500\\ \\text{cm}^3 + 2\\ \\text{dm}^3$$",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "l"
+          },
+          "spravne": {
+            "hodnota": 3.5
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 17,
+              "typ_chyby": "objem-po-desitkach-nebo-stovkach"
+            },
+            {
+              "hodnota": 1502,
+              "typ_chyby": "zapomnel-prevest-jednotky"
+            },
+            {
+              "hodnota": 3500,
+              "typ_chyby": "jednotka-ve-vysledku-spatne"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Kolik litrů je dohromady?\n\n$$1\\,500\\ \\text{cm}^3 + 2\\ \\text{dm}^3$$\n\nVýsledek: ______ l"
+      },
+      "tema": 5
+    },
+    {
+      "id": "M8-T00-DIAG-U18",
+      "typ": "diagnostika",
+      "kapitola": "jednotky",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Film začal v $15{:}40$ a skončil v $17{:}25$.\n\nKolik minut film trval?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "min"
+          },
+          "spravne": {
+            "hodnota": 105
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 185,
+              "typ_chyby": "cas-po-stovkach"
+            },
+            {
+              "hodnota": 145,
+              "typ_chyby": "cas-po-stovkach"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Film začal v $15{:}40$ a skončil v $17{:}25$.\n\nKolik minut film trval?\n\nVýsledek: ______ min"
+      },
+      "tema": 5
+    },
+    {
+      "id": "M8-T00-DIAG-U19",
+      "typ": "diagnostika",
+      "kapitola": "slovni-ulohy",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Auto jede po dálnici pořád stejnou rychlostí. Za $10$ minut ujede $15$ km.\n\nKolik kilometrů ujede za $1{,}5$ hodiny?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "km"
+          },
+          "spravne": {
+            "hodnota": 135
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 165,
+              "typ_chyby": "cas-desetinne-jako-minuty"
+            },
+            {
+              "hodnota": 60,
+              "typ_chyby": "deleni-obracene"
+            },
+            {
+              "hodnota": 2.25,
+              "typ_chyby": "min-a-h-smichane"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Auto jede po dálnici pořád stejnou rychlostí. Za $10$ minut ujede $15$ km.\n\nKolik kilometrů ujede za $1{,}5$ hodiny?\n\nVýsledek: ______ km"
+      },
+      "tema": 6
+    },
+    {
+      "id": "M8-T00-DIAG-U20",
+      "typ": "diagnostika",
+      "kapitola": "vyrazy",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Zjednoduš výraz:\n\n$$4x - 2 \\cdot (x - 3)$$",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "vyraz"
+          },
+          "spravne": {
+            "vyraz": "2x+6"
+          },
+          "zname_chyby": [
+            {
+              "vyraz": "2x-6",
+              "typ_chyby": "znamenko-pred-zavorkou"
+            },
+            {
+              "vyraz": "2x-3",
+              "typ_chyby": "roznasobil-jen-prvni-clen"
+            },
+            {
+              "vyraz": "8x",
+              "typ_chyby": "scital-nestejne-cleny"
+            }
+          ],
+          "kontrola_tvaru": null
+        }
+      ],
+      "tisk": {
+        "zadani": "Zjednoduš výraz:\n\n$$4x - 2 \\cdot (x - 3)$$\n\nVýsledek: ____________"
+      },
+      "tema": 7
+    },
+    {
+      "id": "M8-T00-DIAG-U21",
+      "typ": "diagnostika",
+      "kapitola": "vyrazy",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Doplň, co patří do závorky, aby rovnost platila:\n\n$$-4x + 10 = -2 \\cdot (\\ \\ ?\\ \\ )$$",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Co patří do závorky",
+          "vstup": {
+            "typ": "vyraz"
+          },
+          "spravne": {
+            "vyraz": "2x-5"
+          },
+          "zname_chyby": [
+            {
+              "vyraz": "2x+5",
+              "typ_chyby": "vytknuti-minus-znamenka"
+            },
+            {
+              "vyraz": "2x+10",
+              "typ_chyby": "vytknul-neuplne"
+            }
+          ],
+          "kontrola_tvaru": null
+        }
+      ],
+      "tisk": {
+        "zadani": "Doplň, co patří do závorky, aby rovnost platila:\n\n$$-4x + 10 = -2 \\cdot (\\ \\ ?\\ \\ )$$\n\nDo závorky patří: ____________"
+      },
+      "tema": 7
+    },
+    {
+      "id": "M8-T00-DIAG-U22",
+      "typ": "diagnostika",
+      "kapitola": "rovnice",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Vyřeš rovnici:\n\n$$3(x - 2) = x + 8$$",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek: $x =$",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 7
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 5,
+              "typ_chyby": "roznasobil-jen-prvni-clen"
+            },
+            {
+              "hodnota": 1,
+              "typ_chyby": "prevod-bez-zmeny-znamenka"
+            },
+            {
+              "hodnota": 12,
+              "typ_chyby": "x-odecetl-koeficient"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Vyřeš rovnici:\n\n$$3(x - 2) = x + 8$$\n\nVýsledek: $x =$ ______"
+      },
+      "tema": 8
+    },
+    {
+      "id": "M8-T00-DIAG-U23",
+      "typ": "diagnostika",
+      "kapitola": "rovnice",
+      "cas_min": 2,
+      "zdroj": "vlastni",
+      "zadani": "Myslím si číslo. Když ho zvětším o $6$ a výsledek vynásobím třemi, dostanu $45$.\n\nJaké číslo si myslím?",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 9
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 27,
+              "typ_chyby": "chybi-zavorka"
+            },
+            {
+              "hodnota": 13,
+              "typ_chyby": "roznasobil-jen-prvni-clen"
+            },
+            {
+              "hodnota": 21,
+              "typ_chyby": "prevod-bez-zmeny-znamenka"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Myslím si číslo. Když ho zvětším o $6$ a výsledek vynásobím třemi, dostanu $45$.\n\nJaké číslo si myslím?\n\nVýsledek: ______"
+      },
+      "tema": 8
+    },
+    {
+      "id": "M8-T00-DIAG-U24",
+      "typ": "diagnostika",
+      "kapitola": "geometrie",
+      "cas_min": 1,
+      "zdroj": "vlastni",
+      "zadani": "Obdélníkový záhon má obvod $36$ m. Jedna jeho strana měří $12$ m.\n\nJaký obsah má záhon?",
+      "obrazek": "<svg viewBox=\"0 0 220 130\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"20\" width=\"150\" height=\"75\" fill=\"currentColor\" fill-opacity=\"0.15\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"105\" y=\"118\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">12 m</text><text x=\"190\" y=\"62\" font-size=\"16\" fill=\"currentColor\">?</text></svg>",
+      "obrazek_popis": "Obdélníkový záhon, delší strana je popsaná 12 m, kratší strana je označená otazníkem.",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m²"
+          },
+          "spravne": {
+            "hodnota": 72
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 288,
+              "typ_chyby": "strana-z-obvodu-bez-poloviny"
+            },
+            {
+              "hodnota": 6,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 432,
+              "typ_chyby": "pocital-se-vsemi-cisly"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Obdélníkový záhon má obvod $36$ m. Jedna jeho strana měří $12$ m.\n\nJaký obsah má záhon?\n\nVýsledek: ______ $\\text{m}^2$"
+      },
+      "tema": 9
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "zkontroloval": "vedouci",
+    "datum": "2026-09-26",
+    "poznamka": "SYNTETICKÁ testovací lekce (testy/data/osma) převedená ze Spolu — jen pro testy a QA, není to obsah Spolu 8."
+  }
+}

@@ -145,17 +145,12 @@ Zdroj pravdy pro `web/js/hlasky.js` (export objektu `{ klic: text }`). Frontend 
 | klíč | kdy | text |
 |---|---|---|
 | `zamceno.faze` | fáze ještě není otevřená | Otevře se {datum}. |
-| `zamceno.predmet` | čeština: žádné dítě rodiny nemá předmět zapnutý (zámek 0007) | Češtinu zapnete tlačítkem „Předměty“ u dítěte. |
-| `zamceno.platba_predprodej` | stav pilot, do 30. 11. 2026 | Odemkne se po platbě: 790 Kč v předprodeji (do 30. 11.). |
-| `zamceno.platba` | stav pilot, od 1. 12. 2026 | Odemkne se po platbě: 990 Kč za celou sezónu. |
-| `zamceno.platba_dotaznik` | stav pilot, dotazník vyplněn (i po 1. 12.) | Odemkne se po platbě: díky vyplněnému dotazníku máte cenu 790 Kč. |
-| `zamceno.po_platbe` | pod textem o platbě | Přístup odemykáme ručně po připsání platby. Když to trvá déle, napište nám na {email}. |
 
-## Uzavřený účet (od 1. 5. 2027)
+## Uzavřený účet (stav rodiny `uzavreny`)
 | klíč | kdy | text |
 |---|---|---|
-| `ucet.uzavreny_nadpis` | nadpis stránky | Děkujeme, že jste se připravovali s námi |
-| `ucet.uzavreny` | text stránky | Sezóna skončila 30. dubna a lekce už nejsou dostupné. Držíme palce u přijímaček! |
+| `ucet.uzavreny_nadpis` | nadpis stránky | Děkujeme, že jste opakovali s námi |
+| `ucet.uzavreny` | text stránky | Účet je uzavřený a lekce už nejsou dostupné. Držíme palce v osmé třídě i dál! |
 | `ucet.uzavreny_doucovani` | výzva pod textem | Chcete pokračovat v doučování? Napište nám na {email} nebo se podívejte na studentbase.cz. |
 
 ## Účet — registrace, přihlášení, nové heslo (`registrace.html`, `nove-heslo.html`)
@@ -188,7 +183,7 @@ Zdroj pravdy pro `web/js/hlasky.js` (export objektu `{ klic: text }`). Frontend 
 | `chyba.offline` | prohlížeč hlásí offline | Jste offline. Jakmile se připojení vrátí, vše uložíme. |
 | `chyba.tisk_nenacteno` | H3: tisková verze se nenačetla (síť, přihlášení) | Tiskovou verzi se nepodařilo načíst. Zkontrolujte připojení a obnovte stránku. |
 | `chyba.tisk` | H3: window.print() selhal | Tisk se nepodařilo spustit. Zkuste v menu prohlížeče Sdílet → Tisk. |
-| `prazdny.lekce` | přehled bez lekcí | Zatím tu nejsou žádné lekce. První se otevřou 1. 10. |
+| `prazdny.lekce` | přehled bez lekcí | Zatím tu nejsou žádné lekce. Brzy je doplníme. |
 | `prazdny.deti` | účet bez dítěte | Zatím tu není žádné dítě. Přidejte ho, ať může začít. |
 | `prazdny.souhrn` | souhrn/statistika bez dat | Tady se ukáže souhrn po první dokončené lekci. |
 
@@ -233,6 +228,11 @@ Názvy kapitol pro `{kapitola_nazev}`:
 | `vyjmenovana-slova` | vyjmenovaná slova |
 | `podmet-prisudek` | podmět a přísudek |
 | `souveti` | věta a souvětí |
+| `pridavna-jmena` | přídavná jména |
+| `zajmena-cislovky` | zájmena a číslovky |
+| `shoda` | shoda přísudku s podmětem |
+| `vetne-cleny` | větné členy |
+| `pravopis` | pravopis |
 
 ## Profil dítěte (`prehled.html`, přidání 2. dítěte / chybějící dítě)
 | klíč | kdy | text |
@@ -246,27 +246,12 @@ Názvy kapitol pro `{kapitola_nazev}`:
 | `dite.pridano` | po uložení | Profil dítěte {jmeno} je přidaný. |
 | `dite.max_2` | pokus o 3. dítě | Můžete mít nejvýše 2 profily dětí. |
 
-## Dotazník (`dotaznik.html`)
-| klíč | kdy | text |
-|---|---|---|
-| `dotaznik.vyzva` | přehled rodiče po 4. pilotní lekci | Prošli jste všechny 4 pilotní lekce. Dáte nám 2 minuty? Za vyplněný dotazník máte cenu 790 Kč i po 1. 12. |
-| `dotaznik.odeslano` | po odeslání | Děkujeme! Máte nárok na cenu 790 Kč za celou sezónu. |
-| `dotaznik.odeslany_nadpis` | nadpis po odeslání | Dotazník je odeslaný |
-| `dotaznik.vyplneny_nadpis` | nadpis při dalším otevření | Dotazník už máte vyplněný |
-| `dotaznik.narok_nadpis` | stav pilot, po vyplnění | Máte nárok na 790 Kč |
-| `dotaznik.uz_vyplneno` | stav pilot, dotazník už dřív vyplněný | Děkujeme za zpětnou vazbu. Cena 790 Kč za celou sezónu vám platí i po 1. 12. |
-| `dotaznik.aktivni_nadpis` | stav aktivní (už zaplaceno) | Děkujeme za vyplnění dotazníku |
-| `dotaznik.aktivni` | stav aktivní (už zaplaceno) | Váš přístup k celé sezóně je už odemčený, nic dalšího platit nemusíte. |
-| `dotaznik.chyba_stupnice` | nevybrané číslo 1–5 | Vyberte prosím číslo od 1 do 5. |
-| `dotaznik.chyba_volba` | nevybraná možnost | Vyberte prosím jednu možnost. |
-| `dotaznik.chyba_odeslani` | odeslání selhalo bez hlášky serveru | Dotazník se nepodařilo odeslat. Zkuste to prosím znovu. |
-
 ## Diagnostika Fáze 1 (týden 0) — `lekce.html`, `rodic.html`, `prehled.html`, `tisk.html`
 Zdroj textů: `obsah/diagnostika-report.md` §6 a `obsah/diagnostika-obrazovka.md` §7 (R37: bez „přeskočit“). Klíče s podskupinou (v zadání `diag.stav.jista`) jsou tu s podtržítkem (`diag.stav_jista`), generátor bere jen jednu tečku.
 
 | klíč | kdy | text |
 |---|---|---|
-| `diag.karta_podtitul` | přehled, karta diagnostiky | 24 krátkých úloh, asi 40 minut. Ukáže, kterým týdnům dát víc času. |
+| `diag.karta_podtitul` | přehled, karta diagnostiky | Asi 20 krátkých úloh, asi 25 minut. Ukáže, kterým tématům dát víc času. |
 | `diag.karta_doporuceni` | přehled, karta diagnostiky (rodič) | Doporučujeme udělat ji před týdnem 1. |
 | `diag.karta_sekce` | přehled, nadpis sekce týdne 0 | Týden 0 — vstupní diagnostika |
 | `diag.karta_zacit` | přehled, tlačítko (rodič) | Začít diagnostiku |
@@ -274,26 +259,26 @@ Zdroj textů: `obsah/diagnostika-report.md` §6 a `obsah/diagnostika-obrazovka.m
 | `diag.karta_hotovo` | přehled, štítek hotové diagnostiky | Hotovo |
 | `diag.karta_vysledek` | přehled, odkaz rodiče po dokončení | Výsledek diagnostiky |
 | `diag.start_rodic` | modal volby režimu u diagnostiky | Dítě pracuje samo, vy nenapovídáte. Po polovině si může dát přestávku. |
-| `diag.prubeh` | žák, lišta | Úloha {n} z {celkem} |
+| `diag.prubeh` | žák, lišta ({z} = z / ze podle čísla) | Úloha {n} {z} {celkem} |
 | `diag.ulozeno` | žák, po odevzdání (neutrálně, bez ✔/✘) | Uloženo. |
-| `diag.prestavka_nadpis` | žák, po úloze 12 | Máš za sebou polovinu. |
-| `diag.prestavka_text` | žák, po úloze 12 | Dej si pět minut pauzu. Napij se, protáhni se. Druhá polovina má zase 12 úloh. |
+| `diag.prestavka_nadpis` | žák, v polovině testu | Máš za sebou polovinu. |
+| `diag.prestavka_text` | žák, v polovině testu | Dej si pět minut pauzu. Napij se, protáhni se. Pak dokončíš druhou polovinu. |
 | `diag.prestavka_pokracovat` | žák, přestávka | Pokračovat |
 | `diag.prestavka_jindy` | žák, přestávka | Dokončím jindy |
 | `diag.konec_nadpis` | žák, konec | Hotovo. Díky! |
 | `diag.konec_text` | žák, konec | Výsledek uvidí rodič na telefonu. Ty už nic dalšího dělat nemusíš. |
 | `diag.rodic_uvod` | rodič během diagnostiky | Dítě teď pracuje samo. Vy nenapovídáte, nekontrolujete a nekoukáte přes rameno. |
-| `diag.rodic_odevzdano` | rodič, stav žáka | Odevzdáno {x} z {celkem} |
+| `diag.rodic_odevzdano` | rodič, stav žáka ({z} = z / ze) | Odevzdáno {x} {z} {celkem} |
 | `diag.rodic_polovina_1` | rodič, stav žáka | 1. polovina |
 | `diag.rodic_polovina_2` | rodič, stav žáka | 2. polovina |
 | `diag.rodic_uplynulo` | rodič, uplynulý čas | Uplynulo {min} min |
-| `diag.rodic_cas` | rodič, po 40 minutách | Uplynulo 40 minut. Pokud dítě ještě pracuje a nemá toho dost, nechte ho dokončit. Pokud je unavené, domluvte se na pokračování jindy. |
+| `diag.rodic_cas` | rodič, po 35 minutách | Uplynulo přes půl hodiny. Pokud dítě ještě pracuje a nemá toho dost, nechte ho dokončit. Pokud je unavené, domluvte se na pokračování jindy. |
 | `diag.rodic_rady_nadpis` | rodič, sbalené rady | Co dělat, když… |
 | `diag.rodic_rada_1` | rodič, rady | Dítě se ptá, jestli to má dobře: „To se dozvíme na konci. Teď jdi dál.“ |
 | `diag.rodic_rada_2` | rodič, rady | Dítě nerozumí slovu v zadání: slovo můžete vysvětlit, příklad ne. |
 | `diag.rodic_rada_3` | rodič, rady | Po polovině aplikace dítěti nabídne přestávku. Nechte ho vybrat. |
 | `diag.rodic_zobrazit` | rodič, tlačítko | Zobrazit výsledek |
-| `diag.rodic_ukoncit_potvrzeni` | rodič, potvrzení při méně než 24 | Dítě odevzdalo {x} z {celkem} úloh. Když teď výsledek zobrazíte, diagnostika se uzavře a zbylé úlohy už dítě neudělá. Pokračovat? |
+| `diag.rodic_ukoncit_potvrzeni` | rodič, potvrzení při méně než 24 | Dítě odevzdalo {x} {z} {celkem} úloh. Když teď výsledek zobrazíte, diagnostika se uzavře a zbylé úlohy už dítě neudělá. Pokračovat? |
 | `diag.rodic_orientacni` | rodič, potvrzení při méně než 12 | Výsledek bude jen orientační. |
 | `diag.rodic_zpet` | rodič, potvrzení | Zpět |
 | `diag.rodic_ano` | rodič, potvrzení | Ano, zobrazit |
@@ -301,9 +286,9 @@ Zdroj textů: `obsah/diagnostika-report.md` §6 a `obsah/diagnostika-obrazovka.m
 | `diag.papir_prepsat` | rodič, papír, tlačítko | Přepsat výsledky |
 | `diag.papir_pokyn` | rodič, papír, nad seznamem polí | Přepište přesně to, co dítě napsalo. Nic neopravujte. Prázdnou úlohu nechte prázdnou. |
 | `diag.papir_ulozit` | rodič, papír, tlačítko | Uložit výsledky |
-| `diag.papir_blok_1` | rodič, papír, nadpis bloku | Úlohy 1–12 |
-| `diag.papir_blok_2` | rodič, papír, nadpis bloku | Úlohy 13–24 |
-| `diag.tisk_prestavka` | tisk, předěl po úloze 12 | Polovina. Dej si pět minut pauzu. |
+| `diag.papir_blok_1` | rodič, papír, nadpis bloku | 1. polovina |
+| `diag.papir_blok_2` | rodič, papír, nadpis bloku | 2. polovina |
+| `diag.tisk_prestavka` | tisk, předěl v polovině testu | Polovina. Dej si pět minut pauzu. |
 | `diag.zadna` | rodič, sezení neexistuje | Diagnostiku zatím nemáte hotovou. |
 | `diag.nesestaveno` | rodič, výsledek nejde spočítat | Výsledek se nepodařilo sestavit. Zkuste obnovit stránku. |
 | `diag.vysledek_nadpis` | rodič, výsledek | Výsledek vstupní diagnostiky |
@@ -553,7 +538,7 @@ Skupina `cj`. Žákovi tykáme bez rodu, rodiči vykáme.
 | `cj.neplatne_diktat_dalsi` | `diktat`: dítě chce odevzdat, ale ještě neprošlo všechny věty | Ještě tě čekají další věty. Klepni na „Další věta“. |
 | `cj.zastavit` | poslech a diktát: tlačítko, když nahrávka hraje | Zastavit |
 | `cj.seradit_napoveda` | `seradit`: pod položkami | Klikej na položky v pořadí, jak jdou za sebou. Dalším klikem číslo zrušíš. |
-| `cj.uloha_hotova` | po posledním kroku úlohy, když lekce nemá 4 úlohy (čeština: 6 → „ze 6“) | Úloha {n} ze {celkem} je hotová. Pokračuj další. |
+| `cj.uloha_hotova` | po posledním kroku úlohy, když lekce nemá 4 úlohy (čeština Spolu 8: 5 → „z 5“; {z} = z / ze) | Úloha {n} {z} {celkem} je hotová. Pokračuj další. |
 | `cj.co_vidi_diktat` | rodič, „Co vidí dítě“ u diktátu | Dítě pouští nahrávku po větách a píše, co slyší. Text nevidí. |
 | `cj.cist_sam_odkaz` | rodič: sbalené záložní čtení pod textem diktátu | Jen když nahrávka dítěti nejde |
 | `cj.papir_prehrat` | rodič, papír: přehrávač u poslechu a diktátu | Dítě píše na papír: nahrávku mu pusťte z tohoto telefonu. |
@@ -616,3 +601,59 @@ Skupina `cj`. Žákovi tykáme bez rodu, rodiči vykáme.
 | `samo.stitek` | přehled, karta dokončené lekce | Bez rodiče |
 | `samo.pripominka` | přehled rodiče, po 2 lekcích samo za sebou | Poslední dvě lekce proběhly bez vás. Příští zkuste spolu, stačí 20 minut. |
 | `samo.souhrn` | souhrn lekce u rodiče | Lekce proběhla bez vás. Semafor vyhodnotila aplikace podle toho, jak dítě úlohy řešilo. |
+
+## Spolu 8 — přehled, úvodní test, doporučené pořadí (`prehled.html`, `rodic.html`, `lekce.html`; TECHNIKA-OSMA.md)
+
+| klíč | kde | text |
+|---|---|---|
+| `osma.rytmus` | přehled, pod jménem dítěte | Aspoň 4× týdně jedna lekce. V každém předmětu nejvýš jedna denně. |
+| `osma.postup` | přehled, pruh postupu předmětu ({z} = z / ze) | hotovo {hotovo} {z} {celkem} lekcí |
+| `osma.max_lekce_den` | přehled, po dnešní dokončené lekci předmětu | Dnešní lekce z předmětu {predmet} je hotová. Další doporučujeme až zítra. |
+| `osma.zamceno` | přehled, štítek zamčené lekce | Zamčeno |
+| `osma.zamceno_uzavreno` | přehled, účet uzavřený | Účet je uzavřený. |
+| `osma.tema_nadpis` | přehled, nadpis sekce tématu a karta „Doporučeno teď“ | Téma {tema} · {nazev} |
+| `osma.tema_slabe` | přehled, štítek tématu po úvodním testu | Procvičit |
+| `osma.tema_nejiste` | přehled, štítek tématu po úvodním testu | Zopakovat |
+| `osma.tema_silne` | přehled, štítek tématu po úvodním testu | Jde to |
+| `osma.lekce_poradi` | přehled, karta lekce | Lekce {n} |
+| `osma.lekce_kontrola` | přehled, karta 4. lekce tématu | Lekce {n} · kontrola tématu |
+| `osma.pocet_uloh_2` | přehled, karta lekce (2–4 úlohy) | {n} úlohy |
+| `osma.pocet_uloh_5` | přehled, karta lekce (5 a víc úloh) | {n} úloh |
+| `osma.doporuceno_nadpis` | přehled, nadpis | Doporučeno teď |
+| `osma.doporuceno_podle_testu` | přehled, pod nadpisem (test hotový) | Podle úvodního testu: nejdřív témata, která zatím nejdou. Ta, která jdou, jsou na konci. |
+| `osma.doporuceno_bez_testu` | přehled, pod nadpisem (test není hotový) | Zatím od základů ke složitějšímu. Po úvodním testu pořadí upravíme podle toho, co dítěti nejde. |
+| `osma.doporuceno_osnova` | přehled, pod nadpisem (předmět bez testu) | Od základů ke složitějšímu. |
+| `osma.volitelne` | přehled, karta L1–L3 silného tématu | Volitelné |
+| `osma.tema_silne_pozn` | přehled, pod nadpisem silného tématu | Téma jde. Stačí kontrola tématu (lekce 4). Když nedopadne zeleně, doporučíme lekce 1–3. |
+| `osma.znovu_kontrola` | přehled, „Doporučeno teď“: L4 silného tématu po pojistce | Lekce 1–3 jsou hotové. Teď ještě jednou kontrola tématu. |
+| `osma.vse_hotovo` | přehled, všechny lekce předmětu hotové | Všechny lekce jsou hotové. Výborně! Kterékoli téma můžete projít znovu. |
+| `osma.nic_otevreno` | přehled, žádná otevřená nehotová lekce | Další lekce se teprve otevřou. |
+| `osma.test_stitek` | přehled, karta úvodního testu | Úvodní test |
+| `osma.test_nazev` | přehled, karta úvodního testu | Úvodní test ({min} min) |
+| `osma.test_text_rodic` | přehled rodiče, karta testu | Dítě vyřeší asi 20 úloh samo, bez taháku a bez nápověd. Ukáže, která témata mu jdou a kde začít. |
+| `osma.test_text_zak` | přehled žáka, karta testu | Asi 20 krátkých úloh. Řeš je sám nebo sama, jak nejlíp umíš. Nikdo to nehodnotí. |
+| `osma.test_hotovo_rodic` | přehled rodiče, test hotový | Podle výsledku jsou lekce seřazené: nejdřív to, co zatím nejde. |
+| `osma.test_hotovo_zak` | přehled žáka, test hotový | Hotovo. Lekce jsou seřazené tak, jak ti to pomůže nejvíc. |
+| `osma.test_vysledek` | přehled rodiče, odkaz | Výsledek úvodního testu |
+| `osma.test_zacit_rodic` | přehled rodiče, tlačítko | Spustit úvodní test |
+| `osma.test_zacit_zak` | přehled žáka, tlačítko | Začít test |
+| `osma.vysledek_nadpis` | rodič, výsledek úvodního testu | Výsledek úvodního testu |
+| `osma.vysledek_celkem` | rodič, výsledek: pod nadpisem | Odevzdáno {odevzdano} {z} {celkem} úloh. |
+| `osma.vysledek_jde` | rodič, výsledek: nadpis | Co jde |
+| `osma.vysledek_nejde` | rodič, výsledek: nadpis | Co zatím nejde |
+| `osma.vysledek_nejiste` | rodič, výsledek: nadpis | Napůl |
+| `osma.vysledek_nic` | rodič, výsledek: prázdná skupina | Žádné téma. |
+| `osma.vysledek_zacit` | rodič, výsledek: nadpis | Kde začít |
+| `osma.vysledek_zacit_text` | rodič, výsledek: text | Začněte: {tema}. Na přehledu je nahoře pod „Doporučeno teď“. |
+| `osma.vysledek_zacit_vse` | rodič, výsledek: všechna témata jdou | Všechna témata jdou. Lekce jděte od začátku, poslouží jako opakování. |
+| `osma.vysledek_chyby` | rodič, výsledek: nadpis | Na co se dívat |
+| `osma.vysledek_tlacitko` | rodič, výsledek: tlačítko | Na přehled lekcí |
+| `osma.vysledek_nezjisteno` | rodič, výsledek: odevzdáno méně než polovina | Dítě odevzdalo méně než polovinu úloh, výsledek je jen orientační. |
+| `osma.test_konec_zak` | žák, konec úvodního testu | Hotovo. Díky! Podle testu jsme ti seřadili lekce. Najdeš je na přehledu. |
+| `samo.kontrolni_ceka` | lekce žáka „Dnes samo“, kontrolní úloha před prvním odevzdáním | Tuhle úlohu zkus nejdřív bez nápovědy. Když napoprvé nevyjde, nápovědy se odemknou. |
+
+## Názvy témat (Spolu 8)
+Název tématu na přehledu: „Téma 3 · Zlomky I“. Klíče `tema_mat.t1` … `tema_mat.t10` (matematika) a `tema_cj.t1` … `tema_cj.t10` (čeština) doplní metodici z osnov (`obsah/OSNOVA-MATEMATIKA.md`, `cestina/Obsah/OSNOVA.md`), pak `node nastroje/generuj-hlasky.mjs`. Dokud řádek chybí, aplikace název složí z kapitol lekcí tématu (`web/js/temata.js`).
+
+| klíč | kde | text |
+|---|---|---|

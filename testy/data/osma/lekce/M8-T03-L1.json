@@ -1,0 +1,463 @@
+{
+  "id": "M8-T03-L1",
+  "faze": "osma",
+  "tyden": 3,
+  "poradi": 1,
+  "tema": "Násobení desetinných čísel",
+  "kapitola": "desetinna-cisla",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě správně umístí desetinnou čárku při násobení a dělení.",
+  "uvod_pro_rodice": "Dnes jde o desetinnou čárku: kam patří, když se násobí, dělí a převádějí metry na centimetry.",
+  "uvod_pravidla": [
+    {
+      "znak": "0,3 · 0,2 = 0,06",
+      "text": "desetinná místa se sčítají"
+    },
+    {
+      "znak": "1,2 : 0,4 = 12 : 4",
+      "text": "čárka se u obou čísel posune o stejně míst"
+    },
+    {
+      "znak": "7 : 10 = 0,7",
+      "text": "desetina ze sedmi je sedm děleno deseti"
+    },
+    {
+      "znak": "2,5 · 100 = 250",
+      "text": "krát sto: čárka doprava"
+    },
+    {
+      "znak": "1,5 m = 150 cm",
+      "text": "metr má sto centimetrů"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T03-L1-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) $0{,}4 \\cdot 0{,}2$\n\nB) Kolik centimetrů je $2{,}6$ m?\n\nC) Hod měřil $8$ m, další hod byl o desetinu delší. Kolik metrů měřil další hod?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $0{,}4 \\cdot 0{,}2$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$0{,}8$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-nasobeni"
+              },
+              {
+                "id": "b",
+                "text": "$0{,}08$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$8$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-nasobeni"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $2{,}6$ m v centimetrech",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$26$ cm",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "b",
+                "text": "$2{,}600$ cm",
+                "spravne": false,
+                "typ_chyby": "pripsal-nuly-k-desetinnemu"
+              },
+              {
+                "id": "c",
+                "text": "$260$ cm",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "$0{,}026$ cm",
+                "spravne": false,
+                "typ_chyby": "posun-carky-spatnym-smerem"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: o desetinu delší než $8$ m",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$8{,}8$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$8{,}1$",
+                "spravne": false,
+                "typ_chyby": "o-desetinu-jako-pricist-0-1"
+              },
+              {
+                "id": "c",
+                "text": "$0{,}8$",
+                "spravne": false,
+                "typ_chyby": "jen-cast-bez-celku"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě tu jen vybírá z nabídky. U A se násobí dvě desetinná čísla, u B se metry převádějí na centimetry, u C jde o hod delší o desetinu: přičte se desetina z osmi metrů, tedy $0{,}8$ m, ne $0{,}1$ m. Čte se: $0{,}4$ = nula celá čtyři (čtyři desetiny), $0{,}08$ = osm setin. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $0{,}4 \\cdot 0{,}2$\n\n$4 \\cdot 2 = 8$ (nejdřív bez čárek)\n\n$0{,}4 \\cdot 0{,}2 = 0{,}08$ (za čárkou jedno a jedno místo, ve výsledku dvě)\n\n#### B) $2{,}6$ m v centimetrech\n\n$1$ m $= 100$ cm (metr má sto centimetrů)\n\n$2{,}6 \\cdot 100 = 260$ (krát sto, čárka o dvě místa doprava)\n\n#### C) Hod o desetinu delší než $8$ m\n\n$8 : 10 = 0{,}8$ (desetina z osmi metrů, čárka o jedno místo doleva)\n\n$8 + 0{,}8 = 8{,}8$ (desetina se přičte)\n\n**Výsledek:** A) $0{,}08$, B) $260$ cm, C) $8{,}8$ m",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Kolik je čtyři krát dva? Kolik číslic je za čárkou v obou číslech dohromady?“"
+          },
+          {
+            "k": "B",
+            "text": "„Kolik centimetrů má jeden metr? Kterým směrem a o kolik míst posuneš čárku, když násobíš stem?“"
+          },
+          {
+            "k": "C",
+            "text": "„Kolik metrů je desetina z osmi metrů? Co s ní uděláš, když má být další hod o desetinu delší?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč nula celá čtyři krát nula celá dva není nula celá osm.“",
+        "otocena_role_odpoved": "Obě čísla mají za čárkou jedno místo, dohromady dvě, takže výsledek má dvě místa za čárkou: osm setin. Navíc násobím číslem menším než jedna, takže musí vyjít méně než nula celá čtyři.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $0{,}8$ nebo $8$: čárka jen podle jednoho čísla, nebo žádná. Zeptejte se: „Kolik míst za čárkou mají obě čísla dohromady?“ (Dvě.) U B $26$ cm: čárku posune jen o jedno místo; $0{,}026$ cm: posune ji na opačnou stranu; $2{,}600$ cm: jen připíše nuly. Zeptejte se: „Kolik centimetrů má jeden metr?“ (Sto.) U C $8{,}1$: přičte nula celá jedna. Zeptejte se: „Kolik je desetina z osmi metrů?“ (Nula celá osm.) $0{,}8$: napíše jen desetinu. Zeptejte se: „Jak dlouhý je celý další hod?“ (Osm metrů a ještě desetina, tedy osm celých osm.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — čárka sedí ve všech třech příkladech. Pochvalte, že počítalo místa za čárkou, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Ukažte dítěti na telefonu $0{,}3 \\cdot 0{,}3$, pak $1{,}5$ m v centimetrech, pak kolik měří provázek $20$ cm prodloužený o desetinu. U každého řekne výsledek a kam dá čárku. Kontrola pro vás: $0{,}09$ (dvě místa za čárkou), $150$ cm (o dvě místa doprava), $22$ cm (desetina je dva).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: svinovací metr. Zítra ať dítě ukáže 1 m a řekne, kolik je to centimetrů. Pak ať ukáže 0,4 m a 1,25 m a řekne je v centimetrech. Pak ať samo zapíše $0{,}4 \\cdot 100 = 40$ a $1{,}25 \\cdot 100 = 125$. Potom zopakujte lekci „Násobení desetinných čísel“. Kontrola pro vás: 100 cm, 40 cm, 125 cm."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) $0{,}4 \\cdot 0{,}2$ — a) $0{,}8$ b) $0{,}08$ c) $8$\n\nB) Kolik centimetrů je $2{,}6$ m? — a) $26$ cm b) $2{,}600$ cm c) $260$ cm d) $0{,}026$ cm\n\nC) Hod měřil $8$ m, další hod byl o desetinu delší. Kolik metrů měřil další hod? — a) $8{,}8$ b) $8{,}1$ c) $0{,}8$"
+      }
+    },
+    {
+      "id": "M8-T03-L1-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr počítal příklad\n\n$$0{,}6 \\cdot 0{,}3 + 1{,}2 : 0{,}4$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $= 0{,}18 + 1{,}2 : 0{,}4$\n\n2. řádek: $= 0{,}18 + 0{,}3$\n\n3. řádek: $= 0{,}48$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$= 0{,}18 + 1{,}2 : 0{,}4$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$= 0{,}18 + 0{,}3$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$= 0{,}48$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$= 0{,}18 + 0{,}03$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-deleni"
+              },
+              {
+                "id": "b",
+                "text": "$= 1{,}8 + 3$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-nasobeni"
+              },
+              {
+                "id": "c",
+                "text": "$= 0{,}18 + 3$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 3.18
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 0.48,
+              "typ_chyby": "carka-pri-deleni"
+            },
+            {
+              "hodnota": 0.21,
+              "typ_chyby": "carka-pri-deleni"
+            },
+            {
+              "hodnota": 4.8,
+              "typ_chyby": "carka-pri-nasobeni"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Chyba je jedna a řádky za ní jsou spočítané dobře, jen se špatným číslem. Když čárka nesedí, vyjde výsledek desetkrát menší nebo větší. Čte se: $0{,}18$ = nula celá osmnáct (osmnáct setin).",
+        "reseni": "Chyba je ve 2. řádku: Petr spočítal dvanáct děleno čtyřmi a čárku dal jako u jedné celé dvou. Čárka se ale musí posunout u obou čísel.\n\n$0{,}6 \\cdot 0{,}3 = 0{,}18$ (krát má přednost, za čárkou dvě místa)\n\n$1{,}2 : 0{,}4 = 12 : 4 = 3$ (obě čísla krát deset, podíl se nezmění)\n\n$3 \\cdot 0{,}4 = 1{,}2$ (zkouška dělení)\n\n$0{,}18 + 3 = 3{,}18$ (sčítání nakonec)\n\nDlaždice $0{,}18 + 0{,}03$ a $1{,}8 + 3$ nesedí (první dává u dělení místa za čárkou jako u násobení, druhá má čárku u násobení jen podle jednoho čísla)\n\n**Výsledek:** $3{,}18$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Přečti mi příklad nahlas. Co se v něm počítá jako první a proč?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky jeden po druhém. U každého mi řekni, co v něm Petr spočítal.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: je tu krát, nebo děleno? Sedí čárka? U dělení udělej zkoušku: vynásob výsledek zpátky.“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč jedna celá dva děleno nula celá čtyři není nula celá tři.“",
+        "otocena_role_odpoved": "Protože nula celá čtyři se do jedné celé dvou vejde třikrát. Když obě čísla vynásobím deseti, je to dvanáct děleno čtyřmi, a to jsou tři. Zkouška: tři krát nula celá čtyři je jedna celá dva.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 1. řádek? Ten je správně. Zeptejte se: „Kolik míst za čárkou mají nula celá šest a nula celá tři dohromady?“ (Dvě, proto nula celá osmnáct.) Oprava $1{,}8 + 3$ nebo výsledek $4{,}8$: čárka u násobení jen podle jednoho čísla. Zeptejte se totéž. Klikne na 3. řádek? Ten je jen důsledek. Zeptejte se: „Odkud je nula celá čtyřicet osm?“ (Z 2. řádku: nula celá osmnáct plus nula celá tři.) Výsledek $0{,}48$ (opíše Petra), oprava $0{,}18 + 0{,}03$ nebo výsledek $0{,}21$: čárka u dělení. Zeptejte se: „Kolikrát se nula celá čtyři vejde do jedné celé dvou?“ (Třikrát.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že u dělení posunulo čárku u obou čísel, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu dva Petrovy výpočty: $1{,}5 : 0{,}5 = 0{,}3$ a $0{,}2 \\cdot 0{,}4 = 0{,}08$. Zeptejte se: „Který je dobře? Jak to ověříš?“ Kontrola pro vás: první je špatně, správně je $3$ (patnáct děleno pěti, zkouška tři krát nula celá pět); druhý je dobře.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: svinovací metr a provázek dlouhý 1,2 m. Zítra ať dítě na provázku odměřuje kousky po 40 cm a spočítá, kolik se jich vejde. Pak ať samo zapíše $1{,}2 : 0{,}4 = 12 : 4 = 3$. Potom zopakujte lekci „Násobení desetinných čísel“. Kontrola pro vás: 1,2 m je 120 cm, kousky po 40 cm se vejdou třikrát."
+      },
+      "tisk": {
+        "zadani": "Petr počítal příklad\n\n$$0{,}6 \\cdot 0{,}3 + 1{,}2 : 0{,}4$$\n\na udělal jednu chybu.\n\n1. řádek: $= 0{,}18 + 1{,}2 : 0{,}4$\n\n2. řádek: $= 0{,}18 + 0{,}3$\n\n3. řádek: $= 0{,}48$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $= 0{,}18 + 0{,}03$ b) $= 1{,}8 + 3$ c) $= 0{,}18 + 3$\n\nC) Správný výsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T03-L1-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Ondra pouštěl papírovou vlaštovku. Poprvé doletěla $6$ m daleko. Po každé úpravě křídel doletěla o desetinu dál než naposledy.\n\nVypočítej, o kolik cm dál doletěla vlaštovka při třetím pokusu než při prvním.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Který zápis odpovídá třetímu pokusu?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$6{,}6 + 0{,}6$",
+                "spravne": false,
+                "typ_chyby": "cast-z-prvniho-misto-predchoziho"
+              },
+              {
+                "id": "b",
+                "text": "$6{,}6 + 0{,}66$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$6{,}6 + 0{,}066$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: třetí pokus",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m"
+          },
+          "spravne": {
+            "hodnota": 7.26
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 7.2,
+              "typ_chyby": "cast-z-prvniho-misto-predchoziho"
+            },
+            {
+              "hodnota": 6.2,
+              "typ_chyby": "o-desetinu-jako-pricist-0-1"
+            },
+            {
+              "hodnota": 6.666,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm"
+          },
+          "spravne": {
+            "hodnota": 126
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 120,
+              "typ_chyby": "cast-z-prvniho-misto-predchoziho"
+            },
+            {
+              "hodnota": 20,
+              "typ_chyby": "o-desetinu-jako-pricist-0-1"
+            },
+            {
+              "hodnota": 12.6,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 66.6,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Podobná úloha bývá v testech (2. náhradní termín) jako úloha 1. Past je slovo „naposledy“: desetina se pokaždé bere z posledního pokusu, ne z prvního. Výsledek se chce v centimetrech. Čte se: $0{,}66$ = nula celá šedesát šest (šedesát šest setin).",
+        "reseni": "$6 : 10 = 0{,}6$ (desetina prvního pokusu)\n\n$6 + 0{,}6 = 6{,}6$ (druhý pokus v metrech)\n\n$6{,}6 : 10 = 0{,}66$ (desetina druhého pokusu)\n\n$6{,}6 + 0{,}66 = 7{,}26$ (třetí pokus v metrech)\n\n$7{,}26 - 6 = 1{,}26$ (o kolik dál než poprvé)\n\n$1{,}26 \\cdot 100 = 126$ (převod na centimetry)\n\n**Výsledek:** $126$ cm",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co se s vlaštovkou děje a na co se úloha ptá.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„O desetinu dál než který pokus? Z jakého čísla bereš desetinu u třetího pokusu?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: desetina ze šesti je nula celá šest, druhý pokus je šest celých šest. Co spočítáš dál? A jak to dostaneš do centimetrů?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč třetí pokus není o nula celá šest metru delší než druhý.“",
+        "otocena_role_odpoved": "Protože desetina se bere z druhého pokusu, a ten už je delší než první. Desetina ze šesti celých šesti je nula celá šedesát šest, ne nula celá šest.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 $6{,}6 + 0{,}6$, pak $7{,}2$ m nebo $120$ cm: desetinu bere pořád ze šesti. Zeptejte se: „Z kterého pokusu se bere desetina u třetího?“ (Z druhého.) $6{,}2$ m nebo $20$ cm: přičítá nula celá jedna. Zeptejte se: „Kolik je desetina ze šesti metrů?“ (Nula celá šest.) V kroku 1 $6{,}6 + 0{,}066$ nebo $6{,}666$ m: desetinu posune o dvě místa. Zeptejte se: „Kolik je desetina ze šesti celých šesti?“ (Nula celá šedesát šest.) Výsledek $1{,}26$: nepřevede na centimetry. Zeptejte se: „V jakých jednotkách chtějí výsledek?“ (V centimetrech.) $12{,}6$: převádí deseti. Zeptejte se: „Kolik centimetrů má metr?“ (Sto.) $726$: neodečte první pokus; $66$: odečte druhý pokus. Zeptejte se: „O kolik dál než který pokus?“ (Než první, šest metrů.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — hlavní úlohu zvládlo. Pochvalte, že desetinu bralo vždy z předchozího pokusu a nezapomnělo na centimetry, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu úlohu: „Adam skočil poprvé $4$ m. Každý další skok byl o desetinu delší než ten před ním. O kolik cm byl třetí skok delší než první?“ Ať nahlas řekne druhý skok, třetí skok a rozdíl. Kontrola pro vás: $4{,}4$ m, $4{,}84$ m, rozdíl $0{,}84$ m, tedy $84$ cm.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko, papír a tužku. Zítra ať dítě nakreslí čáru dlouhou 20 cm a prodlouží ji o desetinu. Pak ať ji prodlouží ještě o desetinu nové délky a změří ji. Pak ať samo zapíše $20 : 10 = 2$ a $22 : 10 = 2{,}2$. Potom zopakujte lekci „Násobení desetinných čísel“. Kontrola pro vás: nejdřív 22 cm, pak přidá 2,2 cm, čára měří 24,2 cm."
+      },
+      "tisk": {
+        "zadani": "Ondra pouštěl papírovou vlaštovku. Poprvé doletěla $6$ m daleko. Po každé úpravě křídel doletěla o desetinu dál než naposledy.\n\nVypočítej, o kolik cm dál doletěla vlaštovka při třetím pokusu než při prvním.\n\nA) Který zápis odpovídá třetímu pokusu? Zakroužkuj: a) $6{,}6 + 0{,}6$ b) $6{,}6 + 0{,}66$ c) $6{,}6 + 0{,}066$\n\nB) Třetí pokus: ______ m\n\nC) O kolik dál než při prvním pokusu: ______ cm"
+      }
+    },
+    {
+      "id": "M8-T03-L1-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Ema sbírala borůvky. V pondělí nasbírala $3$ kg. Každý další den nasbírala o desetinu víc než den předtím.\n\nKolik gramů borůvek nasbírala Ema ve středu?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "g"
+          },
+          "spravne": {
+            "hodnota": 3630
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 3600,
+              "typ_chyby": "cast-z-prvniho-misto-predchoziho"
+            },
+            {
+              "hodnota": 3200,
+              "typ_chyby": "o-desetinu-jako-pricist-0-1"
+            },
+            {
+              "hodnota": 363,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 3300,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Úloha se ptá, kolik Ema nasbírala ve středu, a to v gramech. Kilogram má tisíc gramů.",
+        "reseni": "$3 : 10 = 0{,}3$ (desetina pondělí)\n\n$3 + 0{,}3 = 3{,}3$ (úterý v kilogramech)\n\n$3{,}3 : 10 = 0{,}33$ (desetina úterý)\n\n$3{,}3 + 0{,}33 = 3{,}63$ (středa v kilogramech)\n\n$3{,}63 \\cdot 1000 = 3630$ (převod na gramy, čárka o tři místa doprava)\n\n**Výsledek:** $3\\,630$ g",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co Ema dělá a na co se úloha ptá.“",
+          "„Co spočítáš jako první? Z kterého dne bereš desetinu, když počítáš středu?“",
+          "„Tady máš začátek: desetina ze tří kilogramů jsou tři desetiny kilogramu. Kolik nasbírala v úterý a co spočítáš dál?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč ve středu nepřidáváš zase jen tři desetiny kilogramu.“",
+        "otocena_role_odpoved": "Protože desetina se bere z úterka, ne z pondělka. V úterý Ema nasbírala tři celé tři kila, desetina z toho je nula celá třicet tři, a to je víc než tři desetiny.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nepíše nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: $3\\,600$: desetinu bere pořád z pondělí. Zeptejte se: „Z kterého dne se bere desetina ve středu?“ (Z úterý.) $3\\,200$: přičítá nula celá jedna. Zeptejte se: „Kolik je desetina ze tří kilogramů?“ (Nula celá tři.) $3\\,300$: spočítá jen úterý. Zeptejte se: „Na který den se ptají?“ (Na středu.) $363$: kilogramy násobí jen stem; $3{,}63$: nepřevede na gramy. U obou se zeptejte: „Kolik gramů má kilogram?“ (Tisíc.) Jiné číslo? Zeptejte se: „Řekni mi, kolik Ema nasbírala v úterý a kolik ve středu.“ (Tři celé tři a tři celé šedesát tři kilogramu.) Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — desetinu i gramy zvládlo samo. Pochvalte, že desetinu bralo vždy z předchozího dne. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu úlohu: „Kytka měří $30$ cm. Každý týden vyroste o desetinu své výšky. Kolik milimetrů měří po dvou týdnech?“ Ať nahlas řekne výšku po prvním týdnu, desetinu z ní a výšku po druhém týdnu. Kontrola pro vás: $33$ cm, $3{,}3$ cm, $36{,}3$ cm, tedy $363$ mm.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko s milimetry, papír a tužku. Zítra ať dítě nakreslí čáru 10 cm, prodlouží ji o desetinu a pak ještě o desetinu nové délky. Pak ať samo zapíše $10 + 1 = 11$ a $11 + 1{,}1 = 12{,}1$ a řekne délku v milimetrech. Potom zopakujte lekci „Násobení desetinných čísel“. Kontrola pro vás: nejdřív 11 cm, pak přidá 1,1 cm, čára měří 12,1 cm, tedy 121 mm."
+      },
+      "tisk": {
+        "zadani": "Ema sbírala borůvky. V pondělí nasbírala $3$ kg. Každý další den nasbírala o desetinu víc než den předtím.\n\nKolik gramů borůvek nasbírala Ema ve středu?\n\nVýsledek: ______ g"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "SYNTETICKÁ testovací lekce (testy/data/osma) převedená ze Spolu — jen pro testy a QA, není to obsah Spolu 8.",
+    "zkontroloval": "vedouci",
+    "datum": "2026-09-25"
+  }
+}

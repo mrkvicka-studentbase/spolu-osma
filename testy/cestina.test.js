@@ -21,7 +21,8 @@ import { zkontrolujLekci, validuj } from '../supabase/seed/validator.mjs';
 import { parsujSlovnikChybCj } from '../supabase/seed/validator-cj.mjs';
 
 const KOREN = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
-const ADRESAR_CJ = path.join(KOREN, 'obsah', 'cestina', 'lekce');
+// Spolu 8: lekce češtiny zatím nejsou → syntetické lekce (fáze osma, 5 úloh) v testy/data/osma/cestina/lekce
+const ADRESAR_CJ = path.join(KOREN, 'testy', 'data', 'osma', 'cestina', 'lekce');
 const kody = (r) => (r.chyby || []).map((c) => c.kod);
 
 describe('text', () => {
@@ -189,7 +190,7 @@ describe('schéma a validátor', async () => {
   });
 
   test('Matematika neodpovídá větvi češtiny a naopak', async () => {
-    const mat = JSON.parse(await readFile(path.join(KOREN, 'obsah', 'lekce', 'F1-T01-L1.json'), 'utf8'));
+    const mat = JSON.parse(await readFile(path.join(KOREN, 'testy', 'data', 'osma', 'lekce', 'M8-T01-L1.json'), 'utf8'));
     assert.ok(validuj({ $ref: '#/$defs/lekceCestina' }, mat, '', schema).length > 0);
     const cj = JSON.parse(await readFile(path.join(ADRESAR_CJ, soubory[0]), 'utf8'));
     assert.ok(validuj({ $ref: '#/$defs/lekceBezna' }, cj, '', schema).length > 0);

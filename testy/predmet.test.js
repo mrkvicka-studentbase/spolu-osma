@@ -27,12 +27,14 @@ describe('predmet.js', () => {
     assert.equal(predmetZId('cj-t1-l1'), 'cestina');
     assert.equal(predmetZId('P1'), 'matematika');
     assert.equal(predmetZId('F2-T03-L2'), 'matematika');
+    assert.equal(predmetZId('M8-T03-L2'), 'matematika');
+    assert.equal(predmetZId('cj-t0-diag'), 'cestina');
     assert.equal(predmetZId(null), 'matematika');
   });
 
-  test('předměty dítěte: bez sloupce / prázdné = jen matematika, pořadí záložek pevné', () => {
-    assert.deepEqual(predmetyDitete({ id: 'd1' }), ['matematika']);
-    assert.deepEqual(predmetyDitete({ predmety: [] }), ['matematika']);
+  test('předměty dítěte: bez pole / prázdné = oba (Spolu 8), pořadí záložek pevné', () => {
+    assert.deepEqual(predmetyDitete({ id: 'd1' }), ['matematika', 'cestina']);
+    assert.deepEqual(predmetyDitete({ predmety: [] }), ['matematika', 'cestina']);
     assert.deepEqual(predmetyDitete({ predmety: ['cestina'] }), ['cestina']);
     assert.deepEqual(predmetyDitete({ predmety: ['cestina', 'matematika'] }), ['matematika', 'cestina']);
     assert.equal(maSloupecPredmety({ id: 'd1' }), false);

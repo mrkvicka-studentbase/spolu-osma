@@ -4,17 +4,22 @@
 //
 // Použití (z kořene repa):
 //   node supabase/seed/seed-lekce.mjs --jen-validace        jen kontrola, bez sítě a bez klíče
-//   node supabase/seed/seed-lekce.mjs --suchy-beh           zjistí, co by se změnilo, nic nezapíše
-//   node supabase/seed/seed-lekce.mjs                       validace + upsert změněných lekcí
+//   node supabase/seed/seed-lekce.mjs --suchy-beh --otevrit-od 2026-11-02   zjistí, co by se změnilo, nic nezapíše
+//   node supabase/seed/seed-lekce.mjs --otevrit-od 2026-11-02               validace + upsert změněných lekcí
 // Volby:
-//   --adresar <cesta>             jiný adresář s JSON lekcemi (výchozí obsah/lekce)
+//   --adresar <cesta>             jiný adresář s JSON lekcemi (výchozí obsah/lekce; čeština obsah/cestina/lekce)
+//   --soubor <cesta>              jen tento soubor (smí se opakovat; adresář se pak nečte)
+//   --lekce <id>[,<id>…]          jen tyto lekce podle id (M8-… v obsah/lekce, cj-… v obsah/cestina/lekce);
+//                                 smí se opakovat. Pro autory: rychlá kontrola jednoho souboru.
 //   --vcetne-nezkontrolovanych    nahraje i lekce s kontrola.jistota 'nizka' / 'neurceno'
-//   --otevrit-od-zaklady RRRR-MM-DD  den spuštění češtiny (fáze zaklady): týden 1 se otevře ten den,
-//                                 další týdny vždy v pondělí (supabase/seed/otevreni-cj.mjs). Bez něj
-//                                 se čeština nenahraje; s --jen-validace jen vypíše plán otevírání.
+//   --otevrit-od RRRR-MM-DD       Spolu 8 (fáze osma, oba předměty): den, kdy se otevřou VŠECHNY lekce najednou
+//                                 (půlnoc v Praze). Bez něj se fáze osma nenahraje.
+//   --verejna                     lekce fáze osma budou „verejna“ (vidí je každý přihlášený i před --otevrit-od);
+//                                 bez volby verejna = false
+//   --otevrit-od-zaklady RRRR-MM-DD  (jen starší fáze zaklady ze Spolu) týden 1 ten den, další týdny v pondělí.
 //
-// Čeština (--adresar obsah/cestina/lekce) jde do DB jen po migraci supabase/migrations/0007_predmet.sql
-// (sloupec lekce.predmet). Seed to před zápisem ověří a bez migrace nic nezapíše.
+// Spolu 8: v obsah/ smí být jen lekce fáze osma (ZADANI-OSMA §5). Matematika v obsah/lekce, čeština v obsah/cestina/lekce.
+// Seed na konci vypíše, které z 40 lekcí a diagnostiky v daném předmětu ještě chybí (jen informace).
 //
 // Klíče: soubor .env v kořeni repa (nebo proměnné prostředí):
 //   SUPABASE_URL=https://xxxx.supabase.co
@@ -28,9 +33,9 @@ import { readdir, readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { zkontrolujLekci, kontrolaParuSimulaci, nactiSlovnikChyb, jeObjekt, kanonickyJson } from './validator.mjs';
+import { zkontrolujLekci, kontrolaParuSimulaci, nactiSlovnikChyb, jeObjekt, kanonickyJson, OSMA } from './validator.mjs';
 import { parsujSlovnikChybCj } from './validator-cj.mjs';
-import { parsujDatum, otevritOdZaklady } from './otevreni-cj.mjs';
+import { parsujDatum, otevritOdZaklady, pulnocVPraze } from './otevreni-cj.mjs';
 
 const KOREN_REPA = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const CESTA_SCHEMATU = path.join(KOREN_REPA, 'obsah', 'schema.json');
@@ -57,24 +62,42 @@ const volby = {
   vcetneNezkontrolovanych: argv.includes('--vcetne-nezkontrolovanych'),
   adresar: path.join(KOREN_REPA, 'obsah', 'lekce'),
 };
-const iAdr = argv.indexOf('--adresar');
-if (iAdr !== -1) {
-  if (!argv[iAdr + 1]) {
-    console.error('Chybí cesta za --adresar.');
-    process.exit(1); // ještě před jakoukoli sítí — tady je process.exit bezpečný
-  }
-  volby.adresar = path.resolve(argv[iAdr + 1]);
+/** Hodnoty volby: `--x hodnota` i `--x=hodnota`, volba se smí opakovat. Process.exit je tu bezpečný (ještě žádná síť). */
+function hodnotyVolby(jmeno) {
+  const vysledek = [];
+  argv.forEach((a, i) => {
+    if (a === jmeno) {
+      if (!argv[i + 1] || argv[i + 1].startsWith('--')) { console.error(`Chybí hodnota za ${jmeno}.`); process.exit(1); }
+      vysledek.push(argv[i + 1]);
+    } else if (a.startsWith(`${jmeno}=`)) vysledek.push(a.slice(jmeno.length + 1));
+  });
+  return vysledek;
 }
-// --otevrit-od-zaklady 2026-10-05 i --otevrit-od-zaklady=2026-10-05
-const iOtv = argv.findIndex((a) => a === '--otevrit-od-zaklady' || a.startsWith('--otevrit-od-zaklady='));
-if (iOtv !== -1) {
-  const hodnota = argv[iOtv].includes('=') ? argv[iOtv].split('=')[1] : argv[iOtv + 1];
-  volby.spusteniZaklady = parsujDatum(hodnota);
-  if (!volby.spusteniZaklady) {
-    console.error(`Neplatné datum za --otevrit-od-zaklady: "${hodnota ?? ''}" (čekám RRRR-MM-DD).`);
-    process.exit(1);
-  }
+function datumVolby(jmeno) {
+  const h = hodnotyVolby(jmeno);
+  if (!h.length) return undefined;
+  const d = parsujDatum(h[h.length - 1]);
+  if (!d) { console.error(`Neplatné datum za ${jmeno}: "${h[h.length - 1]}" (čekám RRRR-MM-DD).`); process.exit(1); }
+  return d;
 }
+const adresare = hodnotyVolby('--adresar');
+if (adresare.length) volby.adresar = path.resolve(adresare[adresare.length - 1]);
+volby.soubory = hodnotyVolby('--soubor').map((s) => path.resolve(s));
+volby.lekce = hodnotyVolby('--lekce').flatMap((s) => s.split(',')).map((s) => s.trim()).filter(Boolean);
+volby.spusteniZaklady = datumVolby('--otevrit-od-zaklady');
+volby.otevritOd = datumVolby('--otevrit-od');
+volby.verejna = argv.includes('--verejna');
+
+/** Adresář s lekcemi předmětu (výchozí). */
+const ADR_MAT = path.join(KOREN_REPA, 'obsah', 'lekce');
+const ADR_CJ = path.join(KOREN_REPA, 'obsah', 'cestina', 'lekce');
+// --lekce M8-T03-L2 → obsah/lekce/M8-T03-L2.json; cj-… → obsah/cestina/lekce (pokud není dán --adresar)
+for (const id of volby.lekce) {
+  const adr = adresare.length ? volby.adresar : (/^cj-/.test(id) ? ADR_CJ : ADR_MAT);
+  volby.soubory.push(path.join(adr, `${id}.json`));
+}
+/** Je soubor v obsah/ (ostrý obsah Spolu 8)? Tam smí být jen fáze osma. */
+const vObsahu = (cesta) => path.resolve(cesta).startsWith(path.join(KOREN_REPA, 'obsah') + path.sep);
 
 /** Ukončení běhu s hláškou. Nepoužíváme process.exit() — na Windows po fetch padá (libuv assert). */
 class KonecBehu extends Error {
@@ -129,11 +152,24 @@ async function hlavni() {
   const audioMdCj = existsSync(CESTA_AUDIO_CJ) ? await readFile(CESTA_AUDIO_CJ, 'utf8') : '';
   const audioExistuje = (a) => existsSync(path.join(KOREN_REPA, 'web', a));
 
-  if (!existsSync(volby.adresar)) konec(`Adresář s lekcemi neexistuje: ${volby.adresar}`);
-  const soubory = (await readdir(volby.adresar)).filter((n) => n.endsWith('.json')).sort();
-  if (soubory.length === 0) konec(`V ${volby.adresar} nejsou žádné .json lekce.`);
-
-  console.log(`Kontroluji ${soubory.length} lekcí v ${path.relative(process.cwd(), volby.adresar) || '.'}\n`);
+  let cesty;
+  if (volby.soubory.length) {
+    const chybi = volby.soubory.filter((c) => !existsSync(c));
+    if (chybi.length) konec(`Soubor neexistuje: ${chybi.map((c) => path.relative(process.cwd(), c)).join(', ')}`);
+    cesty = [...new Set(volby.soubory)];
+    console.log(`Kontroluji ${cesty.length} ${cesty.length === 1 ? 'soubor' : cesty.length < 5 ? 'soubory' : 'souborů'}\n`);
+  } else {
+    if (!existsSync(volby.adresar)) konec(`Adresář s lekcemi neexistuje: ${volby.adresar}`);
+    const nazvy = (await readdir(volby.adresar)).filter((n) => n.endsWith('.json')).sort();
+    if (nazvy.length === 0) {
+      // Spolu 8: autoři teprve píšou — prázdná složka obsahu není chyba validace
+      if (volby.jenValidace && vObsahu(path.join(volby.adresar, 'x'))) { console.log(`V ${path.relative(process.cwd(), volby.adresar)} zatím nejsou žádné lekce.`); return; }
+      konec(`V ${volby.adresar} nejsou žádné .json lekce.`);
+    }
+    cesty = nazvy.map((n) => path.join(volby.adresar, n));
+    console.log(`Kontroluji ${cesty.length} lekcí v ${path.relative(process.cwd(), volby.adresar) || '.'}\n`);
+  }
+  const soubory = cesty;
 
   let lekce = [];
   const vsechnyNactene = [];
@@ -142,12 +178,13 @@ async function hlavni() {
   let celkemChyb = 0;
   let celkemVarovani = 0;
 
-  for (const nazev of soubory) {
+  for (const cesta of soubory) {
+    const nazev = path.basename(cesta);
     let data;
     const chyby = [];
     let varovani = [];
     try {
-      data = JSON.parse((await readFile(path.join(volby.adresar, nazev), 'utf8')).replace(/^﻿/, ''));
+      data = JSON.parse((await readFile(cesta, 'utf8')).replace(/^\uFEFF/, ''));
     } catch (e) {
       chyby.push(`neplatný JSON: ${e.message}`);
     }
@@ -159,8 +196,15 @@ async function hlavni() {
       chyby.push(...vysledek.chyby);
       varovani = vysledek.varovani;
       // vzorové lekce frontendu Fáze 2 patří jen do testy/data (schema je kvůli nim povoluje)
-      if (jeObjekt(data) && /^F2-VZOR-/.test(String(data.id)) && volby.adresar === path.join(KOREN_REPA, 'obsah', 'lekce')) {
+      if (jeObjekt(data) && /^F2-VZOR-/.test(String(data.id)) && vObsahu(cesta)) {
         chyby.push(`${data.id} je vzorová lekce frontendu — patří do testy/data, ne do obsah/lekce`);
+      }
+      // Spolu 8: v obsah/ jen fáze osma, každý předmět ve své složce (ZADANI-OSMA §5)
+      if (jeObjekt(data) && vObsahu(cesta)) {
+        if (data.faze !== 'osma') chyby.push(`v obsah/ patří jen lekce Spolu 8 ("faze": "osma"), je "${data.faze}"`);
+        const slozkaCj = path.dirname(path.resolve(cesta)) === ADR_CJ;
+        if (cj && !slozkaCj) chyby.push('lekce češtiny patří do obsah/cestina/lekce');
+        if (!cj && slozkaCj) chyby.push('lekce matematiky patří do obsah/lekce');
       }
 
       if (jeObjekt(data) && typeof data.id === 'string') {
@@ -190,6 +234,7 @@ async function hlavni() {
   celkemChyb += chybyParu.length;
 
   console.log(`\nCelkem: ${soubory.length} souborů, ${celkemChyb} chyb, ${celkemVarovani} varování.`);
+  if (!volby.soubory.length) vypisChybejici(vsechnyNactene);
   if (celkemChyb > 0) konec('\nOprav chyby a spusť znovu. Nic se nenahrálo.');
 
   const cestina = lekce.filter((l) => l.predmet === 'cestina');
@@ -207,9 +252,15 @@ async function hlavni() {
   }
 
   // ---------- Nahrání ----------
-  // Čeština: datum spuštění je parametr (zatím nerozhodnuté) a zápis jen po migraci 0007 (ověří se níž).
-  if (cestina.length && !volby.spusteniZaklady) {
-    konec(`\nLekce češtiny (${cestina.map((l) => l.id).join(', ')}) potřebují den spuštění: --otevrit-od-zaklady RRRR-MM-DD. Nic se nenahrálo.`);
+  // Spolu 8 (fáze osma): všechny lekce se otevřou najednou v den --otevrit-od (rozhodne Pavel před spuštěním).
+  const osma = lekce.filter((l) => l.faze === 'osma');
+  if (osma.length && !volby.otevritOd) {
+    konec(`\nLekce Spolu 8 (${osma.length}×) potřebují den otevření: --otevrit-od RRRR-MM-DD (volitelně --verejna). Nic se nenahrálo.`);
+  }
+  // Starší čeština Spolu (fáze zaklady): datum spuštění je parametr; zápis jen po migraci se sloupcem predmet (ověří se níž).
+  const zaklady = cestina.filter((l) => l.faze === 'zaklady');
+  if (zaklady.length && !volby.spusteniZaklady) {
+    konec(`\nLekce češtiny (${zaklady.map((l) => l.id).join(', ')}) potřebují den spuštění: --otevrit-od-zaklady RRRR-MM-DD. Nic se nenahrálo.`);
   }
 
   // Ven jde jen obsah s jistotou 'jista' (kostra 03: 'stredni' dořeší vedoucí, 'nizka' jde Pavlovi).
@@ -225,8 +276,8 @@ async function hlavni() {
   const { url, klic } = await nactiEnv();
   if (!url || !klic) konec('\nChybí SUPABASE_URL nebo SUPABASE_SERVICE_KEY v .env (kořen repa). Viz supabase/README.md.');
 
-  // Pojistka češtiny: bez sloupce lekce.predmet (migrace supabase/migrations/0007_predmet.sql) se nic nezapíše.
-  if (cestina.length) {
+  // Pojistka: bez sloupce lekce.predmet (supabase/migrations/0001_schema.sql Spolu 8) se nic nezapíše.
+  if (cestina.length || osma.length) {
     let test;
     try {
       test = await fetch(`${url}/rest/v1/lekce?select=predmet&limit=1`, { headers: hlavicky(klic) });
@@ -234,8 +285,8 @@ async function hlavni() {
       konec(`\nNepodařilo se spojit se Supabase (${url}): ${e.message}`);
     }
     if (!test.ok) {
-      konec(`\nTabulka lekce nemá sloupec predmet (HTTP ${test.status}) — migrace supabase/migrations/0007_predmet.sql ještě není ` +
-            'aplikovaná (nejdřív npm run migrovat, cestina/REPORT-SPUSTENI.md). Lekce češtiny se nenahrály, nic se nezapsalo.');
+      konec(`\nTabulka lekce nemá sloupec predmet (HTTP ${test.status}) — migrace supabase/migrations/ (0001_schema.sql Spolu 8, ` +
+            'dříve 0007_predmet.sql) ještě není aplikovaná (nejdřív npm run migrovat). Nic se nezapsalo.');
     }
   }
 
@@ -249,13 +300,14 @@ async function hlavni() {
       poradi: l.poradi,
       tema: l.tema,
       kapitola: l.kapitola,
-      varianta: l.varianta || 'z9',
+      varianta: l.varianta || (l.faze === 'osma' ? 'z8' : 'z9'), // Spolu 8 = z8 (čeština pole nemá)
       obsah: l,
-      verejna: l.faze === 'pilot',
-      otevrit_od: cj ? otevritOdZaklady(l.tyden, volby.spusteniZaklady) : OTEVRIT_OD[l.faze],
+      verejna: l.faze === 'osma' ? volby.verejna : l.faze === 'pilot',
+      otevrit_od: l.faze === 'osma' ? pulnocVPraze(volby.otevritOd)
+        : cj ? otevritOdZaklady(l.tyden, volby.spusteniZaklady) : OTEVRIT_OD[l.faze],
     };
-    // predmet posíláme jen u češtiny — Matematika se tak dá nahrát i do DB bez migrace 0007 (výchozí 'matematika')
-    if (cj) radek.predmet = 'cestina';
+    // predmet: Spolu 8 vždy (DB ho má od 0001); starší matematika bez něj (výchozí 'matematika')
+    if (cj || l.faze === 'osma') radek.predmet = cj ? 'cestina' : 'matematika';
     return radek;
   }
 
@@ -268,7 +320,7 @@ async function hlavni() {
   }
 
   const idcka = lekce.map((l) => l.id);
-  const dotaz = `${url}/rest/v1/lekce?select=id,faze,tyden,poradi,tema,kapitola,varianta,obsah,verejna,otevrit_od,verze${cestina.length ? ',predmet' : ''}` +
+  const dotaz = `${url}/rest/v1/lekce?select=id,faze,tyden,poradi,tema,kapitola,varianta,obsah,verejna,otevrit_od,verze${cestina.length || osma.length ? ',predmet' : ''}` +
                 `&id=in.${encodeURIComponent(`(${idcka.join(',')})`)}`;
   let odpoved;
   try {
@@ -308,6 +360,28 @@ async function hlavni() {
   });
   if (!zapis.ok) konec(`\nZápis selhal: HTTP ${zapis.status} ${await zapis.text()}`);
   console.log(`\nHotovo: nahráno ${kNahrani.length} lekcí.`);
+}
+
+/**
+ * Spolu 8: které lekce předmětu ještě chybí (40 lekcí + diagnostika). Jen informace pro autory, ne chyba.
+ * @param {object[]} nactene
+ */
+function vypisChybejici(nactene) {
+  const osma = nactene.filter((l) => jeObjekt(l) && l.faze === 'osma');
+  if (!osma.length) return;
+  const ma = new Set(osma.map((l) => l.id));
+  for (const cj of [false, true]) {
+    if (!osma.some((l) => (l.predmet === 'cestina') === cj)) continue;
+    const ocekavane = [cj ? 'cj-t0-diag' : 'M8-T00-DIAG'];
+    for (let t = 1; t <= OSMA.temat; t++) {
+      for (let n = 1; n <= OSMA.lekciVTematu; n++) {
+        ocekavane.push(cj ? `cj-t${t}-l${(t - 1) * OSMA.lekciVTematu + n}` : `M8-T${String(t).padStart(2, '0')}-L${n}`);
+      }
+    }
+    const chybi = ocekavane.filter((id) => !ma.has(id));
+    console.log(`${cj ? 'Čeština' : 'Matematika'} Spolu 8: ${ocekavane.length - chybi.length}/${ocekavane.length} souborů` +
+      (chybi.length ? `; chybí: ${chybi.length > 12 ? `${chybi.slice(0, 12).join(', ')} … (+${chybi.length - 12})` : chybi.join(', ')}` : ' — kompletní'));
+  }
 }
 
 try {

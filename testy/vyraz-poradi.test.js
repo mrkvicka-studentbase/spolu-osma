@@ -158,10 +158,10 @@ describe('poradi', () => {
 
 // R43: opsané zadání (hodnota sedí, výraz nedokončený) se nepočítá jako správně — skutečná diagnostika U20
 describe('R43: opsané zadání diagnostiky U20 nesedí', () => {
-  test('4x - 2(x-3) u F1-T00-DIAG-U20 = spravne false, poznámka zjednodus', async () => {
+  test('4x - 2(x-3) u U20 diagnostiky (syntetická M8-T00-DIAG = kopie F1-T00-DIAG) = spravne false, poznámka zjednodus', async () => {
     const { readFileSync } = await import('node:fs');
-    const diag = JSON.parse(readFileSync(new URL('../obsah/lekce/F1-T00-DIAG.json', import.meta.url), 'utf8'));
-    const krok = diag.ulohy.find((u) => u.id === 'F1-T00-DIAG-U20').kroky.find((k) => k.id === 'final');
+    const diag = JSON.parse(readFileSync(new URL('./data/osma/lekce/M8-T00-DIAG.json', import.meta.url), 'utf8'));
+    const krok = diag.ulohy.find((u) => u.id === 'M8-T00-DIAG-U20').kroky.find((k) => k.id === 'final');
     const r = vyhodnotKrok(krok, '4x - 2(x-3)');
     assert.equal(r.spravne, false);
     assert.equal(r.typ_chyby, null);

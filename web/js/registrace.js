@@ -1,5 +1,5 @@
 // =====================================================================
-// registrace.js — obrazovka 2 (kostra/04): registrace do pilotu a přihlášení
+// registrace.js — obrazovka 2 (kostra/04): registrace (Spolu 8: jméno rodiče, e-mail, heslo, jméno dítěte) a přihlášení
 //
 // - ?prihlaseni=1 otevře přihlášení; ?zpet=<stránka.html…> po přihlášení vrátí (bezpecnyZpet), jinak prehled.html.
 // - Registrace posílá údaje 1. dítěte v metadatech, rodinu i dítě zakládá DB trigger (R6).
@@ -26,9 +26,9 @@ const $ = (id) => document.getElementById(id);
 // ---------------------------------------------------------------------
 
 const TITULKY = {
-  registrace: 'Registrace — Spolu na přijímačky',
-  prihlaseni: 'Přihlášení — Spolu na přijímačky',
-  obnova: 'Zapomenuté heslo — Spolu na přijímačky',
+  registrace: 'Registrace — Spolu 8',
+  prihlaseni: 'Přihlášení — Spolu 8',
+  obnova: 'Zapomenuté heslo — Spolu 8',
 };
 
 /**
@@ -135,8 +135,6 @@ function validujRegistraci(form) {
   const email = $('r-email').value.trim();
   const heslo = $('r-heslo').value;
   const dite = $('r-dite').value.trim();
-  const typSkoly = radio(form, 'typ_skoly');
-  const znamka = radio(form, 'znamka');
   const souhlas = $('r-souhlas').checked;
 
   const chyby = [
@@ -146,8 +144,6 @@ function validujRegistraci(form) {
     [$('r-heslo'), $('r-heslo-chyba'), heslo.length >= 8 ? null
       : heslo.length ? h('ucet.chyba_heslo_kratke_pocet', { n: heslo.length }) : h('ucet.chyba_heslo_kratke')],
     [$('r-dite'), $('r-dite-chyba'), dite ? null : h('ucet.chyba_dite')],
-    [$('r-skola'), $('r-skola-chyba'), typSkoly ? null : h('ucet.chyba_skola')],
-    [$('r-znamka'), $('r-znamka-chyba'), znamka ? null : h('ucet.chyba_znamka')],
     [$('r-souhlas'), $('r-souhlas-chyba'), souhlas ? null : h('ucet.chyba_souhlas')],
   ];
   let prvni = null;
@@ -164,7 +160,7 @@ function validujRegistraci(form) {
     email,
     heslo,
     zdroj: $('r-odkud').value || null,
-    dite: { jmeno: dite, typSkoly, znamka8: Number(znamka) },
+    dite: { jmeno: dite }, // Spolu 8: typ školy ani známku nechceme; předměty = výchozí oba (DB)
   };
 }
 
@@ -193,7 +189,7 @@ async function odesliRegistraci(e) {
     $('prepinac').hidden = true;
     $('sekce-potvrzeni').hidden = false;
     $('potvrzeni-nadpis').focus();
-    document.title = 'Zkontrolujte e-mail — Spolu na přijímačky';
+    document.title = 'Zkontrolujte e-mail — Spolu 8';
   } catch (chyba) {
     // Nepoužitelná adresa (email_address_invalid / _not_authorized → prelozChybu) → chyba přímo u pole
     if (chyba?.kod === 'spatny_email') {
@@ -303,7 +299,7 @@ function napojZobrazeniHesla() {
 function napojMazaniChyb() {
   const dvojice = [
     ['r-jmeno', 'r-jmeno-chyba'], ['r-email', 'r-email-chyba'], ['r-heslo', 'r-heslo-chyba'],
-    ['r-dite', 'r-dite-chyba'], ['r-skola', 'r-skola-chyba'], ['r-znamka', 'r-znamka-chyba'],
+    ['r-dite', 'r-dite-chyba'],
     ['r-souhlas', 'r-souhlas-chyba'], ['p-email', 'p-email-chyba'], ['p-heslo', 'p-heslo-chyba'],
     ['o-email', 'o-email-chyba'],
   ];

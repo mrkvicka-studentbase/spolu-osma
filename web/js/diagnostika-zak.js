@@ -7,8 +7,13 @@
 import { el, ikona } from './ui.js';
 import { h } from './hlasky.js';
 
-/** Po které úloze je přestávka (2 bloky po 12). */
+/** Po které úloze je přestávka ve Spolu (2 bloky po 12; diagnostika 24 úloh). */
 export const PRESTAVKA_PO = 12;
+
+/** Po které úloze je přestávka: polovina úloh (Spolu 8: 20 úloh → po 10.), nejvýš PRESTAVKA_PO. */
+export function prestavkaPo(pocetUloh) {
+  return Math.min(PRESTAVKA_PO, Math.ceil((Number(pocetUloh) || 2 * PRESTAVKA_PO) / 2));
+}
 
 /**
  * Sezení diagnostiky dítěte: probíhající (NEJSTARŠÍ, bez limitu 24 h — diagnostiku jde dokončit jindy)
@@ -54,13 +59,13 @@ export function vykresliPrestavku(plocha, pokracovat) {
  * @param {HTMLElement} plocha
  * @param {string|null} sezeniId
  */
-export function vykresliKonecDiagnostiky(plocha, sezeniId) {
+export function vykresliKonecDiagnostiky(plocha, sezeniId, { text = h('diag.konec_text') } = {}) {
   try { if (sezeniId) localStorage.setItem(`spolu.diag.konec.${sezeniId}`, new Date().toISOString()); } catch { /* nevadí */ }
   plocha.removeAttribute('aria-busy');
   plocha.replaceChildren(el('div', { class: 'karta konec-lekce' },
     el('span', { class: 'ikona-kruh ikona-kruh--zelena' }, ikona('fajfka')),
     el('h2', { text: h('diag.konec_nadpis') }),
-    el('p', { class: 'text-tlumeny', text: h('diag.konec_text') }),
+    el('p', { class: 'text-tlumeny', text }),
     el('a', { class: 'tlacitko tlacitko--tiche', href: 'prehled.html' }, ikona('sipka-vlevo'), 'Zpět na přehled')));
   window.scrollTo({ top: 0 });
 }

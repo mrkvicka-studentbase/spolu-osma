@@ -9,6 +9,7 @@
 
 import { el, ikona, toast, formatCas } from './ui.js';
 import { h } from './hlasky.js';
+import { zeZ } from './temata.js';
 import { renderMarkdown, renderReseni, normalizujOtazku, finalKrok, rozlozDlazdice, rozlozZadani, NAZVY_TYPU } from './obsah.js';
 import { vyhodnotKrok } from './vyhodnoceni.js';
 import { ulozOdpoved } from './supabase.js';
@@ -130,7 +131,7 @@ export function vytvorPrepinacUloh(s, naUlohu) {
       'aria-label': 'Předchozí úloha', disabled: i === 0, onClick: () => naUlohu(i - 1),
     }, ikona('sipka-vlevo')),
     el('div', { class: 'prepinac-uloh__nazev' },
-      el('strong', { text: `Úloha ${i + 1} ze ${pocet}` }),
+      el('strong', { text: `Úloha ${i + 1} ${zeZ(pocet)} ${pocet}` }),
       el('span', { text: NAZVY_TYPU[uloha.typ] || uloha.typ })),
     el('button', {
       class: 'tlacitko tlacitko--sekundarni tlacitko--ikona', type: 'button', id: 'dalsiUlohaNahore',

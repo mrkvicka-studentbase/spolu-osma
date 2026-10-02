@@ -1,10 +1,9 @@
 // =====================================================================
 // predmet.js — dva předměty ve stejném webu: Matematika a Čeština (ZADANI-CESTINA §8.2, R65)
 //
-// - Předmět lekce: `l.predmet ?? 'matematika'` (před migrací 0007 katalog `predmet` nevrací → vše je matematika).
-//   Kde lekci nemáme (historie sezení bez sloupce predmet), rozhodne id: čeština má vždy prefix `cj-`
-//   (kontrola lekce_predmet_faze_check v supabase/migrations/0007_predmet.sql).
-// - Předměty dítěte: `dite.predmety ?? ['matematika']` (sloupec deti.predmety přinese migrace 0007).
+// - Předmět lekce: `l.predmet ?? 'matematika'`. Kde lekci nemáme (historie sezení), rozhodne id: čeština má vždy
+//   prefix `cj-` (constraint lekce_predmet_id_check v supabase/migrations/0001_schema.sql).
+// - Předměty dítěte: `dite.predmety`, Spolu 8 výchozí oba (deti.predmety default {matematika,cestina}).
 // - Volba předmětu v přehledu: zdroj pravdy je URL `?predmet=`, localStorage `spolu.predmet` je jen pohodlí
 //   (návrat na prehled.html bez parametru). Storage vždy v try/catch.
 // Čisté funkce bez DOM, importovatelné i v Node (testy/predmet.test.js).
@@ -39,17 +38,17 @@ export function predmetLekce(l) {
 }
 
 /**
- * Aktivní předměty dítěte v pořadí záložek. Bez sloupce `predmety` (před migrací) nebo s prázdným polem = jen matematika.
+ * Aktivní předměty dítěte v pořadí záložek. Bez pole `predmety` nebo s prázdným polem = oba (Spolu 8, výchozí DB).
  * @param {{predmety?: string[]|null}|null|undefined} dite
  * @returns {Array<'matematika'|'cestina'>}
  */
 export function predmetyDitete(dite) {
   const p = Array.isArray(dite?.predmety) ? PREDMETY.filter((x) => dite.predmety.includes(x)) : [];
-  return p.length ? p : ['matematika'];
+  return p.length ? p : [...PREDMETY];
 }
 
 /**
- * Má řádek dítěte z DB sloupec `predmety`? (= migrace 0007 proběhla; jinak se volba předmětů neukazuje ani neukládá)
+ * Má řádek dítěte z DB sloupec `predmety`? (Spolu 8 ho má vždy; zůstává kvůli starším datům a testům)
  * @param {object|null|undefined} dite
  * @returns {boolean}
  */

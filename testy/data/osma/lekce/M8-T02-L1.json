@@ -1,0 +1,448 @@
+{
+  "id": "M8-T02-L1",
+  "faze": "osma",
+  "tyden": 2,
+  "poradi": 1,
+  "tema": "Zlomek z čísla",
+  "kapitola": "zlomky",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě spočítá „dvě pětiny ze …“ i „dvě pětiny zbytku“.",
+  "uvod_pro_rodice": "Dnes jde o zlomek z čísla a o past „ze zbytku“: druhá část se počítá z toho, co zbylo, ne z celku.",
+  "uvod_pravidla": [
+    {
+      "znak": "$\\frac{3}{4}$ ze 40 = 30",
+      "text": "děleno dole, krát nahoře"
+    },
+    {
+      "znak": "$40 - 30 = 10$",
+      "text": "zbytek: celek bez části"
+    },
+    {
+      "znak": "$\\frac{2}{5}$ z 10 = 4",
+      "text": "část zbytku, ne celku"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T02-L1-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Kolik je $\\frac{2}{3}$ z $24$?\n\nB) Jana měla $60$ Kč. Třetinu utratila za sešit, pak čtvrtinu zbytku za tužku. Kolik korun stála tužka?\n\nC) Tom snědl polovinu pizzy, Ema pak polovinu zbytku. Jaká část pizzy zbyla?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $\\frac{2}{3}$ z $24$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$8$",
+                "spravne": false,
+                "typ_chyby": "zlomek-z-cisla-jen-deleni"
+              },
+              {
+                "id": "b",
+                "text": "$36$",
+                "spravne": false,
+                "typ_chyby": "zlomek-z-cisla-obracene"
+              },
+              {
+                "id": "c",
+                "text": "$16$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: kolik stála tužka?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$10$ Kč",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$15$ Kč",
+                "spravne": false,
+                "typ_chyby": "z-celku-misto-ze-zbytku"
+              },
+              {
+                "id": "c",
+                "text": "$30$ Kč",
+                "spravne": false,
+                "typ_chyby": "zamenil-cast-a-zbytek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: jaká část pizzy zbyla?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$0$",
+                "spravne": false,
+                "typ_chyby": "secetl-zlomky-ruznych-celku"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{1}{4}$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{3}{4}$",
+                "spravne": false,
+                "typ_chyby": "zamenil-cast-a-zbytek"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě tu jen vybírá z nabídky. U A jde o zlomek z čísla, u B a C o past „ze zbytku“: druhá část se bere z toho, co zbylo, ne z celku. Pizza v C je bez čísel, jde jen o části. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $\\frac{2}{3}$ z $24$\n\n$24 : 3 = 8$ (jedna třetina)\n\n$8 \\cdot 2 = 16$ (dvě třetiny)\n\n#### B) Kolik stála tužka?\n\n$60 : 3 = 20$ (sešit, třetina z celku)\n\n$60 - 20 = 40$ (zbytek po sešitu)\n\n$40 : 4 = 10$ (tužka, čtvrtina zbytku)\n\n#### C) Jaká část pizzy zbyla?\n\n$1 - \\frac{1}{2} = \\frac{1}{2}$ (po Tomovi zbyla polovina)\n\n$\\frac{1}{2} \\cdot \\frac{1}{2} = \\frac{1}{4}$ (Ema snědla polovinu zbytku, tedy čtvrtinu pizzy)\n\n$\\frac{1}{2} - \\frac{1}{4} = \\frac{1}{4}$ (co zbylo)\n\n**Výsledek:** A) $16$, B) $10$ Kč, C) $\\frac{1}{4}$ pizzy",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Na kolik stejných dílů rozdělíš dvacet čtyři? A kolik takových dílů pak vezmeš?“"
+          },
+          {
+            "k": "B",
+            "text": "„Kolik korun Janě zbylo po koupi sešitu? Z jakých peněz se pak počítá čtvrtina?“"
+          },
+          {
+            "k": "C",
+            "text": "„Nakresli si pizzu. Tom sní polovinu. Ukaž mi, co zbylo, a z toho zbytku polovinu pro Emu.“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč tužka nestojí čtvrtinu ze šedesáti korun.“",
+        "otocena_role_odpoved": "Protože čtvrtina se počítá ze zbytku. Za sešit už Jana dala dvacet korun, zbylo jí čtyřicet a tužka stojí čtvrtinu z těch čtyřiceti, tedy deset korun.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U B vybere $15$ Kč: čtvrtinu bere z celku. Zeptejte se: „Kolik korun zbylo po sešitu?“ (Čtyřicet.) $30$ Kč je to, co Janě zbylo nakonec. U A $8$ nebo $36$: jen vydělí, nebo počítá obráceně. U C $0$: sečte dvě poloviny; $\\frac{3}{4}$ je snědená část."
+      },
+      "semafor": {
+        "zelena": "Výborně — všechny tři části sedí. Pochvalte, že u B a C hlídalo, z čeho se část počítá, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Ukažte dítěti na telefonu $\\frac{3}{4}$ z $20$, pak $\\frac{2}{5}$ z $15$. Ať řekne, čím dělí, čím násobí a co vyjde. Pak: „Máš $12$ bonbonů, polovinu sníš a pak polovinu zbytku. Kolik sníš podruhé?“ Kontrola pro vás: děleno čtyřmi, krát tři, $15$; děleno pěti, krát dvě, $6$; podruhé $3$ bonbony.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 24 kostek nebo bonbonů. Zítra ať je dítě rozdělí na tři stejné hromádky a řekne, kolik je v jedné. Pak ať vezme dvě hromádky a spočítá je. Pak ať samo zapíše $24 : 3 = 8$ a $8 \\cdot 2 = 16$. Potom zopakujte lekci „Zlomek z čísla“. Kontrola pro vás: v jedné hromádce 8, ve dvou 16."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Kolik je $\\frac{2}{3}$ z $24$? — a) $8$ b) $36$ c) $16$\n\nB) Jana měla $60$ Kč. Třetinu utratila za sešit, pak čtvrtinu zbytku za tužku. Kolik korun stála tužka? — a) $10$ Kč b) $15$ Kč c) $30$ Kč\n\nC) Tom snědl polovinu pizzy, Ema pak polovinu zbytku. Jaká část pizzy zbyla? — a) $0$ b) $\\frac{1}{4}$ c) $\\frac{3}{4}$"
+      }
+    },
+    {
+      "id": "M8-T02-L1-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Tomáš měl $120$ Kč. Šestinu utratil za zmrzlinu, pak dvě pětiny zbytku za časopis. Kolik korun mu zbylo?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $\\frac{1}{6} \\cdot 120 = 20$\n\n2. řádek: $120 - 20 = 100$\n\n3. řádek: $\\frac{2}{5} \\cdot 120 = 48$\n\n4. řádek: $100 - 48 = 52$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$\\frac{1}{6} \\cdot 120 = 20$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$120 - 20 = 100$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$\\frac{2}{5} \\cdot 120 = 48$",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$100 - 48 = 52$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{2}{5} \\cdot 20 = 8$",
+                "spravne": false,
+                "typ_chyby": "zamenil-cast-a-zbytek"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{2}{5} \\cdot 100 = 40$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{5}{2} \\cdot 100 = 250$",
+                "spravne": false,
+                "typ_chyby": "zlomek-z-cisla-obracene"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 60
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 52,
+              "typ_chyby": "z-celku-misto-ze-zbytku"
+            },
+            {
+              "hodnota": 80,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            },
+            {
+              "hodnota": 40,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Jeho řádky jdou po sobě: zmrzlina, zbytek, časopis, co zbylo. Chyba je jedna a řádky za ní jsou spočítané dobře, jen se špatným číslem. Čte se: „dvě pětiny krát sto dvacet“, to je totéž jako dvě pětiny ze sto dvaceti.",
+        "reseni": "Chyba je ve 3. řádku: Petr počítal dvě pětiny z celých $120$ Kč, časopis ale stál dvě pětiny zbytku.\n\n$\\frac{1}{6} \\cdot 120 = 20$ (zmrzlina, šestina z celku)\n\n$120 - 20 = 100$ (zbytek po zmrzlině)\n\n$\\frac{2}{5} \\cdot 100 = 40$ (časopis, dvě pětiny zbytku)\n\n$100 - 40 = 60$ (co Tomášovi zbylo)\n\nDlaždice $\\frac{2}{5} \\cdot 20$ a $\\frac{5}{2} \\cdot 100$ nesedí (první bere cenu zmrzliny místo zbytku, druhá má zlomek obráceně)\n\n**Výsledek:** $60$ Kč",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Tomáš kupoval a co máš zjistit.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky jeden po druhém. U každého mi řekni, co v něm Petr počítá: zmrzlinu, zbytek, nebo časopis?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: z jakých peněz se to počítá? Z celých sto dvaceti korun, nebo z toho, co zbylo?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč časopis nestojí dvě pětiny ze sto dvaceti korun.“",
+        "otocena_role_odpoved": "Protože za zmrzlinu už Tomáš zaplatil a zbylo mu jen sto korun. Dvě pětiny se berou z těch sta, ne ze všech peněz, takže časopis stál čtyřicet korun.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 4. řádek? Zeptejte se: „Odkud je čtyřicet osm?“ (Ze 3. řádku.) Kdo sám počítá z celku, klikne na 1. nebo 2. řádek; ty jsou správně. „Kolik korun zbylo po zmrzlině?“ (Sto.) Výsledek $52$: opíše Petra; $80$: jen vydělí pěti; $40$: cena časopisu."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že u každého řádku hlídalo, z jakých peněz se počítá, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu větu: „Petr má $80$ Kč. Čtvrtinu utratí a pak polovinu zbytku. Tvrdí, že druhý nákup stojí $40$ Kč.“ Zeptejte se: „Má Petr pravdu? Kde se spletl?“ Kontrola pro vás: nemá, polovinu vzal z celých $80$ Kč; zbytek je $60$ Kč, druhý nákup stojí $30$ Kč.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 12 mincí nebo kostek jako koruny. Zítra: „Máš 12 korun. Třetinu utratíš za bonbon, pak čtvrtinu zbytku za žvýkačku.“ Ať dítě mince opravdu odebírá a řekne, kolik co stálo a kolik mu zbylo. Pak ať samo zapíše $12 : 3 = 4$, $12 - 4 = 8$, $8 : 4 = 2$. Potom zopakujte lekci „Zlomek z čísla“. Kontrola pro vás: bonbon 4, žvýkačka 2, zbylo 6 korun."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\nTomáš měl $120$ Kč. Šestinu utratil za zmrzlinu, pak dvě pětiny zbytku za časopis. Kolik korun mu zbylo?\n\na udělal jednu chybu.\n\n1. řádek: $\\frac{1}{6} \\cdot 120 = 20$\n\n2. řádek: $120 - 20 = 100$\n\n3. řádek: $\\frac{2}{5} \\cdot 120 = 48$\n\n4. řádek: $100 - 48 = 52$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $\\frac{2}{5} \\cdot 20 = 8$ b) $\\frac{2}{5} \\cdot 100 = 40$ c) $\\frac{5}{2} \\cdot 100 = 250$\n\nC) Kolik korun Tomášovi opravdu zbylo? ______ Kč"
+      }
+    },
+    {
+      "id": "M8-T02-L1-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Šestimetrové lano jsme rozřezali na tři kusy. Nejdřív jsme uřízli třetinu lana na houpačku, potom tři pětiny zbytku na švihadlo. Poslední kus jsme použili na šňůru na prádlo.\n\nVypočítej, kolik cm lana má šňůra na prádlo.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Který zápis odpovídá švihadlu?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{3}{5}$ ze $600$ cm",
+                "spravne": false,
+                "typ_chyby": "z-celku-misto-ze-zbytku"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{3}{5}$ ze $400$ cm",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{3}{5}$ ze $200$ cm",
+                "spravne": false,
+                "typ_chyby": "zamenil-cast-a-zbytek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: kus na švihadlo",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm"
+          },
+          "spravne": {
+            "hodnota": 240
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 360,
+              "typ_chyby": "z-celku-misto-ze-zbytku"
+            },
+            {
+              "hodnota": 80,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            },
+            {
+              "hodnota": 120,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm"
+          },
+          "spravne": {
+            "hodnota": 160
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 40,
+              "typ_chyby": "z-celku-misto-ze-zbytku"
+            },
+            {
+              "hodnota": 320,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            },
+            {
+              "hodnota": 240,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Podobná úloha bývá v testech jako úloha 1: slovní úloha se dvěma zlomky za sebou. Past je slovo „zbytku“: tři pětiny se neberou z celého lana, ale z toho, co zbylo po houpačce. Délka je zadaná v metrech, výsledek se chce v centimetrech.",
+        "reseni": "$6$ m $= 600$ cm (převod na centimetry)\n\n$600 : 3 = 200$ (houpačka, třetina celého lana)\n\n$600 - 200 = 400$ (zbytek po houpačce)\n\n$\\frac{3}{5} \\cdot 400 = 240$ (švihadlo, tři pětiny zbytku)\n\n$400 - 240 = 160$ (šňůra na prádlo, poslední kus)\n\n$200 + 240 + 160 = 600$ (zkouška, kusy dají celé lano)\n\n**Výsledek:** $160$ cm",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, na co všechno se lano použilo. Kolik kusů vznikne?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Tři pětiny zbytku: zbytek čeho to je? Kolik lana zbude, když se uřízne houpačka?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: šest metrů je šest set centimetrů a třetina z toho je dvě stě. Co spočítáš dál a z jakého čísla?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč švihadlo nejsou tři pětiny z celého lana.“",
+        "otocena_role_odpoved": "Protože když se řeže švihadlo, houpačka už je uříznutá. Zbývají jen čtyři metry a tři pětiny se berou z nich, ne ze šesti metrů.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Mezivýsledek $360$ nebo výsledek $40$: tři pětiny bere z celého lana. Zeptejte se: „Kolik lana zbylo po houpačce?“ (Čtyři metry.) $80$ nebo $320$: vydělí pěti, ale nevynásobí třemi. $120$: bere houpačku místo zbytku. Výsledek $240$: napíše švihadlo místo posledního kusu."
+      },
+      "semafor": {
+        "zelena": "Výborně — hlavní úlohu zvládlo. Pochvalte, že tři pětiny počítalo ze zbytku, ne z celého lana, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu úlohu: „Stuha má $2$ m. Nejdřív odstřihneme desetinu, pak třetinu zbytku. Kolik cm stuhy zbude?“ Ať nahlas řekne, kolik je desetina, kolik zbylo, kolik je třetina zbytku a kolik zbude nakonec. Kontrola pro vás: $20$ cm, $180$ cm, $60$ cm, zbude $120$ cm.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: provázek, pravítko a nůžky. Zítra ať dítě odměří 30 cm provázku, třetinu ustřihne a změří ji. Ze zbytku ať ustřihne čtvrtinu a změří všechny kusy. Pak ať samo zapíše $30 : 3 = 10$, $30 - 10 = 20$, $20 : 4 = 5$. Potom zopakujte lekci „Zlomek z čísla“. Kontrola pro vás: kusy mají 10 cm a 5 cm, zbude 15 cm."
+      },
+      "tisk": {
+        "zadani": "Šestimetrové lano jsme rozřezali na tři kusy. Nejdřív jsme uřízli třetinu lana na houpačku, potom tři pětiny zbytku na švihadlo. Poslední kus jsme použili na šňůru na prádlo.\n\nVypočítej, kolik cm lana má šňůra na prádlo.\n\nA) Který zápis odpovídá švihadlu? Zakroužkuj: a) $\\frac{3}{5}$ ze $600$ cm b) $\\frac{3}{5}$ ze $400$ cm c) $\\frac{3}{5}$ ze $200$ cm\n\nB) Kus na švihadlo: ______ cm\n\nC) Šňůra na prádlo: ______ cm"
+      }
+    },
+    {
+      "id": "M8-T02-L1-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Kniha má $240$ stran. Klára přečetla první den čtvrtinu knihy a druhý den dvě pětiny zbytku.\n\nKolik stran přečetla Klára druhý den?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "stran"
+          },
+          "spravne": {
+            "hodnota": 72
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 96,
+              "typ_chyby": "z-celku-misto-ze-zbytku"
+            },
+            {
+              "hodnota": 36,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            },
+            {
+              "hodnota": 108,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Úloha se ptá na druhý den, ne na to, kolik stran zbývá přečíst.",
+        "reseni": "$240 : 4 = 60$ (první den, čtvrtina knihy)\n\n$240 - 60 = 180$ (zbytek po prvním dni)\n\n$\\frac{2}{5} \\cdot 180 = 72$ (druhý den, dvě pětiny zbytku)\n\n**Výsledek:** $72$ stran",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co Klára četla a na co se úloha ptá.“",
+          "„Co spočítáš jako první? Proč zrovna tohle?“",
+          "„Tady máš začátek: čtvrtina ze dvou set čtyřiceti je šedesát. Kolik stran ještě zbývá? A z čeho vezmeš dvě pětiny?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč druhý den nepočítáš dvě pětiny z celé knihy.“",
+        "otocena_role_odpoved": "Protože první den už Klára kus knihy přečetla. Dvě pětiny se berou jen ze stran, které jí zbyly, tedy ze sto osmdesáti.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nepíše nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: $96$: dvě pětiny bere z celé knihy. „Kolik stran zbylo po prvním dni?“ (Sto osmdesát.) $36$: vydělí pěti, ale nevynásobí dvěma. $108$: napíše, kolik zbývá přečíst, ne druhý den. Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — zlomek ze zbytku zvládá samo. Pochvalte, že si nejdřív spočítalo zbytek. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu úlohu: „Ve třídě je $30$ dětí. Třetina jede na hory, tři čtvrtiny zbytku k moři. Kolik dětí jede k moři?“ Ať nahlas řekne, kolik jede na hory, kolik zbylo a kolik jede k moři. Kontrola pro vás: na hory $10$, zbylo $20$, k moři $15$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 20 kostek nebo bonbonů. Zítra ať dítě čtvrtinu odsune stranou. Zbytek ať rozdělí na pět stejných hromádek a dvě z nich odsune. Pak ať samo zapíše $20 : 4 = 5$, $20 - 5 = 15$, $15 : 5 \\cdot 2 = 6$. Potom zopakujte lekci „Zlomek z čísla“. Kontrola pro vás: nejdřív odsune 5, pak 6, zbude 9."
+      },
+      "tisk": {
+        "zadani": "Kniha má $240$ stran. Klára přečetla první den čtvrtinu knihy a druhý den dvě pětiny zbytku.\n\nKolik stran přečetla Klára druhý den?\n\nVýsledek: ______ stran"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "SYNTETICKÁ testovací lekce (testy/data/osma) převedená ze Spolu — jen pro testy a QA, není to obsah Spolu 8.",
+    "zkontroloval": "vedouci",
+    "datum": "2026-09-25"
+  }
+}

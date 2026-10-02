@@ -1,0 +1,509 @@
+{
+  "id": "M8-T01-L2",
+  "faze": "osma",
+  "tyden": 1,
+  "poradi": 2,
+  "tema": "Mocnina záporného čísla, dosazení",
+  "kapitola": "cela-cisla",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě rozliší $(-5)^2$ a $-5^2$ a dosadí číslo do výrazu se závorkou.",
+  "uvod_pro_rodice": "Dnes jde o to, kam patří minus u mocniny a jak dosadit záporné číslo za písmeno.",
+  "uvod_pravidla": [
+    {
+      "znak": "$(-3)$",
+      "text": "dosazuje se do závorky"
+    },
+    {
+      "znak": "3 · a²",
+      "text": "nejdřív mocnina"
+    },
+    {
+      "znak": "(−5)²",
+      "text": "vyjde plus"
+    },
+    {
+      "znak": "−5²",
+      "text": "vyjde minus"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T01-L2-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď. Hlídej, **kde je závorka**.\n\nA) $(-6)^2$\n\nB) $-6^2$\n\nC) Který zápis vznikne, když do $a^2$ dosadíš $a = -4$?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $(-6)^2$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$-36$",
+                "spravne": false,
+                "typ_chyby": "zaporna-mocnina-v-zavorce"
+              },
+              {
+                "id": "b",
+                "text": "$36$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$-12$",
+                "spravne": false,
+                "typ_chyby": "mocnina-jako-dvojnasobek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $-6^2$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$36$",
+                "spravne": false,
+                "typ_chyby": "mocnina-zaporneho-bez-zavorky"
+              },
+              {
+                "id": "b",
+                "text": "$-12$",
+                "spravne": false,
+                "typ_chyby": "mocnina-jako-dvojnasobek"
+              },
+              {
+                "id": "c",
+                "text": "$-36$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: $a^2$ pro $a = -4$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$(-4)^2$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$-4^2$",
+                "spravne": false,
+                "typ_chyby": "dosadil-zaporne-bez-zavorky"
+              },
+              {
+                "id": "c",
+                "text": "$(-4) \\cdot 2$",
+                "spravne": false,
+                "typ_chyby": "mocnina-jako-dvojnasobek"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě tu nic dlouhého nepočítá, jen rozhoduje, kam patří minus. Příklady A a B vypadají skoro stejně, liší se jen závorkou, a právě o ni jde. U C se nepočítá vůbec: dítě vybírá, jak se záporné číslo správně zapíše místo písmene. Čte se: A „mínus šest v závorce, na druhou“, B „mínus, šest na druhou“. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $(-6)^2$\n\n$(-6)^2 = (-6) \\cdot (-6) = 36$ (minus je v závorce, umocní se taky)\n\n#### B) $-6^2$\n\n$-6^2 = -(6 \\cdot 6) = -36$ (bez závorky se umocní jen šestka)\n\n#### C) $a^2$ pro $a = -4$\n\n$(-4)^2$ (záporné číslo se dosazuje do závorky)\n\n**Výsledek:** A) $36$, B) $-36$, C) $(-4)^2$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Na druhou znamená krát samo sebe. Co všechno je v té závorce? Co tedy vynásobíš samo se sebou?“"
+          },
+          {
+            "k": "B",
+            "text": "„Tady závorka není. Na co přesně ukazuje ta malá dvojka: jen na šestku, nebo i na minus?“"
+          },
+          {
+            "k": "C",
+            "text": "„Za písmeno dáváš celé číslo mínus čtyři. Jak to zapíšeš, aby se na druhou umocnilo i to minus?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč mínus šest v závorce na druhou a mínus šest na druhou bez závorky nevyjdou stejně.“",
+        "otocena_role_odpoved": "U prvního je minus v závorce, takže se násobí mínus šest krát mínus šest a vyjde plus třicet šest. U druhého se umocní jen šestka a minus zůstane před výsledkem, takže mínus třicet šest.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A vybere $-36$ (minus nechá), u B $36$ (umocní i minus). Zeptejte se: „Na co ukazuje ta malá dvojka? Je minus v závorce, nebo venku?“ U C vybere $-4^2$, zapomene závorku: „Co se pak umocní?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — závorku u mocniny hlídá. Pochvalte, že se dítě podívalo, kde je minus, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Ukažte dítěti na telefonu jeden příklad po druhém: $(-3)^2$, pak $-3^2$, pak $(-10)^2$. U každého nejdřív řekne, jestli vyjde plus, nebo minus a proč, pak výsledek. Kontrola pro vás: $9$, $-9$, $100$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: obálku, nůžky a papírek s nápisem −3. Zítra: obálka je závorka, obsah se umocní celý. Ať dítě vloží −3 do obálky a řekne výsledek na druhou. Pak ať minus odstřihne, položí ho před obálku a řekne výsledek. Nakonec ať samo zapíše $(-3)^2 = 9$ a $-3^2 = -9$. Potom zopakujte lekci „Mocnina záporného čísla, dosazení“. Kontrola pro vás: v obálce 9, s minusem venku −9."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď. Hlídej, kde je závorka.\n\nA) $(-6)^2$ — a) $-36$ b) $36$ c) $-12$\n\nB) $-6^2$ — a) $36$ b) $-12$ c) $-36$\n\nC) Který zápis vznikne, když do $a^2$ dosadíš $a = -4$? — a) $(-4)^2$ b) $-4^2$ c) $(-4) \\cdot 2$"
+      }
+    },
+    {
+      "id": "M8-T01-L2-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr počítal hodnotu výrazu pro $x = -5$\n\n$$x^2 - 3x$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $= (-5)^2 - 3 \\cdot (-5)$\n\n2. řádek: $= -25 - 3 \\cdot (-5)$\n\n3. řádek: $= -25 + 15$\n\n4. řádek: $= -10$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$= (-5)^2 - 3 \\cdot (-5)$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$= -25 - 3 \\cdot (-5)$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$= -25 + 15$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$= -10$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$= -5^2 - 3 \\cdot (-5)$",
+                "spravne": false,
+                "typ_chyby": "dosadil-zaporne-bez-zavorky"
+              },
+              {
+                "id": "b",
+                "text": "$= 25 - 3 \\cdot (-5)$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$= -10 - 3 \\cdot (-5)$",
+                "spravne": false,
+                "typ_chyby": "mocnina-jako-dvojnasobek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 40
+          },
+          "zname_chyby": [
+            {
+              "hodnota": -10,
+              "typ_chyby": "zaporna-mocnina-v-zavorce"
+            },
+            {
+              "hodnota": 10,
+              "typ_chyby": "minus-krat-minus"
+            },
+            {
+              "hodnota": 5,
+              "typ_chyby": "mocnina-jako-dvojnasobek"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Hledat cizí chybu je snazší a bezpečnější než přiznat vlastní. Petr dosadil správně, do závorky, ale pak se spletl u znaménka. Řádky za chybou jsou spočítané dobře, jen pokračují se špatným číslem.",
+        "reseni": "Chyba je ve 2. řádku: Petr spočítal $(-5)^2$ jako $-25$, správně je $25$.\n\n$x^2 - 3x$ (zadání, za písmeno se dosadí mínus pět)\n\n$= (-5)^2 - 3 \\cdot (-5)$ (dosazení do závorky)\n\n$= 25 - 3 \\cdot (-5)$ (mínus pět krát mínus pět, tady se Petr spletl)\n\n$= 25 + 15$ (tři krát mínus pět je mínus patnáct, odečíst ho znamená přičíst)\n\n$= 40$ (sčítání)\n\n**Výsledek:** $40$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co máš v téhle úloze udělat.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky jeden po druhém. U každého mi řekni, co v něm Petr spočítal.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Projdi řádky znovu a u každého ověř: mocninu si napiš jako násobení, u každého krát a mínus zkontroluj znaménko. Kde to nesedí?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč mínus pět v závorce na druhou nemůže vyjít záporně.“",
+        "otocena_role_odpoved": "Na druhou znamená krát samo sebe, takže mínus pět krát mínus pět. Minus krát minus dá plus, proto vyjde plus dvacet pět, ne mínus dvacet pět.",
+        "typicka_chyba": "Dítě ukáže na 3. řádek, protože samo počítá mínus tři krát mínus pět jako mínus patnáct. 3. řádek je ale správně. Zeptejte se: „Minus krát minus dá co?“ Nebo ukáže až na 4. řádek: „Ze kterého řádku to číslo vzniklo?“ Když chybu nevidí vůbec, přečtěte třetí otázku."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte hlavně to, jak vysvětlilo, proč vyjde plus, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu větu: „Petr tvrdí, že $(-4)^2 = -16$.“ Zeptejte se: „Má Petr pravdu? Kde se spletl?“ Pak totéž s větou „Petr tvrdí, že $-4^2 = 16$.“ Kontrola pro vás: v obou případech nemá pravdu, správně je $16$ a $-16$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše pod sebe $2 \\cdot (-5)$, $1 \\cdot (-5)$, $0 \\cdot (-5)$ s výsledky a řekne, o kolik výsledek pokaždé roste. Pak ať pokračuje s $(-1) \\cdot (-5)$ až $(-5) \\cdot (-5)$ a zapíše $(-5)^2 = 25$. Potom zopakujte lekci „Mocnina záporného čísla, dosazení“. Kontrola pro vás: $-10$, $-5$, $0$, pak $5$, $10$, $15$, $20$, $25$; roste o pět."
+      },
+      "tisk": {
+        "zadani": "Petr počítal hodnotu výrazu pro $x = -5$\n\n$$x^2 - 3x$$\n\na udělal jednu chybu.\n\n1. řádek: $= (-5)^2 - 3 \\cdot (-5)$\n\n2. řádek: $= -25 - 3 \\cdot (-5)$\n\n3. řádek: $= -25 + 15$\n\n4. řádek: $= -10$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $= -5^2 - 3 \\cdot (-5)$ b) $= 25 - 3 \\cdot (-5)$ c) $= -10 - 3 \\cdot (-5)$\n\nC) Spočítej správný výsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T01-L2-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Vypočítej hodnotu výrazu pro $b = 5$:\n\n$$16b^2 - 8b + 1$$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na početní operace v pořadí, v jakém je počítáš.",
+          "vstup": {
+            "typ": "poradi",
+            "vyraz": "16 \\op{o1}{\\cdot} 5^{\\op{o2}{2}} \\op{o3}{-} 8 \\op{o4}{\\cdot} 5 \\op{o5}{+} 1",
+            "operace": [
+              {
+                "id": "o1",
+                "popis": "násobení šestnácti"
+              },
+              {
+                "id": "o2",
+                "popis": "mocnina"
+              },
+              {
+                "id": "o3",
+                "popis": "odčítání"
+              },
+              {
+                "id": "o4",
+                "popis": "násobení osmi"
+              },
+              {
+                "id": "o5",
+                "popis": "sčítání"
+              }
+            ]
+          },
+          "spravne": {
+            "poradi": [
+              [
+                "o2",
+                "o1",
+                "o4",
+                "o3",
+                "o5"
+              ],
+              [
+                "o2",
+                "o4",
+                "o1",
+                "o3",
+                "o5"
+              ],
+              [
+                "o4",
+                "o2",
+                "o1",
+                "o3",
+                "o5"
+              ]
+            ]
+          },
+          "zname_chyby": [
+            {
+              "poradi": [
+                "o1",
+                "o2",
+                "o4",
+                "o3",
+                "o5"
+              ],
+              "typ_chyby": "nasobil-pred-mocninou"
+            },
+            {
+              "poradi": [
+                "o2",
+                "o1",
+                "o3",
+                "o4",
+                "o5"
+              ],
+              "typ_chyby": "scital-pred-nasobenim"
+            },
+            {
+              "poradi": [
+                "o2",
+                "o1",
+                "o4",
+                "o5",
+                "o3"
+              ],
+              "typ_chyby": "neslo-zleva"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: $16b^2$",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 400
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 6400,
+              "typ_chyby": "nasobil-pred-mocninou"
+            },
+            {
+              "hodnota": 160,
+              "typ_chyby": "mocnina-jako-dvojnasobek"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 361
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 6361,
+              "typ_chyby": "nasobil-pred-mocninou"
+            },
+            {
+              "hodnota": 121,
+              "typ_chyby": "mocnina-jako-dvojnasobek"
+            },
+            {
+              "hodnota": 359,
+              "typ_chyby": "neslo-zleva"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Takhle vypadá úloha 3.1 v testu: za písmeno se dosadí číslo a výraz se spočítá. Zápis $16b^2$ znamená šestnáct krát bé krát bé, mocnina patří jen k písmenu, ne k šestnáctce. Dítě nejdřív klikáním ukáže, v jakém pořadí bude počítat, pak teprve počítá.",
+        "reseni": "Pořadí: mocnina před násobením šestnácti, obě násobení před odčítáním (násobení osmi může přijít kdykoli dřív), pak odčítání, nakonec sčítání.\n\n$16b^2 - 8b + 1$ (zadání, za písmeno se dosadí pět)\n\n$= 16 \\cdot 5^2 - 8 \\cdot 5 + 1$ (dosazení)\n\n$= 16 \\cdot 25 - 8 \\cdot 5 + 1$ (mocnina)\n\n$= 400 - 40 + 1$ (obě násobení)\n\n$= 360 + 1$ (odčítání, jde se zleva)\n\n$= 361$ (sčítání)\n\n**Výsledek:** $361$",
+        "otazky": [
+          {
+            "k": "Krok 1",
+            "text": "„Přečti mi výraz nahlas, s pětkou místo písmene. Jaké operace v něm vidíš?“"
+          },
+          {
+            "k": "Krok 1, když nesedí",
+            "text": "„Pořadí zatím nesedí. Ke kterému číslu patří malá dvojka? A co má přednost: krát, nebo mínus a plus?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: pět na druhou je pět krát pět. Co s tím výsledkem uděláš potom? A co přijde po obou násobeních?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč se u šestnácti krát pět na druhou nejdřív umocňuje a až potom násobí.“",
+        "otocena_role_odpoved": "Protože mocnina má přednost před násobením a patří jen k pětce. Nejdřív pět krát pět je dvacet pět a teprve to se násobí šestnácti.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Když pořadí nesedí, přečtěte druhou otázku. V mezivýsledku napíše $6400$: nejdřív násobilo. „Ke kterému číslu patří ta malá dvojka?“ Ve výsledku $359$: odečetlo čtyřicet i jedničku najednou. „Mínus a plus vedle sebe se počítají zleva. Co je vlevo?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — dosazení i pořadí sedí. Pochvalte, že si dítě nejdřív ukázalo pořadí a teprve pak počítalo, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu výraz $4c^2 - 2c + 3$ pro $c = 3$. Ať nahlas řekne, co spočítá první, a pak celý výraz spočítá na papír. Kontrola pro vás: první je tři na druhou, výsledek je $33$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 18 kostek. Zítra ať dítě postaví čtverec 3 krát 3, pak ještě jeden stejný, a kostky spočítá. Pak ať samo zapíše $2 \\cdot 3^2 = 2 \\cdot 9 = 18$ a řekne, proč to není $6^2$. Potom zopakujte lekci „Mocnina záporného čísla, dosazení“. Kontrola pro vás: 18 kostek; $6^2 = 36$ by byl jeden velký čtverec 6 krát 6."
+      },
+      "tisk": {
+        "zadani": "Vypočítej hodnotu výrazu pro $b = 5$:\n\n$$16b^2 - 8b + 1$$\n\nA) Po dosazení vznikne výraz\n\n$$16 \\op{o1}{\\cdot} 5^{\\op{o2}{2}} \\op{o3}{-} 8 \\op{o4}{\\cdot} 5 \\op{o5}{+} 1$$\n\nB) Mezivýsledek $16b^2$: ______\n\nC) Výsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T01-L2-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Vypočítej hodnotu výrazu pro $a = -3$:\n\n$$3a^2 - 5a + 2$$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 44
+          },
+          "zname_chyby": [
+            {
+              "hodnota": -10,
+              "typ_chyby": "dosadil-zaporne-bez-zavorky"
+            },
+            {
+              "hodnota": 14,
+              "typ_chyby": "minus-krat-minus"
+            },
+            {
+              "hodnota": 98,
+              "typ_chyby": "nasobil-pred-mocninou"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Je to stejný typ jako úloha z testu, jen se dosazuje záporné číslo. Hlídá se tu závorka, mocnina i znaménka najednou.",
+        "reseni": "$3a^2 - 5a + 2$ (zadání, za písmeno se dosadí mínus tři)\n\n$= 3 \\cdot (-3)^2 - 5 \\cdot (-3) + 2$ (dosazení do závorek)\n\n$= 3 \\cdot 9 - 5 \\cdot (-3) + 2$ (mocnina: minus krát minus dá plus)\n\n$= 27 - (-15) + 2$ (obě násobení)\n\n$= 27 + 15 + 2$ (odečíst záporné číslo znamená přičíst)\n\n$= 44$ (sčítání)\n\n**Výsledek:** $44$",
+        "otazky": [
+          "„Přečti mi výraz nahlas. Co dosadíš za písmeno a jak to zapíšeš?“",
+          "„Co spočítáš jako první? Jaké znaménko tam vyjde a proč?“",
+          "„Začátek: nejdřív mínus tři v závorce na druhou, napiš to jako násobení. Pak tři krát to, co vyjde. Jaké znaménko vyjde u mínus pět krát mínus tři?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč se mínus tři dosazuje do závorky. Co by se stalo bez ní?“",
+        "otocena_role_odpoved": "Bez závorky by se na druhou umocnila jen trojka a minus by zůstal venku, vyšlo by mínus devět. Se závorkou se násobí mínus tři krát mínus tři a vyjde plus devět.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nepíše nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: $-10$: dosadilo bez závorky. $14$: u mínus pět krát mínus tři nechalo minus. $98$: nejdřív násobilo, pak umocnilo. Zeptejte se: „Projdi to se mnou krok po kroku. Kde to přestalo sedět?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — dosazení záporného čísla zvládá samo. Pochvalte, že hlídalo závorku i znaménka. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu výraz $2x^2 - 4x + 1$ pro $x = -2$. Ať ho řeší po krocích na papír a nahlas říká, kam dá závorku a jaké znaménko vyjde. Kontrola pro vás: $17$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše výraz $a^2 + a$, ale místo každého písmene nakreslí prázdnou závorku. Do obou závorek vepíše $-3$ a spočítá. Pak totéž s $-2$. Potom zopakujte lekci „Mocnina záporného čísla, dosazení“. Kontrola pro vás: s $-3$ vyjde $9 - 3 = 6$, s $-2$ vyjde $4 - 2 = 2$."
+      },
+      "tisk": {
+        "zadani": "Vypočítej hodnotu výrazu pro $a = -3$:\n\n$$3a^2 - 5a + 2$$\n\nVýsledek: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "SYNTETICKÁ testovací lekce (testy/data/osma) převedená ze Spolu — jen pro testy a QA, není to obsah Spolu 8.",
+    "zkontroloval": "vedouci",
+    "datum": "2026-09-25"
+  }
+}

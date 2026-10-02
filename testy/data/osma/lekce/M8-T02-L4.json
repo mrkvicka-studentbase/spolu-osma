@@ -1,0 +1,442 @@
+{
+  "id": "M8-T02-L4",
+  "faze": "osma",
+  "tyden": 2,
+  "poradi": 4,
+  "tema": "O třetinu víc, o třetinu míň",
+  "kapitola": "zlomky",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě ví, že „o třetinu víc než X“ se počítá z X, ne z výsledku.",
+  "uvod_pro_rodice": "Dnes jde o věty „o třetinu víc než…“ a „o třetinu míň než…“: třetina se vždy počítá z čísla za slovem „než“.",
+  "uvod_pravidla": [
+    {
+      "znak": "$60 : 3 = 20$",
+      "text": "třetina ze šedesáti"
+    },
+    {
+      "znak": "$60 + 20 = 80$",
+      "text": "o třetinu víc"
+    },
+    {
+      "znak": "$60 - 20 = 40$",
+      "text": "o třetinu míň"
+    },
+    {
+      "znak": "$80 = 4 \\cdot 20$",
+      "text": "osmdesát jsou čtyři třetiny"
+    },
+    {
+      "znak": "$3 \\cdot 20 = 60$",
+      "text": "šedesát jsou tři třetiny"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T02-L4-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Které číslo je o třetinu **větší** než $60$ a které o třetinu **menší** než $60$?\n\nB) Tomáš má $12$ kuliček. To je o třetinu víc, než má Adam. Kolik kuliček má Adam?\n\nC) Jana má $12$ bonbonů. To je o třetinu míň, než má Eva. Kolik bonbonů má Eva?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: o třetinu víc a míň",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "víc: $20$, míň: $20$",
+                "spravne": false,
+                "typ_chyby": "jen-cast-bez-celku"
+              },
+              {
+                "id": "b",
+                "text": "víc: $80$, míň: $20$",
+                "spravne": false,
+                "typ_chyby": "o-tretinu-min-jako-tretina"
+              },
+              {
+                "id": "c",
+                "text": "víc: $80$, míň: $40$",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "víc: $180$, míň: $20$",
+                "spravne": false,
+                "typ_chyby": "o-tretinu-jako-trikrat"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: kolik kuliček má Adam?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$8$",
+                "spravne": false,
+                "typ_chyby": "o-tretinu-z-vysledku"
+              },
+              {
+                "id": "b",
+                "text": "$9$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$4$",
+                "spravne": false,
+                "typ_chyby": "jen-cast-bez-celku"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: kolik bonbonů má Eva?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$18$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$16$",
+                "spravne": false,
+                "typ_chyby": "o-tretinu-z-vysledku"
+              },
+              {
+                "id": "c",
+                "text": "$36$",
+                "spravne": false,
+                "typ_chyby": "o-tretinu-min-jako-tretina"
+              },
+              {
+                "id": "d",
+                "text": "$4$",
+                "spravne": false,
+                "typ_chyby": "jen-cast-bez-celku"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá. U A se k šedesáti jeho třetina přičte, nebo se od něj odečte. U B a C je past: dvanáct není číslo, ze kterého se třetina počítá. Počítá se z čísla za slovem „než“, a to dítě teprve hledá. Každou nabídku může vyzkoušet. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) O třetinu víc a míň než $60$\n\n$60 : 3 = 20$ (třetina ze šedesáti)\n\n$60 + 20 = 80$ (o třetinu víc)\n\n$60 - 20 = 40$ (o třetinu míň)\n\n#### B) Kolik kuliček má Adam\n\n$12 : 4 = 3$ (Adam má tři díly, Tomáš o jeden díl víc, tedy čtyři; jeden díl jsou tři kuličky)\n\n$3 \\cdot 3 = 9$ (Adamovy tři díly)\n\n$9 + 3 = 12$ (zkouška: třetina z devíti jsou tři)\n\n#### C) Kolik bonbonů má Eva\n\n$12 : 2 = 6$ (Eva má tři díly, Jana o jeden díl míň, tedy dva; jeden díl je šest bonbonů)\n\n$3 \\cdot 6 = 18$ (Eviny tři díly)\n\n$18 - 6 = 12$ (zkouška: třetina z osmnácti je šest)\n\n**Výsledek:** A) víc $80$, míň $40$; B) $9$; C) $18$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Kolik je třetina ze šedesáti? Co s ní uděláš, když má být číslo o třetinu větší? A když menší?“"
+          },
+          {
+            "k": "B",
+            "text": "„O třetinu víc než kdo? Zkus každou nabídku: přidej k ní její třetinu. Která dá dvanáct?“"
+          },
+          {
+            "k": "C",
+            "text": "„O třetinu míň než kdo? Zkus každou nabídku: uber jí její třetinu. Která dá dvanáct?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč Adam nemá osm kuliček, když třetina z dvanácti jsou čtyři.“",
+        "otocena_role_odpoved": "Třetina se počítá z Adamových kuliček, ne z Tomášových. Když má Adam devět, jeho třetina jsou tři a devět plus tři je přesně dvanáct.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U B vybere $8$, u C $16$: třetinu bere z dvanácti. Zeptejte se: „Kdo je ve větě za slovem ‚než‘?“ (Adam, Eva.) Čtyřka je jen třetina. U A dvojice s $20$ nebo $180$, u C $36$: plete si „o třetinu“ s „třetinou“ nebo „třikrát“."
+      },
+      "semafor": {
+        "zelena": "Výborně — víc i míň sedí. Pochvalte, že hledalo, z čeho se třetina počítá, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Ukažte dítěti na telefonu jednu otázku po druhé: „Kolik je o třetinu víc než $30$?“, „Kolik je o třetinu míň než $30$?“, „$20$ je o třetinu víc než kolik?“ U každé řekne výsledek a z čeho počítá třetinu. Kontrola pro vás: $40$ a $20$ (z třiceti), $15$ (z patnácti, třetina je pět).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 18 kostek lega. Zítra ať dítě postaví věž ze 6 kostek a řekne, kolik kostek je třetina věže. Pak ať vedle postaví věž o třetinu vyšší a věž o třetinu nižší. Pak ať samo zapíše $6 + 2 = 8$ a $6 - 2 = 4$. Potom zopakujte lekci „O třetinu víc, o třetinu míň“. Kontrola pro vás: třetina jsou 2 kostky, vyšší věž má 8, nižší 4."
+      },
+      "tisk": {
+        "zadani": "A) Které číslo je o třetinu větší než $60$ a které o třetinu menší než $60$? Zakroužkuj: a) víc $20$, míň $20$ b) víc $80$, míň $20$ c) víc $80$, míň $40$ d) víc $180$, míň $20$\n\nB) Tomáš má $12$ kuliček. To je o třetinu víc, než má Adam. Kolik kuliček má Adam? Zakroužkuj: a) $8$ b) $9$ c) $4$\n\nC) Jana má $12$ bonbonů. To je o třetinu míň, než má Eva. Kolik bonbonů má Eva? Zakroužkuj: a) $18$ b) $16$ c) $36$ d) $4$"
+      }
+    },
+    {
+      "id": "M8-T02-L4-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Tomáš má $36$ kuliček. Adam má o třetinu méně kuliček než Tomáš. Adam má ale o třetinu více kuliček než Cyril. Kolik kuliček mají všichni tři dohromady?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: Adam: $36 - 12 = 24$\n\n2. řádek: Cyril: $24 - 8 = 16$\n\n3. řádek: dohromady: $36 + 24 + 16 = 76$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "Adam: $36 - 12 = 24$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "Cyril: $24 - 8 = 16$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "dohromady: $36 + 24 + 16 = 76$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Cyril: $24 : 3 \\cdot 2 = 16$",
+                "spravne": false,
+                "typ_chyby": "o-tretinu-z-vysledku"
+              },
+              {
+                "id": "b",
+                "text": "Cyril: $24 : 4 \\cdot 3 = 18$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "Cyril: $24 : 3 \\cdot 4 = 32$",
+                "spravne": false,
+                "typ_chyby": "zlomek-z-cisla-obracene"
+              },
+              {
+                "id": "d",
+                "text": "Cyril: $24 : 3 = 8$",
+                "spravne": false,
+                "typ_chyby": "jen-cast-bez-celku"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 78
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 76,
+              "typ_chyby": "o-tretinu-z-vysledku"
+            },
+            {
+              "hodnota": 68,
+              "typ_chyby": "jen-cast-bez-celku"
+            },
+            {
+              "hodnota": 92,
+              "typ_chyby": "zlomek-z-cisla-obracene"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. V úloze jsou dvě podobné věty, ale počítají se jinak. U Adama se třetina bere z Tomášových kuliček, protože Tomáš je za slovem „než“ a jeho počet známe. U Cyrila je za „než“ Cyril a jeho počet teprve hledáme. Řádky za chybou jsou spočítané dobře, jen se špatným číslem.",
+        "reseni": "Chyba je ve 2. řádku: Petr vzal třetinu z Adamových kuliček. Adam má ale o třetinu víc než Cyril, takže třetina se počítá z Cyrilových.\n\nAdam: $36 - 12 = 24$ (třetina z Tomášových třiceti šesti je dvanáct)\n\n$24 : 4 = 6$ (Cyril má tři díly, Adam o jeden díl víc, tedy čtyři; jeden díl je šest)\n\nCyril: $3 \\cdot 6 = 18$ (Cyrilovy tři díly)\n\n$18 + 6 = 24$ (zkouška: třetina z osmnácti je šest)\n\nDohromady: $36 + 24 + 18 = 78$ (sečtení všech tří)\n\n**Výsledek:** $78$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co měl Petr zjistit. Kdo má kuliček nejvíc a kdo nejmíň?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každé věty v úloze mi ukaž slovo ‚než‘. Kdo je za ním? Z čího počtu se má brát třetina?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého Petrova řádku se zeptej: bere Petr třetinu z počtu toho, kdo je ve větě za ‚než‘? A zná ten počet už?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč u Cyrila nemůžu vzít třetinu z Adamových kuliček.“",
+        "otocena_role_odpoved": "Věta říká, že Adam má o třetinu víc než Cyril. Třetina se tedy počítá z Cyrilových kuliček. Adamových dvacet čtyři jsou čtyři Cyrilovy třetiny, jedna je šest, takže Cyril má osmnáct.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. 1. řádek je správně, za ‚než‘ je Tomáš. 3. řádek je jen důsledek. $76$ nebo oprava $16$: počítá jako Petr. Zeptejte se: „Adam má o třetinu víc než kdo?“ (Než Cyril.) $8$ a $68$: jen třetina. $32$ a $92$: Cyril víc než Adam."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že u každé věty hledalo slovo „než“, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu větu: „Petr tvrdí: Eva má $20$ bodů, to je o třetinu víc než Jana, takže Jana má $15$.“ Pak: „Petr tvrdí: Jana má $24$ bodů, to je o třetinu víc než Eva, takže Eva má $16$.“ U každé se zeptejte: „Má Petr pravdu?“ Kontrola pro vás: poprvé ano, podruhé ne, Eva má $18$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 24 kostek lega. Zítra: „Adam má 24 kostek, to je o třetinu víc než Cyril.“ Ať dítě rozdělí Adamovy kostky na 4 stejné hromádky a 3 z nich dá Cyrilovi. Zeptejte se: „Proč zrovna čtyři hromádky?“ Pak ať samo zapíše $24 : 4 \\cdot 3 = 18$. Potom zopakujte lekci „O třetinu víc, o třetinu míň“. Kontrola pro vás: Cyril má tři hromádky po šesti, Adam o jednu víc; Cyril má 18."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\n*Tomáš má $36$ kuliček. Adam má o třetinu méně kuliček než Tomáš. Adam má ale o třetinu více kuliček než Cyril. Kolik kuliček mají všichni tři dohromady?*\n\na udělal jednu chybu.\n\n1. řádek: Adam: $36 - 12 = 24$\n\n2. řádek: Cyril: $24 - 8 = 16$\n\n3. řádek: dohromady: $36 + 24 + 16 = 76$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) Cyril: $24 : 3 \\cdot 2 = 16$ b) Cyril: $24 : 4 \\cdot 3 = 18$ c) Cyril: $24 : 3 \\cdot 4 = 32$ d) Cyril: $24 : 3 = 8$\n\nC) Spočítej správný výsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T02-L4-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Do většího akvária se vejde o třetinu víc vody než do menšího akvária. Větší akvárium pojme $240$ litrů.\n\nKolik litrů vody se vejde do menšího akvária?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Vyber, co platí",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Větší má $\\frac{4}{3}$ objemu menšího.",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "Menší má $\\frac{2}{3}$ objemu většího.",
+                "spravne": false,
+                "typ_chyby": "o-tretinu-z-vysledku"
+              },
+              {
+                "id": "c",
+                "text": "Větší má trojnásobek objemu menšího.",
+                "spravne": false,
+                "typ_chyby": "o-tretinu-jako-trikrat"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "l"
+          },
+          "spravne": {
+            "hodnota": 180
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 160,
+              "typ_chyby": "o-tretinu-z-vysledku"
+            },
+            {
+              "hodnota": 80,
+              "typ_chyby": "jen-cast-bez-celku"
+            },
+            {
+              "hodnota": 320,
+              "typ_chyby": "zlomek-z-cisla-obracene"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Takhle vypadá hlavní úloha. Past: $240$ litrů má větší akvárium, třetina se ale počítá z menšího, to je za slovem „než“. Pomáhají díly: menší akvárium jsou tři díly, větší o jeden díl víc, tedy čtyři. Čte se: $\\frac{4}{3}$ „čtyři třetiny“, $\\frac{2}{3}$ „dvě třetiny“.",
+        "reseni": "Menší: $3$ díly, větší: $3 + 1 = 4$ díly (o třetinu víc znamená o jeden díl menšího víc)\n\n$240 : 4 = 60$ (jeden díl)\n\n$3 \\cdot 60 = 180$ (menší akvárium má tři díly)\n\n$180 + 60 = 240$ (zkouška: třetina ze sto osmdesáti je šedesát)\n\n**Výsledek:** $180$ litrů",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co o akváriích víš. Na které akvárium se ptají?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Najdi v zadání slovo ‚než‘. Z objemu kterého akvária se počítá ta třetina?“"
+          },
+          {
+            "k": "Krok 1 a výsledek",
+            "text": "„Tady máš začátek: menší akvárium si rozděl na tři stejné díly. Kolik takových dílů má větší akvárium?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč do menšího akvária nejde sto šedesát litrů, když třetina z dvou set čtyřiceti je osmdesát.“",
+        "otocena_role_odpoved": "Třetina se počítá z menšího akvária, ne z většího. Menší jsou tři díly, větší čtyři díly. Jeden díl je šedesát litrů, takže menší má sto osmdesát.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. $160$ (v kroku 1 $\\frac{2}{3}$): třetinu vzalo z $240$. Zeptejte se: „O třetinu víc než které akvárium?“ (Než menší.) $80$ (v kroku 1 trojnásobek): je to jen třetina. $320$ je víc než větší akvárium. Zeptejte se: „Má menší akvárium víc, nebo míň než $240$?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — hlavní úlohu zvládlo. Pochvalte, že si samo našlo, z čeho se třetina počítá, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu úlohu: „Velká krabice má o třetinu víc bonbonů než malá. Ve velké je $48$ bonbonů. Kolik jich je v malé?“ Ať nahlas řekne, kolik dílů má malá a kolik velká krabice, a pak dopočítá. Kontrola pro vás: malá tři díly, velká čtyři, jeden díl $12$, v malé $36$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 7 stejných hrnků. Zítra ať dítě postaví menší akvárium ze 3 hrnků a větší ze 4. Zeptejte se: „O kolik hrnků má větší víc? Jaká je to část menšího?“ Pak: „Větší má 240 litrů. Kolik je v jednom hrnku?“ Ať samo zapíše $240 : 4 \\cdot 3 = 180$. Potom zopakujte lekci „O třetinu víc, o třetinu míň“. Kontrola pro vás: o jeden hrnek, třetinu menšího; hrnek 60 litrů."
+      },
+      "tisk": {
+        "zadani": "Do většího akvária se vejde o třetinu víc vody než do menšího akvária. Větší akvárium pojme $240$ litrů.\n\nKolik litrů vody se vejde do menšího akvária?\n\nA) Co platí? Zakroužkuj: a) Větší má $\\frac{4}{3}$ objemu menšího. b) Menší má $\\frac{2}{3}$ objemu většího. c) Větší má trojnásobek objemu menšího.\n\nB) Výsledek: ______ litrů"
+      }
+    },
+    {
+      "id": "M8-T02-L4-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Letos přišlo na školní jarmark $600$ lidí. To je o třetinu víc než loni.\n\nKolik lidí přišlo na jarmark loni?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 450
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 400,
+              "typ_chyby": "o-tretinu-z-vysledku"
+            },
+            {
+              "hodnota": 200,
+              "typ_chyby": "jen-cast-bez-celku"
+            },
+            {
+              "hodnota": 800,
+              "typ_chyby": "zlomek-z-cisla-obracene"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Pozor na pořadí vět: nejdřív přijde letošní číslo, teprve pak „o třetinu víc než loni“. Třetina se tedy počítá z loňského počtu, který dítě hledá.",
+        "reseni": "Loni: $3$ díly, letos: $4$ díly (o třetinu víc než loni znamená o jeden loňský díl víc)\n\n$600 : 4 = 150$ (jeden díl)\n\n$3 \\cdot 150 = 450$ (loni tři díly)\n\n$450 + 150 = 600$ (zkouška: třetina ze čtyř set padesáti je sto padesát)\n\n**Výsledek:** $450$ lidí",
+        "otazky": [
+          "„Přečti mi úlohu nahlas. Ke kterému roku patří číslo šest set a na který rok se ptají?“",
+          "„Najdi slovo ‚než‘. Z počtu lidí kterého roku se počítá ta třetina?“",
+          "„Tady máš začátek: loňský počet si rozděl na tři stejné díly. Kolik takových dílů přišlo letos?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč nestačí od šesti set odečíst jeho třetinu.“",
+        "otocena_role_odpoved": "Třetina se počítá z loňského počtu, ne z letošního. Letošních šest set jsou čtyři loňské díly po sto padesáti. Loni byly tři díly, tedy čtyři sta padesát.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nepíše nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: $400$: odečetlo třetinu ze šesti set. Zeptejte se: „O třetinu víc než kdy?“ (Než loni.) $200$ je jen ta třetina. $800$: vyšlo víc než letos. Zeptejte se: „Přišlo loni víc, nebo míň lidí?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — past s třetinou zvládá samo. Pochvalte, že třetinu počítalo z loňska. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu úlohu: „Letos stojí vstupenka $80$ Kč. To je o třetinu víc než loni. Kolik stála loni?“ Ať ji řeší po krocích na papír a nahlas řekne, kolik je jeden díl. Kontrola pro vás: jeden díl $20$ Kč, loni $60$ Kč.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 12 korunových mincí. Zítra: „Letos máš 12 korun, to je o třetinu víc než loni.“ Ať dítě rozdělí mince na 4 stejné hromádky a jednu odsune. Zeptejte se: „Proč zrovna čtyři hromádky?“ Pak ať samo zapíše $12 : 4 \\cdot 3 = 9$. Potom zopakujte lekci „O třetinu víc, o třetinu míň“. Kontrola pro vás: loni tři hromádky, letos o jednu víc; loni 9 korun."
+      },
+      "tisk": {
+        "zadani": "Letos přišlo na školní jarmark $600$ lidí. To je o třetinu víc než loni.\n\nKolik lidí přišlo na jarmark loni?\n\nVýsledek: ______ lidí"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "SYNTETICKÁ testovací lekce (testy/data/osma) převedená ze Spolu — jen pro testy a QA, není to obsah Spolu 8.",
+    "zkontroloval": "vedouci",
+    "datum": "2026-09-25"
+  }
+}

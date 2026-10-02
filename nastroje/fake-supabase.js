@@ -1,12 +1,12 @@
 // =====================================================================
-// fake-supabase.js — JEN PRO VÝVOJ (screenshoty.mjs --bez-site / --f2). Nenasazuje se (není ve web/).
+// fake-supabase.js — JEN PRO VÝVOJ (nastroje/qa-osma.mjs, nastroje/staticky-server.mjs). Nenasazuje se (není ve web/).
 // Náhrada createClient() ze supabase-js: databáze v localStorage prohlížeče (`spolu.fake-db`), žádná síť.
 // Statický server screenshoty.mjs v souboru web/js/supabase.js přepíše import supabase-js z CDN na tento
 // modul, takže běží skutečné helpery supabase.js (zacitSezeni, ulozOdpoved, stavSezeni, dokoncitSezeni…)
 // nad lokálními tabulkami: rodiny, deti, sezeni, odpovedi, semafory, lekce (+ rpc katalog_lekci, je_admin).
 // Katalog lekcí nastaví nástroj do localStorage `spolu.fake-katalog` (metadata bez obsahu, jako RPC).
-// Dva předměty (supabase/migrations/0007_predmet.sql): řádek dítěte smí mít `predmety` a položka katalogu `predmet` —
-// tabulky jsou jen JSON, takže bez nich se chová jako DB před migrací, s nimi jako po ní (nastroje/qa-cestina.mjs).
+// Spolu 8 (supabase/migrations/0001–0005): rodina 'aktivni' bez dotazníku, dítě s `predmety` (výchozí oba),
+// položka katalogu s `predmet` a `pocet_uloh` (jako RPC katalog_lekci). Používá nastroje/qa-osma.mjs.
 // =====================================================================
 
 const KLIC_DB = 'spolu.fake-db';
@@ -16,10 +16,10 @@ const UZIVATEL = { id: '00000000-0000-4000-8000-0000000000a1', email: 'rodina@ex
 function vychoziDb() {
   return {
     rodiny: [{ id: UZIVATEL.id, jmeno_rodice: 'Jana Testová', email: UZIVATEL.email, telefon: null, stav: 'aktivni', zdroj: null,
-      dotaznik_vyplnen: true, odemknuto_at: null, created_at: '2026-09-20T10:00:00.000Z' }],
-    deti: [{ id: '00000000-0000-4000-8000-0000000000d1', rodina_id: UZIVATEL.id, krestni_jmeno: 'Adam', typ_skoly: 'gymnazium',
-      znamka_8: 2, varianta: 'z9', poradi: 1 }],
-    sezeni: [], odpovedi: [], semafory: [], lekce: [], dotazniky: [],
+      odemknuto_at: null, created_at: '2026-09-20T10:00:00.000Z' }],
+    deti: [{ id: '00000000-0000-4000-8000-0000000000d1', rodina_id: UZIVATEL.id, krestni_jmeno: 'Adam', typ_skoly: null,
+      znamka_8: null, varianta: 'z8', poradi: 1, predmety: ['matematika', 'cestina'] }],
+    sezeni: [], odpovedi: [], semafory: [], lekce: [],
     dalsiId: 1,
   };
 }
@@ -37,8 +37,7 @@ const VYCHOZI = {
   sezeni: () => ({ id: uuid(), rezim: 'app', zacatek: new Date().toISOString(), konec: null, stav: 'probiha', souhrn: null }),
   odpovedi: (db) => ({ id: db.dalsiId++, created_at: new Date().toISOString(), cas_s: null, typ_chyby: null }),
   semafory: (db) => ({ id: db.dalsiId++, created_at: new Date().toISOString() }),
-  deti: () => ({ id: uuid() }),
-  dotazniky: (db) => ({ id: db.dalsiId++ }),
+  deti: () => ({ id: uuid(), predmety: ['matematika', 'cestina'] }),
 };
 
 function katalog() {
@@ -56,14 +55,14 @@ function rozeberSelect(s) {
 class Dotaz {
   constructor(tabulka) {
     this.tabulka = tabulka; this.akce = 'select'; this.filtry = []; this.razeni = []; this.limitN = null;
-    this.jeden = null; this.select_ = '*'; this.data = null; this.volby = {}; this.vratit = false;
+    this.jeden = null; this.select_ = '*'; this.data = null; this.volby = {}; this.vratit = false; this.rovno = {};
   }
   select(s = '*') { this.select_ = s; if (this.akce !== 'select') this.vratit = true; return this; }
   insert(radky) { this.akce = 'insert'; this.data = radky; return this; }
   upsert(radky, volby = {}) { this.akce = 'upsert'; this.data = radky; this.volby = volby; return this; }
   update(hodnoty) { this.akce = 'update'; this.data = hodnoty; return this; }
   delete() { this.akce = 'delete'; return this; }
-  eq(k, v) { this.filtry.push((r) => r[k] === v); return this; }
+  eq(k, v) { this.rovno[k] = v; this.filtry.push((r) => r[k] === v); return this; }
   neq(k, v) { this.filtry.push((r) => r[k] !== v); return this; }
   gt(k, v) { this.filtry.push((r) => r[k] > v); return this; }
   gte(k, v) { this.filtry.push((r) => r[k] >= v); return this; }
@@ -76,7 +75,26 @@ class Dotaz {
   limit(n) { this.limitN = n; return this; }
   single() { this.jeden = 'single'; return this; }
   maybeSingle() { this.jeden = 'maybe'; return this; }
-  then(ok, chyba) { return Promise.resolve().then(() => this.provest()).then(ok, chyba); }
+  then(ok, chyba) { return Promise.resolve().then(() => this.doplnLekci()).then(() => this.provest()).then(ok, chyba); }
+
+  /** Tabulka lekce je v localStorage prázdná: lekci podle id načte ze souboru (jako ?lokalne=1) a doplní metadata z katalogu. */
+  async doplnLekci() {
+    const id = this.rovno.id;
+    if (this.tabulka !== 'lekce' || this.akce !== 'select' || typeof id !== 'string' || !/^[A-Za-z0-9_-]+$/.test(id)) return;
+    const db = nactiDb();
+    if ((db.lekce || []).some((l) => l.id === id)) return;
+    const meta = katalog().find((l) => l.id === id);
+    if (!meta) return; // co v katalogu není, je jako zamčené (RLS)
+    try {
+      const r = await fetch(new URL(`/obsah/${/^cj-/.test(id) ? 'cestina/' : ''}lekce/${id}.json`, location.href), { cache: 'no-store' });
+      if (!r.ok) return;
+      const obsah = await r.json();
+      const { zamceno, cas_min: _c, pocet_uloh: _p, ...sloupce } = meta;
+      if (zamceno) return;
+      db.lekce = [...(db.lekce || []), { ...sloupce, obsah }];
+      ulozDb(db);
+    } catch { /* bez souboru = lekce neexistuje */ }
+  }
 
   provest() {
     const db = nactiDb();
@@ -141,7 +159,16 @@ export function createClient() {
   return {
     from: (tabulka) => new Dotaz(tabulka),
     rpc: async (nazev) => {
-      if (nazev === 'katalog_lekci') return { data: katalog(), error: null, status: 200 };
+      if (nazev === 'katalog_lekci') {
+        // bez katalogu v localStorage ho dodá nastroje/staticky-server.mjs --fake (metadata lekcí ze souborů)
+        if (!katalog().length) {
+          try {
+            const r = await fetch('/__fake/katalog.json', { cache: 'no-store' });
+            if (r.ok) localStorage.setItem(KLIC_KATALOG, JSON.stringify(await r.json()));
+          } catch { /* bez serveru prostě prázdný katalog */ }
+        }
+        return { data: katalog(), error: null, status: 200 };
+      }
       if (nazev === 'je_admin') return { data: false, error: null, status: 200 };
       return { data: null, error: { message: `Fake: rpc ${nazev} není` }, status: 404 };
     },

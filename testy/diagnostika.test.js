@@ -1,4 +1,6 @@
 // Diagnostika Fáze 1 (R37): výpočet reportu — web/js/diagnostika.js, kontrolní případy A–D z obsah/diagnostika-report.md §7.
+// Spolu 8: data = syntetická M8-T00-DIAG (kopie F1-T00-DIAG ze Spolu s jinými id) v testy/data/osma; algoritmus Fáze 1
+// zůstal v kódu pro diagnostiku mimo fázi osma, Spolu 8 počítá po tématech (doporuceni.js, testy/doporuceni.test.js).
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -7,8 +9,8 @@ import {
 } from '../web/js/diagnostika.js';
 import { vyhodnotKrok } from '../web/js/vyhodnoceni.js';
 
-const DIAG = JSON.parse(readFileSync(new URL('../obsah/lekce/F1-T00-DIAG.json', import.meta.url), 'utf8'));
-const U = (n) => `F1-T00-DIAG-U${n}`;
+const DIAG = JSON.parse(readFileSync(new URL('./data/osma/lekce/M8-T00-DIAG.json', import.meta.url), 'utf8'));
+const U = (n) => `M8-T00-DIAG-U${n}`;
 
 /** Hodnota správné odpovědi v tom tvaru, jak ji posílá vstup (cislo/zlomek/smisene/vyraz). */
 function spravnaHodnota(krok) {

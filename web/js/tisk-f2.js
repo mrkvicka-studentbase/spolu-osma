@@ -132,7 +132,7 @@ export function sesitSimulace(casti, { zadani, jmeno = null }) {
   const cislo = casti[0]?.simulace?.cislo ?? '';
   const ulohy = casti.flatMap((l) => l.ulohy);
   return el('article', { class: 'tisk-list tisk-list--sesit' },
-    hlavicka(`Spolu na přijímačky — Simulace ${cislo}`, `${h('sim.tisk_sesit')} · 70 minut`, jmeno),
+    hlavicka(`Spolu 8 — Simulace ${cislo}`, `${h('sim.tisk_sesit')} · 70 minut`, jmeno),
     el('p', { class: 'tisk-pokyn', text: h('sim.tisk_prepiste') }),
     ulohy.map((u) => el('section', { class: 'tisk-uloha tisk-uloha--sesit' },
       el('div', { class: 'tisk-uloha__hlavicka' }, el('span', { class: 'tisk-uloha__cislo', text: String(u.pozice ?? '') })),
@@ -175,7 +175,7 @@ export function archSimulace(casti, { jmeno = null } = {}) {
   const ulohy = casti.flatMap((l) => l.ulohy);
   const cas = (klic) => el('span', { class: 'arch-cas' }, `${h(klic)} `, el('span', { class: 'arch-cas__pole' }), ' : ', el('span', { class: 'arch-cas__pole' }));
   return el('article', { class: 'tisk-list tisk-list--arch' },
-    hlavicka(`${h('sim.tisk_arch')} — Simulace ${cislo}`, 'Spolu na přijímačky', jmeno),
+    hlavicka(`${h('sim.tisk_arch')} — Simulace ${cislo}`, 'Spolu 8', jmeno),
     el('div', { class: 'arch-hlavicka' }, cas('sim.tisk_zacatek'), cas('sim.tisk_konec'),
       kontrolniUsecka('sim.tisk_meritko')),
     ulohy.map((u) => el('section', { class: ['arch-uloha', maRysovani(u) && 'arch-uloha--rysovani'] },

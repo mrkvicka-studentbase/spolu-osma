@@ -6,8 +6,27 @@
 
 import { readFile } from 'node:fs/promises';
 import { domenoveKontrolyCj } from './validator-cj.mjs';
+import { KAPITOLY } from '../../web/js/hlasky.js';
 
 export const PORADI_TYPU_ULOH = ['rozcvicka', 'detektiv', 'cermat', 'semafor'];
+
+/** Pseudo-kapitoly lekce (ne obsah): smíšený blok, simulace, diagnostika. */
+const PSEUDO_KAPITOLY = ['mix', 'simulace', 'diagnostika'];
+
+/** Spolu 8: počet témat a lekcí v tématu (ZADANI-OSMA §2). */
+export const OSMA = Object.freeze({ temat: 10, lekciVTematu: 4, diagUloh: [20, 25], casDiag: 25 });
+
+/**
+ * Kapitola mimo známé kódy (obsah/hlasky.md, tabulka „Názvy kapitol“ → web/js/hlasky.js KAPITOLY).
+ * Schéma pustí každý kód ve tvaru ^[a-z][a-z-]+$; neznámý se hlásí jako VAROVÁNÍ, ne chyba (osnovy Spolu 8 se ještě píšou).
+ * @param {string} kod
+ * @returns {string|null} text varování, nebo null
+ */
+export function varovaniKapitoly(kod, kde = 'kapitola') {
+  if (typeof kod !== 'string' || !/^[a-z][a-z-]+$/.test(kod) || PSEUDO_KAPITOLY.includes(kod)) return null;
+  if (Object.prototype.hasOwnProperty.call(KAPITOLY, kod)) return null;
+  return `${kde}: kapitola "${kod}" zatím není v obsah/hlasky.md (tabulka „Názvy kapitol“) — doplň řádek a spusť node nastroje/generuj-hlasky.mjs`;
+}
 
 // ---------------------------------------------------------------------
 // Pomocné funkce
@@ -569,6 +588,23 @@ export function kontrolaParuSimulaci(lekce) {
 }
 
 /**
+ * Diagnostika Spolu 8: úloha má `kapitola` (povinné) a volitelně `tema` = číslo tématu 1–10.
+ * Varuje, když se témata nedají přiřadit (žádná úloha s tema) nebo když některé téma nemá ani jednu úlohu.
+ * @param {object[]} ulohy
+ * @param {(m: string) => void} var_
+ */
+export function kontrolaTematDiagnostiky(ulohy, var_, chyba = var_) {
+  const temata = new Set(ulohy.map((u) => u?.tema).filter(Number.isInteger));
+  // každá úloha musí mít tema: kapitoly geometrie / jednotky pokrývají víc témat (OSNOVA-MATEMATIKA §8 bod 2)
+  const bez = ulohy.filter((u) => jeObjekt(u) && !Number.isInteger(u.tema)).map((u) => u.id);
+  if (bez.length) chyba(`diagnostika: úlohy bez „tema“ (číslo tématu 1–${OSMA.temat}): ${bez.join(', ')}`);
+  if (!temata.size) return;
+  const chybi = [];
+  for (let t = 1; t <= OSMA.temat; t++) if (!temata.has(t)) chybi.push(t);
+  if (chybi.length) var_(`diagnostika: témata bez úlohy: ${chybi.join(', ')} (o nich diagnostika nic neřekne)`);
+}
+
+/**
  * Úplná kontrola jedné lekce: JSON Schema + doménové kontroly.
  * @param {*} data            obsah JSON souboru
  * @param {string} nazevSouboru
@@ -602,7 +638,16 @@ export function domenoveKontroly(l, nazevSouboru, slovnik = null, { audioMd = nu
   if (nazevSouboru !== `${l.id}.json`) chyba(`název souboru má být "${l.id}.json"`);
 
   let m;
-  if (typeof l.id === 'string' && /^P\d+$/.test(l.id)) {
+  if (typeof l.id === 'string' && (m = /^M8-T(\d{2})-(L([1-4])|DIAG)$/.exec(l.id))) {
+    // Spolu 8 (ZADANI-OSMA §5): M8-T01-L1 … M8-T10-L4, diagnostika M8-T00-DIAG
+    if (l.faze !== 'osma') chyba(`id ${l.id}: faze musí být "osma"`);
+    if (l.tyden !== Number(m[1])) chyba(`id ${l.id}: tyden musí být ${Number(m[1])}`);
+    if (m[3] && l.poradi !== Number(m[3])) chyba(`id ${l.id}: poradi musí být ${m[3]}`);
+    if (m[2] === 'DIAG' && (l.typ !== 'diagnostika' || m[1] !== '00')) chyba(`id ${l.id}: diagnostika je jen M8-T00-DIAG s "typ": "diagnostika"`);
+    if (m[2] !== 'DIAG' && (Number(m[1]) < 1 || Number(m[1]) > OSMA.temat)) chyba(`id ${l.id}: téma musí být 01–${OSMA.temat}`);
+  } else if (l.faze === 'osma') {
+    chyba(`faze "osma" má id M8-T<tt>-L<n> nebo M8-T00-DIAG, je ${l.id}`);
+  } else if (typeof l.id === 'string' && /^P\d+$/.test(l.id)) {
     if (l.faze !== 'pilot') chyba(`id ${l.id}: pilotní lekce musí mít faze "pilot"`);
   } else if (typeof l.id === 'string' && (m = /^F([12])-T(\d{2})-(L([1-4])|DIAG)$/.exec(l.id))) {
     if (l.faze !== `faze${m[1]}`) chyba(`id ${l.id}: faze musí být "faze${m[1]}"`);
@@ -620,6 +665,36 @@ export function domenoveKontroly(l, nazevSouboru, slovnik = null, { audioMd = nu
     chyba(`lekce s kapitolou "${l.kapitola}": každá úloha musí mít vlastní kapitolu (SOS a statistiky)`);
   }
   if (jeSimulace) kontrolaSimulaceLekce(l, chyba);
+
+  // pseudo-kapitoly: mix (blok, rozbor), simulace (jen typ simulace), diagnostika (jen diagnostika); úloha je mít nesmí
+  if (l.kapitola === 'simulace' && !jeSimulace) chyba('kapitola "simulace" jen u lekce typu simulace');
+  if (l.kapitola === 'diagnostika' && !jeDiag) chyba('kapitola "diagnostika" jen u diagnostiky');
+  ulohy.forEach((u, i) => {
+    if (jeObjekt(u) && PSEUDO_KAPITOLY.includes(u.kapitola)) chyba(`ulohy[${i}].kapitola: "${u.kapitola}" je pseudo-kapitola lekce, úloha potřebuje skutečnou kapitolu`);
+  });
+  // kapitoly: známé kódy jsou v obsah/hlasky.md; nový kód projde s varováním
+  const vk = varovaniKapitoly(l.kapitola);
+  if (vk) var_(vk);
+  ulohy.forEach((u, i) => { const v = jeObjekt(u) && varovaniKapitoly(u.kapitola, `ulohy[${i}] (${u.id})`); if (v) var_(v); });
+
+  if (l.faze === 'osma') {
+    if (l.varianta !== 'z8') var_(`varianta je "${l.varianta}" — lekce Spolu 8 mají "varianta": "z8"`);
+    // Spolu 8: bez přijímaček (ZADANI-OSMA §1) — úlohy jsou vlastní
+    ulohy.forEach((u, i) => {
+      if (jeObjekt(u) && typeof u.zdroj === 'string' && /cermat|klon/i.test(u.zdroj)) {
+        var_(`ulohy[${i}] (${u.id}): zdroj „${u.zdroj}" — Spolu 8 nemá úlohy CERMAT, úlohy jsou vlastní ("zdroj": "vlastni")`);
+      }
+    });
+    if (jeDiag) {
+      const [min, max] = OSMA.diagUloh;
+      if (ulohy.length < min || ulohy.length > max) var_(`diagnostika má ${ulohy.length} úloh (Spolu 8: ${min}–${max})`);
+      if (Number.isInteger(l.cas_min) && Math.abs(l.cas_min - OSMA.casDiag) > 5) var_(`diagnostika má cas_min ${l.cas_min} (Spolu 8: ~${OSMA.casDiag} min)`);
+      kontrolaTematDiagnostiky(ulohy, var_, chyba);
+    } else {
+      if (l.typ === 'blok' || l.typ === 'simulace') chyba(`Spolu 8 nemá bloky ani simulace (typ "${l.typ}")`);
+      if (Number.isInteger(l.cas_min) && (l.cas_min < 15 || l.cas_min > 25)) var_(`cas_min lekce je ${l.cas_min} (Spolu 8: lekce matematiky ~20 min)`);
+    }
+  }
 
   if (!jeDiag && ulohy.length === 4) {
     const typy = ulohy.map((u) => u?.typ);

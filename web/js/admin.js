@@ -1,9 +1,9 @@
 // =====================================================================
-// admin.js — admin.html: přehled rodin, ruční odemčení/uzavření, statistiky pilotu (agenti/08-admin.md)
+// admin.js — admin.html: přehled rodin, ruční uzavření / znovuotevření účtu, statistiky (agenti/08-admin.md; Spolu 8 bez platby)
 //
 // Používá jen hotové helpery: web/js/supabase.js (`admin.*`, `jeAdmin`), web/js/ui.js, web/js/obsah.js,
 // web/js/hlasky.js. Nic mimo web/admin.html + web/js/admin.js se v tomto zadání nemění.
-// Read-only kromě: admin.odemknout, admin.uzavrit, admin.vratitDoPilotu, admin.ulozitPoznamku.
+// Read-only kromě: admin.odemknout (= znovu otevřít uzavřený účet), admin.uzavrit, admin.ulozitPoznamku.
 // =====================================================================
 
 import {
@@ -22,8 +22,8 @@ import { mapaKapitolUloh, premapujStatistiky } from './simulace.js';
 // Malé slovníky pro popisky
 // ---------------------------------------------------------------------
 
-const STAV_NAZEV = { pilot: 'Pilot', aktivni: 'Aktivní', uzavreny: 'Uzavřeno' };
-const STAV_TRIDA = { pilot: 'stitek--navy', aktivni: 'stitek--zelena', uzavreny: '' };
+const STAV_NAZEV = { aktivni: 'Aktivní', uzavreny: 'Uzavřeno' };
+const STAV_TRIDA = { aktivni: 'stitek--zelena', uzavreny: '' };
 const BARVA_SLOVO = { zelena: 'Zelená', oranzova: 'Oranžová', cervena: 'Červená' };
 const REZIM_SLOVO = { app: 'V aplikaci', papir: 'Na papír', samo: 'Samo (bez rodiče)' }; // R64
 const VOLBA_SLOVO = {
@@ -170,7 +170,6 @@ function sestavPanelRodiny() {
   const poleHledat = el('input', { class: 'pole', id: 'aHledat', type: 'search', placeholder: 'Jméno, e-mail, dítě' });
   const poleStav = el('select', { class: 'pole', id: 'aStav' },
     el('option', { value: '' }, 'Všechny'),
-    el('option', { value: 'pilot' }, 'Pilot'),
     el('option', { value: 'aktivni' }, 'Aktivní'),
     el('option', { value: 'uzavreny' }, 'Uzavřené'));
   const poleRazeni = el('select', { class: 'pole', id: 'aRazeni' },
@@ -268,8 +267,8 @@ function radekRodiny(r) {
   if (r.stav !== 'uzavreny') {
     akce.push(el('button', { class: 'tlacitko tlacitko--male tlacitko--tiche', type: 'button', onClick: () => editovatPoznamku(r, bunkaPoznamka) }, 'Poznámka'));
   }
-  if (r.stav === 'pilot') {
-    akce.push(el('button', { class: 'tlacitko tlacitko--male tlacitko--primarni', type: 'button', onClick: (e) => akceOdemknout(r, e.currentTarget) }, 'Odemknout'));
+  if (r.stav === 'uzavreny') {
+    akce.push(el('button', { class: 'tlacitko tlacitko--male tlacitko--primarni', type: 'button', onClick: (e) => akceOdemknout(r, e.currentTarget) }, 'Znovu otevřít'));
   }
   if (r.stav !== 'uzavreny') {
     akce.push(el('button', { class: 'tlacitko tlacitko--male tlacitko--sekundarni', type: 'button', onClick: (e) => akceUzavrit(r, e.currentTarget) }, 'Uzavřít'));
@@ -335,7 +334,7 @@ function editovatPoznamku(r, bunkaPoznamka) {
 }
 
 async function akceOdemknout(r, tlacitko) {
-  const ano = await potvrdit(`Odemknout rodinu ${r.jmeno_rodice || r.email}? Stav se změní na „aktivní" a rodina získá přístup k placenému obsahu.`);
+  const ano = await potvrdit(`Znovu otevřít účet rodiny ${r.jmeno_rodice || r.email}? Stav se změní na „aktivní" a rodina zase uvidí lekce.`);
   if (!ano) return;
   tlacitko.disabled = true;
   tlacitko.classList.add('je-nacitani');
@@ -343,7 +342,7 @@ async function akceOdemknout(r, tlacitko) {
     const aktualizovana = await admin.odemknout(r.rodina_id);
     Object.assign(r, aktualizovana);
     obnovRadek(r);
-    toast('Rodina odemčena.');
+    toast('Účet je znovu otevřený.');
   } catch (e) {
     toast(e.message || String(e), { typ: 'varovani' });
   } finally {
@@ -421,7 +420,7 @@ function vykresliDetail(detail) {
     return el('div', { class: 'karta karta--tesna zasobnik zasobnik--tesny' },
       el('div', { class: 'radek radek--mezi' },
         el('strong', { text: dite.krestni_jmeno }),
-        el('span', { class: 'text-tlumeny', text: `${dite.typ_skoly === 'gymnazium' ? 'gymnázium' : 'SŠ s maturitou'}${dite.znamka_8 ? ` · známka ${dite.znamka_8}` : ''}` })),
+        el('span', { class: 'text-tlumeny', text: (dite.predmety || ['matematika', 'cestina']).map((p) => (p === 'cestina' ? 'čeština' : 'matematika')).join(' + ') })),
       sezeniDitete.length
         ? el('div', { class: 'zasobnik zasobnik--tesny' }, sezeniDitete.map(sezeniDetail))
         : el('p', { class: 'text-tlumeny' }, 'Zatím žádné sezení.'));
@@ -555,13 +554,11 @@ function sekceKonverze(s) {
     el('div', { class: 'admin-dlazdice__cislo', text: formatCislo(cislo) }),
     el('div', { class: 'text-tlumeny', text: popisek }));
   return el('section', null,
-    nadpisSekce('Rodiny a konverze'),
+    nadpisSekce('Rodiny'),
     el('div', { class: 'radek radek--mezi' },
-      dlazdice(s.rodinyDleStavu.pilot, 'Pilot'),
       dlazdice(s.rodinyDleStavu.aktivni, 'Aktivní'),
       dlazdice(s.rodinyDleStavu.uzavreny, 'Uzavřeno'),
-      dlazdice(s.celkem, 'Celkem rodin'),
-      dlazdice(s.konverzeProcenta === null ? '—' : s.konverzeProcenta, 'Konverze pilot → aktivní (%)')));
+      dlazdice(s.celkem, 'Celkem rodin')));
 }
 
 function sekceGrafSemaforu(radky) {
@@ -688,7 +685,7 @@ function sekceDokonceneTydny(tydny) {
 function aktualizujHlavicku() {
   if (!stav.souhrn) return;
   const s = stav.souhrn.rodinyDleStavu;
-  hlavickaPocty.textContent = `${formatCislo(stav.souhrn.celkem)} rodin · ${formatCislo(s.pilot)} pilot · ${formatCislo(s.aktivni)} aktivní · ${formatCislo(s.uzavreny)} uzavřené`;
+  hlavickaPocty.textContent = `${formatCislo(stav.souhrn.celkem)} rodin · ${formatCislo(s.aktivni)} aktivní · ${formatCislo(s.uzavreny)} uzavřené`;
 }
 
 // ---------------------------------------------------------------------

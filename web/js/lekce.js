@@ -1,7 +1,7 @@
 // =====================================================================
 // lekce.js — obrazovka 6 z kostra/04: lekce žáka (lekce.html?lekce=P1&dite=…&rezim=app|papir)
 //
-// Průběh: 4 úlohy × kroky (čeština 6 úloh, vstupy ve vstupy-cj.js); každá odpověď se hned ukládá (ulozOdpoved, rostoucí `pokus`);
+// Průběh: úlohy × kroky (matematika 4, čeština Spolu 8 5 úloh — počet vždy z dat; vstupy češtiny ve vstupy-cj.js); každá odpověď se hned ukládá (ulozOdpoved, rostoucí `pokus`);
 // max 2 pokusy na krok, pak další krok. Správný výsledek se žákovi NIKDY neukazuje.
 // Obnovení: načte stavSezeni() (+ neodeslanou frontu ze sessionStorage) a pokračuje prvním
 // nevyřešeným krokem. Žádné skóre, procenta ani „Nevím". Odpočet je jen doporučení.
@@ -16,7 +16,9 @@ import { h } from './hlasky.js';
 import { nacistKnihovny, nactiLekciObsah, renderMarkdown, rozlozDlazdice, rozlozZadani, NAZVY_TYPU } from './obsah.js';
 import { pripravenoDnes, vykresliPripravit } from './pripravit.js';
 import { jeDiagnostika } from './diagnostika.js';
-import { najdiSezeniDiagnostiky, vykresliPrestavku, vykresliKonecDiagnostiky, PRESTAVKA_PO } from './diagnostika-zak.js';
+import { sestavSouhrnOsma, mapaKapitolNaTemata, cislaTemat } from './doporuceni.js';
+import { zeZ } from './temata.js';
+import { najdiSezeniDiagnostiky, vykresliPrestavku, vykresliKonecDiagnostiky, prestavkaPo } from './diagnostika-zak.js';
 import { vytvorVstupVyraz, vytvorVstupPoradi, vytvorObrazek } from './vstupy-f1.js';
 import { stitekPismene, vytvorVstupRysovani } from './vstupy-f2.js';
 import { jeSimulace, jeBlok } from './simulace.js';
@@ -29,9 +31,9 @@ import { TYPY_VSTUPU_CJ } from './vyhodnoceni-cj.js';
 import { vytvorVstupCj, hlaskaNeplatneCj } from './vstupy-cj.js';
 import {
   mojeDeti, aktualniSezeni, zacitSezeni, stavSezeni, ulozOdpoved, neulozeneOdpovedi, platneSezeni, lekceProDite,
-  ulozSemafor, dokoncitSezeni,
+  ulozSemafor, dokoncitSezeni, katalogLekci,
 } from './supabase.js';
-import { lzeSamo, volbaSamo, napovedaZOtazky, MAX_NAPOVED } from './samo.js';
+import { lzeSamo, volbaSamo, napovedaZOtazky, napovedyAzPoPokusu, MAX_NAPOVED } from './samo.js';
 import { popisChyby, jeDetektivniChyba } from './chyby.js';
 import { sestavSouhrn } from './rodic-souhrn.js';
 import { spocitejOdznaky } from './odznaky.js';
@@ -126,7 +128,8 @@ function vytvorNapovedy(uloha) {
   const dalsiIndex = (ukazane) => {
     if (poPrikladech) {
       const krok = uloha.kroky.find((k) => !zaznam(uloha, k).hotovo);
-      const pismeno = /Příklad\s+([A-F])/.exec(krok?.popisek || '')?.[1];
+      // matematika „Příklad B: …“, čeština „Řada B“ (FORMAT-CJ §4: otázky rozcvičky {k: 'B', text})
+      const pismeno = /(?:Příklad|Řada)\s+([A-F])\b/.exec(krok?.popisek || '')?.[1];
       const idx = otazky.findIndex((o, i) => !ukazane.includes(i) && o.k.startsWith(pismeno || '#'));
       if (idx >= 0) return idx;
     }
@@ -142,7 +145,20 @@ function vytvorNapovedy(uloha) {
   });
   vykresli();
   if (!otazky.length) tlacitko.hidden = true;
-  return el('section', { class: 'samo-napoveda-blok', 'aria-label': 'Nápovědy' }, seznam, el('div', { class: 'krok__akce' }, tlacitko));
+  // kontrolní / samostatná úloha: nápovědy až po prvním odevzdání (událost spolu:pokus z odevzdat())
+  const ceka = el('p', { class: 'text-tlumeny samo-ceka', text: h('samo.kontrolni_ceka') });
+  const maPokus = () => uloha.kroky.some((k) => zaznam(uloha, k).pokusy.length > 0);
+  const odemknout = () => { tlacitko.hidden = !otazky.length; ceka.hidden = true; };
+  if (napovedyAzPoPokusu(uloha) && otazky.length && !maPokus()) {
+    tlacitko.hidden = true;
+    const poPokusu = (e) => {
+      if (e.detail?.ulohaId !== uloha.id) return;
+      document.removeEventListener('spolu:pokus', poPokusu);
+      odemknout();
+    };
+    document.addEventListener('spolu:pokus', poPokusu);
+  } else ceka.hidden = true;
+  return el('section', { class: 'samo-napoveda-blok', 'aria-label': 'Nápovědy' }, seznam, ceka, el('div', { class: 'krok__akce' }, tlacitko));
 }
 
 /** Semafor úlohy místo rodiče: volba z průběhu (samo.js), barva maticí kostry 02, uloží se jako rodičův. */
@@ -486,6 +502,7 @@ function vykresliKrok(uloha, krok, poradi, poDokonceni) {
     }
     const pokus = { hodnota: hodnota.ulozeni, spravne: v.spravne };
     z.pokusy.push(pokus);
+    document.dispatchEvent(new CustomEvent('spolu:pokus', { detail: { ulohaId: uloha.id } })); // samo: odemkne nápovědy kontrolní úlohy
     const cislo = z.pokusy.length;
     ulozit(uloha, krok, cislo, hodnota.ulozeni, v, (performance.now() - zobrazeno) / 1000);
 
@@ -600,7 +617,7 @@ function vykresliUlohu(index, { obnoveni = false } = {}) {
       sbalit.replaceChildren(ikona('dolu'), sbaleno ? 'Zobrazit zadání' : 'Skrýt zadání');
     },
   }, ikona('dolu'), 'Skrýt zadání');
-  const karta = el('article', { class: 'karta-ulohy', 'aria-label': `Úloha ${index + 1} ze ${lekce.ulohy.length}` },
+  const karta = el('article', { class: 'karta-ulohy', 'aria-label': `Úloha ${index + 1} ${zeZ(lekce.ulohy.length)} ${lekce.ulohy.length}` },
     el('div', { class: 'karta-ulohy__hlavicka' },
       el('span', { class: 'stitek stitek--navy', text: `Úloha ${stav.sim && uloha.pozice ? uloha.pozice : index + 1}` }), // simulace: číslo v testu
       el('span', { class: 'stitek', text: NAZVY_TYPU[uloha.typ] || uloha.typ }),
@@ -666,7 +683,7 @@ function hlidejPokracovaniZadani(karta, zadani) {
 /** „Úloha n ze 4 je hotová." — lekce s jiným počtem úloh (čeština: 6) má počet z lekce. */
 function textUlohaHotova(n) {
   const celkem = stav.lekce.ulohy.length;
-  return celkem === 4 ? h('zak.uloha_hotova', { n }) : h('cj.uloha_hotova', { n, celkem });
+  return celkem === 4 ? h('zak.uloha_hotova', { n }) : h('cj.uloha_hotova', { n, celkem, z: zeZ(celkem) });
 }
 
 function ulohaHotova(uloha, index, kroky) {
@@ -693,11 +710,14 @@ function dalsiDiagnostika(index) {
   if (index >= n) {
     stav.ulohaIndex = n;
     aktualizujListu();
-    vykresliKonecDiagnostiky($('plocha'), stav.sezeni?.id || null);
+    const osma = stav.lekce.faze === 'osma';
+    vykresliKonecDiagnostiky($('plocha'), stav.sezeni?.id || null, osma ? { text: h('osma.test_konec_zak') } : undefined);
+    if (osma) dokoncitTestOsma();
     return;
   }
-  const druhyBlok = stav.lekce.ulohy.slice(PRESTAVKA_PO).some((u) => u.kroky.some((k) => zaznam(u, k).pokusy.length));
-  if (index === PRESTAVKA_PO && !stav.prestavkaVidena && !druhyBlok && n > PRESTAVKA_PO) {
+  const po = prestavkaPo(n);
+  const druhyBlok = stav.lekce.ulohy.slice(po).some((u) => u.kroky.some((k) => zaznam(u, k).pokusy.length));
+  if (index === po && !stav.prestavkaVidena && !druhyBlok && n > po) {
     stav.prestavkaVidena = true;
     stav.ulohaIndex = index;
     aktualizujListu();
@@ -705,6 +725,27 @@ function dalsiDiagnostika(index) {
     return;
   }
   vykresliUlohu(index);
+}
+
+/**
+ * Spolu 8: úvodní test dělá dítě samo, a tak ho po poslední úloze uzavře samo — výsledek po tématech
+ * (doporuceni.js) do sezeni.souhrn. Přehled podle něj seřadí lekce; rodič ho uvidí v „Výsledek úvodního testu“.
+ */
+async function dokoncitTestOsma() {
+  if (stav.bezUkladani || !stav.sezeni?.id || stav.sezeni.stav === 'dokonceno') return;
+  try {
+    const [katalog, data] = await Promise.all([katalogLekci(), stavSezeni(stav.sezeni.id)]);
+    const predmet = predmetLekce(stav.lekce);
+    const lekcePredmetu = katalog.filter((l) => predmetLekce(l) === predmet);
+    const odpovedi = data.odpovedi.concat(neulozeneOdpovedi({ sezeniId: stav.sezeni.id }));
+    const souhrn = sestavSouhrnOsma(stav.lekce, odpovedi, {
+      predmet, mapaKapitol: mapaKapitolNaTemata(lekcePredmetu), temata: cislaTemat(lekcePredmetu), rezim: stav.sezeni.rezim || 'app',
+    });
+    stav.sezeni = await dokoncitSezeni(stav.sezeni.id, souhrn);
+  } catch (e) {
+    // nevadí: přehled i rodič výsledek dopočítají z odpovědí; dítě nic dalšího dělat nemusí
+    console.warn('úvodní test: souhrn se neuložil', e);
+  }
 }
 
 /** Simulace (R38): další úloha; po poslední konec části (1. část → odkaz na 2. část, 2. část → výsledek pro dítě). */
@@ -838,10 +879,11 @@ function aktualizujListu() {
     // Obojí tenký ukazatel po dílcích (bez barev správně/špatně).
     const sim = stav.lekce.simulace || {};
     const pozice = lekce.ulohy[Math.min(ulohaIndex, n - 1)]?.pozice ?? Math.min(ulohaIndex + 1, n);
-    $('podtitul').textContent = stav.sim ? `Simulace ${sim.cislo ?? ''} · ${sim.cast ?? 1}. část`.replace('  ', ' ') : 'Fáze 1 · týden 0';
+    $('podtitul').textContent = stav.sim ? `Simulace ${sim.cislo ?? ''} · ${sim.cast ?? 1}. část`.replace('  ', ' ')
+      : lekce.faze === 'osma' ? h('osma.test_stitek') : 'Fáze 1 · týden 0';
     $('prubehText').textContent = stav.sim
       ? (ulohaIndex >= n ? `${sim.cast ?? 1}. část · hotovo` : h('sim.prubeh', { pozice, cast: sim.cast ?? 1 }))
-      : h('diag.prubeh', { n: Math.min(ulohaIndex + 1, n), celkem: n });
+      : h('diag.prubeh', { n: Math.min(ulohaIndex + 1, n), celkem: n, z: zeZ(n) });
     $('prubehKroky').hidden = true;
     if (stav.diag) $('odpocet').hidden = true;
     let pruh = $('diagPruh');
@@ -853,7 +895,7 @@ function aktualizujListu() {
     }
     const hotovo = Math.min(ulohaIndex, n);
     pruh.setAttribute('aria-valuenow', String(hotovo));
-    pruh.setAttribute('aria-label', h('diag.prubeh', { n: Math.min(ulohaIndex + 1, n), celkem: n }));
+    pruh.setAttribute('aria-label', h('diag.prubeh', { n: Math.min(ulohaIndex + 1, n), celkem: n, z: zeZ(n) }));
     pruh.firstChild.style.width = `${Math.round((hotovo / n) * 100)}%`;
     return;
   }
@@ -936,7 +978,7 @@ async function start() {
     stav.lekce = lekce;
     if (lekce.predmet === 'cestina') document.documentElement.dataset.predmet = 'cestina'; // cestina.css: slova v dlaždicích se nedělí
     nastavPredmet(predmetLekce(lekce)); // menu: manuál a „Zpět na přehled“ podle předmětu lekce
-    document.title = `${lekce.tema} · Spolu na přijímačky`;
+    document.title = `${lekce.tema} · Spolu 8`;
 
     const rezim = ['app', 'papir', 'samo'].includes(param('rezim')) ? param('rezim') : null;
     let pokracovani = false;

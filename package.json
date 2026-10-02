@@ -1,8 +1,8 @@
 {
-  "name": "spolu-na-prijimacky",
+  "name": "spolu-osma",
   "version": "0.1.0",
   "private": true,
-  "description": "Spolu na přijímačky (StudentBase.cz) — nástroje pro vývoj. Web ve složce web/ je statický a nepotřebuje npm ani build.",
+  "description": "Spolu 8 — opakování 8. třídy (StudentBase.cz) — nástroje pro vývoj. Web ve složce web/ je statický a nepotřebuje npm ani build.",
   "type": "module",
   "scripts": {
     "migrovat": "node supabase/skripty/migrovat.mjs",
@@ -11,7 +11,11 @@
     "seed:validace": "node supabase/seed/seed-lekce.mjs --jen-validace",
     "test": "node --test \"testy/*.test.js\"",
     "validace:cestina": "node supabase/seed/seed-lekce.mjs --adresar obsah/cestina/lekce --jen-validace",
-    "qa:cestina": "node nastroje/qa-cestina.mjs"
+    "validace:osma": "node supabase/seed/seed-lekce.mjs --jen-validace && node supabase/seed/seed-lekce.mjs --adresar obsah/cestina/lekce --jen-validace",
+    "qa:osma": "node nastroje/qa-osma.mjs",
+    "qa:osma:synteticke": "node nastroje/qa-osma.mjs --synteticke",
+    "db:test": "bash supabase/test/over-migrace.sh",
+    "web": "node nastroje/staticky-server.mjs --fake"
   },
   "devDependencies": {
     "pg": "8.13.1"

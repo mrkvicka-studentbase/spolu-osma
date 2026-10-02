@@ -203,7 +203,7 @@ Lekce = číslo lekce Spolu 8 (1–40), D = diagnostika. Otázka slouží rodič
 | `carka-chybi-pred-ale` | ve větě jednoduché chybí čárka před *ale* | *malý ale rychlý* | 35, D20 | „Spojuje *ale* dvě věci, které jdou spolu, nebo staví jednu proti druhé?“ |
 | `carka-navic-pred-i-ani-nebo` | napíše čárku před *i, ani, nebo* ve slučovacím spojení | *Tomáš, i Lucka* | 35 | „Spojuje to slovo jen dvě věci za sebou, podobně jako *a*?“ |
 | `carka-osloveni-chybi` | neoddělí oslovení | *Kláro pojď!* | 35 | „Na koho se ve větě volá? Kde to volání končí?“ |
-| `stavba-hranice-zamena` | určí hranici předpony a kořene jinde | *o\ | „Najdi slovo bez předpony, ze kterého je to utvořené. Kde začíná?“ | ddělit* |
+| `stavba-hranice-zamena` | určí hranici předpony a kořene jinde | *o-ddělit* místo *od-dělit* | 37, 40 | „Najdi slovo bez předpony, ze kterého je to utvořené. Kde začíná?“ |
 | `stavba-cast-zamena` | zamění části slova (předponu, kořen, příponu, koncovku) | *přeskoč* → kořen | 40 | „Která část zůstane stejná ve všech příbuzných slovech?“ |
 | `zdvojene-chybi` | na švu napíše jen jednu ze dvou stejných souhlásek | *cený, odělení* | 37, 40, D23 | „Rozlož slovo na části. Končí jedna část stejným písmenem, jakým začíná další?“ |
 | `zdvojene-navic` | napíše dvě souhlásky tam, kde je jedna | *vlnněný* | 37 | „Ze kterého slova je utvořené? Kolik *n* má jeho základ a kolik přípona?“ |

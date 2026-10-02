@@ -490,13 +490,13 @@ async function start() {
       // Simulace (Fáze 2, R38): obě části na jedné stránce — odpočet, „Dítě odevzdalo", Kontrola, souhrn (rodic-simulace.js)
       if (jeSimulace(lekce)) {
         stranka.lekce = lekce;
-        document.title = `${lekce.tema} · Rodič · Spolu na přijímačky`;
+        document.title = `${lekce.tema} · Rodič · Spolu 8`;
         await spustSimulaciRodic({ lekce, dite, elObsah, elListaLekce, elSpodniLista });
         return;
       }
       if (jeDiagnostika(lekce)) {
         stranka.lekce = lekce;
-        document.title = `${lekce.tema} · Rodič · Spolu na přijímačky`;
+        document.title = `${lekce.tema} · Rodič · Spolu 8`;
         await spustDiagnostikuRodic({ lekce, dite, elObsah, elListaLekce });
         return;
       }
@@ -515,7 +515,7 @@ async function start() {
     }
     stranka.lekce = await nactiLekciObsah(sezeni.lekce_id || lekceId);
     nastavPredmet(predmetLekce(stranka.lekce)); // čeština: manuál češtiny, bez „Jak číst zápisy nahlas“ (C4)
-    document.title = `${stranka.lekce.tema} · Rodič · Spolu na přijímačky`;
+    document.title = `${stranka.lekce.tema} · Rodič · Spolu 8`;
     stranka.odpocetStart = jeBlok(stranka.lekce) ? null : nactiOdpocetStart(sezeni.id); // blok: čas ukazuje karta bloku
     // F1: „Než začnete" rozbalené jen při úplně prvním otevření lekce na tomto zařízení
     try {

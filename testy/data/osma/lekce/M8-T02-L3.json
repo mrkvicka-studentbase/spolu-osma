@@ -1,0 +1,535 @@
+{
+  "id": "M8-T02-L3",
+  "faze": "osma",
+  "tyden": 2,
+  "poradi": 3,
+  "tema": "Dlouhý zlomkový výraz po krocích",
+  "kapitola": "zlomky",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě rozepíše delší výraz se zlomky na kroky a u každého řekne, co dělá.",
+  "uvod_pro_rodice": "Dnes jde o delší příklady se zlomky, které se počítají po malých krocích, každý krok na nový řádek.",
+  "uvod_pravidla": [
+    {
+      "znak": "$1 + 1 : \\frac{1}{2}$",
+      "text": "děleno dřív než plus"
+    },
+    {
+      "znak": "$\\dfrac{\\frac{1}{2}}{3}$",
+      "text": "dlouhá čára znamená děleno"
+    },
+    {
+      "znak": "$1 - \\frac{1}{3}$",
+      "text": "převádí se na třetiny"
+    },
+    {
+      "znak": "$\\frac{3}{4} \\cdot 8$",
+      "text": "před násobením se krátí"
+    },
+    {
+      "znak": "$: \\frac{2}{3}$",
+      "text": "násobí se obráceným zlomkem"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T02-L3-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou možnost. Celý příklad počítat nemusíš.\n\nA) Co spočítáš jako první: $\\frac{3}{4} - \\frac{1}{4} : \\frac{1}{2}$?\n\nB) Který zápis znamená totéž co $\\dfrac{\\frac{3}{4} - \\frac{1}{2}}{\\frac{1}{2} \\cdot 3}$?\n\nC) Kolik je $\\frac{3}{4} - \\frac{1}{2}$?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $\\frac{3}{4} - \\frac{1}{4} : \\frac{1}{2}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{3}{4} - \\frac{1}{4}$",
+                "spravne": false,
+                "typ_chyby": "scital-pred-nasobenim"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{1}{4} : \\frac{1}{2}$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "Je to jedno, vyjde to stejně",
+                "spravne": false,
+                "typ_chyby": "poradi-nezalezi"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $\\dfrac{\\frac{3}{4} - \\frac{1}{2}}{\\frac{1}{2} \\cdot 3}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{3}{4} - \\frac{1}{2} : \\frac{1}{2} \\cdot 3$",
+                "spravne": false,
+                "typ_chyby": "ignoroval-zavorku"
+              },
+              {
+                "id": "b",
+                "text": "$\\left(\\frac{1}{2} \\cdot 3\\right) : \\left(\\frac{3}{4} - \\frac{1}{2}\\right)$",
+                "spravne": false,
+                "typ_chyby": "deleni-obracene"
+              },
+              {
+                "id": "c",
+                "text": "$\\left(\\frac{3}{4} - \\frac{1}{2}\\right) : \\left(\\frac{1}{2} \\cdot 3\\right)$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: $\\frac{3}{4} - \\frac{1}{2}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{1}{4}$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{2}{2}$",
+                "spravne": false,
+                "typ_chyby": "scital-citatele-i-jmenovatele"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{2}{4}$",
+                "spravne": false,
+                "typ_chyby": "neprepocital-citatel"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě tu nic celé nepočítá, jen vybírá. U B je patrový zlomek: dlouhá čára znamená děleno a každé patro se počítá celé, jako by bylo v závorce. Čte se: „nahoře tři čtvrtiny mínus jedna polovina, dole jedna polovina krát tři, dlouhá čára mezi nimi je děleno“. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $\\frac{3}{4} - \\frac{1}{4} : \\frac{1}{2}$\n\nPrvní: $\\frac{1}{4} : \\frac{1}{2}$ (dělení má přednost před odčítáním)\n\n#### B) Patrový zlomek\n\n$\\dfrac{\\frac{3}{4} - \\frac{1}{2}}{\\frac{1}{2} \\cdot 3} = \\left(\\frac{3}{4} - \\frac{1}{2}\\right) : \\left(\\frac{1}{2} \\cdot 3\\right)$ (dlouhá čára je děleno, každé patro jako v závorce)\n\n#### C) $\\frac{3}{4} - \\frac{1}{2}$\n\n$\\frac{3}{4} - \\frac{2}{4} = \\frac{1}{4}$ (jedna polovina jsou dvě čtvrtiny)\n\n**Výsledek:** A) $\\frac{1}{4} : \\frac{1}{2}$, B) $\\left(\\frac{3}{4} - \\frac{1}{2}\\right) : \\left(\\frac{1}{2} \\cdot 3\\right)$, C) $\\frac{1}{4}$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Najdi v příkladu obě znaménka. Které z nich má přednost: mínus, nebo děleno?“"
+          },
+          {
+            "k": "B",
+            "text": "„Dlouhá čára znamená děleno. Co všechno je v horním patře a co v dolním? Co čím dělíš?“"
+          },
+          {
+            "k": "C",
+            "text": "„Čtvrtiny a polovinu hned odečíst nejde. Kolik čtvrtin je jedna polovina?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč u B musí být horní patro v závorce. Co by se stalo bez ní?“",
+        "otocena_role_odpoved": "Horní patro se musí spočítat celé, teprve potom se dělí. Bez závorky by se dělila jen jedna polovina a mínus by přišlo až potom, takže by vyšlo něco jiného.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A vybere mínus (počítá zleva) nebo „je to jedno“. U B zápis bez závorek, nebo obrácený: „Co je nahoře a co dole?“ U C vybere $\\frac{2}{2}$ (odečetlo nahoře i dole) nebo $\\frac{2}{4}$. Zeptejte se: „Kolik čtvrtin je jedna polovina?“ (Dvě.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — pravidla sedí. Pochvalte, že si u každého příkladu nejdřív řeklo, co udělá, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Ukažte dítěti na telefonu $\\frac{1}{2} + \\frac{1}{2} : \\frac{1}{4}$ a ať řekne, co spočítá jako první. Pak ukažte $\\frac{2}{3} - \\frac{1}{2}$ a ať řekne, na jaké díly oba zlomky převede a kolik vyjde. Kontrola pro vás: první je $\\frac{1}{2} : \\frac{1}{4}$; na šestiny, vyjde $\\frac{1}{6}$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: list papíru a nůžky. Zítra ať dítě přeloží papír na čtvrtiny a tři čtvrtiny vybarví. Z vybarvené části ať odstřihne kus velký jako polovina papíru. Zeptejte se: „Kolik čtvrtin zůstalo vybarvených?“ Pak ať samo zapíše $\\frac{3}{4} - \\frac{1}{2} = \\frac{1}{4}$. Potom zopakujte lekci „Dlouhý zlomkový výraz po krocích“. Kontrola pro vás: polovina jsou dvě čtvrtiny, vybarvená zůstala jedna čtvrtina."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou možnost. Celý příklad počítat nemusíš.\n\nA) Co spočítáš jako první: $\\frac{3}{4} - \\frac{1}{4} : \\frac{1}{2}$? Zakroužkuj: a) $\\frac{3}{4} - \\frac{1}{4}$ b) $\\frac{1}{4} : \\frac{1}{2}$ c) je to jedno, vyjde to stejně\n\nB) Který zápis znamená totéž co $\\dfrac{\\frac{3}{4} - \\frac{1}{2}}{\\frac{1}{2} \\cdot 3}$? Zakroužkuj: a) $\\frac{3}{4} - \\frac{1}{2} : \\frac{1}{2} \\cdot 3$ b) $\\left(\\frac{1}{2} \\cdot 3\\right) : \\left(\\frac{3}{4} - \\frac{1}{2}\\right)$ c) $\\left(\\frac{3}{4} - \\frac{1}{2}\\right) : \\left(\\frac{1}{2} \\cdot 3\\right)$\n\nC) Kolik je $\\frac{3}{4} - \\frac{1}{2}$? Zakroužkuj: a) $\\frac{1}{4}$ b) $\\frac{2}{2}$ c) $\\frac{2}{4}$"
+      }
+    },
+    {
+      "id": "M8-T02-L3-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr počítal příklad\n\n$$\\left(1 - \\frac{1}{3}\\right) + \\frac{1}{2} : \\frac{3}{4}$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $= \\frac{2}{3} + \\frac{1}{2} : \\frac{3}{4}$\n\n2. řádek: $= \\frac{7}{6} : \\frac{3}{4}$\n\n3. řádek: $= \\frac{7}{6} \\cdot \\frac{4}{3}$\n\n4. řádek: $= \\frac{14}{9}$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$= \\frac{2}{3} + \\frac{1}{2} : \\frac{3}{4}$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$= \\frac{7}{6} : \\frac{3}{4}$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$= \\frac{7}{6} \\cdot \\frac{4}{3}$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$= \\frac{14}{9}$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$= \\frac{2}{3} + \\frac{3}{8}$",
+                "spravne": false,
+                "typ_chyby": "delil-bez-prevraceni"
+              },
+              {
+                "id": "b",
+                "text": "$= \\frac{2}{3} + \\frac{3}{2}$",
+                "spravne": false,
+                "typ_chyby": "prevratil-prvni"
+              },
+              {
+                "id": "c",
+                "text": "$= \\frac{2}{3} + \\frac{2}{3}$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 4,
+            "j": 3
+          },
+          "zname_chyby": [
+            {
+              "c": 14,
+              "j": 9,
+              "typ_chyby": "scital-pred-nasobenim"
+            },
+            {
+              "c": 25,
+              "j": 24,
+              "typ_chyby": "delil-bez-prevraceni"
+            },
+            {
+              "c": 13,
+              "j": 6,
+              "typ_chyby": "prevratil-prvni"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Řádky za chybou jsou spočítané dobře, jen se špatným číslem. Past: i ve zlomcích má děleno přednost před plus, stejně jako u celých čísel. Čte se: „v závorce jedna mínus jedna třetina, plus jedna polovina děleno třemi čtvrtinami“.",
+        "reseni": "Chyba je ve 2. řádku: Petr sečetl dřív, než vydělil.\n\n$\\left(1 - \\frac{1}{3}\\right) + \\frac{1}{2} : \\frac{3}{4}$\n\n$= \\frac{2}{3} + \\frac{1}{2} : \\frac{3}{4}$ (závorka: jedna celá jsou tři třetiny)\n\n$= \\frac{2}{3} + \\frac{1}{2} \\cdot \\frac{4}{3}$ (dělení se mění na násobení obráceným druhým zlomkem)\n\n$= \\frac{2}{3} + \\frac{2}{3}$ (nahoře krát nahoře, dole krát dole, pak krácení dvěma)\n\n$= \\frac{4}{3}$ (stejné jmenovatele: sečtou se jen čitatele)\n\n**Výsledek:** $\\frac{4}{3}$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co máš v téhle úloze udělat.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky jeden po druhém. U každého mi řekni, co v něm Petr spočítal.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: je v něm plus i děleno? Které z nich měl Petr spočítat dřív?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč se tu nesmí nejdřív sečíst dvě třetiny a jedna polovina.“",
+        "otocena_role_odpoved": "Děleno má přednost před plus, i když jsou to zlomky. Nejdřív se vydělí jedna polovina třemi čtvrtinami a teprve výsledek se přičte ke dvěma třetinám.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Ukáže 3. nebo 4. řádek: „Ze kterého řádku to číslo vzniklo?“ Ukáže 1. řádek: ten je správně. Napíše $\\frac{14}{9}$: „Co má přednost, plus, nebo děleno?“ Oprava $\\frac{3}{8}$ nebo $\\frac{3}{2}$, výsledek $\\frac{25}{24}$ nebo $\\frac{13}{6}$: „Který zlomek se při dělení obrací?“ (Ten, kterým se dělí.) Nezkrácený zlomek: aplikace ho uzná jako správný a připomene zkrácení. Pro semafor to chyba není, klikněte podle zbytku úlohy. Zkrácení připomeňte až po semaforu: „Jde to ještě zkrátit?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že u každého řádku hlídalo, co má přednost, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu větu: „Petr tvrdí, že $\\frac{1}{2} + \\frac{1}{2} : \\frac{1}{2} = 2$.“ Zeptejte se: „Má Petr pravdu? Co počítal jako první?“ Pak totéž s větou „Petr tvrdí, že $\\frac{1}{3} + \\frac{2}{3} \\cdot \\frac{1}{2} = \\frac{2}{3}$.“ Kontrola pro vás: poprvé nemá pravdu (správně je $\\frac{3}{2}$), podruhé má.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 2 listy papíru a nůžky. Zítra ať dítě jeden list přeloží napůl a druhý rozstřihne na čtvrtiny. Přikládáním ať zjistí, kolik čtvrtin se vejde do poloviny. Pak ať samo zapíše $\\frac{1}{2} : \\frac{1}{4} = 2$ a potom $1 + \\frac{1}{2} : \\frac{1}{4} = 1 + 2 = 3$ a řekne, proč se dělí dřív. Potom zopakujte lekci „Dlouhý zlomkový výraz po krocích“. Kontrola pro vás: do poloviny se vejdou dvě čtvrtiny, výsledek je $3$, ne $6$."
+      },
+      "tisk": {
+        "zadani": "Petr počítal příklad\n\n$$\\left(1 - \\frac{1}{3}\\right) + \\frac{1}{2} : \\frac{3}{4}$$\n\na udělal jednu chybu.\n\n1. řádek: $= \\frac{2}{3} + \\frac{1}{2} : \\frac{3}{4}$\n\n2. řádek: $= \\frac{7}{6} : \\frac{3}{4}$\n\n3. řádek: $= \\frac{7}{6} \\cdot \\frac{4}{3}$\n\n4. řádek: $= \\frac{14}{9}$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $= \\frac{2}{3} + \\frac{3}{8}$ b) $= \\frac{2}{3} + \\frac{3}{2}$ c) $= \\frac{2}{3} + \\frac{2}{3}$\n\nC) Spočítej správný výsledek a zapiš ho v základním tvaru: ______"
+      }
+    },
+    {
+      "id": "M8-T02-L3-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Vypočítej a výsledek zapiš zlomkem v základním tvaru. Piš celý postup, každou úpravu na nový řádek.\n\n$$\\dfrac{\\frac{4}{3} - \\frac{3}{4}}{\\frac{7}{4} \\cdot \\frac{8}{3}}$$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na početní operace v pořadí, v jakém je počítáš.",
+          "vstup": {
+            "typ": "poradi",
+            "vyraz": "\\left(\\frac{4}{3} \\op{o1}{-} \\frac{3}{4}\\right) \\op{o3}{:} \\left(\\frac{7}{4} \\op{o2}{\\cdot} \\frac{8}{3}\\right)",
+            "operace": [
+              {
+                "id": "o1",
+                "popis": "odčítání v první závorce"
+              },
+              {
+                "id": "o2",
+                "popis": "násobení ve druhé závorce"
+              },
+              {
+                "id": "o3",
+                "popis": "dělení"
+              }
+            ]
+          },
+          "spravne": {
+            "poradi": [
+              [
+                "o1",
+                "o2",
+                "o3"
+              ],
+              [
+                "o2",
+                "o1",
+                "o3"
+              ]
+            ]
+          },
+          "zname_chyby": [
+            {
+              "poradi": [
+                "o1",
+                "o3",
+                "o2"
+              ],
+              "typ_chyby": "ignoroval-zavorku"
+            },
+            {
+              "poradi": [
+                "o2",
+                "o3",
+                "o1"
+              ],
+              "typ_chyby": "ignoroval-zavorku"
+            },
+            {
+              "poradi": [
+                "o3",
+                "o1",
+                "o2"
+              ],
+              "typ_chyby": "ignoroval-zavorku"
+            },
+            {
+              "poradi": [
+                "o3",
+                "o2",
+                "o1"
+              ],
+              "typ_chyby": "ignoroval-zavorku"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: čitatel",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 7,
+            "j": 12
+          },
+          "zname_chyby": [
+            {
+              "c": 1,
+              "j": 12,
+              "typ_chyby": "neprepocital-citatel"
+            },
+            {
+              "c": -1,
+              "j": 1,
+              "typ_chyby": "scital-citatele-i-jmenovatele"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        },
+        {
+          "id": "k3",
+          "popisek": "Mezivýsledek: jmenovatel",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 14,
+            "j": 3
+          },
+          "zname_chyby": [
+            {
+              "c": 56,
+              "j": 1,
+              "typ_chyby": "spolecny-jmenovatel-pri-nasobeni"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 1,
+            "j": 8
+          },
+          "zname_chyby": [
+            {
+              "c": 8,
+              "j": 1,
+              "typ_chyby": "slozeny-zlomek-prevratil-horni"
+            },
+            {
+              "c": 49,
+              "j": 18,
+              "typ_chyby": "delil-bez-prevraceni"
+            },
+            {
+              "c": 1,
+              "j": 56,
+              "typ_chyby": "neprepocital-citatel"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Takhle vypadala úloha 2.3 v testu: patrový zlomek a k němu celý postup. Horní i dolní patro se spočítá každé zvlášť, teprve potom se dělí. V kroku 1 je stejný příklad zapsaný se závorkami; dítě kliká na znaménka v pořadí, v jakém by počítalo, nic nepočítá. Čte se: „nahoře čtyři třetiny mínus tři čtvrtiny, dole sedm čtvrtin krát osm třetin, dlouhá čára je děleno“.",
+        "reseni": "$\\dfrac{\\frac{4}{3} - \\frac{3}{4}}{\\frac{7}{4} \\cdot \\frac{8}{3}}$\n\n$= \\left(\\frac{4}{3} - \\frac{3}{4}\\right) : \\left(\\frac{7}{4} \\cdot \\frac{8}{3}\\right)$ (dlouhá čára je děleno, každé patro jako v závorce)\n\nPořadí: mínus v první závorce a krát ve druhé v libovolném pořadí, děleno až nakonec.\n\n$\\frac{4}{3} - \\frac{3}{4} = \\frac{16}{12} - \\frac{9}{12} = \\frac{7}{12}$ (horní patro: obě části na dvanáctiny)\n\n$\\frac{7}{4} \\cdot \\frac{8}{3} = \\frac{7 \\cdot 2}{1 \\cdot 3} = \\frac{14}{3}$ (dolní patro: čtyřka a osmička se krátí čtyřmi)\n\n$\\frac{7}{12} : \\frac{14}{3}$ (obě závorky jsou spočítané, teď se dělí)\n\n$= \\frac{7}{12} \\cdot \\frac{3}{14}$ (dělení: dolní patro se obrátí a násobí se jím)\n\n$= \\frac{1}{4} \\cdot \\frac{1}{2}$ (krácení: sedm se čtrnáctkou, tři s dvanáctkou)\n\n$= \\frac{1}{8}$ (násobení)\n\n**Výsledek:** $\\frac{1}{8}$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Přečti mi příklad nahlas. Co je v horním patře, co v dolním a co znamená dlouhá čára?“"
+          },
+          {
+            "k": "Krok 1, když nesedí",
+            "text": "„Aplikace říká, že pořadí zatím nesedí. Znaménko děleno dělí celou první závorku celou druhou. Co musí být hotové, než se dělí?“"
+          },
+          {
+            "k": "Krok 2 až výsledek",
+            "text": "„Tady máš začátek: nahoře převeď obě části na dvanáctiny, dole zkrať čtyřku s osmičkou. Co potom uděláš s dlouhou čarou?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč nemůžeš dělit dlouhou čarou dřív, než spočítáš horní i dolní patro.“",
+        "otocena_role_odpoved": "Dlouhá čára dělí celé horní patro celým dolním. Dokud nejsou obě patra spočítaná, nemám co dělit. Je to, jako by každé patro bylo v závorce.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Pořadí nesedí: přečtěte druhou otázku. Čitatel $\\frac{1}{12}$ nebo $-1$: nepřevedlo na dvanáctiny (pak i výsledek $\\frac{1}{56}$). „Kolik dvanáctin jsou čtyři třetiny?“ (Šestnáct.) Jmenovatel $56$: u násobení hledalo společného jmenovatele. Výsledek $8$ nebo $\\frac{49}{18}$: „Který zlomek se při dělení obrací?“ (Dolní patro.) Nezkrácený zlomek: aplikace ho uzná jako správný a připomene zkrácení. Pro semafor to chyba není, klikněte podle zbytku úlohy. Zkrácení připomeňte až po semaforu: „Jde to ještě zkrátit?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — hlavní úlohu zvládlo. Pochvalte, že spočítalo každé patro zvlášť a dělilo až nakonec, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu $\\dfrac{\\frac{3}{2} - \\frac{1}{2}}{\\frac{2}{3} \\cdot \\frac{3}{4}}$. Ať ho počítá na papír a nahlas řekne, co vyšlo nahoře, co dole a co nakonec. Kontrola pro vás: nahoře $1$, dole $\\frac{1}{2}$, výsledek $2$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 2 listy papíru a nůžky. Zítra ať dítě jeden list rozstřihne na čtvrtiny a druhý na osminy. Zeptejte se: „Kolikrát se osmina vejde do čtvrtiny?“ Ať to zkusí přiložením. Pak ať samo zapíše $\\dfrac{\\frac{1}{4}}{\\frac{1}{8}} = \\frac{1}{4} \\cdot \\frac{8}{1} = 2$. Potom zopakujte lekci „Dlouhý zlomkový výraz po krocích“. Kontrola pro vás: osmina se do čtvrtiny vejde dvakrát."
+      },
+      "tisk": {
+        "zadani": "Vypočítej a výsledek zapiš zlomkem v základním tvaru. Piš celý postup, každou úpravu na nový řádek.\n\n$$\\dfrac{\\frac{4}{3} - \\frac{3}{4}}{\\frac{7}{4} \\cdot \\frac{8}{3}}$$\n\nA)\n\n$$\\left(\\frac{4}{3} \\op{o1}{-} \\frac{3}{4}\\right) \\op{o3}{:} \\left(\\frac{7}{4} \\op{o2}{\\cdot} \\frac{8}{3}\\right)$$\n\nB) Mezivýsledek (čitatel): ______\n\nC) Mezivýsledek (jmenovatel): ______\n\nD) Výsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T02-L3-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Vypočítej a výsledek zapiš zlomkem v základním tvaru:\n\n$$\\left(\\frac{3}{2} - \\frac{2}{3}\\right) : \\left(\\frac{5}{9} \\cdot 3\\right)$$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 1,
+            "j": 2
+          },
+          "zname_chyby": [
+            {
+              "c": 2,
+              "j": 1,
+              "typ_chyby": "prevratil-prvni"
+            },
+            {
+              "c": 1,
+              "j": 10,
+              "typ_chyby": "neprepocital-citatel"
+            },
+            {
+              "c": 3,
+              "j": 2,
+              "typ_chyby": "cele-cislo-do-citatele-i-jmenovatele"
+            },
+            {
+              "c": 25,
+              "j": 18,
+              "typ_chyby": "delil-bez-prevraceni"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Je to stejný typ jako patrový zlomek, jen zapsaný se závorkami a znaménkem děleno. Čte se: „závorka tři poloviny mínus dvě třetiny, děleno závorka pět devítin krát tři“.",
+        "reseni": "$\\left(\\frac{3}{2} - \\frac{2}{3}\\right) : \\left(\\frac{5}{9} \\cdot 3\\right)$\n\n$= \\left(\\frac{9}{6} - \\frac{4}{6}\\right) : \\left(\\frac{5}{9} \\cdot 3\\right)$ (první závorka: obě části na šestiny)\n\n$= \\frac{5}{6} : \\left(\\frac{5}{9} \\cdot 3\\right)$ (odčítání)\n\n$= \\frac{5}{6} : \\frac{5}{3}$ (druhá závorka: trojka se krátí s devítkou, násobí se jen horní číslo)\n\n$= \\frac{5}{6} \\cdot \\frac{3}{5}$ (dělení se mění na násobení obráceným druhým zlomkem)\n\n$= \\frac{1}{2}$ (krácení: pět s pětkou, tři se šestkou)\n\n**Výsledek:** $\\frac{1}{2}$",
+        "otazky": [
+          "„Přečti mi příklad nahlas. Co je v první závorce, co ve druhé a co je mezi nimi?“",
+          "„Co spočítáš jako první a co až nakonec? Proč?“",
+          "„Tady máš začátek: v první závorce převeď obě části na šestiny, ve druhé zkrať trojku s devítkou. Co uděláš potom?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč pět devítin krát tři není patnáct dvacetisedmin.“",
+        "otocena_role_odpoved": "Trojka jsou tři celé, dole má jedničku. Násobí se jen horní číslo: patnáct devítin, po zkrácení pět třetin. Patnáct dvacetisedmin je pořád pět devítin, to by bylo násobení jedničkou.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nepíše nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: $2$: obrátilo první zlomek. $\\frac{25}{18}$: neobrátilo žádný. $\\frac{1}{10}$: nepřevedlo na šestiny. $\\frac{3}{2}$: trojku násobilo nahoře i dole. Zeptejte se: „Který zlomek se obrací?“ (Ten za děleno.) „Kolik šestin jsou tři poloviny?“ (Devět.) Nezkrácený zlomek: aplikace ho uzná jako správný a připomene zkrácení. Pro semafor to chyba není, klikněte podle zbytku úlohy. Zkrácení připomeňte až po semaforu: „Jde to ještě zkrátit?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — dlouhý výraz zvládá samo po krocích. Pochvalte, že psalo každou úpravu na nový řádek. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu příklad $\\left(\\frac{5}{4} - \\frac{1}{2}\\right) : \\left(\\frac{3}{8} \\cdot 4\\right)$. Ať ho řeší po krocích na papír a u každého řádku nahlas řekne, co dělá. Kontrola pro vás: první závorka $\\frac{3}{4}$, druhá $\\frac{3}{2}$, výsledek $\\frac{1}{2}$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 2 tabulky čokolády po 6 kostičkách (nebo nakreslené). Zítra ať dítě odpočítá tři poloviny tabulky v kostičkách a z nich odebere dvě třetiny tabulky. Zeptejte se: „Kolik kostiček zbylo? Kolik je to šestin tabulky?“ Pak ať samo zapíše $\\frac{3}{2} - \\frac{2}{3} = \\frac{9}{6} - \\frac{4}{6} = \\frac{5}{6}$. Potom zopakujte lekci „Dlouhý zlomkový výraz po krocích“. Kontrola pro vás: tři poloviny je 9 kostiček, dvě třetiny 4, zbylo 5 kostiček, tedy $\\frac{5}{6}$."
+      },
+      "tisk": {
+        "zadani": "Vypočítej a výsledek zapiš zlomkem v základním tvaru:\n\n$$\\left(\\frac{3}{2} - \\frac{2}{3}\\right) : \\left(\\frac{5}{9} \\cdot 3\\right)$$\n\nVýsledek: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "SYNTETICKÁ testovací lekce (testy/data/osma) převedená ze Spolu — jen pro testy a QA, není to obsah Spolu 8.",
+    "zkontroloval": "vedouci",
+    "datum": "2026-09-25"
+  }
+}

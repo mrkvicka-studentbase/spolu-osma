@@ -10,8 +10,11 @@ begin;
 
 -- >>>>> 0001_schema.sql >>>>>
 -- =====================================================================
--- 0001_schema.sql — Spolu na přijímačky: tabulky, constraints, indexy, GRANTy
--- Závazné schéma: kostra/02-datovy-model.md. Názvy česky bez diakritiky (R1).
+-- 0001_schema.sql — Spolu 8 (opakování 8. třídy): tabulky, constraints, indexy, GRANTy
+-- Čistá sada pro NOVOU databázi (konsolidace migrací Spolu 0001–0007, TECHNIKA-OSMA.md):
+--   lekce.predmet + fáze 'osma' (oba předměty), deti.predmety (výchozí {matematika,cestina}),
+--   sezeni.rezim včetně 'samo' (R64). Bez dotazníku a platby: rodiny.stav jen 'aktivni' / 'uzavreny'.
+-- Vychází z kostra/02-datovy-model.md. Názvy česky bez diakritiky (R1).
 -- Skript je idempotentní (create ... if not exists), lze ho spustit znovu.
 -- =====================================================================
 
@@ -25,30 +28,35 @@ create table if not exists public.rodiny (
                    check (char_length(jmeno_rodice) <= 100),
   email            text,
   telefon          text check (telefon is null or char_length(telefon) <= 30),
-  stav             text not null default 'pilot'
-                   check (stav in ('pilot', 'aktivni', 'uzavreny')),
+  -- Spolu 8 v1 bez platby: každá rodina je 'aktivni'; 'uzavreny' = účet bez přístupu k obsahu (konec provozu)
+  stav             text not null default 'aktivni'
+                   check (stav in ('aktivni', 'uzavreny')),
   zdroj            text check (zdroj is null or char_length(zdroj) <= 50),
-  dotaznik_vyplnen boolean not null default false,
   poznamka_admin   text,
   odemknuto_at     timestamptz,
   created_at       timestamptz not null default now()
 );
 
-comment on table public.rodiny is 'Rodina = účet (auth.users). Chráněné sloupce (stav, odemknuto_at, poznamka_admin, dotaznik_vyplnen) mění jen admin / triggery.';
+comment on table public.rodiny is 'Rodina = účet (auth.users). Chráněné sloupce (stav, odemknuto_at, poznamka_admin) mění jen admin / triggery. Spolu 8 v1: žádná platba, stav aktivni (výchozí) / uzavreny (konec provozu).';
 
 create index if not exists rodiny_stav_idx on public.rodiny (stav);
 
 -- ---------------------------------------------------------------------
 -- deti — max 2 na rodinu (check poradi 1–2 + unique + trigger v 0004)
+-- typ_skoly a znamka_8 jsou ze Spolu (přijímačky) — Spolu 8 je nevyžaduje (null)
+-- predmety = které předměty má dítě aktivní (přehled, zámek sezení)
 -- ---------------------------------------------------------------------
 create table if not exists public.deti (
   id            uuid primary key default gen_random_uuid(),
   rodina_id     uuid not null references public.rodiny (id) on delete cascade,
   krestni_jmeno text not null
                 check (char_length(btrim(krestni_jmeno)) between 1 and 50),
-  typ_skoly     text not null check (typ_skoly in ('gymnazium', 'ss_maturita')),
+  typ_skoly     text check (typ_skoly in ('gymnazium', 'ss_maturita')),
   znamka_8      smallint check (znamka_8 between 1 and 5),
   varianta      text not null default 'z9' check (varianta in ('z9', 'z7')),
+  predmety      text[] not null default '{matematika,cestina}'
+                constraint deti_predmety_check
+                check (cardinality(predmety) between 1 and 2 and predmety <@ array['matematika', 'cestina']::text[]),
   -- poradi doplní trigger, pokud ho klient nepošle (NOT NULL se kontroluje až po BEFORE triggeru)
   poradi        smallint not null check (poradi between 1 and 2),
   created_at    timestamptz not null default now(),
@@ -57,11 +65,15 @@ create table if not exists public.deti (
 
 -- ---------------------------------------------------------------------
 -- lekce — obsah (jsonb) nahrává jen seed se service key; klient nezapisuje
+-- Spolu 8: fáze 'osma'; matematika M8-T<tt>-L<n> / M8-T00-DIAG, čeština cj-t<t>-l<n> / cj-t0-diag.
+-- tyden = číslo tématu 1–10 (0 = diagnostika), poradi = lekce v tématu 1–4.
 -- ---------------------------------------------------------------------
 create table if not exists public.lekce (
   id          text primary key check (id ~ '^[A-Za-z0-9-]{1,40}$'),
-  faze        text not null check (faze in ('pilot', 'faze1', 'faze2')),
-  tyden       smallint not null check (tyden between 0 and 16),
+  predmet     text not null default 'matematika'
+              constraint lekce_predmet_check check (predmet in ('matematika', 'cestina')),
+  faze        text not null default 'osma' constraint lekce_faze_check check (faze in ('osma')),
+  tyden       smallint not null check (tyden between 0 and 10),
   poradi      smallint not null check (poradi between 1 and 4),
   tema        text not null,
   kapitola    text not null,
@@ -70,10 +82,13 @@ create table if not exists public.lekce (
   verejna     boolean not null default false,
   otevrit_od  timestamptz not null,
   verze       integer not null default 1 check (verze >= 1),
-  created_at  timestamptz not null default now()
+  created_at  timestamptz not null default now(),
+  -- id odpovídá předmětu (seed i validátor to hlídají taky)
+  constraint lekce_predmet_id_check check (
+    (predmet = 'cestina' and id like 'cj-%') or (predmet = 'matematika' and id like 'M8-%'))
 );
 
-create index if not exists lekce_faze_tyden_poradi_idx on public.lekce (faze, tyden, poradi);
+create index if not exists lekce_predmet_tyden_poradi_idx on public.lekce (predmet, tyden, poradi);
 
 -- ---------------------------------------------------------------------
 -- sezeni — jedno projití lekce jedním dítětem
@@ -83,7 +98,8 @@ create table if not exists public.sezeni (
   dite_id     uuid not null references public.deti (id) on delete cascade,
   -- lekce se nemažou (seed dělá jen upsert); restrict chrání historii
   lekce_id    text not null references public.lekce (id) on update cascade on delete restrict,
-  rezim       text not null default 'app' check (rezim in ('app', 'papir')),
+  -- app = v aplikaci s rodičem, papir = na papír s rodičem, samo = v aplikaci bez rodiče (R64)
+  rezim       text not null default 'app' constraint sezeni_rezim_check check (rezim in ('app', 'papir', 'samo')),
   zacatek     timestamptz not null default now(),
   konec       timestamptz,
   stav        text not null default 'probiha'
@@ -140,16 +156,6 @@ create table if not exists public.semafory (
 create index if not exists semafory_barva_created_idx on public.semafory (barva, created_at desc);
 
 -- ---------------------------------------------------------------------
--- dotazniky — jeden na rodinu; insert nastaví rodiny.dotaznik_vyplnen (trigger 0004)
--- ---------------------------------------------------------------------
-create table if not exists public.dotazniky (
-  rodina_id    uuid primary key references public.rodiny (id) on delete cascade,
-  odpovedi     jsonb not null,
-  vyplneno_at  timestamptz not null default now(),
-  created_at   timestamptz not null default now()
-);
-
--- ---------------------------------------------------------------------
 -- admini — uid adminů; zápis jen ručně v SQL (viz 0005_admin.sql).
 -- Je tady (ne v 0005), protože ji potřebuje funkce je_admin() v 0002.
 -- ---------------------------------------------------------------------
@@ -166,7 +172,7 @@ create table if not exists public.admini (
 grant usage on schema public to anon, authenticated, service_role;
 
 revoke all on public.rodiny, public.deti, public.lekce, public.sezeni,
-              public.odpovedi, public.semafory, public.dotazniky, public.admini
+              public.odpovedi, public.semafory, public.admini
   from anon, authenticated;
 
 -- rodiny: čtení a úprava vlastního řádku (chráněné sloupce hlídá trigger 0004); insert jen trigger
@@ -180,12 +186,11 @@ grant select, insert, update         on public.sezeni    to authenticated;
 grant select, insert                 on public.odpovedi  to authenticated;
 -- semafory: upsert = insert + update
 grant select, insert, update         on public.semafory  to authenticated;
-grant select, insert                 on public.dotazniky to authenticated;
 -- admini: jen zjištění vlastní role
 grant select                         on public.admini    to authenticated;
 
 grant select, insert, update, delete on public.rodiny, public.deti, public.lekce, public.sezeni,
-                                        public.odpovedi, public.semafory, public.dotazniky, public.admini
+                                        public.odpovedi, public.semafory, public.admini
   to service_role;
 
 grant usage, select on all sequences in schema public to authenticated, service_role;
@@ -247,10 +252,11 @@ $$;
 
 -- Proč je lekce pro přihlášeného zamčená? null = přístupná.
 -- Jediné místo s pravidlem přístupu k obsahu: používá ho RLS na lekce i katalog_lekci() (0003).
+-- Spolu 8 v1: žádná platba ani zámek podle předmětu — lekce vidí každá přihlášená rodina od otevrit_od
+-- (seed --otevrit-od, všechny lekce najednou). Předmět dítěte hlídá až založení sezení (sezeni_insert).
 --   'neprihlaseno' — bez session
---   'uzavreno'     — rodina ve stavu uzavreny (od 1. 5.): nečte nic, ani pilot (kostra 01)
---   'platba'       — neveřejná lekce a rodina není aktivni (čeká na platbu)
---   'datum'        — rodina aktivni, ale now() < otevrit_od
+--   'uzavreno'     — rodina ve stavu uzavreny: nečte nic
+--   'datum'        — now() < otevrit_od (a lekce není verejna)
 create or replace function public.duvod_zamceni(p_verejna boolean, p_otevrit_od timestamptz)
 returns text
 language sql
@@ -259,16 +265,30 @@ security definer
 set search_path = ''
 as $$
   select case
-    when (select auth.uid()) is null            then 'neprihlaseno'
-    when public.je_admin()                      then null
-    when coalesce(r.stav, 'pilot') = 'uzavreny' then 'uzavreno'
-    when p_verejna                              then null
-    when coalesce(r.stav, 'pilot') <> 'aktivni' then 'platba'
-    when now() < p_otevrit_od                   then 'datum'
+    when (select auth.uid()) is null              then 'neprihlaseno'
+    when public.je_admin()                        then null
+    when coalesce(r.stav, 'aktivni') = 'uzavreny' then 'uzavreno'
+    when p_verejna                                then null
+    when now() < p_otevrit_od                     then 'datum'
     else null
   end
   from (select 1) as jeden
   left join public.rodiny r on r.id = (select auth.uid());
+$$;
+
+-- Má dítě daný předmět zapnutý? (deti.predmety; sezení jen pro dítě s předmětem lekce)
+create or replace function public.dite_ma_predmet_lekce(p_dite_id uuid, p_lekce_id text)
+returns boolean
+language sql
+stable
+security definer
+set search_path = ''
+as $$
+  select exists (
+    select 1 from public.deti d
+    join public.lekce l on l.id = p_lekce_id
+    where d.id = p_dite_id and l.predmet = any (d.predmety)
+  );
 $$;
 
 -- Práva na funkce: nikdy anon/public; authenticated je potřebuje pro politiky a RPC.
@@ -276,10 +296,12 @@ revoke execute on function public.je_admin()                              from p
 revoke execute on function public.moje_dite(uuid)                         from public, anon;
 revoke execute on function public.moje_sezeni(uuid)                       from public, anon;
 revoke execute on function public.duvod_zamceni(boolean, timestamptz)     from public, anon;
+revoke execute on function public.dite_ma_predmet_lekce(uuid, text)       from public, anon;
 grant  execute on function public.je_admin()                              to authenticated, service_role;
 grant  execute on function public.moje_dite(uuid)                         to authenticated, service_role;
 grant  execute on function public.moje_sezeni(uuid)                       to authenticated, service_role;
 grant  execute on function public.duvod_zamceni(boolean, timestamptz)     to authenticated, service_role;
+grant  execute on function public.dite_ma_predmet_lekce(uuid, text)       to authenticated, service_role;
 
 -- ---------------------------------------------------------------------
 -- Zapnutí RLS všude
@@ -290,12 +312,11 @@ alter table public.lekce     enable row level security;
 alter table public.sezeni    enable row level security;
 alter table public.odpovedi  enable row level security;
 alter table public.semafory  enable row level security;
-alter table public.dotazniky enable row level security;
 alter table public.admini    enable row level security;
 
 -- ---------------------------------------------------------------------
 -- rodiny: select/update vlastní; admin vše. Insert jen trigger po registraci.
--- Chráněné sloupce (stav, odemknuto_at, poznamka_admin, dotaznik_vyplnen) hlídá
+-- Chráněné sloupce (stav, odemknuto_at, poznamka_admin) hlídá
 -- trigger rodiny_ochrana (0004) — RLS neumí omezit sloupce.
 -- ---------------------------------------------------------------------
 drop policy if exists rodiny_select on public.rodiny;
@@ -329,8 +350,8 @@ create policy deti_update on public.deti
   with check (rodina_id = (select auth.uid()));
 
 -- ---------------------------------------------------------------------
--- lekce: select dle duvod_zamceni() (verejna OR (aktivni AND now() >= otevrit_od) OR admin;
--- uzavreny nečte nic). Žádná politika pro insert/update/delete = klient nezapisuje.
+-- lekce: select dle duvod_zamceni() (verejna OR now() >= otevrit_od OR admin; uzavreny nečte nic).
+-- Žádná politika pro insert/update/delete = klient nezapisuje.
 -- ---------------------------------------------------------------------
 drop policy if exists lekce_select on public.lekce;
 create policy lekce_select on public.lekce
@@ -339,7 +360,8 @@ create policy lekce_select on public.lekce
 
 -- ---------------------------------------------------------------------
 -- sezeni: rodina své (přes dite_id); admin select vše.
--- Insert jen pro lekci, kterou rodina smí číst (poddotaz podléhá RLS na lekce).
+-- Insert jen pro lekci, kterou rodina smí číst (poddotaz podléhá RLS na lekce),
+-- a jen dítěti, které má předmět lekce v deti.predmety.
 -- ---------------------------------------------------------------------
 drop policy if exists sezeni_select on public.sezeni;
 create policy sezeni_select on public.sezeni
@@ -352,6 +374,7 @@ create policy sezeni_insert on public.sezeni
   with check (
     public.moje_dite(dite_id)
     and exists (select 1 from public.lekce l where l.id = lekce_id)
+    and public.dite_ma_predmet_lekce(dite_id, lekce_id)
   );
 
 drop policy if exists sezeni_update on public.sezeni;
@@ -393,19 +416,6 @@ create policy semafory_update on public.semafory
   with check (public.moje_sezeni(sezeni_id));
 
 -- ---------------------------------------------------------------------
--- dotazniky: rodina insert/select vlastní; admin select
--- ---------------------------------------------------------------------
-drop policy if exists dotazniky_select on public.dotazniky;
-create policy dotazniky_select on public.dotazniky
-  for select to authenticated
-  using (rodina_id = (select auth.uid()) or public.je_admin());
-
-drop policy if exists dotazniky_insert on public.dotazniky;
-create policy dotazniky_insert on public.dotazniky
-  for insert to authenticated
-  with check (rodina_id = (select auth.uid()));
-
--- ---------------------------------------------------------------------
 -- admini: select jen sám sebe; zápis jen ručně v SQL (žádná politika)
 -- ---------------------------------------------------------------------
 drop policy if exists admini_select on public.admini;
@@ -423,7 +433,7 @@ create policy admini_select on public.admini
 
 -- ---------------------------------------------------------------------
 -- v_prehled_rodin — rodina, děti, stav, poslední aktivita, dokončené lekce,
--- aktuální týden (max tyden dokončené lekce), červené za 7 dní
+-- aktuální téma (max tyden dokončené lekce), červené za 7 dní
 -- ---------------------------------------------------------------------
 create or replace view public.v_prehled_rodin
 with (security_invoker = true)
@@ -435,11 +445,10 @@ select
   r.telefon,
   r.stav,
   r.zdroj,
-  r.dotaznik_vyplnen,
   r.poznamka_admin,
   r.odemknuto_at,
   r.created_at                           as registrace_at,
-  coalesce(d.deti, '[]'::jsonb)          as deti,          -- [{id, krestni_jmeno, typ_skoly, znamka_8, poradi}]
+  coalesce(d.deti, '[]'::jsonb)          as deti,          -- [{id, krestni_jmeno, predmety, poradi}]
   d.deti_jmena,                                           -- „Anna, Petr" (pro hledání / CSV)
   s.posledni_aktivita,
   coalesce(s.dokonceno_lekci, 0)         as dokonceno_lekci,
@@ -450,8 +459,8 @@ from public.rodiny r
 left join lateral (
   select
     jsonb_agg(jsonb_build_object(
-      'id', x.id, 'krestni_jmeno', x.krestni_jmeno, 'typ_skoly', x.typ_skoly,
-      'znamka_8', x.znamka_8, 'poradi', x.poradi) order by x.poradi) as deti,
+      'id', x.id, 'krestni_jmeno', x.krestni_jmeno, 'predmety', x.predmety,
+      'poradi', x.poradi) order by x.poradi) as deti,
     string_agg(x.krestni_jmeno, ', ' order by x.poradi)              as deti_jmena
   from public.deti x
   where x.rodina_id = r.id
@@ -486,6 +495,7 @@ create or replace view public.v_semafory_dle_kapitoly
 with (security_invoker = true)
 as
 select
+  l.predmet,
   l.kapitola,
   sm.barva,
   se.dite_id,
@@ -497,8 +507,8 @@ join public.sezeni se on se.id = sm.sezeni_id
 join public.deti d    on d.id = se.dite_id
 join public.lekce l   on l.id = se.lekce_id
 group by grouping sets (
-  (l.kapitola, sm.barva),
-  (l.kapitola, sm.barva, se.dite_id, d.krestni_jmeno)
+  (l.predmet, l.kapitola, sm.barva),
+  (l.predmet, l.kapitola, sm.barva, se.dite_id, d.krestni_jmeno)
 );
 
 -- ---------------------------------------------------------------------
@@ -552,6 +562,7 @@ select
   d.krestni_jmeno,
   se.id              as sezeni_id,
   se.lekce_id,
+  l.predmet,
   l.tema,
   l.kapitola,
   sm.uloha_id,
@@ -567,7 +578,7 @@ order by sm.created_at desc;
 
 -- ---------------------------------------------------------------------
 -- v_alarm — dítě, které má za posledních 7 dní ≥ 3 lekce (sezení se semaforem)
--- a v KAŽDÉ z nich aspoň jednu červenou. Jen pro přehled; e-mail až ve Fázi 1.
+-- a v KAŽDÉ z nich aspoň jednu červenou. Jen pro přehled admina.
 -- ---------------------------------------------------------------------
 create or replace view public.v_alarm
 with (security_invoker = true)
@@ -605,13 +616,15 @@ grant select on public.v_prehled_rodin, public.v_semafory_dle_kapitoly, public.v
 
 -- ---------------------------------------------------------------------
 -- katalog_lekci() — metadata VŠECH lekcí (bez obsahu) pro přihlášené.
--- RLS zamčené lekce z tabulky nevrátí; přehled ale musí ukázat i zamčené karty
--- („Otevře se 1. 11." / „Odemkne se po platbě"). Obsah (jsonb) se nevrací.
--- zamceno: null = přístupná | 'platba' | 'datum' | 'uzavreno' (viz duvod_zamceni v 0002)
+-- RLS zamčené lekce z tabulky nevrátí; přehled ale ukazuje i zamčené karty („Otevře se …“).
+-- Obsah (jsonb) se nevrací; pocet_uloh = počet úloh v obsahu (matematika 4, čeština 5, diagnostika 20–25).
+-- zamceno: null = přístupná | 'datum' | 'uzavreno' (viz duvod_zamceni v 0002)
 -- ---------------------------------------------------------------------
-create or replace function public.katalog_lekci()
+drop function if exists public.katalog_lekci();
+create function public.katalog_lekci()
 returns table (
   id          text,
+  predmet     text,
   faze        text,
   tyden       smallint,
   poradi      smallint,
@@ -619,6 +632,7 @@ returns table (
   kapitola    text,
   varianta    text,
   cas_min     integer,
+  pocet_uloh  integer,
   otevrit_od  timestamptz,
   verejna     boolean,
   verze       integer,
@@ -630,15 +644,14 @@ security definer
 set search_path = ''
 as $$
   select
-    l.id, l.faze, l.tyden, l.poradi, l.tema, l.kapitola, l.varianta,
+    l.id, l.predmet, l.faze, l.tyden, l.poradi, l.tema, l.kapitola, l.varianta,
     case when (l.obsah ->> 'cas_min') ~ '^[0-9]+$' then (l.obsah ->> 'cas_min')::integer end,
+    case when jsonb_typeof(l.obsah -> 'ulohy') = 'array' then jsonb_array_length(l.obsah -> 'ulohy') end,
     l.otevrit_od, l.verejna, l.verze,
     public.duvod_zamceni(l.verejna, l.otevrit_od)
   from public.lekce l
   where (select auth.uid()) is not null
-  order by
-    case l.faze when 'pilot' then 1 when 'faze1' then 2 else 3 end,
-    l.tyden, l.poradi, l.id;
+  order by l.predmet, l.tyden, l.poradi, l.id;
 $$;
 
 revoke execute on function public.katalog_lekci() from public, anon;
@@ -648,13 +661,14 @@ grant  execute on function public.katalog_lekci() to authenticated, service_role
 -- >>>>> 0004_triggers.sql >>>>>
 -- =====================================================================
 -- 0004_triggers.sql — triggery: registrace (rodina + 1. dítě, R6), max 2 děti,
--- ochrana sloupců rodiny, dotazník → nárok, konec sezení.
+-- ochrana sloupců rodiny, konec sezení. (Spolu 8: bez dotazníku a platby.)
 -- =====================================================================
 
 -- ---------------------------------------------------------------------
 -- Po registraci (after insert on auth.users): založí rodiny a (R6) první dítě.
 -- Metadata (options.data v supabase.auth.signUp):
---   jmeno_rodice, zdroj, dite_jmeno, typ_skoly ('gymnazium'|'ss_maturita'), znamka_8 (1–5)
+--   jmeno_rodice, zdroj, dite_jmeno; volitelně predmety (pole 'matematika'/'cestina', výchozí oba)
+--   Spolu 8 typ školy ani známku nevyžaduje (sloupce zůstaly, plní se null).
 -- Zásada: chyba v datech dítěte NESMÍ shodit registraci (jinak Supabase vrátí
 -- „Database error saving new user"). Dítě se pak jen nezaloží a klient nabídne
 -- přidání dítěte (mojeDeti() vrátí []).
@@ -670,26 +684,26 @@ declare
   v_jmeno  text;
   v_zdroj  text;
   v_dite   text;
-  v_typ    text;
-  v_znamka smallint;
+  v_predm  text[];
 begin
   m := coalesce(new.raw_user_meta_data, '{}'::jsonb);
   v_jmeno := left(btrim(coalesce(m ->> 'jmeno_rodice', '')), 100);
   v_zdroj := nullif(left(btrim(coalesce(m ->> 'zdroj', '')), 50), '');
 
   insert into public.rodiny (id, email, jmeno_rodice, zdroj, stav)
-  values (new.id, new.email, v_jmeno, v_zdroj, 'pilot')
+  values (new.id, new.email, v_jmeno, v_zdroj, 'aktivni')
   on conflict (id) do nothing;
 
   v_dite := nullif(left(btrim(coalesce(m ->> 'dite_jmeno', '')), 50), '');
   if v_dite is not null then
-    v_typ := m ->> 'typ_skoly';
-    if (m ->> 'znamka_8') ~ '^[1-5]$' then
-      v_znamka := (m ->> 'znamka_8')::smallint;
+    if jsonb_typeof(m -> 'predmety') = 'array' then
+      select array_agg(distinct x) into v_predm
+      from jsonb_array_elements_text(m -> 'predmety') as x
+      where x in ('matematika', 'cestina');
     end if;
     begin
-      insert into public.deti (rodina_id, krestni_jmeno, typ_skoly, znamka_8, poradi)
-      values (new.id, v_dite, v_typ, v_znamka, 1);
+      insert into public.deti (rodina_id, krestni_jmeno, poradi, predmety)
+      values (new.id, v_dite, 1, coalesce(v_predm, '{matematika,cestina}'));
     exception when others then
       raise warning 'po_registraci: dite pro % se nepodarilo zalozit: % (%)', new.id, sqlerrm, sqlstate;
     end;
@@ -765,10 +779,9 @@ create trigger deti_pred_vlozenim
 -- ---------------------------------------------------------------------
 -- rodiny: ochrana sloupců. Klient (role authenticated/anon) nesmí měnit
 --   id, email, created_at               — nikdo z klienta
---   stav, odemknuto_at, poznamka_admin,
---   dotaznik_vyplnen                    — jen admin (je_admin())
+--   stav, odemknuto_at, poznamka_admin  — jen admin (je_admin())
 -- Funkce je SECURITY INVOKER: current_user je volající role. Triggery/skripty
--- běžící jako postgres/service_role (po_dotazniku, SQL Editor, seed) projdou.
+-- běžící jako postgres/service_role (SQL Editor, seed) projdou.
 -- Navíc: při změně stavu na 'aktivni' se doplní odemknuto_at = now().
 -- ---------------------------------------------------------------------
 create or replace function public.rodiny_ochrana()
@@ -794,8 +807,7 @@ begin
     if not public.je_admin() and (
          new.stav             is distinct from old.stav
       or new.odemknuto_at     is distinct from old.odemknuto_at
-      or new.poznamka_admin   is distinct from old.poznamka_admin
-      or new.dotaznik_vyplnen is distinct from old.dotaznik_vyplnen) then
+      or new.poznamka_admin   is distinct from old.poznamka_admin) then
       raise exception 'Tento údaj může změnit jen administrátor.' using errcode = '42501';
     end if;
   end if;
@@ -808,44 +820,6 @@ drop trigger if exists rodiny_ochrana on public.rodiny;
 create trigger rodiny_ochrana
   before update on public.rodiny
   for each row execute function public.rodiny_ochrana();
-
--- ---------------------------------------------------------------------
--- dotazniky: po vložení nastav rodiny.dotaznik_vyplnen = true (nárok na 790 Kč).
--- Security definer → update běží jako vlastník (postgres) a projde ochranou.
--- ---------------------------------------------------------------------
-create or replace function public.po_dotazniku()
-returns trigger
-language plpgsql
-security definer
-set search_path = ''
-as $$
-begin
-  update public.rodiny set dotaznik_vyplnen = true where id = new.rodina_id;
-  return new;
-end;
-$$;
-
-drop trigger if exists po_dotazniku on public.dotazniky;
-create trigger po_dotazniku
-  after insert on public.dotazniky
-  for each row execute function public.po_dotazniku();
-
--- Čas vyplnění dotazníku určuje server, ne klient
-create or replace function public.dotaznik_pred_vlozenim()
-returns trigger
-language plpgsql
-set search_path = ''
-as $$
-begin
-  new.vyplneno_at := now();
-  return new;
-end;
-$$;
-
-drop trigger if exists dotaznik_pred_vlozenim on public.dotazniky;
-create trigger dotaznik_pred_vlozenim
-  before insert on public.dotazniky
-  for each row execute function public.dotaznik_pred_vlozenim();
 
 -- ---------------------------------------------------------------------
 -- sezeni: při ukončení (dokonceno/preruseno) doplň konec, pokud chybí

@@ -1,15 +1,11 @@
 // =====================================================================
 // dite-formular.js — modal „Přidat druhé dítě" / „Přidejte profil dítěte" (QA B1)
 //
-// Stejná pole a komponenty jako registrace (křestní jméno, typ školy, známka 1–5).
-// Uloží přes pridatDite() (supabase.js; max 2 děti hlídá DB trigger + RLS).
+// Spolu 8: křestní jméno a předměty (zaškrtávátka Matematika / Čeština, výchozí obě, aspoň jeden).
+// Typ školy ani známku nechceme (sloupce v DB zůstaly, plní se null). Uloží přes pridatDite()
+// (supabase.js; max 2 děti hlídá DB trigger + RLS).
 // Použití (prehled.js):
 //   const dite = await otevritPridaniDitete({ prvni: deti.length === 0 });  // null = zavřeno
-//
-// Předměty dítěte (ZADANI-CESTINA §8.2, deti.predmety z migrace 0007): zaškrtávátka Matematika / Čeština,
-// aspoň jeden. Jen když řádky dětí z DB sloupec `predmety` mají (= migrace proběhla, maSloupecPredmety);
-// jinak se formulář nemění a `predmety` se do DB neposílají (sloupec by neexistoval).
-//   otevritPridaniDitete({ prvni, predmety: true })       // + zaškrtávátka (výchozí Matematika)
 //   const d = await otevritPredmetyDitete(dite);          // úprava předmětů existujícího dítěte; null = zavřeno
 // =====================================================================
 
@@ -25,15 +21,6 @@ function nastavChybu(pole, chybaEl, text) {
   chybaEl.replaceChildren(...(text ? [ikona('pozor'), document.createTextNode(text)] : []));
   if (text) pole.setAttribute('aria-invalid', 'true');
   else pole.removeAttribute('aria-invalid');
-}
-
-/** Skupina radio voleb `.volby` (stejné komponenty jako registrace.html). */
-function volby(id, legenda, nazev, moznosti, trida = '') {
-  return el('fieldset', { class: ['volby', trida], id, 'aria-describedby': `${id}-chyba` },
-    el('legend', { text: legenda }),
-    moznosti.map(([hodnota, text]) => el('label', { class: 'volba' },
-      el('input', { class: 'volba__vstup', type: 'radio', name: nazev, value: hodnota }),
-      el('span', { class: 'volba__obsah', text }))));
 }
 
 /**
@@ -52,22 +39,16 @@ function volbyPredmetu(id, nazev, vybrane) {
 
 /**
  * Otevře formulář a po úspěšném uložení vrátí nové dítě.
- * @param {{prvni?: boolean, predmety?: boolean}} [volby]  prvni = rodina nemá žádné dítě (jiný nadpis a text);
- *   predmety = ukázat volbu předmětů (jen po migraci 0007)
+ * @param {{prvni?: boolean}} [volby]  prvni = rodina nemá žádné dítě (jiný nadpis a text)
  * @returns {Promise<import('./supabase.js').Dite|null>}  null = zavřeno bez uložení
  */
-export function otevritPridaniDitete({ prvni = false, predmety = false } = {}) {
+export function otevritPridaniDitete({ prvni = false } = {}) {
   const p = `dite${++citac}`;
   const jmeno = el('input', { class: 'pole', id: `${p}-jmeno`, maxlength: '50', autocomplete: 'off', 'aria-describedby': `${p}-jmeno-chyba` });
-  const skola = volby(`${p}-skola`, 'Na jakou školu se hlásí?', `${p}-typ_skoly`, [['gymnazium', 'Gymnázium'], ['ss_maturita', 'SŠ s maturitou']]);
-  const znamka = volby(`${p}-znamka`, 'Známka z matematiky na konci 8. třídy', `${p}-znamka`,
-    [1, 2, 3, 4, 5].map((n) => [String(n), String(n)]), 'volby--stupnice');
   const chyba = (id) => el('p', { class: 'pole-chyba', id: `${id}-chyba`, hidden: true });
   const chJmeno = chyba(`${p}-jmeno`);
-  const chSkola = chyba(`${p}-skola`);
-  const chZnamka = chyba(`${p}-znamka`);
-  const predm = predmety ? volbyPredmetu(`${p}-predmety`, `${p}-predmety`, ['matematika']) : null;
-  const chPredmety = predm ? chyba(`${p}-predmety`) : null;
+  const predm = volbyPredmetu(`${p}-predmety`, `${p}-predmety`, ['matematika', 'cestina']);
+  const chPredmety = chyba(`${p}-predmety`);
   const chybaFormu = el('div', { class: 'hlaska hlaska--varovani', role: 'alert', hidden: true },
     ikona('pozor'), el('div', { class: 'hlaska__text' }, el('strong')));
   const odeslat = el('button', { class: 'tlacitko tlacitko--primarni tlacitko--velke tlacitko--cela-sirka', type: 'submit' }, h('dite.ulozit'));
@@ -77,9 +58,7 @@ export function otevritPridaniDitete({ prvni = false, predmety = false } = {}) {
     chybaFormu,
     el('div', { class: 'pole-skupina' },
       el('label', { class: 'pole-popisek', for: `${p}-jmeno`, text: 'Křestní jméno dítěte' }), jmeno, chJmeno),
-    el('div', { class: 'pole-skupina' }, skola, chSkola),
-    el('div', { class: 'pole-skupina' }, znamka, chZnamka),
-    predm ? el('div', { class: 'pole-skupina' }, predm.uzel, chPredmety) : null,
+    el('div', { class: 'pole-skupina' }, predm.uzel, chPredmety),
     odeslat);
 
   const nadpisId = `${p}-nadpis`;
@@ -91,22 +70,17 @@ export function otevritPridaniDitete({ prvni = false, predmety = false } = {}) {
   document.body.append(dialog);
 
   let nove = null;
-  const vybrano = (nazev) => form.querySelector(`input[name="${nazev}"]:checked`)?.value ?? null;
   jmeno.addEventListener('input', () => nastavChybu(jmeno, chJmeno, null));
-  skola.addEventListener('change', () => nastavChybu(skola, chSkola, null));
-  znamka.addEventListener('change', () => nastavChybu(znamka, chZnamka, null));
-  predm?.uzel.addEventListener('change', () => nastavChybu(predm.uzel, chPredmety, null));
+  predm.uzel.addEventListener('change', () => nastavChybu(predm.uzel, chPredmety, null));
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     chybaFormu.hidden = true;
-    const hodnoty = { jmeno: jmeno.value.trim(), typSkoly: vybrano(`${p}-typ_skoly`), znamka: vybrano(`${p}-znamka`) };
+    const hodnoty = { jmeno: jmeno.value.trim() };
     const chyby = [
       [jmeno, chJmeno, hodnoty.jmeno ? null : h('ucet.chyba_dite')],
-      [skola, chSkola, hodnoty.typSkoly ? null : h('ucet.chyba_skola')],
-      [znamka, chZnamka, hodnoty.znamka ? null : h('ucet.chyba_znamka')],
+      [predm.uzel, chPredmety, predm.hodnota().length ? null : h('dite.predmety_chyba')],
     ];
-    if (predm) chyby.push([predm.uzel, chPredmety, predm.hodnota().length ? null : h('dite.predmety_chyba')]);
     let prvniChyba = null;
     for (const [pole, chybaEl, text] of chyby) {
       nastavChybu(pole, chybaEl, text);
@@ -117,10 +91,7 @@ export function otevritPridaniDitete({ prvni = false, predmety = false } = {}) {
     odeslat.disabled = true;
     odeslat.classList.add('je-nacitani');
     try {
-      nove = await pridatDite({
-        jmeno: hodnoty.jmeno, typSkoly: hodnoty.typSkoly, znamka8: Number(hodnoty.znamka),
-        ...(predm ? { predmety: predm.hodnota() } : {}), // bez migrace 0007 se sloupec neposílá
-      });
+      nove = await pridatDite({ jmeno: hodnoty.jmeno, predmety: predm.hodnota() });
       toast(h('dite.pridano', { jmeno: nove.krestni_jmeno }));
       zavritModal(dialog, 'ok');
     } catch (chybaUlozeni) {
@@ -140,7 +111,7 @@ export function otevritPridaniDitete({ prvni = false, predmety = false } = {}) {
 }
 
 /**
- * Formulář „Předměty: {jméno}“ — úprava deti.predmety (jen po migraci 0007; volající to ověří přes maSloupecPredmety).
+ * Formulář „Předměty: {jméno}“ — úprava deti.predmety.
  * @param {import('./supabase.js').Dite} dite
  * @returns {Promise<import('./supabase.js').Dite|null>}  uložené dítě, null = zavřeno bez uložení
  */

@@ -1,0 +1,574 @@
+{
+  "id": "cj-t2-l6",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 2,
+  "poradi": 2,
+  "tema": "Pády 1–4: na co se ptám",
+  "kapitola": "podstatna-jmena",
+  "cil_pro_rodice": "Dítě řekne pádové otázky 1. až 4. pádu v pořadí a určí pád podstatného jména ve větě tak, že se na něj zeptá slovem z věty (hledá koho, co? → 4. pád), i když slovo vypadá jako v 1. pádě (míč) nebo jako ve 2. pádě (psa).",
+  "uvod_pro_rodice": "Dnes se dítě učí první čtyři pády: na podstatné jméno ve větě se zeptá otázkou a podle otázky pozná, v jakém je pádě.",
+  "uvod_pravidla": [
+    {
+      "znak": "Pád = otázka, na kterou slovo odpoví",
+      "text": "co to je"
+    },
+    {
+      "znak": "Zeptám se z věty: hledá koho, co?",
+      "text": "test"
+    },
+    {
+      "znak": "Vidím psa → koho, co? → 4. pád",
+      "text": "příklad"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "pád": "tvar podstatného jména, který se ve větě mění podle otázky (pes – bez psa – ke psovi – vidím psa); pádů je sedm, dnes první čtyři",
+    "pádové otázky": "1. pád kdo, co? · 2. pád (bez) koho, čeho? · 3. pád (ke) komu, čemu? · 4. pád (vidím) koho, co?",
+    "pomocné slovo": "bez, ke, vidím: pomáhá poznat, která otázka je která; koho je ve 2. i ve 4. pádě, rozhoduje druhá půlka otázky (čeho?, nebo co?)",
+    "1. pád": "kdo nebo co ve větě něco dělá (Pes štěká: kdo štěká? pes)",
+    "rod": "skupina, do které podstatné jméno patří; pozná se podle toho, jestli před něj (o jedné věci) jde říct ten (mužský), ta (ženský), nebo to (střední); nezáleží na tom, jak slovo končí (téma minulé lekce)",
+    "číslo": "jednotné = slovo mluví o jednom (i třída, když je ve třídě hodně dětí), množné = o více (téma minulé lekce)",
+    "podstatné jméno": "název osoby, zvířete, věci, vlastnosti nebo činnosti; jde před něj říct ten, ta, to (týden 1)"
+  },
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "cas_min": 25,
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t2-l6-U1",
+      "typ": "rozcvicka",
+      "cil": "Ledoborec z lekce 5: určit rod podle ten/ta/to u slov s matoucím koncem (hokejista, myš, slunce) a číslo u slova třída.",
+      "cas_min": 4,
+      "zadani": "Urči rod (A, B, C) a číslo (D).\n\nA) hokejista\n\nB) myš\n\nC) slunce\n\nD) třída",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "A) hokejista",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "mužský",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "ženský",
+                "spravne": false,
+                "typ_chyby": "rod-podle-koncovky"
+              },
+              {
+                "id": "c",
+                "text": "střední",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "B) myš",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "mužský",
+                "spravne": false,
+                "typ_chyby": "rod-podle-koncovky"
+              },
+              {
+                "id": "b",
+                "text": "ženský",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "střední",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "C) slunce",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "mužský",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "ženský",
+                "spravne": false,
+                "typ_chyby": "rod-podle-koncovky"
+              },
+              {
+                "id": "c",
+                "text": "střední",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "D) třída",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "jednotné",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "množné",
+                "spravne": false,
+                "typ_chyby": "cislo-zamena"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje minulou lekci. Rod se pozná podle toho, jestli před slovo jde říct ten, ta, nebo to; konec slova nerozhoduje. Proto tu jsou slova s matoucím koncem: hokejista končí jako babička, myš jako deštník, slunce jako židle. Třída je jedna, i když je v ní hodně dětí. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) hokejista\n\nmužský (ten hokejista; končí na -a, ale rozhoduje „ten“)\n\n#### B) myš\n\nženský (ta myš; končí souhláskou, ale rozhoduje „ta“)\n\n#### C) slunce\n\nstřední (to slunce; končí na -e, ale rozhoduje „to“)\n\n#### D) třída\n\njednotné (je to jedna třída, i když je v ní hodně dětí)\n\n**Výsledek:** A) mužský, B) ženský, C) střední, D) jednotné",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Řekni ‚hokejista‘ nahlas s ‚ten‘, s ‚ta‘ a s ‚to‘. Které zní česky?“"
+          },
+          {
+            "k": "B a C",
+            "text": "„Na konec slova se nedívej. Řekni ‚myš‘ a ‚slunce‘ s ‚ten‘, ‚ta‘ a ‚to‘. Co zní česky?“"
+          },
+          {
+            "k": "D",
+            "text": "„Jde říct ‚jedna třída‘? Kolik je tam tříd?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč je hokejista rod mužský, i když končí stejně jako babička.“",
+        "otocena_role_odpoved": "Protože se říká ten hokejista, ne ta hokejista. Rod poznám podle ten, ta, to, ne podle toho, jak slovo končí.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Vybere rod podle konce slova: hokejista ženský, myš mužský, slunce ženský. Zeptejte se: „Řekni to slovo s ten, ta, to. Co zní česky?“ (Ten hokejista, ta myš, to slunce.) Jiný špatný rod: stejná otázka. U třídy vybere množné: „Jde říct jedna třída?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — rod i číslo sedí. Pochvalte, že dítě zkoušelo ten, ta, to nahlas, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti tři slova: hřiště, kočka, deštník. U každého řekne ten, ta, nebo to a podle toho rod. Kontrola pro vás: to hřiště (střední, i když končí na -e jako židle), ta kočka (ženský), ten deštník (mužský).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě nahoru napíše tři sloupce: ten, ta, to. Přečtěte dítěti slova hokejista, myš, slunce; každé zapíše do sloupce, který zní česky. Nakonec řekne, jestli slovo třída mluví o jedné třídě, nebo o více. Potom zopakujte lekci „Pády 1–4: na co se ptám“. Kontrola pro vás: ten hokejista (mužský), ta myš (ženský), to slunce (střední); třída je jedna (jednotné číslo)."
+      },
+      "tisk": {
+        "zadani": "Zakroužkuj rod (A, B, C) a číslo (D).\n\nA) hokejista — a) mužský b) ženský c) střední\n\nB) myš — a) mužský b) ženský c) střední\n\nC) slunce — a) mužský b) ženský c) střední\n\nD) třída — a) jednotné b) množné"
+      }
+    },
+    {
+      "id": "cj-t2-l6-U2",
+      "typ": "nova",
+      "cil": "Seřadit pádové otázky 1.–4. pádu a ve větě poznat otázku 3. pádu bez pomocného slova.",
+      "cas_min": 5,
+      "zadani": "Seřaď otázky od 1. do 4. pádu. Pak odpověz na otázku ke větě.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Seřaď od 1. do 4. pádu",
+          "vstup": {
+            "typ": "seradit",
+            "polozky": [
+              "vidím koho, co?",
+              "kdo, co?",
+              "ke komu, čemu?",
+              "bez koho, čeho?"
+            ]
+          },
+          "spravne": [
+            "kdo, co?",
+            "bez koho, čeho?",
+            "ke komu, čemu?",
+            "vidím koho, co?"
+          ],
+          "zname_chyby": []
+        },
+        {
+          "id": "final",
+          "popisek": "Honzík pomáhá kamarádovi. Na kterou otázku odpovídá *kamarádovi*?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "kdo, co?",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "bez koho, čeho?",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "ke komu, čemu?",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "vidím koho, co?",
+                "spravne": false
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "V kroku 1 dítě kliká na čtyři pádové otázky v pořadí od 1. do 4. pádu. Past: otázky 2. a 4. pádu obě začínají „koho“; liší se druhou půlkou (čeho, nebo co) a pomocným slovem (bez, nebo vidím). V kroku 2 se dítě ptá slovem z věty, bez pomocného slova, a otázku pak najde v řadě.",
+        "reseni": "Krok 1: kdo, co? (1. pád)\n\nbez koho, čeho? (2. pád)\n\nke komu, čemu? (3. pád)\n\nvidím koho, co? (4. pád)\n\nKrok 2: ke komu, čemu? (pomáhá komu? kamarádovi; „pomáhá koho“ česky nezní)\n\n**Výsledek:** krok 1 kdo, co? · bez koho, čeho? · ke komu, čemu? · vidím koho, co?; krok 2 ke komu, čemu?",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Co je pád? Řekni to vlastními slovy.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Řekni každou otázku nahlas s jejím pomocným slovem: vidím…, ke…, bez…. Kterou se ptáš na toho, kdo něco dělá?“"
+          },
+          {
+            "k": "Krok 2",
+            "text": "„Zeptej se slovem z věty: Honzík pomáhá… koho? čemu? komu? co? Které zní česky?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, jak poznáš otázku 2. pádu od otázky 4. pádu, když obě začínají koho.“",
+        "otocena_role_odpoved": "Rozhoduje druhá půlka otázky: 2. pád je bez koho, čeho, 4. pád je vidím koho, co. Pomůže mi říct před ni pomocné slovo bez, nebo vidím.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 (Seřaď od 1. do 4. pádu) prohodí otázky s „bez“ a „vidím“, obě začínají koho. Zeptejte se: „Řekni každou otázku s pomocným slovem. Která je dřív?“ V kroku 2 vybere jinou otázku: „Honzík pomáhá komu, nebo koho?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — pořadí otázek i otázka ve větě sedí. Pochvalte, že dítě říkalo otázky nahlas, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Požádejte dítě, ať řekne otázky od 1. do 4. pádu i s pomocnými slovy. Pak přečtěte větu: „Klára pomáhá babičce.“ Dítě řekne, kterou otázkou se ptá na slovo babičce. Kontrola pro vás: kdo, co? · bez koho, čeho? · ke komu, čemu? · vidím koho, co?; babičce: ke komu, čemu? (3. pád).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: čtyři papírky a tužku. Zítra dítěti nadiktujte otázky „vidím koho, co?“, „kdo, co?“, „ke komu, čemu?“, „bez koho, čeho?“, každou na jeden papírek. Dítě je seřadí od 1. do 4. pádu a přečte nahlas. Potom zopakujte lekci „Pády 1–4: na co se ptám“. Kontrola pro vás: kdo, co? · bez koho, čeho? · ke komu, čemu? · vidím koho, co?"
+      },
+      "tisk": {
+        "zadani": "A) Napiš před každou otázku číslo pádu (1 až 4).\n\n___ vidím koho, co?\n\n___ kdo, co?\n\n___ ke komu, čemu?\n\n___ bez koho, čeho?\n\nB) Honzík pomáhá kamarádovi. Na kterou otázku odpovídá slovo „kamarádovi“? Zakroužkuj: a) kdo, co? b) bez koho, čeho? c) ke komu, čemu? d) vidím koho, co?"
+      }
+    },
+    {
+      "id": "cj-t2-l6-U3",
+      "typ": "nova",
+      "cil": "Poslechem (bez textu) určit, které slovo odpovídá na kdo, co?, a pád slova kočku: pád podle otázky a tvaru, ne podle pořadí ve větě (první slovo věty není vždy 1. pád).",
+      "cas_min": 5,
+      "zadani": "Poslechni si větu. Pak odpověz na dvě otázky. Nahrávku si můžeš pustit, kolikrát chceš.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Otázka 1",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t2/l6-u4.mp3",
+            "prepis": "Kočku honí sousedův pes.",
+            "max_prehrani": 0,
+            "otazka": "Které slovo odpovídá na otázku kdo, co? (Kdo to dělá?)",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "kočku",
+                  "spravne": false,
+                  "typ_chyby": "pad-1-za-4"
+                },
+                {
+                  "id": "b",
+                  "text": "honí",
+                  "spravne": false
+                },
+                {
+                  "id": "c",
+                  "text": "sousedův",
+                  "spravne": false
+                },
+                {
+                  "id": "d",
+                  "text": "pes",
+                  "spravne": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Otázka 2",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t2/l6-u4.mp3",
+            "prepis": "Kočku honí sousedův pes.",
+            "max_prehrani": 0,
+            "otazka": "V jakém pádě je slovo „kočku“?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "1. pád",
+                  "spravne": false,
+                  "typ_chyby": "pad-1-za-4"
+                },
+                {
+                  "id": "b",
+                  "text": "2. pád",
+                  "spravne": false,
+                  "typ_chyby": "pad-2-za-4"
+                },
+                {
+                  "id": "c",
+                  "text": "3. pád",
+                  "spravne": false
+                },
+                {
+                  "id": "d",
+                  "text": "4. pád",
+                  "spravne": true
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě větu jen slyší, text nevidí. Co v nahrávce zazní, máte sbalené; nahlas to nečtěte. Obě otázky jsou ke stejné větě: v kroku 1 dítě hledá, kdo to dělá, v kroku 2 určí pád slova kočku. Past: první slovo věty není ten, kdo něco dělá. O pádu v češtině nerozhoduje pořadí slov, ale otázka.",
+        "reseni": "Otázka 1: pes (kdo, co honí? pes: ten to dělá)\n\nOtázka 2: 4. pád (honí koho, co? kočku)\n\nPast: kočku je ve větě první, ale nehoní (pořadí slov o pádu nerozhoduje)\n\n**Výsledek:** 1. pes, 2. 4. pád",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Kdo koho honí? Řekni to vlastními slovy.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Pusť si větu znovu. Zeptej se: kdo, co honí? Které slovo z nabídky na to odpovídá?“"
+          },
+          {
+            "k": "Krok 2",
+            "text": "„Zeptej se: kdo, co honí? A honí koho, co? Na kterou z těch otázek odpovídá slovo kočku?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč kočka v té větě není ta, kdo něco dělá, i když je první.“",
+        "otocena_role_odpoved": "Protože nehoní ona, honí ji pes. Kdo honí? Pes, to je 1. pád. Honí koho, co? Kočku, to je 4. pád. Na pořadí slov nezáleží.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 (Otázka 1) vybere „kočku“ (je první), „honí“ nebo „sousedův“. Zeptejte se: „Kdo koho honí? Pusť si to znovu.“ V kroku 2 (Otázka 2) vybere 1. pád: „Honí kočka?“ 2. nebo 3. pád: „Řekni před kočku bez, ke, nebo vidím. Co pasuje?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — dítě poznalo jen poslechem, kdo to dělá. Pochvalte, že si větu pustilo znovu a ptalo se, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Řekněte dítěti větu: „Míč hledá Tomáš.“ Dítě ji jen slyší. Řekne, kdo to dělá a v jakém pádě je míč. Kontrola pro vás: dělá to Tomáš (kdo hledá? 1. pád); míč je ve 4. pádě (hledá koho, co?), i když je ve větě první.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra řekněte dítěti větu: „Psa honí kočka.“ Dítě nakreslí, kdo koho honí, a šipku od toho, kdo honí. Pak se u obou zvířat zeptá: kdo, co honí? honí koho, co? Potom zopakujte lekci „Pády 1–4: na co se ptám“. Kontrola pro vás: honí kočka (1. pád, kdo honí?); psa je ve 4. pádě (honí koho, co?). Šipka začíná u kočky, i když je ve větě druhá."
+      },
+      "tisk": {
+        "zadani": "Poslouchej nahrávku (pustí rodič). Můžeš si ji pustit, kolikrát chceš. Pak zakroužkuj odpovědi.\n\n1. Které slovo odpovídá na otázku kdo, co? (Kdo to dělá?) — a) kočku b) honí c) sousedův d) pes\n\n2. V jakém pádě je slovo „kočku“? — a) 1. pád b) 2. pád c) 3. pád d) 4. pád"
+      }
+    },
+    {
+      "id": "cj-t2-l6-U4",
+      "typ": "detektiv",
+      "cil": "Najít u Petra chybu pad-2-za-4 (kamaráda má stejný tvar ve 2. i 4. pádě) a vybrat správný pád s jeho otázkou.",
+      "cas_min": 5,
+      "zadani": "Petr určil pády ve větě:\n\n**Honzík potkal u školy kamaráda.**\n\nNapsal: *Honzík* – 1. pád, *školy* – 2. pád, *kamaráda* – 2. pád.\n\nUdělal **jednu** chybu. Najdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na slovo, které Petr určil špatně.",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Honzík potkal u školy kamaráda.",
+            "cil": "slova",
+            "min": 1,
+            "max": 1
+          },
+          "spravne": [
+            4
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                3,
+                0
+              ],
+              "typ_chyby": "detektiv-jine-slovo"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Jaký pád má to slovo správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1. pád – kdo, co?",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "b",
+                "text": "3. pád – ke komu, čemu?",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "c",
+                "text": "4. pád – vidím koho, co?",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák; hledat cizí chybu je snazší než přiznat vlastní. Petr určil pád tří slov a jednou se spletl. Past: slovo může mít ve 2. i ve 4. pádě stejný tvar, rozhodne jen otázka ze slova ve větě. V kroku 2 (Jaký pád má to slovo správně?) dítě vybere pád i s jeho otázkou.",
+        "reseni": "Chyba je „kamaráda“: Petr napsal 2. pád, správně je 4. pád (potkal koho, co? kamaráda).\n\nHonzík: Petr má dobře (kdo potkal? Honzík, 1. pád)\n\nškoly: Petr má dobře (u koho, čeho? u školy, 2. pád)\n\n**Výsledek:** krok 1 kamaráda, krok 2 4. pád – vidím koho, co?",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Petr dělal a co máš najít ty.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každého Petrova slova se zeptej slovem z věty. Potkal… koho, čeho? Nebo koho, co?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Když má slovo ve 2. i 4. pádě stejný tvar, co rozhodne? Řekni druhou půlku otázky: čeho, nebo co?“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a jak si ji příště ohlídám.“",
+        "otocena_role_odpoved": "Kamaráda není 2. pád. Potkal koho, co? Kamaráda, to je 4. pád. Ve 2. i 4. pádě to zní stejně, tak se musím zeptat slovem z věty. Honzík a školy máš dobře.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Souhlasí s Petrem a klikne na školy nebo Honzík. Zeptejte se: „Řekni druhou půlku otázky: potkal koho… čeho, nebo co?“ (U školy má Petr dobře: u koho, čeho.) V kroku 2 vybere 1. nebo 3. pád: „Kdo potkal? A potkal koho, co?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — dítě našlo Petrovu chybu i správný pád. Pochvalte, že se ptalo u každého slova, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Ve větě Tomáš hledá psa Petr napsal, že psa je ve 2. pádě. Má pravdu?“ Dítě se zeptá slovem z věty. Kontrola pro vás: Petr nemá pravdu; hledá koho, co? psa: 4. pád. Ve 2. pádě by to bylo bez psa, se stejným tvarem.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše dvě věty, které nadiktujete: „Honzík je bez kamaráda.“ a „Honzík vidí kamaráda.“ U slova kamaráda v každé větě řekne celou otázku i s pomocným slovem. Potom zopakujte lekci „Pády 1–4: na co se ptám“. Kontrola pro vás: bez kamaráda: bez koho, čeho? 2. pád; vidí kamaráda: vidím koho, co? 4. pád. Tvar je stejný, rozhoduje otázka."
+      },
+      "tisk": {
+        "zadani": "Petr určil pády ve větě. Napsal: Honzík – 1. pád, školy – 2. pád, kamaráda – 2. pád. Udělal jednu chybu.\n\nHonzík potkal u školy kamaráda.\n\nA) Podtrhni ve větě slovo, které Petr určil špatně.\n\nB) Jaký pád má to slovo správně? Zakroužkuj: a) 1. pád – kdo, co? b) 3. pád – ke komu, čemu? c) 4. pád – vidím koho, co?"
+      }
+    },
+    {
+      "id": "cj-t2-l6-U5",
+      "typ": "kontrolni",
+      "cil": "Samostatně určit 1.–4. pád u sedmi podstatných jmen ve třech větách: 4. pád se stejným tvarem jako 1. (míč) i jako 2. (psa), 1. pád i uprostřed věty (Honzík).",
+      "cas_min": 6,
+      "zadani": "U každého označeného slova vyber pád.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Tomáš půjčil kamarádovi míč. Bez míče by Honzík nehrál. Klára přivedla na hřiště psa.",
+            "slova": [
+              0,
+              2,
+              3,
+              5,
+              7,
+              9,
+              13
+            ],
+            "role": [
+              "1. pád",
+              "2. pád",
+              "3. pád",
+              "4. pád"
+            ]
+          },
+          "spravne": {
+            "0": "1. pád",
+            "2": "3. pád",
+            "3": "4. pád",
+            "5": "2. pád",
+            "7": "1. pád",
+            "9": "1. pád",
+            "13": "4. pád"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "3": "1. pád"
+              },
+              "typ_chyby": "pad-1-za-4"
+            },
+            {
+              "hodnota": {
+                "13": "2. pád"
+              },
+              "typ_chyby": "pad-2-za-4"
+            },
+            {
+              "hodnota": {
+                "7": "4. pád"
+              },
+              "typ_chyby": "pad-4-za-1"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Sedm slov ve třech větách. Pasti: míč a psa jsou ve 4. pádě, i když míč zní jako 1. pád a psa jako 2. pád; Honzík je v 1. pádě, i když stojí uprostřed věty. Hřiště označené není.",
+        "reseni": "1. pád: Tomáš, Honzík, Klára (kdo půjčil? kdo by nehrál? kdo přivedl psa?)\n\n2. pád: míče (bez koho, čeho? bez míče)\n\n3. pád: kamarádovi (půjčil komu? kamarádovi)\n\n4. pád: míč, psa (půjčil co? míč; přivedla koho, co? psa)\n\nhřiště není označené (je ve 4. pádě po „na“, to přijde v další lekci)\n\n**Výsledek:** Tomáš 1., kamarádovi 3., míč 4., míče 2., Honzík 1., Klára 1., psa 4. pád",
+        "otazky": [
+          "„Řekni mi otázky 1. až 4. pádu. Jak zjistíš, v jakém pádě je slovo ve větě?“",
+          "„Vezmi slovo míč. Zeptej se slovem z věty: Tomáš půjčil… koho, co? Nebo kdo, co půjčil?“",
+          "„U slova psa se zeptej: Klára přivedla… koho, čeho? Nebo koho, co? A u slova Honzík: kdo by nehrál?“"
+        ],
+        "otocena_role": "„Najdi v těch větách slovo, které vypadá jako jiný pád, než ve kterém je. Dokaž mi to otázkou.“",
+        "otocena_role_odpoved": "Třeba míč: vypadá jako 1. pád, ale Tomáš půjčil koho, co? Míč, takže 4. pád. Nebo psa: bez psa by byl 2. pád, ale přivedla koho, co? Psa, 4. pád.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: u slova míč vybere 1. pád: „Tomáš půjčil… koho, co?“ U psa 2. pád: „Klára přivedla… koho, čeho, nebo koho, co?“ U slova Honzík 4. pád: „Kdo by nehrál?“ U slova míče 4. pád: „Bez… koho, čeho?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — všech sedm pádů sedí. Pochvalte, že se dítě ptalo slovem z věty. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti dvě věty: „Tomáš dal babičce míč.“ „Bez psa nejde Klára ven.“ U každého jména a názvu řekne otázku a pád. Kontrola pro vás: Tomáš 1. (kdo dal?), babičce 3. (dal komu?), míč 4. (dal co?), psa 2. (bez koho, čeho?), Klára 1. (kdo nejde?).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše pod sebe otázky 1. až 4. pádu. Pak řekněte: „Tomáš hledá psa.“ U slov Tomáš a psa se zeptá slovem z věty a otázku najde. Potom zopakujte lekci „Pády 1–4: na co se ptám“. Kontrola pro vás: kdo, co? · bez koho, čeho? · ke komu, čemu? · vidím koho, co?; Tomáš 1. pád (kdo hledá?), psa 4. pád (hledá koho, co?)."
+      },
+      "tisk": {
+        "zadani": "Nad každé tučné slovo napiš číslo jeho pádu: **1** = 1. pád, **2** = 2. pád, **3** = 3. pád, **4** = 4. pád.\n\n**Tomáš** půjčil **kamarádovi** **míč**. Bez **míče** by **Honzík** nehrál. **Klára** přivedla na hřiště **psa**."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "SYNTETICKÁ testovací lekce (testy/data/osma) převedená ze Spolu — jen pro testy a QA, není to obsah Spolu 8.",
+    "zkontroloval": "vedouci",
+    "datum": "2026-09-30",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?slovo=t%C5%99%C3%ADda",
+      "https://prirucka.ujc.cas.cz/?slovo=hokejista",
+      "https://prirucka.ujc.cas.cz/?slovo=my%C5%A1",
+      "https://prirucka.ujc.cas.cz/?slovo=slunce",
+      "https://prirucka.ujc.cas.cz/?slovo=kamar%C3%A1d",
+      "https://prirucka.ujc.cas.cz/?slovo=babi%C4%8Dka",
+      "https://prirucka.ujc.cas.cz/?slovo=m%C3%AD%C4%8D",
+      "https://prirucka.ujc.cas.cz/?slovo=de%C5%A1tn%C3%ADk",
+      "https://prirucka.ujc.cas.cz/?slovo=pes",
+      "https://prirucka.ujc.cas.cz/?slovo=ko%C4%8Dka",
+      "https://prirucka.ujc.cas.cz/?slovo=soused",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1kola",
+      "https://prirucka.ujc.cas.cz/?slovo=h%C5%99i%C5%A1t%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=zahrada",
+      "https://prirucka.ujc.cas.cz/?slovo=Tom%C3%A1%C5%A1",
+      "https://prirucka.ujc.cas.cz/?slovo=Kl%C3%A1ra",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%BEidle"
+    ],
+    "testovaci_rodic": null
+  }
+}

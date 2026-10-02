@@ -1,0 +1,487 @@
+{
+  "id": "M8-T01-L1",
+  "faze": "osma",
+  "tyden": 1,
+  "poradi": 1,
+  "tema": "Mocniny a odmocniny zpaměti",
+  "kapitola": "pocetni-operace",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě pozná druhou mocninu a odmocninu do $20^2$ a ví, že odmocnina je opačný krok.",
+  "uvod_pro_rodice": "Dnes jde o druhou mocninu, druhou odmocninu a o to, co se pod odmocninou počítá dřív.",
+  "uvod_pravidla": [
+    {
+      "znak": "$4^2$",
+      "text": "číslo krát samo sebe"
+    },
+    {
+      "znak": "$\\sqrt{16}$",
+      "text": "opačný krok k mocnině"
+    },
+    {
+      "znak": "$\\sqrt{9+7}$",
+      "text": "nejdřív celé pod odmocninou"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T01-L1-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správný výsledek. Výsledek si můžeš ověřit násobením.\n\nA) $16^2$\n\nB) $\\sqrt{64}$\n\nC) $\\sqrt{25 - 9}$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $16^2$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$32$",
+                "spravne": false,
+                "typ_chyby": "mocnina-jako-dvojnasobek"
+              },
+              {
+                "id": "b",
+                "text": "$256$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$4$",
+                "spravne": false,
+                "typ_chyby": "zamenil-mocninu-a-odmocninu"
+              },
+              {
+                "id": "d",
+                "text": "$136$",
+                "spravne": false,
+                "typ_chyby": "mocnina-po-clenech"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $\\sqrt{64}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$8$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$32$",
+                "spravne": false,
+                "typ_chyby": "odmocnina-jako-deleni-dvema"
+              },
+              {
+                "id": "c",
+                "text": "$4\\,096$",
+                "spravne": false,
+                "typ_chyby": "zamenil-mocninu-a-odmocninu"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: $\\sqrt{25 - 9}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$2$",
+                "spravne": false,
+                "typ_chyby": "odmocnina-po-clenech"
+              },
+              {
+                "id": "b",
+                "text": "$-4$",
+                "spravne": false,
+                "typ_chyby": "odmocnil-pred-vypoctem-pod-ni"
+              },
+              {
+                "id": "c",
+                "text": "$4$",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě tu jen vybírá výsledek. Hlídejte tři pasti: na druhou počítat jako krát dva, odmocninu jako děleno dvěma, nebo mocninu a odmocninu prohodit. V testu je tabulka druhých mocnin čísel 11 až 20; mocniny do deseti musí dítě znát zpaměti. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $16^2$\n\n$16^2 = 16 \\cdot 16 = 256$ (na druhou je číslo krát samo sebe)\n\n#### B) $\\sqrt{64}$\n\n$\\sqrt{64} = 8$ (osm krát osm je šedesát čtyři)\n\n#### C) $\\sqrt{25 - 9}$\n\n$\\sqrt{25 - 9} = \\sqrt{16}$ (nejdřív rozdíl pod odmocninou)\n\n$\\sqrt{16} = 4$ (čtyři krát čtyři je šestnáct)\n\n**Výsledek:** A) $256$, B) $8$, C) $4$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Na druhou znamená krát samo sebe. Jak to u šestnácti zapíšeš jako násobení?“"
+          },
+          {
+            "k": "B",
+            "text": "„Hledáš číslo, které krát samo sebe dá šedesát čtyři. Které číslo zkusíš jako první?“"
+          },
+          {
+            "k": "C",
+            "text": "„Pod odmocninou je dvacet pět minus devět. Co spočítáš dřív: to minus, nebo odmocninu?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč odmocnina ze šedesáti čtyř není třicet dva.“",
+        "otocena_role_odpoved": "Odmocnina hledá číslo, které krát samo sebe dá šedesát čtyři. To je osm, protože osm krát osm je šedesát čtyři. Třicet dva je jen polovina.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A vybere $32$ (šestnáct krát dva) nebo $136$ (umocní zvlášť deset a šest), u B $32$ (dělí dvěma). Zeptejte se: „Jak si to ověříš násobením?“ U C vybere $-4$: odmocní jen dvacet pět a odečte devět. Zeptejte se: „Co všechno je pod odmocninou?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — mocnina i odmocnina sedí. Pochvalte, že dítě rozlišilo mocninu a odmocninu, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Ukažte dítěti na telefonu jeden příklad po druhém: $12^2$, pak $\\sqrt{81}$, pak $\\sqrt{36 - 11}$. U každého řekne výsledek a jak si ho ověří násobením. Kontrola pro vás: $144$, potom $9$, potom $5$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 16 kostek nebo dílků lega. Zítra ať z nich dítě postaví čtverec 4 krát 4 a řekne, jak dlouhá je jeho strana. Pak ať samo zapíše $4^2 = 16$ a $\\sqrt{16} = 4$. Potom zopakujte lekci „Mocniny a odmocniny zpaměti“. Kontrola pro vás: strana má 4 kostky."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správný výsledek.\n\nA) $16^2$ — a) $32$ b) $256$ c) $4$ d) $136$\n\nB) $\\sqrt{64}$ — a) $8$ b) $32$ c) $4\\,096$\n\nC) $\\sqrt{25 - 9}$ — a) $2$ b) $-4$ c) $4$"
+      }
+    },
+    {
+      "id": "M8-T01-L1-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr počítal příklad\n\n$$\\sqrt{6^2 + 8^2}$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $= \\sqrt{36 + 64}$\n\n2. řádek: $= \\sqrt{36} + \\sqrt{64}$\n\n3. řádek: $= 6 + 8$\n\n4. řádek: $= 14$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$= \\sqrt{36 + 64}$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$= \\sqrt{36} + \\sqrt{64}$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$= 6 + 8$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$= 14$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$= 100$",
+                "spravne": false,
+                "typ_chyby": "zapomnel-odmocninu"
+              },
+              {
+                "id": "b",
+                "text": "$= \\sqrt{100}$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$= 50$",
+                "spravne": false,
+                "typ_chyby": "odmocnina-jako-deleni-dvema"
+              },
+              {
+                "id": "d",
+                "text": "$= \\sqrt{36} + 64$",
+                "spravne": false,
+                "typ_chyby": "odmocnina-jen-z-casti"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 10
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 14,
+              "typ_chyby": "odmocnina-po-clenech"
+            },
+            {
+              "hodnota": 100,
+              "typ_chyby": "zapomnel-odmocninu"
+            },
+            {
+              "hodnota": 50,
+              "typ_chyby": "odmocnina-jako-deleni-dvema"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Hledat cizí chybu je snazší a bezpečnější než přiznat vlastní. Každý řádek vzniká z předchozího. Petr odmocnil každé číslo zvlášť, ale odmocnina patří k celému součtu pod ní. Řádky za chybou jsou spočítané dobře, jen pokračují se špatným zápisem.",
+        "reseni": "Chyba je ve 2. řádku: Petr odmocnil každé číslo zvlášť. Odmocnina patří k celému součtu.\n\n$\\sqrt{6^2 + 8^2}$\n\n$= \\sqrt{36 + 64}$ (mocniny: šest krát šest, osm krát osm)\n\n$= \\sqrt{100}$ (součet pod odmocninou, tady se Petr spletl)\n\n$= 10$ (odmocnina: deset krát deset je sto)\n\n**Výsledek:** $10$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co máš v téhle úloze udělat.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky jeden po druhém. U každého mi řekni, co v něm Petr udělal.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Pravidlo zní: nejdřív se spočítá všechno pod odmocninou, teprve potom se odmocňuje. Ve kterém řádku to Petr nedodržel?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč můj 2. řádek nesedí a jak si to můžu ověřit.“",
+        "otocena_role_odpoved": "Odmocnina patří k celému součtu. Nejdřív se sečte třicet šest a šedesát čtyři, to je sto, a odmocnina ze sta je deset. Ověřit to jde: čtrnáct krát čtrnáct není sto.",
+        "typicka_chyba": "Dítě ukáže až na poslední řádek „14“. Zeptejte se: „Ze kterého řádku to číslo vzniklo?“ Jiné dítě chybu nevidí, protože samo odmocňuje zvlášť: „Kolik je čtrnáct krát čtrnáct? Je to sto?“ U opravy řádku vybere $= 100$: „Kam se poděla odmocnina?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, jak vysvětlilo, proč se odmocňuje celý součet.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu větu: „Petr tvrdí, že $\\sqrt{25 + 144} = 5 + 12 = 17$.“ Zeptejte se: „Má Petr pravdu? Jak to ověříš?“ Kontrola pro vás: nemá, správně je $\\sqrt{169} = 13$; ověření: $17 \\cdot 17 = 289$, ne $169$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: čtverečkovaný papír a tužku. Zítra ať dítě nakreslí čtverec 6 krát 6 políček a vedle čtverec 8 krát 8 a spočítá políčka dohromady. Pak ať samo zapíše $\\sqrt{36 + 64} = \\sqrt{100} = 10$. Potom zopakujte lekci „Mocniny a odmocniny zpaměti“. Kontrola pro vás: 100 políček, to je čtverec 10 krát 10, ne 14 krát 14."
+      },
+      "tisk": {
+        "zadani": "Petr počítal příklad\n\n$$\\sqrt{6^2 + 8^2}$$\n\na udělal jednu chybu.\n\n1. řádek: $= \\sqrt{36 + 64}$\n\n2. řádek: $= \\sqrt{36} + \\sqrt{64}$\n\n3. řádek: $= 6 + 8$\n\n4. řádek: $= 14$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $= 100$ b) $= \\sqrt{100}$ c) $= 50$ d) $= \\sqrt{36} + 64$\n\nC) Spočítej správný výsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T01-L1-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Vypočítej a výsledek zapiš zlomkem v základním tvaru:\n\n$$\\frac{\\sqrt{13^2 - 25}}{\\sqrt{13^2}}$$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na početní operace v pořadí, v jakém je počítáš.",
+          "vstup": {
+            "typ": "poradi",
+            "vyraz": "\\op{o3}{\\sqrt{13^{\\op{o1}{2}} \\op{o2}{-} 25}}",
+            "operace": [
+              {
+                "id": "o1",
+                "popis": "mocnina"
+              },
+              {
+                "id": "o2",
+                "popis": "odčítání"
+              },
+              {
+                "id": "o3",
+                "popis": "odmocnina"
+              }
+            ]
+          },
+          "spravne": {
+            "poradi": [
+              [
+                "o1",
+                "o2",
+                "o3"
+              ]
+            ]
+          },
+          "zname_chyby": [
+            {
+              "poradi": [
+                "o3",
+                "o1",
+                "o2"
+              ],
+              "typ_chyby": "odmocnil-pred-vypoctem-pod-ni"
+            },
+            {
+              "poradi": [
+                "o1",
+                "o3",
+                "o2"
+              ],
+              "typ_chyby": "odmocnil-pred-vypoctem-pod-ni"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: čitatel",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 12
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 8,
+              "typ_chyby": "odmocnina-po-clenech"
+            },
+            {
+              "hodnota": -12,
+              "typ_chyby": "odmocnil-pred-vypoctem-pod-ni"
+            },
+            {
+              "hodnota": 144,
+              "typ_chyby": "zapomnel-odmocninu"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 12,
+            "j": 13
+          },
+          "zname_chyby": [
+            {
+              "c": 8,
+              "j": 13,
+              "typ_chyby": "odmocnina-po-clenech"
+            },
+            {
+              "c": -12,
+              "j": 13,
+              "typ_chyby": "odmocnil-pred-vypoctem-pod-ni"
+            },
+            {
+              "c": 144,
+              "j": 169,
+              "typ_chyby": "zapomnel-odmocninu"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce. Zlomková čára znamená děleno: horní patro děleno dolním. V horním patře je pod odmocninou rozdíl a ten se musí spočítat celý, teprve pak se odmocňuje. Dítě nejdřív klikáním ukáže, v jakém pořadí počítá horní patro. Čte se: zlomek, nahoře odmocnina z celého „třináct na druhou minus dvacet pět“, dole odmocnina ze třinácti na druhou.",
+        "reseni": "$\\frac{\\sqrt{13^2 - 25}}{\\sqrt{13^2}}$\n\n$13^2 = 169$ (mocnina: třináct krát třináct)\n\n$169 - 25 = 144$ (odčítání pod odmocninou)\n\n$\\sqrt{144} = 12$ (horní odmocnina: dvanáct krát dvanáct je sto čtyřicet čtyři)\n\n$\\sqrt{13^2} = 13$ (dolní odmocnina vrátí mocninu zpět)\n\n$\\frac{12}{13}$ (zlomek už zkrátit nejde)\n\n**Výsledek:** $\\frac{12}{13}$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Přečti mi příklad nahlas. Co je nahoře nad čarou a co dole?“"
+          },
+          {
+            "k": "Krok 1, když nesedí",
+            "text": "„Aplikace říká, že pořadí zatím nesedí. Co všechno je pod horní odmocninou? Může se odmocnit dřív, než to spočítáš?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Začátek: třináct na druhou je sto šedesát devět. Co uděláš s pětadvacítkou? A kolik je dole odmocnina ze třinácti na druhou?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč nahoře nemůžeš odmocnit třináct na druhou a pětadvacet každé zvlášť.“",
+        "otocena_role_odpoved": "Odmocnina patří k celému rozdílu pod ní. Nejdřív spočítám sto šedesát devět minus dvacet pět a teprve pak odmocním. Zvlášť by vyšlo osm, ale osm krát osm není sto čtyřicet čtyři.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Když pořadí nesedí, přečtěte druhou otázku. V mezivýsledku napíše $8$ (odmocnilo zvlášť) nebo $-12$ (odmocnilo dřív, než odečetlo). Zeptejte se: „Co všechno je pod odmocninou?“ Napíše $144$: „Kam se poděla odmocnina?“ Nezkrácený zlomek: aplikace ho uzná jako správný a připomene zkrácení. Pro semafor to chyba není, klikněte podle zbytku úlohy. Zkrácení připomeňte až po semaforu: „Jde to ještě zkrátit?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — hlavní úlohu zvládlo. Pochvalte, že nejdřív spočítalo všechno pod odmocninou a teprve pak odmocnilo.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu $\\sqrt{10^2 - 36}$ a ať ho počítá na papír a nahlas říká, co dělá jako první, co potom a co nakonec. Kontrola pro vás: nejdřív $100$, pak $64$, výsledek $8$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 25 kostek. Zítra ať dítě z 9 kostek postaví čtverec 3 krát 3, přidá zbylých 16 a ze všech postaví jeden velký čtverec. Zeptejte se: „Jak dlouhá je strana?“ Pak ať samo zapíše $\\sqrt{9 + 16} = \\sqrt{25} = 5$. Potom zopakujte lekci „Mocniny a odmocniny zpaměti“. Kontrola pro vás: strana má 5 kostek, ne tři plus čtyři, tedy 7."
+      },
+      "tisk": {
+        "zadani": "Vypočítej a výsledek zapiš zlomkem v základním tvaru:\n\n$$\\frac{\\sqrt{13^2 - 25}}{\\sqrt{13^2}}$$\n\nA) Čitatel:\n\n$$\\op{o3}{\\sqrt{13^{\\op{o1}{2}} \\op{o2}{-} 25}}$$\n\nB) Mezivýsledek (čitatel): ______\n\nC) Výsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T01-L1-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Vypočítej:\n\n$$\\sqrt{15^2 - 9^2} : \\sqrt{6^2}$$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 2
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 1,
+              "typ_chyby": "odmocnina-po-clenech"
+            },
+            {
+              "hodnota": 24,
+              "typ_chyby": "zapomnel-odmocninu"
+            },
+            {
+              "hodnota": -11,
+              "typ_chyby": "odmocnil-pred-vypoctem-pod-ni"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Příklad se čte: odmocnina z patnácti na druhou minus devět na druhou, děleno odmocninou ze šesti na druhou.",
+        "reseni": "$\\sqrt{15^2 - 9^2} : \\sqrt{6^2}$\n\n$= \\sqrt{225 - 81} : \\sqrt{36}$ (mocniny)\n\n$= \\sqrt{144} : \\sqrt{36}$ (odčítání pod odmocninou)\n\n$= 12 : 6$ (odmocniny)\n\n$= 2$ (dělení)\n\n**Výsledek:** $2$",
+        "otazky": [
+          "„Přečti mi příklad nahlas. Co všechno je pod první odmocninou?“",
+          "„Co spočítáš jako první? A co až nakonec? Proč v tomhle pořadí?“",
+          "„Tady máš začátek: patnáct na druhou je dvě stě dvacet pět. Co uděláš s devítkou na druhou a co potom?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč nemůžeš hned napsat patnáct minus devět.“",
+        "otocena_role_odpoved": "Odmocnina patří k celému rozdílu. Nejdřív spočítám obě mocniny a odečtu je, teprve pak odmocním. Patnáct minus devět je šest, ale šest krát šest není sto čtyřicet čtyři.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nepíše nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: $1$: odmocnilo každé číslo zvlášť. $24$: zapomnělo horní odmocninu. $-11$: odmocnilo dřív, než odečetlo. Zeptejte se: „Co je celé pod odmocninou? Co s tím uděláš jako první?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — mocniny a odmocniny zvládá samo. Pochvalte klidný postup krok po kroku. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu příklad $\\sqrt{10^2 - 8^2} : \\sqrt{2^2}$ a ať ho počítá na papír a nahlas říká, co dělá. Poslouchejte jen, jestli odmocní až celý rozdíl. Kontrola pro vás: pod odmocninou $36$, výsledek $3$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: čtverečkovaný papír a pastelku. Zítra ať dítě nakreslí čtverec 5 krát 5 políček a v rohu vybarví čtverec 3 krát 3. Zeptejte se: „Kolik políček zůstalo nevybarvených?“ Pak ať samo zapíše $\\sqrt{5^2 - 3^2} = \\sqrt{16} = 4$ a řekne, proč to není $5 - 3$. Potom zopakujte lekci „Mocniny a odmocniny zpaměti“. Kontrola pro vás: 16 políček; čtyři krát čtyři je šestnáct, proto vyjde 4."
+      },
+      "tisk": {
+        "zadani": "Vypočítej:\n\n$$\\sqrt{15^2 - 9^2} : \\sqrt{6^2}$$\n\nVýsledek: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "SYNTETICKÁ testovací lekce (testy/data/osma) převedená ze Spolu — jen pro testy a QA, není to obsah Spolu 8.",
+    "zkontroloval": "vedouci",
+    "datum": "2026-09-25"
+  }
+}

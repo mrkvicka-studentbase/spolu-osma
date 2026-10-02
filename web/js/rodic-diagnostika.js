@@ -16,11 +16,15 @@ import { vyhodnotKrok } from './vyhodnoceni.js';
 import {
   sestavSouhrnDiagnostiky, pocetOdevzdanych, popisChybyRodic, VERZE_ALGORITMU, NAZVY_TYDNU, MAPA_KAPITOL,
 } from './diagnostika.js';
-import { najdiSezeniDiagnostiky, PRESTAVKA_PO } from './diagnostika-zak.js';
+import { najdiSezeniDiagnostiky, prestavkaPo } from './diagnostika-zak.js';
+import { sestavSouhrnOsma, jeSouhrnOsma, mapaKapitolNaTemata, cislaTemat } from './doporuceni.js';
+import { nazevTematu, zeZ } from './temata.js';
+import { popisChyby } from './chyby.js';
+import { predmetLekce } from './predmet.js';
 import { vytvorVstupFinal } from './rodic-karta.js';
 
 const INTERVAL_POLLINGU = 30000;
-const CAS_UPOZORNENI_MIN = 40;
+const CAS_UPOZORNENI_MIN = 35; // Spolu 8: test ~25 min
 
 /** Štítek důrazu týdne: ikona + text, nikdy jen barva; slabý týden oranžově, ne červeně. */
 const DURAZ = {
@@ -111,6 +115,58 @@ export function vytvorVysledek(souhrn, { jmeno = '', datum = null, temata = new 
 }
 
 // ---------------------------------------------------------------------
+// Spolu 8: výsledek úvodního testu (čistý DOM) — krátce: co jde, co nejde, kde začít
+// ---------------------------------------------------------------------
+
+/**
+ * Report rodiči po úvodním testu Spolu 8 (souhrn z doporuceni.js sestavSouhrnOsma).
+ * @param {object} souhrn
+ * @param {{jmeno?: string, datum?: string|Date|null, lekce?: Array<object>}} [volby]  lekce = katalog předmětu (názvy témat)
+ * @returns {HTMLElement}
+ */
+export function vytvorVysledekOsma(souhrn, { jmeno = '', datum = null, lekce = [] } = {}) {
+  const predmet = souhrn.predmet || 'matematika';
+  const nazev = (t) => {
+    const n = nazevTematu(predmet, t, lekce);
+    return n ? h('osma.tema_nadpis', { tema: t, nazev: n }) : `Téma ${t}`;
+  };
+  const temata = souhrn.temata || [];
+  const skupina = (stavy) => temata.filter((t) => stavy.includes(t.stav)).map((t) => t.tema);
+  const seznam = (cisla, ikonaNazev) => (cisla.length
+    ? el('ul', { class: 'diag-jak' }, cisla.map((t) => el('li', null, ikona(ikonaNazev), ` ${nazev(t)}`)))
+    : el('p', { class: 'text-tlumeny', text: h('osma.vysledek_nic') }));
+  const jde = skupina(['silne']);
+  const nejde = skupina(['slabe']);
+  const napul = skupina(['nejiste']);
+  const prvni = (souhrn.poradi || []).find((t) => !jde.includes(t));
+  const popis = (kod) => (predmet === 'cestina' ? popisChyby(kod) : popisChybyRodic(kod));
+  const sekce = (id, nadpis, obsah) => el('section', { class: 'zasobnik', 'aria-labelledby': id },
+    el('h2', { class: 'diag-nadpis', id, text: nadpis }), obsah);
+  const datumText = datum ? formatDatum(datum, { rok: true }) : '';
+  return el('div', { class: 'zasobnik zasobnik--volny diag-vysledek diag-vysledek--osma' },
+    el('header', { class: 'diag-vysledek__hlavicka' },
+      el('h1', { text: h('osma.vysledek_nadpis') }),
+      el('p', { class: 'text-tlumeny', text: [h(`predmet.${predmet}`), jmeno, datumText].filter(Boolean).join(' · ') }),
+      el('p', { text: h('osma.vysledek_celkem', { odevzdano: souhrn.odevzdano, celkem: souhrn.celkem, z: zeZ(souhrn.celkem) }) })),
+    souhrn.celkove === 'nezjisteno' ? el('div', { class: 'hlaska hlaska--info', role: 'status' }, ikona('info'),
+      el('div', { class: 'hlaska__text', text: h('osma.vysledek_nezjisteno') })) : null,
+    sekce('osmaZacit', h('osma.vysledek_zacit'), el('div', { class: 'hlaska hlaska--uspech', role: 'status' }, ikona('sipka-vpravo'),
+      el('div', { class: 'hlaska__text', text: prvni ? h('osma.vysledek_zacit_text', { tema: nazev(prvni) }) : h('osma.vysledek_zacit_vse') }))),
+    sekce('osmaNejde', h('osma.vysledek_nejde'), seznam(nejde, 'hledat')),
+    napul.length ? sekce('osmaNapul', h('osma.vysledek_nejiste'), seznam(napul, 'opakovat')) : null,
+    sekce('osmaJde', h('osma.vysledek_jde'), seznam(jde, 'fajfka')),
+    (souhrn.chyby || []).length ? sekce('osmaChyby', h('osma.vysledek_chyby'),
+      el('ul', { class: 'diag-chyby' }, souhrn.chyby.map((c) => el('li', { class: 'diag-chyby__polozka' },
+        el('p', { class: 'diag-chyby__text', text: popis(c.typ_chyby) }),
+        c.pocet >= 2 ? el('p', { class: 'diag-chyby__pozn', text: h('diag.chyby_vickrat') }) : null)))) : null,
+    el('section', { class: 'zasobnik', 'aria-labelledby': 'diagJak' },
+      el('h2', { class: 'diag-nadpis', id: 'diagJak', text: h('diag.jak_nalozit_nadpis') }),
+      el('ul', { class: 'diag-jak' }, [1, 2].map((i) => el('li', { text: h(`diag.jak_nalozit_${i}`) })))),
+    el('div', { class: 'zasobnik' },
+      el('a', { class: 'tlacitko tlacitko--primarni tlacitko--velke tlacitko--cela-sirka', href: `prehled.html?predmet=${predmet}` }, h('osma.vysledek_tlacitko'))));
+}
+
+// ---------------------------------------------------------------------
 // Průběh (čistý DOM)
 // ---------------------------------------------------------------------
 
@@ -126,8 +182,8 @@ export function vytvorPrubeh({ lekce, odevzdano, zacatek = null, rezim = 'app', 
     ? el('div', { class: 'stav-zaka diag-stav', role: 'status' },
       ikona('tuzka', { trida: 'ikona--velka' }),
       el('div', { class: 'stav-zaka__text' },
-        el('strong', { class: 'diag-stav__pocet', text: h('diag.rodic_odevzdano', { x: odevzdano, celkem }) }),
-        el('small', { text: [odevzdano < PRESTAVKA_PO ? h('diag.rodic_polovina_1') : h('diag.rodic_polovina_2'),
+        el('strong', { class: 'diag-stav__pocet', text: h('diag.rodic_odevzdano', { x: odevzdano, celkem, z: zeZ(celkem) }) }),
+        el('small', { text: [odevzdano < prestavkaPo(celkem) ? h('diag.rodic_polovina_1') : h('diag.rodic_polovina_2'),
           naposledy ? h('rodic.stav_naposledy', { cas: naposledy.toLocaleTimeString('cs-CZ', { hour: '2-digit', minute: '2-digit' }) }) : ''].filter(Boolean).join(' · ') })),
       obnovit ? el('button', { class: 'tlacitko tlacitko--tiche tlacitko--ikona', type: 'button', 'aria-label': h('rodic.stav_obnovit'), onClick: obnovit }, ikona('obnovit')) : null)
     : el('div', { class: 'zasobnik' },
@@ -192,27 +248,39 @@ export function vytvorPapirDiagnostiky(lekce, { odpovedi = [], ulozit }) {
     el('ol', { class: 'diag-papir' }, pole.slice(od, doo).map((p) => p.li)));
   return el('div', { class: 'zasobnik zasobnik--volny diag-papir-obal' },
     el('p', { class: 'hlaska hlaska--info' }, ikona('info'), el('span', { class: 'hlaska__text', text: h('diag.papir_pokyn') })),
-    blok(0, PRESTAVKA_PO, 'diag.papir_blok_1'), blok(PRESTAVKA_PO, pole.length, 'diag.papir_blok_2'), tlacitko);
+    blok(0, prestavkaPo(pole.length), 'diag.papir_blok_1'), blok(prestavkaPo(pole.length), pole.length, 'diag.papir_blok_2'), tlacitko);
 }
 
 // ---------------------------------------------------------------------
 // Řízení stránky (síť)
 // ---------------------------------------------------------------------
 
-/** Souhrn ze sezení; přepočet, když chybí, je jiného typu nebo starší verze (obrazovka §4). */
-export function souhrnSezeni(lekce, sezeni, odpovedi) {
+/**
+ * Souhrn ze sezení; přepočet, když chybí, je jiného typu nebo starší verze (obrazovka §4).
+ * Spolu 8 (lekce.faze 'osma'): souhrn po tématech (doporuceni.js), `katalog` = lekce předmětu (kapitola → téma).
+ */
+export function souhrnSezeni(lekce, sezeni, odpovedi, { katalog = [] } = {}) {
   const s = sezeni?.souhrn;
-  if (s && s.typ === 'diagnostika' && Number(s.verze) >= VERZE_ALGORITMU && Array.isArray(s.tydny)) return { souhrn: s, prepocitano: false };
+  const osma = lekce?.faze === 'osma';
+  if (osma ? jeSouhrnOsma(s) : (s && s.typ === 'diagnostika' && Number(s.verze) >= VERZE_ALGORITMU && Array.isArray(s.tydny))) return { souhrn: s, prepocitano: false };
   if (!odpovedi?.some((o) => o.krok_id === 'final')) return { souhrn: null, prepocitano: false };
-  return { souhrn: sestavSouhrnDiagnostiky(lekce, odpovedi, { rezim: sezeni?.rezim || 'app' }), prepocitano: true };
+  return { souhrn: spocitejSouhrn(lekce, odpovedi, { rezim: sezeni?.rezim || 'app', katalog }), prepocitano: true };
+}
+
+/** Souhrn diagnostiky z odpovědí: Spolu 8 po tématech, jinak Spolu (Fáze 1 po týdnech). */
+function spocitejSouhrn(lekce, odpovedi, { rezim = 'app', katalog = [] } = {}) {
+  if (lekce?.faze !== 'osma') return sestavSouhrnDiagnostiky(lekce, odpovedi, { rezim });
+  const predmet = predmetLekce(lekce);
+  const lekcePredmetu = katalog.filter((l) => predmetLekce(l) === predmet);
+  return sestavSouhrnOsma(lekce, odpovedi, { predmet, mapaKapitol: mapaKapitolNaTemata(lekcePredmetu), temata: cislaTemat(lekcePredmetu), rezim });
 }
 
 async function potvrdUkonceni(odevzdano, celkem) {
   const dialog = el('dialog', { class: 'modal', 'aria-labelledby': 'diagPotvrzeni' },
     el('div', { class: 'modal__panel' },
       el('h2', { class: 'modal__nadpis', id: 'diagPotvrzeni', text: h('diag.rodic_zobrazit') }),
-      el('p', { text: h('diag.rodic_ukoncit_potvrzeni', { x: odevzdano, celkem }) }),
-      odevzdano < PRESTAVKA_PO ? el('p', { class: 'text-tlumeny', text: h('diag.rodic_orientacni') }) : null,
+      el('p', { text: h('diag.rodic_ukoncit_potvrzeni', { x: odevzdano, celkem, z: zeZ(celkem) }) }),
+      odevzdano < prestavkaPo(celkem) ? el('p', { class: 'text-tlumeny', text: h('diag.rodic_orientacni') }) : null,
       el('div', { class: 'modal__akce' },
         el('button', { class: 'tlacitko tlacitko--sekundarni', type: 'button', onClick: () => zavritModal(dialog, 'zpet') }, h('diag.rodic_zpet')),
         el('button', { class: 'tlacitko tlacitko--primarni', type: 'button', onClick: () => zavritModal(dialog, 'ano') }, h('diag.rodic_ano')))));
@@ -254,17 +322,21 @@ export async function spustDiagnostikuRodic({ lekce, dite, elObsah, elListaLekce
 
   let temata = new Map();
   let faze1Otevrena = false;
+  let katalog = [];
   try {
-    const katalog = await sb.katalogLekci();
+    katalog = await sb.katalogLekci();
     temata = new Map(katalog.map((l) => [l.id, l.tema]));
     faze1Otevrena = katalog.some((l) => l.id === 'F1-T01-L1' && !l.zamceno); // „Začít týden 1" jen u otevřené Fáze 1
   } catch { /* bez témat: „lekce 2 a 4" */ }
 
-  const zobrazVysledek = (souhrn, datum) => ukaz(vytvorVysledek(souhrn, { jmeno: dite.krestni_jmeno, datum, temata, faze1Otevrena }));
+  const osma = lekce.faze === 'osma';
+  const zobrazVysledek = (souhrn, datum) => ukaz(osma
+    ? vytvorVysledekOsma(souhrn, { jmeno: dite.krestni_jmeno, datum, lekce: katalog.filter((l) => predmetLekce(l) === predmetLekce(lekce)) })
+    : vytvorVysledek(souhrn, { jmeno: dite.krestni_jmeno, datum, temata, faze1Otevrena }));
 
   if (sezeni.stav === 'dokonceno') {
     const { odpovedi } = await sb.stavSezeni(sezeni.id);
-    const { souhrn, prepocitano } = souhrnSezeni(lekce, sezeni, odpovedi);
+    const { souhrn, prepocitano } = souhrnSezeni(lekce, sezeni, odpovedi, { katalog });
     if (!souhrn) { chybaStranky(elObsah, h('diag.nesestaveno')); return; }
     zobrazVysledek(souhrn, sezeni.konec);
     if (prepocitano) sb.dokoncitSezeni(sezeni.id, souhrn).catch((e) => console.warn('diagnostika: přepočtený souhrn se neuložil', e));
@@ -286,7 +358,7 @@ export async function spustDiagnostikuRodic({ lekce, dite, elObsah, elListaLekce
     if (odevzdano < lekce.ulohy.length && !(await potvrdUkonceni(odevzdano, lekce.ulohy.length))) return;
     clearInterval(casovac);
     await nacti().catch(() => {});
-    const souhrn = sestavSouhrnDiagnostiky(lekce, odpovedi, { rezim: sezeni.rezim || 'app' });
+    const souhrn = spocitejSouhrn(lekce, odpovedi, { rezim: sezeni.rezim || 'app', katalog });
     zobrazVysledek(souhrn, new Date());
     const ulozit = async () => {
       try {
@@ -317,10 +389,18 @@ export async function spustDiagnostikuRodic({ lekce, dite, elObsah, elListaLekce
     },
   }), el('a', { class: 'tlacitko tlacitko--tiche', href: location.href }, ikona('sipka-vlevo'), 'Zpět'));
 
-  const vykresliPrubeh = () => ukaz(vytvorPrubeh(
-    { lekce, odevzdano: pocetOdevzdanych(odpovedi), zacatek: sezeni.zacatek, rezim: sezeni.rezim, naposledy },
-    { obnovit: () => nacti().then(vykresliPrubeh).catch((e) => toast(e.message || h('chyba.nacteni'), { typ: 'varovani' })), zobrazit, prepsat },
-  ));
+  const vykresliPrubeh = () => {
+    // Spolu 8: dítě test uzavře samo (lekce.js dokoncitTestOsma) → rodič hned vidí výsledek
+    if (sezeni.stav === 'dokonceno') {
+      clearInterval(casovac);
+      const { souhrn } = souhrnSezeni(lekce, sezeni, odpovedi, { katalog });
+      if (souhrn) { zobrazVysledek(souhrn, sezeni.konec); return; }
+    }
+    ukaz(vytvorPrubeh(
+      { lekce, odevzdano: pocetOdevzdanych(odpovedi), zacatek: sezeni.zacatek, rezim: sezeni.rezim, naposledy },
+      { obnovit: () => nacti().then(vykresliPrubeh).catch((e) => toast(e.message || h('chyba.nacteni'), { typ: 'varovani' })), zobrazit, prepsat },
+    ));
+  };
   await nacti();
   vykresliPrubeh();
   if (sezeni.rezim === 'app') {

@@ -37,7 +37,7 @@ const DOMPURIFY_JS = `${CDN}/dompurify@3.4.16/dist/purify.es.mjs`;
 export const NAZVY_TYPU = Object.freeze({
   rozcvicka: 'Rozcvička',
   detektiv: 'Detektiv',
-  cermat: 'Úloha jako u přijímaček',
+  cermat: 'Hlavní úloha',          // Spolu 8: typ cermat = hlavní úloha lekce, nikdy „CERMAT“ (rozhodnutí 1. 10.)
   semafor: 'Sám/sama',
   nova: 'Nová látka',          // čeština (FORMAT-CJ §2)
   kontrolni: 'Sám/sama',       // čeština: role semaforu Matematiky

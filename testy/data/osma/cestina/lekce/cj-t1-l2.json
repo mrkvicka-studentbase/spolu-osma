@@ -1,0 +1,475 @@
+{
+  "id": "cj-t1-l2",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 1,
+  "poradi": 2,
+  "tema": "Sloveso: poznám ho",
+  "kapitola": "slovni-druhy",
+  "cil_pro_rodice": "Dítě najde ve větě slovesa včetně je, má, byl a tvarů minulého času (šel) a odliší je od názvů činností (běh).",
+  "uvod_pro_rodice": "Dnes se dítě učí poznat sloveso jedním testem: dá se před něj říct „on“ nebo „ona“ (on běží, on je, on šel)?",
+  "uvod_pravidla": [
+    {
+      "znak": "Sloveso = co kdo dělá, co se děje",
+      "text": "co to je"
+    },
+    {
+      "znak": "Jde říct „on ___“?",
+      "text": "test"
+    },
+    {
+      "znak": "on běží, on je, on šel",
+      "text": "příklad"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "sloveso": "slovo, které říká, co kdo dělá nebo co se děje; patří sem i krátká slova je, má, byl; jde před něj říct on nebo ona",
+    "podstatné jméno": "název osoby, zvířete, věci, vlastnosti (smutek) nebo činnosti (běh, spánek); jde před něj říct ten, ta, to (téma minulé lekce)",
+    "minulý čas": "tvar slova o tom, co už se stalo (šel, měl, koupil)"
+  },
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "cas_min": 25,
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t1-l2-U1",
+      "typ": "rozcvicka",
+      "cil": "Ledoborec: zopakovat test ten/ta/to z lekce 1 na slovech z jedné rodiny (zpívá, zpěv, zpěvný).",
+      "cas_min": 4,
+      "zadani": "V řadách A a B je vždy jedno podstatné jméno. Které? V řadě C odpověz ano, nebo ne.\n\nA) zpívá, zpěv, zpěvný\n\nB) smutný, smutek, smutně\n\nC) Jde říct „to plavání“?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "zpívá",
+                "spravne": false,
+                "typ_chyby": "sd-sloveso-za-podstatne"
+              },
+              {
+                "id": "b",
+                "text": "zpěv",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "zpěvný",
+                "spravne": false,
+                "typ_chyby": "sd-pridavne-za-podstatne"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "smutný",
+                "spravne": false,
+                "typ_chyby": "sd-pridavne-za-podstatne"
+              },
+              {
+                "id": "b",
+                "text": "smutek",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "smutně",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Jde říct „to plavání“?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "ano",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "ne",
+                "spravne": false
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje test z minulé lekce: před podstatné jméno (název) jde říct ten, ta, to a ukázat na to. V řadách A a B jsou slova z jedné rodiny a názvem je vždy jen jedno. Past: „ten smutný“ zní skoro dobře, ale chybí, kdo je smutný. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) zpívá, zpěv, zpěvný\n\nzpěv (ten zpěv; zpívá říká, co kdo dělá, zpěvný říká jaký)\n\n#### B) smutný, smutek, smutně\n\nsmutek (ten smutek; smutný říká jaký, smutně říká jak)\n\n#### C) Jde říct „to plavání“?\n\nano (to plavání; i činnost může být název)\n\n**Výsledek:** A) zpěv, B) smutek, C) ano",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Řekni nahlas ‚ten‘ před každé slovo z řady A. U kterého to dává smysl samo, bez dalšího slova?“"
+          },
+          {
+            "k": "B",
+            "text": "„Řekni ‚ten smutný‘ a ‚ten smutek‘. Po kterém z nich ještě čekáš další slovo?“"
+          },
+          {
+            "k": "C",
+            "text": "„Řekni nahlas ‚to plavání‘ a potom ‚ten plavání‘. Které zní česky? Co to říká o slově plavání?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, jak poznáš, že plavání je název, i když se při plavání něco dělá.“",
+        "otocena_role_odpoved": "Před plavání jde říct „to“: to plavání. To je test na název. Že se při tom něco dělá, nerozhoduje.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V řadě A nebo B vybere „zpěvný“ nebo „smutný“. Zeptejte se: „Co chybí, když řekneš jen ‚ten smutný‘?“ (Chybí, kdo je smutný.) Vybere „zpívá“ nebo „smutně“: „Jde říct ‚ten zpívá‘?“ U C vybere „ne“: „Řekni nahlas ‚to plavání‘.“"
+      },
+      "semafor": {
+        "zelena": "Výborně — test z minulé lekce drží. Pochvalte, že dítě zkoušelo ten, ta, to nahlas, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti tři slova: spí, spánek, běh. U každého řekne, jestli před něj jde říct ten, ta, to. Kontrola pro vás: ten spánek, ten běh (názvy); „ten spí“ nejde, spí říká, co kdo dělá.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: tři předměty ze stolu. Zítra ať dítě každý vezme do ruky a pojmenuje ho s ten, ta nebo to. Pak řekněte dítěti slova „zpívá“ a „zpěv“ a ať zkusí totéž. Potom zopakujte lekci „Sloveso: poznám ho“. Kontrola pro vás: u každého předmětu jde ten, ta nebo to; „ten zpěv“ jde, „ten zpívá“ ne."
+      },
+      "tisk": {
+        "zadani": "V řadách A a B zakroužkuj podstatné jméno. V řadě C zakroužkuj ano, nebo ne.\n\nA) zpívá, zpěv, zpěvný\n\nB) smutný, smutek, smutně\n\nC) Jde říct „to plavání“? ano, ne"
+      }
+    },
+    {
+      "id": "cj-t1-l2-U2",
+      "typ": "nova",
+      "cil": "Poznat slovesa i v krátkém tvaru (je) a v tvarech o tom, co už se stalo (měl, šel), a nezaměnit je s názvem činnosti (spánek).",
+      "cas_min": 5,
+      "zadani": "Vyber všechna slovesa.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "dlazdice_vice",
+            "moznosti": [
+              "je",
+              "škola",
+              "měl",
+              "nový",
+              "šel",
+              "spánek"
+            ]
+          },
+          "spravne": [
+            "je",
+            "měl",
+            "šel"
+          ],
+          "zname_chyby": [
+            {
+              "chybi": [
+                "je",
+                "měl"
+              ],
+              "typ_chyby": "sd-byt-neni-sloveso"
+            },
+            {
+              "chybi": [
+                "šel"
+              ],
+              "typ_chyby": "sd-minuly-cas-neni-sloveso"
+            },
+            {
+              "navic": [
+                "spánek"
+              ],
+              "typ_chyby": "sd-podstatne-za-sloveso"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě vybírá víc dlaždic najednou. Slovesa jsou tři: dvě říkají, co už se stalo (měl, šel), a jedno je krátké „je“, na kterém není vidět žádný pohyb. Past je „spánek“: zní jako činnost, ale je to název (ten spánek). „Škola“ je název, „nový“ říká jaký.",
+        "reseni": "je (on je)\n\nměl (on měl: už se to stalo)\n\nšel (on šel: už se to stalo)\n\nspánek, škola (ten spánek, ta škola: názvy)\n\nnový (říká jaký; „on nový“ nedává smysl)\n\n**Výsledek:** je, měl, šel",
+        "otazky": [
+          "„Co všechno může sloveso říkat? Řekni mi to vlastními slovy.“",
+          "„Řekni nahlas ‚on‘ před každé slovo, třeba ‚on škola‘. U kterých slov to dává smysl?“",
+          "„Sloveso nemusí být pohyb. Zkus ‚on je‘ a potom ‚on spánek‘ a ‚ten spánek‘. Co ti test říká o obou slovech?“"
+        ],
+        "otocena_role": "„Najdi mezi těmi šesti slovy jedno, které zní jako činnost, ale sloveso to není. Dokaž mi to testem.“",
+        "otocena_role_odpoved": "Spánek. Nejde říct „on spánek“, ale jde říct „ten spánek“. Je to název, stejně jako plavání z rozcvičky.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Chybí „je“ nebo „měl“, protože nic nedělají. Zeptejte se: „Jde říct ‚on je‘? A ‚on měl‘?“ Chybí „šel“: „Jde říct ‚on šel‘?“ Navíc „spánek“: „Řekneš ‚on spánek‘, nebo ‚ten spánek‘?“ Navíc „nový“ nebo „škola“: „Jde říct ‚on nový‘?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — tři slovesa, nic navíc. Pochvalte, že dítě vzalo i krátké „je“, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti čtyři slova: má, běh, stihl, radost. U každého řekne, jestli před něj jde říct „on“ nebo „ona“. Kontrola pro vás: má a stihl ano (ona má, on stihl); běh a radost ne, jsou to názvy (ten běh, ta radost).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: šest lístků papíru a tužku. Zítra přečtěte dítěti slova je, měl, šel, spánek, škola, nový; každé napíše na jeden lístek. Pak lístky roztřídí na dvě hromádky: slova, před která jde říct „on“, a ostatní. Potom zopakujte lekci „Sloveso: poznám ho“. Kontrola pro vás: „on“ jde před je, měl, šel; spánek a škola jsou názvy, nový říká jaký."
+      },
+      "tisk": {
+        "zadani": "Zakroužkuj všechna slovesa.\n\nje, škola, měl, nový, šel, spánek"
+      }
+    },
+    {
+      "id": "cj-t1-l2-U3",
+      "typ": "nova",
+      "cil": "Najít sloveso ve větě jen poslechem, bez textu před očima.",
+      "cas_min": 5,
+      "zadani": "Poslechni si větu. Které slovo říká, co táta udělal?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t1/l2-u4.mp3",
+            "prepis": "Táta včera koupil nové kolo.",
+            "max_prehrani": 0,
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "táta",
+                  "spravne": false
+                },
+                {
+                  "id": "b",
+                  "text": "včera",
+                  "spravne": false
+                },
+                {
+                  "id": "c",
+                  "text": "koupil",
+                  "spravne": true
+                },
+                {
+                  "id": "d",
+                  "text": "kolo",
+                  "spravne": false
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě větu jen slyší, text nevidí; nahrávku si může pustit znovu. Co v ní zazní, máte sbalené pod „Co zazní v nahrávce“. Nečtěte to nahlas, dítě má poslouchat. Vybírá ze čtyř slov z věty a sloveso je mezi nimi jedno. „Kolo“ je název (to kolo), „včera“ říká kdy.",
+        "reseni": "koupil (on koupil: říká, co táta udělal)\n\ntáta, kolo (ten táta, to kolo: názvy)\n\nvčera (říká kdy)\n\n**Výsledek:** koupil",
+        "otazky": [
+          "„Co máš v téhle úloze najít? Řekni mi to vlastními slovy.“",
+          "„Vezmi slovo ‚kolo‘ z nabídky. Jde říct ‚on kolo‘? A jak je to u ostatních slov?“",
+          "„Pusť si větu ještě jednou. Co táta udělal? Řekni to jedním slovem a dej před něj ‚on‘.“"
+        ],
+        "otocena_role": "„Řeknu ti jinou větu: ‚Máma včera stihla autobus.‘ Vysvětli mi, jak v ní najdeš sloveso.“",
+        "otocena_role_odpoved": "Stihla, protože jde říct „ona stihla“. Máma a autobus jsou názvy (ta máma, ten autobus) a včera říká kdy.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Vybere „kolo“, protože ho táta koupil. Zeptejte se: „Řekneš ‚on kolo‘, nebo ‚to kolo‘?“ (To kolo, je to název.) Vybere „táta“: „Táta je ten, kdo něco dělá. Co udělal?“ Vybere „včera“: „Říká to slovo, co se stalo, nebo kdy?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — sloveso dítě našlo jen poslechem. Pochvalte, že si větu pustilo znovu a zkoušelo test, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Řekněte dítěti větu „Tomáš ráno stihl autobus.“ Dítě ji jen slyší, nevidí. Řekne, které slovo projde testem „on“. Kontrola pro vás: stihl (on stihl); Tomáš a autobus jsou názvy, ráno říká kdy.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: tři lístky papíru a tužku. Zítra řekněte dítěti dvakrát pomalu větu „Máma koupila kolo.“ Dítě ji jen poslouchá a každé slovo napíše na jeden lístek. Pak ke každému lístku řekne „on“, „ona“ nebo „ten, ta, to“. Potom zopakujte lekci „Sloveso: poznám ho“. Kontrola pro vás: ona koupila (sloveso); ta máma a to kolo jsou názvy."
+      },
+      "tisk": {
+        "zadani": "Poslouchej větu (pustí ti ji rodič). Které slovo říká, co táta udělal?\n\nZakroužkuj: a) táta b) včera c) koupil d) kolo"
+      }
+    },
+    {
+      "id": "cj-t1-l2-U4",
+      "typ": "detektiv",
+      "cil": "Najít u spolužáka slovo, které za sloveso označil omylem (název činnosti „běh“), a říct proč.",
+      "cas_min": 5,
+      "zadani": "Petr měl ve větě označit všechna slovesa:\n\nBěh po lese je zdravý.\n\nOznačil: **Běh**, **je**. Udělal **jednu** chybu. Najdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na slovo, které Petr označil špatně.",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Běh po lese je zdravý.",
+            "cil": "slova",
+            "min": 1,
+            "max": 1
+          },
+          "spravne": [
+            0
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                3
+              ],
+              "typ_chyby": "detektiv-jine-slovo"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Proč to není sloveso?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Jde před něj říct ten, ta, to — je to název",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "Je to krátké slovo",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "c",
+                "text": "Je na začátku věty",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák; hledat cizí chybu je snazší než přiznat vlastní. Petr označil dvě slova, jedno z nich špatně. Dítě má obě projít testem „on“ a v kroku 2 (Proč to není sloveso?) vybrat důvod. Past: „je“ vypadá, že nic nedělá, ale Petr ho označil správně (on je).",
+        "reseni": "Chyba je „Běh“: Petr ho označil jako sloveso.\n\nBěh (ten běh: název činnosti, „on běh“ nejde)\n\nje (on je: Petr ho označil správně)\n\n**Výsledek:** krok 1 Běh, krok 2 Jde před něj říct ten, ta, to — je to název",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co je sloveso. Která dvě slova Petr označil?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrova slova jedno po druhém. Před každé řekni nahlas ‚on‘. Co slyšíš?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Když ‚on‘ nejde, zkus ‚ten, ta, to‘. Které Petrovo slovo projde jen tímhle testem? Co to potom je?“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a jak si ji příště ohlídám.“",
+        "otocena_role_odpoved": "Běh není sloveso. Nejde říct „on běh“, jde říct „ten běh“, takže je to název. Příště u každého slova zkusit „on“ i „ten, ta, to“. Slovo „je“ máš dobře.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na „je“, protože nic nedělá. Zeptejte se: „Jde říct ‚on je‘?“ (Jde, Petr ho označil správně.) Klikne na slovo, které Petr neoznačil: „Která dvě slova Petr označil?“ V kroku 2 zvolí délku nebo začátek věty: „Podle čeho to poznáš: podle délky, nebo podle testu?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — Petrovu chybu dítě našlo i vysvětlilo. Pochvalte, že zkoušelo „on“ i „ten“ u obou slov, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr označil jako slovesa slova zpěv a zpívá.“ Zeptejte se: „Má Petr pravdu u obou? Jak to ověříš?“ Kontrola pro vás: jen u „zpívá“ (on zpívá); zpěv je název (ten zpěv), stejně jako běh.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: dva lístky papíru a tužku. Zítra ať dítě napíše na jeden lístek „spánek“ a na druhý „spí“. U obou zkusí „on“ i „ten“. Pak ať předvede, co znamená „on spí“. Potom zopakujte lekci „Sloveso: poznám ho“. Kontrola pro vás: „on spí“ jde, je to sloveso; u spánku jde jen „ten spánek“, je to název."
+      },
+      "tisk": {
+        "zadani": "Petr měl ve větě označit všechna slovesa:\n\nBěh po lese je zdravý.\n\nOznačil: Běh, je. Udělal jednu chybu.\n\nA) Podtrhni slovo, které Petr označil špatně.\n\nB) Proč to není sloveso? Zakroužkuj: a) Jde před něj říct ten, ta, to — je to název b) Je to krátké slovo c) Je na začátku věty"
+      }
+    },
+    {
+      "id": "cj-t1-l2-U5",
+      "typ": "kontrolni",
+      "cil": "Najít samostatně všechna slovesa ve dvou větách, včetně „měla“ a tvarů o tom, co už se stalo, a nenechat se zmást názvem „radost“ ani slovem „rychle“.",
+      "cas_min": 6,
+      "zadani": "Klikni na všechna slovesa v obou větách.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Ráno Tomáš vstal a rychle se oblékl. Máma měla radost, že stihl autobus.",
+            "cil": "slova",
+            "min": 1,
+            "max": 6,
+            "volitelne": [
+              5
+            ]
+          },
+          "spravne": [
+            2,
+            6,
+            8,
+            11
+          ],
+          "zname_chyby": [
+            {
+              "chybi": [
+                8
+              ],
+              "typ_chyby": "sd-byt-neni-sloveso"
+            },
+            {
+              "chybi": [
+                2,
+                6,
+                11
+              ],
+              "typ_chyby": "sd-minuly-cas-neni-sloveso"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Slovesa jsou čtyři a všechna říkají, co už se stalo. Nejčastěji chybí „měla“ (nic nedělá) nebo „stihl“. Pasti: „radost“ je název (ta radost), „rychle“ říká jak. Když dítě klikne i na „se“ u „oblékl“, nevadí to: patří k „oblékl se“.",
+        "reseni": "vstal (on vstal)\n\noblékl (on se oblékl; „se“ smí, ale nemusí být označené)\n\nměla (ona měla)\n\nstihl (on stihl)\n\nTomáš, Máma, radost, autobus (ten Tomáš, ta máma, ta radost, ten autobus: názvy)\n\nRáno, rychle (říkají kdy a jak)\n\n**Výsledek:** vstal, oblékl, měla, stihl",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co hledáš. Jak sloveso poznáš?“",
+          "„Projdi první větu slovo po slově. Před každé řekni nahlas ‚on‘. Kde to dává smysl?“",
+          "„Sloveso nemusí být pohyb. Ve druhé větě zkus před každé slovo ‚ona‘ nebo ‚on‘. Která slova projdou?“"
+        ],
+        "otocena_role": "„Najdi v těch větách jedno slovo, které vypadá jako sloveso, ale není. Dokaž mi to testem.“",
+        "otocena_role_odpoved": "Radost. Nejde říct „ona radost“, jde říct „ta radost“, je to název. Nebo rychle: „on rychle“ nedává smysl, říká jen jak.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: chybí „měla“. Zeptejte se: „Jde říct ‚ona měla‘?“ Chybí „vstal“, „oblékl“ nebo „stihl“: „Jde říct ‚on stihl‘?“ Navíc „radost“ nebo jiný název: „Řekneš ‚ona radost‘, nebo ‚ta radost‘?“ Navíc „rychle“: „Jde říct ‚on rychle‘?“ Klik na „se“ nevadí. Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — všechna čtyři slovesa, nic navíc. Pochvalte, že dítě zkoušelo test u každého slova. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti větu „Táta měl radost, že Tomáš stihl autobus.“ Dítě řekne, která slova projdou testem „on“ nebo „ona“. Kontrola pro vás: měl a stihl (on měl, on stihl); táta, radost, Tomáš a autobus jsou názvy.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: plyšáka nebo jinou hračku. Zítra ať s ní dítě přehraje ráno: hračka spí, vstane, jde do školy. U každé scénky řekne jednou větou, co hračka dělá, a najde slovo, před které jde říct „on“ nebo „ona“. Potom zopakujte lekci „Sloveso: poznám ho“. Kontrola pro vás: v každé větě je jedno takové slovo, třeba spí, vstane, jde (on spí, on vstane, on jde); škola je název."
+      },
+      "tisk": {
+        "zadani": "Podtrhni všechna slovesa v obou větách.\n\nRáno Tomáš vstal a rychle se oblékl. Máma měla radost, že stihl autobus."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "SYNTETICKÁ testovací lekce (testy/data/osma) převedená ze Spolu — jen pro testy a QA, není to obsah Spolu 8.",
+    "zkontroloval": "vedouci",
+    "datum": "2026-09-30",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?id=580",
+      "https://prirucka.ujc.cas.cz/?slovo=zp%C3%ADvat",
+      "https://prirucka.ujc.cas.cz/?slovo=zp%C4%9Bv",
+      "https://prirucka.ujc.cas.cz/?slovo=zp%C4%9Bvn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=smutn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=smutek",
+      "https://prirucka.ujc.cas.cz/?slovo=plav%C3%A1n%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=ko%C4%8Dka",
+      "https://prirucka.ujc.cas.cz/?slovo=sp%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?slovo=gau%C4%8D",
+      "https://prirucka.ujc.cas.cz/?slovo=b%C3%BDt",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1kola",
+      "https://prirucka.ujc.cas.cz/?slovo=m%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=nov%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=j%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=sp%C3%A1nek",
+      "https://prirucka.ujc.cas.cz/?slovo=t%C3%A1ta",
+      "https://prirucka.ujc.cas.cz/?slovo=koupit",
+      "https://prirucka.ujc.cas.cz/?slovo=kolo",
+      "https://prirucka.ujc.cas.cz/?slovo=b%C4%9Bh",
+      "https://prirucka.ujc.cas.cz/?slovo=les",
+      "https://prirucka.ujc.cas.cz/?id=zdrav%C3%BD_1",
+      "https://prirucka.ujc.cas.cz/?slovo=Tom%C3%A1%C5%A1",
+      "https://prirucka.ujc.cas.cz/?slovo=vst%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?id=se",
+      "https://prirucka.ujc.cas.cz/?slovo=obl%C3%A9ct",
+      "https://prirucka.ujc.cas.cz/?slovo=m%C3%A1ma",
+      "https://prirucka.ujc.cas.cz/?slovo=radost",
+      "https://prirucka.ujc.cas.cz/?slovo=stihnout",
+      "https://prirucka.ujc.cas.cz/?slovo=autobus"
+    ],
+    "testovaci_rodic": null
+  }
+}

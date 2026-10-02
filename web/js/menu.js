@@ -1,5 +1,5 @@
 // =====================================================================
-// menu.js — společné menu v hlavičce přihlášených stránek (prehled, lekce, rodic, dotaznik)
+// menu.js — společné menu v hlavičce přihlášených stránek (prehled, lekce, rodic)
 // + textové modaly pro rodiče: manuál „Jak vést lekci" a slovníček „Jak číst zápisy nahlas".
 //
 // HTML stránky obsahuje jen hlavičku s logem (odkaz na prehled.html):
@@ -22,7 +22,6 @@ import { nacistKnihovny, renderMarkdown, renderManual } from './obsah.js';
 import { MANUAL_NADPIS, MANUAL_MD } from './manual.js';
 import { MANUAL_CJ_NADPIS, MANUAL_CJ_MD } from './manual-cj.js';
 import { CTENI_NADPIS, CTENI_MD } from './cteni-zapisu.js';
-import { vytvorOsuSezony } from './osa-sezony.js';
 
 const KLIC_MANUAL = 'spolu.manual-precteno';
 const KLIC_MANUAL_CJ = 'spolu.manual-precteno.cestina';
@@ -196,8 +195,7 @@ export function napojMenu({ hlavicka, role = true, poZmeneRole, prehled = true }
     location.href = 'registrace.html?prihlaseni=1';
   });
 
-  // R63 (Pavel 30. 9.): časová osa sezóny v hlavičce mezi „Spolu na přijímačky" a menu
-  if (cil && !cil.querySelector('.osa-sezony')) cil.append(vytvorOsuSezony());
+  // Spolu 8: časová osa sezóny do přijímaček (R63, osa-sezony.js) odstraněna — produkt nemá přijímačky
   cil?.append(el('button', {
     class: 'tlacitko tlacitko--na-tmave tlacitko--ikona', type: 'button', 'aria-label': 'Menu', 'aria-haspopup': 'dialog',
     onClick: () => otevrit(),
