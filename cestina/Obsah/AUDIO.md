@@ -21,10 +21,10 @@ Verze 1.0, 29. 9. 2026. Vede autor úloh, generuje Pavel. Soubory do `web/audio/
 
 | ID souboru | Lekce / krok | Typ | Přesné znění | Poznámka | Stav |
 |---|---|---|---|---|---|
-| `t1/l1-u3.mp3` | 1 / úloha 3 (`k1` i `final`) | poslech | Pátý den tábora jsme my dva našli v lese tři houby. | Nic nezdůrazňovat, hlavně ne „pátý“ a „my“; „my dva“ vyslovit spojitě, bez pauzy. Oznamovací intonace. Cca 4 s. | čeká |
-| `t1/l3-u2.mp3` | 3 / úloha 2 (`k1` i `final`) | poslech | Večer jsme šli kolem rybníka a viděli tam dvě volavky. | „Večer“ na začátku bez důrazu a bez pauzy za ním; „kolem rybníka“ spojitě (pauza by napověděla). Cca 4 s. | čeká |
-| `t2/l5-u3.mp3` | 5 / úloha 3 (`k1` i `final`) | poslech | Tomáš potkal na hřišti souseda s dědou. | Oznamovací věta. Nezdůrazňovat „souseda“ ani „dědou“; koncovky „-a“ v „souseda“ a „-ou“ v „dědou“ vyslovit zřetelně, nepolykat. Cca 3 s. | čeká |
-| `t2/l6-u3.mp3` | 6 / úloha 3 (`k1` i `final`) | poslech | Na náměstí si hrálo kotě s malým štěnětem. | Oznamovací věta. Nezdůrazňovat „náměstí“ ani „štěnětem“; „štěnětem“ vyslovit celé a zřetelně (slabika „-ně-“ se nesmí ztratit), „náměstí“ s dlouhým „í“. Cca 3 s. | čeká |
+| `t1/l1-u3.mp3` | 1 / úloha 3 (`k1` i `final`) | poslech | Pátý den tábora jsme my dva našli v lese tři houby. | Nic nezdůrazňovat, hlavně ne „pátý“ a „my“; „my dva“ vyslovit spojitě, bez pauzy. Oznamovací intonace. Cca 4 s. | hotovo 2. 10. (Pavel) |
+| `t1/l3-u2.mp3` | 3 / úloha 2 (`k1` i `final`) | poslech | Večer jsme šli kolem rybníka a viděli tam dvě volavky. | „Večer“ na začátku bez důrazu a bez pauzy za ním; „kolem rybníka“ spojitě (pauza by napověděla). Cca 4 s. | hotovo 2. 10. (Pavel) |
+| `t2/l5-u3.mp3` | 5 / úloha 3 (`k1` i `final`) | poslech | Tomáš potkal na hřišti souseda s dědou. | Oznamovací věta. Nezdůrazňovat „souseda“ ani „dědou“; koncovky „-a“ v „souseda“ a „-ou“ v „dědou“ vyslovit zřetelně, nepolykat. Cca 3 s. | hotovo 2. 10. (Pavel) |
+| `t2/l6-u3.mp3` | 6 / úloha 3 (`k1` i `final`) | poslech | Na náměstí si hrálo kotě s malým štěnětem. | Oznamovací věta. Nezdůrazňovat „náměstí“ ani „štěnětem“; „štěnětem“ vyslovit celé a zřetelně (slabika „-ně-“ se nesmí ztratit), „náměstí“ s dlouhým „í“. Cca 3 s. | hotovo 2. 10. (Pavel) |
 
 Týden 2+ doplní autor úloh při psaní lekcí. Před odevzdáním týdne musí být řádky pro všechny `poslech` a `diktat` kroky v tabulce, jinak QA týden nepustí (kontrola: každý `audio` odkaz v JSON má řádek tady a soubor na disku).
 
