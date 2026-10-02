@@ -245,7 +245,7 @@
         "otazky": [
           {
             "k": "Celá úloha",
-            "text": "„Řekni mi vlastními slovy, co Petr dělá v prvních dvou řádcích a proč.“"
+            "text": "„Řekni mi vlastními slovy, co Petr v příkladu dělá a proč převádí zlomky na dvanáctiny.“"
           },
           {
             "k": "Krok 1",
@@ -253,7 +253,7 @@
           },
           {
             "k": "Krok 2 a výsledek",
-            "text": "„Tady máš začátek: jedna třetina jsou čtyři dvanáctiny. Co pak odečteš od třinácti dvanáctin a jak výsledek zkrátíš?“"
+            "text": "„Tady máš začátek: dvanáct je šest krát dvě, čtyři krát tři a tři krát čtyři. Čím se tedy násobí čitatelé? Jak výsledek zkrátíš?“"
           }
         ],
         "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč jedna třetina není jedna dvanáctina.“",
@@ -428,7 +428,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč při převodu na dvanáctiny musíš změnit i čitatele, a ne jen jmenovatele.“",
         "otocena_role_odpoved": "Protože ze čtvrtin se dělají třikrát menší díly, a proto musí být dílů třikrát víc. Čitatel se násobí stejně jako jmenovatel, jinak by se zlomek zmenšil.",
-        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání; když se dítě úplně zasekne, čtěte otázky 1–3. Po odevzdání se podívejte na obrazovku dítěte: $\\frac{2}{7}$: počítá zvlášť čitatele a zvlášť jmenovatele. Zeptejte se: „Jsou to stejné díly?“ (Ne.) $\\frac{1}{6}$: změní jmenovatele, čitatele ne. $\\frac{3}{12}$ aplikace uzná a požádá o zkrácení. Semafor: opraví se samo = „Sám/sama“; po vaší otázce = „Potřeboval(a) otázku“; neopraví = „Spletl(a) se“."
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $\\frac{2}{7}$: počítá zvlášť čitatele a zvlášť jmenovatele. Zeptejte se: „Jsou to stejné díly?“ (Ne.) $\\frac{1}{6}$: změní jmenovatele, čitatele ne. $\\frac{3}{12}$ aplikace uzná a požádá o zkrácení."
       },
       "semafor": {
         "zelena": "Výborně — tři zlomky zvládá samo. Pochvalte, že převedlo všechny na stejné díly. Zítra můžete pokračovat další lekcí.",
@@ -441,9 +441,9 @@
     }
   ],
   "kontrola": {
-    "jistota": "stredni",
-    "poznamka": "Autor 1. 10.: čísla a známé chyby přepočítány skriptem. U1 C má smíšená čísla ($1\\frac{2}{3}$, $1\\frac{1}{3}$) podle příkladu kódu odcital-zlomek-od-celeho-spatne; smíšená čísla jsou jinak až v T05-L3 — recenzent rozhodne, zda nahradit $\\frac{5}{3}$ a $\\frac{4}{3}$. Sporné: U1 C dlaždice $\\frac{1}{3}$ (dvojka brána jako dvě třetiny) = neprepocital-citatel; U3 k1 rozdíl dnů = odpovida-na-jinou-otazku; U2 k2 $\\frac{10}{12}$ (devítka přičtena nahoře i dole) = pricetl-misto-nasobeni. U3 k2 chybu „rozdíl $\\frac{3}{20}$“ (o kolik víc v úterý) nelze odlišit od neprepocital-citatel ($\\frac{1}{20} + \\frac{2}{20}$), kód je neprepocital-citatel. Kód kratil-jen-castecne (osnova) se v kroku s kontrola_tvaru nepoužívá, nezkrácený výsledek řeší hláška.",
-    "zkontroloval": "autor",
+    "jistota": "jista",
+    "poznamka": "Recenze: vše přepočítáno skriptem (Python Fraction) a přes vyhodnotKrok (správné odpovědi, nezkrácené tvary, dlaždice, známé chyby). Opravy: U2 otázka L3 („jedna třetina jsou čtyři dvanáctiny“) prozrazovala chybný 3. řádek (SABLONA §5.2; v režimu „Dnes samo“ jdou nápovědy postupně) — nově ukazuje násobitele pro všechny tři jmenovatele; L1 už neupozorňuje na „první dva řádky“. U4 typická chyba zkrácena pod 50 slov. Smíšená čísla v U1 C ($1\\frac{2}{3}$, $1\\frac{1}{3}$) ponechána: odpovídají osnově i příkladu kódu odcital-zlomek-od-celeho-spatne, dítě je jen poznává v nabídce (čtení je ve vysvětlení). Kódy U1 C $\\frac{1}{3}$ (neprepocital-citatel: $\\frac{2}{3} - \\frac{1}{3}$), U2 k2 $\\frac{10}{12}$ a U3 k1 rozdíl dnů ověřeny a ponechány.",
+    "zkontroloval": "recenzent",
     "datum": "2026-10-01"
   }
 }

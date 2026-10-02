@@ -33,7 +33,7 @@
       "id": "M8-T04-L1-U1",
       "typ": "rozcvicka",
       "cas_min": 4,
-      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Zkrať na základní tvar: $\\frac{18}{24}$\n\nB) Doplň číslo místo otazníku: $\\frac{3}{5} = \\frac{?}{20}$\n\nC) Který zlomek se **nerovná** $\\frac{3}{4}$?",
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Zkrať na základní tvar: $\\frac{18}{24}$\n\nB) Doplň číslo místo otazníku: $\\frac{3}{5} = \\frac{?}{20}$\n\nC) Který zlomek se rovná $\\frac{3}{4}$?",
       "zdroj": "vlastni",
       "kroky": [
         {
@@ -96,26 +96,26 @@
         },
         {
           "id": "final",
-          "popisek": "Příklad C: co se nerovná $\\frac{3}{4}$?",
+          "popisek": "Příklad C: co se rovná $\\frac{3}{4}$?",
           "vstup": {
             "typ": "dlazdice",
             "moznosti": [
               {
                 "id": "a",
-                "text": "$\\frac{6}{8}$",
+                "text": "$\\frac{5}{6}$",
                 "spravne": false,
                 "typ_chyby": "pricetl-misto-nasobeni"
               },
               {
                 "id": "b",
-                "text": "$\\frac{5}{6}$",
+                "text": "$\\frac{9}{12}$",
                 "spravne": true
               },
               {
                 "id": "c",
-                "text": "$\\frac{15}{20}$",
+                "text": "$\\frac{3}{12}$",
                 "spravne": false,
-                "typ_chyby": "pricetl-misto-nasobeni"
+                "typ_chyby": "upravil-jen-cast-zlomku"
               }
             ]
           }
@@ -123,7 +123,7 @@
       ],
       "tahak": {
         "vysvetleni": "Dítě jen vybírá z nabídky. U A se krátí, dokud to jde: $\\frac{6}{8}$ je sice stejně velký zlomek, ale ještě není v základním tvaru. U B a C se hlídá, že se čitatel i jmenovatel násobí stejným číslem, nic se k nim nepřičítá. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
-        "reseni": "#### A) $\\frac{18}{24}$\n\n$\\frac{18}{24} = \\frac{3}{4}$ (čitatel i jmenovatel děleno šesti)\n\n#### B) $\\frac{3}{5} = \\frac{?}{20}$\n\n$20 : 5 = 4$ (kolikrát je nový jmenovatel větší)\n\n$3 \\cdot 4 = 12$ (čitatel krát stejné číslo)\n\n#### C) Co se nerovná $\\frac{3}{4}$\n\n$\\frac{6}{8} = \\frac{3}{4}$ (obojí děleno dvěma)\n\n$\\frac{15}{20} = \\frac{3}{4}$ (obojí děleno pěti)\n\n$\\frac{5}{6} \\neq \\frac{3}{4}$ (vzniklo přičtením dvojky nahoře i dole)\n\n**Výsledek:** A) $\\frac{3}{4}$, B) $12$, C) $\\frac{5}{6}$",
+        "reseni": "#### A) $\\frac{18}{24}$\n\n$\\frac{18}{24} = \\frac{3}{4}$ (čitatel i jmenovatel děleno šesti)\n\n#### B) $\\frac{3}{5} = \\frac{?}{20}$\n\n$20 : 5 = 4$ (kolikrát je nový jmenovatel větší)\n\n$3 \\cdot 4 = 12$ (čitatel krát stejné číslo)\n\n#### C) Co se rovná $\\frac{3}{4}$\n\n$\\frac{3}{4} = \\frac{9}{12}$ (obojí krát tři)\n\n$\\frac{5}{6} \\neq \\frac{3}{4}$ (vzniklo přičtením dvojky nahoře i dole)\n\n$\\frac{3}{12} \\neq \\frac{3}{4}$ (krát tři jen jmenovatel)\n\n**Výsledek:** A) $\\frac{3}{4}$, B) $12$, C) $\\frac{9}{12}$",
         "otazky": [
           {
             "k": "A",
@@ -135,12 +135,12 @@
           },
           {
             "k": "C",
-            "text": "„Zkrať každý zlomek, jak nejvíc to jde. Který z nich nevyjde jako tři čtvrtiny?“"
+            "text": "„Zkrať každý zlomek, jak nejvíc to jde. Který z nich vyjde jako tři čtvrtiny?“"
           }
         ],
         "otocena_role": "„Vysvětli mi, proč se tři pětiny nerovnají osmnácti dvacetinám, když se nahoře i dole přičetlo patnáct.“",
         "otocena_role_odpoved": "Zlomek zůstane stejně velký, jen když se nahoře i dole násobí stejným číslem. Pětina jsou čtyři dvacetiny, takže tři pětiny jsou dvanáct dvacetin, ne osmnáct.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $\\frac{6}{8}$: krátí jen dvěma a skončí. Zeptejte se: „Jde to ještě zkrátit?“ (Ano, dvěma.) $\\frac{3}{24}$ nebo u B $3$: upraví jen jednu část zlomku; $\\frac{9}{8}$: dělí nahoře a dole jiným číslem. U B $18$, u C $\\frac{6}{8}$ nebo $\\frac{15}{20}$: přičítá místo násobení."
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $\\frac{6}{8}$: krátí jen třemi a skončí. Zeptejte se: „Jde to ještě zkrátit?“ (Ano, dvěma.) $\\frac{3}{24}$, u B $3$ nebo u C $\\frac{3}{12}$: upraví jen jednu část zlomku; $\\frac{9}{8}$: dělí nahoře a dole jiným číslem. U B $18$, u C $\\frac{5}{6}$: přičítá místo násobení."
       },
       "semafor": {
         "zelena": "Výborně — krácení i rozšiřování sedí. Pochvalte, že hlídalo stejné číslo nahoře i dole, a jděte dál.",
@@ -148,7 +148,7 @@
         "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 20 kostek nebo knoflíků. Zítra ať je dítě rozdělí na 5 stejných hromádek a 3 hromádky odsune. Zeptejte se: „Kolik kostek jsou tři pětiny?“ Pak ať samo zapíše $\\frac{3}{5} = \\frac{12}{20}$ a řekne, čím násobí nahoře i dole. Potom zopakujte lekci „Krácení a rozšiřování“. Kontrola pro vás: 12 kostek, nahoře i dole krát čtyři."
       },
       "tisk": {
-        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Zkrať na základní tvar: $\\frac{18}{24}$ — a) $\\frac{6}{8}$ b) $\\frac{3}{24}$ c) $\\frac{3}{4}$ d) $\\frac{9}{8}$\n\nB) Doplň číslo místo otazníku: $\\frac{3}{5} = \\frac{?}{20}$ — a) $12$ b) $3$ c) $18$\n\nC) Který zlomek se nerovná $\\frac{3}{4}$? — a) $\\frac{6}{8}$ b) $\\frac{5}{6}$ c) $\\frac{15}{20}$"
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Zkrať na základní tvar: $\\frac{18}{24}$ — a) $\\frac{6}{8}$ b) $\\frac{3}{24}$ c) $\\frac{3}{4}$ d) $\\frac{9}{8}$\n\nB) Doplň číslo místo otazníku: $\\frac{3}{5} = \\frac{?}{20}$ — a) $12$ b) $3$ c) $18$\n\nC) Který zlomek se rovná $\\frac{3}{4}$? — a) $\\frac{5}{6}$ b) $\\frac{9}{12}$ c) $\\frac{3}{12}$"
       }
     },
     {
@@ -413,7 +413,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč nestačí k patnácti přičíst šestnáct, když se ke čtyřiceti přičetlo šestnáct.“",
         "otocena_role_odpoved": "Protože přičítáním se zlomek změní. Stejný zůstane, jen když se nahoře i dole dělí nebo násobí stejným číslem. Tři osminy krát sedm jsou dvacet jedna padesátišestin.",
-        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání; když se dítě úplně zasekne, čtěte otázky 1–3. Po odevzdání se podívejte na obrazovku dítěte: $31$: přičte šestnáct nahoře i dole. Zeptejte se: „Jak se ze čtyřiceti stane padesát šest, přičtením, nebo násobením?“ (Přes osm: děleno pěti, krát sedm.) $15$: čitatel nechá beze změny. Semafor: opraví se samo = „Sám/sama“; po vaší otázce = „Potřeboval(a) otázku“; neopraví = „Spletl(a) se“."
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $31$: přičte šestnáct nahoře i dole. Zeptejte se: „Jak se ze čtyřiceti stane padesát šest, přičtením, nebo násobením?“ (Přes osm: děleno pěti, krát sedm.) $15$: čitatel nechá beze změny."
       },
       "semafor": {
         "zelena": "Výborně — rozšiřování zvládá samo. Pochvalte, že zlomek nejdřív zkrátilo. Zítra můžete pokračovat další lekcí.",
@@ -426,9 +426,9 @@
     }
   ],
   "kontrola": {
-    "jistota": "stredni",
-    "poznamka": "Autor 1. 10.: čísla a známé chyby přepočítány skriptem (zlomky v Pythonu, vyhodnocení přes web/js/vyhodnoceni.js). Sporné: U1 C — osnova chce „Který zlomek se nerovná ostatním?“, použito „se nerovná $\\frac{3}{4}$“, protože u volné trojice nemá volba stejného zlomku jednoznačný kód; obě chybné dlaždice jsou pricetl-misto-nasobeni. U3 k1 $\\frac{3}{4}$ (= $\\frac{12}{16}$, žáci se psem ku žákům bez psa) kódováno zamenil-cast-a-zbytek — přesnější kód „část ku zbytku“ ve slovníku není. U3 final $19$ (12 + 7 ze 28 + 7) kódováno pricetl-misto-nasobeni. U2: oprava 2. řádku má víc správných podob ($\\frac{9}{15}$, $\\frac{3}{5}$), v nabídce je jen $\\frac{6}{10}$.",
-    "zkontroloval": "autor",
+    "jistota": "jista",
+    "poznamka": "Recenze: vše přepočítáno skriptem (Python Fraction) a přes vyhodnotKrok (správné odpovědi, nezkrácené tvary, všechny dlaždice a známé chyby sedí). Opravy: U1 C přepsáno na „Který zlomek se rovná $\\frac{3}{4}$?“ s nabídkou $\\frac{5}{6}$ (pricetl-misto-nasobeni), $\\frac{9}{12}$ (správně), $\\frac{3}{12}$ (upravil-jen-cast-zlomku): v původní verzi „nerovná se“ byly chybné dlaždice $\\frac{6}{8}$ a $\\frac{15}{20}$ kódované pricetl-misto-nasobeni, ale jejich volba tou chybou nevzniká; odchylka od osnovy („nerovná se ostatním“). U1 typická chyba: $\\frac{6}{8}$ vzniká krácením třemi, ne dvěma (opraveno). U4 typická chyba zkrácena pod 50 slov. Ponecháno: U3 k1 $\\frac{3}{4}$ (žáci se psem ku žákům bez psa) jako zamenil-cast-a-zbytek, U3 final $19$ jako pricetl-misto-nasobeni; U2 oprava 2. řádku jen jako $\\frac{6}{10}$ (dlaždice, jednoznačné).",
+    "zkontroloval": "recenzent",
     "datum": "2026-10-01"
   }
 }
