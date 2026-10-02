@@ -1,0 +1,450 @@
+{
+  "id": "M8-T10-L4",
+  "faze": "osma",
+  "tyden": 10,
+  "poradi": 4,
+  "tema": "Tělesa ve slovních úlohách",
+  "kapitola": "geometrie",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo vyřeší úlohu s tělesem, ve které spojí objem, jednotky a procenta nebo zlomek.",
+  "uvod_pro_rodice": "Dnes je kontrola celého tématu: povrch, objem v litrech a hranoly ve slovních úlohách, kde se k objemu přidají procenta nebo zlomky.",
+  "uvod_pravidla": [
+    {
+      "znak": "$V = 5 \\cdot 4 \\cdot 2\\ \\text{dm}^3$",
+      "text": "objem v litrech"
+    },
+    {
+      "znak": "$75\\,\\%$ z $40$ l je $30$ l",
+      "text": "naplněná část"
+    },
+    {
+      "znak": "$40 - 30 = 10$ l",
+      "text": "dolít zbývá"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka",
+    "pravítko"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T10-L4-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Krabice bez víka má dno $5$ cm krát $4$ cm a výšku $2$ cm. Jaký má povrch?\n\nB) Kolik litrů pojme krabice $20$ cm krát $10$ cm krát $10$ cm?\n\nC) Hranol je vysoký $10$ cm. Podstava je trojúhelník se stranou $5$ cm a výškou k ní $4$ cm. Jaký má objem?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: krabice bez víka",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$76\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "prehledl-udaj"
+              },
+              {
+                "id": "b",
+                "text": "$40\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "povrch-objem-zamena"
+              },
+              {
+                "id": "c",
+                "text": "$36\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "povrch-bez-podstav"
+              },
+              {
+                "id": "d",
+                "text": "$56\\ \\text{cm}^2$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: kolik litrů?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$2$ l",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$2\\,000$ l",
+                "spravne": false,
+                "typ_chyby": "litr-zamena"
+              },
+              {
+                "id": "c",
+                "text": "$20$ l",
+                "spravne": false,
+                "typ_chyby": "objem-po-desitkach-nebo-stovkach"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: objem hranolu",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$200\\ \\text{cm}^3$",
+                "spravne": false,
+                "typ_chyby": "trojuhelnik-bez-deleni-dvema"
+              },
+              {
+                "id": "b",
+                "text": "$100\\ \\text{cm}^3$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$19\\ \\text{cm}^3$",
+                "spravne": false,
+                "typ_chyby": "objem-soucet-rozmeru"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě vybírá, ale každý příklad si spočítá na papíře. Každý je z jedné lekce tématu: A povrch krabice bez víka, B objem v litrech, C objem hranolu s trojúhelníkem v podstavě. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) Krabice bez víka\n\n$5 \\cdot 4 = 20$ (dno, víko chybí)\n\n$2 \\cdot 5 \\cdot 2 = 20$ (přední a zadní stěna)\n\n$2 \\cdot 4 \\cdot 2 = 16$ (boční stěny)\n\n$20 + 20 + 16 = 56\\ \\text{cm}^2$ (pět stěn)\n\n#### B) Krabice $20$ cm, $10$ cm a $10$ cm\n\n$2 \\cdot 1 \\cdot 1 = 2\\ \\text{dm}^3$ (rozměry v decimetrech)\n\n$2\\ \\text{dm}^3 = 2$ l (decimetr krychlový je litr)\n\n#### C) Objem trojbokého hranolu\n\n$5 \\cdot 4 : 2 = 10\\ \\text{cm}^2$ (podstava, trojúhelník)\n\n$10 \\cdot 10 = 100\\ \\text{cm}^3$ (podstava krát výška hranolu)\n\n**Výsledek:** A) $56\\ \\text{cm}^2$; B) $2$ l; C) $100\\ \\text{cm}^3$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, spočítej na papíře: kolik stěn má krabice bez víka? Které z nich jsou stejně velké?“"
+          },
+          {
+            "k": "B",
+            "text": "„Neklikej, převeď nejdřív rozměry na decimetry. Kolik litrů je jeden decimetr krychlový?“"
+          },
+          {
+            "k": "C",
+            "text": "„Neklikej, jakou stěnu má hranol jako podstavu? Jak se počítá její obsah a co s ním uděláš potom?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč je u příkladu B lepší počítat v decimetrech než v centimetrech.“",
+        "otocena_role_odpoved": "Decimetr krychlový je přesně litr. Když převedu rozměry na decimetry, objem vyjde rovnou v litrech a nemusím dělit tisícem. Správně je i: dva tisíce centimetrů krychlových děleno tisícem.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. A $76$: počítá i víko. Zeptejte se: „Které stěny krabice má?“ (Dno a čtyři boční.) A $40$: objem; $36$: chybí dno. B $2\\,000$ nebo $20$: „Kolik centimetrů krychlových má litr?“ (Tisíc.) C $200$: nevydělí dvěma; $19$: sčítá. „Jak se počítá obsah trojúhelníku?“ (Strana krát výška děleno dvěma.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — povrch, litry i hranol sedí. Pochvalte, že dítě u každého příkladu poznalo, co se počítá, a jděte dál.",
+        "oranzova": "Zítra 5 minut, ústně. Přečtěte dítěti: „Krabice bez víka má tvar krychle s hranou deset centimetrů. Jaký má povrch? Kolik litrů se do ní vejde?“ Ať nahlas řekne, kolik stěn počítá a jak převádí. Kontrola pro vás: pět stěn po $100$, povrch $500\\ \\text{cm}^2$; objem $1\\,000\\ \\text{cm}^3$, tedy $1$ litr.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: krabici od mléka (litr) a pravítko. Zítra ať dítě spočítá stěny krabice a řekne, kolik by jich bylo bez víka. Zeptejte se: „Kolik mléka se do krabice vejde a kolik je to centimetrů krychlových?“ Pak ať samo zapíše $1$ l $= 1\\ \\text{dm}^3 = 1\\,000\\ \\text{cm}^3$. Potom zopakujte lekci „Tělesa ve slovních úlohách“. Kontrola pro vás: šest stěn, bez víka pět; litr je tisíc centimetrů krychlových."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Krabice bez víka má dno $5$ cm krát $4$ cm a výšku $2$ cm. Jaký má povrch? — a) $76\\ \\text{cm}^2$ b) $40\\ \\text{cm}^2$ c) $36\\ \\text{cm}^2$ d) $56\\ \\text{cm}^2$\n\nB) Kolik litrů pojme krabice $20$ cm krát $10$ cm krát $10$ cm? — a) $2$ l b) $2\\,000$ l c) $20$ l\n\nC) Hranol je vysoký $10$ cm. Podstava je trojúhelník se stranou $5$ cm a výškou k ní $4$ cm. Jaký má objem? — a) $200\\ \\text{cm}^3$ b) $100\\ \\text{cm}^3$ c) $19\\ \\text{cm}^3$"
+      }
+    },
+    {
+      "id": "M8-T10-L4-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Dětský bazén tvaru kvádru je dlouhý $3$ m, široký $2$ m a hluboký $0{,}5$ m. Je naplněný z $80\\,\\%$. Kolik litrů vody chybí do plna?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: objem: $3 \\cdot 2 \\cdot 0{,}5 = 3\\ \\text{m}^3$\n\n2. řádek: $3\\ \\text{m}^3 = 3\\,000$ l\n\n3. řádek: voda: $3\\,000 - 80 = 2\\,920$ l\n\n4. řádek: chybí: $3\\,000 - 2\\,920 = 80$ l",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "objem: $3 \\cdot 2 \\cdot 0{,}5 = 3\\ \\text{m}^3$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$3\\ \\text{m}^3 = 3\\,000$ l",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "voda: $3\\,000 - 80 = 2\\,920$ l",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "chybí: $3\\,000 - 2\\,920 = 80$ l",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "voda: $80\\,\\%$ z $3\\,000 = 2\\,400$ l",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "voda: $80\\,\\%$ z $3\\,000 = 24\\,000$ l",
+                "spravne": false,
+                "typ_chyby": "procento-jako-desetina"
+              },
+              {
+                "id": "c",
+                "text": "voda: $20\\,\\%$ z $3\\,000 = 600$ l",
+                "spravne": false,
+                "typ_chyby": "zamenil-cast-a-zbytek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "l"
+          },
+          "spravne": {
+            "hodnota": 600
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 80,
+              "typ_chyby": "procento-jako-cislo"
+            },
+            {
+              "hodnota": 2400,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            },
+            {
+              "hodnota": 60,
+              "typ_chyby": "objem-po-desitkach-nebo-stovkach"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Bazén je plný z osmdesáti procent, do plna chybí zbylých dvacet procent. Procenta nejsou litry: osmdesát procent je osmdesát setin objemu. Chyba je jedna, řádky za ní jsou spočítané dobře, jen se špatným číslem. Čte se: $0{,}5$ m „nula celá pět metru“, tedy půl metru.",
+        "reseni": "Chyba je ve 3. řádku: Petr odečetl osmdesát litrů místo osmdesáti procent.\n\n$3 \\cdot 2 \\cdot 0{,}5 = 3\\ \\text{m}^3$ (objem bazénu)\n\n$3\\ \\text{m}^3 = 3\\,000$ l (kubík je tisíc litrů)\n\n$3\\,000 : 100 \\cdot 80 = 2\\,400$ l (voda, osmdesát procent objemu)\n\n$3\\,000 - 2\\,400 = 600$ l (chybí do plna; jiná cesta: dvacet procent ze tří tisíc)\n\nDlaždice s $24\\,000$ dělí deseti místo stem a dlaždice s $20\\,\\%$ počítá prázdnou část místo vody (proto nesedí)\n\n**Výsledek:** $600$ l",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, jak je bazén naplněný a na co se úloha ptá.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky. U každého čísla řekni, jestli jsou to litry, nebo procenta.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: odečítá Petr litry od litrů? Jak se spočítá, kolik litrů je osmdesát procent?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč do plna nechybí osmdesát litrů.“",
+        "otocena_role_odpoved": "Osmdesát procent není osmdesát litrů. Je to osmdesát setin ze tří tisíc litrů, tedy dva tisíce čtyři sta litrů vody. Do plna chybí zbytek, šest set litrů.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 4. řádek? Ten jen odečítá. Zeptejte se: „Odkud je dva tisíce devět set dvacet?“ (Ze 3. řádku.) 1. a 2. řádek jsou správně. Výsledek $80$: opíše Petra; $2\\,400$: odpoví vodou místo toho, co chybí; $60$: kubík bere jako sto litrů. „Kolik litrů je kubík?“ (Tisíc.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že dítě rozlišilo litry a procenta, a jděte dál.",
+        "oranzova": "Zítra 5 minut, ústně. Přečtěte dítěti: „Sud na dvě stě litrů je naplněný ze sedmdesáti procent. Petr tvrdí, že do plna chybí třicet litrů. Má pravdu?“ Ať nahlas řekne, kolik vody v sudu je a kolik chybí. Kontrola pro vás: nemá; vody je $140$ l, chybí $60$ l (třicet procent ze dvou set).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 10 stejných hrnků nebo kelímků. Zítra ať je dítě postaví do řady: všech deset je plný bazén, sto procent. Ať odsune osm jako vodu. Zeptejte se: „Kolik procent je jeden kelímek? Kolik procent chybí do plna?“ Pak ať samo zapíše $100\\,\\% - 80\\,\\% = 20\\,\\%$. Potom zopakujte lekci „Tělesa ve slovních úlohách“. Kontrola pro vás: kelímek je deset procent, chybí dvacet procent, dva kelímky."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\n*Dětský bazén tvaru kvádru je dlouhý $3$ m, široký $2$ m a hluboký $0{,}5$ m. Je naplněný z $80\\,\\%$. Kolik litrů vody chybí do plna?*\n\na udělal jednu chybu.\n\n1. řádek: objem: $3 \\cdot 2 \\cdot 0{,}5 = 3\\ \\text{m}^3$\n\n2. řádek: $3\\ \\text{m}^3 = 3\\,000$ l\n\n3. řádek: voda: $3\\,000 - 80 = 2\\,920$ l\n\n4. řádek: chybí: $3\\,000 - 2\\,920 = 80$ l\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) voda: $80\\,\\%$ z $3\\,000 = 2\\,400$ l b) voda: $80\\,\\%$ z $3\\,000 = 24\\,000$ l c) voda: $20\\,\\%$ z $3\\,000 = 600$ l\n\nC) Kolik litrů opravdu chybí do plna? ______ l"
+      }
+    },
+    {
+      "id": "M8-T10-L4-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Akvárium tvaru kvádru je dlouhé $60$ cm, široké $30$ cm a vysoké $40$ cm. Voda v něm sahá do tří čtvrtin výšky. Ema ho chce dolít až po okraj konví, do které se vejdou $2$ litry.\n\nVypočítej, kolik litrů se vejde do celého akvária, kolik litrů chybí do plna a kolik plných konví Ema přinese.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Mezivýsledek: celé akvárium",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "l"
+          },
+          "spravne": {
+            "hodnota": 72
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 72000,
+              "typ_chyby": "litr-zamena"
+            },
+            {
+              "hodnota": 720,
+              "typ_chyby": "objem-po-desitkach-nebo-stovkach"
+            },
+            {
+              "hodnota": 130,
+              "typ_chyby": "objem-soucet-rozmeru"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: chybí do plna",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "l"
+          },
+          "spravne": {
+            "hodnota": 18
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 54,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            },
+            {
+              "hodnota": 18000,
+              "typ_chyby": "litr-zamena"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "konví"
+          },
+          "spravne": {
+            "hodnota": 9
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 27,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            },
+            {
+              "hodnota": 36,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 9000,
+              "typ_chyby": "litr-zamena"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Úloha spojuje objem a zlomek. Voda sahá do tří čtvrtin výšky, v akváriu jsou tedy tři čtvrtiny objemu a do plna chybí jedna čtvrtina. Rozměry jsou v centimetrech; nejkratší cesta je převést je na decimetry, decimetr krychlový je litr. Správně je i: spočítat tři čtvrtiny a odečíst je od celku.",
+        "reseni": "$6 \\cdot 3 \\cdot 4 = 72\\ \\text{dm}^3 = 72$ l (rozměry v decimetrech, celé akvárium)\n\n$72 : 4 = 18$ l (do plna chybí jedna čtvrtina; jiná cesta: tři čtvrtiny jsou padesát čtyři litrů, sedmdesát dva minus padesát čtyři)\n\n$18 : 2 = 9$ (konev pojme dva litry)\n\n**Výsledek:** $72$ l, $18$ l, $9$ konví",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, kolik vody v akváriu je a co chce Ema udělat.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„V jakých jednotkách jsou rozměry? Na jakou jednotku je převedeš, aby objem vyšel rovnou v litrech?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: voda sahá do tří čtvrtin. Jaká část akvária je ještě prázdná? Kolik konví na ni bude potřeba?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč Ema nedolévá tři čtvrtiny akvária.“",
+        "otocena_role_odpoved": "Tři čtvrtiny vody už v akváriu jsou. Do plna chybí jen jedna čtvrtina, tedy osmnáct litrů, a na ně stačí devět konví po dvou litrech.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Krok 1 $72\\,000$ nebo $720$: nepřevede na litry, nebo dělí stem. Zeptejte se: „Kolik centimetrů krychlových má litr?“ (Tisíc.) $130$: sčítá rozměry. Krok 2 $54$ a výsledek $27$: počítá vodu, která už tam je. „Jaká část akvária je prázdná?“ (Čtvrtina.) Výsledek $36$: dolévá celé akvárium; $9\\,000$: nepřevede na litry."
+      },
+      "semafor": {
+        "zelena": "Výborně — objem i zlomek sedí. Pochvalte, že dítě hlídalo, kolik vody už v akváriu je, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: „Krabice na písek má objem $60$ litrů a je plná do dvou třetin. Kolik litrů písku chybí do plna? Kolik je to kbelíků po $5$ litrech?“ Kontrola pro vás: v krabici je $40$ l, chybí třetina, tedy $20$ l; $4$ kbelíky.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: průhlednou sklenici, fix, pravítko a vodu. Zítra ať dítě udělá na sklenici čárky ve čtvrtinách výšky a nalije vodu ke třetí čárce. Zeptejte se: „Kolik čtvrtin chybí do plna?“ Pak ať samo zapíše $1 - \\frac{3}{4} = \\frac{1}{4}$. Potom zopakujte lekci „Tělesa ve slovních úlohách“. Kontrola pro vás: chybí jedna čtvrtina, voda sahá ke třetí čárce ze čtyř."
+      },
+      "tisk": {
+        "zadani": "Akvárium tvaru kvádru je dlouhé $60$ cm, široké $30$ cm a vysoké $40$ cm. Voda v něm sahá do tří čtvrtin výšky. Ema ho chce dolít až po okraj konví, do které se vejdou $2$ litry.\n\nVypočítej, kolik litrů se vejde do celého akvária, kolik litrů chybí do plna a kolik plných konví Ema přinese.\n\nA) Celé akvárium: ______ l\n\nB) Chybí do plna: ______ l\n\nC) Počet konví: ______"
+      }
+    },
+    {
+      "id": "M8-T10-L4-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Nádrž na dešťovou vodu má tvar kvádru. Je dlouhá $80$ cm, široká $50$ cm a vysoká $1$ m. Teď je naplněná ze $60\\,\\%$.\n\nKolik litrů vody je v nádrži?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "l"
+          },
+          "spravne": {
+            "hodnota": 240
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 160,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            },
+            {
+              "hodnota": 340,
+              "typ_chyby": "procento-jako-cislo"
+            },
+            {
+              "hodnota": 2400,
+              "typ_chyby": "zapomnel-prevest-jednotky"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Nejdřív objem celé nádrže v litrech, pak šedesát procent z něj. Správně je i: voda sahá do šedesáti procent výšky, tedy šedesáti centimetrů, a objem vody se spočítá rovnou.",
+        "reseni": "$8 \\cdot 5 \\cdot 10 = 400\\ \\text{dm}^3 = 400$ l (rozměry v decimetrech, celá nádrž)\n\n$400 : 100 = 4$ l (jedno procento)\n\n$4 \\cdot 60 = 240$ l (šedesát procent; jiná cesta: voda do výšky šedesáti centimetrů, osm krát pět krát šest decimetrů)\n\n**Výsledek:** $240$ l",
+        "otazky": [
+          "„Přečti mi úlohu nahlas. Na co se úloha ptá: na celou nádrž, nebo jen na vodu?“",
+          "„Co spočítáš jako první? V jakých jednotkách budou rozměry, aby objem vyšel v litrech?“",
+          "„Tady máš začátek: celá nádrž je osm krát pět krát deset decimetrů krychlových. Kolik je z toho jedno procento?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč v nádrži není čtyři sta minus šedesát litrů.“",
+        "otocena_role_odpoved": "Šedesát procent nejsou litry, je to šedesát setin celé nádrže. Jedna setina ze čtyř set litrů jsou čtyři litry, šedesát setin je dvě stě čtyřicet litrů.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte: $160$: spočítá prázdnou část. Zeptejte se: „Kolik procent nádrže je plné?“ (Šedesát.) $340$: odečte šedesát litrů. „Co znamená šedesát procent?“ (Šedesát setin nádrže.) $2\\,400$: násobí centimetry s metrem. „V jakých jednotkách jsou rozměry?“ (Centimetry a metr.) Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — objem a procenta zvládá samo. Pochvalte, že dítě nejdřív spočítalo celou nádrž. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: „Akvárium $50$ cm krát $20$ cm krát $30$ cm je naplněné ze $70\\,\\%$. Kolik litrů vody v něm je?“ Ať nahlas řekne objem celého akvária a pak vodu. Kontrola pro vás: celé $30$ l (pět krát dva krát tři decimetry), voda $21$ l.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 20 kostek nebo bonbonů. Zítra: „Nádrž má dvacet litrů, každá kostka je litr.“ Ať dítě rozdělí kostky na deset stejných hromádek (jedna je deset procent) a šest hromádek odsune jako vodu. Zeptejte se: „Kolik litrů vody v nádrži je?“ Pak ať samo zapíše $20 : 100 \\cdot 60 = 12$. Potom zopakujte lekci „Tělesa ve slovních úlohách“. Kontrola pro vás: hromádka má 2 kostky, voda 12 kostek, prázdných 8."
+      },
+      "tisk": {
+        "zadani": "Nádrž na dešťovou vodu má tvar kvádru. Je dlouhá $80$ cm, široká $50$ cm a vysoká $1$ m. Teď je naplněná ze $60\\,\\%$.\n\nKolik litrů vody je v nádrži?\n\nVýsledek: ______ l"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "stredni",
+    "poznamka": "Autor 1. 10.: čísla ověřena skriptem (python, zlomky) i přes web/js/vyhodnoceni.js. U1 20 + 20 + 16 = 56 (76, 40, 36); 2 l (2 000, 20); 5 · 4 : 2 · 10 = 100 (200, 19). U2 3 m³ = 3 000 l, 80 % = 2 400, chybí 600 (80, 2 400, 60; k2 24 000, 600). U3 72 l, 18 l, 9 konví (k1 72 000, 720, 130; k2 54, 18 000; final 27, 36, 9 000). U4 400 l · 0,6 = 240 (160, 340, 2 400). Sporné: 1) U3 k2 a final: chyba „jen vydělil jmenovatelem“ (72 : 4 = 18) dává správné číslo, proto není ve známých chybách; 54 a 27 kódem zamenil-cast-a-zbytek. 2) U3 final 36 kódem prehledl-udaj (dolévá celé akvárium). 3) U2 final 60 kódem objem-po-desitkach-nebo-stovkach (kubík jako 100 l). 4) L4 je kontrola tématu: U1 má po jednom příkladu z L1, L2, L3; detektiv a hlavní úloha spojují objem v litrech s procenty a se zlomkem; L4 je bez obrázků (slovní úlohy). 5) U4 podobná L2-U4 (nádrž, m a cm), navíc procenta.",
+    "zkontroloval": "autor",
+    "datum": "2026-10-01"
+  }
+}

@@ -1,0 +1,403 @@
+{
+  "id": "M8-T02-L1",
+  "faze": "osma",
+  "tyden": 2,
+  "poradi": 1,
+  "tema": "Porovnání a zaokrouhlení",
+  "kapitola": "desetinna-cisla",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě porovná a seřadí desetinná čísla po řádech a zaokrouhlí je na desetiny, setiny i celé.",
+  "uvod_pro_rodice": "Dnes jde o to, jak poznat větší desetinné číslo a jak desetinné číslo zaokrouhlit.",
+  "uvod_pravidla": [
+    {
+      "znak": "$0{,}5 = 0{,}50$",
+      "text": "nula na konci nevadí"
+    },
+    {
+      "znak": "$0{,}5 > 0{,}45$",
+      "text": "porovnává se po řádech"
+    },
+    {
+      "znak": "$3{,}46 \\doteq 3{,}5$",
+      "text": "rozhoduje další číslice"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T02-L1-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Které z čísel $0{,}58$; $0{,}508$; $0{,}6$ je největší?\n\nB) Zaokrouhli $12{,}38$ na desetiny.\n\nC) Jak se zapíše číslem „sedm setin“?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: největší číslo",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$0{,}58$",
+                "spravne": false,
+                "typ_chyby": "porovnani-desetinnych-podle-delky"
+              },
+              {
+                "id": "b",
+                "text": "$0{,}508$",
+                "spravne": false,
+                "typ_chyby": "porovnani-desetinnych-podle-delky"
+              },
+              {
+                "id": "c",
+                "text": "$0{,}6$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $12{,}38$ na desetiny",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$12{,}4$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$12{,}3$",
+                "spravne": false,
+                "typ_chyby": "zaokrouhlil-useknutim"
+              },
+              {
+                "id": "c",
+                "text": "$12$",
+                "spravne": false,
+                "typ_chyby": "zaokrouhlil-na-spatny-rad"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: sedm setin",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$0{,}7$",
+                "spravne": false,
+                "typ_chyby": "rad-cislice-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$0{,}07$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$0{,}007$",
+                "spravne": false,
+                "typ_chyby": "rad-cislice-zamena"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě tu jen vybírá z nabídky. U A rozhoduje první místo za čárkou (desetiny), ne počet číslic. U B rozhoduje číslice hned za desetinami. Čte se: $0{,}508$ = pět set osm tisícin, $0{,}58$ = padesát osm setin, $0{,}07$ = sedm setin. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) Největší číslo\n\n$0{,}600$; $0{,}580$; $0{,}508$ (doplněné nuly, všechna čísla mají tři místa za čárkou)\n\n$0{,}600 > 0{,}580 > 0{,}508$ (porovnání po řádech: šest desetin je nejvíc)\n\n#### B) $12{,}38$ na desetiny\n\n$12{,}38 \\doteq 12{,}4$ (za desetinami je osmička, desetiny se zvětší o jednu)\n\n#### C) Sedm setin\n\n$0{,}07$ (setiny jsou druhé místo za čárkou)\n\n**Výsledek:** A) $0{,}6$, B) $12{,}4$, C) $0{,}07$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, porovnej na papíře: doplň nuly, aby měla všechna čísla stejně míst za čárkou. Které číslo je pak největší?“"
+          },
+          {
+            "k": "B",
+            "text": "„Která číslice stojí hned za desetinami? Co podle ní uděláš s desetinami?“"
+          },
+          {
+            "k": "C",
+            "text": "„Kolik míst za čárkou mají setiny? Ukaž mi je prstem na čísle.“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč není větší to číslo, které má víc číslic za čárkou.“",
+        "otocena_role_odpoved": "Protože rozhoduje první místo za čárkou, desetiny. Nula celá šest má šest desetin, nula celá pět set osm jen pět. Když doplním nuly, je to šest set tisícin proti pěti stům osmi tisícinám.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A vybere $0{,}508$ nebo $0{,}58$: delší zápis bere jako větší. Zeptejte se: „Kolik desetin má které číslo?“ (Šest, pět, pět.) U B $12{,}3$: jen usekne; $12$: zaokrouhlí na celé. U C $0{,}7$ nebo $0{,}007$: plete desetiny, setiny a tisíciny."
+      },
+      "semafor": {
+        "zelena": "Výborně — porovnání i zaokrouhlení sedí. Pochvalte, že se dítě dívalo na desetiny, ne na počet číslic, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Ukažte dítěti na telefonu dvojice $0{,}4$ a $0{,}39$, pak $1{,}2$ a $1{,}15$. U každé ať řekne, které číslo je větší a proč. Pak ať zaokrouhlí $5{,}67$ na desetiny. Kontrola pro vás: $0{,}4$ (čtyři desetiny proti třem); $1{,}2$ (dvě desetiny proti jedné); $5{,}7$ (pět celých sedm).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko s milimetry. Zítra ať dítě najde na pravítku $4{,}5$ cm a $4{,}25$ cm a ukáže, která značka je dál od nuly. Pak ať samo zapíše $4{,}5 > 4{,}25$. Potom zopakujte lekci „Porovnání a zaokrouhlení“. Kontrola pro vás: dál je $4{,}5$ cm (45 milimetrů), $4{,}25$ cm je mezi 42 a 43 milimetry."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Které z čísel $0{,}58$; $0{,}508$; $0{,}6$ je největší? — a) $0{,}58$ b) $0{,}508$ c) $0{,}6$\n\nB) Zaokrouhli $12{,}38$ na desetiny. — a) $12{,}4$ b) $12{,}3$ c) $12$\n\nC) Jak se zapíše číslem „sedm setin“? — a) $0{,}7$ b) $0{,}07$ c) $0{,}007$"
+      }
+    },
+    {
+      "id": "M8-T02-L1-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr zaokrouhloval číslo\n\n$$24{,}617$$\n\nna celé, na desetiny a na setiny a udělal **jednu** chybu. Najdi ji.\n\n1. řádek: na celé: $24{,}617 \\doteq 25$\n\n2. řádek: na desetiny: $24{,}617 \\doteq 24{,}6$\n\n3. řádek: na setiny: $24{,}617 \\doteq 24{,}61$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "na celé: $24{,}617 \\doteq 25$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "na desetiny: $24{,}617 \\doteq 24{,}6$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "na setiny: $24{,}617 \\doteq 24{,}61$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Číslo zaokrouhlené na setiny",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 24.62
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 24.61,
+              "typ_chyby": "zaokrouhlil-useknutim"
+            },
+            {
+              "hodnota": 24.6,
+              "typ_chyby": "zaokrouhlil-na-spatny-rad"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Každý řádek zaokrouhluje stejné číslo, jen na jiné místo; chyba je jen v jednom řádku. Desetiny jsou první místo za čárkou, setiny druhé. Čte se: $24{,}617$ = dvacet čtyři celé šest set sedmnáct, $\\doteq$ = přibližně se rovná, $24{,}62$ = dvacet čtyři celé šedesát dva.",
+        "reseni": "Chyba je ve 3. řádku: Petr číslo jen usekl, o setinách ale rozhoduje další číslice, sedmička.\n\n$24{,}617 \\doteq 25$ (za celými je šestka, celé se zvětší)\n\n$24{,}617 \\doteq 24{,}6$ (za desetinami je jednička, desetiny zůstanou)\n\n$24{,}617 \\doteq 24{,}62$ (za setinami je sedmička, setiny se zvětší)\n\n**Výsledek:** $24{,}62$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Petr v každém řádku dělá. Na které místo zaokrouhluje?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Ukaž mi prstem v čísle celé, desetiny a setiny. Která číslice stojí vždy hned za nimi?“"
+          },
+          {
+            "k": "Krok 1 a výsledek",
+            "text": "„U každého řádku najdi číslici hned za místem, na které se zaokrouhluje. Co podle ní musí Petr udělat?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč na setiny nevyjde dvacet čtyři celé šedesát jedna.“",
+        "otocena_role_odpoved": "Za setinami je sedmička, a to je pět nebo víc. Setiny se proto zvětší o jednu: dvacet čtyři celé šedesát dva. Useknout se smí, jen když je další číslice menší než pět.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 1. nebo 2. řádek? Ty jsou správně. Zeptejte se: „Jaká číslice stojí za celými? A za desetinami?“ (Šestka, jednička.) Výsledek $24{,}61$: samo usekává. Zeptejte se: „Jaká číslice je za setinami?“ (Sedmička.) $24{,}6$: zaokrouhlí na desetiny."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že u každého řádku hledalo číslici za zaokrouhlovaným místem, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu číslo $8{,}354$. Ať ho nahlas zaokrouhlí na celé, na desetiny a na setiny a u každého řekne, podle které číslice rozhodlo. Kontrola pro vás: $8$ (podle trojky); $8{,}4$ (podle pětky); $8{,}35$ (podle čtyřky).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko s milimetry. Zítra ať dítě najde na pravítku značky $6{,}3$ cm a $6{,}4$ cm a mezi nimi místo $6{,}37$ cm. Zeptejte se: „Ke které značce má to místo blíž?“ Pak ať samo zapíše $6{,}37 \\doteq 6{,}4$. Potom zopakujte lekci „Porovnání a zaokrouhlení“. Kontrola pro vás: blíž je $6{,}4$ cm, sedmička je víc než pět."
+      },
+      "tisk": {
+        "zadani": "Petr zaokrouhloval číslo\n\n$$24{,}617$$\n\nna celé, na desetiny a na setiny a udělal jednu chybu.\n\n1. řádek: na celé: $24{,}617 \\doteq 25$\n\n2. řádek: na desetiny: $24{,}617 \\doteq 24{,}6$\n\n3. řádek: na setiny: $24{,}617 \\doteq 24{,}61$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Číslo $24{,}617$ zaokrouhlené na setiny: ______"
+      }
+    },
+    {
+      "id": "M8-T02-L1-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Při tréninku skoku dalekého si děti zapsaly výkony různě přesně:\n\nTomáš: $4{,}68$ m\n\nAdam: $4{,}525$ m\n\nKlára: $4{,}5$ m\n\nLucka: $4{,}09$ m\n\nKdo vyhrál? Jaký výkon má ten, kdo skončil třetí? Kolik metrů skočil vítěz po zaokrouhlení na desetiny?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Kdo vyhrál?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Adam",
+                "spravne": false,
+                "typ_chyby": "porovnani-desetinnych-podle-delky"
+              },
+              {
+                "id": "b",
+                "text": "Tomáš",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "Lucka",
+                "spravne": false,
+                "typ_chyby": "rad-cislice-zamena"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: výkon třetího v pořadí",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m"
+          },
+          "spravne": {
+            "hodnota": 4.5
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 4.09,
+              "typ_chyby": "porovnani-desetinnych-podle-delky"
+            },
+            {
+              "hodnota": 4.525,
+              "typ_chyby": "rad-cislice-zamena"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek: výkon vítěze na desetiny",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m"
+          },
+          "spravne": {
+            "hodnota": 4.7
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 4.6,
+              "typ_chyby": "zaokrouhlil-useknutim"
+            },
+            {
+              "hodnota": 4.5,
+              "typ_chyby": "porovnani-desetinnych-podle-delky"
+            },
+            {
+              "hodnota": 4.1,
+              "typ_chyby": "rad-cislice-zamena"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Výkony mají různý počet míst za čárkou. Delší zápis neznamená delší skok: porovnává se po řádech, nejdřív celé, pak desetiny, pak setiny. Čte se: $4{,}525$ = čtyři celé pět set dvacet pět, $4{,}09$ = čtyři celé nula devět (devět setin, tedy čtyři metry a devět centimetrů).",
+        "reseni": "$4{,}680$; $4{,}525$; $4{,}500$; $4{,}090$ (doplněné nuly, všechny výkony mají tři místa za čárkou)\n\n$4{,}680 > 4{,}525 > 4{,}500 > 4{,}090$ (pořadí Tomáš, Adam, Klára, Lucka)\n\n$4{,}5$ m (třetí je Klára)\n\n$4{,}68 \\doteq 4{,}7$ (za desetinami je osmička, desetiny se zvětší)\n\n**Výsledek:** vyhrál Tomáš, třetí výkon $4{,}5$ m, vítěz po zaokrouhlení $4{,}7$ m",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, na co se úloha ptá. Kolik věcí máš zjistit?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Doplň nuly, aby měly všechny výkony stejně míst za čárkou. Porovnej je po řádech. Kdo je první, druhý a třetí?“"
+          },
+          {
+            "k": "Výsledek",
+            "text": "„Tady máš začátek: desetiny jsou první číslice za čárkou. Jaká číslice stojí u vítěze hned za nimi a co podle ní uděláš?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč Lucka nevyhrála, když má za čárkou devítku.“",
+        "otocena_role_odpoved": "Protože ta devítka jsou setiny, ne desetiny. Lucka má nula desetin, skočila jen čtyři metry a devět centimetrů. Tomáš má šest desetin, a to je nejvíc.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Adam v kroku 1, $4{,}09$ v kroku 2 nebo výsledek $4{,}5$: delší zápis bere jako větší. Zeptejte se: „Kolik desetin má Adam a kolik Tomáš?“ (Pět a šest.) Lucka, $4{,}525$ nebo $4{,}1$: devítku čte jako desetiny. Výsledek $4{,}6$: jen usekne."
+      },
+      "semafor": {
+        "zelena": "Výborně — hlavní úlohu zvládlo. Pochvalte, že výkony porovnávalo po řádech, ne podle délky zápisu, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu čísla $9{,}4$; $9{,}38$; $9{,}405$. Ať je na papír seřadí od nejmenšího a nejmenší zaokrouhlí na desetiny. Kontrola pro vás: $9{,}38 < 9{,}4 < 9{,}405$ (po doplnění nul $9{,}380$, $9{,}400$, $9{,}405$); zaokrouhlené $9{,}4$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko s milimetry a papír. Zítra ať dítě nakreslí čáry dlouhé $4{,}5$ cm, $4{,}8$ cm a $4{,}35$ cm a řekne, která je nejdelší a která nejkratší. Pak ať samo zapíše $4{,}8 > 4{,}5 > 4{,}35$. Potom zopakujte lekci „Porovnání a zaokrouhlení“. Kontrola pro vás: nejdelší je $4{,}8$ cm (48 milimetrů), nejkratší $4{,}35$ cm."
+      },
+      "tisk": {
+        "zadani": "Při tréninku skoku dalekého si děti zapsaly výkony různě přesně:\n\nTomáš: $4{,}68$ m, Adam: $4{,}525$ m, Klára: $4{,}5$ m, Lucka: $4{,}09$ m\n\nA) Kdo vyhrál? Zakroužkuj: a) Adam b) Tomáš c) Lucka\n\nB) Výkon třetího v pořadí: ______ m\n\nC) Výkon vítěze zaokrouhlený na desetiny: ______ m"
+      }
+    },
+    {
+      "id": "M8-T02-L1-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Z čísel\n\n$$5{,}4 \\qquad 5{,}38 \\qquad 5{,}375 \\qquad 5{,}04 \\qquad 5{,}6$$\n\nvyber a napiš největší číslo, které je menší než $5{,}4$.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 5.38
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 5.375,
+              "typ_chyby": "porovnani-desetinnych-podle-delky"
+            },
+            {
+              "hodnota": 5.6,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Past: $5{,}375$ má víc číslic, ale je menší než $5{,}38$. Čte se: $5{,}38$ = pět celých třicet osm, $5{,}375$ = pět celých tři sta sedmdesát pět, $5{,}04$ = pět celých nula čtyři.",
+        "reseni": "$5{,}400$; $5{,}380$; $5{,}375$; $5{,}040$; $5{,}600$ (doplněné nuly)\n\n$5{,}380$; $5{,}375$; $5{,}040$ (tato tři čísla jsou menší než pět celých čtyři)\n\n$5{,}380 > 5{,}375 > 5{,}040$ (porovnání po řádech: setiny osm proti sedmi)\n\n**Výsledek:** $5{,}38$",
+        "otazky": [
+          "„Řekni mi vlastními slovy, jaké číslo hledáš. Jaké dvě podmínky musí splnit?“",
+          "„Doplň nuly, aby měla všechna čísla stejně míst za čárkou. Která z nich jsou menší než pět celých čtyři?“",
+          "„Tady máš začátek: pět celých třicet osm je pět celých tři sta osmdesát tisícin. Které z menších čísel je největší?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč pět celých tři sta sedmdesát pět není větší než pět celých třicet osm.“",
+        "otocena_role_odpoved": "Když doplním nulu, porovnávám pět celých tři sta osmdesát a pět celých tři sta sedmdesát pět. Desetiny jsou stejné, ale setin má první číslo osm a druhé jen sedm.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nepíše nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Během úlohy nic neříkejte, ptejte se až po odevzdání. Po odevzdání se podívejte na obrazovku dítěte: $5{,}375$: delší zápis bere jako větší. Zeptejte se: „Kolik setin má které číslo?“ (Osm a sedm.) $5{,}6$: přehlédne „menší než“ a napíše největší číslo ze všech. Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — porovnávání po řádech zvládá samo. Pochvalte, že si doplnilo nuly. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu čísla $2{,}7$; $2{,}65$; $2{,}695$; $2{,}07$. Ať najde největší číslo menší než $2{,}7$ a řekne, jak to poznalo. Kontrola pro vás: $2{,}695$ (dvě celé šest set devadesát pět); po doplnění nul $2{,}695 > 2{,}650 > 2{,}070$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě nakreslí tabulku se sloupci jednotky, desetiny, setiny, tisíciny, zapíše do ní $5{,}4$ a $5{,}375$ a prázdná místa doplní nulami. Zeptejte se: „Ve kterém sloupci se čísla poprvé liší?“ Pak ať samo zapíše $5{,}4 > 5{,}375$. Potom zopakujte lekci „Porovnání a zaokrouhlení“. Kontrola pro vás: v desetinách, čtyři je víc než tři."
+      },
+      "tisk": {
+        "zadani": "Z čísel\n\n$$5{,}4 \\qquad 5{,}38 \\qquad 5{,}375 \\qquad 5{,}04 \\qquad 5{,}6$$\n\nvyber a napiš největší číslo, které je menší než $5{,}4$.\n\nVýsledek: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "stredni",
+    "poznamka": "Autor 1. 10. (skript): U1 A $0{,}6 > 0{,}58 > 0{,}508$; B $12{,}38 \\doteq 12{,}4$ (useknutí $12{,}3$, na celé $12$); C $0{,}07$. U2 $24{,}617$ → $25$; $24{,}6$; $24{,}62$ (useknutí $24{,}61$, na desetiny $24{,}6$). U3 pořadí $4{,}68 > 4{,}525 > 4{,}5 > 4{,}09$ (Tomáš, Adam, Klára, Lucka); podle délky zápisu Adam, Tomáš, Lucka, Klára (vítěz Adam, třetí $4{,}09$, Adam na desetiny $4{,}5$); devítka Lucky čtená jako desetiny ($4{,}9$) dá pořadí Lucka, Tomáš, Adam, Klára (třetí $4{,}525$, Lucka na desetiny $4{,}1$); vítěz $4{,}68 \\doteq 4{,}7$, useknutí $4{,}6$. U4 menší než $5{,}4$: $5{,}38$; $5{,}375$; $5{,}04$ → $5{,}38$ ($5{,}375$ délka zápisu, $5{,}6$ bez podmínky). Sporné: (1) U2 nemá krok k2, protože by opakoval final (osnova chce final = číslo na setiny); chyba je v posledním řádku, kód nasel-az-dusledek se nepoužije. (2) U3 má výkony na milimetry ($4{,}525$ m) — zadání to vysvětluje větou „různě přesně“. Kód rad-cislice-zamena pro „devět setin čtené jako devět desetin“ (Lucka) je rozšíření popisu kódu. (3) U1 A a U4: obě chybné možnosti A mají stejný kód porovnani-desetinnych-podle-delky. (4) U4: odpověď $5{,}4$ (záměna „menší než“ za „menší nebo rovno“) nemá kód, je jen „zatím nesedí“. (5) Platí má jen 3 řádky (osnova), znak $\\doteq$ je vysvětlen v „Čte se“ u U2, ne v legendě.",
+    "zkontroloval": "autor",
+    "datum": "2026-10-01"
+  }
+}

@@ -1,0 +1,439 @@
+{
+  "id": "M8-T08-L4",
+  "faze": "osma",
+  "tyden": 8,
+  "poradi": 4,
+  "tema": "Kontrola: poměr a úměrnost",
+  "kapitola": "pomer",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo dělí v poměru, počítá s měřítkem a s úměrností.",
+  "uvod_pro_rodice": "Dnes je kontrola celého tématu: dělení v poměru, měřítko mapy a úměrnost.",
+  "uvod_pravidla": [
+    {
+      "znak": "$3 : 5$",
+      "text": "osm dílů dohromady"
+    },
+    {
+      "znak": "$1 : 25\\,000$",
+      "text": "centimetr: 250 metrů"
+    },
+    {
+      "znak": "$2 \\to 4$ dělníci, $6 \\to 3$ dny",
+      "text": "víc dělníků, míň dní"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T08-L4-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Rozděl $48$ v poměru $5 : 3$. Jak velká je větší část?\n\nB) Na mapě v měřítku $1 : 20\\,000$ je cesta dlouhá $8$ cm. Kolik kilometrů měří ve skutečnosti?\n\nC) Dvě stejné sekačky posekají louku za $6$ hodin. Za kolik hodin ji posekají tři takové sekačky?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $48$ v poměru $5 : 3$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$24$",
+                "spravne": false,
+                "typ_chyby": "deleni-v-pomeru-bez-souctu-dilu"
+              },
+              {
+                "id": "b",
+                "text": "$18$",
+                "spravne": false,
+                "typ_chyby": "deleni-v-pomeru-prohodil"
+              },
+              {
+                "id": "c",
+                "text": "$30$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $8$ cm na mapě $1 : 20\\,000$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$16$ km",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "b",
+                "text": "$1{,}6$ km",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$1\\,600$ km",
+                "spravne": false,
+                "typ_chyby": "jednotka-ve-vysledku-spatne"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: tři sekačky",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$4$ h",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$9$ h",
+                "spravne": false,
+                "typ_chyby": "neprima-jako-prima"
+              },
+              {
+                "id": "c",
+                "text": "$5$ h",
+                "spravne": false,
+                "typ_chyby": "umera-jako-soucet"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá. Každý příklad je z jedné lekce tématu: A dělení v poměru, B měřítko mapy, C úměrnost. Čte se: $5 : 3$ „pět ku třem“, $1 : 20\\,000$ „jedna ku dvaceti tisícům“, $1{,}6$ „jedna celá šest“. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $48$ v poměru $5 : 3$\n\n$5 + 3 = 8$ (dílů dohromady)\n\n$48 : 8 = 6$ (jeden díl)\n\n$5 \\cdot 6 = 30$ (větší část, menší je osmnáct)\n\n#### B) $8$ cm na mapě $1 : 20\\,000$\n\n$8 \\cdot 20\\,000 = 160\\,000$ (centimetrů ve skutečnosti)\n\n$160\\,000\\ \\text{cm} = 1\\,600\\ \\text{m} = 1{,}6\\ \\text{km}$ (převod na kilometry)\n\n#### C) Sekačky\n\n$2 \\cdot 6 = 12$ (hodin by sekala jedna sekačka)\n\n$12 : 3 = 4$ (tři sekačky)\n\n**Výsledek:** A) $30$, B) $1{,}6$ km, C) $4$ h",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, spočítej na papíře: kolik dílů je dohromady? Kolik je jeden díl a kolik dílů má větší část?“"
+          },
+          {
+            "k": "B",
+            "text": "„Kolik centimetrů ve skutečnosti je jeden centimetr na mapě? Kolik centimetrů má kilometr?“"
+          },
+          {
+            "k": "C",
+            "text": "„Víc sekaček na stejnou louku: bude to trvat déle, nebo kratší dobu? Kolik hodin by sekala jedna?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč tři sekačky nesekají devět hodin.“",
+        "otocena_role_odpoved": "Protože víc sekaček poseká stejnou louku rychleji, ne pomaleji. Jedna by sekala dvanáct hodin, tři sekačky třetinu z toho, čtyři hodiny.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $24$: dělí dvěma; $18$: menší část. Zeptejte se: „Kolik dílů je dohromady?“ (Osm.) U B $16$ km: převod o nulu; $1\\,600$ km: metry. „Kolik centimetrů má kilometr?“ (Sto tisíc.) U C $9$: víc → víc; $5$: ubere hodinu. „Víc sekaček, déle, nebo kratší dobu?“ (Kratší.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — všechny tři části tématu sedí. Pochvalte, že u každé rozhodlo, jak začít, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Rozděl $35$ v poměru $4 : 3$.“ Pak: „Kolik metrů je $3$ cm na mapě $1 : 10\\,000$?“ A nakonec: „Čtyři kamarádi sní pizzu za $6$ minut. Za kolik minut ji sní tři?“ Kontrola pro vás: $20$ a $15$; $300$ m; $8$ minut.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 16 kostek nebo bonbonů a dva hrnky. Zítra ať dítě rozdělí kostky v poměru $3 : 1$: do prvního hrnku 3, do druhého 1, a tak dál, dokud nedojdou. Pak ať samo zapíše $3 + 1 = 4$, $16 : 4 = 4$, $3 \\cdot 4 = 12$. Potom zopakujte lekci „Kontrola: poměr a úměrnost“. Kontrola pro vás: 4 kola; v hrncích 12 a 4 kostky."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Rozděl $48$ v poměru $5 : 3$. Jak velká je větší část? — a) $24$ b) $18$ c) $30$\n\nB) Na mapě v měřítku $1 : 20\\,000$ je cesta dlouhá $8$ cm. Kolik kilometrů měří ve skutečnosti? — a) $16$ km b) $1{,}6$ km c) $1\\,600$ km\n\nC) Dvě stejné sekačky posekají louku za $6$ hodin. Za kolik hodin ji posekají tři takové sekačky? — a) $4$ h b) $9$ h c) $5$ h"
+      }
+    },
+    {
+      "id": "M8-T08-L4-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Tomáš měří na turistické mapě v měřítku $1 : 50\\,000$ cestu z kempu na rozhlednu: $4$ cm. Kolik kilometrů ujde tam a zpět?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $1$ cm na mapě $= 50\\,000$ cm\n\n2. řádek: $50\\,000$ cm $= 500$ m\n\n3. řádek: $4$ cm na mapě: $500 : 4 = 125$ m\n\n4. řádek: tam a zpět: $2 \\cdot 125 = 250$ m $= 0{,}25$ km",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$1$ cm na mapě $= 50\\,000$ cm",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$50\\,000$ cm $= 500$ m",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$4$ cm na mapě: $500 : 4 = 125$ m",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "tam a zpět: $2 \\cdot 125 = 250$ m $= 0{,}25$ km",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$4$ cm na mapě: $4 \\cdot 500 = 2\\,000$ m",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$4$ cm na mapě: $500 + 4 = 504$ m",
+                "spravne": false,
+                "typ_chyby": "umera-jako-soucet"
+              },
+              {
+                "id": "c",
+                "text": "$4$ cm na mapě: $4 \\cdot 50\\,000 = 200\\,000$ m",
+                "spravne": false,
+                "typ_chyby": "jednotka-ve-vysledku-spatne"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "km"
+          },
+          "spravne": {
+            "hodnota": 4
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 0.25,
+              "typ_chyby": "meritko-obracene"
+            },
+            {
+              "hodnota": 2,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 4000,
+              "typ_chyby": "jednotka-ve-vysledku-spatne"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Na mapě $1 : 50\\,000$ (čte se „jedna ku padesáti tisícům“) je každý centimetr $500$ m ve skutečnosti. Skutečná cesta je vždy delší než čára na mapě. Chyba je jedna, řádky za ní jsou spočítané dobře, jen se špatným číslem. Čte se: $0{,}25$ „nula celá dvacet pět“ (čtvrtina).",
+        "reseni": "Chyba je ve 3. řádku: Petr dělil místo násobení. Čtyři centimetry na mapě jsou ve skutečnosti čtyřikrát víc než jeden, ne čtvrtina.\n\n$1$ cm na mapě $= 50\\,000$ cm (měřítko)\n\n$50\\,000$ cm $= 500$ m (sto centimetrů je metr)\n\n$4 \\cdot 500 = 2\\,000$ (metrů, cesta tam)\n\n$2 \\cdot 2\\,000 = 4\\,000$ (metrů tam a zpět)\n\n$4\\,000$ m $= 4$ km (tisíc metrů je kilometr)\n\nDlaždice $500 + 4$ a $4 \\cdot 50\\,000 = 200\\,000$ m nesedí (první přičítá, druhá jsou centimetry, ne metry)\n\n**Výsledek:** $4$ km",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Tomáš měří a na co se úloha ptá.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Je skutečná cesta delší, nebo kratší než čára na mapě? Sedí to u každého Petrova řádku?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: když je jeden centimetr pět set metrů, mají být víc centimetrů víc, nebo míň metrů?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč čtyři centimetry na mapě nemůžou být sto dvacet pět metrů.“",
+        "otocena_role_odpoved": "Protože už jeden centimetr je pět set metrů. Čtyři centimetry musí být víc, čtyřikrát pět set, tedy dva tisíce metrů. Tam a zpět jsou čtyři kilometry.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 4. řádek? Ten je jen důsledek. Zeptejte se: „Odkud je sto dvacet pět?“ (Ze 3. řádku.) 1. a 2. řádek jsou správně. Výsledek $0{,}25$: opíše Petra; $2$: jen cesta tam; zeptejte se: „Kolikrát Tomáš cestu ujde?“ (Dvakrát.) $4\\,000$: jsou to metry, ne kilometry."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že hlídalo, jestli má skutečná cesta vyjít delší, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr tvrdí: na mapě $1 : 10\\,000$ je $1$ cm sto metrů, takže $5$ cm je $20$ m. Má pravdu?“ Ať nahlas řekne, kde se Petr spletl a kolik to je. Kontrola pro vás: nemá, dělil místo násobení; $5$ cm je $500$ m.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko, papír a 5 kostek nebo mincí. Zítra: „Na naší mapě je 1 cm sto kroků.“ Ať dítě nakreslí čáru 3 cm a ke každému centimetru položí jednu kostku za sto kroků. Zeptejte se: „Kolik kroků je celá čára? Víc, nebo míň než sto?“ Pak ať samo zapíše $3 \\cdot 100 = 300$. Potom zopakujte lekci „Kontrola: poměr a úměrnost“. Kontrola pro vás: 300 kroků, víc než sto."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\nTomáš měří na turistické mapě v měřítku $1 : 50\\,000$ cestu z kempu na rozhlednu: $4$ cm. Kolik kilometrů ujde tam a zpět?\n\na udělal jednu chybu.\n\n1. řádek: $1$ cm na mapě $= 50\\,000$ cm\n\n2. řádek: $50\\,000$ cm $= 500$ m\n\n3. řádek: $4$ cm na mapě: $500 : 4 = 125$ m\n\n4. řádek: tam a zpět: $2 \\cdot 125 = 250$ m $= 0{,}25$ km\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $4 \\cdot 500 = 2\\,000$ m b) $500 + 4 = 504$ m c) $4 \\cdot 50\\,000 = 200\\,000$ m\n\nC) Kolik kilometrů Tomáš ujde tam a zpět? ______ km"
+      }
+    },
+    {
+      "id": "M8-T08-L4-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Klára a Ema jdou na výlet k jezeru. Na mapě v měřítku $1 : 25\\,000$ měří jejich cesta $24$ cm. Za hodinu ujdou $4$ km.\n\nKolik kilometrů měří cesta ve skutečnosti a jak dlouho ji půjdou? Dobu chůze zapiš v hodinách a nakonec v minutách.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Mezivýsledek: cesta ve skutečnosti",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "km"
+          },
+          "spravne": {
+            "hodnota": 6
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 600,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 60,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 6000,
+              "typ_chyby": "jednotka-ve-vysledku-spatne"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: doba chůze v hodinách",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "h"
+          },
+          "spravne": {
+            "hodnota": 1.5
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 24,
+              "typ_chyby": "vzorec-v-s-t-zamena"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "min"
+          },
+          "spravne": {
+            "hodnota": 90
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 110,
+              "typ_chyby": "cas-desetinne-jako-minuty"
+            },
+            {
+              "hodnota": 1440,
+              "typ_chyby": "vzorec-v-s-t-zamena"
+            },
+            {
+              "hodnota": 1.5,
+              "typ_chyby": "jednotka-ve-vysledku-spatne"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Úloha spojuje měřítko a úměrnost. Nejdřív se z mapy zjistí skutečná délka cesty v kilometrech. Pak čas: čtyři kilometry za hodinu, delší cesta, delší chůze (přímá úměrnost). Pozor na převod: $1{,}5$ h je hodina a půl, tedy $90$ minut, ne $110$. Čte se: $1 : 25\\,000$ „jedna ku dvaceti pěti tisícům“.",
+        "reseni": "$24 \\cdot 25\\,000 = 600\\,000$ (centimetrů ve skutečnosti)\n\n$600\\,000\\ \\text{cm} = 6\\,000\\ \\text{m} = 6\\ \\text{km}$ (sto centimetrů je metr, tisíc metrů kilometr)\n\n$6 : 4 = 1{,}5$ (hodin chůze, čtyři kilometry za hodinu)\n\n$1{,}5 \\cdot 60 = 90$ (minut)\n\n$6 \\cdot 15 = 90$ (jiná cesta: jeden kilometr za patnáct minut)\n\n**Výsledek:** cesta $6$ km, chůze $1{,}5$ h, tedy $90$ minut",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Klára s Emou plánují a co všechno máš zjistit.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Kolik centimetrů ve skutečnosti je jeden centimetr na mapě? Kolik centimetrů má kilometr?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: za hodinu ujdou čtyři kilometry, za půl hodiny dva. Jak dlouho jim potrvá celá cesta? Kolik minut má hodina?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč jedna celá pět hodiny není hodina a padesát minut.“",
+        "otocena_role_odpoved": "Protože nula celá pět je polovina hodiny, to je třicet minut. Jedna celá pět hodiny je hodina a půl, tedy devadesát minut.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 $600$ nebo $60$: převádí špatně; $6\\,000$: nechá metry. Zeptejte se: „Kolik centimetrů má kilometr?“ (Sto tisíc.) V kroku 2 $24$, výsledek $1\\,440$: násobí místo dělení. „Kolik kilometrů ujdou za hodinu?“ (Čtyři.) $110$: bere $1{,}5$ h jako hodinu padesát; $1{,}5$: nepřevede na minuty."
+      },
+      "semafor": {
+        "zelena": "Výborně — z mapy až k minutám to zvládlo. Pochvalte, že hlídalo jednotky, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Na mapě $1 : 25\\,000$ měří cesta $12$ cm. Kolik kilometrů to je? Za hodinu ujdeš $4$ km. Kolik minut půjdeš?“ Kontrola pro vás: $3$ km; tři čtvrtě hodiny, tedy $45$ minut (jeden kilometr za $15$ minut).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko a papír. Zítra ať dítě nakreslí „mapu“ cesty do obchodu, kde 1 cm je 100 m. Ať změří čáru a samo zapíše např. $5$ cm $\\to 500$ m. Pak: „Za minutu ujdeš 100 m. Kolik minut půjdeš?“ Ať samo zapíše $500 : 100 = 5$. Potom zopakujte lekci „Kontrola: poměr a úměrnost“. Kontrola pro vás: kolik centimetrů má čára, tolik set metrů a tolik minut."
+      },
+      "tisk": {
+        "zadani": "Klára a Ema jdou na výlet k jezeru. Na mapě v měřítku $1 : 25\\,000$ měří jejich cesta $24$ cm. Za hodinu ujdou $4$ km.\n\nKolik kilometrů měří cesta ve skutečnosti a jak dlouho ji půjdou?\n\nA) Cesta ve skutečnosti: ______ km\n\nB) Doba chůze: ______ h\n\nC) Doba chůze: ______ min"
+      }
+    },
+    {
+      "id": "M8-T08-L4-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Krmivo v útulku vystačí pro $12$ psů na $20$ dní. Do útulku přibyli další $3$ psi a každý pes sní denně stejně.\n\nNa kolik dní teď krmivo vystačí?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "dní"
+          },
+          "spravne": {
+            "hodnota": 16
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 25,
+              "typ_chyby": "neprima-jako-prima"
+            },
+            {
+              "hodnota": 17,
+              "typ_chyby": "umera-jako-soucet"
+            },
+            {
+              "hodnota": 4,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Krmiva je pořád stejně, psů je víc: víc psů, míň dní. Je to nepřímá úměrnost jako u dělníků.",
+        "reseni": "$12 + 3 = 15$ (psů teď)\n\n$12 \\cdot 20 = 240$ (na tolik dní by krmivo vystačilo jednomu psovi)\n\n$240 : 15 = 16$ (dní pro patnáct psů)\n\n**Výsledek:** $16$ dní",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co se v útulku změnilo a na co se úloha ptá.“",
+          "„Když je psů víc, vystačí krmivo na víc, nebo na míň dní? Kolik psů je teď?“",
+          "„Tady máš začátek: jednomu psovi by krmivo vystačilo na dvanáct krát dvacet dní. Kolik je to dní a co uděláš dál?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč krmivo teď nevystačí na dvacet pět dní.“",
+        "otocena_role_odpoved": "Protože psů je víc a každý sní svou dávku. Stejné krmivo se rozdělí mezi víc psů, takže dojde dřív, za šestnáct dní, ne později.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nepíše nebo řekne „nevím“), čtěte Otázky 1–3. Po odevzdání se podívejte na obrazovku dítěte. $25$: počítá víc → víc. Zeptejte se: „Víc psů, dojde krmivo dřív, nebo později?“ (Dřív.) $17$: ubere den za každého psa. $4$: napíše, o kolik dní míň. „Na co se úloha ptá?“ (Na kolik dní krmivo vystačí.) Semafor: opraví se samo = „Sám/sama“; po vaší otázce = „Potřeboval(a) otázku“; neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — nepřímou úměrnost zvládá samo. Pochvalte, že nejdřív rozhodlo „víc psů, míň dní“. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Seno pro $6$ koní vystačí na $10$ dní. Na kolik dní vystačí pro $4$ koně?“ Ať nejdřív řekne, jestli víc, nebo míň dní, pak dopočítá. Kontrola pro vás: víc; jednomu koni na $60$ dní, čtyřem na $15$ dní.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 12 bonbonů nebo kostek (jako krmivo) a 4 hrnky (jako psi). Zítra: „Každý pes sní za den jeden bonbon.“ Ať dítě krmí 2 psy, pak 3 a 4 psy a počítá, na kolik dní bonbony vystačí. Pak ať samo zapíše $12 : 2 = 6$, $12 : 3 = 4$, $12 : 4 = 3$. Potom zopakujte lekci „Kontrola: poměr a úměrnost“. Kontrola pro vás: 6, 4, 3 dny; víc psů, míň dní."
+      },
+      "tisk": {
+        "zadani": "Krmivo v útulku vystačí pro $12$ psů na $20$ dní. Do útulku přibyli další $3$ psi a každý pes sní denně stejně.\n\nNa kolik dní teď krmivo vystačí?\n\nVýsledek: ______ dní"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "stredni",
+    "poznamka": "Sporné pro recenzenta: (1) „Platí“ 3 má místo osnovního „víc pracovníků — míň dní“ konkrétní příklad $2 \\to 4$ dělníci, $6 \\to 3$ dny (SABLONA §18). (2) U3 má k2 „doba chůze v hodinách“ (zadání ji jmenuje) a final v minutách, aby šla zachytit chyba $1{,}5$ h = $110$ min (cas-desetinne-jako-minuty); k2 má jen jednu známou chybu ($24$, vzorec-v-s-t-zamena z oddílu P). U3 má 4 výpočty. (3) U2 Petr „dělí měřítkem“ jako $500 : 4$ (dělí místo násobení, meritko-obracene), ne $4 : 50\\,000$ (nehezké číslo). (4) U1 C a U4 jsou obě nepřímá úměrnost (osnova: C úměrnost, semafor nepřímá). Čísla přepočítána skriptem: U1 $30$, $1{,}6$ km, $4$ h; U2 $4 \\cdot 500 = 2\\,000$ m, tam a zpět $4$ km ($0{,}25$, $2$, $4\\,000$); U3 $600\\,000$ cm $= 6$ km, $1{,}5$ h, $90$ min ($600$, $60$, $6\\,000$; $24$; $110$, $1\\,440$, $1{,}5$); U4 $240 : 15 = 16$ ($25$, $17$, $4$).",
+    "zkontroloval": "autor",
+    "datum": "2026-10-01"
+  }
+}

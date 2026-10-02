@@ -1,0 +1,442 @@
+{
+  "id": "M8-T06-L2",
+  "faze": "osma",
+  "tyden": 6,
+  "poradi": 2,
+  "tema": "Plus a mínus se zápornými",
+  "kapitola": "cela-cisla",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě sčítá a odčítá i záporná čísla a ví, že odečíst záporné číslo znamená přičíst.",
+  "uvod_pro_rodice": "Dnes jde o sčítání a odčítání se zápornými čísly: posun po ose a odečtení záporného čísla.",
+  "uvod_pravidla": [
+    {
+      "znak": "$-7 + 3 = -4$",
+      "text": "posun doprava o tři"
+    },
+    {
+      "znak": "$5 - (-3) = 5 + 3$",
+      "text": "odečíst záporné: přičíst"
+    },
+    {
+      "znak": "$3 - 8 = -5$",
+      "text": "přes nulu do minusu"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T06-L2-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správný výsledek.\n\nA) $-8 + 5$\n\nB) $-5 - (-3)$\n\nC) $-4 - 6$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $-8 + 5$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$-13$",
+                "spravne": false,
+                "typ_chyby": "ruzna-znamenka-secetl"
+              },
+              {
+                "id": "b",
+                "text": "$3$",
+                "spravne": false,
+                "typ_chyby": "mensi-minus-vetsi"
+              },
+              {
+                "id": "c",
+                "text": "$-3$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $-5 - (-3)$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$-2$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$-8$",
+                "spravne": false,
+                "typ_chyby": "odcitani-zaporneho"
+              },
+              {
+                "id": "c",
+                "text": "$2$",
+                "spravne": false,
+                "typ_chyby": "mensi-minus-vetsi"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: $-4 - 6$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$2$",
+                "spravne": false,
+                "typ_chyby": "posun-spatnym-smerem"
+              },
+              {
+                "id": "b",
+                "text": "$-10$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$10$",
+                "spravne": false,
+                "typ_chyby": "pravidlo-znamenek-pri-scitani"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě tu jen vybírá. Pomůže teploměr: plus je posun nahoru, mínus posun dolů. U B se odečítá záporné číslo, to je totéž jako ho přičíst. Čte se: „mínus pět, mínus, závorka, mínus tři“. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $-8 + 5$\n\n$-8 + 5 = -3$ (od mínus osmi o pět nahoru, pořád pod nulou)\n\n#### B) $-5 - (-3)$\n\n$-5 - (-3) = -5 + 3$ (odečíst záporné číslo znamená přičíst)\n\n$-5 + 3 = -2$ (od mínus pěti o tři nahoru)\n\n#### C) $-4 - 6$\n\n$-4 - 6 = -10$ (od mínus čtyř o šest dolů)\n\n**Výsledek:** A) $-3$, B) $-2$, C) $-10$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, představ si teploměr. Je mínus osm stupňů a oteplí se o pět. Kterým směrem jdeš a kde skončíš?“"
+          },
+          {
+            "k": "B",
+            "text": "„Čím se dá nahradit odečtení záporného čísla? Přepiš si příklad tak, aby v něm nebyly dva minusy vedle sebe.“"
+          },
+          {
+            "k": "C",
+            "text": "„Je mínus čtyři stupně a ochladí se o šest. Kterým směrem po teploměru jdeš, nahoru, nebo dolů?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč mínus pět minus mínus tři není mínus osm.“",
+        "otocena_role_odpoved": "Protože odečíst záporné číslo je totéž jako ho přičíst. Mínus pět plus tři je mínus dva, po teploměru jdu nahoru, ne dolů.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $-13$: sečte osm a pět. Zeptejte se: „Oteplí se, nebo ochladí?“ (Oteplí, jde se nahoru.) U A $3$ nebo u B $2$: zapomene, že je pořád pod nulou. U B $-8$: odečte tři místo přičtení; „Co dají dva minusy vedle sebe?“ (Plus.) U C $2$: jde nahoru místo dolů; $10$: myslí, že dva minusy dají plus i tady; „Ochladí se, nebo oteplí?“ (Ochladí.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — znaménka sedí ve všech třech příkladech. Pochvalte, že si pomohlo teploměrem nebo osou, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Kolik je mínus devět plus čtyři? Kolik je mínus šest minus mínus dva? Kolik je mínus tři minus pět?“ Ať u každého řekne, kterým směrem po teploměru jde. Kontrola pro vás: mínus pět (nahoru); mínus čtyři (nahoru, dva minusy dají plus); mínus osm (dolů).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír, tužku a minci jako figurku. Zítra ať dítě nakreslí svislý teploměr od mínus deseti do deseti. Mince začne na mínus osmi a jde o pět nahoru. Pak začne na mínus čtyřech a jde o šest dolů. Ať samo zapíše $-8 + 5 = -3$ a $-4 - 6 = -10$. Potom zopakujte lekci „Plus a mínus se zápornými“. Kontrola pro vás: mince skončí na mínus třech a na mínus deseti."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správný výsledek.\n\nA) $-8 + 5$ Zakroužkuj: a) $-13$ b) $3$ c) $-3$\n\nB) $-5 - (-3)$ Zakroužkuj: a) $-2$ b) $-8$ c) $2$\n\nC) $-4 - 6$ Zakroužkuj: a) $2$ b) $-10$ c) $10$"
+      }
+    },
+    {
+      "id": "M8-T06-L2-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr počítal příklad\n\n$$-12 + 7 - (-9) - 15$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $= -5 - (-9) - 15$\n\n2. řádek: $= -5 - 9 - 15$\n\n3. řádek: $= -14 - 15$\n\n4. řádek: $= -29$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$= -5 - (-9) - 15$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$= -5 - 9 - 15$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$= -14 - 15$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$= -29$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$= 5 + 9 - 15$",
+                "spravne": false,
+                "typ_chyby": "pravidlo-znamenek-pri-scitani"
+              },
+              {
+                "id": "b",
+                "text": "$= -5 + (-9) - 15$",
+                "spravne": false,
+                "typ_chyby": "odcitani-zaporneho"
+              },
+              {
+                "id": "c",
+                "text": "$= -5 + 9 - 15$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": -11
+          },
+          "zname_chyby": [
+            {
+              "hodnota": -29,
+              "typ_chyby": "odcitani-zaporneho"
+            },
+            {
+              "hodnota": 11,
+              "typ_chyby": "mensi-minus-vetsi"
+            },
+            {
+              "hodnota": -25,
+              "typ_chyby": "ruzna-znamenka-secetl"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Počítá zleva doprava, jedno číslo po druhém. Čte se: „mínus, závorka, mínus devět“. Odečíst záporné číslo je totéž jako ho přičíst. Chyba je jedna a řádky za ní jsou spočítané dobře, jen se špatným číslem.",
+        "reseni": "Chyba je ve 2. řádku: Petr odečetl devítku, ale odečítá se záporné číslo, a to se přičítá.\n\n$-12 + 7 = -5$ (od mínus dvanácti o sedm nahoru)\n\n$-5 - (-9) = -5 + 9 = 4$ (odečíst záporné znamená přičíst)\n\n$4 - 15 = -11$ (přes nulu do minusu)\n\nDlaždice $= -5 + (-9) - 15$ nesedí (je to Petrova chyba, jen jinak zapsaná), $= 5 + 9 - 15$ nesedí (minus u pětky zůstává)\n\n**Výsledek:** $-11$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Přečti mi Petrův příklad nahlas. Kde v něm vidíš dva minusy vedle sebe?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každého Petrova řádku mi řekni, co se v něm změnilo. Co se má stát, když se odečítá záporné číslo?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: odečítá se tu záporné číslo? Změnil Petr odečtení na přičtení?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč mínus pět minus mínus devět není mínus čtrnáct.“",
+        "otocena_role_odpoved": "Protože odečíst záporné číslo znamená přičíst. Mínus pět plus devět jsou čtyři, takže se jde nahoru, ne dolů. Pak čtyři minus patnáct je mínus jedenáct.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 3. nebo 4. řádek? Ty jsou spočítané dobře ze špatného čísla. 1. řádek je správně. Zeptejte se: „Co dají dva minusy vedle sebe?“ (Plus.) Výsledek $-29$: opíše Petra. $11$: zapomene minus u čtyři minus patnáct; „Je výsledek nad nulou, nebo pod?“ (Pod.) $-25$: sečte dvanáct a sedm; „Kterým směrem jdeš, když k mínus dvanácti přičítáš?“ (Nahoru.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že u každého řádku hlídalo dva minusy vedle sebe, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu Petrův výpočet $-3 - (-8) = -11$. Zeptejte se: „Má Petr pravdu? Kde se spletl?“ Ať opravu řekne nahlas. Kontrola pro vás: nemá; odečíst mínus osm znamená přičíst osm, mínus tři plus osm je pět.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 10 papírků jako dluhy po koruně. Zítra ať dítě položí 5 dluhů a pak 2 dluhy odebere, protože mu je kamarád odpustil. Zeptejte se: „Máš teď víc, nebo míň než předtím?“ Pak ať samo zapíše $-5 - (-2) = -3$. Potom zopakujte lekci „Plus a mínus se zápornými“. Kontrola pro vás: zbudou 3 dluhy, mínus tři; odebrat dluh znamená mít víc."
+      },
+      "tisk": {
+        "zadani": "Petr počítal příklad\n\n$$-12 + 7 - (-9) - 15$$\n\na udělal jednu chybu.\n\n1. řádek: $= -5 - (-9) - 15$\n\n2. řádek: $= -5 - 9 - 15$\n\n3. řádek: $= -14 - 15$\n\n4. řádek: $= -29$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $= 5 + 9 - 15$ b) $= -5 + (-9) - 15$ c) $= -5 + 9 - 15$\n\nC) Správný výsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T06-L2-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Tomáš dlužil školní jídelně, a tak měl na účtu za obědy $-240$ Kč. Rodiče mu pak na účet poslali $500$ Kč. Potom mu jídelna strhla $380$ Kč za obědy na další týdny.\n\nJaký stav měl účet po penězích od rodičů a jaký stav má teď?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Který zápis odpovídá zadání?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$-240 - 500 + 380$",
+                "spravne": false,
+                "typ_chyby": "posun-spatnym-smerem"
+              },
+              {
+                "id": "b",
+                "text": "$240 + 500 - 380$",
+                "spravne": false,
+                "typ_chyby": "prehledl-udaj"
+              },
+              {
+                "id": "c",
+                "text": "$-240 + 500 - 380$",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "$-240 + 500 + 380$",
+                "spravne": false,
+                "typ_chyby": "posun-spatnym-smerem"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Stav účtu po penězích od rodičů",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 260
+          },
+          "zname_chyby": [
+            {
+              "hodnota": -740,
+              "typ_chyby": "ruzna-znamenka-secetl"
+            },
+            {
+              "hodnota": 740,
+              "typ_chyby": "prehledl-udaj"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Stav účtu teď",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": -120
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 120,
+              "typ_chyby": "mensi-minus-vetsi"
+            },
+            {
+              "hodnota": 640,
+              "typ_chyby": "posun-spatnym-smerem"
+            },
+            {
+              "hodnota": 360,
+              "typ_chyby": "prehledl-udaj"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce. Stav účtu v minusu znamená dluh. Peníze od rodičů stav zvýší, platba za obědy ho sníží. Čte se: $-240$ „mínus dvě stě čtyřicet korun“. V kroku 1 dítě vybírá zápis, pak počítá stav po penězích od rodičů a stav na konci.",
+        "reseni": "$-240 + 500 - 380$ (dluh, peníze od rodičů se přičtou, platba se odečte)\n\n$-240 + 500 = 260$ (stav po penězích od rodičů: dluh se zaplatí a dvě stě šedesát zbude)\n\n$260 - 380 = -120$ (stav teď: platba je větší než zůstatek, účet je zase v minusu)\n\n**Výsledek:** po penězích od rodičů $260$ Kč, teď $-120$ Kč",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co se dělo s penězi na účtu. Co znamená, že je stav v minusu?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Které peníze na účet přibyly a které z něj ubyly? Jaké znaménko k nim patří?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: dluh dvě stě čtyřicet korun se zaplatí z pěti set korun. Kolik zbude? A co pak udělá platba za obědy?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč je na konci účet zase v minusu, když rodiče poslali pět set korun.“",
+        "otocena_role_odpoved": "Z pěti set korun se nejdřív zaplatil dluh a zbylo jen dvě stě šedesát. Obědy stály tři sta osmdesát, to je víc, takže chybí sto dvacet korun a účet je mínus sto dvacet.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 zápis s $240$ bez minusu, mezivýsledek $740$ nebo výsledek $360$: přehlédne dluh. Zeptejte se: „Měl Tomáš na začátku peníze, nebo dluh?“ (Dluh.) Zápisy s $-500$ nebo $+380$, výsledek $640$: plete, co přibylo a co ubylo. Mezivýsledek $-740$: sečte dluh a peníze dohromady; „Dluh se zmenší, nebo zvětší?“ (Zmenší.) Výsledek $120$: zapomene, že je zase dluh."
+      },
+      "semafor": {
+        "zelena": "Výborně — zápis i oba stavy účtu sedí. Pochvalte, že hlídalo, co je dluh a co peníze navíc, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Ema dluží kamarádce sto korun. Dostane kapesné tři sta korun a pak koupí lístek do kina za dvě stě padesát. Kolik má teď?“ Ať si čísla zapíše, řeší na papír a řekne stav po kapesném i na konci. Kontrola pro vás: po kapesném dvě stě korun, na konci mínus padesát, tedy dluh padesát korun.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 10 mincí a 10 papírků jako dluhy. Zítra dítě začne se 3 papírky dluhu. Dostane 5 mincí, každou mincí zaplatí jeden dluh a obojí dá stranou. Pak zaplatí 4 koruny za nákup; když mince chybí, vezme papírek dluhu. Ať samo zapíše $-3 + 5 - 4 = -2$. Potom zopakujte lekci „Plus a mínus se zápornými“. Kontrola pro vás: po výplatě zbudou 2 mince, na konci 2 dluhy, mínus dva."
+      },
+      "tisk": {
+        "zadani": "Tomáš dlužil školní jídelně, a tak měl na účtu za obědy $-240$ Kč. Rodiče mu pak na účet poslali $500$ Kč. Potom mu jídelna strhla $380$ Kč za obědy na další týdny.\n\nJaký stav měl účet po penězích od rodičů a jaký stav má teď?\n\nA) Který zápis odpovídá zadání? Zakroužkuj: a) $-240 - 500 + 380$ b) $240 + 500 - 380$ c) $-240 + 500 - 380$ d) $-240 + 500 + 380$\n\nB) Stav účtu po penězích od rodičů: ______ Kč\n\nC) Stav účtu teď: ______ Kč"
+      }
+    },
+    {
+      "id": "M8-T06-L2-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Adam každé ráno zapisoval teplotu u chaty: pondělí $2{,}5\\ °\\text{C}$, úterý $-3{,}5\\ °\\text{C}$, středa $0{,}5\\ °\\text{C}$, čtvrtek $4{,}5\\ °\\text{C}$.\n\nO kolik stupňů byla nejvyšší z těchto teplot vyšší než nejnižší?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "°C"
+          },
+          "spravne": {
+            "hodnota": 8
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 1,
+              "typ_chyby": "odcitani-zaporneho"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Nejdřív se najde nejvyšší a nejnižší teplota, pak se spočítá rozdíl. Čte se: $-3{,}5$ „mínus tři celé pět“, $4{,}5$ „čtyři celé pět“.",
+        "reseni": "$4{,}5$ (nejvyšší teplota, čtvrtek)\n\n$-3{,}5$ (nejnižší teplota, úterý, jediná pod nulou)\n\n$4{,}5 - (-3{,}5) = 4{,}5 + 3{,}5 = 8$ (odečíst záporné znamená přičíst; na teploměru tři celé pět k nule a čtyři celé pět nad nulu)\n\n**Výsledek:** $8\\ °\\text{C}$",
+        "otazky": [
+          "„Přečti mi teploty nahlas. Který den byla největší zima a který den bylo nejtepleji?“",
+          "„Představ si teploměr. Kolik stupňů je od nejnižší teploty k nule a kolik od nuly k nejvyšší?“",
+          "„Tady máš začátek: rozdíl je čtyři celé pět minus mínus tři celé pět. Čím nahradíš dva minusy vedle sebe?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč rozdíl teplot nevyjde jedna, když čtyři celé pět minus tři celé pět je jedna.“",
+        "otocena_role_odpoved": "Protože úterní teplota je pod nulou. Od mínus tří celých pěti k nule jsou tři celé pět stupně a pak ještě čtyři celé pět nad nulu. Dohromady osm stupňů.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nepíše nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: $1$: odečte tři celé pět, jako by úterý bylo nad nulou. Zeptejte se: „Kde na teploměru je mínus tři celé pět? Kolik stupňů je odtud k nule?“ (Pod nulou, tři celé pět.) Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — rozdíl teplot přes nulu zvládá samo. Pochvalte, že hlídalo teplotu pod nulou. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „V noci bylo mínus šest stupňů, v poledne pět. O kolik se oteplilo?“ Pak: „Ráno bylo mínus dva, večer mínus sedm. O kolik se ochladilo?“ Ať řekne, jak to počítá na teploměru. Kontrola pro vás: o jedenáct stupňů (šest k nule a pět nad nulu); o pět stupňů.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír, tužku a pravítko. Zítra ať dítě nakreslí svislý teploměr od mínus deseti do deseti, stupeň po centimetru. Ať vyznačí mínus tři a pět a spočítá centimetry mezi nimi. Pak ať samo zapíše $5 - (-3) = 8$. Potom zopakujte lekci „Plus a mínus se zápornými“. Kontrola pro vás: mezi značkami je osm centimetrů, tři pod nulou a pět nad nulou."
+      },
+      "tisk": {
+        "zadani": "Adam každé ráno zapisoval teplotu u chaty: pondělí $2{,}5\\ °\\text{C}$, úterý $-3{,}5\\ °\\text{C}$, středa $0{,}5\\ °\\text{C}$, čtvrtek $4{,}5\\ °\\text{C}$.\n\nO kolik stupňů byla nejvyšší z těchto teplot vyšší než nejnižší?\n\nVýsledek: ______ °C"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "stredni",
+    "poznamka": "Autor 1. 10.: čísla a známé chyby přepočítané skriptem, vyhodnotKrok sedí. Sporné: U1 má jiná čísla než osnova ($-8 + 5$, $-5 - (-3)$), protože osnova měla A a B shodné s příklady v „Platí“. Kód pravidlo-znamenek-pri-scitani je použitý pro „dva minusy dají plus“ i u odčítání ($-4 - 6 = 10$, dlaždice $= 5 + 9 - 15$); mensi-minus-vetsi pro zapomenutý minus po $-8 + 5$, $-5 + 3$ a $4 - 15$. U3 kód prehledl-udaj pro start bez minusu (dluh brán jako peníze), $-740$ vzniká i posunem špatným směrem (zapsáno ruzna-znamenka-secetl). U4 má jen jednu známou chybu ($1$); osnova chtěla jednu zápornou teplotu, jiná typická chyba dává stejné číslo.",
+    "zkontroloval": "autor",
+    "datum": "2026-10-01"
+  }
+}

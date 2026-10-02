@@ -1,0 +1,441 @@
+{
+  "id": "M8-T08-L3",
+  "faze": "osma",
+  "tyden": 8,
+  "poradi": 3,
+  "tema": "Přímá a nepřímá úměrnost",
+  "kapitola": "pomer",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě rozhodne „víc → víc, nebo víc → míň“ dřív, než začne počítat, a dopočítá chybějící hodnotu.",
+  "uvod_pro_rodice": "Dnes jde o úměrnost: dítě nejdřív rozhodne, jestli při větším počtu vyjde víc, nebo míň, a teprve pak počítá.",
+  "uvod_pravidla": [
+    {
+      "znak": "$3 \\to 6$ rohlíků, $12 \\to 24$ Kč",
+      "text": "přímá: oboje dvakrát víc"
+    },
+    {
+      "znak": "$3 \\to 6$ malířů, $8 \\to 4$ dny",
+      "text": "nepřímá: dnů dvakrát míň"
+    },
+    {
+      "znak": "$1$ rohlík $= 4$ Kč",
+      "text": "přes jeden kus"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T08-L3-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Která dvojice je nepřímá úměrnost?\n\nB) Lístky do kina: $1$ lístek stojí $25$ Kč, $2$ lístky $50$ Kč, $4$ lístky $100$ Kč. Je to přímá úměrnost?\n\nC) $4$ stejné sešity stojí $60$ Kč. Kolik korun stojí $6$ takových sešitů?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: nepřímá úměrnost",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "počet sešitů a celková cena za ně",
+                "spravne": false,
+                "typ_chyby": "prima-jako-neprima"
+              },
+              {
+                "id": "b",
+                "text": "počet kroků a ušlá vzdálenost",
+                "spravne": false,
+                "typ_chyby": "prima-jako-neprima"
+              },
+              {
+                "id": "c",
+                "text": "počet malířů a doba natírání plotu",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: lístky do kina",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "ne, je to nepřímá úměrnost",
+                "spravne": false,
+                "typ_chyby": "prima-jako-neprima"
+              },
+              {
+                "id": "b",
+                "text": "ano, cena roste stejněkrát jako počet",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "ne, cena roste pokaždé o jiný počet korun",
+                "spravne": false,
+                "typ_chyby": "umera-jako-soucet"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: $6$ sešitů",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$90$ Kč",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$62$ Kč",
+                "spravne": false,
+                "typ_chyby": "umera-jako-soucet"
+              },
+              {
+                "id": "c",
+                "text": "$40$ Kč",
+                "spravne": false,
+                "typ_chyby": "prima-jako-neprima"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá. Přímá úměrnost: kolikrát víc jednoho, tolikrát víc druhého (sešity a cena). Nepřímá: kolikrát víc jednoho, tolikrát míň druhého (víc malířů, kratší práce). U B ceny nerostou o stejný kus, ale stejněkrát jako počet lístků, a to stačí. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) Nepřímá úměrnost\n\nMalíři a doba natírání (dvakrát víc malířů natře plot za poloviční dobu)\n\nSešity a cena, kroky a vzdálenost (víc a víc, to je přímá úměrnost)\n\n#### B) Lístky a cena\n\n$50 : 25 = 2$ (dvakrát víc lístků, dvakrát víc korun)\n\n$100 : 25 = 4$ (čtyřikrát víc lístků, čtyřikrát víc korun)\n\n#### C) Sešity\n\n$60 : 4 = 15$ (jeden sešit)\n\n$6 \\cdot 15 = 90$ (šest sešitů)\n\n**Výsledek:** A) malíři a plot, B) ano, přímá, C) $90$ Kč",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Představ si dvakrát víc malířů. Bude jim plot trvat déle, nebo kratší dobu? A jak je to u ostatních dvojic?“"
+          },
+          {
+            "k": "B",
+            "text": "„Kolikrát víc lístků jsou čtyři než jeden? Kolikrát víc korun je sto než dvacet pět?“"
+          },
+          {
+            "k": "C",
+            "text": "„Neklikej, spočítej na papíře: kolik stojí jeden sešit? A kolik pak šest?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč šest sešitů nestojí šedesát dva korun.“",
+        "otocena_role_odpoved": "Protože o dva sešity víc neznamená o dvě koruny víc. Jeden sešit stojí patnáct korun, takže šest sešitů stojí devadesát.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A sešity nebo kroky: plete přímou a nepřímou. Zeptejte se: „Víc sešitů, zaplatíš víc, nebo míň?“ (Víc, to je přímá.) U B „nepřímá“ nebo „o jiný počet korun“: hledá stejný rozdíl. „Kolikrát víc?“ (Oboje čtyřikrát.) U C $62$: přičte rozdíl; $40$: počítá víc → míň."
+      },
+      "semafor": {
+        "zelena": "Výborně — přímou a nepřímou úměrnost rozlišuje. Pochvalte, že nejdřív rozhodlo „víc, nebo míň“, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Dva stejné rohlíky stojí $8$ Kč. Kolik stojí pět?“ Pak: „Dva kamarádi sní pizzu za $10$ minut. Za kolik minut ji sní pět kamarádů, když jedí stejně rychle?“ U každé ať nejdřív řekne „víc“, nebo „míň“. Kontrola pro vás: víc, $20$ Kč; míň, $4$ minuty.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 10 mincí nebo knoflíků (jako koruny). Zítra: „Jeden bonbon stojí 2 koruny.“ Ať dítě vyskládá cenu za 1, 2, 3 a 5 bonbonů. Zeptejte se: „Dvakrát víc bonbonů, kolikrát víc korun?“ Pak ať samo zapíše $2 \\cdot 5 = 10$. Potom zopakujte lekci „Přímá a nepřímá úměrnost“. Kontrola pro vás: 2, 4, 6 a 10 korun; dvakrát víc bonbonů, dvakrát víc korun."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Která dvojice je nepřímá úměrnost? — a) počet sešitů a celková cena za ně b) počet kroků a ušlá vzdálenost c) počet malířů a doba natírání plotu\n\nB) Lístky do kina: $1$ lístek stojí $25$ Kč, $2$ lístky $50$ Kč, $4$ lístky $100$ Kč. Je to přímá úměrnost? — a) ne, je to nepřímá úměrnost b) ano, cena roste stejněkrát jako počet c) ne, cena roste pokaždé o jiný počet korun\n\nC) $4$ stejné sešity stojí $60$ Kč. Kolik korun stojí $6$ takových sešitů? — a) $90$ Kč b) $62$ Kč c) $40$ Kč"
+      }
+    },
+    {
+      "id": "M8-T08-L3-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Čtyři stejná čerpadla vyčerpají vodu ze zatopeného sklepa za $6$ hodin. Jedno čerpadlo se porouchalo. O kolik hodin déle bude čerpání trvat?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: čerpadla: $4 - 1 = 3$\n\n2. řádek: čas: $6 \\cdot 3 : 4 = 4{,}5$ h\n\n3. řádek: rozdíl: $6 - 4{,}5 = 1{,}5$ h",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "čerpadla: $4 - 1 = 3$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "čas: $6 \\cdot 3 : 4 = 4{,}5$ h",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "rozdíl: $6 - 4{,}5 = 1{,}5$ h",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "čas: $6 \\cdot 4 = 24$ h",
+                "spravne": false,
+                "typ_chyby": "odpovida-na-jinou-otazku"
+              },
+              {
+                "id": "b",
+                "text": "čas: $6 \\cdot 4 : 3 = 8$ h",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "čas: $6 + 4 - 3 = 7$ h",
+                "spravne": false,
+                "typ_chyby": "umera-jako-soucet"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "h"
+          },
+          "spravne": {
+            "hodnota": 2
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 1.5,
+              "typ_chyby": "neprima-jako-prima"
+            },
+            {
+              "hodnota": 8,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 1,
+              "typ_chyby": "umera-jako-soucet"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Míň čerpadel znamená delší čerpání: nepřímá úměrnost. Petr počítal, jako by s menším počtem čerpadel šlo všechno rychleji. Chyba je jedna, řádky za ní jsou spočítané dobře, jen se špatným číslem. Čte se: $4{,}5$ h „čtyři a půl hodiny“, $1{,}5$ h „hodina a půl“.",
+        "reseni": "Chyba je ve 2. řádku: Petr počítal přímou úměrnost (míň čerpadel, míň hodin). Je to nepřímá: míň čerpadel, víc hodin.\n\n$4 - 1 = 3$ (zbylá čerpadla)\n\n$6 \\cdot 4 = 24$ (hodin by čerpalo jedno čerpadlo samo)\n\n$24 : 3 = 8$ (hodin čerpají tři čerpadla)\n\n$8 - 6 = 2$ (o tolik hodin déle)\n\nDlaždice $6 \\cdot 4 = 24$ a $6 + 4 - 3 = 7$ nesedí (první je čas jednoho čerpadla, druhá přidává hodinu za chybějící čerpadlo)\n\n**Výsledek:** o $2$ hodiny déle",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co se stalo s čerpadly a na co se úloha ptá.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Když čerpá míň čerpadel, bude to trvat déle, nebo kratší dobu? Sedí to s Petrovými čísly?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: počítá Petr víc → víc, nebo víc → míň? Kolik hodin by čerpalo jedno čerpadlo samo?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč tři čerpadla nemůžou být hotová dřív než čtyři.“",
+        "otocena_role_odpoved": "Protože každé čerpadlo vyčerpá za hodinu stejně vody. Když jedno chybí, zbylá tři musí čerpat déle. Jedno samo by čerpalo dvacet čtyři hodin, tři čerpadla osm hodin, to jsou dvě hodiny navíc.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 3. řádek? Ten je jen důsledek. Zeptejte se: „Odkud je čtyři a půl?“ (Z 2. řádku.) 1. řádek je správně. Výsledek $1{,}5$: opíše Petra; $8$: celý čas; zeptejte se: „Na co se úloha ptá?“ (O kolik déle.) $1$: přidá hodinu za čerpadlo."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že rozhodlo „míň čerpadel, víc hodin“, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr tvrdí: dva malíři natřou plot za $6$ hodin, takže tři malíři za $9$ hodin. Má pravdu?“ Ať nahlas řekne, jestli víc malířů znamená víc, nebo míň hodin, a kolik hodin to bude. Kontrola pro vás: nemá; víc malířů, míň hodin; jeden malíř $12$ hodin, tři malíři $4$ hodiny.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 24 kostek nebo bonbonů (jako práce) a 4 hrnky (jako čerpadla). Zítra ať dítě rozdělí kostky do 4 hrnků, pak do 3 a pak do 2. Zeptejte se: „Když je hrnků míň, je v každém víc, nebo míň práce?“ Pak ať samo zapíše $24 : 4 = 6$, $24 : 3 = 8$. Potom zopakujte lekci „Přímá a nepřímá úměrnost“. Kontrola pro vás: 6, 8 a 12 kostek; míň hrnků, víc práce pro každý."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\nČtyři stejná čerpadla vyčerpají vodu ze zatopeného sklepa za $6$ hodin. Jedno čerpadlo se porouchalo. O kolik hodin déle bude čerpání trvat?\n\na udělal jednu chybu.\n\n1. řádek: čerpadla: $4 - 1 = 3$\n\n2. řádek: čas: $6 \\cdot 3 : 4 = 4{,}5$ h\n\n3. řádek: rozdíl: $6 - 4{,}5 = 1{,}5$ h\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) čas: $6 \\cdot 4 = 24$ h b) čas: $6 \\cdot 4 : 3 = 8$ h c) čas: $6 + 4 - 3 = 7$ h\n\nC) O kolik hodin déle bude čerpání trvat? ______ h"
+      }
+    },
+    {
+      "id": "M8-T08-L3-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Na stavbě hřiště by $4$ dělníci pracovali $12$ dní. Po $3$ dnech práce jim přišli pomoct další $2$ dělníci, všichni pracují stejně rychle.\n\nKolik dní pracovali dělníci po příchodu pomoci? Za kolik dní celkem bylo hřiště hotové?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Vyber, co platí",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "víc dělníků, víc dní: přímá úměrnost",
+                "spravne": false,
+                "typ_chyby": "neprima-jako-prima"
+              },
+              {
+                "id": "b",
+                "text": "o dva dělníky víc, o dva dny míň",
+                "spravne": false,
+                "typ_chyby": "umera-jako-soucet"
+              },
+              {
+                "id": "c",
+                "text": "víc dělníků, míň dní: nepřímá úměrnost",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: dny po příchodu pomoci",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "dní"
+          },
+          "spravne": {
+            "hodnota": 6
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 13.5,
+              "typ_chyby": "neprima-jako-prima"
+            },
+            {
+              "hodnota": 7,
+              "typ_chyby": "umera-jako-soucet"
+            },
+            {
+              "hodnota": 8,
+              "typ_chyby": "prehledl-udaj"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "dní"
+          },
+          "spravne": {
+            "hodnota": 9
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 16.5,
+              "typ_chyby": "neprima-jako-prima"
+            },
+            {
+              "hodnota": 6,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 8,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 10,
+              "typ_chyby": "umera-jako-soucet"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Práce je pořád stejná, mění se počet dělníků: víc dělníků, míň dní, to je nepřímá úměrnost. Past: pomoc přišla až po třech dnech. Zbytek práce, na který by čtyři dělníci potřebovali devět dní, dělá šest dělníků. Nakonec se sečtou dny před pomocí i po ní.",
+        "reseni": "$12 - 3 = 9$ (tolik dní práce zbývalo čtyřem dělníkům)\n\n$4 \\cdot 9 = 36$ (tolik dní by zbytek trval jednomu dělníkovi)\n\n$36 : 6 = 6$ (dny práce šesti dělníků po příchodu pomoci)\n\n$3 + 6 = 9$ (dny celkem)\n\n**Výsledek:** po příchodu pomoci $6$ dní, celkem $9$ dní",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co se na stavbě dělo. Kdy přišla pomoc?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Když na stejnou práci přijde víc lidí, bude hotovo dřív, nebo později? Jak se tomu říká?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: po třech dnech zbývalo čtyřem dělníkům devět dní práce. Kolik dní by to trvalo jednomu dělníkovi?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč nepočítáš celou práci od začátku se šesti dělníky.“",
+        "otocena_role_odpoved": "Protože první tři dny pracovali jen čtyři dělníci. Šest jich pracovalo až na zbytku, ten jim trval šest dní. Celkem je to tři plus šest, devět dní.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 „víc dní“, pak $13{,}5$ a $16{,}5$: počítá víc → víc. Zeptejte se: „Pomůžou noví dělníci, aby to bylo dřív?“ (Ano.) $7$ a $10$: ubere dva dny za dva dělníky. $8$: šest dělníků od začátku; výsledek $6$: bez prvních tří dnů. „Kolik dní pracovali sami?“ (Tři.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — úlohu se dvěma částmi zvládlo. Pochvalte, že rozhodlo „víc dělníků, míň dní“ a nezapomnělo na první dny. Jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Tři kamarádi by hrabali listí na zahradě $8$ hodin. Kolik hodin by hrabali čtyři?“ Ať nahlas řekne, jestli to bude víc, nebo míň hodin, kolik by to trvalo jednomu a kolik čtyřem. Kontrola pro vás: míň; jeden $24$ hodin, čtyři $6$ hodin.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 12 kostek nebo bonbonů (jako práce). Zítra ať je dítě rozdělí 2 kamarádům, pak 3, pak 4 a 6. Zeptejte se: „Když je kamarádů víc, má každý víc, nebo míň práce?“ Pak ať samo zapíše $12 : 2 = 6$, $12 : 3 = 4$, $12 : 4 = 3$, $12 : 6 = 2$. Potom zopakujte lekci „Přímá a nepřímá úměrnost“. Kontrola pro vás: 6, 4, 3, 2; víc kamarádů, míň práce."
+      },
+      "tisk": {
+        "zadani": "Na stavbě hřiště by $4$ dělníci pracovali $12$ dní. Po $3$ dnech práce jim přišli pomoct další $2$ dělníci, všichni pracují stejně rychle.\n\nKolik dní pracovali dělníci po příchodu pomoci? Za kolik dní celkem bylo hřiště hotové?\n\nA) Co platí? Zakroužkuj: a) víc dělníků, víc dní: přímá úměrnost b) o dva dělníky víc, o dva dny míň c) víc dělníků, míň dní: nepřímá úměrnost\n\nB) Dny po příchodu pomoci: ______\n\nC) Dny celkem: ______"
+      }
+    },
+    {
+      "id": "M8-T08-L3-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Ema jezdí do školy na kole. Když jede rychlostí $12$ km/h, je ve škole za $20$ minut.\n\nZa kolik minut by tam byla, kdyby jela po stejné cestě rychlostí $15$ km/h?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "min"
+          },
+          "spravne": {
+            "hodnota": 16
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 25,
+              "typ_chyby": "neprima-jako-prima"
+            },
+            {
+              "hodnota": 17,
+              "typ_chyby": "umera-jako-soucet"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Cesta je pořád stejně dlouhá. Rychlejší jízda znamená kratší čas: nepřímá úměrnost. Čte se: $12$ km/h „dvanáct kilometrů za hodinu“.",
+        "reseni": "$12 \\to 15$ km/h (rychleji, tedy míň minut)\n\n$20 \\cdot 12 = 240$ (minut by cesta trvala rychlostí jeden kilometr za hodinu)\n\n$240 : 15 = 16$ (minut rychlostí patnáct kilometrů za hodinu)\n\n$12 : 3 = 4$ (jiná cesta: dvacet minut je třetina hodiny, cesta měří čtyři kilometry)\n\n$4 \\cdot 4 = 16$ (jiná cesta: patnáct kilometrů za hodinu je kilometr za čtyři minuty)\n\n**Výsledek:** $16$ minut",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co se mění a co zůstává stejné.“",
+          "„Když Ema pojede rychleji, bude ve škole dřív, nebo později? Je to přímá, nebo nepřímá úměrnost?“",
+          "„Tady máš začátek: dvacet minut je třetina hodiny, takže cesta měří čtyři kilometry. Za kolik minut je ujede rychlostí patnáct?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč při vyšší rychlosti nevyjde víc minut.“",
+        "otocena_role_odpoved": "Protože čím rychleji Ema jede, tím dřív je ve škole. Kdyby jela pomaleji, trvalo by to déle. Správně je i: cesta měří čtyři kilometry, patnáct kilometrů za hodinu je kilometr za čtyři minuty, tedy šestnáct minut.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nepíše nebo řekne „nevím“), čtěte Otázky 1–3. Po odevzdání se podívejte na obrazovku dítěte. $25$: počítá víc → víc. Zeptejte se: „Je Ema při rychlejší jízdě ve škole dřív, nebo později?“ (Dřív.) $17$: ubere tři minuty za tři kilometry za hodinu navíc. Zkouška pro vás: cesta má $4$ km, rychlostí $15$ km/h je kilometr za $4$ minuty, tedy $16$ minut. Semafor: opraví se samo = „Sám/sama“; po vaší otázce = „Potřeboval(a) otázku“; neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — nepřímou úměrnost poznalo samo. Pochvalte, že nejdřív rozhodlo „rychleji, míň minut“. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Táta jede autem rychlostí $60$ km/h a je u babičky za $40$ minut. Za kolik minut by tam byl rychlostí $80$ km/h?“ Ať nejdřív řekne „víc“, nebo „míň“, pak dopočítá. Kontrola pro vás: míň, $30$ minut (cesta měří $40$ km; nebo $40 \\cdot 60 : 80 = 30$).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 12 kostek (jako kilometry cesty). Zítra: „Každou minutu ujedeš 2 kostky.“ Ať dítě odsouvá kostky po dvou a počítá minuty. Pak po třech a po čtyřech. Zeptejte se: „Když jedeš rychleji, potřebuješ víc, nebo míň minut?“ Pak ať samo zapíše $12 : 2 = 6$, $12 : 3 = 4$, $12 : 4 = 3$. Potom zopakujte lekci „Přímá a nepřímá úměrnost“. Kontrola pro vás: 6, 4 a 3 minuty; rychleji, míň minut."
+      },
+      "tisk": {
+        "zadani": "Ema jezdí do školy na kole. Když jede rychlostí $12$ km/h, je ve škole za $20$ minut.\n\nZa kolik minut by tam byla, kdyby jela po stejné cestě rychlostí $15$ km/h?\n\nVýsledek: ______ min"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "stredni",
+    "poznamka": "Sporné pro recenzenta: (1) U1 B je podle osnovy „tabulka hodnot“, ale bez tabulky: tři dvojice lístky → cena v textu; distraktor „cena roste pokaždé o jiný počet korun“ má kód umera-jako-soucet (aditivní myšlení), přesnější kód není. (2) U1 A má dva distraktory s prima-jako-neprima. (3) U2: řádky za chybou spočítané ze špatného čísla; aby nebyla druhá chyba, Petr počítá rozdíl $6 - 4{,}5$. U3 final má 4 známé chyby ($16{,}5$, $6$, $8$, $10$), u $8$ kód prehledl-udaj (šest dělníků od začátku). (4) U4 je nepřímá úměrnost s rychlostí (osnova dovoluje), výsledky celé; jen 2 známé chyby. Čísla přepočítána skriptem: U1 $90$ Kč ($62$, $40$); U2 $6 \\cdot 4 : 3 = 8$, o $2$ h ($1{,}5$, $8$, $1$); U3 $9 \\cdot 4 : 6 = 6$, celkem $9$ ($13{,}5$, $7$, $8$; $16{,}5$, $6$, $8$, $10$); U4 $20 \\cdot 12 : 15 = 16$ ($25$, $17$).",
+    "zkontroloval": "autor",
+    "datum": "2026-10-01"
+  }
+}

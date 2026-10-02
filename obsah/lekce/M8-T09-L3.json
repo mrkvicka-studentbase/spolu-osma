@@ -309,6 +309,10 @@
             {
               "hodnota": 60,
               "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 360,
+              "typ_chyby": "odpovida-na-jinou-otazku"
             }
           ]
         },
@@ -374,7 +378,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč není výhodnější banka s vyšším úrokem.“",
         "otocena_role_odpoved": "Banka A dá šest set korun úroku, ale dvě stě čtyřicet si vezme jako poplatek, zůstane jen tři sta šedesát. Banka B dá čtyři sta a nic si nevezme, je o čtyřicet korun lepší.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. $200$ ve výsledku: přehlédne poplatek. Zeptejte se: „Co si banka A za rok vezme?“ (Poplatek $240$ Kč.) Zkouška pro vás: $600 - 240$ je míň než $400$. $360$, $400$: odpoví jednou bankou. $6\\,000$, $4\\,000$: dělí deseti; $60$: dělí tisícem."
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. $200$ ve výsledku: přehlédne poplatek. Zeptejte se: „Co si banka A za rok vezme?“ (Poplatek $240$ Kč.) Zkouška pro vás: $600 - 240$ je míň než $400$. Výsledek $360$, $400$: odpoví jednou bankou; krok 1 $360$: odečte poplatek už tam. $6\\,000$, $4\\,000$: dělí deseti; $60$: dělí tisícem."
       },
       "semafor": {
         "zelena": "Výborně — nabídky porovnalo i s poplatkem. Pochvalte, že poplatek odečetlo dřív, než banky srovnalo, a jděte dál.",
@@ -441,9 +445,9 @@
     }
   ],
   "kontrola": {
-    "jistota": "stredni",
-    "poznamka": "Autor přepočítal skriptem (Python, zlomky) a ověřil přes vyhodnotKrok. U1: 198 (162; 18; 190), 480 (160; 800; 615), 5 150 (150; 4 850; 5 003). U2: roční úrok 240, za 9 měsíců 180, vybral 12 180 (12 240 Petr; 180 bez vkladu). U3: úrok A 600, B 400, A po poplatku 360, rozdíl 40 (200 bez poplatku; 360; 400). U4: 1 380 (180; 1 020; 1 215). Sporné: U3 má 5 výpočtů včetně jednoho procenta (osnova dovoluje nejvýš 4); 3. řádek „Platí“ je konkrétní příklad místo „úrok 2 % ročně“; v U3 dvě známé chyby se stejným kódem odpovida-na-jinou-otazku; jednoduchý úrok bez daně.",
-    "zkontroloval": "autor",
+    "jistota": "jista",
+    "poznamka": "Recenze: vše přepočítáno skriptem (Python Fraction) a přes vyhodnotKrok. Oprava: U3 krok 1 doplněna známá chyba 360 (odpovida-na-jinou-otazku, poplatek odečten už u úroku) a zmínka v typické chybě. U3 má čtyři věcné výpočty (úrok A, úrok B, odečtení poplatku, rozdíl), jedno procento z 20 000 je zpaměti, proto ponecháno. Jednoduchý úrok bez daně podle rozhodnutí vedoucího. Konkrétní příklad v 3. řádku „Platí“ odpovídá SABLONA §18.",
+    "zkontroloval": "recenzent",
     "datum": "2026-10-01"
   }
 }

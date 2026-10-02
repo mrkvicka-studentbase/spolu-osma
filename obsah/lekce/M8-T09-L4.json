@@ -128,7 +128,7 @@
         }
       ],
       "tahak": {
-        "vysvetleni": "Dítě jen vybírá. Každý příklad je z jedné lekce tématu: část z celku, kolik procent tvoří část a cena po slevě. U každého je důležité, co je celek. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "vysvetleni": "Dítě jen vybírá. Každý příklad je z jedné lekce tématu: část z celku, kolik procent tvoří část a cena po slevě. U každého je důležité, co je celek. Čte se: $0{,}35$ nula celá třicet pět. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
         "reseni": "#### A) $20\\,\\%$ z $450$\n\n$450 : 10 = 45$ (deset procent)\n\n$45 \\cdot 2 = 90$ (dvacet procent)\n\n#### B) Fotbalisté\n\n$14 : 40 = 0{,}35$ (část děleno celek)\n\n$0{,}35 = 35\\,\\%$ (krát sto)\n\n#### C) Kšiltovka po slevě\n\n$260 : 10 \\cdot 2 = 52$ (sleva, dvacet procent)\n\n$260 - 52 = 208$ (cena po slevě)\n\n**Výsledek:** A) $90$; B) $35\\,\\%$; C) $208$ Kč",
         "otazky": [
           {
@@ -161,7 +161,7 @@
       "id": "M8-T09-L4-U2",
       "typ": "detektiv",
       "cas_min": 5,
-      "zadani": "Petr řešil úlohu\n\n*Mikina stojí po slevě $20\\,\\%$ celkem $640$ Kč. Kolik korun stála před slevou?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: po slevě platí: $100\\,\\% - 20\\,\\% = 80\\,\\%$\n\n2. řádek: sleva: $20\\,\\%$ z $640 = 128$\n\n3. řádek: před slevou: $640 + 128 = 768$",
+      "zadani": "Petr řešil úlohu\n\n*Mikina stojí po slevě $20\\,\\%$ celkem $720$ Kč. Kolik korun stála před slevou?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: po slevě platí: $100\\,\\% - 20\\,\\% = 80\\,\\%$\n\n2. řádek: sleva: $20\\,\\%$ z $720 = 144$\n\n3. řádek: před slevou: $720 + 144 = 864$",
       "zdroj": "vlastni",
       "kroky": [
         {
@@ -180,13 +180,13 @@
               {
                 "id": "r2",
                 "stitek": "2. řádek",
-                "text": "sleva: $20\\,\\%$ z $640 = 128$",
+                "text": "sleva: $20\\,\\%$ z $720 = 144$",
                 "spravne": true
               },
               {
                 "id": "r3",
                 "stitek": "3. řádek",
-                "text": "před slevou: $640 + 128 = 768$",
+                "text": "před slevou: $720 + 144 = 864$",
                 "spravne": false,
                 "typ_chyby": "nasel-az-dusledek"
               }
@@ -201,18 +201,18 @@
             "moznosti": [
               {
                 "id": "a",
-                "text": "jedno procento: $640 : 100 = 6{,}4$",
+                "text": "jedno procento: $720 : 100 = 7{,}2$",
                 "spravne": false,
                 "typ_chyby": "spatny-zaklad"
               },
               {
                 "id": "b",
-                "text": "jedno procento: $640 : 80 = 8$",
+                "text": "jedno procento: $720 : 80 = 9$",
                 "spravne": true
               },
               {
                 "id": "c",
-                "text": "jedno procento: $640 : 20 = 32$",
+                "text": "jedno procento: $720 : 20 = 36$",
                 "spravne": false,
                 "typ_chyby": "zamenil-cast-a-zbytek"
               }
@@ -227,19 +227,19 @@
             "jednotka": "Kč"
           },
           "spravne": {
-            "hodnota": 800
+            "hodnota": 900
           },
           "zname_chyby": [
             {
-              "hodnota": 768,
+              "hodnota": 864,
               "typ_chyby": "o-tretinu-z-vysledku"
             },
             {
-              "hodnota": 660,
+              "hodnota": 740,
               "typ_chyby": "procento-jako-cislo"
             },
             {
-              "hodnota": 3200,
+              "hodnota": 3600,
               "typ_chyby": "zamenil-cast-a-zbytek"
             }
           ]
@@ -247,7 +247,7 @@
       ],
       "tahak": {
         "vysvetleni": "Petr je vymyšlený spolužák. Sleva se počítala z původní ceny, kterou zatím nikdo nezná. Cena po slevě je jen osmdesát procent původní ceny. Správný 2. řádek proto hledá jedno procento původní ceny. Řádky za chybou jsou spočítané dobře, jen se špatným číslem.",
-        "reseni": "Chyba je ve 2. řádku: Petr počítal slevu z ceny po slevě. Sleva se ale brala z původní ceny.\n\n$100\\,\\% - 20\\,\\% = 80\\,\\%$ (cena po slevě je osmdesát procent původní ceny)\n\n$640 : 80 = 8$ (jedno procento původní ceny; oprava $6{,}4$ bere za celek cenu po slevě, oprava $32$ dělí procenty slevy)\n\n$8 \\cdot 100 = 800$ (původní cena, sto procent)\n\n**Výsledek:** $800$ Kč",
+        "reseni": "Chyba je ve 2. řádku: Petr počítal slevu z ceny po slevě. Sleva se ale brala z původní ceny.\n\n$100\\,\\% - 20\\,\\% = 80\\,\\%$ (cena po slevě je osmdesát procent původní ceny)\n\n$720 : 80 = 9$ (jedno procento původní ceny; oprava $7{,}2$ bere za celek cenu po slevě, oprava $36$ dělí procenty slevy)\n\n$9 \\cdot 100 = 900$ (původní cena, sto procent)\n\n**Výsledek:** $900$ Kč",
         "otazky": [
           {
             "k": "Celá úloha",
@@ -259,12 +259,12 @@
           },
           {
             "k": "Krok 2 a výsledek",
-            "text": "„Šest set čtyřicet korun je osmdesát procent původní ceny. Jak z toho zjistíš jedno procento a pak celou cenu?“"
+            "text": "„Sedm set dvacet korun je osmdesát procent původní ceny. Jak z toho zjistíš jedno procento a pak celou cenu?“"
           }
         ],
-        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč mikina nestála sedm set šedesát osm korun.“",
-        "otocena_role_odpoved": "Sleva se počítala z původní ceny, ne z ceny po slevě. Šest set čtyřicet je osmdesát procent, jedno procento je osm, původní cena osm set. Zkouška: osm set bez dvaceti procent je šest set čtyřicet.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. 1. řádek je správně, 3. je důsledek. $768$: počítá jako Petr. Zeptejte se: „Z jaké ceny se sleva počítala?“ (Z původní.) Zkouška pro vás: $768$ bez pětiny je asi $614$. $660$: přičte dvacet korun. $3\\,200$: dělí dvaceti místo osmdesáti."
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč mikina nestála osm set šedesát čtyři korun.“",
+        "otocena_role_odpoved": "Sleva se počítala z původní ceny, ne z ceny po slevě. Sedm set dvacet je osmdesát procent, jedno procento je devět, původní cena devět set. Zkouška: devět set bez dvaceti procent je sedm set dvacet.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. 1. řádek je správně, 3. je důsledek. $864$: počítá jako Petr. Zeptejte se: „Z jaké ceny se sleva počítala?“ (Z původní.) Zkouška pro vás: $864$ bez pětiny je asi $691$. $740$: přičte dvacet korun. $3\\,600$: dělí dvaceti místo osmdesáti."
       },
       "semafor": {
         "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že poznalo, z jaké ceny se sleva počítala, a jděte dál.",
@@ -272,7 +272,7 @@
         "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 10 papírků a 50 knoflíků. Zítra: „Deset papírků je původní cena, každý je deset procent. Sleva dvacet procent jsou dva papírky.“ Ať dítě odloží 2 papírky a na zbylých 8 rozdělí 40 knoflíků (cena po slevě). Zeptejte se: „Kolik knoflíků patří na jeden papírek? Kolik na všech deset?“ Pak ať samo zapíše $40 : 8 = 5$ a $5 \\cdot 10 = 50$. Potom zopakujte lekci „Kontrola: procenta“. Kontrola pro vás: původní cena 50."
       },
       "tisk": {
-        "zadani": "Petr řešil úlohu\n\n*Mikina stojí po slevě $20\\,\\%$ celkem $640$ Kč. Kolik korun stála před slevou?*\n\na udělal jednu chybu.\n\n1. řádek: po slevě platí: $100\\,\\% - 20\\,\\% = 80\\,\\%$\n\n2. řádek: sleva: $20\\,\\%$ z $640 = 128$\n\n3. řádek: před slevou: $640 + 128 = 768$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) jedno procento: $640 : 100 = 6{,}4$ b) jedno procento: $640 : 80 = 8$ c) jedno procento: $640 : 20 = 32$\n\nC) Spočítej správný výsledek: ______ Kč"
+        "zadani": "Petr řešil úlohu\n\n*Mikina stojí po slevě $20\\,\\%$ celkem $720$ Kč. Kolik korun stála před slevou?*\n\na udělal jednu chybu.\n\n1. řádek: po slevě platí: $100\\,\\% - 20\\,\\% = 80\\,\\%$\n\n2. řádek: sleva: $20\\,\\%$ z $720 = 144$\n\n3. řádek: před slevou: $720 + 144 = 864$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) jedno procento: $720 : 100 = 7{,}2$ b) jedno procento: $720 : 80 = 9$ c) jedno procento: $720 : 20 = 36$\n\nC) Spočítej správný výsledek: ______ Kč"
       }
     },
     {
@@ -445,9 +445,9 @@
     }
   ],
   "kontrola": {
-    "jistota": "stredni",
-    "poznamka": "Autor přepočítal skriptem (Python, zlomky) a ověřil přes vyhodnotKrok. U1: 90 (9; 900), 35 % (14 %; 65 %; 0,35 %), 208 (312; 52; 240). U2: 640 : 80 · 100 = 800 (768 Petr; 660; 3 200 = 640 : 20 · 100); zkouška 800 − 160 = 640. U3: 6 000, sleva ze 6 000, 4 800 (k1 1 000; 4 000; 5 020. final 5 000; 7 200; 1 200). U4: 96 : 40 · 100 = 240 (38,4; 136; 2,4). Sporné: U2 k2 nahrazuje 2. řádek výpočtem jednoho procenta (oprava „sleva z 800“ by prozradila výsledek); U3 hodnotu 5 000 nese jen kód sleva-a-zdrazeni-se-vyrusi, postupne-procenta-secetl je jen v dlaždici kroku 2; U4 je hlavní úloha L2 v jiné situaci (kniha místo úspor).",
-    "zkontroloval": "autor",
+    "jistota": "jista",
+    "poznamka": "Recenze: vše přepočítáno skriptem (Python Fraction) a přes vyhodnotKrok. Oprava: U2 změněna cena po slevě z 640 Kč na 720 Kč (správně 900 Kč; Petr 864; 740; 3 600; oprava 720 : 80 = 9, distraktory 7,2 a 36), protože žebříček „Platí“ (640 : 80 · 100 = 800) prozrazoval výsledek detektiva; tahák, otočená role, tisk a „Zkouška pro vás“ (864 bez pětiny je asi 691) přepočítány. „Čte se“ u 0,35 v U1. U3 (6 000, 4 800) a U4 (240) beze změny.",
+    "zkontroloval": "recenzent",
     "datum": "2026-10-01"
   }
 }

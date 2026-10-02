@@ -1,0 +1,429 @@
+{
+  "id": "M8-T04-L4",
+  "faze": "osma",
+  "tyden": 4,
+  "poradi": 4,
+  "tema": "Kontrola: zlomky I",
+  "kapitola": "zlomky",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo zkrátí, porovná, sečte a odečte zlomky ve slovní úloze.",
+  "uvod_pro_rodice": "Dnes je kontrola celého tématu: krácení, porovnání, sčítání a odčítání zlomků.",
+  "uvod_pravidla": [
+    {
+      "znak": "$\\frac{9}{12} = \\frac{3}{4}$",
+      "text": "krátí se úplně"
+    },
+    {
+      "znak": "$\\frac{5}{6} > \\frac{3}{4}$",
+      "text": "porovnání na dvanáctinách"
+    },
+    {
+      "znak": "$1 - \\frac{5}{12} = \\frac{7}{12}$",
+      "text": "zbytek do celku"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T04-L4-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Zkrať na základní tvar: $\\frac{24}{36}$\n\nB) Které číslo je větší: $\\frac{2}{3}$, nebo $\\frac{3}{5}$?\n\nC) $\\frac{1}{2} + \\frac{1}{3}$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $\\frac{24}{36}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{12}{18}$",
+                "spravne": false,
+                "typ_chyby": "kratil-jen-castecne"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{2}{3}$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{4}{3}$",
+                "spravne": false,
+                "typ_chyby": "kratil-ruznym-cislem"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $\\frac{2}{3}$, nebo $\\frac{3}{5}$?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{3}{5}$",
+                "spravne": false,
+                "typ_chyby": "porovnal-podle-jmenovatele"
+              },
+              {
+                "id": "b",
+                "text": "jsou stejně velká",
+                "spravne": false,
+                "typ_chyby": "zlomek-na-desetinne-nepresne"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{2}{3}$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: $\\frac{1}{2} + \\frac{1}{3}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{5}{6}$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{2}{5}$",
+                "spravne": false,
+                "typ_chyby": "scital-citatele-i-jmenovatele"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{2}{6}$",
+                "spravne": false,
+                "typ_chyby": "neprepocital-citatel"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje tři dovednosti tématu: A krácení, B porovnání, C sčítání. Dítě jen vybírá. U B pomůže převod na patnáctiny. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $\\frac{24}{36}$\n\n$\\frac{24}{36} = \\frac{2}{3}$ (obojí děleno dvanácti)\n\n#### B) $\\frac{2}{3}$, nebo $\\frac{3}{5}$\n\n$\\frac{2}{3} = \\frac{10}{15}$, $\\frac{3}{5} = \\frac{9}{15}$ (převod na patnáctiny)\n\n$\\frac{10}{15} > \\frac{9}{15}$ (větší jsou dvě třetiny)\n\n#### C) $\\frac{1}{2} + \\frac{1}{3}$\n\n$\\frac{3}{6} + \\frac{2}{6} = \\frac{5}{6}$ (převod na šestiny, sčítají se čitatelé)\n\n**Výsledek:** A) $\\frac{2}{3}$, B) $\\frac{2}{3}$, C) $\\frac{5}{6}$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, spočítej na papíře: kterým největším číslem jde vydělit dvacet čtyři i třicet šest?“"
+          },
+          {
+            "k": "B",
+            "text": "„Neklikej, spočítej na papíře: kolik patnáctin jsou dvě třetiny a kolik tři pětiny?“"
+          },
+          {
+            "k": "C",
+            "text": "„Na jaké stejné díly převedeš polovinu i třetinu? Kolik takových dílů máš dohromady?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč dvanáct osmnáctin ještě není základní tvar.“",
+        "otocena_role_odpoved": "Protože dvanáct i osmnáct jde ještě vydělit šesti. Základní tvar je, až když čitatel a jmenovatel už nejde vydělit stejným číslem: dvě třetiny.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $\\frac{12}{18}$: krátí jen dvěma a skončí; $\\frac{4}{3}$: dělí nahoře a dole jiným číslem. Zeptejte se: „Jde to ještě zkrátit?“ (Ano, šesti.) U B $\\frac{3}{5}$: větší jmenovatel bere jako větší; „stejně velká“: zaokrouhlí obě na $0{,}6$. U C $\\frac{2}{5}$ nebo $\\frac{2}{6}$: sčítá bez převodu."
+      },
+      "semafor": {
+        "zelena": "Výborně — krácení, porovnání i sčítání sedí. Pochvalte, že u každého příkladu převádělo na stejné díly, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: zkrátit $\\frac{20}{30}$; které je větší, $\\frac{3}{4}$, nebo $\\frac{5}{7}$; a $\\frac{1}{4} + \\frac{1}{2}$. Kontrola pro vás: $\\frac{2}{3}$ (děleno deseti); větší je $\\frac{3}{4}$ ($\\frac{21}{28}$ proti $\\frac{20}{28}$); $\\frac{3}{4}$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 6 kostek nebo bonbonů. Zítra: „Celek je 6 kostek.“ Ať dítě odsune polovinu a k ní ještě třetinu. Zeptejte se: „Kolik kostek je odsunutých a jaká je to část ze šesti?“ Pak ať samo zapíše $\\frac{3}{6} + \\frac{2}{6} = \\frac{5}{6}$. Potom zopakujte lekci „Kontrola: zlomky I“. Kontrola pro vás: polovina 3, třetina 2, dohromady 5 kostek, tedy pět šestin."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Zkrať na základní tvar: $\\frac{24}{36}$ — a) $\\frac{12}{18}$ b) $\\frac{2}{3}$ c) $\\frac{4}{3}$\n\nB) Které číslo je větší: $\\frac{2}{3}$, nebo $\\frac{3}{5}$? — a) $\\frac{3}{5}$ b) jsou stejně velká c) $\\frac{2}{3}$\n\nC) $\\frac{1}{2} + \\frac{1}{3}$ — a) $\\frac{5}{6}$ b) $\\frac{2}{5}$ c) $\\frac{2}{6}$"
+      }
+    },
+    {
+      "id": "M8-T04-L4-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr počítal příklad\n\n$$\\frac{3}{4} + \\frac{7}{12}$$\n\na výsledek zapsal v základním tvaru. Udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $= \\frac{9}{12} + \\frac{7}{12}$\n\n2. řádek: $= \\frac{16}{12}$\n\n3. řádek: $= \\frac{8}{6}$, základní tvar",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$= \\frac{9}{12} + \\frac{7}{12}$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$= \\frac{16}{12}$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$= \\frac{8}{6}$, základní tvar",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek v základním tvaru",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{8}{6}$",
+                "spravne": false,
+                "typ_chyby": "kratil-jen-castecne"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{4}{6}$",
+                "spravne": false,
+                "typ_chyby": "upravil-jen-cast-zlomku"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{4}{3}$",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "$\\frac{8}{3}$",
+                "spravne": false,
+                "typ_chyby": "kratil-ruznym-cislem"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Sčítání má správně, chyba je v krácení: základní tvar je až zlomek, který už nejde zkrátit žádným číslem. Výsledek je víc než celek, to je v pořádku. Čte se: šestnáct dvanáctin, osm šestin, čtyři třetiny.",
+        "reseni": "Chyba je ve 3. řádku: Petr zkrátil jen dvěma a prohlásil výsledek za hotový, ale osm šestin jde zkrátit ještě dvěma.\n\n$\\frac{3}{4} = \\frac{9}{12}$ (obojí krát tři)\n\n$\\frac{9}{12} + \\frac{7}{12} = \\frac{16}{12}$ (sčítají se čitatelé)\n\n$\\frac{16}{12} = \\frac{4}{3}$ (obojí děleno čtyřmi)\n\nDlaždice $\\frac{4}{6}$ a $\\frac{8}{3}$ nesedí (první dělí jen čitatel, druhá dělí nahoře a dole jiným číslem)\n\n**Výsledek:** $\\frac{4}{3}$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co znamená základní tvar zlomku.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každého řádku zkontroluj: platí ta rovnost? A je poslední řádek opravdu hotový?“"
+          },
+          {
+            "k": "Výsledek",
+            "text": "„Tady máš začátek: šestnáct i dvanáct jde vydělit dvěma. Jde je vydělit i větším číslem?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč osm šestin ještě není hotový výsledek.“",
+        "otocena_role_odpoved": "Protože osm i šest jde ještě vydělit dvěma. Hotové je to až jako čtyři třetiny, ty už zkrátit nejdou. Rovnou to jde, když se šestnáct dvanáctin vydělí čtyřmi.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 1. nebo 2. řádek? Ty jsou správně. Zeptejte se: „Dá se osm šestin ještě zkrátit?“ (Ano, dvěma.) Výsledek $\\frac{8}{6}$: opíše Petra; $\\frac{4}{6}$: dělí jen čitatel; $\\frac{8}{3}$: dělí nahoře a dole jiným číslem."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že zlomek krátilo, dokud to šlo, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu: „Petr tvrdí: $\\frac{5}{12} + \\frac{1}{4} = \\frac{8}{12} = \\frac{4}{6}$, a to je základní tvar.“ Zeptejte se: „Má Petr pravdu?“ Kontrola pro vás: nemá; $\\frac{4}{6}$ jde zkrátit dvěma, správně $\\frac{2}{3}$ (nebo rovnou $\\frac{8}{12}$ děleno čtyřmi).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 12 kostek, 8 červených a 4 jiné. Zítra ať je dítě rozdělí na dvojice stejné barvy, pak na čtveřice. Zeptejte se: „Kolik čtveřic je červených a kolik všech?“ Pak ať samo zapíše $\\frac{8}{12} = \\frac{4}{6} = \\frac{2}{3}$. Potom zopakujte lekci „Kontrola: zlomky I“. Kontrola pro vás: dvojic 4 červené z 6, čtveřic 2 červené ze 3."
+      },
+      "tisk": {
+        "zadani": "Petr počítal příklad\n\n$$\\frac{3}{4} + \\frac{7}{12}$$\n\na výsledek zapsal v základním tvaru. Udělal jednu chybu.\n\n1. řádek: $= \\frac{9}{12} + \\frac{7}{12}$\n\n2. řádek: $= \\frac{16}{12}$\n\n3. řádek: $= \\frac{8}{6}$, základní tvar\n\nA) Zakroužkuj řádek s chybou.\n\nB) Výsledek v základním tvaru. Zakroužkuj: a) $\\frac{8}{6}$ b) $\\frac{4}{6}$ c) $\\frac{4}{3}$ d) $\\frac{8}{3}$"
+      }
+    },
+    {
+      "id": "M8-T04-L4-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Klára má s rodiči zahradu. Záhony zabírají $\\frac{2}{5}$ zahrady, trávník $\\frac{1}{4}$ zahrady a zbytek je ovocný sad.\n\na) Jakou část zahrady zabírá sad?\n\nb) Čeho je na zahradě nejvíc?\n\nc) O kolik je největší část zahrady větší než nejmenší?\n\nZlomky zapiš v základním tvaru.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Část zahrady, kterou zabírá sad",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 7,
+            "j": 20
+          },
+          "zname_chyby": [
+            {
+              "c": 2,
+              "j": 3,
+              "typ_chyby": "scital-citatele-i-jmenovatele"
+            },
+            {
+              "c": 17,
+              "j": 20,
+              "typ_chyby": "neprepocital-citatel"
+            },
+            {
+              "c": 13,
+              "j": 20,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        },
+        {
+          "id": "k2",
+          "popisek": "Čeho je na zahradě nejvíc?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "ovocného sadu",
+                "spravne": false,
+                "typ_chyby": "porovnal-podle-jmenovatele"
+              },
+              {
+                "id": "b",
+                "text": "záhonů",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "záhonů a trávníku stejně",
+                "spravne": false,
+                "typ_chyby": "porovnal-podle-rozdilu"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 3,
+            "j": 20
+          },
+          "zname_chyby": [
+            {
+              "c": 2,
+              "j": 5,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "c": 1,
+              "j": 10,
+              "typ_chyby": "porovnal-podle-jmenovatele"
+            },
+            {
+              "c": 1,
+              "j": 20,
+              "typ_chyby": "neprepocital-citatel"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Úloha spojuje sčítání, zbytek do celku a porovnání. Všechny tři části se nejlépe porovnají na dvacetinách. Pozor: zbytek nemusí být největší část. V části c) se od největší části odečítá nejmenší.",
+        "reseni": "$\\frac{2}{5} = \\frac{8}{20}$, $\\frac{1}{4} = \\frac{5}{20}$ (záhony a trávník na dvacetinách)\n\n$\\frac{8}{20} + \\frac{5}{20} = \\frac{13}{20}$ (záhony a trávník dohromady)\n\n$\\frac{20}{20} - \\frac{13}{20} = \\frac{7}{20}$ (sad, zbytek do celku)\n\n$\\frac{8}{20} > \\frac{7}{20} > \\frac{5}{20}$ (nejvíc je záhonů, nejméně trávníku)\n\n$\\frac{8}{20} - \\frac{5}{20} = \\frac{3}{20}$ (o kolik je záhonů víc než trávníku)\n\n**Výsledek:** a) $\\frac{7}{20}$, b) záhonů, c) o $\\frac{3}{20}$ zahrady",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, z jakých tří částí je zahrada a na co se úloha ptá.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Na jaké stejné díly převedeš pětiny i čtvrtiny? Kolik takových dílů má každá část zahrady?“"
+          },
+          {
+            "k": "Výsledek",
+            "text": "„Tady máš začátek: celá zahrada je dvacet dvacetin. Která část jich má nejvíc a která nejméně?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč ovocný sad není největší část, i když je to celý zbytek zahrady.“",
+        "otocena_role_odpoved": "Protože záhony a trávník dohromady zabírají třináct dvacetin, na sad zbývá jen sedm dvacetin. Záhony mají osm dvacetin, to je víc než sedm.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 $\\frac{2}{3}$: sčítá čitatele i jmenovatele; $\\frac{17}{20}$: nepřepočítá čitatele; $\\frac{13}{20}$: píše záhony s trávníkem. V kroku 2 sad: větší jmenovatel bere jako víc; „stejně“: počítá jen chybějící díly. Zeptejte se: „Kolik dvacetin má každá část?“ (Osm, pět, sedm.) Výsledek $\\frac{2}{5}$: píše velikost záhonů; $\\frac{1}{10}$: odečítá sad; $\\frac{1}{20}$: nepřepočítá čitatele."
+      },
+      "semafor": {
+        "zelena": "Výborně — celou slovní úlohu se zlomky zvládlo. Pochvalte, že všechny části převedlo na stejné díly, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Ema dala $\\frac{1}{2}$ kapesného za kino, $\\frac{1}{3}$ za sladkosti a zbytek ušetřila. Jakou část ušetřila a na co šlo nejméně?“ Kontrola pro vás: na šestiny, kino $\\frac{3}{6}$, sladkosti $\\frac{2}{6}$, ušetřila $\\frac{1}{6}$; nejméně jsou úspory.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 20 kostek nebo knoflíků. Zítra: „Celá zahrada je 20 kostek.“ Ať dítě odsune dvě pětiny jako záhony a čtvrtinu jako trávník; zbytek je sad. Zeptejte se: „Která hromádka je největší?“ Pak ať samo zapíše $\\frac{8}{20} + \\frac{5}{20} + \\frac{7}{20} = \\frac{20}{20}$. Potom zopakujte lekci „Kontrola: zlomky I“. Kontrola pro vás: záhony 8, trávník 5, sad 7 kostek, největší jsou záhony."
+      },
+      "tisk": {
+        "zadani": "Klára má s rodiči zahradu. Záhony zabírají $\\frac{2}{5}$ zahrady, trávník $\\frac{1}{4}$ zahrady a zbytek je ovocný sad.\n\na) Jakou část zahrady zabírá sad?\n\nb) Čeho je na zahradě nejvíc?\n\nc) O kolik je největší část zahrady větší než nejmenší?\n\nZlomky zapiš v základním tvaru.\n\na) Sad: ______ zahrady\n\nb) Čeho je nejvíc? Zakroužkuj: a) ovocného sadu b) záhonů c) záhonů a trávníku stejně\n\nc) Výsledek: o ______ zahrady"
+      }
+    },
+    {
+      "id": "M8-T04-L4-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Vypočítej a výsledek zapiš jako zlomek v základním tvaru:\n\n$$\\frac{7}{12} - \\frac{1}{4}$$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 1,
+            "j": 3
+          },
+          "zname_chyby": [
+            {
+              "c": 3,
+              "j": 4,
+              "typ_chyby": "scital-citatele-i-jmenovatele"
+            },
+            {
+              "c": 1,
+              "j": 2,
+              "typ_chyby": "neprepocital-citatel"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha celého tématu: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Barva této úlohy ukáže, jestli téma sedí. Výsledek se krátí až na základní tvar.",
+        "reseni": "$\\frac{1}{4} = \\frac{3}{12}$ (obojí krát tři)\n\n$\\frac{7}{12} - \\frac{3}{12} = \\frac{4}{12}$ (odčítají se čitatelé)\n\n$\\frac{4}{12} = \\frac{1}{3}$ (obojí děleno čtyřmi)\n\n**Výsledek:** $\\frac{1}{3}$",
+        "otazky": [
+          "„Přečti mi příklad nahlas. Na jaké díly je rozdělený celek v prvním a ve druhém zlomku?“",
+          "„Na jaké díly převedeš čtvrtinu, aby šla odečíst od dvanáctin?“",
+          "„Tady máš začátek: jedna čtvrtina jsou tři dvanáctiny. Kolik dvanáctin zbude a jak výsledek zkrátíš?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč nestačí odečíst sedm minus jedna a dvanáct minus čtyři.“",
+        "otocena_role_odpoved": "Protože odečítat se dají jen stejné díly. Čtvrtina jsou tři dvanáctiny, takže sedm dvanáctin bez tří dvanáctin jsou čtyři dvanáctiny, tedy jedna třetina.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání; když se dítě úplně zasekne, čtěte otázky 1–3. Po odevzdání se podívejte na obrazovku dítěte: $\\frac{3}{4}$ (nebo $\\frac{6}{8}$): odečítá zvlášť čitatele a zvlášť jmenovatele. Zeptejte se: „Jsou to stejné díly?“ (Ne.) $\\frac{1}{2}$ (nebo $\\frac{6}{12}$): nepřepočítá čitatele. $\\frac{4}{12}$ nebo $\\frac{2}{6}$ aplikace uzná a požádá o zkrácení. Semafor: opraví se samo = „Sám/sama“; po vaší otázce = „Potřeboval(a) otázku“; neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — téma zlomky I zvládá samo. Pochvalte, že převedlo na stejné díly a zkrátilo. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: $\\frac{5}{6} - \\frac{1}{2}$ a $\\frac{9}{10} - \\frac{2}{5}$. Ať nahlas řekne, na jaké díly převádí a jak výsledek zkrátí. Kontrola pro vás: $\\frac{5}{6} - \\frac{3}{6} = \\frac{2}{6} = \\frac{1}{3}$; $\\frac{9}{10} - \\frac{4}{10} = \\frac{5}{10} = \\frac{1}{2}$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 12 kostek nebo bonbonů. Zítra: „Celek je 12 kostek.“ Ať si dítě vezme 7 kostek a pak vrátí čtvrtinu celku. Zeptejte se: „Kolik kostek ti zbylo a jaká je to část z dvanácti?“ Pak ať samo zapíše $\\frac{7}{12} - \\frac{3}{12} = \\frac{4}{12} = \\frac{1}{3}$. Potom zopakujte lekci „Kontrola: zlomky I“. Kontrola pro vás: čtvrtina jsou 3 kostky, zbyly 4, tedy třetina."
+      },
+      "tisk": {
+        "zadani": "Vypočítej a výsledek zapiš jako zlomek v základním tvaru:\n\n$$\\frac{7}{12} - \\frac{1}{4}$$\n\nVýsledek: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "stredni",
+    "poznamka": "Autor 1. 10.: čísla a známé chyby přepočítány skriptem. Detektiv podle rozhodnutí vedoucího (ZADANI-OSMA §7 bod 8): final je dlaždice „Výsledek v základním tvaru“ s $\\frac{8}{6}$ = kratil-jen-castecne, krok k2 vynechán (byl by stejný jako final). Odchylka hlavní úlohy: osnova chce „které části je nejvíc a jak velká je“; velikost největší části by opakovala zadání ($\\frac{2}{5}$), proto final = o kolik je největší část větší než nejmenší ($\\frac{3}{20}$) a $\\frac{2}{5}$ je známá chyba odpovida-na-jinou-otazku. Čísla zvolena tak, aby zbytek (sad) nebyl největší. Sporné kódy: U1 B „stejně velká“ = zlomek-na-desetinne-nepresne ($\\frac{2}{3}$ i $\\frac{3}{5}$ zaokrouhleno na $0{,}6$); U3 k2 „záhonů a trávníku stejně“ = porovnal-podle-rozdilu (oběma chybí tři díly); U3 final $\\frac{1}{10}$ (sad minus trávník) = porovnal-podle-jmenovatele jako důsledek kroku 2.",
+    "zkontroloval": "autor",
+    "datum": "2026-10-01"
+  }
+}

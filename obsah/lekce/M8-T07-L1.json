@@ -1,0 +1,436 @@
+{
+  "id": "M8-T07-L1",
+  "faze": "osma",
+  "tyden": 7,
+  "poradi": 1,
+  "tema": "Úhly v trojúhelníku",
+  "kapitola": "geometrie",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě dopočítá vedlejší a vrcholový úhel a úhly v trojúhelníku a rovnoběžníku, i ve stupních a minutách.",
+  "uvod_pro_rodice": "Dnes jde o dopočítávání úhlů: co dají dva úhly dohromady na přímce, v trojúhelníku a v rovnoběžníku.",
+  "uvod_pravidla": [
+    {
+      "znak": "$65° + 115° = 180°$",
+      "text": "vedlejší úhly tvoří přímku"
+    },
+    {
+      "znak": "$50° + 60° + 70° = 180°$",
+      "text": "součet úhlů trojúhelníku"
+    },
+    {
+      "znak": "$1° = 60'$",
+      "text": "stupeň má šedesát minut"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka",
+    "pravítko"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T07-L1-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď. Obrázek je jen náčrt, úhly neměř.\n\nA) Přímky $p$ a $q$ se protínají. Jak velký je úhel $\\alpha$?\n\nB) Jak velký je úhel $\\beta$?\n\nC) Trojúhelník dole má úhly $50°$ a $70°$. Jak velký je úhel $\\gamma$?",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 300 320\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"20\" y1=\"75\" x2=\"280\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"288\" y=\"80\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\" font-style=\"italic\">p</text><line x1=\"179.6\" y1=\"11.6\" x2=\"120.4\" y2=\"138.4\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"187.6\" y=\"21.6\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\" font-style=\"italic\">q</text><path d=\"M174,75 A24,24 0 0 0 160.1,53.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"189.8\" y=\"57.2\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">65°</text><path d=\"M155.9,62.3 A14,14 0 0 0 136,75\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"133.9\" y=\"54.9\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">α</text><path d=\"M128,75 A22,22 0 0 0 140.7,94.9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"119.6\" y=\"99.6\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">β</text><polygon points=\"50,295 210,295 161.6,162\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M74,295 A24,24 0 0 0 65.4,276.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"92.7\" y=\"283\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">50°</text><path d=\"M201.8,272.4 A24,24 0 0 0 186,295\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"170.2\" y=\"277.2\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">70°</text><path d=\"M147.5,178.9 A22,22 0 0 0 169.1,182.7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"155\" y=\"204.7\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">γ</text></svg>",
+      "obrazek_popis": "Nahoře vodorovná přímka p a šikmá přímka q se protínají; vpravo nad p je úhel 65°, vlevo nad p úhel alfa (vedle 65°) a vlevo pod p úhel beta (naproti 65°); dole trojúhelník s úhly 50° vlevo, 70° vpravo a gama nahoře.",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: úhel $\\alpha$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$65°$",
+                "spravne": false,
+                "typ_chyby": "vedlejsi-vrcholovy-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$115°$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$25°$",
+                "spravne": false,
+                "typ_chyby": "doplnil-uhel-do-90"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: úhel $\\beta$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$65°$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$25°$",
+                "spravne": false,
+                "typ_chyby": "doplnil-uhel-do-90"
+              },
+              {
+                "id": "c",
+                "text": "$115°$",
+                "spravne": false,
+                "typ_chyby": "vedlejsi-vrcholovy-zamena"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: úhel $\\gamma$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$120°$",
+                "spravne": false,
+                "typ_chyby": "odpovida-na-jinou-otazku"
+              },
+              {
+                "id": "b",
+                "text": "$240°$",
+                "spravne": false,
+                "typ_chyby": "soucet-uhlu-trojuhelniku-spatne"
+              },
+              {
+                "id": "c",
+                "text": "$60°$",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá, počítá si na papíře. Vedlejší úhel leží vedle zadaného na stejné přímce, vrcholový naproti přes průsečík. Čte se: $\\alpha$ „alfa“, $\\beta$ „beta“, $\\gamma$ „gama“. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) úhel $\\alpha$\n\n$\\alpha = 180° - 65° = 115°$ (vedlejší úhly leží na přímce p, dohromady dají sto osmdesát stupňů)\n\n#### B) úhel $\\beta$\n\n$\\beta = 65°$ (vrcholový úhel naproti přes průsečík je stejně velký)\n\n#### C) úhel $\\gamma$\n\n$50° + 70° = 120°$ (dva zadané úhly)\n\n$\\gamma = 180° - 120° = 60°$ (úhly v trojúhelníku dají dohromady sto osmdesát stupňů)\n\n**Výsledek:** A) $115°$, B) $65°$, C) $60°$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, ukaž mi prstem přímku p. Které dva úhly na ní leží vedle sebe? Kolik stupňů má celá přímka?“"
+          },
+          {
+            "k": "B",
+            "text": "„Kde leží beta vzhledem k šedesáti pěti stupňům: vedle, nebo naproti přes průsečík? Co z toho plyne?“"
+          },
+          {
+            "k": "C",
+            "text": "„Neklikej, nejdřív na papír: kolik stupňů dají dohromady všechny tři úhly trojúhelníku? Kolik z nich je zadaných?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč úhel alfa nemá šedesát pět stupňů, když leží hned vedle.“",
+        "otocena_role_odpoved": "Alfa a šedesát pět stupňů leží vedle sebe na jedné přímce, dohromady dají sto osmdesát. Proto má alfa sto patnáct. Stejně velký je jen úhel naproti přes průsečík, beta.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $65°$ nebo u B $115°$: plete úhel vedle a naproti. Zeptejte se: „Je alfa ostrý, nebo tupý?“ (Tupý.) $25°$: „Je tu pravý úhel?“ (Není.) U C $240°$: „Kolik stupňů má trojúhelník?“ (Sto osmdesát.) $120°$ je jen součet dvou zadaných úhlů."
+      },
+      "semafor": {
+        "zelena": "Výborně — všechny tři úhly sedí. Pochvalte, že rozlišilo úhel vedle a úhel naproti, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Dvě přímky se protínají, jeden úhel má čtyřicet stupňů. Kolik má úhel vedle něj a kolik úhel naproti?“ Pak: „Trojúhelník má úhly třicet a sto stupňů. Kolik má třetí?“ Kontrola pro vás: vedle sto čtyřicet, naproti čtyřicet stupňů; třetí úhel padesát stupňů.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: dvě tužky a list papíru. Zítra ať dítě položí tužky přes sebe do písmene X na papír a úhly obkreslí. Zeptejte se: „Které dva úhly jsou stejně velké? Které dva dají dohromady rovnou čáru?“ Pak ať samo zapíše $180° - 40° = 140°$ pro úhel vedle čtyřiceti stupňů. Potom zopakujte lekci „Úhly v trojúhelníku“. Kontrola pro vás: stejné jsou úhly naproti sobě, dva vedle sebe dají $180°$."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď. Obrázek je jen náčrt, úhly neměř.\n\nA) Přímky $p$ a $q$ se protínají. Jak velký je úhel $\\alpha$? a) $65°$ b) $115°$ c) $25°$\n\nB) Jak velký je úhel $\\beta$? a) $65°$ b) $25°$ c) $115°$\n\nC) Trojúhelník dole má úhly $50°$ a $70°$. Jak velký je úhel $\\gamma$? a) $120°$ b) $240°$ c) $60°$"
+      }
+    },
+    {
+      "id": "M8-T07-L1-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Body $A$ a $B$ leží na přímce $p$. Obrázek je jen náčrt. Vypočítej velikost úhlu $\\gamma$ v trojúhelníku $ABC$.*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $\\alpha = 180° - 140° = 40°$\n\n2. řádek: $\\beta = 75°$\n\n3. řádek: $\\gamma = 180° - 40° - 75° = 65°$",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 320 225\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"10\" y1=\"190\" x2=\"310\" y2=\"190\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"300\" y=\"182\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\" font-style=\"italic\">p</text><polygon points=\"70,190 180,190 211.9,70.9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M83.8,178.4 A18,18 0 0 0 52,190\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"55\" y=\"158.2\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">140°</text><path d=\"M98,190 A28,28 0 0 0 91.4,172\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"111.8\" y=\"181.7\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">α</text><path d=\"M185.2,170.7 A20,20 0 0 0 160,190\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"158.1\" y=\"169.2\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">β</text><path d=\"M208,190 A28,28 0 0 0 187.2,163\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"220.5\" y=\"165.9\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">75°</text><path d=\"M193.5,86.4 A24,24 0 0 0 205.7,94.1\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"190.4\" y=\"109.9\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">γ</text><text x=\"70\" y=\"213\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">A</text><text x=\"180\" y=\"213\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">B</text><text x=\"211.9\" y=\"62.9\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">C</text></svg>",
+      "obrazek_popis": "Vodorovná přímka p s body A (vlevo) a B (vpravo) a trojúhelník ABC nad ní; u A je mezi přímkou p vlevo a stranou AC úhel 140°, uvnitř u A úhel alfa; u B je mezi přímkou p vpravo a stranou BC úhel 75°, uvnitř u B úhel beta; nahoře u C úhel gama.",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$\\alpha = 180° - 140° = 40°$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$\\beta = 75°$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$\\gamma = 180° - 40° - 75° = 65°$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\beta = 15°$",
+                "spravne": false,
+                "typ_chyby": "doplnil-uhel-do-90"
+              },
+              {
+                "id": "b",
+                "text": "$\\beta = 105°$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$\\beta = 35°$",
+                "spravne": false,
+                "typ_chyby": "odpovida-na-jinou-otazku"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "°"
+          },
+          "spravne": {
+            "hodnota": 35
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 65,
+              "typ_chyby": "vedlejsi-vrcholovy-zamena"
+            },
+            {
+              "hodnota": 215,
+              "typ_chyby": "soucet-uhlu-trojuhelniku-spatne"
+            },
+            {
+              "hodnota": 125,
+              "typ_chyby": "doplnil-uhel-do-90"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. V 1. řádku počítá úhel alfa u vrcholu A, ve 2. betu u vrcholu B a ve 3. dopočítá gamu. Chyba je jedna a řádek za ní je spočítaný dobře, jen se špatným číslem. Obrázek je náčrt: úhly se počítají, neměří.",
+        "reseni": "Chyba je ve 2. řádku: úhel $75°$ a úhel $\\beta$ leží vedle sebe na přímce p. Jsou to vedlejší úhly, ne vrcholové.\n\n$\\alpha = 180° - 140° = 40°$ (vedlejší úhel, tento řádek je správně)\n\n$\\beta = 180° - 75° = 105°$ (vedlejší úhel k sedmdesáti pěti stupňům)\n\n$\\gamma = 180° - 40° - 105° = 35°$ (úhly v trojúhelníku)\n\n$40° + 105° + 35° = 180°$ (zkouška)\n\nDlaždice $\\beta = 15°$ a $\\beta = 35°$ nesedí (první počítá do devadesáti, druhá je úhel gama)\n\n**Výsledek:** $35°$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Ukaž mi na obrázku úhel, který Petr hledá, a oba úhly, které jsou zadané.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každého Petrova řádku mi ukaž na obrázku úhel, se kterým Petr počítá.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: leží ty dva úhly vedle sebe na přímce, nebo naproti sobě přes vrchol?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč beta nemá sedmdesát pět stupňů.“",
+        "otocena_role_odpoved": "Beta a sedmdesát pět stupňů leží vedle sebe na přímce p, takže dají dohromady sto osmdesát. Beta má sto pět stupňů. Stejně velký by byl jen úhel naproti přes vrchol.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 1. řádek? Ten je správně. 3. řádek je jen důsledek. Výsledek $65°$: opíše Petra. Zeptejte se: „Je beta na obrázku tupý?“ (Ano.) V kroku 2 $15°$, výsledek $125°$: „Je tu pravý úhel?“ (Není.) $215°$: „Kolik stupňů má trojúhelník?“ (Sto osmdesát.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že u každého úhlu rozhodlo, jestli leží vedle, nebo naproti, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr tvrdí: úhel vedle úhlu šedesát stupňů má taky šedesát stupňů. Má pravdu? A kolik má úhel naproti přes vrchol?“ Kontrola pro vás: nemá, úhel vedle má sto dvacet stupňů; úhel naproti má šedesát stupňů.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: list papíru, pravítko a dvě pastelky. Zítra ať dítě podle pravítka nakreslí dvě čáry, které se kříží, a úhly naproti sobě vybarví stejnou barvou. Zeptejte se: „Které dva úhly dají dohromady rovnou čáru?“ Pak ať k jednomu úhlu napíše $50°$ a dopočítá zbylé tři. Potom zopakujte lekci „Úhly v trojúhelníku“. Kontrola pro vás: $50°$, $130°$, $50°$, $130°$."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\n*Body $A$ a $B$ leží na přímce $p$. Obrázek je jen náčrt. Vypočítej velikost úhlu $\\gamma$ v trojúhelníku $ABC$.*\n\na udělal jednu chybu.\n\n1. řádek: $\\alpha = 180° - 140° = 40°$\n\n2. řádek: $\\beta = 75°$\n\n3. řádek: $\\gamma = 180° - 40° - 75° = 65°$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $\\beta = 15°$ b) $\\beta = 105°$ c) $\\beta = 35°$\n\nC) Výsledek: $\\gamma =$ ______ °"
+      }
+    },
+    {
+      "id": "M8-T07-L1-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Ema vystřihla z papíru trojúhelník $ABC$. Úhel $\\alpha$ u vrcholu $A$ a úhel $\\beta$ u vrcholu $B$ změřila úhloměrem:\n\n$$\\alpha = 52°25', \\quad \\beta = 64°50'$$\n\nJak velký je úhel $\\gamma$ u vrcholu $C$? Zapiš zvlášť stupně a minuty.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Co potřebuješ zjistit nejdřív?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\alpha + \\beta = 116°75'$",
+                "spravne": false,
+                "typ_chyby": "stupne-minuty-po-stovkach"
+              },
+              {
+                "id": "b",
+                "text": "$\\alpha + \\beta = 117°15'$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$\\alpha + \\beta = 116{,}75°$",
+                "spravne": false,
+                "typ_chyby": "stupne-minuty-po-stovkach"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Výsledek: stupně",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "°"
+          },
+          "spravne": {
+            "hodnota": 62
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 63,
+              "typ_chyby": "stupne-minuty-po-stovkach"
+            },
+            {
+              "hodnota": 242,
+              "typ_chyby": "soucet-uhlu-trojuhelniku-spatne"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek: minuty",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "′"
+          },
+          "spravne": {
+            "hodnota": 45
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 85,
+              "typ_chyby": "stupne-minuty-po-stovkach"
+            },
+            {
+              "hodnota": 25,
+              "typ_chyby": "stupne-minuty-po-stovkach"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce. Úhly jsou ve stupních a minutách jako čas v hodinách a minutách: jeden stupeň má šedesát minut, ne sto. Čte se: $52°25'$ „padesát dva stupňů dvacet pět minut“. Výsledek dítě zapíše do dvou okének, zvlášť stupně a minuty. Správně je i odčítat od sto osmdesáti stupňů úhly postupně.",
+        "reseni": "$52°25' + 64°50' = 116°75'$ (sečtou se zvlášť stupně a zvlášť minuty)\n\n$116°75' = 117°15'$ (šedesát minut je jeden stupeň, zbude patnáct minut)\n\n$180° = 179°60'$ (jeden stupeň se rozmění na šedesát minut)\n\n$179°60' - 117°15' = 62°45'$ (odečtou se zvlášť stupně a zvlášť minuty)\n\n$52°25' + 64°50' + 62°45' = 180°$ (zkouška)\n\n**Výsledek:** $\\gamma = 62°45'$, tedy $62$ stupňů a $45$ minut",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, které úhly znáš a který hledáš. Kolik stupňů mají všechny tři dohromady?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Kolik minut má jeden stupeň? Když ti při sčítání vyjde víc minut, co s nimi uděláš?“"
+          },
+          {
+            "k": "Krok 2 a 3",
+            "text": "„Tady máš začátek: sto osmdesát stupňů je totéž co sto sedmdesát devět stupňů a šedesát minut. Co od toho odečteš?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč sto šestnáct stupňů a sedmdesát pět minut ještě není hotový zápis.“",
+        "otocena_role_odpoved": "Protože jeden stupeň má šedesát minut. Ze sedmdesáti pěti minut je jeden celý stupeň a zbude patnáct minut, takže je to sto sedmnáct stupňů a patnáct minut.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 $116°75'$ nebo $116{,}75°$, ve výsledku $63$ a $25$ nebo $62$ a $85$: počítá minuty po stovkách. Zeptejte se: „Kolik minut má jeden stupeň?“ (Šedesát.) Stupně $242$: „Kolik stupňů mají úhly trojúhelníku dohromady?“ (Sto osmdesát.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — stupně i minuty sedí. Pochvalte, že minuty převádělo po šedesáti, ne po stovce, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu $30°40' + 50°35'$ a pak $180° - 81°15'$. Ať u každého řekne, kolik vyšlo minut a jestli z nich vznikne celý stupeň. Kontrola pro vás: $81°15'$ (sedmdesát pět minut je stupeň a patnáct minut); $98°45'$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: hodiny s ručičkami (nebo hodiny v telefonu). Zítra se zeptejte: „Kolik je hodina a čtyřicet minut plus padesát minut?“ Ať dítě posouvá ručičky a řekne, kdy přejde celá hodina. Pak ať samo zapíše stejně u stupňů: $1°40' + 50' = 2°30'$. Potom zopakujte lekci „Úhly v trojúhelníku“. Kontrola pro vás: dvě hodiny třicet minut; stupně se převádějí také po šedesáti minutách."
+      },
+      "tisk": {
+        "zadani": "Ema vystřihla z papíru trojúhelník $ABC$. Úhel $\\alpha$ u vrcholu $A$ a úhel $\\beta$ u vrcholu $B$ změřila úhloměrem:\n\n$$\\alpha = 52°25', \\quad \\beta = 64°50'$$\n\nJak velký je úhel $\\gamma$ u vrcholu $C$? Zapiš zvlášť stupně a minuty.\n\nA) Co potřebuješ zjistit nejdřív? Zakroužkuj: a) $\\alpha + \\beta = 116°75'$ b) $\\alpha + \\beta = 117°15'$ c) $\\alpha + \\beta = 116{,}75°$\n\nB) Výsledek: $\\gamma =$ ______ ° ______ ′"
+      }
+    },
+    {
+      "id": "M8-T07-L1-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Rám zahradní branky má tvar rovnoběžníku $ABCD$. Úhel při vrcholu $A$ měří $68°$. Obrázek je jen náčrt.\n\nJak velký je úhel při vrcholu $B$?",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 320 180\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"40,150 240,150 281.2,48 81.2,48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M64,150 A24,24 0 0 0 49,127.7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"79\" y=\"130.9\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">68°</text><path d=\"M248.2,129.6 A22,22 0 0 0 218,150\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"218.8\" y=\"123.7\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">?</text><text x=\"36\" y=\"170\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">A</text><text x=\"244\" y=\"170\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">B</text><text x=\"287.2\" y=\"40\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">C</text><text x=\"75.2\" y=\"40\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">D</text></svg>",
+      "obrazek_popis": "Rovnoběžník ABCD skloněný doprava; u vrcholu A vlevo dole je úhel 68°, u vrcholu B vpravo dole je hledaný úhel označený otazníkem.",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "°"
+          },
+          "spravne": {
+            "hodnota": 112
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 68,
+              "typ_chyby": "rovnobeznik-uhly-zamena"
+            },
+            {
+              "hodnota": 22,
+              "typ_chyby": "doplnil-uhel-do-90"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. V rovnoběžníku jsou úhly naproti sobě stejné a dva úhly u jedné strany dají dohromady $180°$. Vrcholy A a B leží u stejné strany.",
+        "reseni": "úhel při $B$: $180° - 68° = 112°$ (úhly u jedné strany rovnoběžníku dají dohromady sto osmdesát stupňů)\n\n$68° + 112° + 68° + 112° = 360°$ (zkouška: úhly čtyřúhelníku dají tři sta šedesát stupňů)\n\n**Výsledek:** $112°$",
+        "otazky": [
+          "„Přečti mi úlohu nahlas a ukaž mi na obrázku vrcholy A a B. Leží u stejné strany?“",
+          "„Je úhel u vrcholu B na obrázku ostrý, nebo tupý? Co to říká o jeho velikosti?“",
+          "„Tady máš začátek: úhly u vrcholů A a B leží u jedné strany rovnoběžníku a dají dohromady sto osmdesát stupňů. Co dál?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč úhel u vrcholu B nemá taky šedesát osm stupňů.“",
+        "otocena_role_odpoved": "Šedesát osm stupňů má úhel naproti, u vrcholu C. Úhel u B leží vedle úhlu u A u stejné strany, spolu dají sto osmdesát, takže má sto dvanáct stupňů.",
+        "typicka_chyba": "Během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $68°$: plete úhel vedle a úhel naproti. Zeptejte se: „Je úhel u B na obrázku ostrý, nebo tupý?“ (Tupý.) $22°$: „Je tu pravý úhel?“ (Není.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — úhel v rovnoběžníku dopočítalo samo. Pochvalte, že zkontrolovalo, jestli je úhel ostrý, nebo tupý. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „V rovnoběžníku má jeden úhel sedmdesát stupňů. Kolik má úhel vedle něj u stejné strany a kolik úhel naproti?“ Ať to ukáže na rovnoběžníku nakresleném v sešitě. Kontrola pro vás: vedle sto deset stupňů, naproti sedmdesát stupňů.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: list papíru, pravítko a nůžky. Zítra ať dítě podle obou hran pravítka nakreslí pás a přes něj šikmou čáru, takže vznikne rovnoběžník. Ať ho vystřihne, odstřihne dva rohy u jedné strany a přiloží je k sobě špičkami. Zeptejte se: „Jakou čáru dají?“ Pak ať samo zapíše $180° - 60° = 120°$. Potom zopakujte lekci „Úhly v trojúhelníku“. Kontrola pro vás: dva rohy dají rovnou čáru, tedy $180°$."
+      },
+      "tisk": {
+        "zadani": "Rám zahradní branky má tvar rovnoběžníku $ABCD$. Úhel při vrcholu $A$ měří $68°$. Obrázek je jen náčrt.\n\nJak velký je úhel při vrcholu $B$?\n\nVýsledek: ______ °"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "stredni",
+    "poznamka": "Autor 1. 10. (přepočítáno skriptem): U1 180 − 65 = 115; vrcholový 65; 180 − 50 − 70 = 60 (120 součet, 240 = 360 − 120). U2 α = 40, β = 105, γ = 35 (65 = Petr, 215 = 360 − 145, 125 = s β 15). U3 52°25′ + 64°50′ = 117°15′, γ = 62°45′ (po stovkách 116°75′ → 63°25′, se správným součtem 62°85′; 360° → 242°45′). U4 180 − 68 = 112 (68, 22). Sporné: (1) žebříček „Platí“ má konkrétní čísla místo vzorců z osnovy (SABLONA §18); (2) U3 k1 třetí dlaždice $116{,}75°$ má stejný kód jako $116°75'$ (jiná podoba téže chyby); (3) U3 krok minut má jednotku „′“ (U+2032), ověřit zobrazení (OSNOVA §8 bod 10); (4) U2 k2 dlaždice $\\beta = 35°$ s kódem odpovida-na-jinou-otazku (je to úhel gama); (5) obrázky jsou náčrty s přibližně správnými úhly, ověřit vykreslení na telefonu.",
+    "zkontroloval": "autor",
+    "datum": "2026-10-01"
+  }
+}

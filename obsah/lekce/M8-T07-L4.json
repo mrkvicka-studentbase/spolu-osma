@@ -1,0 +1,435 @@
+{
+  "id": "M8-T07-L4",
+  "faze": "osma",
+  "tyden": 7,
+  "poradi": 4,
+  "tema": "Kontrola: úhly a útvary",
+  "kapitola": "geometrie",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo dopočítá úhel v útvaru, rozhodne o souměrnosti a spočítá obsah.",
+  "uvod_pro_rodice": "Dnes je kontrola celého tématu: úhly, souměrnost a obsah útvarů, dítě pracuje co nejvíc samo.",
+  "uvod_pravidla": [
+    {
+      "znak": "$65° + 115° = 180°$",
+      "text": "sousední úhly rovnoběžníku"
+    },
+    {
+      "znak": "osa, nebo střed",
+      "text": "osová, nebo středová"
+    },
+    {
+      "znak": "$S = \\frac{a \\cdot v_a}{2}$",
+      "text": "výška patří ke straně"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka",
+    "pravítko"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T07-L4-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Dva úhly trojúhelníku měří $48°$ a $67°$. Jak velký je třetí úhel?\n\nB) Kolik os souměrnosti má čtverec?\n\nC) Trojúhelník má strany $a = 12$ cm a $b = 8$ cm. Výška na stranu $a$ měří $5$ cm. Jaký má trojúhelník obsah?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: třetí úhel",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$115°$",
+                "spravne": false,
+                "typ_chyby": "odpovida-na-jinou-otazku"
+              },
+              {
+                "id": "b",
+                "text": "$65°$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$245°$",
+                "spravne": false,
+                "typ_chyby": "soucet-uhlu-trojuhelniku-spatne"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: osy čtverce",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$4$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$2$",
+                "spravne": false,
+                "typ_chyby": "pocet-os-spatne"
+              },
+              {
+                "id": "c",
+                "text": "$1$",
+                "spravne": false,
+                "typ_chyby": "pocet-os-spatne"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: obsah trojúhelníku",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$60\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "trojuhelnik-bez-deleni-dvema"
+              },
+              {
+                "id": "b",
+                "text": "$20\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "vyska-k-jine-strane"
+              },
+              {
+                "id": "c",
+                "text": "$30\\ \\text{cm}^2$",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá, počítá si na papíře. Příklady jsou ze všech tří lekcí tématu: úhly, souměrnost a obsah. Osa souměrnosti je čára, podle které jde útvar přeložit tak, že se půlky kryjí. Čte se: $v_a$ „vé a“, výška na stranu $a$. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) třetí úhel\n\n$180° - 48° - 67° = 65°$ (úhly v trojúhelníku dají sto osmdesát stupňů)\n\n#### B) osy čtverce\n\n$4$ osy (svislá, vodorovná a obě úhlopříčky)\n\n#### C) obsah trojúhelníku\n\n$\\frac{12 \\cdot 5}{2} = 30$ (strana a krát výška na ni, děleno dvěma; strana b se nepoužije)\n\n**Výsledek:** A) $65°$, B) $4$, C) $30\\ \\text{cm}^2$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, nejdřív na papír: kolik stupňů mají dohromady všechny tři úhly trojúhelníku? Kolik z nich znáš?“"
+          },
+          {
+            "k": "B",
+            "text": "„Nakresli si čtverec nebo vezmi čtvercový papírek. Podle kolika různých čar ho přeložíš, aby se půlky kryly?“"
+          },
+          {
+            "k": "C",
+            "text": "„Neklikej, nejdřív na papír: na kterou stranu dopadá výška pět centimetrů? Kterou stranu s ní vynásobíš?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč u trojúhelníku v příkladu C nepoužiješ stranu osm centimetrů.“",
+        "otocena_role_odpoved": "Výška pět centimetrů dopadá na stranu a, která měří dvanáct. Násobí se strana s výškou, která k ní patří, a u trojúhelníku se ještě dělí dvěma.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $245°$: „Kolik stupňů má trojúhelník?“ (Sto osmdesát.) $115°$ je jen součet zadaných úhlů. U B $2$ nebo $1$: zapomene na úhlopříčky. „Přeložíš čtverec i podle úhlopříčky?“ (Ano.) U C $60$: nedělí dvěma; $20$: jiná strana. „Na kterou stranu výška dopadá?“ (Na stranu a.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — všechny tři sedí. Pochvalte, že u každého příkladu poznalo, které pravidlo použít, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Trojúhelník má úhly třicet a osmdesát stupňů. Kolik má třetí?“ Pak: „Kolik os souměrnosti má obdélník?“ Pak: „Trojúhelník má stranu deset a výšku na ni čtyři centimetry. Jaký má obsah?“ Kontrola pro vás: sedmdesát stupňů; dvě osy; dvacet centimetrů čtverečních.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: čtvercový papírek (ubrousek) a pastelku. Zítra ať dítě papírek překládá tak, aby se půlky kryly, a každý přehyb obtáhne pastelkou. Zeptejte se: „Kolik různých přehybů je na papírku?“ Pak ať samo zapíše: čtverec má $4$ osy. Potom zopakujte lekci „Trojúhelník a souměrnost“. Kontrola pro vás: čtyři přehyby, dva středem stran a dva přes rohy."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Dva úhly trojúhelníku měří $48°$ a $67°$. Jak velký je třetí úhel? a) $115°$ b) $65°$ c) $245°$\n\nB) Kolik os souměrnosti má čtverec? a) $4$ b) $2$ c) $1$\n\nC) Trojúhelník má strany $a = 12$ cm a $b = 8$ cm. Výška na stranu $a$ měří $5$ cm. Jaký má trojúhelník obsah? a) $60\\ \\text{cm}^2$ b) $20\\ \\text{cm}^2$ c) $30\\ \\text{cm}^2$"
+      }
+    },
+    {
+      "id": "M8-T07-L4-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Vypočítej obsah rovnoběžníku na obrázku.*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $S = a \\cdot v_a$\n\n2. řádek: $S = 20 \\cdot 16$\n\n3. řádek: $S = 320\\ \\text{cm}^2$",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 390 200\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"80,170 280,170 370,50 170,50\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"170\" y1=\"50\" x2=\"170\" y2=\"170\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M178,170 L178,162 L170,162\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"280\" y1=\"170\" x2=\"152\" y2=\"74\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M158.4,78.8 L153.6,85.2 L147.2,80.4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"180\" y=\"190\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">a = 20 cm</text><text x=\"117\" y=\"110\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"end\">b = 15 cm</text><text x=\"176\" y=\"140\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">12 cm</text><text x=\"224\" y=\"110\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">16 cm</text></svg>",
+      "obrazek_popis": "Rovnoběžník se spodní stranou a = 20 cm a šikmou levou stranou b = 15 cm; čárkovaná výška 12 cm vede z horního levého vrcholu kolmo na stranu a, čárkovaná výška 16 cm vede z pravého dolního vrcholu kolmo na stranu b.",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$S = a \\cdot v_a$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$S = 20 \\cdot 16$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$S = 320\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$S = 20 \\cdot 12$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$S = 20 \\cdot 15$",
+                "spravne": false,
+                "typ_chyby": "vyska-jako-strana"
+              },
+              {
+                "id": "c",
+                "text": "$S = 15 \\cdot 12$",
+                "spravne": false,
+                "typ_chyby": "vyska-k-jine-strane"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm²"
+          },
+          "spravne": {
+            "hodnota": 240
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 320,
+              "typ_chyby": "vyska-k-jine-strane"
+            },
+            {
+              "hodnota": 180,
+              "typ_chyby": "vyska-k-jine-strane"
+            },
+            {
+              "hodnota": 300,
+              "typ_chyby": "vyska-jako-strana"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Na obrázku jsou dvě výšky a každá dopadá kolmo na jinou stranu. Ke straně $a$ patří výška, která dopadá na ni. Čte se: $v_a$ „vé a“, výška na stranu $a$. Chyba je jedna a řádek za ní je spočítaný dobře, jen se špatným číslem.",
+        "reseni": "Chyba je ve 2. řádku: výška $16$ cm dopadá kolmo na stranu $b$, ne na stranu $a$.\n\n$S = a \\cdot v_a$ (vzorec, tento řádek je správně)\n\n$S = 20 \\cdot 12$ (strana a a výška, která na ni dopadá)\n\n$S = 240\\ \\text{cm}^2$ (obsah)\n\n$15 \\cdot 16 = 240$ (zkouška druhou cestou: strana b a výška na ni)\n\nDlaždice $S = 20 \\cdot 15$ a $S = 15 \\cdot 12$ nesedí (první násobí dvě strany, druhá páruje výšku s jinou stranou)\n\n**Výsledek:** $240\\ \\text{cm}^2$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi, co Petr počítá. Ukaž mi na obrázku obě strany a obě výšky.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každého Petrova řádku mi ukaž na obrázku čísla, se kterými Petr počítá.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: dopadá ta výška kolmo právě na stranu, kterou Petr násobí?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč nenásobíš dvacet krát šestnáct.“",
+        "otocena_role_odpoved": "Výška šestnáct dopadá kolmo na šikmou stranu patnáct, ne na stranu dvacet. Ke straně dvacet patří výška dvanáct. Správně je i: patnáct krát šestnáct, vyjde taky dvě stě čtyřicet.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 1. řádek? Ten je správně. 3. řádek je jen důsledek. Výsledek $320$ nebo $180$: páruje výšku s jinou stranou. Zeptejte se: „Na kterou stranu výška šestnáct kolmo dopadá?“ (Na šikmou, patnáct.) $300$: násobí dvě strany. „Je šikmá strana výška?“ (Ne.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že ke každé straně hledalo její výšku, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Petr tvrdí: rovnoběžník se stranami osm a šest centimetrů a výškou čtyři centimetry na delší stranu má obsah dvacet čtyři centimetrů čtverečních. Má pravdu?“ Kontrola pro vás: nemá, výška čtyři patří ke straně osm, obsah je třicet dva centimetrů čtverečních.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: list papíru, pravítko a sešit. Zítra ať dítě nakreslí šikmý rovnoběžník a z horního rohu spustí podle rohu sešitu kolmou čáru na spodní stranu. Zeptejte se: „Na kterou stranu výška dopadá?“ Pak ať změří spodní stranu i výšku a samo zapíše obsah jako jejich součin. Potom zopakujte lekci „Obsah trojúhelníku a lichoběžníku“. Kontrola pro vás: násobí se spodní strana a kolmá čára, ne šikmá strana."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\n*Vypočítej obsah rovnoběžníku na obrázku.*\n\na udělal jednu chybu.\n\n1. řádek: $S = a \\cdot v_a$\n\n2. řádek: $S = 20 \\cdot 16$\n\n3. řádek: $S = 320\\ \\text{cm}^2$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $S = 20 \\cdot 12$ b) $S = 20 \\cdot 15$ c) $S = 15 \\cdot 12$\n\nC) Výsledek: $S =$ ______ cm²"
+      }
+    },
+    {
+      "id": "M8-T07-L4-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Honzíkova rodina má zahradu tvaru lichoběžníku $ABCD$, strany $AB$ a $CD$ jsou rovnoběžné. Obrázek je jen náčrt. Celou zahradu chtějí zatravnit, pokládka trávníku stojí $50$ Kč za $1\\ \\text{m}^2$.\n\nJak velký je úhel při vrcholu $D$, jaký obsah má zahrada a kolik bude stát trávník?",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"20,170 300,170 263.7,50 63.7,50\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"200\" y1=\"50\" x2=\"200\" y2=\"170\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M208,170 L208,162 L200,162\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><path d=\"M42,170 A22,22 0 0 0 27.5,149.3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"57.2\" y=\"148.2\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">70°</text><path d=\"M56.8,68.8 A20,20 0 0 0 83.7,50\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"82.8\" y=\"85.8\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">?</text><text x=\"160\" y=\"190\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">14 m</text><text x=\"163.7\" y=\"42\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">10 m</text><text x=\"206\" y=\"116\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">6 m</text><text x=\"14\" y=\"188\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">A</text><text x=\"306\" y=\"188\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">B</text><text x=\"271.7\" y=\"44\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">C</text><text x=\"55.7\" y=\"44\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">D</text></svg>",
+      "obrazek_popis": "Lichoběžník ABCD: dolní strana AB 14 m, horní strana DC 10 m, čárkovaná výška 6 m; u vrcholu A vlevo dole je úhel 70°, u vrcholu D vlevo nahoře je hledaný úhel označený otazníkem.",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Úhel při vrcholu $D$",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "°"
+          },
+          "spravne": {
+            "hodnota": 110
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 70,
+              "typ_chyby": "rovnobeznik-uhly-zamena"
+            },
+            {
+              "hodnota": 20,
+              "typ_chyby": "doplnil-uhel-do-90"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Obsah zahrady",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m²"
+          },
+          "spravne": {
+            "hodnota": 72
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 84,
+              "typ_chyby": "lichobeznik-jedna-zakladna"
+            },
+            {
+              "hodnota": 144,
+              "typ_chyby": "lichobeznik-jedna-zakladna"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek: cena trávníku",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 3600
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 4200,
+              "typ_chyby": "lichobeznik-jedna-zakladna"
+            },
+            {
+              "hodnota": 7200,
+              "typ_chyby": "lichobeznik-jedna-zakladna"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce, spojuje úhly a obsah. Úhly u vrcholů A a D leží u stejné šikmé strany mezi dvěma rovnoběžkami, proto dají dohromady $180°$. Obsah: polovina součtu rovnoběžných stran krát výška. Úhel do obsahu ani do ceny nevstupuje.",
+        "reseni": "$180° - 70° = 110°$ (úhly u jedné šikmé strany lichoběžníku dají sto osmdesát stupňů)\n\n$\\frac{14 + 10}{2} = 12$ (polovina součtu rovnoběžných stran)\n\n$12 \\cdot 6 = 72\\ \\text{m}^2$ (obsah zahrady)\n\n$72 \\cdot 50 = 3\\,600$ Kč (cena trávníku)\n\n**Výsledek:** úhel $110°$, obsah $72\\ \\text{m}^2$, cena $3\\,600$ Kč",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, na které tři věci se úloha ptá. Které údaje k nim potřebuješ?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Ukaž mi úhly u vrcholů A a D. Leží u stejné šikmé strany? Je úhel u D ostrý, nebo tupý?“"
+          },
+          {
+            "k": "Krok 2 a 3",
+            "text": "„Tady máš začátek: čtrnáct a deset je dohromady dvacet čtyři. Co s tím uděláš, aby vyšel obsah? A potom cena?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč úhel u vrcholu D nemá taky sedmdesát stupňů.“",
+        "otocena_role_odpoved": "Úhly u A a u D leží u stejné šikmé strany mezi dvěma rovnoběžnými stranami. Spolu dají sto osmdesát stupňů, takže úhel u D má sto deset. Na obrázku je tupý.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 $70°$: „Je úhel u D na obrázku ostrý, nebo tupý?“ (Tupý.) $20°$: „Je tu pravý úhel?“ (Není.) V kroku 2 $84$ nebo $144$, výsledek $4\\,200$ nebo $7\\,200$: bere jednu základnu nebo nedělí dvěma. „Kde je ve vzorci polovina?“ (Součet základen se dělí dvěma.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — hlavní úloha sedí. Pochvalte, že spojilo úhly i obsah a hlídalo, co patří ke které otázce, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: „Lichoběžník má rovnoběžné strany $12$ m a $8$ m, výšku $5$ m a u jedné šikmé strany úhel $65°$. Kolik má druhý úhel u téže strany a jaký je obsah?“ Kontrola pro vás: $115°$; polovina z dvaceti je deset, krát pět, $50$ metrů čtverečních.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: list papíru, pravítko a nůžky. Zítra ať dítě obtáhne obě hrany pravítka, přes vzniklý pás nakreslí šikmou čáru a pás vystřihne. Ať ho podél šikmé čáry rozstřihne a od jednoho dílu odstřihne oba rohy u šikmé čáry. Zeptejte se: „Jakou čáru dají rohy přiložené k sobě?“ Pak ať samo zapíše $180° - 70° = 110°$. Potom zopakujte lekci „Úhly v trojúhelníku“. Kontrola pro vás: rovnou čáru, tedy $180°$."
+      },
+      "tisk": {
+        "zadani": "Honzíkova rodina má zahradu tvaru lichoběžníku $ABCD$, strany $AB$ a $CD$ jsou rovnoběžné. Obrázek je jen náčrt. Celou zahradu chtějí zatravnit, pokládka trávníku stojí $50$ Kč za $1\\ \\text{m}^2$.\n\nJak velký je úhel při vrcholu $D$, jaký obsah má zahrada a kolik bude stát trávník?\n\nA) Úhel při vrcholu $D$: ______ °\n\nB) Obsah zahrady: ______ m²\n\nC) Cena trávníku: ______ Kč"
+      }
+    },
+    {
+      "id": "M8-T07-L4-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Adam vyrábí z kartonu trojúhelníkovou vlajku na závody. Strana $AB$ měří $14$ cm, strana $AC$ měří $10$ cm a výška na stranu $AB$ měří $8$ cm.\n\nJaký obsah má vlajka?",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"30,175 282,175 138,31\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"138\" y1=\"31\" x2=\"138\" y2=\"175\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M146,175 L146,167 L138,167\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"190\" y=\"194\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">14 cm</text><text x=\"78\" y=\"100\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"end\">10 cm</text><text x=\"144\" y=\"120\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">8 cm</text><text x=\"24\" y=\"194\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">A</text><text x=\"288\" y=\"194\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">B</text><text x=\"138\" y=\"23\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">C</text></svg>",
+      "obrazek_popis": "Trojúhelník ABC: spodní strana AB 14 cm, levá strana AC 10 cm a čárkovaná výška 8 cm z vrcholu C kolmo na stranu AB.",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm²"
+          },
+          "spravne": {
+            "hodnota": 56
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 112,
+              "typ_chyby": "trojuhelnik-bez-deleni-dvema"
+            },
+            {
+              "hodnota": 70,
+              "typ_chyby": "vyska-jako-strana"
+            },
+            {
+              "hodnota": 40,
+              "typ_chyby": "vyska-k-jine-strane"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Zadané jsou dvě strany a jedna výška. Použije se jen strana, na kterou výška kolmo dopadá; druhá strana je navíc.",
+        "reseni": "$14 \\cdot 8 = 112$ (obdélník se stejnou stranou a výškou)\n\n$112 : 2 = 56$ (trojúhelník je polovina; strana AC se nepoužije)\n\n**Výsledek:** $56\\ \\text{cm}^2$",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co o vlajce víš. Které údaje jsou strany a který je výška?“",
+          "„Ukaž mi na obrázku výšku. Na kterou stranu kolmo dopadá? Se kterou stranou ji tedy vynásobíš?“",
+          "„Tady máš začátek: obdélník se stranou čtrnáct a výškou osm má sto dvanáct centimetrů čtverečních. Jakou část z toho má trojúhelník?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč strana deset centimetrů do výpočtu nepatří.“",
+        "otocena_role_odpoved": "Výška osm centimetrů dopadá kolmo na stranu AB, která má čtrnáct. Násobí se strana s výškou, která k ní patří, a u trojúhelníku se dělí dvěma. Strana deset je navíc.",
+        "typicka_chyba": "Během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $112$: nedělí dvěma. Zeptejte se: „Kolik takových trojúhelníků dá obdélník?“ (Dva.) $70$: bere stranu deset jako výšku. „Která čára dopadá kolmo?“ (Výška osm.) $40$: páruje výšku se stranou deset. „Na kterou stranu výška dopadá?“ (Na AB.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — obsah trojúhelníku spočítalo samo. Pochvalte, že ke straně vybralo správnou výšku. Zítra můžete pokračovat dalším tématem.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: „Trojúhelník má strany $12$ cm a $9$ cm. Výška na stranu $12$ cm měří $6$ cm. Jaký má obsah?“ Ať řekne, kterou stranu použije a proč. Kontrola pro vás: dvanáct krát šest děleno dvěma, $36\\ \\text{cm}^2$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: čtverečkovaný papír, nůžky a pravítko. Zítra ať dítě nakreslí obdélník 6 čtverečků dlouhý a 4 vysoký a v něm trojúhelník: spodní strana obdélníku a špička na horní straně. Ať trojúhelník vystřihne a dva zbylé kousky na něj přiloží. Zeptejte se: „Kolik čtverečků má trojúhelník?“ Pak ať samo zapíše $\\frac{6 \\cdot 4}{2} = 12$. Potom zopakujte lekci „Obsah trojúhelníku a lichoběžníku“. Kontrola pro vás: zbytky ho přesně zakryjí, má 12 čtverečků."
+      },
+      "tisk": {
+        "zadani": "Adam vyrábí z kartonu trojúhelníkovou vlajku na závody. Strana $AB$ měří $14$ cm, strana $AC$ měří $10$ cm a výška na stranu $AB$ měří $8$ cm.\n\nJaký obsah má vlajka?\n\nVýsledek: ______ cm²"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "stredni",
+    "poznamka": "Autor 1. 10. (přepočítáno skriptem, obrázky ze stejných čísel): U1 180 − 48 − 67 = 65 (115, 245); čtverec 4 osy; 12 · 5 : 2 = 30 (60, 20 = 8 · 5 : 2). U2 sin úhlu 0,8: 20 · 12 = 15 · 16 = 240 (320 = Petr, 180, 300). U3 180 − 70 = 110 (70, 20); (14 + 10) : 2 · 6 = 72 (84 = 14 · 6, 144 bez dělení); 72 · 50 = 3 600 (4 200, 7 200); úhel u B vychází asi 73°, lichoběžník existuje. U4 14 · 8 : 2 = 56, strana AC 10 (pata výšky 6 cm od A) (112, 70, 40). Sporné: (1) U3 k1 používá kód rovnobeznik-uhly-zamena i pro lichoběžník (úhly u ramene; jiný kód není); (2) červené texty L4 odkazují na lekci tématu, kde je dovednost (L1–L3), ne na „Kontrola: úhly a útvary“; (3) U1 B dlaždice $1$ s kódem pocet-os-spatne je slabší distraktor; (4) U3 cena trávníku 50 Kč za m² je zjednodušená.",
+    "zkontroloval": "autor",
+    "datum": "2026-10-01"
+  }
+}

@@ -1,0 +1,439 @@
+{
+  "id": "M8-T05-L1",
+  "faze": "osma",
+  "tyden": 5,
+  "poradi": 1,
+  "tema": "Násobení, zlomek z čísla",
+  "kapitola": "zlomky",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě vynásobí zlomky (a předem zkrátí) a spočítá zlomek z čísla i ze zbytku.",
+  "uvod_pro_rodice": "Dnes jde o násobení zlomků a o zlomek z čísla: krátí se před násobením a část zbytku se počítá ze zbytku, ne z celku.",
+  "uvod_pravidla": [
+    {
+      "znak": "$\\frac{2}{3} \\cdot \\frac{9}{10}$",
+      "text": "před násobením krátit"
+    },
+    {
+      "znak": "$3 \\cdot \\frac{2}{5} = \\frac{6}{5}$",
+      "text": "číslo násobí jen čitatel"
+    },
+    {
+      "znak": "$\\frac{3}{4}$ z $40$ je $30$",
+      "text": "děleno dole, krát nahoře"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T05-L1-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) $\\frac{2}{3} \\cdot \\frac{3}{4}$\n\nB) $4 \\cdot \\frac{2}{9}$\n\nC) Kolik je $\\frac{3}{5}$ ze $45$?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $\\frac{2}{3} \\cdot \\frac{3}{4}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{1}{6}$",
+                "spravne": false,
+                "typ_chyby": "upravil-jen-cast-zlomku"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{72}{12}$",
+                "spravne": false,
+                "typ_chyby": "spolecny-jmenovatel-pri-nasobeni"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{1}{2}$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $4 \\cdot \\frac{2}{9}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{8}{9}$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{8}{36}$",
+                "spravne": false,
+                "typ_chyby": "cele-cislo-do-citatele-i-jmenovatele"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{72}{9}$",
+                "spravne": false,
+                "typ_chyby": "spolecny-jmenovatel-pri-nasobeni"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: $\\frac{3}{5}$ ze $45$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$9$",
+                "spravne": false,
+                "typ_chyby": "zlomek-z-cisla-jen-deleni"
+              },
+              {
+                "id": "b",
+                "text": "$27$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$75$",
+                "spravne": false,
+                "typ_chyby": "zlomek-z-cisla-obracene"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě tu jen vybírá z nabídky. U A a B jde o násobení: čitatel krát čitatel, jmenovatel krát jmenovatel, a co jde, se zkrátí předem. Celé číslo násobí jen čitatel. U C jde o zlomek z čísla. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $\\frac{2}{3} \\cdot \\frac{3}{4}$\n\n$= \\frac{2 \\cdot 3}{3 \\cdot 4}$ (čitatel krát čitatel, jmenovatel krát jmenovatel)\n\n$= \\frac{2}{4}$ (trojka nahoře i dole se zkrátí)\n\n$= \\frac{1}{2}$ (zkrácení dvěma)\n\n#### B) $4 \\cdot \\frac{2}{9}$\n\n$= \\frac{4 \\cdot 2}{9}$ (celé číslo násobí jen čitatel)\n\n$= \\frac{8}{9}$ (dílky zůstanou devítiny)\n\n#### C) $\\frac{3}{5}$ ze $45$\n\n$45 : 5 = 9$ (jedna pětina)\n\n$9 \\cdot 3 = 27$ (tři pětiny)\n\n**Výsledek:** A) $\\frac{1}{2}$, B) $\\frac{8}{9}$, C) $27$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, spočítej na papíře: co dostaneš, když vynásobíš čitatele spolu a jmenovatele spolu? Dá se něco zkrátit?“"
+          },
+          {
+            "k": "B",
+            "text": "„Představ si dvě devítiny čtyřikrát za sebou. Mění se tím velikost dílku, nebo jen počet dílků?“"
+          },
+          {
+            "k": "C",
+            "text": "„Na kolik stejných dílů rozdělíš čtyřicet pět? Kolik takových dílů pak vezmeš?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč čtyři krát dvě devítiny nejsou osm šestatřicetin.“",
+        "otocena_role_odpoved": "Čtyřka říká, kolikrát dvě devítiny vezmu. Dílky zůstanou devítiny, jen jich je osm. Osm šestatřicetin jsou jen dvě devítiny, tím by se nic nenásobilo.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U B $\\frac{8}{36}$: násobí čtyřkou i jmenovatel. Zeptejte se: „Jak velký je jeden dílek?“ (Pořád devítina.) $\\frac{72}{12}$, $\\frac{72}{9}$: hledá společného jmenovatele jako u sčítání. U A $\\frac{1}{6}$: trojku krátí jen nahoře. „Čím dělíš dole?“ (Taky třemi.) U C $9$, $75$: jen dělí, nebo obráceně."
+      },
+      "semafor": {
+        "zelena": "Výborně — násobení i zlomek z čísla sedí. Pochvalte, že u B nechalo jmenovatel beze změny, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu $3 \\cdot \\frac{2}{7}$, pak $\\frac{3}{4} \\cdot \\frac{2}{9}$ a $\\frac{2}{3}$ z $36$. Ať na papír spočítá a nahlas řekne, co vyšlo a co zkrátilo. Kontrola pro vás: $\\frac{6}{7}$; $\\frac{1}{6}$ (zkrátí se trojka s devítkou i dvojka se čtyřkou); $24$ (třetina je dvanáct, krát dvě).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 20 kostek, knoflíků nebo bonbonů. Zítra ať je dítě rozdělí na pět stejných hromádek a řekne, kolik je v jedné. Pak ať vezme tři hromádky a spočítá je. Pak ať samo zapíše $20 : 5 = 4$ a $4 \\cdot 3 = 12$. Potom zopakujte lekci „Násobení, zlomek z čísla“. Kontrola pro vás: v jedné hromádce 4, ve třech 12."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) $\\frac{2}{3} \\cdot \\frac{3}{4}$ — a) $\\frac{1}{6}$ b) $\\frac{72}{12}$ c) $\\frac{1}{2}$\n\nB) $4 \\cdot \\frac{2}{9}$ — a) $\\frac{8}{9}$ b) $\\frac{8}{36}$ c) $\\frac{72}{9}$\n\nC) Kolik je $\\frac{3}{5}$ ze $45$? — a) $9$ b) $27$ c) $75$"
+      }
+    },
+    {
+      "id": "M8-T05-L1-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Klára měla v mobilu $480$ fotek. Šestinu smazala, potom přesunula tři pětiny zbytku do počítače. Kolik fotek jí zůstalo v mobilu?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $\\frac{1}{6} \\cdot 480 = 80$\n\n2. řádek: $480 - 80 = 400$\n\n3. řádek: $\\frac{3}{5} \\cdot 480 = 288$\n\n4. řádek: $400 - 288 = 112$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$\\frac{1}{6} \\cdot 480 = 80$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$480 - 80 = 400$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$\\frac{3}{5} \\cdot 480 = 288$",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$400 - 288 = 112$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{3}{5} \\cdot 80 = 48$",
+                "spravne": false,
+                "typ_chyby": "zamenil-cast-a-zbytek"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{1}{5} \\cdot 400 = 80$",
+                "spravne": false,
+                "typ_chyby": "zlomek-z-cisla-jen-deleni"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{3}{5} \\cdot 400 = 240$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "fotek"
+          },
+          "spravne": {
+            "hodnota": 160
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 112,
+              "typ_chyby": "z-celku-misto-ze-zbytku"
+            },
+            {
+              "hodnota": 320,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            },
+            {
+              "hodnota": 240,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Jeho řádky jdou po sobě: smazané fotky, zbytek, přesunuté fotky, co zůstalo. Chyba je jedna a řádky za ní jsou spočítané dobře, jen se špatným číslem. Čte se: „tři pětiny krát čtyři sta osmdesát“, to je totéž jako tři pětiny ze čtyř set osmdesáti.",
+        "reseni": "Chyba je ve 3. řádku: Petr počítal tři pětiny ze všech $480$ fotek, přesouvaly se ale tři pětiny zbytku.\n\n$\\frac{1}{6} \\cdot 480 = 80$ (smazané fotky, šestina ze všech)\n\n$480 - 80 = 400$ (zbytek po smazání)\n\n$\\frac{3}{5} \\cdot 400 = 240$ (přesunuté fotky, tři pětiny zbytku)\n\n$400 - 240 = 160$ (fotky, které zůstaly v mobilu)\n\nDlaždice $\\frac{3}{5} \\cdot 80$ a $\\frac{1}{5} \\cdot 400$ nesedí (první bere smazané fotky místo zbytku, druhá je jen jedna pětina)\n\n**Výsledek:** $160$ fotek",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Klára s fotkami dělá a na co se úloha ptá.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky jeden po druhém. U každého řekni, co v něm Petr počítá: smazané fotky, zbytek, nebo přesunuté fotky?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: z kolika fotek se to počítá? Ze všech, nebo z těch, které po smazání zůstaly?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč Klára nepřesouvá tři pětiny ze všech fotek.“",
+        "otocena_role_odpoved": "Protože šestinu fotek už smazala a v mobilu jich zbylo jen čtyři sta. Tři pětiny se berou z těch čtyř set, takže přesune dvě stě čtyřicet fotek.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 4. řádek? Je jen důsledek: „Odkud je dvě stě osmdesát osm?“ (Ze 3. řádku.) 1. a 2. řádek jsou správně. Výsledek $112$: opíše Petra; $320$: jen vydělí pěti; $240$: přesunuté fotky. Zeptejte se: „Kolik fotek zůstalo po smazání?“ (Čtyři sta.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že u každého řádku hlídalo, z kolika fotek se počítá, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Petr má $60$ kuliček. Třetinu rozdá, pak polovinu zbytku. Tvrdí, že podruhé rozdá $30$ kuliček.“ Zeptejte se: „Má Petr pravdu? Kde se spletl?“ Kontrola pro vás: nemá, polovinu vzal ze všech $60$; zbytek je $40$, podruhé rozdá $20$ kuliček.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 15 kostek nebo knoflíků jako fotky. Zítra: „Máš 15 fotek. Třetinu smažeš, pak dvě pětiny zbytku přesuneš.“ Ať dítě kostky opravdu odebírá a řekne, kolik smaže, kolik přesune a kolik zůstane. Pak ať samo zapíše $15 : 3 = 5$, $15 - 5 = 10$, $10 : 5 \\cdot 2 = 4$. Potom zopakujte lekci „Násobení, zlomek z čísla“. Kontrola pro vás: smaže 5, přesune 4, zůstane 6."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\nKlára měla v mobilu $480$ fotek. Šestinu smazala, potom přesunula tři pětiny zbytku do počítače. Kolik fotek jí zůstalo v mobilu?\n\na udělal jednu chybu.\n\n1. řádek: $\\frac{1}{6} \\cdot 480 = 80$\n\n2. řádek: $480 - 80 = 400$\n\n3. řádek: $\\frac{3}{5} \\cdot 480 = 288$\n\n4. řádek: $400 - 288 = 112$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $\\frac{3}{5} \\cdot 80 = 48$ b) $\\frac{1}{5} \\cdot 400 = 80$ c) $\\frac{3}{5} \\cdot 400 = 240$\n\nC) Kolik fotek Kláře opravdu zůstalo? ______ fotek"
+      }
+    },
+    {
+      "id": "M8-T05-L1-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Ema jede s rodiči na chatu. Celá cesta měří $60$ km. Vlakem jedou $\\frac{5}{6}$ cesty, autobusem $\\frac{3}{5}$ zbytku a zbytek jdou pěšky.\n\nKolik kilometrů jedou vlakem, kolik autobusem a kolik kilometrů jdou pěšky?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Mezivýsledek: vlakem",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "km"
+          },
+          "spravne": {
+            "hodnota": 50
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 10,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            },
+            {
+              "hodnota": 72,
+              "typ_chyby": "zlomek-z-cisla-obracene"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: autobusem",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "km"
+          },
+          "spravne": {
+            "hodnota": 6
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 36,
+              "typ_chyby": "z-celku-misto-ze-zbytku"
+            },
+            {
+              "hodnota": 2,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            },
+            {
+              "hodnota": 30,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek: pěšky",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "km"
+          },
+          "spravne": {
+            "hodnota": 4
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 8,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            },
+            {
+              "hodnota": 6,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce: dítě zadá tři čísla, pro vlak, autobus a cestu pěšky. Past je slovo „zbytku“: tři pětiny se neberou z celé cesty, ale z toho, co zbude po vlaku. Pěšky jde rodina to, co zbude po autobusu.",
+        "reseni": "$60 : 6 = 10$ (jedna šestina cesty)\n\n$10 \\cdot 5 = 50$ (vlakem, pět šestin)\n\n$60 - 50 = 10$ (zbytek po vlaku)\n\n$\\frac{3}{5} \\cdot 10 = 6$ (autobusem, tři pětiny zbytku)\n\n$10 - 6 = 4$ (pěšky, co zbude po autobusu)\n\n$50 + 6 + 4 = 60$ (zkouška, části dají celou cestu)\n\n**Výsledek:** vlakem $50$ km, autobusem $6$ km, pěšky $4$ km",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, jak Ema cestuje. Na kolik částí se cesta dělí?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Tři pětiny zbytku: zbytek čeho to je? Kolik kilometrů zbude, když odečteš cestu vlakem?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: jedna šestina ze šedesáti kilometrů je deset. Co spočítáš dál a z jakého čísla?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč autobusem nejedou tři pětiny ze šedesáti kilometrů.“",
+        "otocena_role_odpoved": "Protože tři pětiny se berou ze zbytku. Vlakem už ujedou padesát kilometrů, zbude deset a autobusem jedou tři pětiny z těch deseti, tedy šest kilometrů.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Krok 2 $36$: bere z celé cesty. Zeptejte se: „Kolik kilometrů zbylo po vlaku?“ (Deset.) $10$, $2$ nebo $8$: jen vydělí; $72$: obráceně. „Kolik dílů bereš?“ (Pět, v kroku 2 tři.) $30$ nebo výsledek $6$: jiná část cesty. „Na kterou část se krok ptá?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — všechny tři části cesty sedí. Pochvalte, že tři pětiny počítalo ze zbytku, ne z celé cesty, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu úlohu: „Stuha má $90$ cm. Třetinu odstřihneme, pak dvě pětiny zbytku. Kolik cm zbude?“ Ať na papír spočítá a nahlas řekne první kus, zbytek, druhý kus a co zbude. Kontrola pro vás: $30$ cm, $60$ cm, $24$ cm, zbude $36$ cm.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 24 kostek nebo knoflíků jako 24 km cesty. Zítra ať je dítě rozdělí na čtyři hromádky a tři odsune jako vlak. Ze zbytku ať odsune dvě třetiny jako autobus. Pak ať samo zapíše $24 : 4 \\cdot 3 = 18$, $24 - 18 = 6$, $6 : 3 \\cdot 2 = 4$. Potom zopakujte lekci „Násobení, zlomek z čísla“. Kontrola pro vás: vlak 18, autobus 4, pěšky 2."
+      },
+      "tisk": {
+        "zadani": "Ema jede s rodiči na chatu. Celá cesta měří $60$ km. Vlakem jedou $\\frac{5}{6}$ cesty, autobusem $\\frac{3}{5}$ zbytku a zbytek jdou pěšky.\n\nKolik kilometrů jedou vlakem, kolik autobusem a kolik kilometrů jdou pěšky?\n\nA) Vlakem: ______ km\n\nB) Autobusem: ______ km\n\nC) Pěšky: ______ km"
+      }
+    },
+    {
+      "id": "M8-T05-L1-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Lucka dostala k narozeninám $900$ Kč. Třetinu utratila za lístek na koncert a ze zbytku dala $\\frac{3}{4}$ do kasičky.\n\nKolik korun dala Lucka do kasičky?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 450
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 675,
+              "typ_chyby": "z-celku-misto-ze-zbytku"
+            },
+            {
+              "hodnota": 150,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            },
+            {
+              "hodnota": 225,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Úloha se ptá na peníze v kasičce, ne na to, kolik Lucce zbylo.",
+        "reseni": "$900 : 3 = 300$ (lístek, třetina ze všech peněz)\n\n$900 - 300 = 600$ (zbytek po lístku)\n\n$600 : 4 = 150$ (čtvrtina zbytku)\n\n$150 \\cdot 3 = 450$ (kasička, tři čtvrtiny zbytku)\n\n**Výsledek:** $450$ Kč",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co Lucka s penězi dělá a na co se úloha ptá.“",
+          "„Co spočítáš jako první? Z jakých peněz se pak berou tři čtvrtiny?“",
+          "„Tady máš začátek: třetina z devíti set je tři sta. Kolik korun zbude? A kolik jsou z toho tři čtvrtiny?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč do kasičky nejdou tři čtvrtiny z devíti set korun.“",
+        "otocena_role_odpoved": "Protože tři sta korun už Lucka utratila za lístek. Tři čtvrtiny se berou jen ze zbytku, tedy ze šesti set korun, a to je čtyři sta padesát.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $675$: tři čtvrtiny bere ze všech peněz. Zeptejte se: „Kolik korun zbylo po lístku?“ (Šest set.) $150$: jen vydělí čtyřmi. „Kolik čtvrtin jde do kasičky?“ (Tři.) $225$: bere tři čtvrtiny z ceny lístku. „Z jakých peněz se počítá?“ (Ze zbytku.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — zlomek ze zbytku zvládá samo. Pochvalte, že si nejdřív spočítalo zbytek. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Ve třídě je $28$ dětí. Čtvrtina jede na hory, dvě třetiny zbytku k moři. Kolik dětí jede k moři?“ Ať na papír spočítá a nahlas řekne, kolik jede na hory, kolik zbylo a kolik jede k moři. Kontrola pro vás: na hory $7$, zbylo $21$, k moři $14$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 12 mincí nebo knoflíků jako koruny. Zítra: „Máš 12 korun. Třetinu utratíš, ze zbytku dáš tři čtvrtiny do kasičky.“ Ať dítě mince opravdu odsouvá a řekne, kolik utratí, kolik zbude a kolik dá do kasičky. Pak ať samo zapíše $12 : 3 = 4$, $12 - 4 = 8$, $8 : 4 \\cdot 3 = 6$. Potom zopakujte lekci „Násobení, zlomek z čísla“. Kontrola pro vás: utratí 4, zbude 8, do kasičky 6."
+      },
+      "tisk": {
+        "zadani": "Lucka dostala k narozeninám $900$ Kč. Třetinu utratila za lístek na koncert a ze zbytku dala $\\frac{3}{4}$ do kasičky.\n\nKolik korun dala Lucka do kasičky?\n\nVýsledek: ______ Kč"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "stredni",
+    "poznamka": "Autor 1. 10. (čísla ověřena skriptem): U1 $\\frac{1}{2}$ ($\\frac{1}{6}$, $\\frac{72}{12}$); $\\frac{8}{9}$ ($\\frac{8}{36}$, $\\frac{72}{9}$); 27 (9, 75). U2 480 → 80 → 400 → 240 → 160 (112, 320, 240). U3 60 km: 50, 10, 6, 4 (k1 10, 72; k2 36, 2, 30; final 8, 6). U4 900 → 300 → 600 → 450 (675, 150, 225). Sporné: 1) U1 A $\\frac{1}{6}$ kódováno upravil-jen-cast-zlomku (trojka zkrácená jen v čitateli) — kód je z krácení, tady krácení před násobením. 2) Distraktory $\\frac{72}{12}$ a $\\frac{72}{9}$ (spolecny-jmenovatel-pri-nasobeni) jsou zapsané nezkrácené, jak je dítě napíše; jsou nejdelší dlaždice. 3) U3 proti osnově jiné zlomky ($\\frac{5}{6}$ vlakem, $\\frac{3}{5}$ zbytku autobusem, 4 km pěšky): u $\\frac{3}{8}$ a $\\frac{2}{5}$ vychází pěšky stejně jako vlakem a chůze je přes čtvrtinu cesty. Chyba z celku vede ve výsledku na záporné číslo, proto je zachycená jen v kroku 2. 4) U1 C čísla 45 místo 35 (u 35 obrácený výpočet nevyjde celé číslo).",
+    "zkontroloval": "autor",
+    "datum": "2026-10-01"
+  }
+}

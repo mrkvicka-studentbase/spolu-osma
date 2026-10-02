@@ -1,0 +1,482 @@
+{
+  "id": "M8-T05-L3",
+  "faze": "osma",
+  "tyden": 5,
+  "poradi": 3,
+  "tema": "Smíšená čísla",
+  "kapitola": "zlomky",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě převede smíšené číslo na zlomek a zpět a počítá s ním bez chyby v celé části.",
+  "uvod_pro_rodice": "Dnes jde o smíšená čísla: před počítáním se převedou na zlomek a výsledek se převede zpět.",
+  "uvod_pravidla": [
+    {
+      "znak": "$2\\frac{1}{3} = \\frac{7}{3}$",
+      "text": "dvě celé: šest třetin"
+    },
+    {
+      "znak": "$\\frac{17}{5} = 3\\frac{2}{5}$",
+      "text": "zbytek zůstane nahoře"
+    },
+    {
+      "znak": "$1\\frac{1}{2} \\cdot 1\\frac{1}{3}$",
+      "text": "nejdřív převod na zlomky"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T05-L3-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Zapiš $3\\frac{1}{4}$ jako zlomek.\n\nB) Zapiš $\\frac{23}{6}$ jako smíšené číslo.\n\nC) $2 - \\frac{3}{4}$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $3\\frac{1}{4}$ jako zlomek",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{4}{4}$",
+                "spravne": false,
+                "typ_chyby": "smisene-scital-celou-cast"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{13}{12}$",
+                "spravne": false,
+                "typ_chyby": "smisene-zmenil-jmenovatel"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{13}{4}$",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "$\\frac{3}{4}$",
+                "spravne": false,
+                "typ_chyby": "smisene-jako-soucin"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $\\frac{23}{6}$ jako smíšené číslo",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$3\\frac{5}{6}$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$3\\frac{5}{23}$",
+                "spravne": false,
+                "typ_chyby": "smisene-zpet-spatne"
+              },
+              {
+                "id": "c",
+                "text": "$5\\frac{3}{6}$",
+                "spravne": false,
+                "typ_chyby": "smisene-zpet-spatne"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: $2 - \\frac{3}{4}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$1\\frac{3}{4}$",
+                "spravne": false,
+                "typ_chyby": "odcital-zlomek-od-celeho-spatne"
+              },
+              {
+                "id": "b",
+                "text": "$2\\frac{3}{4}$",
+                "spravne": false,
+                "typ_chyby": "smisene-odcitani-po-castech"
+              },
+              {
+                "id": "c",
+                "text": "$1\\frac{1}{4}$",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá. Smíšené číslo $3\\frac{1}{4}$ znamená tři celé a k tomu jedna čtvrtina, ne tři krát čtvrtina. Čte se: „tři celé a jedna čtvrtina“. U C se jedna celá rozmění na čtvrtiny. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $3\\frac{1}{4}$ jako zlomek\n\n$3 \\cdot 4 = 12$ (tři celé jsou dvanáct čtvrtin)\n\n$12 + 1 = 13$ (k tomu jedna čtvrtina)\n\n$3\\frac{1}{4} = \\frac{13}{4}$ (jmenovatel zůstává)\n\n#### B) $\\frac{23}{6}$ jako smíšené číslo\n\n$23 : 6 = 3$, zbytek $5$ (šestka se vejde třikrát, pět šestin zbude)\n\n$\\frac{23}{6} = 3\\frac{5}{6}$ (zbytek zůstane nahoře)\n\n#### C) $2 - \\frac{3}{4}$\n\n$2 = 1\\frac{4}{4}$ (jedna celá se rozmění na čtyři čtvrtiny)\n\n$1\\frac{4}{4} - \\frac{3}{4} = 1\\frac{1}{4}$ (odečtou se čtvrtiny)\n\n**Výsledek:** A) $\\frac{13}{4}$, B) $3\\frac{5}{6}$, C) $1\\frac{1}{4}$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Kolik čtvrtin je v jedné celé? A kolik ve třech celých? Nezapomeň na tu jednu čtvrtinu navíc.“"
+          },
+          {
+            "k": "B",
+            "text": "„Neklikej, spočítej na papíře: kolikrát se šestka vejde do dvaceti tří? Kolik zbude?“"
+          },
+          {
+            "k": "C",
+            "text": "„Kolik čtvrtin je jedna celá? Rozměň jednu celou na čtvrtiny a pak tři čtvrtiny uber.“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč tři celé a jedna čtvrtina nejsou čtyři čtvrtiny.“",
+        "otocena_role_odpoved": "Čtyři čtvrtiny jsou jen jedna celá. Každá celá má čtyři čtvrtiny, takže tři celé jsou dvanáct čtvrtin a s tou jednou je to třináct čtvrtin.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $\\frac{4}{4}$, $\\frac{3}{4}$, $\\frac{13}{12}$: sčítá, násobí, nebo mění jmenovatel. Zeptejte se: „Kolik čtvrtin mají tři celé?“ (Dvanáct.) U B $3\\frac{5}{23}$, $5\\frac{3}{6}$: zbytek dá jinam. „Kolik šestin zbude?“ (Pět.) U C $1\\frac{3}{4}$, $2\\frac{3}{4}$: nerozmění celou. „Kolik čtvrtin je jedna celá?“ (Čtyři.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — převody tam i zpět sedí. Pochvalte, že počítalo čtvrtiny a šestiny v celých, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu $2\\frac{2}{5}$, $\\frac{19}{4}$ a $3 - \\frac{2}{3}$. Ať první zapíše jako zlomek, druhé jako smíšené číslo, třetí spočítá a nahlas řekne, jak. Kontrola pro vás: $\\frac{12}{5}$ (deset pětin a dvě); $4\\frac{3}{4}$ (čtyři celé, zbytek tři); $2\\frac{1}{3}$ (jedna celá jsou tři třetiny).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 3 listy papíru a nůžky. Zítra ať dítě každý list rozstřihne na čtyři stejné díly a řekne, kolik čtvrtin má. Pak ať jednu čtvrtinu odloží. Zeptejte se: „Kolik celých listů z toho složíš a kolik čtvrtin zbude?“ Pak ať samo zapíše $3 = \\frac{12}{4}$ a $3 - \\frac{1}{4} = 2\\frac{3}{4}$. Potom zopakujte lekci „Smíšená čísla“. Kontrola pro vás: 12 čtvrtin; zbudou 2 celé listy a 3 čtvrtiny."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Zapiš $3\\frac{1}{4}$ jako zlomek. — a) $\\frac{4}{4}$ b) $\\frac{13}{12}$ c) $\\frac{13}{4}$ d) $\\frac{3}{4}$\n\nB) Zapiš $\\frac{23}{6}$ jako smíšené číslo. — a) $3\\frac{5}{6}$ b) $3\\frac{5}{23}$ c) $5\\frac{3}{6}$\n\nC) $2 - \\frac{3}{4}$ — a) $1\\frac{3}{4}$ b) $2\\frac{3}{4}$ c) $1\\frac{1}{4}$"
+      }
+    },
+    {
+      "id": "M8-T05-L3-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr počítal příklad\n\n$$4\\frac{1}{3} - 1\\frac{3}{4}$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $= 4\\frac{4}{12} - 1\\frac{9}{12}$\n\n2. řádek: $= (4 - 1) + (\\frac{9}{12} - \\frac{4}{12})$\n\n3. řádek: $= 3 + \\frac{5}{12}$\n\n4. řádek: $= 3\\frac{5}{12}$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$= 4\\frac{4}{12} - 1\\frac{9}{12}$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$= (4 - 1) + (\\frac{9}{12} - \\frac{4}{12})$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$= 3 + \\frac{5}{12}$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$= 3\\frac{5}{12}$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$= \\frac{8}{12} - \\frac{10}{12}$",
+                "spravne": false,
+                "typ_chyby": "smisene-scital-celou-cast"
+              },
+              {
+                "id": "b",
+                "text": "$= \\frac{52}{12} - \\frac{21}{12}$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$= \\frac{16}{12} - \\frac{9}{12}$",
+                "spravne": false,
+                "typ_chyby": "smisene-jako-soucin"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "smisene"
+          },
+          "spravne": {
+            "cela": 2,
+            "c": 7,
+            "j": 12
+          },
+          "zname_chyby": [
+            {
+              "cela": 3,
+              "c": 5,
+              "j": 12,
+              "typ_chyby": "smisene-odcitani-po-castech"
+            },
+            {
+              "cela": 0,
+              "c": 7,
+              "j": 12,
+              "typ_chyby": "smisene-jako-soucin"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Čte se: „čtyři celé a jedna třetina minus jedna celá a tři čtvrtiny“. Past: od čtyř dvanáctin nejde odečíst devět dvanáctin, proto nejde jen odečíst zvlášť celé a zvlášť zlomky. Chyba je jedna a řádky za ní jsou spočítané dobře, jen se špatným číslem.",
+        "reseni": "Chyba je ve 2. řádku: Petr odečetl zvlášť celé a zvlášť zlomky a u zlomků prohodil pořadí, aby mu to vyšlo.\n\n$= 4\\frac{4}{12} - 1\\frac{9}{12}$ (oba zlomky na dvanáctinách)\n\n$= \\frac{52}{12} - \\frac{21}{12}$ (převod na zlomky: čtyři celé jsou čtyřicet osm dvanáctin a čtyři navíc)\n\n$= \\frac{31}{12}$ (odčítání čitatelů)\n\n$= 2\\frac{7}{12}$ (dvě celé, zbytek sedm dvanáctin)\n\nJiná správná cesta: $3\\frac{16}{12} - 1\\frac{9}{12} = 2\\frac{7}{12}$ (jedna celá se rozmění na dvanáct dvanáctin)\n\nDlaždice $\\frac{8}{12} - \\frac{10}{12}$ a $\\frac{16}{12} - \\frac{9}{12}$ nesedí (první celé jen přičte k čitateli, druhá je násobí)\n\n**Výsledek:** $2\\frac{7}{12}$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Přečti mi příklad nahlas. Která čísla jsou celá a které části jsou zlomky?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky jeden po druhém. U každého řekni, co se v něm změnilo proti řádku nad ním.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku zkontroluj: odečítá se pořád to, co v zadání, a od toho, co v zadání? Nic se neprohodilo?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč nesmím odečíst čtyři dvanáctiny od devíti dvanáctin.“",
+        "otocena_role_odpoved": "Protože v zadání se odečítá od čtyř celých a jedné třetiny, ne naopak. Čtyři dvanáctiny jsou málo, tak se musí jedna celá rozměnit na dvanáctiny, nebo se obě čísla převedou na zlomky.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. 3. a 4. řádek jsou jen důsledek, 1. řádek je správně. Zeptejte se: „Co se od čeho odečítá v zadání?“ (Devět dvanáctin od čtyř nejde bez rozměnění.) Výsledek $3\\frac{5}{12}$: opíše Petra; $\\frac{7}{12}$: násobí celé se zlomkem. „Kolik dvanáctin jsou čtyři celé?“ (Čtyřicet osm.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že hlídalo, co se od čeho odečítá, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu, jak Petr počítá: $3\\frac{1}{5} - 1\\frac{3}{5} = 2\\frac{2}{5}$. Zeptejte se: „Má Petr pravdu? Kolik má vyjít?“ Ať to na papír spočítá. Kontrola pro vás: nemá, odečetl jednu pětinu od tří; správně $\\frac{16}{5} - \\frac{8}{5} = \\frac{8}{5} = 1\\frac{3}{5}$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 3 listy papíru a nůžky. Jeden list rozstřihněte na čtvrtiny a nechte z něj jen jednu. Zítra ať dítě z dvou listů a jedné čtvrtiny odebere tři čtvrtiny. Zeptejte se: „Jak je odebereš, když máš jen jednu čtvrtinu?“ Ať jeden celý list rozstřihne. Pak ať samo zapíše $2\\frac{1}{4} - \\frac{3}{4} = 1\\frac{2}{4} = 1\\frac{1}{2}$. Potom zopakujte lekci „Smíšená čísla“. Kontrola pro vás: zbude 1 celý list a 2 čtvrtiny."
+      },
+      "tisk": {
+        "zadani": "Petr počítal příklad\n\n$$4\\frac{1}{3} - 1\\frac{3}{4}$$\n\na udělal jednu chybu.\n\n1. řádek: $= 4\\frac{4}{12} - 1\\frac{9}{12}$\n\n2. řádek: $= (4 - 1) + (\\frac{9}{12} - \\frac{4}{12})$\n\n3. řádek: $= 3 + \\frac{5}{12}$\n\n4. řádek: $= 3\\frac{5}{12}$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $= \\frac{8}{12} - \\frac{10}{12}$ b) $= \\frac{52}{12} - \\frac{21}{12}$ c) $= \\frac{16}{12} - \\frac{9}{12}$\n\nC) Správný výsledek (smíšené číslo): ______"
+      }
+    },
+    {
+      "id": "M8-T05-L3-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Na jednu dávku palačinek je potřeba $1\\frac{3}{4}$ hrnku mouky. Adam peče na oslavu $2\\frac{1}{2}$ dávky.\n\nKolik hrnků mouky potřebuje? Výsledek zapiš zlomkem i smíšeným číslem.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Který zápis odpovídá zadání?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{4}{4} \\cdot \\frac{3}{2}$",
+                "spravne": false,
+                "typ_chyby": "smisene-scital-celou-cast"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{7}{4} \\cdot \\frac{5}{2}$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$1 \\cdot 2 + \\frac{3}{4} \\cdot \\frac{1}{2}$",
+                "spravne": false,
+                "typ_chyby": "smisene-nasobil-po-castech"
+              },
+              {
+                "id": "d",
+                "text": "$\\frac{3}{4} \\cdot \\frac{2}{2}$",
+                "spravne": false,
+                "typ_chyby": "smisene-jako-soucin"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: mouka zlomkem",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 35,
+            "j": 8
+          },
+          "zname_chyby": [
+            {
+              "c": 3,
+              "j": 2,
+              "typ_chyby": "smisene-scital-celou-cast"
+            },
+            {
+              "c": 19,
+              "j": 8,
+              "typ_chyby": "smisene-nasobil-po-castech"
+            },
+            {
+              "c": 3,
+              "j": 4,
+              "typ_chyby": "smisene-jako-soucin"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek: mouka smíšeným číslem",
+          "vstup": {
+            "typ": "smisene"
+          },
+          "spravne": {
+            "cela": 4,
+            "c": 3,
+            "j": 8
+          },
+          "zname_chyby": [
+            {
+              "cela": 2,
+              "c": 3,
+              "j": 8,
+              "typ_chyby": "smisene-nasobil-po-castech"
+            },
+            {
+              "cela": 4,
+              "c": 3,
+              "j": 35,
+              "typ_chyby": "smisene-zpet-spatne"
+            },
+            {
+              "cela": 1,
+              "c": 1,
+              "j": 2,
+              "typ_chyby": "smisene-scital-celou-cast"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce. Čte se: „jedna celá a tři čtvrtiny“ a „dvě celé a jedna polovina“. Smíšená čísla se nenásobí po částech (celé s celými, zlomky se zlomky). Nejdřív se převedou na zlomky, pak se násobí a výsledek se převede zpět.",
+        "reseni": "$1\\frac{3}{4} = \\frac{7}{4}$ (jedna celá jsou čtyři čtvrtiny, a tři navíc)\n\n$2\\frac{1}{2} = \\frac{5}{2}$ (dvě celé jsou čtyři poloviny, a jedna navíc)\n\n$\\frac{7}{4} \\cdot \\frac{5}{2} = \\frac{35}{8}$ (čitatel krát čitatel, jmenovatel krát jmenovatel)\n\n$\\frac{35}{8} = 4\\frac{3}{8}$ (čtyři celé jsou třicet dva osmin, zbytek tři)\n\nZkouška odhadem: na dvě dávky stačí tři a půl hrnku, na dvě a půl dávky je potřeba víc\n\n**Výsledek:** $\\frac{35}{8} = 4\\frac{3}{8}$ hrnku mouky",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, kolik mouky je na jednu dávku a kolik dávek Adam peče.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Jak zapíšeš jednu celou a tři čtvrtiny jako zlomek? Kolik čtvrtin je jedna celá?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: dvě celé a jedna polovina je pět polovin. Co uděláš se dvěma zlomky a jak výsledek převedeš zpátky?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč nestačí vynásobit jedna krát dva a tři čtvrtiny krát jedna polovina.“",
+        "otocena_role_odpoved": "Protože by se vynechaly kusy: jedna celá se musí vynásobit i tou polovinou a tři čtvrtiny i dvojkou. Po převodu na zlomky se nic nevynechá.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Krok 1 „jedna krát dva“, $\\frac{19}{8}$ nebo $2\\frac{3}{8}$: násobí po částech. Zeptejte se: „Kolik mouky je na dvě dávky?“ (Tři a půl hrnku.) $\\frac{3}{2}$, $\\frac{3}{4}$, $1\\frac{1}{2}$: špatný převod. „Kolik čtvrtin je jedna celá a tři čtvrtiny?“ (Sedm.) $4\\frac{3}{35}$: zbytek dole. „Kolik osmin zbude?“ (Tři.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — převod i násobení sedí. Pochvalte, že smíšená čísla nejdřív převedlo na zlomky, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu $1\\frac{1}{2} \\cdot 2\\frac{2}{3}$. Ať nahlas řekne, jak převede obě čísla, a na papír spočítá. Kontrola pro vás: $\\frac{3}{2} \\cdot \\frac{8}{3} = \\frac{24}{6} = 4$; po částech by chybně vyšlo $2\\frac{1}{3}$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 3 listy papíru a nůžky. Zítra: jedna dávka je jeden a půl listu. Ať dítě vyskládá dvě dávky, tedy dvakrát celý list a půlku. Zeptejte se: „Kolik listů je to dohromady?“ Pak ať samo zapíše $1\\frac{1}{2} \\cdot 2 = \\frac{3}{2} \\cdot 2 = 3$. Potom zopakujte lekci „Smíšená čísla“. Kontrola pro vás: 3 listy, dva celé a dvě půlky."
+      },
+      "tisk": {
+        "zadani": "Na jednu dávku palačinek je potřeba $1\\frac{3}{4}$ hrnku mouky. Adam peče na oslavu $2\\frac{1}{2}$ dávky.\n\nKolik hrnků mouky potřebuje? Výsledek zapiš zlomkem i smíšeným číslem.\n\nA) Který zápis odpovídá zadání? Zakroužkuj: a) $\\frac{4}{4} \\cdot \\frac{3}{2}$ b) $\\frac{7}{4} \\cdot \\frac{5}{2}$ c) $1 \\cdot 2 + \\frac{3}{4} \\cdot \\frac{1}{2}$ d) $\\frac{3}{4} \\cdot \\frac{2}{2}$\n\nB) Mouka zlomkem: ______ hrnku\n\nC) Mouka smíšeným číslem: ______ hrnku"
+      }
+    },
+    {
+      "id": "M8-T05-L3-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Vypočítej a výsledek zapiš jako smíšené číslo:\n\n$$2\\frac{1}{4} \\cdot 1\\frac{2}{3}$$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "smisene"
+          },
+          "spravne": {
+            "cela": 3,
+            "c": 3,
+            "j": 4
+          },
+          "zname_chyby": [
+            {
+              "cela": 2,
+              "c": 1,
+              "j": 6,
+              "typ_chyby": "smisene-nasobil-po-castech"
+            },
+            {
+              "cela": 0,
+              "c": 3,
+              "j": 4,
+              "typ_chyby": "smisene-scital-celou-cast"
+            },
+            {
+              "cela": 3,
+              "c": 3,
+              "j": 15,
+              "typ_chyby": "smisene-zpet-spatne"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Čte se: „dvě celé a jedna čtvrtina krát jedna celá a dvě třetiny“.",
+        "reseni": "$2\\frac{1}{4} = \\frac{9}{4}$ (dvě celé jsou osm čtvrtin, a jedna navíc)\n\n$1\\frac{2}{3} = \\frac{5}{3}$ (jedna celá jsou tři třetiny, a dvě navíc)\n\n$\\frac{9}{4} \\cdot \\frac{5}{3} = \\frac{3 \\cdot 5}{4 \\cdot 1} = \\frac{15}{4}$ (devítka a trojka se zkrátí třemi)\n\n$\\frac{15}{4} = 3\\frac{3}{4}$ (tři celé jsou dvanáct čtvrtin, zbytek tři)\n\n**Výsledek:** $3\\frac{3}{4}$",
+        "otazky": [
+          "„Přečti mi příklad nahlas. Jaká dvě čísla násobíš?“",
+          "„Co uděláš se smíšenými čísly, než je vynásobíš?“",
+          "„Tady máš začátek: dvě celé a jedna čtvrtina je devět čtvrtin. Jak zapíšeš druhé číslo a co pak?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč nestačí vynásobit dvě krát jedna a jednu čtvrtinu krát dvě třetiny.“",
+        "otocena_role_odpoved": "Protože by se vynechaly kusy: dvě celé se musí vynásobit i dvěma třetinami a čtvrtina i jedničkou. Po převodu na zlomky se nic nevynechá.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $2\\frac{1}{6}$: násobí po částech. Zeptejte se: „Kolik je dvě celé a čtvrtina krát jedna?“ (Dvě a čtvrt, výsledek musí být víc.) $\\frac{3}{4}$: převádí smíšená čísla sčítáním. „Kolik čtvrtin jsou dvě celé?“ (Osm.) $3\\frac{3}{15}$ nebo $3\\frac{1}{5}$: zbytek dá dolů. „Kolik čtvrtin zbude?“ (Tři.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — násobení smíšených čísel zvládá samo. Pochvalte, že je nejdřív převedlo na zlomky. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu $1\\frac{1}{3} \\cdot 2\\frac{1}{4}$. Ať na papír spočítá a nahlas řekne oba převody a výsledek. Kontrola pro vás: $\\frac{4}{3}$ a $\\frac{9}{4}$, součin $3$ (čtyřka a trojka se zkrátí).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 3 listy papíru a nůžky. Zítra ať dítě všechny listy rozstřihne na čtvrtiny a vyskládá dvě celé a jednu čtvrtinu. Zeptejte se: „Kolik čtvrtin leží na stole?“ Pak ať samo zapíše $2\\frac{1}{4} = \\frac{9}{4}$ a stejně převede $1\\frac{2}{3}$. Potom zopakujte lekci „Smíšená čísla“. Kontrola pro vás: 9 čtvrtin; $1\\frac{2}{3} = \\frac{5}{3}$."
+      },
+      "tisk": {
+        "zadani": "Vypočítej a výsledek zapiš jako smíšené číslo:\n\n$$2\\frac{1}{4} \\cdot 1\\frac{2}{3}$$\n\nVýsledek: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "stredni",
+    "poznamka": "Autor 1. 10. (čísla ověřena skriptem): U1 $\\frac{13}{4}$ ($\\frac{4}{4}$, $\\frac{13}{12}$, $\\frac{3}{4}$); $3\\frac{5}{6}$ ($3\\frac{5}{23}$, $5\\frac{3}{6}$); $1\\frac{1}{4}$ ($1\\frac{3}{4}$, $2\\frac{3}{4}$). U2 $\\frac{52}{12} - \\frac{21}{12} = 2\\frac{7}{12}$ ($3\\frac{5}{12}$, $\\frac{7}{12}$). U3 $\\frac{35}{8} = 4\\frac{3}{8}$ (k2 $\\frac{3}{2}$, $\\frac{19}{8}$, $\\frac{3}{4}$; final $2\\frac{3}{8}$, $4\\frac{3}{35}$, $1\\frac{1}{2}$). U4 $\\frac{15}{4} = 3\\frac{3}{4}$ ($2\\frac{1}{6}$, $\\frac{3}{4}$, $3\\frac{3}{15}$). Sporné: 1) U1 C $2\\frac{3}{4}$ kódováno smisene-odcitani-po-castech (dvě celé minus nula celých, pak tři čtvrtiny minus nula). 2) U1 B obě chybné dlaždice mají smisene-zpet-spatne (zbytek do jmenovatele / prohozený podíl a zbytek). 3) U3 má k2 zlomek a final smíšené číslo se stejnou hodnotou (podle osnovy); popisky říkají jen tvar zápisu. 4) Krok smisene má kontrola_tvaru zakladni_tvar, takže $\\frac{35}{8}$ zadané jako smíšené číslo s nulou celých projde jako správně s poznámkou.",
+    "zkontroloval": "autor",
+    "datum": "2026-10-01"
+  }
+}

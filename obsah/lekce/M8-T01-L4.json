@@ -1,0 +1,443 @@
+{
+  "id": "M8-T01-L4",
+  "faze": "osma",
+  "tyden": 1,
+  "poradi": 4,
+  "tema": "Kontrola: čísla a dělitelnost",
+  "kapitola": "pocetni-operace",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo vyřeší úlohy na pořadí operací, dělitelnost a společný násobek nebo dělitel.",
+  "uvod_pro_rodice": "Dnes je kontrola celého tématu: pořadí operací, znaky dělitelnosti, společný dělitel a násobek.",
+  "uvod_pravidla": [
+    {
+      "znak": "$36 - 12 : 3 \\cdot 2$",
+      "text": "krát a děleno zleva"
+    },
+    {
+      "znak": "$2\\,754$: $2 + 7 + 5 + 4 = 18$",
+      "text": "trojka, devítka: součet číslic"
+    },
+    {
+      "znak": "$D(a, b)$ a $n(a, b)$",
+      "text": "dělit, nebo opakovat?"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T01-L4-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Co se v příkladu $48 : 6 \\cdot 2 - 4$ počítá jako první?\n\nB) Které číslo je dělitelné třemi?\n\nC) Lucka zalévá kytky na balkoně každé $4$ dny a kaktusy každých $6$ dní. Dnes zalévala obojí. Co hledáš, když chceš zjistit, za kolik dní bude zase zalévat obojí?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $48 : 6 \\cdot 2 - 4$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$48 : 6$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$6 \\cdot 2$",
+                "spravne": false,
+                "typ_chyby": "neslo-zleva"
+              },
+              {
+                "id": "c",
+                "text": "$2 - 4$",
+                "spravne": false,
+                "typ_chyby": "scital-pred-nasobenim"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: dělitelné třemi",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$4\\,213$",
+                "spravne": false,
+                "typ_chyby": "delitelnost-3-podle-posledni-cislice"
+              },
+              {
+                "id": "b",
+                "text": "$2\\,519$",
+                "spravne": false,
+                "typ_chyby": "delitelnost-3-podle-posledni-cislice"
+              },
+              {
+                "id": "c",
+                "text": "$3\\,516$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: co hledáš?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$D(4, 6)$",
+                "spravne": false,
+                "typ_chyby": "nsd-nsn-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$n(4, 6)$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$4 \\cdot 6$",
+                "spravne": false,
+                "typ_chyby": "nsn-soucin-cisel"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrola tématu: tři rychlé příklady, jeden z každé lekce. Dítě tu jen vybírá z nabídky. U C nic nepočítá, jen pozná, co se hledá. Čte se: $n(4, 6)$ „nejmenší společný násobek čísel čtyři a šest“, $D(4, 6)$ „největší společný dělitel“. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $48 : 6 \\cdot 2 - 4$\n\nPrvní: $48 : 6 = 8$ (děleno a krát zleva, mínus až potom)\n\nPak: $8 \\cdot 2 = 16$, $16 - 4 = 12$ (násobení, odčítání)\n\n#### B) Dělitelné třemi\n\n$3\\,516$: $3 + 5 + 1 + 6 = 15$ (součet číslic je dělitelný třemi)\n\n$4\\,213$: součet $10$; $2\\,519$: součet $17$ (třemi dělitelná nejsou, i když končí trojkou a devítkou)\n\n#### C) Zalévání\n\n$n(4, 6) = 12$ (zalévání se opakuje, hledá se násobek; obojí zase za dvanáct dní)\n\n**Výsledek:** A) $48 : 6$, B) $3\\,516$, C) $n(4, 6)$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Které operace mají přednost před mínus? A když dvě takové stojí vedle sebe, odkud začneš?“"
+          },
+          {
+            "k": "B",
+            "text": "„Neklikej, sečti u každého čísla všechny číslice. Který součet jde vydělit třemi?“"
+          },
+          {
+            "k": "C",
+            "text": "„Zalévání se pořád opakuje. Hledáš číslo menší, nebo větší než čtyři a šest?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč dva tisíce pět set devatenáct není dělitelné třemi, i když končí devítkou.“",
+        "otocena_role_odpoved": "U trojky nerozhoduje poslední číslice, ale součet všech číslic. Dva plus pět plus jedna plus devět je sedmnáct a to třemi dělitelné není.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A vybere $6 \\cdot 2$ (nejde zleva) nebo $2 - 4$ (mínus dřív než děleno). U B $4\\,213$ nebo $2\\,519$: rozhoduje podle poslední číslice. Zeptejte se: „Kolik je součet číslic?“ U C $D(4, 6)$ nebo $4 \\cdot 6$. Zeptejte se: „Bude to dřív, nebo později než za šest dní?“ (Později, za dvanáct.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — všechny tři části tématu sedí. Pochvalte, že u každého příkladu poznalo, na co se ptá, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Ukažte dítěti na telefonu $30 - 12 : 4 \\cdot 2$ a číslo $2\\,346$. Pak se zeptejte: „Majáky bliknou po $6$ a po $8$ sekundách. Hledáš dělitel, nebo násobek?“ Ať řekne, co počítá první, zda je číslo dělitelné třemi a co hledá. Kontrola pro vás: $12 : 4$, vyjde $24$; ano, součet $15$; násobek, $24$ sekund.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 12 kostek nebo bonbonů. Zítra ať je dítě zkusí rozdělit na 2, 3, 4 a 5 stejných hromádek a řekne, kdy nic nezbude. Pak ať samo zapíše $12 : 3 \\cdot 2$ a řekne, co se počítá první. Potom zopakujte lekci „Kontrola: čísla a dělitelnost“. Kontrola pro vás: nezbude nic u 2, 3 a 4; $12 : 3 = 4$, pak $4 \\cdot 2 = 8$."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Co se v příkladu $48 : 6 \\cdot 2 - 4$ počítá jako první? — a) $48 : 6$ b) $6 \\cdot 2$ c) $2 - 4$\n\nB) Které číslo je dělitelné třemi? — a) $4\\,213$ b) $2\\,519$ c) $3\\,516$\n\nC) Lucka zalévá kytky na balkoně každé $4$ dny a kaktusy každých $6$ dní. Dnes zalévala obojí. Co hledáš, když chceš zjistit, za kolik dní bude zase zalévat obojí? — a) $D(4, 6)$ b) $n(4, 6)$ c) $4 \\cdot 6$"
+      }
+    },
+    {
+      "id": "M8-T01-L4-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr počítal příklad\n\n$$4 \\cdot (25 - 3 \\cdot 5) + 48 : (2 + 6)$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $= 4 \\cdot (25 - 15) + 48 : (2 + 6)$\n\n2. řádek: $= 4 \\cdot 10 + 48 : (2 + 6)$\n\n3. řádek: $= 40 + 24 + 6$\n\n4. řádek: $= 70$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$= 4 \\cdot (25 - 15) + 48 : (2 + 6)$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$= 4 \\cdot 10 + 48 : (2 + 6)$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$= 40 + 24 + 6$",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$= 70$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$= 88 : 8$",
+                "spravne": false,
+                "typ_chyby": "scital-pred-nasobenim"
+              },
+              {
+                "id": "b",
+                "text": "$= 40 + 6$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$= 40 + 30$",
+                "spravne": false,
+                "typ_chyby": "ignoroval-zavorku"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo"
+          },
+          "spravne": {
+            "hodnota": 46
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 70,
+              "typ_chyby": "ignoroval-zavorku"
+            },
+            {
+              "hodnota": 91,
+              "typ_chyby": "ignoroval-zavorku"
+            },
+            {
+              "hodnota": 11,
+              "typ_chyby": "scital-pred-nasobenim"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrola tématu. Petr je vymyšlený spolužák, chyba je jedna a řádky za ní jsou spočítané dobře, jen se špatným číslem. Ve výrazu jsou dvě závorky; každá se spočítá celá dřív, než se s ní dál násobí nebo dělí.",
+        "reseni": "Chyba je ve 3. řádku: Petr dělil čtyřicet osm jen dvojkou, ne celou závorkou.\n\n$4 \\cdot (25 - 3 \\cdot 5) + 48 : (2 + 6)$\n\n$= 4 \\cdot (25 - 15) + 48 : (2 + 6)$ (v první závorce násobení)\n\n$= 4 \\cdot 10 + 48 : (2 + 6)$ (první závorka)\n\n$= 4 \\cdot 10 + 48 : 8$ (druhá závorka)\n\n$= 40 + 6$ (násobení a dělení)\n\n$= 46$ (sčítání)\n\nDlaždice $88 : 8$ nesedí (sčítá dřív, než dělí), $40 + 30$ taky ne (dělí jen dvojkou)\n\n**Výsledek:** $46$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Přečti mi Petrův příklad nahlas. Kolik závorek v něm je a co je v každé?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky jeden po druhém. U každého mi řekni, co v něm Petr počítá.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: když závorka zmizí, je spočítaná celá? Počítá se s ní pak jako s jedním číslem?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč čtyřicet osm nedělím jen dvojkou.“",
+        "otocena_role_odpoved": "Dva plus šest je v závorce, takže se nejdřív sečte na osm. Čtyřicet osm se dělí celou závorkou, tedy osmi, a vyjde šest.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 4. řádek? Zeptejte se: „Odkud je dvacet čtyři?“ (Ze čtyřiceti osmi děleno dvěma.) Kdo sám přehlíží závorku, klikne na 1. nebo 2. řádek; ty jsou správně. Výsledek $70$: opíše Petra; $91$: přehlédne první závorku; $11$: sečte čtyřicet a čtyřicet osm dřív, než dělí."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že hlídalo obě závorky, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu: „Petr tvrdí, že $36 : (3 + 6) = 18$.“ Zeptejte se: „Má Petr pravdu? Co spočítal jako první?“ Kontrola pro vás: nemá, dělil jen trojkou ($36 : 3 + 6 = 18$); správně $3 + 6 = 9$, $36 : 9 = 4$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 24 kostek nebo bonbonů. Zítra: „Rozděl 24 bonbonů mezi 2 kluky a 4 holky, každé dítě dostane stejně.“ Ať dítě nejdřív spočítá děti a pak bonbony rozdělí. Pak ať samo zapíše $24 : (2 + 4)$. Potom zopakujte lekci „Kontrola: čísla a dělitelnost“. Kontrola pro vás: 6 dětí, každé dostane 4 bonbony."
+      },
+      "tisk": {
+        "zadani": "Petr počítal příklad\n\n$$4 \\cdot (25 - 3 \\cdot 5) + 48 : (2 + 6)$$\n\na udělal jednu chybu.\n\n1. řádek: $= 4 \\cdot (25 - 15) + 48 : (2 + 6)$\n\n2. řádek: $= 4 \\cdot 10 + 48 : (2 + 6)$\n\n3. řádek: $= 40 + 24 + 6$\n\n4. řádek: $= 70$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $= 88 : 8$ b) $= 40 + 6$ c) $= 40 + 30$\n\nC) Výsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T01-L4-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Adam a Ema běhají po okruhu v parku. Adam uběhne jedno kolo za $9$ minut, Ema za $12$ minut. Vyběhli spolu ze startu.\n\nZa kolik minut budou poprvé zase spolu na startu? Kolik koleček do té doby uběhnou dohromady?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Co potřebuješ zjistit nejdřív?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$D(9, 12)$",
+                "spravne": false,
+                "typ_chyby": "nsd-nsn-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$9 \\cdot 12$",
+                "spravne": false,
+                "typ_chyby": "nsn-soucin-cisel"
+              },
+              {
+                "id": "c",
+                "text": "$n(9, 12)$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Za kolik minut budou spolu na startu?",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "min"
+          },
+          "spravne": {
+            "hodnota": 36
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 3,
+              "typ_chyby": "nsd-nsn-zamena"
+            },
+            {
+              "hodnota": 108,
+              "typ_chyby": "nsn-soucin-cisel"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "koleček"
+          },
+          "spravne": {
+            "hodnota": 7
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 21,
+              "typ_chyby": "nsn-soucin-cisel"
+            },
+            {
+              "hodnota": 4,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 3,
+              "typ_chyby": "prehledl-udaj"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrola tématu: úloha spojuje společný násobek a pořadí operací. Oba běžci jsou na startu vždy po celém kole, proto se hledá číslo, které jde vydělit devíti i dvanácti: nejmenší společný násobek. Pak se spočítá, kolik kol uběhne každý, a sečte se to.",
+        "reseni": "$12$, $24$, $36$ (násobky dvanácti; až třicet šest jde vydělit i devíti)\n\n$n(9, 12) = 36$ (spolu na startu za třicet šest minut)\n\n$36 : 9 = 4$ (Adamova kolečka)\n\n$36 : 12 = 3$ (Emina kolečka)\n\n$36 : 9 + 36 : 12 = 4 + 3 = 7$ (dohromady)\n\n**Výsledek:** za $36$ minut, dohromady $7$ koleček",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Adam a Ema dělají a na co se úloha ptá.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Kdy je na startu Adam? A kdy Ema? Hledáš dělitel, nebo násobek?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: Ema je na startu za dvanáct, dvacet čtyři, třicet šest minut. Kdy tam je Adam? Kolik kol do té doby uběhne každý?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč nebudou spolu na startu už za osmnáct minut.“",
+        "otocena_role_odpoved": "Za osmnáct minut je na startu jen Adam, po dvou kolech. Ema má za sebou jedno a půl kola, takže je na druhé straně okruhu. Spolu jsou až za třicet šest minut.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 2 $3$: hledá dělitel. Zeptejte se: „Může Adam uběhnout kolo za tři minuty?“ (Nemůže, potřebuje devět.) $108$ a výsledek $21$: jen vynásobí. Výsledek $4$ nebo $3$: počítá jen jednoho běžce. Zeptejte se: „Kolik koleček uběhne ten druhý?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — násobek i dopočet sedí. Pochvalte, že poznalo, že se hledá násobek, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Klára ujede na kole jedno kolo okruhu za $6$ minut, Tomáš za $8$ minut. Vyjedou spolu. Za kolik minut budou zase spolu na startu a kolik kol ujedou dohromady?“ Kontrola pro vás: $n(6, 8) = 24$ minut; Klára $4$ kola, Tomáš $3$, dohromady $7$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír s čísly 1 až 40 a dvě pastelky. Zítra ať dítě jednou barvou zakroužkuje každé 9. číslo (Adam), druhou každé 12. číslo (Ema). Ať najde první číslo se dvěma kroužky a spočítá kroužky každé barvy do něj. Pak ať samo zapíše $36 : 9 + 36 : 12$. Potom zopakujte lekci „Kontrola: čísla a dělitelnost“. Kontrola pro vás: 36; Adam 4 kroužky, Ema 3, dohromady 7."
+      },
+      "tisk": {
+        "zadani": "Adam a Ema běhají po okruhu v parku. Adam uběhne jedno kolo za $9$ minut, Ema za $12$ minut. Vyběhli spolu ze startu.\n\nZa kolik minut budou poprvé zase spolu na startu? Kolik koleček do té doby uběhnou dohromady?\n\nA) Co potřebuješ zjistit nejdřív? Zakroužkuj: a) $D(9, 12)$ b) $9 \\cdot 12$ c) $n(9, 12)$\n\nB) Spolu na startu za: ______ minut\n\nC) Dohromady: ______ koleček"
+      }
+    },
+    {
+      "id": "M8-T01-L4-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Honzík má dvě laťky, jednu dlouhou $72$ cm a druhou $120$ cm. Chce je rozřezat na stejně dlouhé kusy, co nejdelší, aby nic nezbylo.\n\nKolik centimetrů bude měřit jeden kus?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm"
+          },
+          "spravne": {
+            "hodnota": 24
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 6,
+              "typ_chyby": "rozklad-bez-opakovani"
+            },
+            {
+              "hodnota": 360,
+              "typ_chyby": "nsd-nsn-zamena"
+            },
+            {
+              "hodnota": 8,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha tématu: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Délka kusu musí dělit obě laťky beze zbytku a má být co největší.",
+        "reseni": "$72 = 2 \\cdot 2 \\cdot 2 \\cdot 3 \\cdot 3$ (rozklad)\n\n$120 = 2 \\cdot 2 \\cdot 2 \\cdot 3 \\cdot 5$ (rozklad)\n\n$D(72, 120) = 2 \\cdot 2 \\cdot 2 \\cdot 3 = 24$ (společné jsou tři dvojky a jedna trojka)\n\n$72 : 24 = 3$, $120 : 24 = 5$ (zkouška: nic nezbude, kusů je osm)\n\n**Výsledek:** $24$ cm",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co chce Honzík udělat a na co se úloha ptá.“",
+          "„Délka kusu musí beze zbytku dělit obě laťky. Hledáš dělitel, nebo násobek? Největší, nebo nejmenší?“",
+          "„Tady máš začátek: sedmdesát dva je dva krát dva krát dva krát tři krát tři. Jak rozložíš sto dvacet? Co mají rozklady společné?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč kus nemůže měřit třeba třicet šest centimetrů.“",
+        "otocena_role_odpoved": "Třicet šest se do sedmdesáti dvou vejde dvakrát, ale sto dvacet beze zbytku nerozdělí, zbylo by dvanáct centimetrů. Kus musí dělit obě laťky a největší takový je dvacet čtyři.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $360$: hledá násobek. Zeptejte se: „Může být kus delší než laťka?“ (Nemůže.) $6$: v rozkladu bere každé prvočíslo jen jednou; zeptejte se: „Kolik dvojek mají oba rozklady?“ (Tři.) $8$: napíše počet kusů."
+      },
+      "semafor": {
+        "zelena": "Výborně — téma čísla a dělitelnost zvládá samo. Pochvalte, že poznalo, že hledá dělitel. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Stuhy mají $48$ cm a $60$ cm. Chceš je rozstříhat na co nejdelší stejné kusy, aby nic nezbylo. Kolik centimetrů má kus?“ Ať nahlas řekne, jestli hledá dělitel, nebo násobek. Kontrola pro vás: dělitel, $D(48, 60) = 12$ cm (z první stuhy $4$ kusy, z druhé $5$).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: dva proužky papíru, 12 cm a 18 cm, a pravítko. Zítra ať dítě na obou proužcích zkusí odměřit stejně dlouhé díly: po 2, po 3, po 4 a po 6 cm. Ať řekne, kdy nic nezbude. Pak ať samo zapíše $D(12, 18) = 6$. Potom zopakujte lekci „Kontrola: čísla a dělitelnost“. Kontrola pro vás: nic nezbude u 2, 3 a 6 cm; nejdelší je 6 cm."
+      },
+      "tisk": {
+        "zadani": "Honzík má dvě laťky, jednu dlouhou $72$ cm a druhou $120$ cm. Chce je rozřezat na stejně dlouhé kusy, co nejdelší, aby nic nezbylo.\n\nKolik centimetrů bude měřit jeden kus?\n\nVýsledek: ______ cm"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "stredni",
+    "poznamka": "Výpočty ověřeny skriptem (python): U1 A první $48 : 6$, B $3\\,516$ (součet $15$; $4\\,213$ součet $10$, $2\\,519$ součet $17$), C $n(4, 6)$. U2 $46$ (Petr $70$; první závorka přehlédnutá $91$; sčítání před dělením $11$). U3 $n(9, 12) = 36$ ($D = 3$; součin $108$), koleček $4 + 3 = 7$ (součin: $12 + 9 = 21$; jen Adam $4$; jen Ema $3$). U4 $D(72, 120) = 24$ cm (prvočísla jen jednou $6$; $n = 360$; počet kusů $8$). Kontroly v oranžové a červené přepočítány. Sporné: U1 B oba distraktory mají stejný kód; „Platí“ 2 má text „trojka, devítka: součet číslic“ (osnova „devítka: součet číslic“), protože rozcvička B je na trojku; U2 k2 dlaždice $40 + 30$ je Petrova chyba jen jinak zapsaná; U3 final $3$ (jen Ema) je stejné číslo jako chybný $D$ v kroku 2, kód prehledl-udaj je u obou krajních hodnot.",
+    "zkontroloval": "autor",
+    "datum": "2026-10-01"
+  }
+}

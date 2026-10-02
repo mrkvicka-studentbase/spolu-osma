@@ -1,0 +1,520 @@
+{
+  "id": "M8-T01-L1",
+  "faze": "osma",
+  "tyden": 1,
+  "poradi": 1,
+  "tema": "Pořadí operací a závorky",
+  "kapitola": "pocetni-operace",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě řekne, co v příkladu počítá jako první, i když stojí dělení a násobení vedle sebe nebo jsou závorky v sobě.",
+  "uvod_pro_rodice": "Dnes jde o pořadí: co se v příkladu počítá jako první, když jsou v něm krát, děleno a závorky.",
+  "uvod_pravidla": [
+    {
+      "znak": "$7 + 2 \\cdot 5$",
+      "text": "krát dřív než plus"
+    },
+    {
+      "znak": "$24 : 4 \\cdot 2$",
+      "text": "stejná přednost: zleva"
+    },
+    {
+      "znak": "$[(3 + 5) \\cdot 2 - 1]$",
+      "text": "nejdřív vnitřní závorka"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T01-L1-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U příkladů A a B klikni na početní operace v pořadí, v jakém je počítáš. Celé počítat nemusíš. U C vyber, kolik vyjde.\n\nA) $50 - 18 : 3 \\cdot 2 + 4$\n\nB) $2 \\cdot [(9 - 3) : 2 + 4]$\n\nC) $9 + 3 \\cdot 5$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: klikni v pořadí, v jakém počítáš",
+          "vstup": {
+            "typ": "poradi",
+            "vyraz": "50 \\op{o1}{-} 18 \\op{o2}{:} 3 \\op{o3}{\\cdot} 2 \\op{o4}{+} 4",
+            "operace": [
+              {
+                "id": "o1",
+                "popis": "odčítání"
+              },
+              {
+                "id": "o2",
+                "popis": "dělení"
+              },
+              {
+                "id": "o3",
+                "popis": "násobení"
+              },
+              {
+                "id": "o4",
+                "popis": "sčítání"
+              }
+            ]
+          },
+          "spravne": {
+            "poradi": [
+              [
+                "o2",
+                "o3",
+                "o1",
+                "o4"
+              ]
+            ]
+          },
+          "zname_chyby": [
+            {
+              "poradi": [
+                "o3",
+                "o2",
+                "o1",
+                "o4"
+              ],
+              "typ_chyby": "neslo-zleva"
+            },
+            {
+              "poradi": [
+                "o2",
+                "o3",
+                "o4",
+                "o1"
+              ],
+              "typ_chyby": "neslo-zleva"
+            },
+            {
+              "poradi": [
+                "o1",
+                "o2",
+                "o3",
+                "o4"
+              ],
+              "typ_chyby": "scital-pred-nasobenim"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: klikni v pořadí, v jakém počítáš",
+          "vstup": {
+            "typ": "poradi",
+            "vyraz": "2 \\op{o1}{\\cdot} [(9 \\op{o2}{-} 3) \\op{o3}{:} 2 \\op{o4}{+} 4]",
+            "operace": [
+              {
+                "id": "o1",
+                "popis": "násobení dvěma"
+              },
+              {
+                "id": "o2",
+                "popis": "odčítání v kulaté závorce"
+              },
+              {
+                "id": "o3",
+                "popis": "dělení"
+              },
+              {
+                "id": "o4",
+                "popis": "sčítání"
+              }
+            ]
+          },
+          "spravne": {
+            "poradi": [
+              [
+                "o2",
+                "o3",
+                "o4",
+                "o1"
+              ]
+            ]
+          },
+          "zname_chyby": [
+            {
+              "poradi": [
+                "o1",
+                "o2",
+                "o3",
+                "o4"
+              ],
+              "typ_chyby": "ignoroval-zavorku"
+            },
+            {
+              "poradi": [
+                "o3",
+                "o2",
+                "o4",
+                "o1"
+              ],
+              "typ_chyby": "ignoroval-zavorku"
+            },
+            {
+              "poradi": [
+                "o2",
+                "o4",
+                "o3",
+                "o1"
+              ],
+              "typ_chyby": "scital-pred-nasobenim"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: $9 + 3 \\cdot 5$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$60$",
+                "spravne": false,
+                "typ_chyby": "scital-pred-nasobenim"
+              },
+              {
+                "id": "b",
+                "text": "$24$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$24$ i $60$, pořadí je jedno",
+                "spravne": false,
+                "typ_chyby": "poradi-nezalezi"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "U A a B dítě kliká na početní operace ve vzorci v tom pořadí, v jakém by je počítalo; u kliknutých se objeví čísla 1, 2, 3. Nic nepočítá. Hranatá závorka je jen větší závorka, počítá se zevnitř ven. U C vybírá výsledek. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $50 - 18 : 3 \\cdot 2 + 4$\n\nPrvní: $18 : 3 = 6$ (děleno a krát mají přednost, mezi sebou zleva)\n\nDruhé: $6 \\cdot 2 = 12$ (násobení)\n\nTřetí: $50 - 12 = 38$ (mínus a plus zleva)\n\nČtvrté: $38 + 4 = 42$ (sčítání)\n\n#### B) $2 \\cdot [(9 - 3) : 2 + 4]$\n\nPrvní: $9 - 3 = 6$ (vnitřní kulatá závorka)\n\nDruhé: $6 : 2 = 3$ (v hranaté závorce dělení před plus)\n\nTřetí: $3 + 4 = 7$ (zbytek hranaté závorky)\n\nČtvrté: $2 \\cdot 7 = 14$ (násobení až nakonec)\n\n#### C) $9 + 3 \\cdot 5$\n\n$3 \\cdot 5 = 15$ (násobení má přednost)\n\n$9 + 15 = 24$ (sčítání)\n\n**Výsledek:** A) děleno, krát, mínus, plus; B) mínus, děleno, plus, krát; C) $24$",
+        "otazky": [
+          {
+            "k": "A, když nesedí",
+            "text": "„Které dvě operace mají přednost před plus a mínus? A když dvě takové stojí vedle sebe, odkud začneš?“"
+          },
+          {
+            "k": "B, když nesedí",
+            "text": "„Najdi závorku, která je nejvíc uvnitř. Co je v ní? A co se v hranaté závorce počítá potom?“"
+          },
+          {
+            "k": "C",
+            "text": "„Neklikej, spočítej na papíře. Co má přednost: plus, nebo krát?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč u A nejdřív dělíš osmnáct třemi, a ne tři krát dva.“",
+        "otocena_role_odpoved": "Děleno a krát jsou si rovné, takže se jde zleva. Dělení stojí víc vlevo, proto je první. Kdyby se začalo násobením, vyšlo by jiné číslo.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Když pořadí u A nebo B nesedí, přečtěte otázku k tomu příkladu. U C vybere $60$: sčítá dřív, než násobí. Zeptejte se: „Co má přednost, plus, nebo krát?“ (Krát.) Dlaždice „$24$ i $60$“ znamená, že pořadí bere jako jedno."
+      },
+      "semafor": {
+        "zelena": "Výborně — pořadí sedí. Pochvalte, že u děleno a krát vedle sebe šlo dítě zleva, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Ukažte dítěti na telefonu jeden příklad po druhém: $20 - 8 : 4 \\cdot 2$, pak $3 \\cdot [(7 - 1) : 3 + 2]$. U každého řekne, co počítá první, druhé a další, a výsledek. Kontrola pro vás: děleno, krát, mínus, vyjde $16$; mínus v závorce, děleno, plus, krát, vyjde $12$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 10 kostek nebo bonbonů. Zítra: „Máš 2 krabičky po 3 bonbonech a k tomu 4 bonbony volně.“ Ať dítě bonbony vyskládá a spočítá. Pak ať samo zapíše $2 \\cdot 3 + 4$ a řekne, proč se nejdřív násobí. Potom zopakujte lekci „Pořadí operací a závorky“. Kontrola pro vás: 10 bonbonů; nejdřív $2 \\cdot 3 = 6$, pak $6 + 4 = 10$."
+      },
+      "tisk": {
+        "zadani": "U příkladů A a B očísluj, v jakém pořadí počítáš. Celé počítat nemusíš.\n\nA)\n\n$$50 \\op{o1}{-} 18 \\op{o2}{:} 3 \\op{o3}{\\cdot} 2 \\op{o4}{+} 4$$\n\nB)\n\n$$2 \\op{o1}{\\cdot} [(9 \\op{o2}{-} 3) \\op{o3}{:} 2 \\op{o4}{+} 4]$$\n\nC) Kolik je $9 + 3 \\cdot 5$? Zakroužkuj: a) $60$ b) $24$ c) $24$ i $60$, pořadí je jedno"
+      }
+    },
+    {
+      "id": "M8-T01-L1-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr počítal příklad\n\n$$3 \\cdot 20 - 24 : 4 \\cdot 2 + 7$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $= 60 - 24 : 4 \\cdot 2 + 7$\n\n2. řádek: $= 60 - 24 : 8 + 7$\n\n3. řádek: $= 60 - 3 + 7$\n\n4. řádek: $= 64$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$= 60 - 24 : 4 \\cdot 2 + 7$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$= 60 - 24 : 8 + 7$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$= 60 - 3 + 7$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$= 64$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$= 36 : 4 \\cdot 2 + 7$",
+                "spravne": false,
+                "typ_chyby": "scital-pred-nasobenim"
+              },
+              {
+                "id": "b",
+                "text": "$= 60 - 6 \\cdot 2 + 7$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$= 60 - 24 : 4 \\cdot 9$",
+                "spravne": false,
+                "typ_chyby": "scital-pred-nasobenim"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo"
+          },
+          "spravne": {
+            "hodnota": 55
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 64,
+              "typ_chyby": "neslo-zleva"
+            },
+            {
+              "hodnota": 25,
+              "typ_chyby": "scital-pred-nasobenim"
+            },
+            {
+              "hodnota": 41,
+              "typ_chyby": "neslo-zleva"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Každý řádek je jedna úprava předchozího. Chyba je jedna a řádky za ní jsou spočítané dobře, jen se špatným číslem. Hlídejte: děleno a krát mají stejnou přednost a jdou zleva, plus a mínus taky.",
+        "reseni": "Chyba je ve 2. řádku: Petr nejdřív násobil čtyři krát dva, i když dělení stojí vlevo.\n\n$3 \\cdot 20 - 24 : 4 \\cdot 2 + 7$\n\n$= 60 - 24 : 4 \\cdot 2 + 7$ (násobení na začátku)\n\n$= 60 - 6 \\cdot 2 + 7$ (děleno a krát zleva, nejdřív dělení)\n\n$= 60 - 12 + 7$ (násobení)\n\n$= 48 + 7$ (mínus a plus zleva)\n\n$= 55$ (sčítání)\n\nDlaždice $36 : 4 \\cdot 2 + 7$ a $60 - 24 : 4 \\cdot 9$ nesedí (obě odčítají nebo sčítají dřív než krát a děleno)\n\n**Výsledek:** $55$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Přečti mi Petrův příklad nahlas. Jaké početní operace v něm vidíš?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky jeden po druhém. U každého mi řekni, kterou operaci v něm Petr počítá.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: stojí tu děleno a krát vedle sebe? Jde Petr zleva?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč nesmím nejdřív spočítat čtyři krát dva.“",
+        "otocena_role_odpoved": "Děleno a krát mají stejnou přednost, takže se počítají zleva. Napřed se dělí dvacet čtyři čtyřmi a teprve šestka se násobí dvěma.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 3. nebo 4. řádek? Ty jsou spočítané dobře. Zeptejte se: „Odkud se vzala osmička?“ (Ze čtyři krát dva.) 1. řádek je správně. Výsledek $64$: opíše Petra; $25$: počítá zleva bez přednosti; $41$: sečte dvanáct a sedm dřív, než odečítá."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že u děleno a krát hlídalo, co stojí vlevo, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu: „Petr tvrdí, že $40 - 12 : 2 \\cdot 3 = 38$.“ Zeptejte se: „Má Petr pravdu? Co spočítal jako první?“ Kontrola pro vás: nemá, násobil dřív, než dělil ($12 : 6 = 2$); správně $12 : 2 = 6$, $6 \\cdot 3 = 18$, $40 - 18 = 22$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 12 kostek nebo bonbonů. Zítra ať je dítě rozdělí na 3 stejné hromádky a pak vezme 2 z nich. Ať řekne, kolik má v ruce. Pak ať samo zapíše $12 : 3 \\cdot 2$ a řekne, co se počítá první. Potom zopakujte lekci „Pořadí operací a závorky“. Kontrola pro vás: v ruce 8; nejdřív $12 : 3 = 4$, pak $4 \\cdot 2 = 8$."
+      },
+      "tisk": {
+        "zadani": "Petr počítal příklad\n\n$$3 \\cdot 20 - 24 : 4 \\cdot 2 + 7$$\n\na udělal jednu chybu.\n\n1. řádek: $= 60 - 24 : 4 \\cdot 2 + 7$\n\n2. řádek: $= 60 - 24 : 8 + 7$\n\n3. řádek: $= 60 - 3 + 7$\n\n4. řádek: $= 64$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $= 36 : 4 \\cdot 2 + 7$ b) $= 60 - 6 \\cdot 2 + 7$ c) $= 60 - 24 : 4 \\cdot 9$\n\nC) Výsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T01-L1-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Ema kupuje do školy $3$ sešity po $24$ Kč a $2$ propisky po $18$ Kč. Platí bankovkou $200$ Kč.\n\nKolik korun stojí celý nákup? Kolik korun jí prodavač vrátí?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Který zápis odpovídá zadání?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$200 - 3 \\cdot 24 + 2 \\cdot 18$",
+                "spravne": false,
+                "typ_chyby": "chybi-zavorka"
+              },
+              {
+                "id": "b",
+                "text": "$200 - (3 \\cdot 24 + 18)$",
+                "spravne": false,
+                "typ_chyby": "prehledl-udaj"
+              },
+              {
+                "id": "c",
+                "text": "$200 - (3 \\cdot 24 + 2 \\cdot 18)$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Kolik stojí celý nákup?",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 108
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 1332,
+              "typ_chyby": "scital-pred-nasobenim"
+            },
+            {
+              "hodnota": 90,
+              "typ_chyby": "prehledl-udaj"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 92
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 164,
+              "typ_chyby": "chybi-zavorka"
+            },
+            {
+              "hodnota": 110,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 108,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě nejdřív vybere zápis, pak spočítá cenu nákupu a nakonec, kolik se vrací. Past: od dvou set se odečítá celý nákup, proto patří do závorky. Bez závorky by se cena propisek k penězům přičetla. Když dítě odečte sešity a pak zvlášť propisky, je to taky správně.",
+        "reseni": "$3 \\cdot 24 = 72$ (sešity)\n\n$2 \\cdot 18 = 36$ (propisky)\n\n$72 + 36 = 108$ (celý nákup)\n\n$200 - 108 = 92$ (vrácené peníze)\n\nZápis: $200 - (3 \\cdot 24 + 2 \\cdot 18) = 92$ (závorka, odečítá se celý nákup)\n\n**Výsledek:** nákup $108$ Kč, prodavač vrátí $92$ Kč",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Ema kupuje a na co se úloha ptá.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Co všechno Ema platí? Odečítá se od dvou set každá věc zvlášť, nebo celý nákup najednou? Jak to zapíšeš?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: tři sešity stojí sedmdesát dva korun. Kolik stojí propisky? A co uděláš potom?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč je v zápisu závorka kolem celého nákupu. Co by se stalo bez ní?“",
+        "otocena_role_odpoved": "Ema platí sešity i propisky, takže se od dvou set odečte celá cena nákupu. Bez závorky by se cena propisek k penězům přičetla, jako by za ně Ema peníze dostala.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Výsledek $164$ (v kroku 1 zápis bez závorky): propisky přičte. Zeptejte se: „Dostane Ema za propisky peníze, nebo je platí?“ (Platí.) $90$ nebo $110$: počítá jen jednu propisku. $1\\,332$: sečte dřív, než násobí. Výsledek $108$: napíše cenu nákupu místo vrácených peněz."
+      },
+      "semafor": {
+        "zelena": "Výborně — zápis i výpočet sedí. Pochvalte, že dítě odečetlo celý nákup najednou, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Adam koupí $4$ rohlíky po $5$ Kč a $2$ jogurty po $15$ Kč. Platí stokorunou. Kolik mu vrátí?“ Ať nahlas řekne zápis se závorkou, cenu nákupu a kolik se vrací. Kontrola pro vás: $100 - (4 \\cdot 5 + 2 \\cdot 15)$, nákup $50$ Kč, vrátí $50$ Kč.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 20 mincí nebo knoflíků jako koruny a hrnek. Zítra: „Máš 20 korun. Kupuješ 2 lízátka po 3 korunách a 1 sešit za 5 korun.“ Ať dítě dá do hrnku celý nákup a pak spočítá, co zbylo. Pak ať samo zapíše $20 - (2 \\cdot 3 + 5)$. Potom zopakujte lekci „Pořadí operací a závorky“. Kontrola pro vás: nákup 11 korun, zbude 9."
+      },
+      "tisk": {
+        "zadani": "Ema kupuje do školy $3$ sešity po $24$ Kč a $2$ propisky po $18$ Kč. Platí bankovkou $200$ Kč.\n\nKolik korun stojí celý nákup? Kolik korun jí prodavač vrátí?\n\nA) Který zápis odpovídá zadání? Zakroužkuj: a) $200 - 3 \\cdot 24 + 2 \\cdot 18$ b) $200 - (3 \\cdot 24 + 18)$ c) $200 - (3 \\cdot 24 + 2 \\cdot 18)$\n\nB) Celý nákup: ______ Kč\n\nC) Prodavač vrátí: ______ Kč"
+      }
+    },
+    {
+      "id": "M8-T01-L1-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Vypočítej:\n\n$$84 - [5 \\cdot (12 - 4) + 4] : 4$$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo"
+          },
+          "spravne": {
+            "hodnota": 73
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 69,
+              "typ_chyby": "ignoroval-zavorku"
+            },
+            {
+              "hodnota": 43,
+              "typ_chyby": "ignoroval-zavorku"
+            },
+            {
+              "hodnota": 10,
+              "typ_chyby": "scital-pred-nasobenim"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Čte se: osmdesát čtyři mínus hranatá závorka, pět krát kulatá závorka dvanáct mínus čtyři, plus čtyři, konec hranaté závorky, děleno čtyřmi.",
+        "reseni": "$84 - [5 \\cdot (12 - 4) + 4] : 4$\n\n$= 84 - [5 \\cdot 8 + 4] : 4$ (vnitřní kulatá závorka)\n\n$= 84 - [40 + 4] : 4$ (v hranaté závorce násobení)\n\n$= 84 - 44 : 4$ (hranatá závorka)\n\n$= 84 - 11$ (dělení před odčítáním)\n\n$= 73$ (odčítání)\n\n**Výsledek:** $73$",
+        "otazky": [
+          "„Přečti mi příklad nahlas. Kde začíná a kde končí každá závorka?“",
+          "„Co spočítáš jako první? Proč zrovna tohle?“",
+          "„Tady máš začátek: dvanáct mínus čtyři je osm. Co se v hranaté závorce počítá dál? A co uděláš s tím, co z ní vyjde?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč se nejdřív dělí čtyřmi a odečítá se až potom.“",
+        "otocena_role_odpoved": "Hranatá závorka vyjde čtyřicet čtyři a to se dělí čtyřmi, protože dělení má přednost před mínus. Až potom se jedenáct odečte od osmdesáti čtyř.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $69$: přehlédne kulatou závorku a násobí jen dvanáct. $43$: dělí čtyřmi jen poslední čtyřku. Zeptejte se: „Co všechno se dělí čtyřmi?“ (Celá hranatá závorka.) $10$: odečítá dřív, než dělí."
+      },
+      "semafor": {
+        "zelena": "Výborně — závorky i pořadí zvládá samo. Pochvalte, že šlo od vnitřní závorky ven. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu $60 - [3 \\cdot (9 - 5) + 6] : 2$. Ať řekne, co počítá první, druhé a další, a napíše výsledek. Kontrola pro vás: $9 - 5 = 4$, $3 \\cdot 4 = 12$, $12 + 6 = 18$, $18 : 2 = 9$, $60 - 9 = 51$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 3 krabičky a 15 kostek nebo bonbonů. Zítra ať dítě dá do každé krabičky 4 kostky a 3 nechá volně. Pak ať všechno rozdělí na 3 stejné hromádky a řekne, kolik je v jedné. Pak ať samo zapíše $[3 \\cdot 4 + 3] : 3$. Potom zopakujte lekci „Pořadí operací a závorky“. Kontrola pro vás: celkem 15, v jedné hromádce 5."
+      },
+      "tisk": {
+        "zadani": "Vypočítej:\n\n$$84 - [5 \\cdot (12 - 4) + 4] : 4$$\n\nVýsledek: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "stredni",
+    "poznamka": "Výpočty ověřeny skriptem (python): U1 A $42$ (pořadí děleno, krát, mínus, plus; známá pořadí neslo-zleva 2×, scital-pred-nasobenim), B $14$, C $24$ ($60$). U2 $55$ (Petr $64$; $25$; $41$). U3 nákup $108$ ($1\\,332$; $90$), vráceno $92$ ($164$; $110$; $108$). U4 $73$ ($69$; $43$; $10$). Kontroly v oranžové a červené přepočítány. Sporné: U1 C dlaždice „$24$ i $60$, pořadí je jedno“ (kód poradi-nezalezi) místo třetího čísla, protože výraz $a + b \\cdot c$ má jen jednu číselnou chybu; U2 k2 má dva distraktory se stejným kódem scital-pred-nasobenim; U3 k1 má místo distraktoru scital-pred-nasobenim (osnova) distraktor prehledl-udaj (jedna propiska), scital-pred-nasobenim je v k2 ($1\\,332$). Kódy chyb v oddílu A rozlišují „zleva“ jen přes neslo-zleva i pro plus a mínus ($41$).",
+    "zkontroloval": "autor",
+    "datum": "2026-10-01"
+  }
+}
