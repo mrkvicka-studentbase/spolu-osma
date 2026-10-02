@@ -78,7 +78,7 @@
                 "id": "b",
                 "text": "$\\frac{5}{9}$",
                 "spravne": false,
-                "typ_chyby": "prevratil-prvni"
+                "typ_chyby": "prevratil-oba"
               },
               {
                 "id": "c",
@@ -140,7 +140,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč se v příkladu C převrací čtyři devítiny, a ne dvě třetiny.“",
         "otocena_role_odpoved": "Protože čtyřmi devítinami se dělí. Dělit zlomkem je totéž jako násobit převráceným zlomkem a převrací se jen ten, kterým dělím. Dvě třetiny zůstanou, jak jsou.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $-\\frac{2}{7}$, $-\\frac{7}{2}$: plete převrácené a opačné číslo. Zeptejte se: „Co dá převrácené číslo krát původní?“ (Jedničku.) $\\frac{9}{5}$, $\\frac{8}{27}$: násobí bez převrácení; $\\frac{5}{9}$, $\\frac{2}{3}$: převrací první zlomek; $5$: dělí obráceně. „Kterým číslem se dělí?“ (Tím za dvojtečkou.)"
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $-\\frac{2}{7}$, $-\\frac{7}{2}$: plete převrácené a opačné číslo. Zeptejte se: „Co dá převrácené číslo krát původní?“ (Jedničku.) $\\frac{9}{5}$, $\\frac{8}{27}$: násobí bez převrácení; $\\frac{2}{3}$: převrací první zlomek; $\\frac{5}{9}$: převrací oba; $5$: dělí obráceně. „Kterým číslem se dělí?“ (Tím za dvojtečkou.)"
       },
       "semafor": {
         "zelena": "Výborně — převrácené číslo i dělení sedí. Pochvalte, že převracelo jen číslo za dvojtečkou, a jděte dál.",
@@ -436,7 +436,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč se nahoře nejdřív sčítá a teprve potom dělí.“",
         "otocena_role_odpoved": "Dlouhá čára funguje jako závorka: celé horní patro se dělí celým dolním. Proto musím horní součet spočítat celý a až potom ho vydělím pěti devítinami.",
-        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $\\frac{2}{3}$: převrátí horní patro. Zeptejte se: „Kterým zlomkem se dělí?“ (Dolním.) $\\frac{18}{25}$: nahoře sečte čitatele i jmenovatele. „Kolik je polovina a třetina?“ (Pět šestin.) $\\frac{25}{54}$: násobí bez převrácení. „Co se při dělení převrací?“ (Dolní zlomek.)"
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $\\frac{2}{3}$: převrátí horní patro. Zeptejte se: „Kterým zlomkem se dělí?“ (Dolním.) $\\frac{18}{25}$: sečte čitatele i jmenovatele. „Kolik je polovina a třetina?“ (Pět šestin.) $\\frac{25}{54}$: nepřevrátí nic. „Co se při dělení převrací?“ (Dolní zlomek.)"
       },
       "semafor": {
         "zelena": "Výborně — složený zlomek zvládá samo. Pochvalte, že nejdřív spočítalo horní patro. Zítra můžete pokračovat další lekcí.",
@@ -449,9 +449,9 @@
     }
   ],
   "kontrola": {
-    "jistota": "stredni",
-    "poznamka": "Autor 1. 10. (čísla ověřena skriptem): U1 $\\frac{7}{2}$; $\\frac{1}{5}$ ($\\frac{9}{5}$, $\\frac{5}{9}$, 5); $\\frac{3}{2}$ ($\\frac{8}{27}$, $\\frac{2}{3}$). U2 $\\frac{3}{4} \\cdot \\frac{10}{9} = \\frac{5}{6}$ ($\\frac{6}{5}$, $\\frac{40}{27}$, $\\frac{27}{40}$). U3 5 skleniček (0,2; 0,1125), zbude $\\frac{3}{10}$ l ($\\frac{9}{20}$, $\\frac{3}{5}$). U4 $\\frac{5}{6} : \\frac{5}{9} = \\frac{3}{2}$ ($\\frac{2}{3}$, $\\frac{18}{25}$, $\\frac{25}{54}$). Sporné: 1) U1 A dlaždice $-\\frac{7}{2}$ má kód opacne-prevracene-zamena (prohodí i změní znaménko), jiný kód pro ni není. 2) U3 sklenička $\\frac{3}{20}$ l místo $\\frac{3}{16}$ z osnovy: u šestnáctin dává chyba „trojkou násobí i jmenovatel“ stejný zbytek jako odpověď „kolik nalil“ ($\\frac{9}{16}$). 3) U3 k2 zname 0,1125 ($\\frac{9}{80}$) je méně „hezké“ číslo, dítě ho zadá spíš zlomkem; vstup cislo zápis zlomku s lomítkem přijme. 4) U3 final je zlomek bez jednotky, jednotka je v popisku.",
-    "zkontroloval": "autor",
+    "jistota": "jista",
+    "poznamka": "Recenzent 1. 10. 2026: všechna čísla, mezivýsledky, kontroly v oranžové a červené a známé chyby přepočítány nezávisle (python Fraction), správné odpovědi i známé chyby ověřeny přes vyhodnotKrok. U1 $\\frac{7}{2}$; $\\frac{1}{5}$ ($\\frac{9}{5}$, $\\frac{5}{9}$, $5$); $\\frac{3}{2}$ ($\\frac{8}{27}$, $\\frac{2}{3}$). U2 $\\frac{3}{4} \\cdot \\frac{10}{9} = \\frac{5}{6}$ ($\\frac{6}{5}$, $\\frac{40}{27}$, $\\frac{27}{40}$). U3 $5$ skleniček ($0{,}2$; $0{,}1125$, i zapsané jako $\\frac{1}{5}$ a $\\frac{9}{80}$ s lomítkem), zbude $\\frac{3}{10}$ l ($\\frac{9}{20}$, $\\frac{3}{5}$). U4 $\\frac{5}{6} : \\frac{5}{9} = \\frac{3}{2}$ ($\\frac{2}{3}$, $\\frac{18}{25}$, $\\frac{25}{54}$). Věcná chyba (1): U1 B dlaždice $\\frac{5}{9}$ měla kód prevratil-prvni, ale převrácení prvního dá $\\frac{5}{3} \\cdot 3 = 5$; $\\frac{5}{9} = \\frac{5}{3} \\cdot \\frac{1}{3}$ je prevratil-oba (opraven kód i typická chyba). Dále U4 typická chyba zkrácena pod 50 slov. Body autora: $-\\frac{7}{2}$ jako opacne-prevracene-zamena v pořádku; sklenička $\\frac{3}{20}$ l místo $\\frac{3}{16}$ zdůvodněná (rozlišitelné chyby); jednotka v popisku výsledku v pořádku.",
+    "zkontroloval": "recenzent",
     "datum": "2026-10-01"
   }
 }
