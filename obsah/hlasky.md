@@ -657,3 +657,23 @@ Název tématu na přehledu: „Téma 3 · Zlomky I“. Klíče `tema_mat.t1` �
 
 | klíč | kde | text |
 |---|---|---|
+| `tema_mat.t1` | přehled, matematika, téma 1 | Přirozená čísla a dělitelnost |
+| `tema_mat.t2` | přehled, matematika, téma 2 | Desetinná čísla |
+| `tema_mat.t3` | přehled, matematika, téma 3 | Jednotky, obvod a obsah |
+| `tema_mat.t4` | přehled, matematika, téma 4 | Zlomky I |
+| `tema_mat.t5` | přehled, matematika, téma 5 | Zlomky II |
+| `tema_mat.t6` | přehled, matematika, téma 6 | Celá a racionální čísla |
+| `tema_mat.t7` | přehled, matematika, téma 7 | Úhly, trojúhelníky, souměrnost |
+| `tema_mat.t8` | přehled, matematika, téma 8 | Poměr, měřítko, úměrnost |
+| `tema_mat.t9` | přehled, matematika, téma 9 | Procenta a úrok |
+| `tema_mat.t10` | přehled, matematika, téma 10 | Tělesa a slovní úlohy |
+| `tema_cj.t1` | přehled, čeština, téma 1 | Slovní druhy |
+| `tema_cj.t2` | přehled, čeština, téma 2 | Podstatná jména: vzory a koncovky |
+| `tema_cj.t3` | přehled, čeština, téma 3 | Přídavná jména |
+| `tema_cj.t4` | přehled, čeština, téma 4 | Zájmena a číslovky |
+| `tema_cj.t5` | přehled, čeština, téma 5 | Slovesa: způsob, vid, rod |
+| `tema_cj.t6` | přehled, čeština, téma 6 | Vyjmenovaná slova |
+| `tema_cj.t7` | přehled, čeština, téma 7 | Shoda přísudku s podmětem |
+| `tema_cj.t8` | přehled, čeština, téma 8 | Větné členy |
+| `tema_cj.t9` | přehled, čeština, téma 9 | Souvětí a čárka |
+| `tema_cj.t10` | přehled, čeština, téma 10 | Stavba slova a pravopis na švu |

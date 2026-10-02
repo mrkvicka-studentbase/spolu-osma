@@ -182,8 +182,10 @@ describe('lekce v doporučeném pořadí', () => {
 
 describe('temata.js', () => {
   test('název tématu: z hlášek, jinak z kapitol lekcí', () => {
-    assert.equal(nazevTematu('matematika', 2, katalog()), 'Zlomky');
-    assert.equal(nazevTematu('matematika', 7, []), '');
+    // názvy jsou v obsah/hlasky.md (tema_mat.t*, tema_cj.t*), mají přednost před kapitolami lekcí
+    assert.equal(nazevTematu('matematika', 2, katalog()), 'Desetinná čísla');
+    assert.equal(nazevTematu('matematika', 7, []), 'Úhly, trojúhelníky, souměrnost');
+    assert.equal(nazevTematu('cestina', 9, []), 'Souvětí a čárka');
   });
   test('počet úloh: z obsahu, z katalogu, jinak podle předmětu', () => {
     assert.equal(pocetUlohLekce({ ulohy: [1, 2, 3, 4, 5] }), 5);
