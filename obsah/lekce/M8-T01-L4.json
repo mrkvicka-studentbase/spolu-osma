@@ -18,7 +18,7 @@
       "text": "trojka, devítka: součet číslic"
     },
     {
-      "znak": "$D(a, b)$ a $n(a, b)$",
+      "znak": "$D(8, 12) = 4$, $n(8, 12) = 24$",
       "text": "dělit, nebo opakovat?"
     }
   ],
@@ -134,7 +134,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč dva tisíce pět set devatenáct není dělitelné třemi, i když končí devítkou.“",
         "otocena_role_odpoved": "U trojky nerozhoduje poslední číslice, ale součet všech číslic. Dva plus pět plus jedna plus devět je sedmnáct a to třemi dělitelné není.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A vybere $6 \\cdot 2$ (nejde zleva) nebo $2 - 4$ (mínus dřív než děleno). U B $4\\,213$ nebo $2\\,519$: rozhoduje podle poslední číslice. Zeptejte se: „Kolik je součet číslic?“ U C $D(4, 6)$ nebo $4 \\cdot 6$. Zeptejte se: „Bude to dřív, nebo později než za šest dní?“ (Později, za dvanáct.)"
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A vybere $6 \\cdot 2$ (nejde zleva) nebo $2 - 4$ (mínus dřív než děleno). U B $4\\,213$ nebo $2\\,519$: rozhoduje podle poslední číslice; zeptejte se: „Kolik je součet číslic?“ U C $D(4, 6)$ nebo $4 \\cdot 6$: „Bude to dřív, nebo později než za šest dní?“ (Později, za dvanáct.)"
       },
       "semafor": {
         "zelena": "Výborně — všechny tři části tématu sedí. Pochvalte, že u každého příkladu poznalo, na co se ptá, a jděte dál.",
@@ -325,7 +325,7 @@
         },
         {
           "id": "final",
-          "popisek": "Výsledek",
+          "popisek": "Kolik koleček uběhnou dohromady?",
           "vstup": {
             "typ": "cislo",
             "jednotka": "koleček"
@@ -350,7 +350,7 @@
         }
       ],
       "tahak": {
-        "vysvetleni": "Kontrola tématu: úloha spojuje společný násobek a pořadí operací. Oba běžci jsou na startu vždy po celém kole, proto se hledá číslo, které jde vydělit devíti i dvanácti: nejmenší společný násobek. Pak se spočítá, kolik kol uběhne každý, a sečte se to.",
+        "vysvetleni": "Kontrola tématu: úloha spojuje společný násobek a pořadí operací. Oba běžci jsou na startu vždy po celém kole, proto se hledá číslo, které jde vydělit devíti i dvanácti: nejmenší společný násobek. Pak se spočítá, kolik kol uběhne každý, a sečte se to. Čte se: $n(9, 12)$ „nejmenší společný násobek čísel devět a dvanáct“.",
         "reseni": "$12$, $24$, $36$ (násobky dvanácti; až třicet šest jde vydělit i devíti)\n\n$n(9, 12) = 36$ (spolu na startu za třicet šest minut)\n\n$36 : 9 = 4$ (Adamova kolečka)\n\n$36 : 12 = 3$ (Emina kolečka)\n\n$36 : 9 + 36 : 12 = 4 + 3 = 7$ (dohromady)\n\n**Výsledek:** za $36$ minut, dohromady $7$ koleček",
         "otazky": [
           {
@@ -363,7 +363,7 @@
           },
           {
             "k": "Krok 2 a výsledek",
-            "text": "„Tady máš začátek: Ema je na startu za dvanáct, dvacet čtyři, třicet šest minut. Kdy tam je Adam? Kolik kol do té doby uběhne každý?“"
+            "text": "„Tady máš začátek: Ema je na startu za dvanáct a za dvacet čtyři minut. Kdy je tam Adam? Kolik kol uběhne každý?“"
           }
         ],
         "otocena_role": "„Vysvětli mi, proč nebudou spolu na startu už za osmnáct minut.“",
@@ -383,7 +383,7 @@
       "id": "M8-T01-L4-U4",
       "typ": "semafor",
       "cas_min": 4,
-      "zadani": "Honzík má dvě laťky, jednu dlouhou $72$ cm a druhou $120$ cm. Chce je rozřezat na stejně dlouhé kusy, co nejdelší, aby nic nezbylo.\n\nKolik centimetrů bude měřit jeden kus?",
+      "zadani": "Honzík má dvě laťky, jednu dlouhou $40$ cm a druhou $56$ cm. Chce je rozřezat na stejně dlouhé kusy, co nejdelší, aby nic nezbylo.\n\nKolik centimetrů bude měřit jeden kus?",
       "zdroj": "vlastni",
       "kroky": [
         {
@@ -394,19 +394,19 @@
             "jednotka": "cm"
           },
           "spravne": {
-            "hodnota": 24
+            "hodnota": 8
           },
           "zname_chyby": [
             {
-              "hodnota": 6,
+              "hodnota": 2,
               "typ_chyby": "rozklad-bez-opakovani"
             },
             {
-              "hodnota": 360,
+              "hodnota": 280,
               "typ_chyby": "nsd-nsn-zamena"
             },
             {
-              "hodnota": 8,
+              "hodnota": 12,
               "typ_chyby": "odpovida-na-jinou-otazku"
             }
           ]
@@ -414,15 +414,15 @@
       ],
       "tahak": {
         "vysvetleni": "Kontrolní úloha tématu: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Délka kusu musí dělit obě laťky beze zbytku a má být co největší.",
-        "reseni": "$72 = 2 \\cdot 2 \\cdot 2 \\cdot 3 \\cdot 3$ (rozklad)\n\n$120 = 2 \\cdot 2 \\cdot 2 \\cdot 3 \\cdot 5$ (rozklad)\n\n$D(72, 120) = 2 \\cdot 2 \\cdot 2 \\cdot 3 = 24$ (společné jsou tři dvojky a jedna trojka)\n\n$72 : 24 = 3$, $120 : 24 = 5$ (zkouška: nic nezbude, kusů je osm)\n\n**Výsledek:** $24$ cm",
+        "reseni": "$40 = 2 \\cdot 2 \\cdot 2 \\cdot 5$ (rozklad)\n\n$56 = 2 \\cdot 2 \\cdot 2 \\cdot 7$ (rozklad)\n\n$D(40, 56) = 2 \\cdot 2 \\cdot 2 = 8$ (společné jsou tři dvojky)\n\n$40 : 8 = 5$, $56 : 8 = 7$ (zkouška: nic nezbude, kusů je dvanáct)\n\n**Výsledek:** $8$ cm",
         "otazky": [
           "„Řekni mi vlastními slovy, co chce Honzík udělat a na co se úloha ptá.“",
           "„Délka kusu musí beze zbytku dělit obě laťky. Hledáš dělitel, nebo násobek? Největší, nebo nejmenší?“",
-          "„Tady máš začátek: sedmdesát dva je dva krát dva krát dva krát tři krát tři. Jak rozložíš sto dvacet? Co mají rozklady společné?“"
+          "„Tady máš začátek: čtyřicet je dva krát dva krát dva krát pět. Jak rozložíš padesát šest? Co mají rozklady společné?“"
         ],
-        "otocena_role": "„Vysvětli mi, proč kus nemůže měřit třeba třicet šest centimetrů.“",
-        "otocena_role_odpoved": "Třicet šest se do sedmdesáti dvou vejde dvakrát, ale sto dvacet beze zbytku nerozdělí, zbylo by dvanáct centimetrů. Kus musí dělit obě laťky a největší takový je dvacet čtyři.",
-        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $360$: hledá násobek. Zeptejte se: „Může být kus delší než laťka?“ (Nemůže.) $6$: v rozkladu bere každé prvočíslo jen jednou; zeptejte se: „Kolik dvojek mají oba rozklady?“ (Tři.) $8$: napíše počet kusů."
+        "otocena_role": "„Vysvětli mi, proč kus nemůže měřit třeba deset centimetrů.“",
+        "otocena_role_odpoved": "Deset se do čtyřiceti vejde čtyřikrát, ale padesát šest beze zbytku nerozdělí, zbylo by šest centimetrů. Kus musí dělit obě laťky a nejdelší takový je osm.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $280$: hledá násobek. Zeptejte se: „Může být kus delší než laťka?“ (Nemůže.) $2$: v rozkladu bere každé prvočíslo jen jednou; zeptejte se: „Kolik dvojek mají oba rozklady?“ (Tři.) $12$: napíše počet kusů."
       },
       "semafor": {
         "zelena": "Výborně — téma čísla a dělitelnost zvládá samo. Pochvalte, že poznalo, že hledá dělitel. Zítra můžete pokračovat další lekcí.",
@@ -430,14 +430,14 @@
         "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: dva proužky papíru, 12 cm a 18 cm, a pravítko. Zítra ať dítě na obou proužcích zkusí odměřit stejně dlouhé díly: po 2, po 3, po 4 a po 6 cm. Ať řekne, kdy nic nezbude. Pak ať samo zapíše $D(12, 18) = 6$. Potom zopakujte lekci „Kontrola: čísla a dělitelnost“. Kontrola pro vás: nic nezbude u 2, 3 a 6 cm; nejdelší je 6 cm."
       },
       "tisk": {
-        "zadani": "Honzík má dvě laťky, jednu dlouhou $72$ cm a druhou $120$ cm. Chce je rozřezat na stejně dlouhé kusy, co nejdelší, aby nic nezbylo.\n\nKolik centimetrů bude měřit jeden kus?\n\nVýsledek: ______ cm"
+        "zadani": "Honzík má dvě laťky, jednu dlouhou $40$ cm a druhou $56$ cm. Chce je rozřezat na stejně dlouhé kusy, co nejdelší, aby nic nezbylo.\n\nKolik centimetrů bude měřit jeden kus?\n\nVýsledek: ______ cm"
       }
     }
   ],
   "kontrola": {
-    "jistota": "stredni",
-    "poznamka": "Výpočty ověřeny skriptem (python): U1 A první $48 : 6$, B $3\\,516$ (součet $15$; $4\\,213$ součet $10$, $2\\,519$ součet $17$), C $n(4, 6)$. U2 $46$ (Petr $70$; první závorka přehlédnutá $91$; sčítání před dělením $11$). U3 $n(9, 12) = 36$ ($D = 3$; součin $108$), koleček $4 + 3 = 7$ (součin: $12 + 9 = 21$; jen Adam $4$; jen Ema $3$). U4 $D(72, 120) = 24$ cm (prvočísla jen jednou $6$; $n = 360$; počet kusů $8$). Kontroly v oranžové a červené přepočítány. Sporné: U1 B oba distraktory mají stejný kód; „Platí“ 2 má text „trojka, devítka: součet číslic“ (osnova „devítka: součet číslic“), protože rozcvička B je na trojku; U2 k2 dlaždice $40 + 30$ je Petrova chyba jen jinak zapsaná; U3 final $3$ (jen Ema) je stejné číslo jako chybný $D$ v kroku 2, kód prehledl-udaj je u obou krajních hodnot.",
-    "zkontroloval": "autor",
+    "jistota": "jista",
+    "poznamka": "Recenze: vše přepočítáno skriptem a vyhodnoceno přes vyhodnotKrok: U1 $48 : 6$, $3\\,516$ (součty $10$, $17$, $15$), $n(4, 6)$; U2 $46$ ($70$, $91$, $11$); U3 $n(9, 12) = 36$ ($3$, $108$), koleček $7$ ($21$, $4$, $3$); kontroly v oranžové a červené sedí. Větší zásah: U4 měla laťky $72$ a $120$ cm ($120$ mimo osnovu „dvojice čísel do 100“, rozklady s pěti prvočísly, aritmetika těžší než U1–U3, SABLONA §19) → laťky $40$ a $56$ cm: $D(40, 56) = 8$ cm, známé chyby $2$ (rozklad-bez-opakovani), $280$ (nsd-nsn-zamena), $12$ kusů (odpovida-na-jinou-otazku); přepsáno řešení, otázka 3, otočená role, typická chyba a tisk. Dále: U3 popisek posledního kroku → „Kolik koleček uběhnou dohromady?“, otázka 3 už neprozrazuje $36$, ve vysvětlení „Čte se“; „Platí“ 3 konkrétní příklad $D(8, 12) = 4$, $n(8, 12) = 24$ místo $D(a, b)$; U1 typická chyba pod 50 slov.",
+    "zkontroloval": "recenzent",
     "datum": "2026-10-01"
   }
 }

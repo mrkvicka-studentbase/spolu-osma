@@ -212,7 +212,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč u A nejdřív dělíš osmnáct třemi, a ne tři krát dva.“",
         "otocena_role_odpoved": "Děleno a krát jsou si rovné, takže se jde zleva. Dělení stojí víc vlevo, proto je první. Kdyby se začalo násobením, vyšlo by jiné číslo.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. Když pořadí u A nebo B nesedí, přečtěte otázku k tomu příkladu. U C vybere $60$: sčítá dřív, než násobí. Zeptejte se: „Co má přednost, plus, nebo krát?“ (Krát.) Dlaždice „$24$ i $60$“ znamená, že pořadí bere jako jedno."
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Když pořadí u A nebo B nesedí, přečtěte otázku k tomu příkladu. U C vybere $60$: sčítá dřív, než násobí; „$24$ i $60$“: pořadí bere jako jedno. Zeptejte se: „Co má přednost, plus, nebo krát?“ (Krát, vyjde jen $24$.)"
       },
       "semafor": {
         "zelena": "Výborně — pořadí sedí. Pochvalte, že u děleno a krát vedle sebe šlo dítě zleva, a jděte dál.",
@@ -220,7 +220,7 @@
         "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 10 kostek nebo bonbonů. Zítra: „Máš 2 krabičky po 3 bonbonech a k tomu 4 bonbony volně.“ Ať dítě bonbony vyskládá a spočítá. Pak ať samo zapíše $2 \\cdot 3 + 4$ a řekne, proč se nejdřív násobí. Potom zopakujte lekci „Pořadí operací a závorky“. Kontrola pro vás: 10 bonbonů; nejdřív $2 \\cdot 3 = 6$, pak $6 + 4 = 10$."
       },
       "tisk": {
-        "zadani": "U příkladů A a B očísluj, v jakém pořadí počítáš. Celé počítat nemusíš.\n\nA)\n\n$$50 \\op{o1}{-} 18 \\op{o2}{:} 3 \\op{o3}{\\cdot} 2 \\op{o4}{+} 4$$\n\nB)\n\n$$2 \\op{o1}{\\cdot} [(9 \\op{o2}{-} 3) \\op{o3}{:} 2 \\op{o4}{+} 4]$$\n\nC) Kolik je $9 + 3 \\cdot 5$? Zakroužkuj: a) $60$ b) $24$ c) $24$ i $60$, pořadí je jedno"
+        "zadani": "U příkladů A a B celé počítat nemusíš.\n\nA)\n\n$$50 \\op{o1}{-} 18 \\op{o2}{:} 3 \\op{o3}{\\cdot} 2 \\op{o4}{+} 4$$\n\nB)\n\n$$2 \\op{o1}{\\cdot} [(9 \\op{o2}{-} 3) \\op{o3}{:} 2 \\op{o4}{+} 4]$$\n\nC) Kolik je $9 + 3 \\cdot 5$? Zakroužkuj: a) $60$ b) $24$ c) $24$ i $60$, pořadí je jedno"
       }
     },
     {
@@ -403,7 +403,7 @@
         },
         {
           "id": "final",
-          "popisek": "Výsledek",
+          "popisek": "Kolik prodavač vrátí?",
           "vstup": {
             "typ": "cislo",
             "jednotka": "Kč"
@@ -512,9 +512,9 @@
     }
   ],
   "kontrola": {
-    "jistota": "stredni",
-    "poznamka": "Výpočty ověřeny skriptem (python): U1 A $42$ (pořadí děleno, krát, mínus, plus; známá pořadí neslo-zleva 2×, scital-pred-nasobenim), B $14$, C $24$ ($60$). U2 $55$ (Petr $64$; $25$; $41$). U3 nákup $108$ ($1\\,332$; $90$), vráceno $92$ ($164$; $110$; $108$). U4 $73$ ($69$; $43$; $10$). Kontroly v oranžové a červené přepočítány. Sporné: U1 C dlaždice „$24$ i $60$, pořadí je jedno“ (kód poradi-nezalezi) místo třetího čísla, protože výraz $a + b \\cdot c$ má jen jednu číselnou chybu; U2 k2 má dva distraktory se stejným kódem scital-pred-nasobenim; U3 k1 má místo distraktoru scital-pred-nasobenim (osnova) distraktor prehledl-udaj (jedna propiska), scital-pred-nasobenim je v k2 ($1\\,332$). Kódy chyb v oddílu A rozlišují „zleva“ jen přes neslo-zleva i pro plus a mínus ($41$).",
-    "zkontroloval": "autor",
+    "jistota": "jista",
+    "poznamka": "Recenze: vše přepočítáno skriptem (python Fraction) a vyhodnoceno přes vyhodnotKrok: U1 A $42$ (pořadí děleno, krát, mínus, plus), B $14$, C $24$; U2 $55$ ($64$, $25$, $41$); U3 nákup $108$ ($1\\,332$, $90$), vrátí $92$ ($164$, $110$, $108$); U4 $73$ ($69$, $43$, $10$); kontroly v oranžové a červené sedí. Opraveno: U3 popisek posledního kroku „Výsledek“ → „Kolik prodavač vrátí?“ (zadání má dvě otázky); U1 typická chyba má otázku i pro dlaždici „$24$ i $60$“; U1 tisk bez zdvojeného pokynu (aplikace „Očísluj…“ přidává sama). Odchylky autora od osnovy (U1 C dlaždice poradi-nezalezi, U3 k1 distraktor prehledl-udaj, scital-pred-nasobenim v k2) přijaty.",
+    "zkontroloval": "recenzent",
     "datum": "2026-10-01"
   }
 }

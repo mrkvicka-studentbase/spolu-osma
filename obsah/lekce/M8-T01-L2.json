@@ -125,7 +125,7 @@
           },
           {
             "k": "B",
-            "text": "„Zkus každé číslo vydělit dvěma, třemi, pěti, sedmi. Které nejde vydělit ničím kromě jedničky a sebe?“"
+            "text": "„Prvočíslo má přesně dva dělitele: jedničku a samo sebe. Zkus každé číslo vydělit dvěma, třemi, pěti, sedmi. Které to splňuje?“"
           },
           {
             "k": "C",
@@ -228,7 +228,7 @@
         ],
         "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč číslo, které končí čtyřkou, nemusí být dělitelné čtyřmi.“",
         "otocena_role_odpoved": "U čtyřky nestačí poslední číslice, musí se vzít poslední dvě. Tady je to třicet čtyři a to čtyřmi beze zbytku nejde, protože čtyři krát osm je třicet dva.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 4. řádek? Ten je správně. Zeptejte se: „Které číslo tvoří poslední dvě číslice?“ (Třicet čtyři.) Kdo sám rozhoduje podle poslední číslice, klikne na 1. nebo 2. řádek; ty jsou správně. Výsledek $5$: počítá i čtyřku jako Petr; $1$: trojku a devítku posuzuje podle poslední číslice."
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 4. řádek? Ten je správně. Zeptejte se: „Které číslo tvoří poslední dvě číslice?“ (Třicet čtyři.) Klikne na 1. nebo 2. řádek? Ty jsou taky správně. Výsledek $5$: počítá i čtyřku jako Petr; $1$: trojku a devítku posuzuje podle poslední číslice."
       },
       "semafor": {
         "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že u čtyřky hlídalo poslední dvě číslice, a jděte dál.",
@@ -294,7 +294,7 @@
         },
         {
           "id": "final",
-          "popisek": "Výsledek",
+          "popisek": "Která číslice je největší?",
           "vstup": {
             "typ": "cislo"
           },
@@ -318,7 +318,7 @@
         }
       ],
       "tahak": {
-        "vysvetleni": "Číslo je dělitelné šesti, když je dělitelné dvěma i třemi zároveň. Dítě zkouší číslice od nuly do devíti. Past: ověří jen jednu podmínku. Nula se počítá taky: $4\\,170$ šesti dělitelné je. Ve výsledku se chce číslice, ne celé číslo.",
+        "vysvetleni": "Číslo je dělitelné šesti, když je dělitelné dvěma i třemi zároveň. Čtvereček je chybějící poslední číslice. Dítě zkouší číslice od nuly do devíti. Past: ověří jen jednu podmínku. Nula se počítá taky: $4\\,170$ šesti dělitelné je. Ve výsledku se chce číslice, ne celé číslo.",
         "reseni": "$4 + 1 + 7 = 12$ (součet známých číslic)\n\n$0$, $3$, $6$, $9$ (s nimi je součet číslic dělitelný třemi)\n\n$0$, $6$ (z nich jen sudé, číslo musí být dělitelné i dvěma)\n\n$4\\,170$ a $4\\,176$ (obě čísla jsou dělitelná šesti)\n\n**Výsledek:** hodí se $2$ číslice, největší je $6$",
         "otazky": [
           {
@@ -336,7 +336,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč se na konec nehodí devítka, i když je s ní součet číslic dělitelný třemi.“",
         "otocena_role_odpoved": "S devítkou na konci by číslo bylo liché a liché číslo není dělitelné dvěma. Pro šestku musí platit obojí, dělitelné dvěma i třemi.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 2 napíše $4$ a výsledek $9$: hlídá jen trojku. Zeptejte se: „Je číslo s devítkou na konci sudé?“ (Není.) $5$ a $8$: hlídá jen sudé číslo; zeptejte se na součet číslic. V kroku 2 $1$: zapomene na nulu. Výsledek $4\\,176$: napíše celé číslo místo číslice."
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 2 $4$, výsledek $9$: hlídá jen trojku. Zeptejte se: „Je číslo s devítkou na konci sudé?“ (Není.) $5$ a $8$: hlídá jen sudé; zeptejte se na součet číslic. V kroku 2 $1$: zapomene na nulu. Výsledek $4\\,176$: celé číslo místo číslice."
       },
       "semafor": {
         "zelena": "Výborně — obě podmínky dělitelnosti sedí. Pochvalte, že dítě hlídalo dvojku i trojku najednou, a jděte dál.",
@@ -402,9 +402,9 @@
     }
   ],
   "kontrola": {
-    "jistota": "stredni",
-    "poznamka": "Výpočty ověřeny skriptem (python): U1 A $516$ ($534$, $738$), B $53$ ($51 = 3 \\cdot 17$, $1$), C $342$ ($326$, $243$). U2 $5\\,634$: dělitelé z nabídky $2$, $3$, $6$, $9$ → $4$ (Petr $5$; podle poslední číslice u trojky a devítky $1$). U3 $417\\square$: dělitelné šesti jen $0$, $6$ → $2$ číslice, největší $6$ (jen trojka: $4$ číslice, max $9$; jen sudé: $5$, max $8$; celé číslo $4\\,176$). U4 $198 = 2 \\cdot 3 \\cdot 3 \\cdot 11$ → $19$ ($16$; $22$; $20$). Kontroly v oranžové a červené přepočítány. Odchylky od osnovy: U2 bez kroku k2 (oprava řádku), protože jiné typické chyby dávají u čtyřky stejný kód jako Petrova; U3 má prázdné místo na konci čísla (ne uprostřed jako $4\\_8$) a k2 je „kolik číslic se hodí“ místo „nejmenší číslice“: u $4\\_8$ je číslo vždy sudé a nejmenší číslice je u správného i chybného postupu stejná, takže by se chyba nedala rozpoznat. Sporné: U2 řádky detektiva jsou slovní rozhodnutí, ne výpočet; U3 k2 a final mají obě chybné hodnoty se stejným kódem (jen jedna podmínka); součet prvočísel v U4 je umělá kontrola rozkladu.",
-    "zkontroloval": "autor",
+    "jistota": "jista",
+    "poznamka": "Recenze: vše přepočítáno skriptem a vyhodnoceno přes vyhodnotKrok: U1 A $516$, B $53$, C $342$; U2 $5\\,634$ dělí $2$, $3$, $6$, $9$ → $4$ ($5$, $1$); U3 $417\\square$: číslice $0$ a $6$ → $2$, největší $6$ ($4$/$9$ jen trojka, $5$/$8$ jen sudé, $4\\,176$); U4 $198 = 2 \\cdot 3 \\cdot 3 \\cdot 11$ → $19$ ($16$, $22$, $20$); kontroly v oranžové a červené sedí. Opraveno: U1 otázka B vedla i k jedničce („nejde vydělit ničím kromě jedničky a sebe“) → definice se dvěma děliteli; U3 popisek posledního kroku → „Která číslice je největší?“; U3 vysvětlení říká, co znamená čtvereček; typická chyba U2 a U3 zkrácena pod 50 slov. Odchylky od osnovy (U2 bez k2, U3 čtvereček na konci a k2 „kolik číslic“) přijaty, zdůvodnění autora sedí.",
+    "zkontroloval": "recenzent",
     "datum": "2026-10-01"
   }
 }

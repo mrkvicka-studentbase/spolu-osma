@@ -134,7 +134,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč nejmenší společný násobek šesti a osmi není čtyřicet osm.“",
         "otocena_role_odpoved": "Čtyřicet osm je společný násobek, ale ne nejmenší. Už dvacet čtyři jde vydělit šesti i osmi, takže nejmenší je dvacet čtyři.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $48$ nebo u B $2$: plete si dělitel a násobek. Zeptejte se: „Má vyjít víc, nebo míň než zadaná čísla?“ U B $48$: jen vynásobí. U A $2$: dvojku bere jen jednou. U C $D(10, 15)$ nebo součin: „Odjedou spolu dřív, nebo později než za patnáct minut?“ (Později, ne až za sto padesát.)"
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. A $48$, B $2$, C $D(10, 15)$: plete si dělitel a násobek; zeptejte se: „Má vyjít víc, nebo míň než zadaná čísla?“ (Dělitel míň, násobek víc.) B $48$, C součin: „Najdeš menší společný násobek?“ (B $24$, C $30$.) A $2$: dvojku bere jednou."
       },
       "semafor": {
         "zelena": "Výborně — dělitel i násobek sedí. Pochvalte, že dítě poznalo, kdy hledá který, a jděte dál.",
@@ -329,10 +329,9 @@
         },
         {
           "id": "final",
-          "popisek": "Výsledek",
+          "popisek": "Kolik lízátek je v balíčku?",
           "vstup": {
-            "typ": "cislo",
-            "jednotka": "lízátek"
+            "typ": "cislo"
           },
           "spravne": {
             "hodnota": 4
@@ -422,7 +421,7 @@
         "otazky": [
           "„Řekni mi vlastními slovy, co se na nádraží děje a na co se úloha ptá.“",
           "„Hledáš dělitel, nebo násobek? Bude to dřív, nebo později než za čtyřicet pět minut?“",
-          "„Tady máš začátek: vlak odjíždí za čtyřicet pět, devadesát, sto třicet pět minut. Kdy odjíždí autobus? Kdy se to potká poprvé?“"
+          "„Tady máš začátek: vlak odjíždí za čtyřicet pět minut, autobus za třicet. Napiš si další odjezdy obou. Kdy se potkají poprvé?“"
         ],
         "otocena_role": "„Vysvětli mi, proč neodjedou spolu už za čtyřicet pět minut.“",
         "otocena_role_odpoved": "Za čtyřicet pět minut odjíždí jen vlak. Autobus jezdí po třiceti minutách a čtyřicet pět nejde vydělit třiceti. Poprvé spolu odjedou za devadesát minut.",
@@ -439,9 +438,9 @@
     }
   ],
   "kontrola": {
-    "jistota": "stredni",
-    "poznamka": "Výpočty ověřeny skriptem (python): U1 A $D(16, 24) = 8$ ($n = 48$; dvojka jen jednou $2$), B $n(6, 8) = 24$ ($48$; $D = 2$), C $n(10, 15)$. U2 $n(24, 36) = 72$ (Petr $36$; součin $864$; $D = 12$). U3 $D(54, 72) = 18$ balíčků ($n = 216$; dvojka a trojka jen jednou $6$; jen dělitel $72$), $4$ lízátka ($12$; tyčinky $3$; balíčky $18$). U4 $n(45, 30) = 90$ ($D = 15$; součin $1\\,350$; trojka jen jednou $30$). Kontroly v oranžové a červené přepočítány. Sporné: zápis $D(a, b)$ a $n(a, b)$ chybí v obsah/cteni-zapisu.md, „Čte se“ je zatím ve vysvětlení; U3 k1 distraktor „největší dělitel jen čísla $72$“ má kód prehledl-udaj (osnova uvádí jen nsd-nsn-zamena) a k2 má známou chybu $72$ se stejným kódem; U4 hodnota $30$ (rozklad-bez-opakovani) je zároveň jedno ze zadaných čísel, dítě ji může napsat i bez rozkladu.",
-    "zkontroloval": "autor",
+    "jistota": "jista",
+    "poznamka": "Recenze: vše přepočítáno skriptem a vyhodnoceno přes vyhodnotKrok: U1 $D(16, 24) = 8$ ($48$, $2$), $n(6, 8) = 24$ ($48$, $2$), C $n(10, 15)$; U2 $n(24, 36) = 72$ ($36$, $864$, $12$); U3 $D(54, 72) = 18$ balíčků ($216$, $6$, $72$), $4$ lízátka ($12$, $3$, $18$); U4 $n(45, 30) = 90$ min ($15$, $1\\,350$, $30$); kontroly v oranžové a červené sedí. Opraveno: U3 popisek posledního kroku → „Kolik lízátek je v balíčku?“ a bez jednotky (zobrazovalo „4 lízátek“); U4 otázka 3 prozrazovala výsledek $90$ ve výčtu odjezdů → jen začátek odjezdů; U1 typická chyba zkrácena pod 50 slov, s odpovědí k otázce a se všemi distraktory. „Čte se“ pro $D$ a $n$ je ve vysvětlení (v obsah/cteni-zapisu.md zápis chybí, mimo tuto lekci).",
+    "zkontroloval": "recenzent",
     "datum": "2026-10-01"
   }
 }
