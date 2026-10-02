@@ -53,7 +53,7 @@ create table if not exists public.deti (
                 check (char_length(btrim(krestni_jmeno)) between 1 and 50),
   typ_skoly     text check (typ_skoly in ('gymnazium', 'ss_maturita')),
   znamka_8      smallint check (znamka_8 between 1 and 5),
-  varianta      text not null default 'z9' check (varianta in ('z9', 'z7')),
+  varianta      text not null default 'z8' check (varianta in ('z8', 'z9', 'z7')),
   predmety      text[] not null default '{matematika,cestina}'
                 constraint deti_predmety_check
                 check (cardinality(predmety) between 1 and 2 and predmety <@ array['matematika', 'cestina']::text[]),
@@ -77,7 +77,7 @@ create table if not exists public.lekce (
   poradi      smallint not null check (poradi between 1 and 4),
   tema        text not null,
   kapitola    text not null,
-  varianta    text not null default 'z9' check (varianta in ('z9', 'z7')),
+  varianta    text not null default 'z8' check (varianta in ('z8', 'z9', 'z7')),
   obsah       jsonb not null,
   verejna     boolean not null default false,
   otevrit_od  timestamptz not null,

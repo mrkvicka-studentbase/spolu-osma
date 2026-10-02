@@ -35,6 +35,8 @@ for (const nutny of ['index.html', 'prehled.html', 'lekce.html', 'rodic.html', '
 for (const n of soubory) if (VYNECHAT.has(path.basename(n))) chyby.push(`vývojářský soubor v k-nahrani: ${n}`);
 const config = existsSync(path.join(CIL, 'js/config.js')) ? readFileSync(path.join(CIL, 'js/config.js'), 'utf8') : '';
 if (/service_role|sb_secret_/i.test(config)) chyby.push('js/config.js obsahuje service key — NIKDY nenahrávat!');
+if (/DOPLNIT/.test(config)) chyby.push('js/config.js nemá adresu a klíč nového projektu Spolu 8 (SPUSTENI.md, krok B4)');
+if (/ruogwpyayxgclcwnaxky/.test(config)) chyby.push('js/config.js míří na databázi Spolu na přijímačky — Spolu 8 musí mít vlastní projekt');
 const audio = soubory.filter((n) => n.startsWith('audio/') && n.endsWith('.mp3'));
 
 console.log(`k-nahrani/: ${soubory.length} souborů (z toho nahrávky češtiny ${audio.length}).`);

@@ -35,7 +35,12 @@ echo "create database jednou;" > "$TMP/d.sql"; chmod 644 "$TMP/d.sql"; psql -f "
 psqlj() { jako_pg "PGOPTIONS='-c client_min_messages=warning' '$PGBIN/psql' -h '$TMP' -p $PORT -U postgres -d jednou -v ON_ERROR_STOP=1 -q $*"; }
 cp "$KOREN/supabase/test/stuby-supabase.sql" "$TMP/s.sql"; cp "$KOREN/supabase/vse-v-jednom.sql" "$TMP/v.sql"; chmod 644 "$TMP/s.sql" "$TMP/v.sql"
 psqlj -f "$TMP/s.sql" >/dev/null; psqlj -f "$TMP/v.sql" >/dev/null
-echo "✔ vse-v-jednom.sql v pořádku"
+# seed Spolu 8 posílá varianta z8 (zastaralý vse-v-jednom.sql ji odmítal)
+echo "insert into public.lekce (id, predmet, faze, tyden, poradi, tema, kapitola, varianta, obsah, otevrit_od) values ('M8-T01-L1', 'matematika', 'osma', 1, 1, 't', 'k', 'z8', '{}', now()); delete from public.lekce;" > "$TMP/z8.sql"; chmod 644 "$TMP/z8.sql"
+psqlj -f "$TMP/z8.sql" >/dev/null
+psqlj -f "$TMP/t.sql" > "$TMP/t1.log" 2>&1 || true
+grep -q "ZÁMEK: sezeni_insert OK" "$TMP/t1.log" || { echo "✘ test zámku po vse-v-jednom.sql selhal"; tail -5 "$TMP/t1.log"; exit 1; }
+echo "✔ vse-v-jednom.sql v pořádku (lekce z8 + zámek)"
 
 # Čistá DB → přesně nástroj Pavla (npm run migrovat = supabase/skripty/migrovat.mjs, transakce + _migrace)
 echo "→ npm run migrovat na čisté DB"
