@@ -6,6 +6,7 @@
 | $12 : 4$ | dvanáct děleno čtyřmi |
 | $D(8, 12)$ | největší společný dělitel osmi a dvanácti |
 | $n(8, 12)$ | nejmenší společný násobek osmi a dvanácti |
+| $52°25′$ | padesát dva stupňů dvacet pět minut |
 | $3^2$ | tři na druhou (tři krát tři) |
 | $2^3$ | dva na třetí (dva krát dva krát dva) |
 | $\sqrt{49}$ | odmocnina ze čtyřiceti devíti |
