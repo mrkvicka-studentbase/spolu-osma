@@ -134,7 +134,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč není větší to číslo, které má víc číslic za čárkou.“",
         "otocena_role_odpoved": "Protože rozhoduje první místo za čárkou, desetiny. Nula celá šest má šest desetin, nula celá pět set osm jen pět. Když doplním nuly, je to šest set tisícin proti pěti stům osmi tisícinám.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A vybere $0{,}508$ nebo $0{,}58$: delší zápis bere jako větší. Zeptejte se: „Kolik desetin má které číslo?“ (Šest, pět, pět.) U B $12{,}3$: jen usekne; $12$: zaokrouhlí na celé. U C $0{,}7$ nebo $0{,}007$: plete desetiny, setiny a tisíciny."
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A vybere $0{,}508$ nebo $0{,}58$: delší zápis bere jako větší. Zeptejte se: „Kolik desetin má které číslo?“ (Nula celá šest má šest, ostatní dvě pět.) U B $12{,}3$: jen usekne; $12$: zaokrouhlí na celé. U C $0{,}7$ nebo $0{,}007$: plete desetiny, setiny a tisíciny."
       },
       "semafor": {
         "zelena": "Výborně — porovnání i zaokrouhlení sedí. Pochvalte, že se dítě dívalo na desetiny, ne na počet číslic, a jděte dál.",
@@ -378,11 +378,11 @@
         "otazky": [
           "„Řekni mi vlastními slovy, jaké číslo hledáš. Jaké dvě podmínky musí splnit?“",
           "„Doplň nuly, aby měla všechna čísla stejně míst za čárkou. Která z nich jsou menší než pět celých čtyři?“",
-          "„Tady máš začátek: pět celých třicet osm je pět celých tři sta osmdesát tisícin. Které z menších čísel je největší?“"
+          "„Tady máš začátek: pět celých čtyři je pět celých čtyři sta tisícin. Která čísla mají tisícin méně? Které z nich je největší?“"
         ],
         "otocena_role": "„Vysvětli mi, proč pět celých tři sta sedmdesát pět není větší než pět celých třicet osm.“",
         "otocena_role_odpoved": "Když doplním nulu, porovnávám pět celých tři sta osmdesát a pět celých tři sta sedmdesát pět. Desetiny jsou stejné, ale setin má první číslo osm a druhé jen sedm.",
-        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nepíše nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Během úlohy nic neříkejte, ptejte se až po odevzdání. Po odevzdání se podívejte na obrazovku dítěte: $5{,}375$: delší zápis bere jako větší. Zeptejte se: „Kolik setin má které číslo?“ (Osm a sedm.) $5{,}6$: přehlédne „menší než“ a napíše největší číslo ze všech. Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $5{,}375$: delší zápis bere jako větší. Zeptejte se: „Kolik setin má pět celých třicet osm a kolik pět celých tři sta sedmdesát pět?“ (Osm a sedm.) $5{,}6$: přehlédne „menší než“."
       },
       "semafor": {
         "zelena": "Výborně — porovnávání po řádech zvládá samo. Pochvalte, že si doplnilo nuly. Zítra můžete pokračovat další lekcí.",
@@ -395,9 +395,9 @@
     }
   ],
   "kontrola": {
-    "jistota": "stredni",
-    "poznamka": "Autor 1. 10. (skript): U1 A $0{,}6 > 0{,}58 > 0{,}508$; B $12{,}38 \\doteq 12{,}4$ (useknutí $12{,}3$, na celé $12$); C $0{,}07$. U2 $24{,}617$ → $25$; $24{,}6$; $24{,}62$ (useknutí $24{,}61$, na desetiny $24{,}6$). U3 pořadí $4{,}68 > 4{,}525 > 4{,}5 > 4{,}09$ (Tomáš, Adam, Klára, Lucka); podle délky zápisu Adam, Tomáš, Lucka, Klára (vítěz Adam, třetí $4{,}09$, Adam na desetiny $4{,}5$); devítka Lucky čtená jako desetiny ($4{,}9$) dá pořadí Lucka, Tomáš, Adam, Klára (třetí $4{,}525$, Lucka na desetiny $4{,}1$); vítěz $4{,}68 \\doteq 4{,}7$, useknutí $4{,}6$. U4 menší než $5{,}4$: $5{,}38$; $5{,}375$; $5{,}04$ → $5{,}38$ ($5{,}375$ délka zápisu, $5{,}6$ bez podmínky). Sporné: (1) U2 nemá krok k2, protože by opakoval final (osnova chce final = číslo na setiny); chyba je v posledním řádku, kód nasel-az-dusledek se nepoužije. (2) U3 má výkony na milimetry ($4{,}525$ m) — zadání to vysvětluje větou „různě přesně“. Kód rad-cislice-zamena pro „devět setin čtené jako devět desetin“ (Lucka) je rozšíření popisu kódu. (3) U1 A a U4: obě chybné možnosti A mají stejný kód porovnani-desetinnych-podle-delky. (4) U4: odpověď $5{,}4$ (záměna „menší než“ za „menší nebo rovno“) nemá kód, je jen „zatím nesedí“. (5) Platí má jen 3 řádky (osnova), znak $\\doteq$ je vysvětlen v „Čte se“ u U2, ne v legendě.",
-    "zkontroloval": "autor",
+    "jistota": "jista",
+    "poznamka": "Recenzent 1. 10.: matematika přepočítána skriptem (Fraction, matematické zaokrouhlení) včetně mezivýsledků v řešení, čísel v taháku, oranžové a červené; známé chyby i dlaždice ověřeny přes vyhodnotKrok. Věcné chyby žádné. Opraveno: U4 otázka 3 už neukazuje hledané číslo $5{,}38$ (v režimu samo by prozradila výsledek), ale postup přes tisíciny; U4 typická chyba zkrácena pod 50 slov (vzor kontrolní úlohy z T09); U1 typická chyba jednoznačná odpověď na otázku o desetinách. Ponecháno: U2 bez k2 (chyba v posledním řádku, final = oprava); U4 odpověď $5{,}4$ (menší nebo rovno) bez kódu, vyhodnotí se jako „zatím nesedí“.",
+    "zkontroloval": "recenzent",
     "datum": "2026-10-01"
   }
 }
