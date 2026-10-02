@@ -1,0 +1,588 @@
+{
+  "id": "cj-t9-l34",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 9,
+  "poradi": 2,
+  "tema": "Čárka v souvětí",
+  "kapitola": "souveti",
+  "cil_pro_rodice": "Dítě napíše čárku na hranici vedlejší věty (u věty vložené doprostřed z obou stran) a nenapíše ji před a, které jen spojuje.",
+  "uvod_pro_rodice": "Dnes se dítě učí psát čárku tam, kde začíná nebo končí vedlejší věta, a nepsat ji před a, které jen spojuje.",
+  "uvod_pravidla": [
+    {
+      "znak": "Čárka na hranici vedlejší věty",
+      "text": "co to je"
+    },
+    {
+      "znak": "Ne před a, i, ani, nebo (spojují)",
+      "text": "test"
+    },
+    {
+      "znak": "Kluk, který přišel, se smál.",
+      "text": "příklad"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "přísudek": "sloveso ve větě, které říká, co kdo dělá nebo co se děje (hraje, šli); patří k němu i chce jít nebo budu číst",
+    "věta jednoduchá": "věta s jedním přísudkem (Tomáš, Lucka a Klára šli ven.)",
+    "souvětí": "dvě nebo více vět spojených dohromady; vět je tolik, kolik je přísudků",
+    "věta hlavní": "věta, která obstojí sama (Vím.)",
+    "věta vedlejší": "věta, která sama neobstojí; začíná slovem jako že, když, protože, aby, který, kde (že přijdeš)",
+    "vložená věta": "vedlejší věta uprostřed jiné věty; čárka je před ní i za ní (Kluk, který přišel, se smál.)",
+    "spojovací slovo": "slovo, které připojuje vedlejší větu (že, když, protože, který), nebo jen spojuje (a, i, ani, nebo)"
+  },
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "cas_min": 25,
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t9-l34-U1",
+      "typ": "rozcvicka",
+      "cil": "Zopakovat lekci 33: počet vět podle přísudků a větu hlavní a vedlejší.",
+      "cas_min": 4,
+      "zadani": "V řadách A a B urči, kolik vět je v souvětí. V řadě C vyber větu vedlejší, v řadě D větu hlavní.\n\nA) Ema čte knihu a Adam hraje hokej.\n\nB) Honzík chce jet k babičce.\n\nC) Klára řekla, že přijde.\n\nD) Když prší, sedíme doma.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1 věta",
+                "spravne": false,
+                "typ_chyby": "souveti-pocet-podle-spojek"
+              },
+              {
+                "id": "b",
+                "text": "2 věty",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "3 věty",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1 věta",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "2 věty",
+                "spravne": false,
+                "typ_chyby": "souveti-infinitiv-jako-veta"
+              },
+              {
+                "id": "c",
+                "text": "3 věty",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Klára řekla",
+                "spravne": false,
+                "typ_chyby": "veta-hlavni-za-vedlejsi"
+              },
+              {
+                "id": "b",
+                "text": "že přijde",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Když prší",
+                "spravne": false,
+                "typ_chyby": "veta-hlavni-za-vedlejsi"
+              },
+              {
+                "id": "b",
+                "text": "sedíme doma",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje minulou lekci: vět je tolik, kolik je přísudků (sloves, která říkají, co se děje), a vedlejší věta začíná slovem jako že, když, který. Past v řadě B: chce jet je jeden přísudek. Otázky jsou po řadách: čtěte tu u řady, kde se dítě zasekne.",
+        "reseni": "#### A) Ema čte knihu a Adam hraje hokej.\n\n2 věty (čte, hraje)\n\n#### B) Honzík chce jet k babičce.\n\n1 věta (chce jet je jeden přísudek)\n\n#### C) Klára řekla, že přijde.\n\nže přijde (začíná že, sama neobstojí)\n\n#### D) Když prší, sedíme doma.\n\nsedíme doma (obstojí sama; Když prší je vedlejší)\n\n**Výsledek:** A) 2 věty, B) 1 věta, C) že přijde, D) sedíme doma",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Kdo v řadě A něco dělá a co dělá? Kolik je tam takových sloves?“"
+          },
+          {
+            "k": "B",
+            "text": "„Kolik věcí Honzík v řadě B dělá? Řekni to slovy z věty.“"
+          },
+          {
+            "k": "C a D",
+            "text": "„Kterou část řekneš samotnou a dává smysl? Kterou začíná slovo, po kterém čekáš pokračování?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, jak poznáš větu vedlejší. Ukaž mi to na řadě D.“",
+        "otocena_role_odpoved": "Vedlejší věta sama neobstojí a začíná slovem jako když, že, který. V řadě D je to Když prší. Sedíme doma obstojí samo, je to věta hlavní.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V řadě A vybere 1, protože tam není čárka. Zeptejte se: „Kolik je tam sloves?“ V B vybere 2: „Kolik věcí Honzík dělá?“ V C nebo D vybere první část jen proto, že je první: „Dá se ta část říct samotná?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — počet vět i větu vedlejší dítě drží z minulé lekce. Pochvalte, že hledalo slovesa, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Tomáš ví, že trénink začíná v pět.“ Dítě řekne, kolik je tam vět a která je vedlejší. Kontrola pro vás: 2 věty (ví, začíná); vedlejší je že trénink začíná v pět.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše dvě věty: jednu o sobě a jednu, která začíná „Když…“. V obou podtrhne slovesa a spočítá věty. Potom zopakujte lekci „Čárka v souvětí“. Kontrola pro vás: první věta má jedno sloveso (1 věta); věta s Když má dvě slovesa (2 věty) a část s když sama neobstojí."
+      },
+      "tisk": {
+        "zadani": "V řadách A a B zakroužkuj, kolik vět je v souvětí. V řadě C zakroužkuj větu vedlejší, v řadě D větu hlavní.\n\nA) Ema čte knihu a Adam hraje hokej. a) 1 věta b) 2 věty c) 3 věty\n\nB) Honzík chce jet k babičce. a) 1 věta b) 2 věty c) 3 věty\n\nC) Klára řekla, že přijde. a) Klára řekla b) že přijde\n\nD) Když prší, sedíme doma. a) Když prší b) sedíme doma"
+      }
+    },
+    {
+      "id": "cj-t9-l34-U2",
+      "typ": "nova",
+      "cil": "Sluchem spočítat věty a najít slovo, které začíná vloženou vedlejší větu (čárka se tu neověřuje).",
+      "cas_min": 5,
+      "zadani": "Poslechni si nahrávku. Potom odpověz na dvě otázky.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Kolik vět je v nahrávce?",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t9/l34-u2.mp3",
+            "prepis": "Lucka čte knihu a Tomáš, který přišel pozdě, píše úkol.",
+            "max_prehrani": 0,
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "1 věta",
+                  "spravne": false
+                },
+                {
+                  "id": "b",
+                  "text": "2 věty",
+                  "spravne": false,
+                  "typ_chyby": "souveti-pocet-podle-spojek"
+                },
+                {
+                  "id": "c",
+                  "text": "3 věty",
+                  "spravne": true
+                },
+                {
+                  "id": "d",
+                  "text": "4 věty",
+                  "spravne": false
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Které slovo začíná vedlejší větu?",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t9/l34-u2.mp3",
+            "prepis": "Lucka čte knihu a Tomáš, který přišel pozdě, píše úkol.",
+            "max_prehrani": 0,
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "čte",
+                  "spravne": false
+                },
+                {
+                  "id": "b",
+                  "text": "a",
+                  "spravne": false,
+                  "typ_chyby": "veta-hlavni-za-vedlejsi"
+                },
+                {
+                  "id": "c",
+                  "text": "který",
+                  "spravne": true
+                },
+                {
+                  "id": "d",
+                  "text": "píše",
+                  "spravne": false,
+                  "typ_chyby": "veta-hlavni-za-vedlejsi"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě větu jen slyší, text nevidí; nahrávku si může pustit znovu. Co v ní zazní, máte sbalené pod „Co zazní v nahrávce“. Nečtěte to nahlas, dítě má poslouchat. Past: vedlejší věta je vložená doprostřed jiné věty, dítě ji musí najít uprostřed.",
+        "reseni": "čte, přišel, píše (tři slovesa, tři věty)\n\nkterý přišel pozdě (věta vedlejší vložená doprostřed: začíná který, sama neobstojí)\n\nLucka čte knihu, Tomáš píše úkol (věty hlavní; a je jen spojuje)\n\n**Výsledek:** krok 1: 3 věty, krok 2: který",
+        "otazky": [
+          {
+            "k": "Krok 1",
+            "text": "„Pusť si nahrávku a na každé slovo, které říká, co kdo dělá, zvedni prst. Kolik prstů máš?“"
+          },
+          {
+            "k": "Krok 2",
+            "text": "„Co dělá Tomáš? A co se o něm dozvíš navíc, uprostřed?“"
+          },
+          {
+            "k": "Krok 2",
+            "text": "„Která část nahrávky samotná nedává smysl? Jakým slovem začíná?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, jak se v nahrávce pozná věta, která sama neobstojí.“",
+        "otocena_role_odpoved": "Začíná slovem který a říká jen něco navíc o Tomášovi. Sama neobstojí, je vedlejší a je vložená mezi Tomáš a píše úkol.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 vybere 2 věty podle a. Zeptejte se: „Kolik slov říká, co kdo dělá?“ V kroku 2 vybere a nebo píše: „Dá se ta část říct samotná?“ Vybere čte: „Co se dozvíš navíc uprostřed?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — vloženou větu dítě pozná i poslechem. Pochvalte, že si nahrávku pustilo znovu, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Řekněte dítěti větu: „Pes, který štěká u plotu, patří Adamovi.“ Dítě řekne, kolik vět slyší a které slovo začíná vedlejší větu. Kontrola pro vás: 2 věty (štěká, patří); vedlejší začíná slovem který.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra řekněte dítěti dvakrát pomalu větu „Kolo, které stojí venku, je nové.“ Dítě ji napíše a zakroužkuje část, která sama neobstojí. Potom zopakujte lekci „Čárka v souvětí“. Kontrola pro vás: zakroužkované které stojí venku; zbytek Kolo je nové obstojí sám."
+      },
+      "tisk": {
+        "zadani": "Poslouchej nahrávku (pustí ti ji rodič).\n\nA) Kolik vět je v nahrávce? Zakroužkuj: a) 1 věta b) 2 věty c) 3 věty d) 4 věty\n\nB) Které slovo začíná vedlejší větu? Zakroužkuj: a) čte b) a c) který d) píše"
+      }
+    },
+    {
+      "id": "cj-t9-l34-U3",
+      "typ": "nova",
+      "cil": "Napsat čárku před že, který, protože a na konci vložené vedlejší věty.",
+      "cas_min": 5,
+      "zadani": "Klikni na místa, kam patří čárka.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Adam ví že trénink začíná v pět. Kolo které stojí u plotu patří Emě. Klára zůstala doma protože byla nemocná.",
+            "cil": "mezery",
+            "min": 1,
+            "max": 6
+          },
+          "spravne": [
+            1,
+            7,
+            11,
+            16
+          ],
+          "zname_chyby": [
+            {
+              "chybi": [
+                1
+              ],
+              "typ_chyby": "carka-chybi-ze"
+            },
+            {
+              "chybi": [
+                7
+              ],
+              "typ_chyby": "carka-chybi-ktery"
+            },
+            {
+              "chybi": [
+                11
+              ],
+              "typ_chyby": "carka-vlozena-chybi-druha"
+            },
+            {
+              "chybi": [
+                16
+              ],
+              "typ_chyby": "carka-chybi-pred-spojkou"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě kliká na místa mezi slovy, kam patří čárka. Čárka se píše na hranici vedlejší věty: před že, který, protože. Past ve druhém souvětí: věta které stojí u plotu je vložená doprostřed, čárka patří před ni i za ni.",
+        "reseni": "Adam ví, že trénink začíná v pět. (před že)\n\nKolo, které stojí u plotu, patří Emě. (vložená věta: před i za)\n\nKlára zůstala doma, protože byla nemocná. (před protože)\n\n**Výsledek:** čárky za ví, Kolo, plotu, doma",
+        "otazky": [
+          "„Kde se v souvětí píše čárka? Řekni to vlastními slovy.“",
+          "„Najdi v každém souvětí slovo, kterým začíná věta, co sama neobstojí. Co patří před to slovo?“",
+          "„Ve druhém souvětí najdi sloveso věty, která začíná které. Kde ta věta končí a co tam patří?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč má druhé souvětí dvě čárky a ostatní jen jednu.“",
+        "otocena_role_odpoved": "Věta které stojí u plotu je uprostřed. Čárka je tam, kde začíná, i tam, kde končí. V ostatních souvětích je vedlejší věta na konci, stačí čárka před ní.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Chybí čárka za plotu. Zeptejte se: „Kde končí věta, která začíná které?“ Chybí čárka před že, které nebo protože: „Kde začíná věta, která sama neobstojí?“ Čárka navíc jinde: „Začíná nebo končí tam nějaká věta?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — čárky na hranicích vět sedí, i u vložené věty. Pochvalte, že dítě hledalo začátek i konec vedlejší věty, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Míč, který jsme našli v trávě, patří Tomášovi.“ Dítě řekne, za kterými slovy by napsalo čárku. Kontrola pro vás: za Míč a za trávě; věta který jsme našli v trávě je vložená, čárka je před ní i za ní.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše větu „Pes, který spí na gauči, je náš.“ a lehce přeškrtne část od který po gauči. Zbytek přečte nahlas. Pak ukáže čárku na obou koncích přeškrtnuté části. Potom zopakujte lekci „Čárka v souvětí“. Kontrola pro vás: bez přeškrtnuté části zbude Pes je náš; čárky jsou před který a za gauči."
+      },
+      "tisk": {
+        "zadani": "Doplň do souvětí čárky.\n\nAdam ví že trénink začíná v pět. Kolo které stojí u plotu patří Emě. Klára zůstala doma protože byla nemocná."
+      }
+    },
+    {
+      "id": "cj-t9-l34-U4",
+      "typ": "detektiv",
+      "cil": "Najít u Petra chybějící čárku na konci vložené vedlejší věty a říct, proč tam patří.",
+      "cas_min": 5,
+      "zadani": "Petr napsal souvětí a zapomněl v něm jednu čárku:\n\nPes, který štěkal celou noc usnul až ráno.\n\nNajdi místo, kam čárka patří.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na místo, kde čárka chybí.",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Pes, který štěkal celou noc usnul až ráno.",
+            "cil": "mezery",
+            "min": 1,
+            "max": 1
+          },
+          "spravne": [
+            4
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                0,
+                1,
+                2,
+                3,
+                5,
+                6
+              ],
+              "typ_chyby": "detektiv-jine-slovo"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Proč tam patří čárka?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Končí tam vedlejší věta",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "Začíná tam vedlejší věta",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "c",
+                "text": "Je tam výčet",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "d",
+                "text": "Je tam oslovení",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Napsal čárku před který, ale zapomněl na druhou. Dítě klikne na místo mezi slovy, kde chybí, a v kroku 2 (Proč tam patří čárka?) vybere důvod. Past: čárka před který už tam je a je správně.",
+        "reseni": "Chyba: chybí čárka za noc.\n\nPes, který štěkal celou noc, usnul až ráno. (vložená věta který štěkal celou noc má čárku na začátku i na konci)\n\n**Výsledek:** krok 1 za noc, krok 2 Končí tam vedlejší věta",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, kam se píše čárka u věty, která je uprostřed jiné věty.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Najdi v Petrově souvětí obě slovesa. Které patří k větě s který? Kde ta věta končí?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Přečti souvětí bez části, která začíná který. Co zbude? Kde ta část končila?“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a jak si ji příště ohlídám.“",
+        "otocena_role_odpoved": "Chybí čárka za noc. Věta který štěkal celou noc je vložená, čárka je před ní i za ní. Příště najít, kde vedlejší věta končí.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne za štěkal nebo za celou. Zeptejte se: „Patří celou noc ještě k tomu, co pes dělal?“ Klikne za usnul nebo za až: „Kde končí věta s který?“ V kroku 2 zvolí jiný důvod: „Ta věta tady začíná, nebo končí?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — Petrovu chybu dítě našlo i vysvětlilo. Pochvalte, že hledalo konec vložené věty, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr napsal čárku jen před který: Kluk který sedí vpředu je Adam.“ Zeptejte se: „Kam patří druhá čárka? Proč?“ Kontrola pro vás: za vpředu; tam končí vložená věta který sedí vpředu.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše větu o zvířeti, které zná, se slovem který nebo která uprostřed (Kočka, která…, spí). Pak zakroužkuje vloženou větu a napíše čárku na oba konce kroužku. Potom zopakujte lekci „Čárka v souvětí“. Kontrola pro vás: kroužek začíná slovem který (která) a končí před slovesem hlavní věty; čárka je na obou koncích."
+      },
+      "tisk": {
+        "zadani": "Petr napsal souvětí a zapomněl v něm jednu čárku:\n\nPes, který štěkal celou noc usnul až ráno.\n\nA) Napiš čárku tam, kam patří.\n\nB) Proč tam patří čárka? Zakroužkuj: a) Končí tam vedlejší věta b) Začíná tam vedlejší věta c) Je tam výčet d) Je tam oslovení"
+      }
+    },
+    {
+      "id": "cj-t9-l34-U5",
+      "typ": "kontrolni",
+      "cil": "Samostatně napsat pět čárek ve třech souvětích (i na obou koncích vložených vět) a nenapsat čárku před a, které jen spojuje.",
+      "cas_min": 6,
+      "zadani": "Klikni na všechna místa, kam patří čárka.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Tomáš dnes nepřijde protože je nemocný a má horečku. Kluci kteří hráli fotbal se šli umýt a potom šli domů. Pes kterého jsme našli v lese teď bydlí u Emy.",
+            "cil": "mezery",
+            "min": 1,
+            "max": 8
+          },
+          "spravne": [
+            2,
+            9,
+            12,
+            20,
+            25
+          ],
+          "zname_chyby": [
+            {
+              "chybi": [
+                2
+              ],
+              "typ_chyby": "carka-chybi-pred-spojkou"
+            },
+            {
+              "chybi": [
+                9,
+                20
+              ],
+              "typ_chyby": "carka-chybi-ktery"
+            },
+            {
+              "chybi": [
+                12,
+                25
+              ],
+              "typ_chyby": "carka-vlozena-chybi-druha"
+            },
+            {
+              "navic": [
+                5,
+                15
+              ],
+              "typ_chyby": "carka-navic-a"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Čárek je pět, dvě vedlejší věty jsou vložené (čárka před i za). Past: dvakrát a, které jen spojuje (nemocný a má horečku, umýt a potom), tam čárka není.",
+        "reseni": "Tomáš dnes nepřijde, protože je nemocný a má horečku. (před protože; před a ne)\n\nKluci, kteří hráli fotbal, se šli umýt a potom šli domů. (vložená věta: před i za; před a ne)\n\nPes, kterého jsme našli v lese, teď bydlí u Emy. (vložená věta: před i za)\n\n**Výsledek:** čárky za nepřijde, Kluci, fotbal, Pes, lese",
+        "otazky": [
+          "„Řekni mi vlastními slovy, kde se v souvětí píše čárka a kde ne.“",
+          "„Najdi v každém souvětí slovo, kterým začíná věta, co sama neobstojí. Kde ta věta začíná a kde končí?“",
+          "„Najdi všechna a. Spojuje každé jen dvě věci za sebou, nebo začíná větu, která sama neobstojí?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč v tomhle textu před a čárka není.“",
+        "otocena_role_odpoved": "A tu jen spojuje dvě věci za sebou: je nemocný a má horečku, šli se umýt a potom šli domů. Před takové a se čárka nepíše.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: chybí čárka za fotbal nebo za lese: „Kde končí věta s který?“ Chybí před protože, kteří nebo kterého: „Kde začíná věta, která sama neobstojí?“ Čárka před a: „Spojuje jen dvě věci?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — všech pět čárek sedí a před a žádná není. Pochvalte, že hledalo začátek i konec vět. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Kniha kterou čtu je napínavá a má hezké obrázky.“ Dítě řekne, za kterými slovy by napsalo čárku a proč. Kontrola pro vás: za Kniha a za čtu (vložená věta kterou čtu); před a čárka není, jen spojuje.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě opíše větu „Kluci, kteří hráli fotbal, se šli umýt.“ a zakroužkuje vloženou větu i s oběma čárkami. Pak napíše podobnou větu o kamarádce se slovem která. Potom zopakujte lekci „Čárka v souvětí“. Kontrola pro vás: kroužek kteří hráli fotbal, čárka před ním i za ním; ve vlastní větě stejně kolem věty s která."
+      },
+      "tisk": {
+        "zadani": "Doplň do souvětí všechny čárky.\n\nTomáš dnes nepřijde protože je nemocný a má horečku. Kluci kteří hráli fotbal se šli umýt a potom šli domů. Pes kterého jsme našli v lese teď bydlí u Emy."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Autor 1. 10. 2026 podle cestina/Obsah/OSNOVA.md §13 (L34) a rozpisu cestina/Obsah/TEMA-9.md. Hodnotí se jen čárky (klik na mezery) a v poslechu počet vět a začátek vedlejší věty (čárka se poslechem neověřuje). Pravidla: ÚJČ id=150 (vedlejší věty a vložené věty z obou stran, čárka před vztažným zájmenem), id=153 (před a ve slučovacím poměru čárka není; a potom je slučovací). Vyřazeno podle osnovy: a za vloženou větou, a v jiném než slučovacím poměru, až když, poté co. Slova ověřena v příručce (viz zdroj). Nahrávka t9/l34-u2 čeká na Pavla.",
+    "zkontroloval": "autor",
+    "datum": "2026-10-01",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?id=150",
+      "https://prirucka.ujc.cas.cz/?id=151",
+      "https://prirucka.ujc.cas.cz/?id=153",
+      "https://prirucka.ujc.cas.cz/?id=155",
+      "https://prirucka.ujc.cas.cz/?slovo=Ema",
+      "https://prirucka.ujc.cas.cz/?slovo=Adam",
+      "https://prirucka.ujc.cas.cz/?slovo=Kl%C3%A1ra",
+      "https://prirucka.ujc.cas.cz/?slovo=Tom%C3%A1%C5%A1",
+      "https://prirucka.ujc.cas.cz/?slovo=%C4%8D%C3%ADst",
+      "https://prirucka.ujc.cas.cz/?slovo=hokej",
+      "https://prirucka.ujc.cas.cz/?slovo=cht%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=jet",
+      "https://prirucka.ujc.cas.cz/?slovo=babi%C4%8Dka",
+      "https://prirucka.ujc.cas.cz/?slovo=pr%C5%A1et",
+      "https://prirucka.ujc.cas.cz/?slovo=sed%C4%9Bt",
+      "https://prirucka.ujc.cas.cz/?slovo=kniha",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C5%99ij%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=ps%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?slovo=%C3%BAkol",
+      "https://prirucka.ujc.cas.cz/?slovo=tr%C3%A9nink",
+      "https://prirucka.ujc.cas.cz/?slovo=za%C4%8D%C3%ADnat",
+      "https://prirucka.ujc.cas.cz/?slovo=kolo",
+      "https://prirucka.ujc.cas.cz/?slovo=st%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?slovo=plot",
+      "https://prirucka.ujc.cas.cz/?slovo=pat%C5%99it",
+      "https://prirucka.ujc.cas.cz/?slovo=z%C5%AFstat",
+      "https://prirucka.ujc.cas.cz/?slovo=nemocn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=pes",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1t%C4%9Bkat",
+      "https://prirucka.ujc.cas.cz/?slovo=noc",
+      "https://prirucka.ujc.cas.cz/?slovo=usnout",
+      "https://prirucka.ujc.cas.cz/?slovo=r%C3%A1no",
+      "https://prirucka.ujc.cas.cz/?slovo=hore%C4%8Dka",
+      "https://prirucka.ujc.cas.cz/?slovo=fotbal",
+      "https://prirucka.ujc.cas.cz/?slovo=um%C3%BDt",
+      "https://prirucka.ujc.cas.cz/?slovo=les",
+      "https://prirucka.ujc.cas.cz/?slovo=bydlet",
+      "https://prirucka.ujc.cas.cz/?slovo=naj%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=pozd%C4%9Bji",
+      "https://prirucka.ujc.cas.cz/?slovo=m%C3%AD%C4%8D",
+      "https://prirucka.ujc.cas.cz/?slovo=tr%C3%A1va",
+      "https://prirucka.ujc.cas.cz/?slovo=kniha",
+      "https://prirucka.ujc.cas.cz/?slovo=nap%C3%ADnav%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=obr%C3%A1zek",
+      "https://prirucka.ujc.cas.cz/?slovo=gau%C4%8D",
+      "https://prirucka.ujc.cas.cz/?slovo=kluk",
+      "https://prirucka.ujc.cas.cz/?slovo=nov%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=ko%C4%8Dka"
+    ],
+    "testovaci_rodic": null
+  }
+}
