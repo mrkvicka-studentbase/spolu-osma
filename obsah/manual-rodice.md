@@ -4,6 +4,10 @@
 **Hlavní pravidlo.** ==Vy nepočítáte, nepíšete ani nevysvětlujete. Ptáte se.== Chvalte postup, ne výsledek.
 :::
 
+::: blok barva=zelena ikona=uzivatel
+**Dnes samo.** Když dnes nemáte čas, dítě může lekci udělat samo. Otázky z taháku mu pak ukazuje aplikace jako nápovědy a semafor vyhodnotí podle toho, jak úlohy šly. ==Výchozí je lekce spolu.== Souhrn uvidíte na telefonu.
+:::
+
 ::: blok barva=zelena ikona=telefon
 **Jak lekce probíhá.** Dítě sedí u počítače, vy vedle s telefonem. Na telefonu vidíte zadání jako dítě a ke každé úloze tahák: otázky, typickou chybu a sbalené řešení. Lekce má 4 úlohy, asi ==20–25 minut==. Odpočet je jen doporučení. Nejvýš jedna lekce denně.
 :::

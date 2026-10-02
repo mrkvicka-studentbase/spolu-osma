@@ -4,11 +4,15 @@
 **Hlavní pravidlo.** ==Vy nevysvětlujete, neopravujete, nepíšete a nečtete texty nahlas. Ptáte se.== Češtinu umět nemusíte. Správná odpověď je vždycky schovaná pod „Kontrola pro vás“. Otevřete ji, až když dítě odevzdá.
 :::
 
+::: blok barva=zelena ikona=uzivatel
+**Dnes samo.** Když dnes nemáte čas, dítě může lekci udělat samo. Otázky z taháku mu pak ukazuje aplikace jako nápovědy a semafor vyhodnotí podle toho, jak úlohy šly. Nahrávky si pouští samo. ==Výchozí je lekce spolu.== Souhrn uvidíte na telefonu.
+:::
+
 ::: blok barva=zelena ikona=telefon
-**Jak lekce probíhá.** Dítě sedí u počítače, vy vedle s telefonem. Lekce má 6 úloh, asi ==30 minut==:
+**Jak lekce probíhá.** Dítě sedí u počítače, vy vedle s telefonem. Lekce má 5 úloh, asi ==25 minut==:
 
 - rozcvička z minulé lekce,
-- tři úlohy s novou látkou,
+- dvě úlohy s procvičovanou látkou,
 - Petr detektiv,
 - kontrolní úloha.
 
@@ -36,7 +40,7 @@ Nejvýš jedna lekce denně.
 :::
 
 ::: blok barva=zelena ikona=tuzka
-**Diktát (od týdne 3).** Věty diktuje nahrávka, každou jde pustit nejvýš dvakrát. Po odevzdání uvidíte tabulku: co dítě napsalo, co mělo být, a otázku. ==Přečtěte jen otázku.== Neopravujte a nediktujte znovu. Jediná výjimka: když nahrávka nejde, u textu diktátu je tlačítko „Číst sám“. Pak čtěte pomalu, každou větu dvakrát, bez čárek a teček.
+**Diktát (od tématu 3, v poslední lekci tématu).** Věty diktuje nahrávka, každou jde pustit nejvýš dvakrát. Po odevzdání uvidíte tabulku: co dítě napsalo, co mělo být, a otázku. ==Přečtěte jen otázku.== Neopravujte a nediktujte znovu. Jediná výjimka: když nahrávka nejde, u textu diktátu je tlačítko „Číst sám“. Pak čtěte pomalu, každou větu dvakrát, bez čárek a teček.
 :::
 
 ::: blok barva=oranzova ikona=krizek
