@@ -116,7 +116,7 @@
         }
       ],
       "tahak": {
-        "vysvetleni": "Dítě tu jen vybírá. U A jde o porovnání: na ose je vpravo vždy větší číslo. U B o absolutní hodnotu, tedy vzdálenost od nuly. Čte se: „absolutní hodnota z mínus šesti“. U C o opačné číslo, které leží na druhé straně nuly. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "vysvetleni": "Dítě tu jen vybírá. U A jde o porovnání: na ose je vpravo vždy větší číslo. U B o absolutní hodnotu, tedy vzdálenost od nuly. Čte se: „absolutní hodnota z mínus šesti“, $0{,}4$ „nula celá čtyři“. U C o opačné číslo, které leží na druhé straně nuly. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
         "reseni": "#### A) $-8$ a $-5$\n\n$-8 < -5$ (mínus osm leží na ose vlevo od mínus pěti, vlevo je menší číslo)\n\n#### B) $\\lvert -6 \\rvert$\n\n$\\lvert -6 \\rvert = 6$ (od nuly k mínus šesti je šest jednotek, vzdálenost není záporná)\n\n$6 > 4$ (proto neplatí, že je menší než absolutní hodnota ze čtyř)\n\n#### C) Opačné číslo k $-2{,}5$\n\n$2{,}5$ (stejně daleko od nuly, na druhé straně)\n\n$-2{,}5 + 2{,}5 = 0$ (zkouška: opačná čísla dají po sečtení nulu; mínus nula celá čtyři je převrácené číslo)\n\n**Výsledek:** A) $-8 < -5$, B) $\\lvert -6 \\rvert = 6$, C) $2{,}5$",
         "otazky": [
           {
@@ -134,7 +134,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč je mínus osm menší než mínus pět, když osm je víc než pět.“",
         "otocena_role_odpoved": "Protože mínus osm leží na ose víc vlevo, dál pod nulou. Je to jako u teploty: mínus osm stupňů je větší zima než mínus pět, takže je to menší číslo.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A vybere $-8 > -5$ nebo $-5 < -8$: rozhoduje podle číslice. Zeptejte se: „Kde je větší zima, při mínus osmi, nebo při mínus pěti?“ (Při mínus osmi, to je menší číslo.) U B rovnost s $-6$ nebo „menší než $\\lvert 4 \\rvert$“: nechá absolutní hodnotu zápornou; „Kolik jednotek je od nuly k mínus šesti?“ (Šest.) U C $-0{,}4$ nebo $0{,}4$: plete opačné a převrácené číslo; „Kolik dá tvoje číslo plus původní?“ (Nulu.)"
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $-8 > -5$ nebo $-5 < -8$: rozhoduje podle číslice. Zeptejte se: „Kde je větší zima?“ (Při mínus osmi, tedy menší číslo.) U B $-6$ nebo $\\lvert 4 \\rvert$: „Jak daleko od nuly je mínus šest?“ (Šest.) U C $-0{,}4$ nebo $0{,}4$: „Kolik dá tvoje číslo plus původní?“ (Nulu.)"
       },
       "semafor": {
         "zelena": "Výborně — porovnání, absolutní hodnota i opačné číslo sedí. Pochvalte, že si dítě čísla představilo na ose, a jděte dál.",
@@ -255,7 +255,7 @@
         ],
         "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč absolutní hodnota z mínus sedmi není mínus sedm.“",
         "otocena_role_odpoved": "Absolutní hodnota je vzdálenost od nuly. Mínus sedm je od nuly sedm jednotek a vzdálenost nemůže být záporná. Takže je to sedm a celý výsledek je jedenáct.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 3. nebo 4. řádek? Ty jsou spočítané dobře ze špatného čísla. 1. řádek je správně. Zeptejte se: „Co mají svislé čáry udělat s mínus sedmi?“ (Vzít vzdálenost od nuly, sedm.) Výsledek $-3$: opíše Petra. $17$ (nebo dlaždice s třináctkou): počítá tři mínus deset jako mínus třináct; „Kde na ose skončíš, když jdeš od tří o deset doleva?“ (U mínus sedmi.)"
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 3. nebo 4. řádek? Ty jsou jen důsledek, 1. řádek je správně. Zeptejte se: „Co udělají svislé čáry s mínus sedmi?“ (Sedm.) Výsledek $-3$, oprava $= 8 - 7 - 4$: Petrova chyba. $17$, oprava s $13$: „Kolik je tři mínus deset?“ (Mínus sedm.)"
       },
       "semafor": {
         "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že hlídalo, aby absolutní hodnota nevyšla záporná, a jděte dál.",
@@ -341,6 +341,10 @@
               "typ_chyby": "stupnice-grafu-spatne"
             },
             {
+              "hodnota": 8,
+              "typ_chyby": "stupnice-grafu-spatne"
+            },
+            {
               "hodnota": 1,
               "typ_chyby": "odcitani-zaporneho"
             }
@@ -366,7 +370,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč se při vzdálenosti bodů A a B kus vlevo od nuly a kus vpravo od nuly sčítají.“",
         "otocena_role_odpoved": "Protože cesta z bodu A do bodu B vede přes nulu. Nejdřív jdu tři celé pět k nule a pak ještě dvě celé pět k bodu B, dohromady šest. Správně je i: dvanáct dílků po polovině.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. U bodu A $-7$ nebo $-5$, u bodu B $5$ nebo $3$, vzdálenost $12$: počítá každý dílek jako jedna. Zeptejte se: „Kolik dílků je mezi nulou a dvojkou?“ (Čtyři, dílek je polovina.) $-0{,}5$ nebo $1{,}5$: od popsaného čísla jde opačným směrem; „Leží bod vlevo, nebo vpravo od toho čísla?“ Vzdálenost $1$: odečte čísla bez znamének; „Vede cesta z A do B přes nulu?“ (Ano.)"
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. A $-7$ nebo $-5$, B $5$ nebo $3$, vzdálenost $12$ nebo $8$. Zeptejte se: „Kolik dílků je mezi nulou a dvojkou?“ (Čtyři, dílek je polovina.) $-0{,}5$, $1{,}5$: „Kterým směrem od popsaného čísla bod leží?“ (A vlevo, B vpravo.) Vzdálenost $1$: „Vede cesta přes nulu?“ (Ano.)"
       },
       "semafor": {
         "zelena": "Výborně — dílek, oba body i vzdálenost sedí. Pochvalte, že si nejdřív zjistilo, kolik je jeden dílek, a jděte dál.",
@@ -420,7 +424,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč číslo uprostřed není deset, když polovina vzdálenosti je deset.“",
         "otocena_role_odpoved": "Deset je jen to, jak daleko je střed od každého z čísel. Musím ho od mínus čtrnácti odpočítat doprava, takže skončím u mínus čtyř. Správně je i: průměr, mínus čtrnáct plus šest děleno dvěma.",
-        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nepíše nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: $10$: napíše polovinu vzdálenosti, ne číslo. Zeptejte se: „Leží tvoje číslo mezi mínus čtrnácti a šesti?“ (Ne.) $16$: odpočítá deset od šestky špatným směrem; „Kterým směrem je od šestky mínus čtrnáct?“ (Doleva.) $-10$: sečte mínus čtrnáct a šest jako mínus dvacet; „Kterým směrem jdeš, když k mínus čtrnácti přičítáš?“ (Doprava.) Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $10$: polovina vzdálenosti. Zeptejte se: „Leží tvoje číslo mezi mínus čtrnácti a šesti?“ (Ne.) $16$: „Kterým směrem od šestky je mínus čtrnáct?“ (Doleva.) $-10$: „Kam jdeš, když k mínus čtrnácti přičítáš?“ (Doprava.)"
       },
       "semafor": {
         "zelena": "Výborně — střed mezi záporným a kladným číslem zvládá samo. Pochvalte, že hlídalo vzdálenost na obě strany. Zítra můžete pokračovat další lekcí.",
@@ -433,9 +437,9 @@
     }
   ],
   "kontrola": {
-    "jistota": "stredni",
-    "poznamka": "Autor 1. 10.: čísla a známé chyby přepočítané skriptem, vyhodnotKrok sedí. Sporné: U1 A a B jsou dlaždice se zápisem (porovnání, rovnost), protože k jedné správné odpovědi dvou čísel nejsou dva různé chybné výsledky; v A i B mají dvě chybné dlaždice stejný kód. U1 C distraktory $-0{,}4$ a $0{,}4$ (převrácené číslo k desetinnému) mohou být pro část dětí nezvyklé. Čísla rozcvičky jsou jiná než v „Platí“ (osnova měla A shodné se žebříčkem). U2 dlaždice a výsledek $17$ kódem ruzna-znamenka-secetl ($3 - 10 = -13$). U3 $-5$ a $3$ i $-7$ a $5$ jsou obě stupnice-grafu-spatne (počítání od nuly / od popsaného čísla po jedné), výsledek $1$ = odcitani-zaporneho (osnova měla posun-spatnym-smerem, ten je u bodů). U4 $-10$ je kód z L2. Zápis $\\lvert -6 \\rvert$ chybí v obsah/cteni-zapisu.md, čtení je v „Čte se“.",
-    "zkontroloval": "autor",
+    "jistota": "jista",
+    "poznamka": "Recenzent 1. 10.: všechna zadání, mezivýsledky v řešení, čísla v taháku, oranžové a červené přepočítána skriptem (Python Fraction); správné odpovědi, dlaždice i známé chyby ověřeny přes vyhodnotKrok (i desetinná čárka a typografické mínus). Věcné chyby žádné. Opraveno: U3 výsledek doplněna známá chyba $8$ (stupnice-grafu-spatne, navazuje na body $-5$ a $3$ z kroků 1 a 2); typické chyby U1–U4 zkráceny pod 50 slov, ke každé chybné hodnotě otázka s odpovědí, U4 se standardní větou kontrolní úlohy (SABLONA §8.5) místo vlastního klíče semaforu; U1 „Čte se“ doplněno o $0{,}4$. Ponecháno: čísla rozcvičky jiná než v „Platí“; v U1 A a B mají dvě chybné dlaždice stejný kód; U3 výsledek $1$ kódem odcitani-zaporneho. Zápis $\\lvert -6 \\rvert$ chybí v obsah/cteni-zapisu.md (čtení je v „Čte se“), doplní správce slovníku.",
+    "zkontroloval": "recenzent",
     "datum": "2026-10-01"
   }
 }
