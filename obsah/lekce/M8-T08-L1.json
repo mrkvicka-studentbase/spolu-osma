@@ -10,15 +10,15 @@
   "uvod_pro_rodice": "Dnes jde o poměr: jak ho zkrátit a jak podle něj rozdělit celek na stejné díly.",
   "uvod_pravidla": [
     {
-      "znak": "$12 : 18 = 2 : 3$",
+      "znak": "$12 : 30 = 2 : 5$",
       "text": "krátí se jako zlomek"
     },
     {
-      "znak": "$2 + 3 = 5$",
+      "znak": "$2 + 5 = 7$",
       "text": "počet dílů dohromady"
     },
     {
-      "znak": "$60 : 5 = 12$",
+      "znak": "$140 : 7 = 20$",
       "text": "velikost jednoho dílu"
     }
   ],
@@ -140,7 +140,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč u chlapců a dívek nevyjde čtyři ku třem.“",
         "otocena_role_odpoved": "Protože věta říká chlapců k dívkám, takže chlapci jsou první. Dvanáct ku šestnácti je po vydělení čtyřmi tři ku čtyřem.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. $5 : 3$ nebo $4 : 3$: prohodí pořadí. Zeptejte se: „Kdo je ve větě první?“ (U B chlapci.) $3 : 25$: vydělí jen první číslo; $12 : 16$ nebo $6 : 8$: nezkrátí úplně. „Jde to ještě vydělit?“ (Ano, dvěma.) U C $40$: číslo zmenší; $61$: jen přičte jedničku."
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. $5 : 3$ nebo $4 : 3$: prohodí pořadí. Zeptejte se: „Kdo je ve větě první?“ $3 : 25$: dělí jen první číslo. „Čím dělíš dvacet pět?“ (Také pěti.) $12 : 16$ nebo $6 : 8$: nezkrátí úplně. „Jdou obě čísla ještě vydělit?“ (Ano.) U C $40$ nebo $61$: „Kolik je jeden díl?“ (Třicet.)"
       },
       "semafor": {
         "zelena": "Výborně — poměry sedí. Pochvalte, že hlídalo pořadí podle věty, a jděte dál.",
@@ -241,7 +241,7 @@
       ],
       "tahak": {
         "vysvetleni": "Petr je vymyšlený spolužák. Peníze se dělí mezi tři děti, ale ne rovným dílem: poměr $2 : 3 : 4$ (čte se „dva ku třem ku čtyřem“) znamená, že Tomáš dostane dva stejné díly, Lucka tři a Adam čtyři. Chyba je jedna a řádky za ní jsou spočítané dobře, jen se špatným číslem.",
-        "reseni": "Chyba je ve 2. řádku: Petr dělil počtem dětí. Peníze se ale dělí na díly podle poměru.\n\n$2\\,000 - 200 = 1\\,800$ (peníze po zaplacení pizzy)\n\n$2 + 3 + 4 = 9$ (počet dílů dohromady)\n\n$1\\,800 : 9 = 200$ (jeden díl)\n\n$4 \\cdot 200 = 800$ (Adam má čtyři díly)\n\n$400 + 600 + 800 = 1\\,800$ (zkouška: Tomáš, Lucka a Adam dohromady)\n\nDlaždice $1\\,800 : 4$ a $1\\,800 : 2$ nesedí (dělí jedním číslem z poměru nebo počtem částí, ne součtem dílů)\n\n**Výsledek:** $800$ Kč",
+        "reseni": "Chyba je ve 2. řádku: Petr dělil počtem dětí. Peníze se ale dělí na díly podle poměru.\n\n$2\\,000 - 200 = 1\\,800$ (peníze po zaplacení pizzy)\n\n$2 + 3 + 4 = 9$ (počet dílů dohromady)\n\n$1\\,800 : 9 = 200$ (jeden díl)\n\n$4 \\cdot 200 = 800$ (Adam má čtyři díly)\n\n$400 + 600 + 800 = 1\\,800$ (zkouška: Tomáš, Lucka a Adam dohromady)\n\nDlaždice $1\\,800 : 4$ a $1\\,800 : 2$ nesedí (dělí jen jedním číslem z poměru, ne součtem dílů)\n\n**Výsledek:** $800$ Kč",
         "otazky": [
           {
             "k": "Celá úloha",
@@ -304,7 +304,7 @@
         },
         {
           "id": "k2",
-          "popisek": "Mezivýsledek",
+          "popisek": "Mezivýsledek: cement",
           "vstup": {
             "typ": "cislo",
             "jednotka": "kg"
@@ -346,7 +346,7 @@
         }
       ],
       "tahak": {
-        "vysvetleni": "Poměr $1 : 4$ (čte se „jedna ku čtyřem“) znamená: na jeden díl cementu jdou čtyři stejně velké díly písku. Těch $200$ kg je celá směs, tedy všechny díly dohromady. Mezivýsledek je velikost jednoho dílu; je to zároveň hmotnost cementu.",
+        "vysvetleni": "Poměr $1 : 4$ (čte se „jedna ku čtyřem“) znamená: na jeden díl cementu jdou čtyři stejně velké díly písku. Těch $200$ kg je celá směs, tedy všechny díly dohromady. Mezivýsledek je hmotnost cementu, tedy jeden díl.",
         "reseni": "$1 + 4 = 5$ (počet dílů dohromady)\n\n$200 : 5 = 40$ (jeden díl, tolik je i cementu)\n\n$4 \\cdot 40 = 160$ (písek má čtyři díly)\n\n$40 + 160 = 200$ (zkouška: cement a písek dají celou směs)\n\n**Výsledek:** $160$ kg",
         "otazky": [
           {
@@ -359,7 +359,7 @@
           },
           {
             "k": "Krok 2 a výsledek",
-            "text": "„Tady máš začátek: celá směs je pět stejných dílů. Kolik kilogramů je jeden díl? Kolik dílů je písek?“"
+            "text": "„Tady máš začátek: všechny obdélníčky dohromady váží dvě stě kilogramů. Kolik váží jeden? Kolik jich patří písku?“"
           }
         ],
         "otocena_role": "„Vysvětli mi, proč dvě stě kilogramů nedělíš čtyřmi.“",
@@ -372,7 +372,7 @@
         "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 15 kostek nebo knoflíků. Zítra: „Malta má cement a písek v poměru $1 : 4$.“ Ať dítě skládá řady: jedna kostka cement, čtyři kostky písek, dokud kostky nedojdou. Zeptejte se: „Kolik řad máš? Kolik kostek je písek?“ Pak ať samo zapíše $1 + 4 = 5$, $15 : 5 = 3$, $4 \\cdot 3 = 12$. Potom zopakujte lekci „Poměr a dělení v poměru“. Kontrola pro vás: 3 řady, písek 12 kostek."
       },
       "tisk": {
-        "zadani": "Adam pomáhá tátovi míchat maltu na zídku. Cement a písek se míchají v poměru $1 : 4$. Suché směsi z cementu a písku potřebují dohromady $200$ kg.\n\nKolik kilogramů písku potřebují?\n\nA) Který zápis odpovídá zadání? Zakroužkuj: a) celá směs: $4$ díly b) celá směs: $5$ dílů c) celá směs: $2$ díly\n\nB) Mezivýsledek: ______ kg\n\nC) Písek: ______ kg"
+        "zadani": "Adam pomáhá tátovi míchat maltu na zídku. Cement a písek se míchají v poměru $1 : 4$. Suché směsi z cementu a písku potřebují dohromady $200$ kg.\n\nKolik kilogramů písku potřebují?\n\nA) Který zápis odpovídá zadání? Zakroužkuj: a) celá směs: $4$ díly b) celá směs: $5$ dílů c) celá směs: $2$ díly\n\nB) Cement: ______ kg\n\nC) Písek: ______ kg"
       }
     },
     {
@@ -418,7 +418,7 @@
         ],
         "otocena_role": "„Vysvětli mi, proč si Klára s Honzíkem nerozdělí odměnu napůl.“",
         "otocena_role_odpoved": "Protože Honzík pracoval déle, šest hodin, a Klára jen čtyři. Odměna se dělí podle hodin, takže Honzík dostane víc. Správně je i: sedm set padesát děleno deseti je sedmdesát pět za hodinu, krát šest.",
-        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nepíše nebo řekne „nevím“), čtěte Otázky 1–3. Po odevzdání se podívejte na obrazovku dítěte. $375$: dělí napůl. Zeptejte se: „Pracovali oba stejně dlouho?“ (Ne.) $300$: napíše Klářin podíl. „Kdo pracoval šest hodin?“ (Honzík.) $75$: jen korun za hodinu. Semafor: opraví se samo = „Sám/sama“; po vaší otázce = „Potřeboval(a) otázku“; neopraví = „Spletl(a) se“."
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $375$: dělí napůl. Zeptejte se: „Pracovali oba stejně dlouho?“ (Ne.) $300$: napíše Klářin podíl. „Kdo pracoval šest hodin?“ (Honzík.) $75$: jen korun za hodinu. „Kolik hodin pracoval Honzík?“ (Šest.)"
       },
       "semafor": {
         "zelena": "Výborně — dělení v poměru zvládá samo. Pochvalte, že dělilo podle hodin, ne napůl. Zítra můžete pokračovat další lekcí.",
@@ -431,9 +431,9 @@
     }
   ],
   "kontrola": {
-    "jistota": "stredni",
-    "poznamka": "Sporné pro recenzenta: (1) U1 A distraktor $3 : 25$ s kódem upravil-jen-cast-zlomku (D1) a U1 B $6 : 8$ s kratil-jen-castecne (D1) — osnova u rozcvičky jmenuje pomer-nezkraceny, pomer-prevraceny a deleni-v-pomeru-bez-souctu-dilu; ten poslední se k A–C nehodí, proto U1 C má pomer-prevraceny ($40$ = zmenšení v poměru $2 : 3$) a umera-jako-soucet ($61$). U1 C má číslo $60$ místo $40$ z osnovy (jinak by obrácený poměr nevyšel celý). (2) U3 k1 má dva distraktory se stejným kódem deleni-v-pomeru-bez-souctu-dilu (jedním členem / počtem členů); zápisy „$4$ díly / $5$ dílů“ se liší tvarem slova. (3) U3 k2 „Mezivýsledek“ podle osnovy bez slova díl v zadání; jeden díl = cement = $40$, takže obojí čtení dá stejné číslo. (4) U4 má 3 známé chyby, $150$ (jeden díl po zkrácení) není mezi nimi. Čísla přepočítána skriptem: U1 $3 : 5$, $3 : 4$, $90$; U2 $1\\,800 : 9 = 200$, $800$ ($2\\,400$, $400$, $200$); U3 $40$, $160$ ($50$, $100$; $400$, $40$); U4 $450$ ($375$, $300$, $75$).",
-    "zkontroloval": "autor",
+    "jistota": "jista",
+    "poznamka": "Recenze: vše přepočítáno nezávisle skriptem (Python Fraction) a přes vyhodnotKrok (správné odpovědi, dlaždice, známé chyby). U1 $3 : 5$, $3 : 4$, $90$ ($40$, $61$); U2 $1\\,800 : 9 = 200$, Adam $800$ Kč ($2\\,400$, $400$, $200$); U3 $40$ kg, $160$ kg ($50$, $100$; $400$, $40$); U4 $450$ Kč ($375$, $300$, $75$). Opraveno: „Platí“ ukazovalo $12 : 18 = 2 : 3$ a $2 + 3 = 5$, tedy přesně zkrácení a součet dílů z U4 — nově $12 : 30 = 2 : 5$, $2 + 5 = 7$, $140 : 7 = 20$ (žádné číslo z úloh). U3 otázka 3 prozrazovala výsledek kroku 1 (pět dílů; v režimu „Dnes samo“ jdou nápovědy už během kroku 1) — nově jen začátek přes obdélníčky. U3 krok 2 „Mezivýsledek“ byl nejednoznačný (dítě nevědělo, které číslo v kg zadat) — popisek „Mezivýsledek: cement“ (slovo ze zadání), upraveno vysvětlení a tisk. U1 typická chyba tvrdila „Jde to ještě vydělit? (Ano, dvěma.)“ i pro $12 : 16$ (tam čtyřmi) — přepsáno, každá chybná dlaždice má otázku. U2 řešení: dlaždice $1\\,800 : 2$ popsána přesně (jedním číslem z poměru). U4 typická chyba zkrácena pod 50 slov (vzor T01–T04). Body autora: kódy upravil-jen-cast-zlomku a kratil-jen-castecne u poměru odpovídají slovníku (D1, i u poměru); $60$ místo $40$ v U1 C ponecháno; dva distraktory se stejným kódem v U3 k1 v pořádku.",
+    "zkontroloval": "recenzent",
     "datum": "2026-10-01"
   }
 }
