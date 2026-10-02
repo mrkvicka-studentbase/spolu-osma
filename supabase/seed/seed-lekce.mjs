@@ -50,7 +50,8 @@ const OTEVRIT_OD = {
 const CESTA_SLOVNIKU = path.join(KOREN_REPA, 'obsah', 'typy-chyb.md');
 // Čeština (cestina/Obsah/FORMAT-CJ.md): vlastní slovník chyb a seznam nahrávek; audio je ve web/audio/cestina/
 const CESTA_SLOVNIKU_CJ = path.join(KOREN_REPA, 'cestina', 'Obsah', 'TYPY-CHYB.md');
-const CESTA_AUDIO_CJ = path.join(KOREN_REPA, 'cestina', 'Obsah', 'AUDIO.md');
+// SPOLU_AUDIO_MD: jiný seznam nahrávek (testy se syntetickými lekcemi, testy/data/osma/AUDIO.md)
+const CESTA_AUDIO_CJ = process.env.SPOLU_AUDIO_MD ? path.resolve(process.env.SPOLU_AUDIO_MD) : path.join(KOREN_REPA, 'cestina', 'Obsah', 'AUDIO.md');
 
 // ---------------------------------------------------------------------
 // Argumenty

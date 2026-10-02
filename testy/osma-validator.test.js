@@ -20,7 +20,7 @@ const DATA = path.join(KOREN, 'testy', 'data', 'osma');
 const schema = JSON.parse(await readFile(path.join(KOREN, 'obsah', 'schema.json'), 'utf8'));
 const slovnik = await nactiSlovnikChyb(path.join(KOREN, 'obsah', 'typy-chyb.md'));
 const slovnikCj = parsujSlovnikChybCj(await readFile(path.join(KOREN, 'cestina', 'Obsah', 'TYPY-CHYB.md'), 'utf8'));
-const audioMd = await readFile(path.join(KOREN, 'cestina', 'Obsah', 'AUDIO.md'), 'utf8');
+const audioMd = await readFile(path.join(KOREN, 'testy', 'data', 'osma', 'AUDIO.md'), 'utf8') // syntetické lekce mají vlastní seznam nahrávek;
 
 const nacti = async (rel) => JSON.parse(await readFile(path.join(DATA, rel), 'utf8'));
 const kopie = (x) => structuredClone(x);
@@ -191,7 +191,7 @@ function seed(argumenty, port = 9) {
   return new Promise((ok) => {
     const p = spawn(process.execPath, ['supabase/seed/seed-lekce.mjs', ...argumenty], {
       cwd: KOREN,
-      env: { ...process.env, SUPABASE_URL: `http://127.0.0.1:${port}`, SUPABASE_SERVICE_KEY: 'sb_secret_test', NO_PROXY: '127.0.0.1' },
+      env: { ...process.env, SUPABASE_URL: `http://127.0.0.1:${port}`, SUPABASE_SERVICE_KEY: 'sb_secret_test', NO_PROXY: '127.0.0.1', SPOLU_AUDIO_MD: path.join(KOREN, 'testy', 'data', 'osma', 'AUDIO.md') },
     });
     let vystup = '';
     p.stdout.on('data', (c) => { vystup += c; });

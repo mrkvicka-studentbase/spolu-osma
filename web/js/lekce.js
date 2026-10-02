@@ -130,7 +130,7 @@ function vytvorNapovedy(uloha) {
       const krok = uloha.kroky.find((k) => !zaznam(uloha, k).hotovo);
       // matematika „Příklad B: …“, čeština „Řada B“ (FORMAT-CJ §4: otázky rozcvičky {k: 'B', text})
       const pismeno = /(?:Příklad|Řada)\s+([A-F])\b/.exec(krok?.popisek || '')?.[1];
-      const idx = otazky.findIndex((o, i) => !ukazane.includes(i) && o.k.startsWith(pismeno || '#'));
+      const idx = otazky.findIndex((o, i) => !ukazane.includes(i) && pismeno && new RegExp(`(^|[^A-Z])${pismeno}([^A-Z]|$)`).test(o.k || '')); // i „A a B“, „C–D“
       if (idx >= 0) return idx;
     }
     return otazky.findIndex((_, i) => !ukazane.includes(i));

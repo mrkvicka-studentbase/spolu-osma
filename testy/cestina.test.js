@@ -178,7 +178,7 @@ describe('nové vstupy v kontraktu vyhodnotKrok', () => {
 describe('schéma a validátor', async () => {
   const schema = JSON.parse(await readFile(path.join(KOREN, 'obsah', 'schema.json'), 'utf8'));
   const slovnikCj = parsujSlovnikChybCj(await readFile(path.join(KOREN, 'cestina', 'Obsah', 'TYPY-CHYB.md'), 'utf8'));
-  const audioMd = await readFile(path.join(KOREN, 'cestina', 'Obsah', 'AUDIO.md'), 'utf8');
+  const audioMd = await readFile(path.join(KOREN, 'testy', 'data', 'osma', 'AUDIO.md'), 'utf8') // syntetické lekce mají vlastní seznam nahrávek;
   const soubory = (await readdir(ADRESAR_CJ)).filter((n) => /^cj-t\d+-l\d+\.json$/.test(n)).sort();
 
   test('slovník chyb češtiny se načte (detektiv, diktát, dvojice kódů a zkratka vs-m-*)', () => {

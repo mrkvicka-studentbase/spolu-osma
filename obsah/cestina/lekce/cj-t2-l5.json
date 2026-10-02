@@ -1,0 +1,739 @@
+{
+  "id": "cj-t2-l5",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 2,
+  "poradi": 1,
+  "tema": "Vzory rodu mužského",
+  "kapitola": "podstatna-jmena",
+  "cil_pro_rodice": "Dítě testem „vidím ___“ rozhodne, jestli je jméno rodu mužského životné, a podle 1. a 2. pádu ho přiřadí k jednomu ze šesti vzorů, i když končí na -a (hokejista) nebo na -e (průvodce).",
+  "uvod_pro_rodice": "Dnes dítě přiřazuje jména rodu mužského ke vzorům: rozhodne, jestli je jméno životné (vidím pána, ne pán), a podle 2. pádu vybere vzor.",
+  "uvod_pravidla": [
+    {
+      "znak": "Životné: vidím pána, ne pán",
+      "text": "test životnosti"
+    },
+    {
+      "znak": "2. p.: pána, hradu, muže, stroje",
+      "text": "vzor podle 2. pádu"
+    },
+    {
+      "znak": "-a předseda · -e soudce",
+      "text": "jména na -a, -e"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "vzor": "slovo, podle kterého se skloňují podobná slova. Rodu mužského je šest: pán, hrad, muž, stroj, předseda, soudce. Kdo zná vzor, ví, jak napsat koncovku.",
+    "rod mužský": "jde před slovo říct ten (ten táta, ten strom)",
+    "životné a neživotné": "jen u rodu mužského. Životné: ve 4. pádě se řekne jako vidím pána (vidím souseda). Neživotné: jako vidím hrad (vidím strom). Strom žije, ale je neživotný; rozhoduje test, ne život.",
+    "pád": "tvar slova podle otázky: 1. kdo, co? · 2. bez koho, čeho? · 3. ke komu, čemu? · 4. vidím koho, co? · 5. oslovujeme, voláme · 6. o kom, o čem? · 7. s kým, čím?",
+    "2. pád": "tvar po slově bez: bez pána, bez hradu, bez muže, bez stroje, bez předsedy, bez soudce"
+  },
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "cas_min": 25,
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t2-l5-U1",
+      "typ": "rozcvicka",
+      "cil": "Ledoborec ze společného základu (Z2): určit pád jména rodu mužského ve větě otázkou ze slova ve větě; pasti 1. × 4., 2. × 4., 2. × 6. a 4. × 7. pád.",
+      "cas_min": 4,
+      "zadani": "V každé řadě urči, v jakém pádě je tučné slovo.\n\nA) Na lavičce leží **batoh**.\n\nB) Adam pozdravil **trenéra**.\n\nC) Ema vypráví o **filmu**.\n\nD) Tomáš hraje tenis se **spolužákem**.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1. pád",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "2. pád",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "4. pád",
+                "spravne": false,
+                "typ_chyby": "pad-4-za-1"
+              },
+              {
+                "id": "d",
+                "text": "6. pád",
+                "spravne": false
+              },
+              {
+                "id": "e",
+                "text": "7. pád",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1. pád",
+                "spravne": false,
+                "typ_chyby": "pad-1-za-4"
+              },
+              {
+                "id": "b",
+                "text": "2. pád",
+                "spravne": false,
+                "typ_chyby": "pad-2-za-4"
+              },
+              {
+                "id": "c",
+                "text": "4. pád",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "6. pád",
+                "spravne": false
+              },
+              {
+                "id": "e",
+                "text": "7. pád",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1. pád",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "2. pád",
+                "spravne": false,
+                "typ_chyby": "pad-2-za-6"
+              },
+              {
+                "id": "c",
+                "text": "4. pád",
+                "spravne": false
+              },
+              {
+                "id": "d",
+                "text": "6. pád",
+                "spravne": true
+              },
+              {
+                "id": "e",
+                "text": "7. pád",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1. pád",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "2. pád",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "4. pád",
+                "spravne": false,
+                "typ_chyby": "pad-4-za-7"
+              },
+              {
+                "id": "d",
+                "text": "6. pád",
+                "spravne": false
+              },
+              {
+                "id": "e",
+                "text": "7. pád",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje pády, které dítě zná z dřívějška; vzory je dnes potřebují. Pád pozná otázkou ze slova ve větě: leží kdo, co? pozdravil koho, co? Past: batoh zní v 1. i ve 4. pádě stejně, rozhoduje otázka z věty. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) Na lavičce leží batoh.\n\n1. pád (leží kdo, co? batoh; leží sám, nikdo s ním nic nedělá)\n\n#### B) Adam pozdravil trenéra.\n\n4. pád (pozdravil koho, co? trenéra)\n\n#### C) Ema vypráví o filmu.\n\n6. pád (vypráví o kom, o čem? o filmu)\n\n#### D) Tomáš hraje tenis se spolužákem.\n\n7. pád (hraje s kým, čím? se spolužákem)\n\n**Výsledek:** A) 1. pád, B) 4. pád, C) 6. pád, D) 7. pád",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Zeptej se slovem z věty: leží kdo, co? Leží to samo, nebo s tím někdo něco dělá?“"
+          },
+          {
+            "k": "B a C",
+            "text": "„Zeptej se od slova ve větě: pozdravil koho, co? Vypráví o kom, o čem? Které otázce z řady pádů to odpovídá?“"
+          },
+          {
+            "k": "D",
+            "text": "„Jaké krátké slovo stojí před tím jménem? Řekni otázku i s ním.“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč batoh v řadě A není 4. pád, i když se dá říct vidím batoh.“",
+        "otocena_role_odpoved": "Ve větě se ptám: leží kdo, co? Batoh leží sám, nikdo s ním nic nedělá, takže 1. pád. Vidím batoh jen zní stejně.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V řadě A vybere 4. pád. Zeptejte se: „Leží kdo, co?“ V řadě B 1. nebo 2. pád: „Pozdravil koho, co?“ V řadě C 2. pád: „Je tam o, nebo bez?“ V řadě D 4. pád: „Je tam se? S kým, čím?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — pády sedí. Pochvalte, že se dítě ptalo slovem z věty, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti dvě věty: „Na stole leží míč.“ „Lucka hledá míč.“ U slova míč v každé větě řekne otázku a pád. Kontrola pro vás: leží kdo, co? 1. pád; hledá koho, co? 4. pád. Tvar je stejný, rozhoduje otázka.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše pod sebe: leží batoh, bez batohu, o batohu, s batohem. Ke každému připíše otázku a pád. Potom zopakujte lekci „Vzory rodu mužského“. Kontrola pro vás: kdo, co? 1. pád; bez koho, čeho? 2. pád; o kom, o čem? 6. pád; s kým, čím? 7. pád."
+      },
+      "tisk": {
+        "zadani": "V každé řadě zakroužkuj pád tučného slova: a) 1. pád b) 2. pád c) 4. pád d) 6. pád e) 7. pád\n\nA) Na lavičce leží **batoh**.\n\nB) Adam pozdravil **trenéra**.\n\nC) Ema vypráví o **filmu**.\n\nD) Tomáš hraje tenis se **spolužákem**."
+      }
+    },
+    {
+      "id": "cj-t2-l5-U2",
+      "typ": "nova",
+      "cil": "Přiřadit ke vzoru čtyři jména rodu mužského, u kterých se vzor plete: učitel (muž), pokoj (stroj), hokejista (předseda) a průvodce jako člověk (soudce).",
+      "cas_min": 5,
+      "zadani": "Ke kterému vzoru patří slovo?\n\nA) učitel\n\nB) pokoj\n\nC) hokejista\n\nD) průvodce (člověk, který vede výlet)",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "A) učitel",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "pán",
+                "spravne": false,
+                "typ_chyby": "vzor-pan-za-muz"
+              },
+              {
+                "id": "b",
+                "text": "hrad",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "muž",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "stroj",
+                "spravne": false
+              },
+              {
+                "id": "e",
+                "text": "předseda",
+                "spravne": false
+              },
+              {
+                "id": "f",
+                "text": "soudce",
+                "spravne": false,
+                "typ_chyby": "vzor-muz-za-soudce"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "B) pokoj",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "pán",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "hrad",
+                "spravne": false,
+                "typ_chyby": "vzor-hrad-za-stroj"
+              },
+              {
+                "id": "c",
+                "text": "muž",
+                "spravne": false
+              },
+              {
+                "id": "d",
+                "text": "stroj",
+                "spravne": true
+              },
+              {
+                "id": "e",
+                "text": "předseda",
+                "spravne": false
+              },
+              {
+                "id": "f",
+                "text": "soudce",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "C) hokejista",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "pán",
+                "spravne": false,
+                "typ_chyby": "vzor-pan-za-predseda"
+              },
+              {
+                "id": "b",
+                "text": "hrad",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "muž",
+                "spravne": false
+              },
+              {
+                "id": "d",
+                "text": "stroj",
+                "spravne": false
+              },
+              {
+                "id": "e",
+                "text": "předseda",
+                "spravne": true
+              },
+              {
+                "id": "f",
+                "text": "soudce",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "D) průvodce",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "pán",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "hrad",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "muž",
+                "spravne": false,
+                "typ_chyby": "vzor-muz-za-soudce"
+              },
+              {
+                "id": "d",
+                "text": "stroj",
+                "spravne": false
+              },
+              {
+                "id": "e",
+                "text": "předseda",
+                "spravne": false
+              },
+              {
+                "id": "f",
+                "text": "soudce",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě ve čtyřech krocích vybírá ze šesti vzorů rodu mužského, nabídka je pořád stejná. Rozhoduje životnost (vidím učitele × vidím pokoj), 2. pád (bez učitele, bez pokoje) a konec slova v 1. pádě: hokejista končí na -a jako předseda, průvodce na -e jako soudce.",
+        "reseni": "#### A) učitel\n\nmuž (vidím učitele, bez učitele; končí souhláskou)\n\n#### B) pokoj\n\nstroj (vidím pokoj, bez pokoje)\n\n#### C) hokejista\n\npředseda (ten hokejista; končí na -a)\n\n#### D) průvodce\n\nsoudce (ten průvodce; končí na -e, vidím průvodce)\n\n**Výsledek:** A) muž, B) stroj, C) předseda, D) soudce",
+        "otazky": [
+          "„Co je vzor a k čemu je dobrý? Řekni to vlastními slovy.“",
+          "„Vezmi slovo učitel. Řekni: vidím ___ a bez ___. Který vzor zní stejně?“",
+          "„Řekni slovo s ten. Jakým písmenem končí? Který ze šesti vzorů končí stejně?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč hokejista nepatří k pánovi, i když je to taky člověk.“",
+        "otocena_role_odpoved": "Hokejista končí v 1. pádě na -a, stejně jako předseda. Pán končí souhláskou. Proto předseda.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U učitele vybere pán nebo soudce. Zeptejte se: „Bez učitele, nebo bez učitela? Jak končí?“ U pokoje hrad: „Bez pokoje, nebo bez pokoju?“ U hokejisty pán, u průvodce muž: „Jakým písmenem slovo končí? A vzor?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — všechny čtyři vzory sedí. Pochvalte, že dítě zkoušelo 2. pád a konec slova, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti tři slova: lékař, cyklista, zástupce. U každého řekne vzor a proč. Kontrola pro vás: lékař muž (bez lékaře), cyklista předseda (končí na -a), zástupce soudce (končí na -e).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše do řádku šest vzorů: pán, hrad, muž, stroj, předseda, soudce. Pod každý napíše 2. pád s bez. Pak k nim přiřadí slova učitel a hokejista. Potom zopakujte lekci „Vzory rodu mužského“. Kontrola pro vás: bez pána, hradu, muže, stroje, předsedy, soudce; učitel – muž, hokejista – předseda."
+      },
+      "tisk": {
+        "zadani": "U každého slova zakroužkuj vzor.\n\nA) učitel: pán, hrad, muž, stroj, předseda, soudce\n\nB) pokoj: pán, hrad, muž, stroj, předseda, soudce\n\nC) hokejista: pán, hrad, muž, stroj, předseda, soudce\n\nD) průvodce (člověk, který vede výlet): pán, hrad, muž, stroj, předseda, soudce"
+      }
+    },
+    {
+      "id": "cj-t2-l5-U3",
+      "typ": "nova",
+      "cil": "Určit vzor jmen rodu mužského, která dítě jen slyší v jiném pádě (dědou, souseda): samo si je vrátí do 1. pádu.",
+      "cas_min": 5,
+      "zadani": "Poslechni si větu. Pak odpověz na dvě otázky. Nahrávku si můžeš pustit, kolikrát chceš.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Otázka 1",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t2/l5-u3.mp3",
+            "prepis": "Tomáš potkal na hřišti souseda s dědou.",
+            "max_prehrani": 0,
+            "otazka": "Ke kterému vzoru patří slovo „dědou“?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "pán",
+                  "spravne": false,
+                  "typ_chyby": "vzor-pan-za-predseda"
+                },
+                {
+                  "id": "b",
+                  "text": "předseda",
+                  "spravne": true
+                },
+                {
+                  "id": "c",
+                  "text": "žena",
+                  "spravne": false,
+                  "typ_chyby": "vzor-zena-za-predseda"
+                },
+                {
+                  "id": "d",
+                  "text": "hrad",
+                  "spravne": false
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Otázka 2",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t2/l5-u3.mp3",
+            "prepis": "Tomáš potkal na hřišti souseda s dědou.",
+            "max_prehrani": 0,
+            "otazka": "Ke kterému vzoru patří slovo „souseda“?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "pán",
+                  "spravne": true
+                },
+                {
+                  "id": "b",
+                  "text": "hrad",
+                  "spravne": false
+                },
+                {
+                  "id": "c",
+                  "text": "muž",
+                  "spravne": false
+                },
+                {
+                  "id": "d",
+                  "text": "předseda",
+                  "spravne": false
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě větu jen slyší, text nevidí; co zazní, máte sbalené pod „Co zazní v nahrávce“. Nečtěte to nahlas. Obě slova jsou ve větě v jiném tvaru než v 1. pádě. Dítě si je musí samo vrátit (ten děda, ten soused) a teprve potom hledat vzor.",
+        "reseni": "Otázka 1: předseda (ten děda; v 1. pádě končí na -a, bez dědy)\n\nOtázka 2: pán (ten soused; vidím souseda, bez souseda; končí souhláskou)\n\n**Výsledek:** 1. předseda, 2. pán",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Co se v té větě stalo? Řekni to vlastními slovy.“"
+          },
+          {
+            "k": "Otázka 1",
+            "text": "„Řekni to slovo tak, aby před něj šlo říct ten. Jak končí? Který vzor končí stejně?“"
+          },
+          {
+            "k": "Otázka 2",
+            "text": "„Řekni to slovo s ten. Pak zkus: vidím ___ a bez ___. Který vzor zní stejně?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, jak poznáš vzor slova, které ve větě slyšíš v jiném tvaru.“",
+        "otocena_role_odpoved": "Řeknu si ho v 1. pádě s ten: ten děda. Končí na -a a je to muž, takže předseda. Ten soused končí souhláskou, bez souseda, takže pán.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 (Otázka 1) vybere žena nebo pán. Zeptejte se: „Řekneš ten, nebo ta děda? Jak končí?“ V kroku 2 (Otázka 2) vybere předseda, protože slyší -a: „Řekni to slovo s ten. Jak končí teď?“ Vybere hrad nebo muž: „Vidím koho? Bez koho?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — vzory sedí jen podle poslechu. Pochvalte, že si dítě slovo vrátilo do tvaru s ten, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Řekněte dítěti větu: „Klára šla do kina s tátou.“ Zeptejte se, ke kterému vzoru patří slovo tátou. Kontrola pro vás: předseda (ten táta; je to muž a končí na -a jako předseda).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra řekněte dítěti tři spojení: s dědou, bez souseda, o tátovi. Dítě každé slovo napíše tak, aby před něj šlo říct ten, a připíše vzor. Potom zopakujte lekci „Vzory rodu mužského“. Kontrola pro vás: ten děda – předseda, ten soused – pán, ten táta – předseda."
+      },
+      "tisk": {
+        "zadani": "Poslouchej nahrávku (pustí rodič). Můžeš si ji pustit, kolikrát chceš. Pak zakroužkuj odpovědi.\n\n1. Ke kterému vzoru patří slovo „dědou“? — a) pán b) předseda c) žena d) hrad\n\n2. Ke kterému vzoru patří slovo „souseda“? — a) pán b) hrad c) muž d) předseda"
+      }
+    },
+    {
+      "id": "cj-t2-l5-U4",
+      "typ": "detektiv",
+      "cil": "Najít u Petra jméno rodu mužského na -a, které dal ke vzoru pán (táta), a vybrat správný vzor.",
+      "cas_min": 5,
+      "zadani": "Petr určoval vzory ve větě:\n\nTáta šel se strýcem na hokej.\n\nNapsal: **Táta** – pán, **strýcem** – muž, **hokej** – stroj. Udělal **jednu** chybu. Najdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na slovo, které Petr určil špatně.",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Táta šel se strýcem na hokej.",
+            "cil": "slova",
+            "min": 1,
+            "max": 1
+          },
+          "spravne": [
+            0
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                3,
+                5
+              ],
+              "typ_chyby": "detektiv-jine-slovo"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Jaký vzor má to slovo?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "předseda",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "muž",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "c",
+                "text": "stroj",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "d",
+                "text": "hrad",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák; cizí chyba se hledá snáz. Určil tři vzory, jeden špatně. Dítě v kroku 1 klikne na chybné slovo a v kroku 2 (Jaký vzor má to slovo?) vybere správný vzor. Nabídka má vzory všech tří slov, takže krok 2 neprozradí krok 1.",
+        "reseni": "Chyba je „Táta“: Petr ho dal ke vzoru pán.\n\nTáta: předseda (ten táta; končí na -a, bez táty)\n\nstrýcem: muž (ten strýc, bez strýce; Petr má dobře)\n\nhokej: stroj (vidím hokej, bez hokeje; Petr má dobře)\n\n**Výsledek:** krok 1 Táta, krok 2 předseda",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Co měl Petr udělat? Řekni to vlastními slovy.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrova slova jedno po druhém. Řekni každé s ten a ve 2. pádě s bez. Sedí vzor?“"
+          },
+          {
+            "k": "Krok 2",
+            "text": "„Řekni to slovo s ten. Jakým písmenem končí? Který vzor končí stejně?“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a jak si ji příště ohlídám.“",
+        "otocena_role_odpoved": "Táta není pán. Končí na -a, bez táty, takže předseda. Příště se podívat, jak slovo končí v 1. pádě. Strýc a hokej máš dobře.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na „strýcem“ nebo „hokej“. Zeptejte se: „Bez strýce, nebo bez strýca? Bez hokeje, nebo bez hokeju?“ (Petr je má dobře.) V kroku 2 vybere jiný vzor: „Jak končí slovo táta? Který vzor končí stejně?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — Petrovu chybu dítě našlo i opravilo. Pochvalte, že zkoušelo 2. pád u všech slov, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr napsal, že kolega patří ke vzoru pán.“ Zeptejte se: „Má Petr pravdu? Jak to ověříš?“ Kontrola pro vás: nemá; ten kolega končí na -a, patří ke vzoru předseda.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše pod sebe: táta, strýc, hokej. Ke každému připíše 2. pád s bez a vzor. Potom zopakujte lekci „Vzory rodu mužského“. Kontrola pro vás: bez táty – předseda, bez strýce – muž, bez hokeje – stroj."
+      },
+      "tisk": {
+        "zadani": "Petr určoval vzory ve větě:\n\nTáta šel se strýcem na hokej.\n\nNapsal: Táta – pán, strýcem – muž, hokej – stroj. Udělal jednu chybu.\n\nA) Podtrhni slovo, které Petr určil špatně.\n\nB) Jaký vzor má to slovo? Zakroužkuj: a) předseda b) muž c) stroj d) hrad"
+      }
+    },
+    {
+      "id": "cj-t2-l5-U5",
+      "typ": "kontrolni",
+      "cil": "Samostatně určit vzor pěti jmen rodu mužského v textu: správce (soudce), kocour (pán), strom (hrad, neživotný), kolega (předseda), klíč (stroj).",
+      "cas_min": 6,
+      "zadani": "U každého označeného slova vyber vzor.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Správce tábora krmil kocoura pod vysokým stromem. Jeho kolega mu přinesl klíč od jídelny.",
+            "slova": [
+              0,
+              3,
+              6,
+              8,
+              11
+            ],
+            "role": [
+              "pán",
+              "hrad",
+              "muž",
+              "stroj",
+              "předseda",
+              "soudce"
+            ]
+          },
+          "spravne": {
+            "0": "soudce",
+            "3": "pán",
+            "6": "hrad",
+            "8": "předseda",
+            "11": "stroj"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "6": "pán"
+              },
+              "typ_chyby": "zivotnost-podle-vyznamu"
+            },
+            {
+              "hodnota": {
+                "8": "pán"
+              },
+              "typ_chyby": "vzor-pan-za-predseda"
+            },
+            {
+              "hodnota": {
+                "0": "muž"
+              },
+              "typ_chyby": "vzor-muz-za-soudce"
+            },
+            {
+              "hodnota": {
+                "11": "hrad"
+              },
+              "typ_chyby": "vzor-hrad-za-stroj"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Pět slov, každé k jinému vzoru. Pasti: strom žije, ale je neživotný (vidím strom); správce končí na -e, kolega na -a; klíč má 2. pád bez klíče.",
+        "reseni": "Správce: soudce (ten správce; končí na -e, vidím správce)\n\nkocoura: pán (ten kocour; vidím kocoura, bez kocoura)\n\nstromem: hrad (ten strom; vidím strom, bez stromu)\n\nkolega: předseda (ten kolega; končí na -a)\n\nklíč: stroj (vidím klíč, bez klíče)\n\n**Výsledek:** soudce, pán, hrad, předseda, stroj",
+        "otazky": [
+          "„Řekni mi vlastními slovy, jak najdeš vzor jména rodu mužského.“",
+          "„Vezmi slovo, u kterého váháš. Řekni ho s ten a pak: vidím ___ a bez ___. Který vzor zní stejně?“",
+          "„Vezmi slovo stromem. Řekni ho v 1. pádě s ten a dosaď ho do: vidím ___. Jak to zní?“"
+        ],
+        "otocena_role": "„Najdi v textu slovo, u kterého se snadno splete životnost. Dokaž mi testem, jak to je.“",
+        "otocena_role_odpoved": "Strom. Žije, ale řeknu vidím strom, ne vidím stroma. Takže je neživotný a patří k hradu.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: strom jako pán: „Vidím strom, nebo vidím stroma?“ Kolega jako pán: „Jak končí?“ Správce jako muž: „Jak končí slovo správce? A vzor muž?“ Klíč jako hrad: „Bez klíče, nebo bez klíču?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — všech pět vzorů sedí. Pochvalte, že dítě zkoušelo vidím a bez u každého slova. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti tři slova: kocour, koš, cyklista. U každého řekne vzor a test. Kontrola pro vás: kocour pán (vidím kocoura), koš stroj (vidím koš, bez koše), cyklista předseda (končí na -a).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše do sloupce: strom, kolega, správce, klíč. Ke každému připíše vidím ___, bez ___ a vzor. Potom zopakujte lekci „Vzory rodu mužského“. Kontrola pro vás: vidím strom, bez stromu – hrad; vidím kolegu, bez kolegy – předseda; vidím správce, bez správce – soudce; vidím klíč, bez klíče – stroj."
+      },
+      "tisk": {
+        "zadani": "Nad každé tučné slovo napiš vzor: pán, hrad, muž, stroj, předseda, soudce.\n\n**Správce** tábora krmil **kocoura** pod vysokým **stromem**. Jeho **kolega** mu přinesl **klíč** od jídelny."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Autor 1. 10. 2026 podle rozpisu cestina/Obsah/TEMA-2.md (lekce 5) a OSNOVA §6 L5. Všechny hodnocené tvary (pád, vzor, životnost) ověřeny v příručce ÚJČ přes nastroje/ujc.sh, viz TEMA-2.md „Ověření ÚJČ“. Odchylky od osnovy: U3 poslech zkrácen na „Tomáš potkal na hřišti souseda s dědou.“ (hlas nahrávky je ženský, „jsem potkal“ by neseděl); U5 bez kategorie životnost (kategorie „zivotnost“ nemá v obsah/hlasky.md název skupiny, dítě by vidělo klíč bez diakritiky), životnost se měří přes vzor (strom → pán = zivotnost-podle-vyznamu); koník nahrazen kocourem. Nahrávka t2/l5-u3.mp3 čeká (řádek pro AUDIO.md je v TEMA-2.md).",
+    "zkontroloval": "autor",
+    "datum": "2026-10-01",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?id=222",
+      "https://prirucka.ujc.cas.cz/?slovo=batoh",
+      "https://prirucka.ujc.cas.cz/?slovo=tren%C3%A9r",
+      "https://prirucka.ujc.cas.cz/?slovo=film",
+      "https://prirucka.ujc.cas.cz/?slovo=spolu%C5%BE%C3%A1k",
+      "https://prirucka.ujc.cas.cz/?slovo=u%C4%8Ditel",
+      "https://prirucka.ujc.cas.cz/?slovo=pokoj",
+      "https://prirucka.ujc.cas.cz/?slovo=hokejista",
+      "https://prirucka.ujc.cas.cz/?id=pr%C5%AFvodce_1",
+      "https://prirucka.ujc.cas.cz/?slovo=soused",
+      "https://prirucka.ujc.cas.cz/?slovo=d%C4%9Bda",
+      "https://prirucka.ujc.cas.cz/?slovo=t%C3%A1ta",
+      "https://prirucka.ujc.cas.cz/?slovo=str%C3%BDc",
+      "https://prirucka.ujc.cas.cz/?slovo=hokej",
+      "https://prirucka.ujc.cas.cz/?id=spr%C3%A1vce_1",
+      "https://prirucka.ujc.cas.cz/?slovo=kocour",
+      "https://prirucka.ujc.cas.cz/?slovo=strom",
+      "https://prirucka.ujc.cas.cz/?slovo=kolega",
+      "https://prirucka.ujc.cas.cz/?slovo=kl%C3%AD%C4%8D",
+      "https://prirucka.ujc.cas.cz/?slovo=l%C3%A9ka%C5%99",
+      "https://prirucka.ujc.cas.cz/?slovo=cyklista",
+      "https://prirucka.ujc.cas.cz/?slovo=z%C3%A1stupce",
+      "https://prirucka.ujc.cas.cz/?slovo=ko%C5%A1",
+      "https://prirucka.ujc.cas.cz/?slovo=m%C3%AD%C4%8D",
+      "https://prirucka.ujc.cas.cz/?slovo=Tom%C3%A1%C5%A1",
+      "https://prirucka.ujc.cas.cz/?slovo=h%C5%99i%C5%A1t%C4%9B"
+    ],
+    "testovaci_rodic": null
+  }
+}

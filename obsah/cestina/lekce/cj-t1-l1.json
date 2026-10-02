@@ -1,0 +1,609 @@
+{
+  "id": "cj-t1-l1",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 1,
+  "poradi": 1,
+  "tema": "Ohebné slovní druhy",
+  "kapitola": "slovni-druhy",
+  "cil_pro_rodice": "Dítě rozhodne, zda slovo mění tvar (ohebné), a ohebná slova zařadí do pěti druhů; nezamění zájmeno s podstatným jménem (my) ani s přídavným jménem (můj) a číslovku řadovou s přídavným jménem (pátý).",
+  "uvod_pro_rodice": "Dnes dítě třídí slova na ohebná, která mění tvar (pes – psa – psovi), a neohebná a ohebná zařadí do pěti druhů: podstatné jméno, přídavné jméno, zájmeno, číslovka, sloveso.",
+  "uvod_pravidla": [
+    {
+      "znak": "Ohebné slovo mění tvar: pes – psa",
+      "text": "co to je"
+    },
+    {
+      "znak": "Zkus: bez ___, k ___, já/on ___",
+      "text": "test"
+    },
+    {
+      "znak": "pátý = číslovka · můj = zájmeno",
+      "text": "příklad"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "slovní druh": "skupina slov, která se pozná stejným testem; druhů je deset, dnes pět ohebných",
+    "ohebné slovo": "mění tvar: pes – psa – psovi, my – nás, skočil – skočili; ohebná jsou podstatná a přídavná jména, zájmena, číslovky a slovesa",
+    "neohebné slovo": "tvar nemění: na, ale, včera, rychle; že jde říct rychle – rychleji, je jen stupňování, škola příslovce přesto řadí k neohebným",
+    "podstatné jméno": "název osoby, zvířete, věci, vlastnosti nebo činnosti; jde před něj říct ten, ta, to (ten den, ta třída)",
+    "přídavné jméno": "říká, jaký kdo nebo co je (vysoký, nový); ptáme se jaký?",
+    "zájmeno": "stojí místo jména nebo na ně ukazuje: já, my, on, můj, náš, ten. Můj a náš odpovídají na čí?, ale jsou to zájmena: místo nich jde říct něčí jméno",
+    "číslovka": "říká počet nebo pořadí: dva, tři, několik (kolik?), pátý, třetí (kolikátý?)",
+    "sloveso": "říká, co kdo dělá nebo co se děje; jde říct on ___ (on skočil, ona jela)",
+    "příslovce": "říká jak, kde nebo kdy (rychle, včera, dobře); je neohebné, dnes je jen past"
+  },
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "cas_min": 25,
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t1-l1-U1",
+      "typ": "rozcvicka",
+      "cil": "Ledoborec ze společného základu (Z1): poznat podstatné jméno (ten, ta, to), přídavné jméno (jaký?) a sloveso (on ___) a nenechat se zmást slovem, které říká jak nebo kdy.",
+      "cas_min": 4,
+      "zadani": "V řadách A a B vyber podstatné jméno, v řadě C sloveso, v řadě D přídavné jméno.\n\nA) hraje, hra, hravý, včera\n\nB) rychlý, rychle, zrychlí, rychlost\n\nC) plavání, plavecký, plave, dobře\n\nD) hlas, hlasitý, hlásí, hlasitě",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "hraje",
+                "spravne": false,
+                "typ_chyby": "sd-sloveso-za-podstatne"
+              },
+              {
+                "id": "b",
+                "text": "hra",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "hravý",
+                "spravne": false,
+                "typ_chyby": "sd-pridavne-za-podstatne"
+              },
+              {
+                "id": "d",
+                "text": "včera",
+                "spravne": false,
+                "typ_chyby": "sd-prislovce-za-podstatne"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "rychlý",
+                "spravne": false,
+                "typ_chyby": "sd-pridavne-za-podstatne"
+              },
+              {
+                "id": "b",
+                "text": "rychle",
+                "spravne": false,
+                "typ_chyby": "sd-prislovce-za-podstatne"
+              },
+              {
+                "id": "c",
+                "text": "zrychlí",
+                "spravne": false,
+                "typ_chyby": "sd-sloveso-za-podstatne"
+              },
+              {
+                "id": "d",
+                "text": "rychlost",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "plavání",
+                "spravne": false,
+                "typ_chyby": "sd-podstatne-za-sloveso"
+              },
+              {
+                "id": "b",
+                "text": "plavecký",
+                "spravne": false,
+                "typ_chyby": "sd-pridavne-za-sloveso"
+              },
+              {
+                "id": "c",
+                "text": "plave",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "dobře",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "hlas",
+                "spravne": false,
+                "typ_chyby": "sd-podstatne-za-pridavne"
+              },
+              {
+                "id": "b",
+                "text": "hlasitý",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "hlásí",
+                "spravne": false,
+                "typ_chyby": "sd-sloveso-za-pridavne"
+              },
+              {
+                "id": "d",
+                "text": "hlasitě",
+                "spravne": false,
+                "typ_chyby": "sd-prislovce-za-pridavne"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje tři testy z dřívějška: podstatné jméno projde testem ten, ta, to, přídavné jméno otázkou jaký?, sloveso testem on ___. V každé řadě je past: slovo, které říká jak nebo kdy (včera, rychle, dobře, hlasitě). Otázky jsou po řadách: čtěte tu u řady, kde se dítě zasekne.",
+        "reseni": "#### A) hraje, hra, hravý, včera\n\nhra (ta hra; hraje říká, co kdo dělá, hravý jaký, včera kdy)\n\n#### B) rychlý, rychle, zrychlí, rychlost\n\nrychlost (ta rychlost; rychlý jaký, rychle jak, zrychlí co kdo udělá)\n\n#### C) plavání, plavecký, plave, dobře\n\nplave (on plave; plavání je název činnosti: to plavání; plavecký jaký, dobře jak)\n\n#### D) hlas, hlasitý, hlásí, hlasitě\n\nhlasitý (jaký hlas? hlasitý; hlas je název, hlásí co kdo dělá, hlasitě jak)\n\n**Výsledek:** A) hra, B) rychlost, C) plave, D) hlasitý",
+        "otazky": [
+          {
+            "k": "A a B",
+            "text": "„Řekni nahlas ten, ta nebo to před každé slovo z řady. U kterého to dává smysl samo, bez dalšího slova?“"
+          },
+          {
+            "k": "C",
+            "text": "„Zkus před každé slovo říct on. Které zní jako věta? A u slova plavání: on plavání, nebo to plavání?“"
+          },
+          {
+            "k": "D",
+            "text": "„Polož otázku jaký? k podstatnému jménu z řady. Které slovo na ni odpoví? A na co odpovídá hlasitě?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč rychle není přídavné jméno, i když zní skoro jako rychlý.“",
+        "otocena_role_odpoved": "Rychlý říká, jaký kdo je: rychlý kluk. Rychle říká, jak něco dělá: běží rychle. Na otázku jaký? odpoví jen rychlý.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V řadě A nebo B vybere hravý, rychlý nebo slovo včera či rychle. Zeptejte se: „Jde říct ta rychle? Ta hravý?“ V řadě C vybere plavání: „Řekneš on plavání, nebo to plavání?“ V řadě D vybere hlas nebo hlasitě: „Jaký hlas?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — tři testy drží i s pastmi. Pochvalte, že dítě zkoušelo ten, ta, to a jaký? nahlas, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti čtyři slova: hra, hravý, hraje, včera. U každého řekne, jestli projde testem ten, ta, to, otázkou jaký?, nebo testem on ___. Kontrola pro vás: ta hra, jaký? hravý, on hraje; včera neprojde ničím, říká kdy.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše tři sloupce: ten/ta/to, jaký?, on ___. Přečtěte mu slova hlas, hlasitý, hlásí, rychlost, rychlý, zrychlí a dítě každé zapíše do sloupce, kde test funguje. Potom zopakujte lekci „Ohebné slovní druhy“. Kontrola pro vás: ten hlas, ta rychlost; jaký? hlasitý, rychlý; on hlásí, on zrychlí."
+      },
+      "tisk": {
+        "zadani": "V řadách A a B zakroužkuj podstatné jméno, v řadě C sloveso, v řadě D přídavné jméno.\n\nA) hraje, hra, hravý, včera\n\nB) rychlý, rychle, zrychlí, rychlost\n\nC) plavání, plavecký, plave, dobře\n\nD) hlas, hlasitý, hlásí, hlasitě"
+      }
+    },
+    {
+      "id": "cj-t1-l1-U2",
+      "typ": "nova",
+      "cil": "Rozhodnout u osmi slov, která mění tvar (ohebná), a nenechat se zmást stupňováním příslovce (rychle – rychleji).",
+      "cas_min": 5,
+      "zadani": "Vyber všechna ohebná slova, tedy ta, která mění tvar.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "dlazdice_vice",
+            "moznosti": [
+              "Tomáš",
+              "rychle",
+              "skočil",
+              "na",
+              "dva",
+              "náš",
+              "ale",
+              "vysoký"
+            ]
+          },
+          "spravne": [
+            "Tomáš",
+            "skočil",
+            "dva",
+            "náš",
+            "vysoký"
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                "rychle"
+              ],
+              "typ_chyby": "ohebnost-stupnovani"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě vybírá víc dlaždic najednou. Ohebné slovo mění tvar podle pádu, osoby nebo čísla: Tomáš – bez Tomáše, skočil – skočí, dva – dvou, náš – našeho, vysoký – vysokého. Past je rychle: jde říct rychleji, ale to je jen stupňování, v jiném pádě ani osobě ho říct nejde. Na a ale se nemění nikdy.",
+        "reseni": "Tomáš (bez Tomáše, k Tomášovi)\n\nskočil (skočí, skočili)\n\ndva (bez dvou, se dvěma)\n\nnáš (bez našeho, k našemu)\n\nvysoký (bez vysokého, k vysokému)\n\nrychle, na, ale: neohebná (rychle – rychleji je jen stupňování)\n\n**Výsledek:** Tomáš, skočil, dva, náš, vysoký",
+        "otazky": [
+          "„Co znamená, že slovo je ohebné? Řekni to vlastními slovy.“",
+          "„Vezmi slovo dva. Zkus říct bez ___ a se ___. Mění se? A jak je to se slovem na?“",
+          "„Slovo rychle zkus říct v jiném pádě nebo s já, ty, on. Jde to? Je stupňování totéž?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč je náš ohebné slovo a ale ne.“",
+        "otocena_role_odpoved": "Náš mění tvar: bez našeho, k našemu, s naším. Ale zůstane pořád stejné, ať ho dám do jakékoli věty.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Navíc je rychle. Zeptejte se: „Řekni rychle v jiném pádě. Jde to? Je stupňování totéž?“ Chybí dva, náš nebo jiné ohebné slovo: „Řekni bez ___ a s ___. Mění se to slovo?“ Navíc na nebo ale: „Dá se to slovo nějak změnit?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — ohebná slova sedí a rychle zůstalo stranou. Pochvalte, že dítě zkoušelo slova v jiném tvaru, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti čtyři slova: tři, pod, můj, včera. U každého řekne, jestli umí změnit jeho tvar (bez ___, s ___). Kontrola pro vás: tři (se třemi) a můj (bez mého) jsou ohebná; pod a včera se nemění.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra přečtěte dítěti slova skočil, na, dva, ale, vysoký; dítě je napíše a ke každému zkusí připsat jiný tvar (bez ___, k ___, oni ___). Potom zopakujte lekci „Ohebné slovní druhy“. Kontrola pro vás: jiný tvar mají skočil (skočili), dva (dvou), vysoký (vysokého); na a ale se nemění."
+      },
+      "tisk": {
+        "zadani": "Zakroužkuj všechna ohebná slova (mění tvar).\n\nTomáš, rychle, skočil, na, dva, náš, ale, vysoký"
+      }
+    },
+    {
+      "id": "cj-t1-l1-U3",
+      "typ": "nova",
+      "cil": "Ve slyšené větě určit druh slova pátý (číslovka, ne přídavné jméno) a slova my (zájmeno, ne podstatné jméno).",
+      "cas_min": 5,
+      "zadani": "Poslechni si větu. Pak urči slovní druh dvou slov z ní. Nahrávku si můžeš pustit, kolikrát chceš.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Slovo „pátý“",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t1/l1-u3.mp3",
+            "prepis": "Pátý den tábora jsme my dva našli v lese tři houby.",
+            "max_prehrani": 0,
+            "otazka": "Jaký slovní druh je slovo „pátý“?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "podstatné jméno",
+                  "spravne": false
+                },
+                {
+                  "id": "b",
+                  "text": "přídavné jméno",
+                  "spravne": false,
+                  "typ_chyby": "cislovka-za-pridavne"
+                },
+                {
+                  "id": "c",
+                  "text": "zájmeno",
+                  "spravne": false
+                },
+                {
+                  "id": "d",
+                  "text": "číslovka",
+                  "spravne": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Slovo „my“",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t1/l1-u3.mp3",
+            "prepis": "Pátý den tábora jsme my dva našli v lese tři houby.",
+            "max_prehrani": 0,
+            "otazka": "Jaký slovní druh je slovo „my“?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "podstatné jméno",
+                  "spravne": false,
+                  "typ_chyby": "zajmeno-za-podstatne"
+                },
+                {
+                  "id": "b",
+                  "text": "přídavné jméno",
+                  "spravne": false
+                },
+                {
+                  "id": "c",
+                  "text": "zájmeno",
+                  "spravne": true
+                },
+                {
+                  "id": "d",
+                  "text": "číslovka",
+                  "spravne": false
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě větu jen slyší, text nevidí; nahrávku si může pustit znovu. Co v ní zazní, máte sbalené pod „Co zazní v nahrávce“. Nečtěte to nahlas, dítě má poslouchat. Pasti: pátý odpovídá na kolikátý?, je to číslovka, i když se mění jako přídavné jméno nový. My stojí místo jmen lidí, je to zájmeno, ne podstatné jméno.",
+        "reseni": "pátý: číslovka (kolikátý den? pátý)\n\nmy: zájmeno (stojí místo jmen, my = já a kamarád)\n\n**Výsledek:** krok 1 číslovka, krok 2 zájmeno",
+        "otazky": [
+          "„Jak poznáš číslovku a jak zájmeno? Řekni to vlastními slovy.“",
+          "„Zeptej se na slovo pátý: jaký den, nebo kolikátý den? Která otázka sedí líp?“",
+          "„Slovo my: je to název, nebo to stojí místo jmen? Za koho můžeš říct my?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč pátý není přídavné jméno, i když se mění stejně jako nový.“",
+        "otocena_role_odpoved": "Pátý říká pořadí, ptám se kolikátý? Taková slova jsou číslovky. Přídavné jméno říká, jaký kdo nebo co je.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 (Slovo „pátý“) vybere přídavné jméno. Zeptejte se: „Ptáš se jaký, nebo kolikátý?“ V kroku 2 (Slovo „my“) vybere podstatné jméno: „Je to jméno věci, nebo to stojí místo jména?“ Vybere jiný druh: „Pusť si větu znovu a zkus test.“"
+      },
+      "semafor": {
+        "zelena": "Výborně — číslovku i zájmeno dítě poznalo jen poslechem. Pochvalte, že se ptalo kolikátý?, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Řekněte dítěti větu „Třetí den jsme my dva hráli na hřišti.“ Dítě ji jen slyší. Řekne, jaký druh je třetí a jaký my. Kontrola pro vás: třetí je číslovka (kolikátý den?), my je zájmeno (stojí místo jmen).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše pod sebe pátý, nový, my, kamarád. U každého slova zkusí otázky kolikátý?, jaký? a test ten, ta, to a připíše druh. Potom zopakujte lekci „Ohebné slovní druhy“. Kontrola pro vás: pátý číslovka (kolikátý?), nový přídavné jméno (jaký?), my zájmeno (místo jmen), kamarád podstatné jméno (ten kamarád)."
+      },
+      "tisk": {
+        "zadani": "Poslouchej větu (pustí ti ji rodič). Pak urči slovní druh dvou slov z ní.\n\nA) Jaký slovní druh je slovo „pátý“? Zakroužkuj: a) podstatné jméno b) přídavné jméno c) zájmeno d) číslovka\n\nB) Jaký slovní druh je slovo „my“? Zakroužkuj: a) podstatné jméno b) přídavné jméno c) zájmeno d) číslovka"
+      }
+    },
+    {
+      "id": "cj-t1-l1-U4",
+      "typ": "detektiv",
+      "cil": "Najít u Petra přivlastňovací zájmeno (Můj) určené jako přídavné jméno a říct správný druh.",
+      "cas_min": 5,
+      "zadani": "Petr měl ve větě určit slovní druhy:\n\nMůj kamarád má dva psy.\n\nNapsal: **Můj** – přídavné jméno, **kamarád** – podstatné jméno, **dva** – číslovka. Udělal **jednu** chybu. Najdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na slovo, které Petr určil špatně.",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Můj kamarád má dva psy.",
+            "cil": "slova",
+            "min": 1,
+            "max": 1
+          },
+          "spravne": [
+            0
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                1,
+                3
+              ],
+              "typ_chyby": "detektiv-jine-slovo"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Jaký druh to slovo je?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "číslovka",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "b",
+                "text": "zájmeno",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "sloveso",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "d",
+                "text": "podstatné jméno",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák; hledat cizí chybu je snazší než vlastní. Určil tři slova, jedno špatně. Dítě je projde testem a v kroku 2 (Jaký druh to slovo je?) vybere správný druh. Past: můj odpovídá na čí?, proto vypadá jako přídavné jméno. Je to ale zájmeno: místo něj jde říct něčí jméno (Tomášův kamarád).",
+        "reseni": "Chyba je Můj: Petr ho určil jako přídavné jméno.\n\nMůj: zájmeno (místo něj jde říct něčí jméno, Tomášův kamarád)\n\nkamarád: podstatné jméno (ten kamarád), Petr má dobře\n\ndva: číslovka (kolik psů?), Petr má dobře\n\n**Výsledek:** krok 1 Můj, krok 2 zájmeno",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co je zájmeno. Která tři slova Petr určil?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrova slova jedno po druhém. U každého řekni test, podle kterého ten druh poznáš. Sedí všude?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Které Petrovo slovo odpovídá na čí? Zkus místo něj říct něčí jméno. Jaký druh to potom je?“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a jak si ji příště ohlídám.“",
+        "otocena_role_odpoved": "Můj není přídavné jméno, ale zájmeno: místo něj jde říct něčí jméno, třeba Tomášův kamarád. Kamarád a dva máš dobře.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na kamarád nebo dva. Zeptejte se: „Jde říct ten kamarád? Kolik psů?“ (Petr to má dobře.) Klikne na Můj, ale v kroku 2 zvolí jiný druh: „Dá se místo toho slova říct něčí jméno? Zkus to.“"
+      },
+      "semafor": {
+        "zelena": "Výborně — Petrovu chybu dítě našlo i opravilo. Pochvalte, že zkoušelo test u všech tří slov, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr napsal, že ve spojení náš pes je náš přídavné jméno.“ Zeptejte se: „Má Petr pravdu? Jak to ověříš?“ Kontrola pro vás: nemá, náš je zájmeno; místo něj jde říct něčí jméno (Tomášův pes).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše můj pes, nový pes, náš kamarád, vysoký kamarád. U každého prvního slova zkusí, jestli místo něj jde říct něčí jméno, a připíše zájmeno, nebo přídavné jméno. Potom zopakujte lekci „Ohebné slovní druhy“. Kontrola pro vás: můj a náš jsou zájmena; nový a vysoký přídavná jména (jaký?)."
+      },
+      "tisk": {
+        "zadani": "Petr měl ve větě určit slovní druhy:\n\nMůj kamarád má dva psy.\n\nNapsal: Můj – přídavné jméno, kamarád – podstatné jméno, dva – číslovka. Udělal jednu chybu.\n\nA) Podtrhni slovo, které Petr určil špatně.\n\nB) Jaký druh to slovo je? Zakroužkuj: a) číslovka b) zájmeno c) sloveso d) podstatné jméno"
+      }
+    },
+    {
+      "id": "cj-t1-l1-U5",
+      "typ": "kontrolni",
+      "cil": "Samostatně určit pět ohebných druhů u šesti slov ve dvou větách, včetně pastí Naše, Třetí a několik.",
+      "cas_min": 6,
+      "zadani": "U každého označeného slova vyber slovní druh.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Naše třída jela na výlet do hor. Třetí den jsme potkali několik nových kamarádů.",
+            "slova": [
+              0,
+              1,
+              2,
+              7,
+              11,
+              12
+            ],
+            "role": [
+              "podstatné jméno",
+              "přídavné jméno",
+              "zájmeno",
+              "číslovka",
+              "sloveso"
+            ]
+          },
+          "spravne": {
+            "0": "zájmeno",
+            "1": "podstatné jméno",
+            "2": "sloveso",
+            "7": "číslovka",
+            "11": "číslovka",
+            "12": "přídavné jméno"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "0": "přídavné jméno"
+              },
+              "typ_chyby": "zajmeno-za-pridavne"
+            },
+            {
+              "hodnota": {
+                "7": "přídavné jméno"
+              },
+              "typ_chyby": "cislovka-za-pridavne"
+            },
+            {
+              "hodnota": {
+                "11": "zájmeno"
+              },
+              "typ_chyby": "cislovka-jen-cislice"
+            },
+            {
+              "hodnota": {
+                "11": "přídavné jméno"
+              },
+              "typ_chyby": "cislovka-jen-cislice"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Šest slov, pět druhů, číslovky jsou dvě. Pasti: Naše odpovídá na čí?, ale je to zájmeno; Třetí se mění jako přídavné jméno, ale říká pořadí; několik je číslovka, i když neříká přesné číslo.",
+        "reseni": "Naše: zájmeno (místo něj jde říct něčí jméno)\n\ntřída: podstatné jméno (ta třída)\n\njela: sloveso (ona jela)\n\nTřetí: číslovka (kolikátý den?)\n\nněkolik: číslovka (kolik kamarádů?)\n\nnových: přídavné jméno (jakých kamarádů?)\n\n**Výsledek:** zájmeno, podstatné jméno, sloveso, číslovka, číslovka, přídavné jméno",
+        "otazky": [
+          "„Řekni mi vlastními slovy, jak poznáš pět ohebných druhů.“",
+          "„Vezmi slovo, u kterého váháš. Zeptej se na něj: ten? jaký? kolik? kolikátý? on ___? Která otázka sedí?“",
+          "„Vezmi slova Naše a několik. U prvního zkus místo něj říct něčí jméno, u druhého se zeptej kolik?, nebo jaký?“"
+        ],
+        "otocena_role": "„Najdi v těch větách slovo, které vypadá jako přídavné jméno, ale není. Dokaž mi to.“",
+        "otocena_role_odpoved": "Třeba Třetí: neříká jaký, ale kolikátý den, je to číslovka. Nebo Naše: místo něj jde říct něčí jméno, je to zájmeno.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: Naše jako přídavné jméno: „Dá se místo toho slova říct něčí jméno?“ Třetí jako přídavné jméno: „Ptáš se jaký, nebo kolikátý?“ několik jako zájmeno nebo přídavné jméno: „Odpovídá to na kolik?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — pět ohebných druhů sedí i s pastmi. Pochvalte, že dítě zkoušelo otázky u každého slova. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti větu „Náš pes našel několik kostí.“ Dítě řekne druh slov náš a několik. Kontrola pro vás: náš je zájmeno (místo něj jde říct něčí jméno), několik je číslovka (kolik kostí?).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše otázky ten?, jaký?, kolik? nebo kolikátý?, on ___?, místo něčího jména? Přečtěte mu slova třída, nový, třetí, jela, náš a dítě ke každému napíše otázku, která sedí. Potom zopakujte lekci „Ohebné slovní druhy“. Kontrola pro vás: ta třída, jaký? nový, kolikátý? třetí, ona jela, náš místo něčího jména (zájmeno)."
+      },
+      "tisk": {
+        "zadani": "Nad každé tučné slovo napiš jeho slovní druh.\n\n**Naše** **třída** **jela** na výlet do hor. **Třetí** den jsme potkali **několik** **nových** kamarádů."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Autor 1. 10. podle cestina/Obsah/OSNOVA.md §5 (L1) a rozpisu cestina/Obsah/TEMA-1.md. Slovní druh každého hodnoceného slova ověřen v příručce ÚJČ (SSČ) přes nastroje/ujc.sh; u homonym odkaz na konkrétní heslo (?id=…). [OVĚŘIT] žádné. Vzorová odpověď každého kroku vyjde správně a každá známá chyba vrací svůj kód (seed:validace + vyhodnotKrok). Validátor hlásí jen chybějící soubory nahrávek a řádek t1/l1-u3.mp3 v AUDIO.md (řádek je v TEMA-1.md, sloučí vedoucí). Odchylky od osnovy: U1 řady slov z jedné rodiny (hra/hraje/hravý/včera …); U2 obecné chyby (chybí dva, náš) nejsou v zname_chyby, schéma chce typ_chyby. U5 text: Naše třída jela na výlet do hor. Třetí den jsme potkali několik nových kamarádů. Tvar tří/třech (dubleta) se nikde nepoužívá, jen se třemi.",
+    "zkontroloval": "autor",
+    "datum": "2026-10-01",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?slovo=hra",
+      "https://prirucka.ujc.cas.cz/?slovo=hr%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?slovo=hrav%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=v%C4%8Dera",
+      "https://prirucka.ujc.cas.cz/?slovo=rychlost",
+      "https://prirucka.ujc.cas.cz/?slovo=rychl%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=rychle",
+      "https://prirucka.ujc.cas.cz/?slovo=zrychlit",
+      "https://prirucka.ujc.cas.cz/?slovo=plavat",
+      "https://prirucka.ujc.cas.cz/?slovo=plav%C3%A1n%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=plaveck%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=dob%C5%99e",
+      "https://prirucka.ujc.cas.cz/?slovo=hlas",
+      "https://prirucka.ujc.cas.cz/?slovo=hlasit%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=hl%C3%A1sit",
+      "https://prirucka.ujc.cas.cz/?slovo=hlasit%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=Tom%C3%A1%C5%A1",
+      "https://prirucka.ujc.cas.cz/?slovo=sko%C4%8Dit",
+      "https://prirucka.ujc.cas.cz/?slovo=na",
+      "https://prirucka.ujc.cas.cz/?slovo=dva",
+      "https://prirucka.ujc.cas.cz/?id=n%C3%A1%C5%A1",
+      "https://prirucka.ujc.cas.cz/?slovo=ale",
+      "https://prirucka.ujc.cas.cz/?slovo=vysok%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=t%C5%99i",
+      "https://prirucka.ujc.cas.cz/?id=m%C5%AFj_1",
+      "https://prirucka.ujc.cas.cz/?slovo=pod",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C3%A1t%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=my",
+      "https://prirucka.ujc.cas.cz/?slovo=den",
+      "https://prirucka.ujc.cas.cz/?slovo=t%C3%A1bor",
+      "https://prirucka.ujc.cas.cz/?slovo=les",
+      "https://prirucka.ujc.cas.cz/?slovo=houba",
+      "https://prirucka.ujc.cas.cz/?slovo=t%C5%99et%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=h%C5%99i%C5%A1t%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=nov%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=kamar%C3%A1d",
+      "https://prirucka.ujc.cas.cz/?slovo=m%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=pes",
+      "https://prirucka.ujc.cas.cz/?slovo=t%C5%99%C3%ADda",
+      "https://prirucka.ujc.cas.cz/?slovo=jet",
+      "https://prirucka.ujc.cas.cz/?slovo=v%C3%BDlet",
+      "https://prirucka.ujc.cas.cz/?slovo=hora",
+      "https://prirucka.ujc.cas.cz/?slovo=n%C4%9Bkolik"
+    ],
+    "testovaci_rodic": null
+  }
+}
