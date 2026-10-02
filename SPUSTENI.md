@@ -5,78 +5,33 @@ Klíče (service key, heslo DB) patří jen do souboru `.env` u tebe. Do chatu a
 
 | | Část A | Část B |
 |---|---|---|
-| Aplikace | Spolu na přijímačky (9. třída, M + ČJ) | Spolu 8 (opakování 8. třídy, M + ČJ) |
+| Aplikace | Spolu na přijímačky (9. třída, M + ČJ pilot) | Spolu 8 (opakování 8. třídy, M + ČJ) |
 | Supabase | **stávající** projekt `spolu-na-prijimacky` | **nový** projekt `spolu-osma` |
-| Repozitář / složka | `spolu` → `Desktop\MVP` | `spolu-osma` → `Desktop\Spolu8` (nová) |
+| Zdroj | `Desktop\MVP` (master, to, co je na webu) | `spolu-osma` → `Desktop\Spolu8` (nová) |
 | Web | `spolu.studentbase.cz` | `osma.studentbase.cz` (návrh, nová subdoména) |
-| Čas | ~30 min | ~60 min |
-
-Části jsou na sobě nezávislé. Doporučené pořadí: nejdřív A, pak B.
+| Čas | ~10 min | ~60 min |
 
 ---
 
-## ČÁST A — Spolu na přijímačky: dohrát češtinu do `spolu-na-prijimacky`
+## ČÁST A — Spolu na přijímačky: do databáze se nic nedohrává
 
-Do stávajícího projektu se dohrává:
-1. **migrace 0006** (režim „Dnes samo“), pokud ještě neproběhla;
-2. **migrace 0007** (předměty a zámek podle předmětu);
-3. **3 upravené lekce matematiky**;
-4. **8 lekcí češtiny** (týdny 1–2);
-5. **nový web**.
+**Oprava 2. 10.:** původní část A (migrace `0007_predmet` a lekce `cj-t1…` z repa `spolu`) **NEDĚLAT**.
+Ostrý web i databáze běží ze složky `Desktop\MVP`. Tam už je hotový a nasazený **pilot češtiny CJ-P1 až CJ-P4**:
+- migrace 0007 v DB proběhla 1. 10.;
+- lekce jsou nahrané;
+- web B14–B17 je nahraný;
+- Fable vše schválil (ODPOVED 1. 10.).
 
-Podrobnosti a varianty jsou v repu `spolu` v `cestina/REPORT-SPUSTENI.md` §3. Tady je zkrácená cesta.
+Repo `spolu` (linie „Čeština: základy“) má jinou migraci 0007 a jiný přehled. Jeho nahrání by přepsalo nasazenou matematiku i češtinu.
 
-**A0. Příprava** (cmd ve složce `Desktop\MVP`):
-```
-git pull
-npm ci
-npm test
-```
-Má vyjít `pass 391`, `fail 0`.
-
-**A1. Datum spuštění** = den, kdy nahraješ web. Dál jako `<DATUM>`, např. `2026-10-03`. Týden 1 češtiny se otevře ten den, týden 2 v pondělí 5. 10.
-
-**A2. Migrace** v Supabase → projekt `spolu-na-prijimacky` → **SQL Editor**:
-1. Spusť tento dotaz:
-   ```sql
-   select pg_get_constraintdef(oid) from pg_constraint where conname = 'sezeni_rezim_check';
-   ```
-2. Když výsledek **neobsahuje** `samo`: New query → vlož celý soubor `supabase\migrations\0006_rezim_samo.sql` → **Run**.
-3. New query → vlož celý soubor `supabase\migrations\0007_predmet.sql` → **Run**.
-4. Kontrola: tento dotaz musí vrátit 1 řádek.
-   ```sql
-   select proname from pg_proc where proname = 'duvod_zamceni_lekce';
-   ```
-
-(Když máš v `.env` `SUPABASE_DB_URL`, místo kroků 2–3 stačí `npm run migrovat`.)
-
-**A3. Lekce** (cmd):
-```
-npm run seed
-node supabase/seed/seed-lekce.mjs --adresar obsah/cestina/lekce --otevrit-od-zaklady <DATUM> --suchy-beh
-node supabase/seed/seed-lekce.mjs --adresar obsah/cestina/lekce --otevrit-od-zaklady <DATUM>
-```
-- `npm run seed` nahraje změněné lekce matematiky.
-- Suchý běh češtiny vypíše plán otevírání a „nahrálo by se 8 lekcí“.
-- Ostrý běh napíše „Hotovo: nahráno 8 lekcí“.
-
-**A4. Web — hned po A3:**
-1. Dvojklik na `nasadit.bat`.
-2. Na Endoru nahraj **celý obsah** složky `k-nahrani` do kořene `spolu.studentbase.cz` (66 souborů včetně složky `audio`) a přepiš staré soubory.
-
-**A5. Zapnout češtinu dětem.** Buď to udělá rodič v přehledu tlačítkem **„Předměty“**, nebo ty v SQL Editoru pro všechny pilotní rodiny:
-```sql
-update public.deti d set predmety = '{matematika,cestina}'
-from public.rodiny r where r.id = d.rodina_id and r.stav = 'pilot';
-```
-
-**A6. Kontrola v prohlížeči.** Přihlas se jako testovací rodina a ověř:
-- nahoře jsou záložky **Matematika | Čeština**;
-- v češtině je otevřený týden 1;
-- týden 2 ukazuje „Otevře se 5. 10.“;
-- v lekci `cj-t1-l2`, úloha 4 hraje nahrávka.
-
-✅ **Část A je hotová.** Když se něco pokazí, postup je v `cestina/REPORT-SPUSTENI.md`, oddíl „Když se něco pokazí“ (rollback).
+Co zbývá do pilotu 8. 10. (podle `Desktop\MVP\reporty\PRO-PAVLA.md`):
+1. **B18:** z `Desktop\MVP\k-nahrani` nahraj na Endoru 2 soubory (`js/prehled.js`, `js/hlasky.js`). Předtím zkontroluj větu o pokračování češtiny, je v PRO-PAVLA u B18.
+2. **SMTP + zapnout „Confirm email“** v projektu `spolu-na-prijimacky` (Authentication → SMTP Settings). Před reklamou na pilot.
+3. **Tým MVP opraví** 3 nápovědy v taháku češtiny (CJ-P2, CJ-P3, CJ-P4, ODPOVED 1. 10., body 1–3) a pak připraví další balíček.
+4. **Soubor `rodiny-2026-09-24.csv`** (osobní údaje) je v `Desktop\MVP` uložený v gitu:
+   - vyřadit ho z gitu (`git rm --cached`) a přidat do `.gitignore`;
+   - nikdy ho nenahrávat na web ani na GitHub.
+5. Do 31. 10.: Revolut odkaz na 990 Kč.
 
 ---
 
