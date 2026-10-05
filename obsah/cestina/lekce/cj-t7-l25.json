@@ -1,0 +1,750 @@
+{
+  "id": "cj-t7-l25",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 7,
+  "poradi": 1,
+  "tema": "Shoda s jedním podmětem",
+  "kapitola": "shoda",
+  "cil_pro_rodice": "Dítě najde podmět (i když stojí za slovesem nebo je schovaný ve větě předtím), řekne před něj ti, ty, nebo ta a podle toho doplní i, y, nebo a v koncovce slovesa (kluci běželi, holky běžely, auta jela).",
+  "uvod_pro_rodice": "Dnes dítě doplňuje koncovku slovesa v minulém čase podle podmětu: najde, kdo nebo co to dělá, řekne před to ti, ty, nebo ta a podle toho napíše i, y, nebo a.",
+  "uvod_pravidla": [
+    {
+      "znak": "Najdu podmět, řeknu ti/ty/ta",
+      "text": "co to je"
+    },
+    {
+      "znak": "ti → i · ty → y · ta → a",
+      "text": "test"
+    },
+    {
+      "znak": "ti kluci běželi · ty holky běžely",
+      "text": "příklad"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "podmět": "kdo nebo co ve větě něco dělá; zeptáte se od slovesa: kdo, co? (Kluci běželi. → kdo běžel? kluci)",
+    "přísudek": "sloveso, které říká, co podmět dělá (běželi)",
+    "shoda": "koncovka slovesa v minulém čase se řídí podmětem: kluci běželi, holky běžely, auta jela",
+    "ti / ty / ta": "test místo poučky: před podmět se řekne ti (ti kluci → i), ty (ty holky, ty stromy → y), nebo ta (ta auta → a)",
+    "životnost": "škola říká, že kluci jsou rodu mužského životného (→ i) a stromy neživotného (→ y); dítě to pozná testem ti / ty",
+    "nevyjádřený podmět": "podmět ve větě chybí, je ve větě předtím (Kluci trénovali. Potom šli domů. → kdo šel? kluci)"
+  },
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "cas_min": 25,
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t7-l25-U1",
+      "typ": "rozcvicka",
+      "cil": "Ledoborec ze společného základu: najít podmět otázkou kdo, co? i tam, kde stojí za slovesem a kde je na začátku věty jiné slovo (předmět, kdy).",
+      "cas_min": 4,
+      "zadani": "V každé řadě vyber podmět. Zeptej se od slovesa: kdo, co to dělá?\n\nA) Lucka čte v parku knihu.\n\nB) Včera vyhrál zápas Adam.\n\nC) Kočku hladí Ema.\n\nD) Do třídy přinesl dort Tomáš.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "čte",
+                "spravne": false,
+                "typ_chyby": "podmet-prisudek-zamena"
+              },
+              {
+                "id": "b",
+                "text": "Lucka",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "knihu",
+                "spravne": false,
+                "typ_chyby": "podmet-za-predmet"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Včera",
+                "spravne": false,
+                "typ_chyby": "podmet-prvni-slovo"
+              },
+              {
+                "id": "b",
+                "text": "zápas",
+                "spravne": false,
+                "typ_chyby": "podmet-za-predmet"
+              },
+              {
+                "id": "c",
+                "text": "Adam",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "vyhrál",
+                "spravne": false,
+                "typ_chyby": "podmet-prisudek-zamena"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Kočku",
+                "spravne": false,
+                "typ_chyby": "podmet-za-predmet"
+              },
+              {
+                "id": "b",
+                "text": "hladí",
+                "spravne": false,
+                "typ_chyby": "podmet-prisudek-zamena"
+              },
+              {
+                "id": "c",
+                "text": "Ema",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "třídy",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "Tomáš",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "dort",
+                "spravne": false,
+                "typ_chyby": "podmet-za-predmet"
+              },
+              {
+                "id": "d",
+                "text": "přinesl",
+                "spravne": false,
+                "typ_chyby": "podmet-prisudek-zamena"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje, jak se hledá podmět: od slovesa se zeptáme kdo, co? Pasti: podmět nemusí být první (Včera vyhrál zápas Adam) a na začátku může stát slovo, které podmět není (Kočku hladí Ema: hladí koho? kočku). Otázky jsou po řadách: čtěte tu u řady, kde se dítě zasekne.",
+        "reseni": "#### A) Lucka čte v parku knihu.\n\nLucka (kdo čte? Lucka; knihu: čte co?)\n\n#### B) Včera vyhrál zápas Adam.\n\nAdam (kdo vyhrál? Adam; zápas: vyhrál co?; včera říká kdy)\n\n#### C) Kočku hladí Ema.\n\nEma (kdo hladí? Ema; kočku: hladí koho?)\n\n#### D) Do třídy přinesl dort Tomáš.\n\nTomáš (kdo přinesl? Tomáš; dort: přinesl co?)\n\n**Výsledek:** A) Lucka, B) Adam, C) Ema, D) Tomáš",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Najdi ve větě sloveso. Pak se od něj zeptej: kdo, co to dělá?“"
+          },
+          {
+            "k": "B a D",
+            "text": "„Které slovo říká, kdy nebo kam? A které odpoví na otázku kdo to udělal?“"
+          },
+          {
+            "k": "C",
+            "text": "„Zkus obě otázky: kdo hladí? a hladí koho? Na kterou odpovídá slovo kočku?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč ve větě Kočku hladí Ema není podmět kočku, i když je první.“",
+        "otocena_role_odpoved": "Zeptám se: kdo hladí? Ema. Kočku odpovídá na otázku hladí koho, takže to podmět není. Podmět nemusí stát na začátku.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Vybere slovo ze začátku (Včera, Kočku): „Zeptej se od slovesa: kdo, co to dělá?“ Vybere knihu, zápas nebo dort: „Dělá to ta věc, nebo to někdo dělá s ní?“ Vybere sloveso: „Které slovo říká, kdo to dělá?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — podmět dítě najde i za slovesem. Pochvalte, že se ptalo od slovesa kdo, co, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti dvě věty: „Míč chytil brankář.“ „Ráno zavolala babička.“ U každé řekne, kdo to dělá. Kontrola pro vás: brankář (míč: chytil co?), babička (ráno říká kdy).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a dvě pastelky. Zítra ať dítě napíše větu „Kočku hladí Ema.“ Ukáže sloveso a zeptá se od něj nahlas: kdo hladí? hladí koho? Odpovědi podtrhne každou jinou barvou. Potom zopakujte lekci „Shoda s jedním podmětem“. Kontrola pro vás: kdo hladí? Ema (podmět); hladí koho? kočku (podmět to není)."
+      },
+      "tisk": {
+        "zadani": "V každé řadě zakroužkuj podmět.\n\nA) Lucka čte v parku knihu. Zakroužkuj: a) čte b) Lucka c) knihu\n\nB) Včera vyhrál zápas Adam. Zakroužkuj: a) Včera b) zápas c) Adam d) vyhrál\n\nC) Kočku hladí Ema. Zakroužkuj: a) Kočku b) hladí c) Ema\n\nD) Do třídy přinesl dort Tomáš. Zakroužkuj: a) třídy b) Tomáš c) dort d) přinesl"
+      }
+    },
+    {
+      "id": "cj-t7-l25-U2",
+      "typ": "nova",
+      "cil": "Doplnit i, y, a v koncovce slovesa podle podmětu, který stojí před slovesem, testem ti / ty / ta.",
+      "cas_min": 5,
+      "zadani": "Doplň i, y, nebo a.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Kluci spěchal_ na trénink. Holky hrál_ florbal. Auta stál_ na parkovišti. Stromy u hřiště šuměl_. Kuřata u babičky pípal_. Psi u sousedů štěkal_.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 2,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 3,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 4,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 5,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "i",
+            "y",
+            "a",
+            "y",
+            "a",
+            "i"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "y",
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "shoda-y-za-i"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                "y",
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "shoda-y-za-a"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                "i",
+                null,
+                null
+              ],
+              "typ_chyby": "shoda-i-za-y"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                null,
+                "y",
+                null
+              ],
+              "typ_chyby": "shoda-y-za-a"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě doplňuje písmeno na konec slovesa. Podmět stojí vždy před slovesem. Postup: najde podmět, řekne před něj ti, ty, nebo ta a podle toho vybere i, y, nebo a. Pasti: stromy (ten strom, ale ty stromy → y) a kuřata (ta kuřata → a, ne y).",
+        "reseni": "Kluci spěchali (ti kluci → i)\n\nHolky hrály (ty holky → y)\n\nAuta stála (ta auta → a)\n\nStromy šuměly (ty stromy → y)\n\nKuřata pípala (ta kuřata → a)\n\nPsi štěkali (ti psi → i)\n\n**Výsledek:** i, y, a, y, a, i",
+        "otazky": [
+          "„Řekni mi vlastními slovy, podle čeho poznáš, jaké písmeno patří na konec slovesa.“",
+          "„Vezmi první větu. Kdo spěchal? Řekni před to slovo ti, ty, nebo ta. Co zní česky?“",
+          "„U stromů a kuřat to zkus nahlas: ti, nebo ty stromy? Ta, nebo ty kuřata? Jak to řekneš ve škole?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč se píše stromy šuměly, když se o jednom řekne ten strom.“",
+        "otocena_role_odpoved": "O jednom řeknu ten strom, ale o více ty stromy, ne ti stromy. Ty → y, proto šuměly.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U stromů vybere i: „Řekneš ti stromy, nebo ty stromy?“ U kuřat nebo aut vybere y: „Ta kuřata, nebo ty kuřata? Jak to řekneš ve škole?“ U kluků vybere y: „Ti kluci, nebo ty kluci?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — test ti, ty, ta funguje. Pochvalte, že si ho dítě řeklo nahlas, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti tři slova: vlaky, koťata, hráči. U každého řekne ti, ty, nebo ta a písmeno do věty „… byl_ tady“. Kontrola pro vás: ty vlaky byly, ta koťata byla, ti hráči byli.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: tři lístky papíru a tužku. Zítra ať dítě napíše na lístky ti, ty, ta. Pak mu řekněte: kluci, holky, auta, stromy. Ke každému slovu položí správný lístek a napíše „… byl_ venku“ se správným písmenem. Potom zopakujte lekci „Shoda s jedním podmětem“. Kontrola pro vás: ti kluci byli, ty holky byly, ta auta byla, ty stromy byly."
+      },
+      "tisk": {
+        "zadani": "Doplň i, y, nebo a.\n\nKluci spěchal_ na trénink. Holky hrál_ florbal. Auta stál_ na parkovišti. Stromy u hřiště šuměl_. Kuřata u babičky pípal_. Psi u sousedů štěkal_."
+      }
+    },
+    {
+      "id": "cj-t7-l25-U3",
+      "typ": "nova",
+      "cil": "Najít nevyjádřený podmět ve slyšené větě (je ve větě předtím) a podle něj určit i, nebo y; písmeno nejde poznat sluchem.",
+      "cas_min": 5,
+      "zadani": "Poslechni si nahrávku. Pak odpověz na dvě otázky.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Kdo šel na zmrzlinu?",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t7/l25-u3.mp3",
+            "prepis": "Holky z naší třídy trénovaly po škole volejbal. Potom šly na zmrzlinu.",
+            "max_prehrani": 0,
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "holky",
+                  "spravne": true
+                },
+                {
+                  "id": "b",
+                  "text": "třída",
+                  "spravne": false,
+                  "typ_chyby": "shoda-nevyjadreny-neurcen"
+                },
+                {
+                  "id": "c",
+                  "text": "volejbal",
+                  "spravne": false
+                },
+                {
+                  "id": "d",
+                  "text": "nikdo",
+                  "spravne": false,
+                  "typ_chyby": "shoda-nevyjadreny-neurcen"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Jaké písmeno patří do „šl_“?",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t7/l25-u3.mp3",
+            "prepis": "Holky z naší třídy trénovaly po škole volejbal. Potom šly na zmrzlinu.",
+            "max_prehrani": 0,
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "i",
+                  "spravne": false,
+                  "typ_chyby": "shoda-i-za-y"
+                },
+                {
+                  "id": "b",
+                  "text": "y",
+                  "spravne": true
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě text nevidí, jen slyší; nahrávku si může pustit znovu. Co v ní zazní, máte sbalené pod „Co zazní v nahrávce“, nečtěte to nahlas. Ve druhé větě podmět chybí, je ve větě předtím. Písmeno dítě sluchem nepozná (šli i šly zní stejně), musí si nejdřív říct, kdo to dělal.",
+        "reseni": "Krok 1: holky (kdo šel na zmrzlinu? holky z první věty)\n\nKrok 2: y (ty holky → šly)\n\n**Výsledek:** krok 1 holky, krok 2 y",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co se v nahrávce stalo. Kdo tam vystupuje?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Ve druhé větě chybí, kdo to dělá. Ve které větě to najdeš?“"
+          },
+          {
+            "k": "Krok 2",
+            "text": "„Řekni před slovo z kroku 1 ti, ty, nebo ta. Které písmeno k tomu patří?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, jak poznáš písmeno ve slově šl_, když ve větě chybí, kdo to dělá.“",
+        "otocena_role_odpoved": "Podmět je schovaný ve větě předtím: šly holky. Řeknu ty holky, takže y.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 vybere „třída“ nebo „nikdo“: „Kdo trénoval? A kdo potom šel?“ V kroku 2 vybere i: „Řekneš ti holky, nebo ty holky?“ (Sluchem to poznat nejde, šli a šly zní stejně.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — schovaný podmět dítě našlo i poslechem. Pochvalte, že si nejdřív řeklo, kdo to dělal, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Kluci mají po tréninku hlad. Potom šl_ na oběd.“ Zeptejte se: „Kdo šel na oběd? Jaké písmeno napíšeš?“ Kontrola pro vás: kluci (z první věty), ti kluci → i (šli).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše: „Holky mají volno. Potom šl_ domů.“ Šipkou spojí šl_ se slovem, které to dělá, řekne před něj ti, ty, nebo ta a doplní písmeno. Potom zopakujte lekci „Shoda s jedním podmětem“. Kontrola pro vás: šipka vede k holky; ty holky → šly."
+      },
+      "tisk": {
+        "zadani": "Poslouchej nahrávku (pustí ti ji rodič).\n\nA) Kdo šel na zmrzlinu? Zakroužkuj: a) holky b) třída c) volejbal d) nikdo\n\nB) Jaké písmeno patří do šl_? Zakroužkuj: a) i b) y"
+      }
+    },
+    {
+      "id": "cj-t7-l25-U4",
+      "typ": "detektiv",
+      "cil": "Najít u spolužáka koncovku udělanou podle slova vedle slovesa (kola kluků stáli) a říct, které slovo koncovku určuje.",
+      "cas_min": 5,
+      "zadani": "Petr doplnil koncovky sloves:\n\nKluci z oddílu přijeli na trénink. Kola kluků stáli u plotu.\n\nUdělal **jednu** chybu. Najdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na slovo, které Petr napsal špatně.",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Kluci z oddílu přijeli na trénink. Kola kluků stáli u plotu.",
+            "cil": "slova",
+            "min": 1,
+            "max": 1
+          },
+          "spravne": [
+            8
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                0,
+                3,
+                6,
+                7
+              ],
+              "typ_chyby": "detektiv-jine-slovo"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Které slovo určuje správnou koncovku?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Kluci",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "b",
+                "text": "Kola",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "kluků",
+                "spravne": false,
+                "typ_chyby": "shoda-podle-blizkeho-slova"
+              },
+              {
+                "id": "d",
+                "text": "plotu",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák; cizí chybu se hledá snáz. Petr má dvě slovesa, jedno špatně. Past: ve druhé větě stojí hned u slovesa slovo kluků, ale podmět to není. U plotu stála kola. V kroku 2 (Které slovo určuje správnou koncovku?) dítě vybírá slovo, podle kterého se koncovka řídí.",
+        "reseni": "Chyba je stáli: správně stála.\n\npřijeli (kdo přijel? kluci; ti kluci → i: Petr to má dobře)\n\nstála (co stálo? kola; ta kola → a; kluků jen říká čí)\n\n**Výsledek:** krok 1 stáli, krok 2 Kola",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, podle čeho se řídí koncovka slovesa.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každého slovesa se zeptej: kdo, co to dělá? Pak řekni ti, ty, nebo ta.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Podmět nemusí být slovo, které stojí hned u slovesa. Zeptej se u každého slovesa znovu: kdo, co to dělá?“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Řekni mi, proč jsem se spletl a jak si to příště ohlídám.“",
+        "otocena_role_odpoved": "Řídil ses slovem kluků, protože bylo hned u slovesa. U plotu ale stála kola: ta kola → a. Příště se zeptám od slovesa: kdo, co stálo?",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na přijeli: „Kdo přijel? Ti, nebo ty kluci?“ (Petr to má dobře.) V kroku 2 vybere kluků: „Stáli u plotu kluci? Co tam stálo?“ Vybere Kluci nebo plotu: „Které slovo patří k druhému slovesu?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — dítě se nenechalo nachytat slovem vedle slovesa. Pochvalte, že se ptalo od slovesa, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Míče hráčů ležel_ v trávě.“ Zeptejte se: „Co leželo v trávě? Jaké písmeno tam patří?“ Kontrola pro vás: míče (hráčů jen říká čí); ty míče → y (ležely).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: tašku a dvě boty. Zítra dejte boty do tašky a řekněte: „Boty kamarádů ležel_ v tašce.“ Dítě ukáže, co v tašce leží, řekne před to ti, ty, nebo ta a napíše písmeno. Potom zopakujte lekci „Shoda s jedním podmětem“. Kontrola pro vás: leží boty, ty boty → y (ležely); kamarádů jen říká čí."
+      },
+      "tisk": {
+        "zadani": "Petr doplnil koncovky sloves:\n\nKluci z oddílu přijeli na trénink. Kola kluků stáli u plotu.\n\nUdělal jednu chybu.\n\nA) Podtrhni slovo, které Petr napsal špatně.\n\nB) Které slovo určuje správnou koncovku? Zakroužkuj: a) Kluci b) Kola c) kluků d) plotu"
+      }
+    },
+    {
+      "id": "cj-t7-l25-U5",
+      "typ": "kontrolni",
+      "cil": "Samostatně doplnit osm koncovek sloves podle jednoho podmětu: podmět za slovesem, nevyjádřený podmět, slovo jiného rodu u slovesa a střední rod.",
+      "cas_min": 6,
+      "zadani": "Doplň do textu i, y, nebo a.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "V sobotu jel_ kluci z našeho oddílu na závody. Na stadionu už čekal_ holky z jiných škol. Kluci si vzal_ dresy. Potom šl_ na rozcvičku. Míče trenérů ležel_ v síti u brány. Na tribuně seděl_ děvčata z naší třídy. Mraky zmizel_ a začalo svítit slunce. Kola na parkovišti zůstal_ u stojanu.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 2,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 3,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 4,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 5,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 6,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 7,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "i",
+            "y",
+            "i",
+            "i",
+            "y",
+            "a",
+            "y",
+            "a"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "y",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "shoda-y-za-i"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                "y",
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "shoda-nevyjadreny-neurcen"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                null,
+                "i",
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "shoda-podle-blizkeho-slova"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                "y",
+                null,
+                null
+              ],
+              "typ_chyby": "shoda-y-za-a"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Osm sloves, u každého dítě najde podmět. Pasti: podmět za slovesem (jeli kluci, seděla děvčata), schovaný podmět (Potom šli: kluci z věty předtím, ne dresy) a slovo trenérů u slovesa (ležely míče).",
+        "reseni": "jeli (kdo jel? kluci; ti kluci → i)\n\nčekaly (kdo čekal? holky; ty holky → y)\n\nvzali (ti kluci → i)\n\nšli (kdo šel? kluci z věty předtím → i)\n\nležely (co leželo? míče; ty míče → y)\n\nseděla (kdo seděl? děvčata; ta děvčata → a)\n\nzmizely (ty mraky → y)\n\nzůstala (ta kola → a)\n\n**Výsledek:** i, y, i, i, y, a, y, a",
+        "otazky": [
+          "„Řekni mi vlastními slovy, jak doplníš písmeno na konec slovesa.“",
+          "„U každého slovesa se zeptej: kdo, co to dělá? Pak řekni před to slovo ti, ty, nebo ta.“",
+          "„Ve větě Potom šl_ na rozcvičku chybí, kdo to dělá. Najdi to ve větě předtím.“"
+        ],
+        "otocena_role": "„Vyber si dvě slovesa, u kterých se dá splést, a dokaž mi, proč tam patří tvoje písmeno.“",
+        "otocena_role_odpoved": "Třeba ležely: leží míče, ne trenéři, ty míče → y. A seděla: kdo seděl? děvčata, ta děvčata → a.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: jely nebo šly: „Kdo jel? Kdo šel? Ti, nebo ty?“ leželi: „Co leželo v síti?“ seděly: „Ta děvčata, nebo ty děvčata?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — podmět dítě najde i za slovesem a ve větě předtím. Pochvalte postup. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Na hřišti trénoval_ holky. Potom šl_ do šatny.“ U obou sloves řekne, kdo to dělá, a písmeno. Kontrola pro vás: holky trénovaly; šly (kdo? holky z první věty; ty holky → y).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše pod sebe: kluci, holky, auta, mraky. Ke každému připíše ti, ty, nebo ta a potom větu „… byl_ tady“ se správným písmenem. Potom zopakujte lekci „Shoda s jedním podmětem“. Kontrola pro vás: ti kluci byli, ty holky byly, ta auta byla, ty mraky byly."
+      },
+      "tisk": {
+        "zadani": "Doplň i, y, nebo a.\n\nV sobotu jel_ kluci z našeho oddílu na závody. Na stadionu už čekal_ holky z jiných škol. Kluci si vzal_ dresy. Potom šl_ na rozcvičku. Míče trenérů ležel_ v síti u brány. Na tribuně seděl_ děvčata z naší třídy. Mraky zmizel_ a začalo svítit slunce. Kola na parkovišti zůstal_ u stojanu."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Korektura 4. 10. 2026: tvary ověřeny v ÚJČ (id=600, 602, hesla níže), indexy přepočítány, vzorové odpovědi a známé chyby ověřeny skriptem. Opraveno: U2 věta „Kluci běžel_“ → „Kluci spěchal_“ (Platí „ti kluci běželi“ prozrazovalo odpověď); U4 otázka 3 ukazovala na chybné slovo (stáli) → obecná nápověda; U1 otázka k řadě D (bez „kdy“); příklad ve slovníčku se kryl s odpovědí U3.",
+    "zkontroloval": "korektor",
+    "datum": "2026-10-04",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?id=600",
+      "https://prirucka.ujc.cas.cz/?id=602",
+      "https://prirucka.ujc.cas.cz/?id=st%C3%A1t_1",
+      "https://prirucka.ujc.cas.cz/?slovo=kluk",
+      "https://prirucka.ujc.cas.cz/?slovo=holka",
+      "https://prirucka.ujc.cas.cz/?slovo=auto",
+      "https://prirucka.ujc.cas.cz/?slovo=strom",
+      "https://prirucka.ujc.cas.cz/?slovo=ku%C5%99e",
+      "https://prirucka.ujc.cas.cz/?slovo=pes",
+      "https://prirucka.ujc.cas.cz/?slovo=d%C4%9Bv%C4%8De",
+      "https://prirucka.ujc.cas.cz/?slovo=m%C3%AD%C4%8D",
+      "https://prirucka.ujc.cas.cz/?slovo=mrak",
+      "https://prirucka.ujc.cas.cz/?slovo=kolo",
+      "https://prirucka.ujc.cas.cz/?slovo=tren%C3%A9r",
+      "https://prirucka.ujc.cas.cz/?slovo=kniha",
+      "https://prirucka.ujc.cas.cz/?slovo=z%C3%A1pas",
+      "https://prirucka.ujc.cas.cz/?slovo=ko%C4%8Dka",
+      "https://prirucka.ujc.cas.cz/?slovo=dort",
+      "https://prirucka.ujc.cas.cz/?slovo=b%C4%9B%C5%BEet",
+      "https://prirucka.ujc.cas.cz/?slovo=hr%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1um%C4%9Bt",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C3%ADpat",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1t%C4%9Bkat",
+      "https://prirucka.ujc.cas.cz/?slovo=tr%C3%A9novat",
+      "https://prirucka.ujc.cas.cz/?slovo=j%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=jet",
+      "https://prirucka.ujc.cas.cz/?slovo=vz%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=le%C5%BEet",
+      "https://prirucka.ujc.cas.cz/?slovo=sed%C4%9Bt",
+      "https://prirucka.ujc.cas.cz/?slovo=zmizet",
+      "https://prirucka.ujc.cas.cz/?slovo=z%C5%AFstat",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C5%99ijet",
+      "https://prirucka.ujc.cas.cz/?slovo=%C4%8D%C3%ADst",
+      "https://prirucka.ujc.cas.cz/?slovo=vyhr%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?slovo=hladit",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C5%99in%C3%A9st",
+      "https://prirucka.ujc.cas.cz/?slovo=chytit",
+      "https://prirucka.ujc.cas.cz/?slovo=sp%C4%9Bchat",
+      "https://prirucka.ujc.cas.cz/?slovo=d%C3%ADt%C4%9B"
+    ],
+    "testovaci_rodic": null
+  }
+}

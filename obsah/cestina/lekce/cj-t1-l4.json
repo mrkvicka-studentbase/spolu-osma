@@ -419,13 +419,13 @@
         "vysvetleni": "Dítě u každé věty vybere druh tučného slova; nabídka šesti druhů je ve všech krocích stejná. Pasti: Náš odpovídá na čí?, ale je to zájmeno; třetí se mění jako přídavné jméno, ale je to číslovka; večer tu odpovídá na kdy?, je to příslovce; Ať uvádí přání, je to částice.",
         "reseni": "A) Náš: zájmeno (místo něj jde říct něčí jméno)\n\nB) třetí: číslovka (kolikátá?)\n\nC) večer: příslovce (přijdu kdy?)\n\nD) Ať: částice (uvádí přání)\n\n**Výsledek:** A) zájmeno, B) číslovka, C) příslovce, D) částice",
         "otazky": [
-          "„Řekni mi vlastními slovy, jak poznáš zájmeno a číslovku.“",
+          "„Řekni mi vlastními slovy, jakými otázkami poznáš druh slova ve větě.“",
           "„U slova třetí se zeptej: jaká, nebo kolikátá Lucka skončila? Která otázka sedí?“",
-          "„Ve větě C: šlo by před večer říct ten? Ve větě D: spojuje Ať něco, nebo je to přání?“"
+          "„Ve větě C: je před slovem večer ten, nebo stojí samo? Ve větě D: spojuje Ať něco, nebo je to přání?“"
         ],
         "otocena_role": "„Vysvětli mi, proč je Náš zájmeno, i když odpovídá na otázku čí?“",
         "otocena_role_odpoved": "Místo náš můžu říct něčí jméno: Tomášův pes. Taková slova jsou zájmena. Přídavné jméno říká, jaký pes je.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A nebo B zvolí přídavné jméno. Zeptejte se: „Dá se místo toho říct něčí jméno? Ptáš se jaký, nebo kolikátý?“ U C podstatné jméno: „Šlo by říct ten večer? Na co slovo odpovídá?“ U D jiný druh: „Je to přání?“"
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A nebo B zvolí přídavné jméno. Zeptejte se: „Dá se místo toho říct něčí jméno? Ptáš se jaký, nebo kolikátý?“ U C podstatné jméno: „Je před ním ten? Na co slovo odpovídá?“ U D jiný druh: „Je to přání?“"
       },
       "semafor": {
         "zelena": "Výborně — čtyři pasti tématu sedí. Pochvalte, že dítě zkoušelo otázky nahlas, a jděte dál.",
@@ -506,7 +506,7 @@
         "otazky": [
           {
             "k": "Celá úloha",
-            "text": "„Řekni mi vlastními slovy, co je číslovka. Která tři slova Petr určil?“"
+            "text": "„Řekni mi vlastními slovy, jak poznáš podstatné jméno, sloveso a zájmeno. Která tři slova Petr určil?“"
           },
           {
             "k": "Krok 1",
@@ -514,7 +514,7 @@
           },
           {
             "k": "Krok 1 a 2",
-            "text": "„Které Petrovo slovo odpovídá na kolik? Musí číslovka vždycky říkat přesné číslo?“"
+            "text": "„U slova, kde má Petr chybu, zkus: ten?, ono ___?, kolik?, nebo stojí místo jména? Co sedí?“"
           }
         ],
         "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a jak si ji příště ohlídám.“",
@@ -643,7 +643,7 @@
         "otazky": [
           "„Řekni mi vlastními slovy, jak poznáš ohebné a neohebné slovo. Které druhy patří do každé skupiny?“",
           "„Vezmi slovo, u kterého váháš. Zkus ten?, jaký?, kolik?, on ___?, kdy?, stojí před jménem?, přání?, výkřik? Co sedí?“",
-          "„Vezmi slova náš a Kéž. Dá se místo náš říct něčí jméno? Spojuje Kéž něco, nebo uvádí přání?“"
+          "„Vezmi slova náš a Kéž. U náš: ptáš se jaký?, nebo jde místo něj říct něčí jméno? U Kéž: spojuje něco, nebo uvádí přání?“"
         ],
         "otocena_role": "„Vyber si jedno neohebné slovo z textu a vysvětli mi, proč se nemění a jaký je to druh.“",
         "otocena_role_odpoved": "Třeba v: v sobotě, v sobotu, pořád jen v. Nemění se a stojí před jménem, je to předložka.",
@@ -679,9 +679,9 @@
   ],
   "kontrola": {
     "jistota": "jista",
-    "poznamka": "Autor 1. 10. podle cestina/Obsah/OSNOVA.md §5 (L4) a rozpisu cestina/Obsah/TEMA-1.md. Slovní druh každého hodnoceného slova ověřen v příručce ÚJČ (SSČ) přes nastroje/ujc.sh; u homonym odkaz na konkrétní heslo (?id=…). [OVĚŘIT] žádné. Vzorová odpověď každého kroku vyjde správně a každá známá chyba vrací svůj kód (seed:validace + vyhodnotKrok). Validátor hlásí jen chybějící soubory nahrávek; lekce nahrávku nemá. Odchylky: U5 (týdenní) rozdělena na k1 ohebná slova a final neohebná slova po 5 rolích (ZADANI-OSMA §8 bod 8); semafor_tydne počítá 10 slov z obou kroků (9/7/0), barva lekce v aplikaci jen z final. U3 nabídka 6 druhů bez spojky (dlaždice max 6), u Ať proto past spojka-za-castici není (je v U1 D a U5). Oranžová U5: Bum místo Au (au není heslo).",
-    "zkontroloval": "autor",
-    "datum": "2026-10-01",
+    "poznamka": "Korektor 4. 10.: slovní druh každého hodnoceného slova znovu ověřen přes nastroje/ujc.sh (SSČ); jazykové chyby v hodnocených tvarech 0, dublety 0, sporné jevy OSNOVA §16 jen neoznačené. Indexy tokenů přepočítány (tokenizuj), vzorová odpověď každého kroku a každá známá chyba ověřeny skriptem přes vyhodnotKrok. Opraveno: otázky taháku U3 (Otázka 1 jmenovala odpovědi zájmeno a číslovku, Otázka 3 test „šlo by říct ten večer?“, který u Přijdu večer neplatí), U4 (Otázka 1 a 3 ukazovaly na několik a číslovku) a U5 → přepsány jako výběr testů. kéž/ať: SSČ část. přací (kéž prší!, ať se ti něco hezkého zdá!). Předchozí poznámka autora: Autor 1. 10. podle cestina/Obsah/OSNOVA.md §5 (L4) a rozpisu cestina/Obsah/TEMA-1.md. Slovní druh každého hodnoceného slova ověřen v příručce ÚJČ (SSČ) přes nastroje/ujc.sh; u homonym odkaz na konkrétní heslo (?id=…). [OVĚŘIT] žádné. Vzorová odpověď každého kroku vyjde správně a každá známá chyba vrací svůj kód (seed:validace + vyhodnotKrok). Validátor hlásí jen chybějící soubory nahrávek; lekce nahrávku nemá. Odchylky: U5 (týdenní) rozdělena na k1 ohebná slova a final neohebná slova po 5 rolích (ZADANI-OSMA §8 bod 8); semafor_tydne počítá 10 slov z obou kroků (9/7/0), barva lekce v aplikaci jen z final. U3 nabídka 6 druhů bez spojky (dlaždice max 6), u Ať proto past spojka-za-castici není (je v U1 D a U5). Oranžová U5: Bum místo Au (au není heslo).",
+    "zkontroloval": "korektor",
+    "datum": "2026-10-04",
     "zdroj": [
       "https://prirucka.ujc.cas.cz/?slovo=rychle",
       "https://prirucka.ujc.cas.cz/?slovo=Lucka",

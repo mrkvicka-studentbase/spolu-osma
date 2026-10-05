@@ -94,8 +94,8 @@ npm run seed -- --adresar obsah/cestina/lekce --otevrit-od <DATUM> --suchy-beh
 npm run seed -- --adresar obsah/cestina/lekce --otevrit-od <DATUM>
 ```
 - **Matematika:** „Hotovo: nahráno 41 lekcí“ (40 + úvodní test).
-- **Čeština:** „Hotovo: nahráno 8 lekcí“ (témata 1–2). Na konci vypíše, které soubory ještě chybí, to je jen informace.
-- Až budou hotová témata 3–10, spustíš stejné dva příkazy pro češtinu znovu se stejným datem.
+- **Čeština:** „Hotovo: nahráno 41 lekcí“ (40 + úvodní test).
+- Až nahrávky témat 3–10 dáš do `web\audio\cestina\t3` … `t10`, stačí znovu nahrát web (krok B8), lekce se znovu seedovat nemusí.
 
 ### B8. Web na Endoru (10 min)
 1. V administraci Endory založ subdoménu **`osma`** (`osma.studentbase.cz`). Když zvolíš jiný název, změň ho i v B6.
@@ -115,6 +115,14 @@ npm run seed -- --adresar obsah/cestina/lekce --otevrit-od <DATUM>
    - „Dnes samo“ funguje u jedné lekce matematiky.
 4. Poslechni 4 nahrávky a porovnej je s texty v `cestina\Obsah\AUDIO.md`.
 
+### B10. Nahrávky češtiny témat 3–10 (až budeš mít čas, ~1–2 h)
+45 nahrávek (16 poslechů, 29 vět diktátu). Hotová tabulka je `cestina\Obsah\nahravky-t3-t10.csv` (otevři v Excelu):
+- sloupec **soubor**: kam a jak soubor pojmenovat. Např. `t3/l12-d1.mp3` = složka `web\audio\cestina\t3`, soubor `l12-d1.mp3`;
+- sloupec **vložit do ElevenLabs**: text zkopíruj tak, jak je. U diktátu obsahuje pauzy (`<break …/>`) a druhé pomalé čtení po slovech;
+- stejný hlas a nastavení jako u prvních 4 nahrávek, MP3 mono.
+
+Po natočení: nahraj na web znovu (krok B8). Lekce se znovu seedovat nemusí. Nebo mi soubory pošli sem a zapojím je jako minule.
+
 ✅ **Část B je hotová.**
 
 ---
@@ -124,9 +132,7 @@ npm run seed -- --adresar obsah/cestina/lekce --otevrit-od <DATUM>
 - [ ] **Registrace cizím e-mailem** (třeba Gmail) funguje a e-mail nespadne do spamu.
 - [ ] **Podmínky a GDPR:** registrace odkazuje na studentbase.cz jako na „podmínky používání a zpracování osobních údajů“. Ověř, že tam takový text opravdu je.
 - [ ] **Spolu 8:**
-  - čeština má zatím témata 1–2, tedy první dva týdny;
-  - témata 3–10 dokončíme v neděli;
-  - úvodní test češtiny zatím chybí, čeština jde v pořadí osnovy.
+  - čeština je kompletní (40 lekcí + úvodní test), ale 45 nahrávek témat 3–10 ještě není natočených. Seznam je v `cestina/Obsah/nahravky-t3-t10.csv`. Lekce bez nahrávky dítěti ukáže hlášku místo přehrávače, poslech nebo diktát pak nejde udělat.
 - [ ] **Spolu 8 — SOS konzultace za 150 Kč** je v aplikaci. Necháš ji tam?
 - [ ] **Free projekty** se po 7 dnech bez provozu uspí. Při běžném provozu to nehrozí, jinak přejít na Pro (25 $/měsíc).
 

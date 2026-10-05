@@ -137,6 +137,8 @@ function spravna(k) {
   return k.spravne;
 }
 /** Chybná odpověď — přednostně známá chyba, jinak obecná. Musí být platná a nesprávná. */
+/** Krok úlohy, kde žák skončil chybou (true), nebo po jediné možné chybě odpověděl správně (false). */
+const konecChybou = new Map();
 function chybna(k, poradi = 0) {
   const v = vnoreny(k);
   const kandidati = [];
@@ -183,7 +185,7 @@ function chybna(k, poradi = 0) {
   }
   const platne = kandidati.filter((h) => { try { const r = vyhodnotKrok(k, h); return !r.neplatne && r.spravne === false; } catch { return false; } });
   const ruzne = [...new Map(platne.map((h) => [JSON.stringify(h), h])).values()];
-  return ruzne[Math.min(poradi, ruzne.length - 1)];
+  return ruzne[poradi]; // u dvou dlaždic (ano/ne) druhá různá chybná odpověď není → undefined
 }
 
 async function vypln(page, sekce, k, odp) {
@@ -308,7 +310,7 @@ async function zakPruchod(page, l, pridej, { samo = false } = {}) {
       const kolikSpatne = spatne.includes(ui) ? 2 : 0;
       for (let p = 0; p < kolikSpatne; p += 1) {
         const ch = chybna(k, p);
-        if (ch === undefined) { pridej(`${kde}: nešla sestavit chybná odpověď`); break; }
+        if (ch === undefined) { if (p === 0) pridej(`${kde}: nešla sestavit chybná odpověď`); break; }
         await vypln(page, sekce, k, ch);
         const r = await odevzdej(page, sekce);
         if (!r.druh.includes('zpetna-vazba--nesedi')) pridej(`${kde}: chybná odpověď → „${r.text}“`);
@@ -321,7 +323,9 @@ async function zakPruchod(page, l, pridej, { samo = false } = {}) {
         }
         if (await sekce.locator('.krok--hotovy').count() || (await sekce.getAttribute('class'))?.includes('krok--hotovy')) break;
       }
-      if (kolikSpatne < 2) {
+      const hotovo = await sekce.locator('.krok--hotovy').count() || (await sekce.getAttribute('class'))?.includes('krok--hotovy');
+      if (kolikSpatne && !samo) konecChybou.set(`${u.id}/${k.id}`, Boolean(hotovo));
+      if (!hotovo) { // kolikSpatne < 2, nebo došly různé chybné odpovědi (dvě dlaždice)
         await vypln(page, sekce, k, spravna(k));
         const r = await odevzdej(page, sekce);
         if (!r.druh.includes('zpetna-vazba--spravne') && !r.druh.includes('poznamka')) pridej(`${kde}: správná odpověď z JSON → „${r.text}“`);
@@ -389,7 +393,8 @@ async function rodic(ctx, l, odevzdano, pridej) {
     if (r.dalsiZamceno !== true) pridej(`${kde}: „Další“ není zamčené po otevření úlohy (brána ①–④, R28)`);
     if (r.reseniVNahledu > 0) pridej(`${kde}: „Co vidí dítě“ ukazuje výběr nebo řešení`);
     if (r.reseniVNahledu < 0) pridej(`${kde}: chybí „Co vidí dítě“`);
-    if (spatne.includes(ui) && !/nesedí/.test(r.stav)) pridej(`${kde}: stav žáka po chybě neukazuje „nesedí“`);
+    // „nesedí“ jen když poslední krok úlohy skončil u žáka chybou (u dvou dlaždic je jen jedna chybná odpověď, pak žák odpoví správně)
+    if (spatne.includes(ui) && konecChybou.get(`${l.ulohy[ui].id}/${l.ulohy[ui].kroky.at(-1).id}`) !== false && !/nesedí/.test(r.stav)) pridej(`${kde}: stav žáka po chybě neukazuje „nesedí“`);
     await page.evaluate(async () => {
       const spi = (ms) => new Promise((x) => setTimeout(x, ms));
       document.querySelectorAll('#obsah details').forEach((d) => { d.open = true; });

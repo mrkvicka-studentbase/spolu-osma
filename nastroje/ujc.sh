@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Dotaz do Internetové jazykové příručky ÚJČ (https://prirucka.ujc.cas.cz) — jen pro vývoj obsahu češtiny.
 # Server odmítá souběžné dotazy: tento skript je řadí (flock) a mezi dotazy čeká 3 s. Výsledky si pamatuje
-# v cache (výchozí /tmp/ujc-cache), takže opakovaný dotaz na stejné heslo server nezatíží.
+# v cache (výchozí /tmp/ujc-cache; odpověď „server je přetížen“ se neukládá, zkusí se znovu), takže opakovaný dotaz na stejné heslo server nezatíží.
 # Použití: bash nastroje/ujc.sh <heslo>            → tabulka tvarů jako text (bez HTML)
 #          bash nastroje/ujc.sh --id <číslo>       → výklad (např. --id 600)
 #          bash nastroje/ujc.sh --html <heslo>     → surové HTML
@@ -15,7 +15,7 @@ if [ ! -s "$soubor" ]; then
   flock 9
   if [ ! -s "$soubor" ]; then
     for pokus in 1 2 3; do
-      if curl -sS --max-time 40 "https://prirucka.ujc.cas.cz/?$dotaz" -o "$soubor.tmp" && [ -s "$soubor.tmp" ]; then mv "$soubor.tmp" "$soubor"; break; fi
+      if curl -sS --max-time 40 "https://prirucka.ujc.cas.cz/?$dotaz" -o "$soubor.tmp" && [ -s "$soubor.tmp" ] && ! grep -q "je ještě vyhodnocován" "$soubor.tmp"; then mv "$soubor.tmp" "$soubor"; break; fi
       sleep $((pokus * 5))
     done
     sleep 3

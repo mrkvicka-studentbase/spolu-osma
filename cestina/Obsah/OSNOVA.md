@@ -156,7 +156,7 @@ Celkem: 20 lekcí s poslechem (20 nahrávek), 8 diktátů (28 nahrávek), viz §
 ## 6. Téma 2 — Podstatná jména: vzory a koncovky (`podstatna-jmena`, lekce 5–8)
 
 **Cíl tématu:** Dítě u podstatného jména určí vzor (všech 14: *pán, hrad, muž, stroj, předseda, soudce; žena, růže, píseň, kost; město, moře, kuře, stavení*; u rodu mužského nejdřív životnost testem *vidím ___*) a podle vzoru doplní *i/y* v koncovce (*s kamarády → s pány → y*).
-**Hranice:** pády a rod jsou Z2. **Nehodnotit:** 1. p. mn. *-i × -ové* (*soudci/soudcové, hokejisté/hokejisti*; ÚJČ id=226), 6. p. j. č. *-u × -e* (id=223), 3./6. p. *-ovi × -u* (id=225), slova kolísající mezi vzory (id=221, id=252), dvojné číslo (*rukama, očima*), *dni/dny*, *průvodce* ve významu kniha (živ. i neživ., ÚJČ heslo). V mezerách jen volba *i × y*, nikdy celé koncovky.
+**Hranice:** pády a rod jsou Z2. **Nehodnotit:** 1. p. mn. *-i × -ové* (*soudci/soudcové, hokejisté/hokejisti*; ÚJČ id=226), 6. p. j. č. *-u × -e* (id=223), 3./6. p. *-ovi × -u* (id=225), slova kolísající mezi vzory (id=221, id=251), dvojné číslo (*rukama, očima*), *dni/dny*, *průvodce* ve významu kniha (živ. i neživ., ÚJČ heslo). V mezerách jen volba *i × y*, nikdy celé koncovky.
 **Hodnoty rolí:** 14 vzorů jako výše; `životný`, `neživotný`.
 **Zdroje:** hesla *předseda, soudce, kuře, kost, stodola, míč, kamarád, hokejista, dlaň, ulice* (tabulky tvarů ověřeny), id=222, 226.
 
@@ -634,7 +634,7 @@ Celkem: 20 lekcí s poslechem (20 nahrávek), 8 diktátů (28 nahrávek), viz §
 |---|---|---|---|
 | U1 rozcvička (4) | Z2: 2. × 7. pád | 4 kroky `dlazdice` (pád tučného jména) | `pad-*` |
 | U2 nová (5) | předložky | `doplnit_pismeno` 6 mezer `["s","z"]`/`["se","ze"]` (*_ kamarádem, _ domu, _e školy …*; jen *z* ve významu „zevnitř“) | `s-z-predlozka-zamena` |
-| U3 nová, **poslech** (5) | předpona podle významu (zní stejně) | `poslech` 2 věty (návrh „Lyžaři sjeli z kopce. Listí na podzim zežloutlo.“); `k1` „Jak začíná *_jeli*?“ (s · z), `k2` „*_ kopce*?“ (s · z), `final` „*_ežloutlo*?“ (s · z) | s · z · z · **NÁVRH** `s-z-predpona-zamena`, `s-z-predlozka-zamena` |
+| U3 nová, **poslech** (5) | předpona podle významu (zní stejně) | `poslech` 2 věty (korektura 4. 10.: „Lyžaři vyšli z chaty a sjeli do údolí. Listí na podzim zežloutlo.“ — *z kopce* připouští i *s*, id=111); `k1` „Jak začíná *_jeli*?“ (s · z), `k2` „*_ chaty*?“ (s · z), `final` „*_ežloutlo*?“ (s · z) | s · z · z · **NÁVRH** `s-z-predpona-zamena`, `s-z-predlozka-zamena` |
 | U4 detektiv (5) | `s-z-predpona-zamena` | Petr: „Klára zhodila hrnek na zem.“ `final` „Proč s-?“: hrnek šel dolů · hrnek se změnil · je tam 7. pád · je tam 2. pád | k1 *zhodila* · final první |
 | U5 kontrolní (6) | předpony i předložky | `doplnit_pismeno` 8 mezer (4 předpony, 4 předložky) | kódy L38 |
 
@@ -672,7 +672,7 @@ Celkem: 20 lekcí s poslechem (20 nahrávek), 8 diktátů (28 nahrávek), viz §
 | # | T | vstup | co měří | zadání a data | správně | známé chyby (kód) | zdroj ÚJČ |
 |---|---|---|---|---|---|---|---|
 | D1 | 1 | `klik_ve_textu` slova, `min 1` | ohebné × neohebné (past: příslovce, které se stupňuje) | „Klikni na všechna slova, která nemění tvar.“ Tomáš(0) včera(1) rychle(2) běžel(3) na(4) trénink(5) ale(6) autobus(7) mu(8) ujel(9) | `[1, 2, 4, 6]` | `chybi: [2]` → `ohebnost-stupnovani` · `navic: [8]` → obecná (zájmeno je ohebné) | hesla *včera* (přísl.), *rychlý* (→ *rychle* přísl.), *ale* (sp. odpor.); *na* předl. |
-| D2 | 1 | `dlazdice` | druh podle věty | „Jaký slovní druh je *Kolem* ve větě: Kolem školy vede cesta.“ předložka · příslovce · spojka · podstatné jméno | předložka | příslovce → `prislovce-za-predlozku` | heslo *kolem* (SSČ: přísl.; předl. s 2. p.) |
+| D2 | 1 | `oznac_role` (oprava 4. 10.: dlaždice „spojka“ a „podstatné jméno“ nemají kód) | druh podle věty | „Kolem školy vede cesta. Lucka šla kolem a zamávala.“ — dítě určí obě *kolem* | předložka, příslovce | předložka označená jako příslovce → `predlozka-za-prislovce` (opraven směr kódu) | heslo *kolem* (SSČ: přísl.; předl. s 2. p.) |
 | D3 | 2 | `dlazdice` | vzor mužského jména na *-a* | „Ke kterému vzoru patří slovo *hokejista*?“ předseda · pán · žena · hrad | předseda | pán → `vzor-pan-za-predseda` · žena → `vzor-zena-za-predseda` (NÁVRH) | heslo *hokejista* (m. živ., 2. p. *hokejisty*), *předseda* |
 | D4 | 2 | `doplnit_pismeno` 3× `["i","y"]` | *i/y* v koncovce podle vzoru (1. p. mn. pán, 2. p. žena, 7. p. mn. stroj) | „Kamarád_ si u stodol_ hráli s míč_.“ | `["i","y","i"]` | `["y",null,null]` → `koncovka-podst-y-za-i` · `[null,"i",null]` → `koncovka-podst-i-za-y` · `[null,null,"y"]` → `koncovka-podst-y-za-i` | hesla *kamarád* (1. mn. *kamarádi*), *stodola* (2. j. *stodoly*), *míč* (7. mn. *míči*) |
 | D5 | 3 | `doplnit_pismeno` `["ý","í"]`, `["i","y"]` | *-ý/-í* tvrdého a *-ovi/-ovy* přivlastňovacího přídavného jména | „Hladov_ psi štěkali na Tomášov_ kamarády.“ | `["í","y"]` | `["ý",null]` → `koncovka-prid-y-za-i` · `[null,"i"]` → `privlastnovaci-i-za-y` (NÁVRH) | heslo *hladový*; id=400 (*Karafiátovi Broučci* × *Karafiátovy Broučky*) |
@@ -691,7 +691,7 @@ Celkem: 20 lekcí s poslechem (20 nahrávek), 8 diktátů (28 nahrávek), viz §
 | D18 | 9 | `klik_ve_textu` `cil: "mezery"` | čárka před *že*, *který* a za vloženou větou | „Klikni, kam patří čárky.“ Tomáš ví že trénink který začíná v pět bude dlouhý. | čárky za *ví*, *trénink*, *pět* | chybí za *pět* → `carka-vlozena-chybi-druha` (NÁVRH) · za *ví* → `carka-chybi-ze` · za *trénink* → `carka-chybi-ktery` | id=150 (podřadicí spojky, vztažná zájmena, vložené vedlejší věty) |
 | D19 | 9 | `dlazdice` | počet vět podle přísudků | „Kolik vět má souvětí: Když jsme přišli domů, máma vařila a táta četl noviny.“ 1 · 2 · 3 · 4 | 3 | 2 → `souveti-pocet-podle-spojek` | id=150 (každá věta má vlastní podmět i přísudek, nejde o několikanásobný přísudek) |
 | D20 | 9 | `klik_ve_textu` `cil: "mezery"` | čárka ve výčtu a před *ale*, ne před *a* | „Klikni, kam patří čárky.“ Na výlet si vezmi svačinu pití a pláštěnku ale ne těžkou bundu. | čárky za *svačinu*, *pláštěnku* | navíc za *pití* → `carka-navic-a` · chybí za *svačinu* → `carka-vycet-chybi` · chybí za *pláštěnku* → `carka-chybi-pred-ale` (NÁVRH) | id=151 (výčet; odporovací *ale*), id=153 (slučovací *a* bez čárky) |
-| D21 | 10 | `doplnit_pismeno` `["ě","je"]`, `["ě","je"]`, `["ě","ně"]` | *bje, vje* na švu, *mně* podle příbuzného slova | „Adam ob_vil v_ezd do jeskyně, ale zapom_l baterku.“ | `["je","je","ně"]` | `["ě",null,null]`, `[null,"ě",null]` → `skupina-e-za-je` · `[null,null,"ě"]` → `skupina-me-za-mne` (NÁVRH) | id=126 (*objevit, vjezd*; *zapomněl* od *zapomenout*) |
+| D21 | 10 | `doplnit_pismeno` `["ě","je"]`, `["ě","je"]`, `["ě","ně"]` | *bje, vje* na švu, *mně* podle příbuzného slova | „Adam ob_vil v_zd do jeskyně, ale zapom_l baterku.“ (oprava 4. 10.: *v_ezd* by dalo *vjeezd*) | `["je","je","ně"]` | `["ě",null,null]`, `[null,"ě",null]` → `skupina-e-za-je` · `[null,null,"ě"]` → `skupina-me-za-mne` (NÁVRH) | id=126 (*objevit, vjezd*; *zapomněl* od *zapomenout*) |
 | D22 | 10 | `doplnit_pismeno` 3× `["s","z"]` | předpona *s-* × *z-*, předložka *z* + 2. p. | „Klára _hodila hrnek na zem a hrnek se _ničil. Pak vyběhla _ kuchyně.“ | `["s","z","z"]` | `["z",null,null]`, `[null,"s",null]` → `s-z-predpona-zamena` (NÁVRH) · `[null,null,"s"]` → `s-z-predlozka-zamena` | id=110 (*s-* shora dolů; *z-* zdokonavující), id=111 (*z* + 2. p.), hesla *shodit*, *zničit* |
 | D23 | 10 | `doplnit_pismeno` `["n","nn"]`, `["d","dd"]` | zdvojené souhlásky na švu | „Ten ce_ý obraz visí v o_ělení muzea.“ | `["nn","dd"]` | `["n",null]`, `[null,"d"]` → `zdvojene-chybi` (NÁVRH) | id=125 (*cena – cenný*), heslo *oddělení* (*od-dě-le-ní*) |
 
@@ -721,7 +721,7 @@ Kontrola zásady „nic dřív, než se to probralo“: diagnostika není lekce,
 | podměty s dvojím skloňováním (*uzenáči/uzenáče*, *průvodce* kniha), *dni/dny* | dvojí tvar i shoda | id=600, heslo *průvodce* |
 | 1. p. mn. *-i × -ové* (*soudci/soudcové, hokejisté/hokejisti*) | obojí spisovné | hesla, id=226 |
 | 6. p. j. č. *-u × -e*, 3./6. p. *-ovi × -u* u životných | dublety | id=223, id=225 |
-| slova kolísající mezi vzory (*píseň × kost*, měkké × tvrdé) | dva vzory správně | id=252, id=221 |
+| slova kolísající mezi vzory (*píseň × kost*, měkké × tvrdé) | dva vzory správně | id=251, id=221 |
 | dvojné číslo (*rukama, očima*), číslovky u částí těla (*třema nohama*) | duál je u částí těla správně | id=671, heslo *oba* |
 | 2. p. *tří/třech, čtyř/čtyřech* | obojí spisovné | id=671 |
 | *mě × mne* ve 2. a 4. p.; *něj × něho* | obojí správně | id=650, heslo *on* |
@@ -817,7 +817,7 @@ Soubory `web/audio/cestina/t<t>/l<n>-u<k>.mp3` (poslech) a `t<t>/l<n>-d<v>.mp3` 
 | L31 | U3 | poslech | Kluk s modrou čepicí čekal u vchodu. | bez pauzy za „čepicí“ (pauza by napověděla) |
 | L33 | U3 | poslech | Když jsme přišli domů, máma vařila večeři a táta četl noviny. | přirozeně |
 | L34 | U2 | poslech | Lucka čte knihu a Tomáš, který přišel pozdě, píše úkol. | přirozeně |
-| L38 | U3 | poslech | Lyžaři sjeli z kopce. Listí na podzim zežloutlo. | — |
+| L38 | U3 | poslech | Lyžaři vyšli z chaty a sjeli do údolí. Listí na podzim zežloutlo. | — |
 | L39 | U3 | poslech | Tomáš zapomněl doma klíče. | — |
 | L12 | U5 k1 | diktát 3 | Malí kluci čekají na hřišti. · Tomášovy boty jsou nové. · Ten veselý pes je Klářin. | podle AUDIO.md; hlásit „velké písmeno — Tomášovy, Klářin“? [§19 otázka 7] |
 | L16 | U5 k1 | diktát 3 | Lucka mně půjčila sešit. · Klára ji pozvala na oslavu. · Dal jsem to oběma bratrům. | *ji* krátce |

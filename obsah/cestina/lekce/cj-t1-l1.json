@@ -7,7 +7,7 @@
   "tema": "Ohebné slovní druhy",
   "kapitola": "slovni-druhy",
   "cil_pro_rodice": "Dítě rozhodne, zda slovo mění tvar (ohebné), a ohebná slova zařadí do pěti druhů; nezamění zájmeno s podstatným jménem (my) ani s přídavným jménem (můj) a číslovku řadovou s přídavným jménem (pátý).",
-  "uvod_pro_rodice": "Dnes dítě třídí slova na ohebná, která mění tvar (pes – psa – psovi), a neohebná a ohebná zařadí do pěti druhů: podstatné jméno, přídavné jméno, zájmeno, číslovka, sloveso.",
+  "uvod_pro_rodice": "Dnes dítě třídí slova na ohebná, která mění tvar (pes – psa – psovi), a neohebná. Ohebná pak zařadí do pěti druhů: podstatné jméno, přídavné jméno, zájmeno, číslovka, sloveso.",
   "uvod_pravidla": [
     {
       "znak": "Ohebné slovo mění tvar: pes – psa",
@@ -18,7 +18,7 @@
       "text": "test"
     },
     {
-      "znak": "pátý = číslovka · můj = zájmeno",
+      "znak": "šestý = číslovka · tvůj = zájmeno",
       "text": "příklad"
     }
   ],
@@ -355,9 +355,9 @@
         "vysvetleni": "Dítě větu jen slyší, text nevidí; nahrávku si může pustit znovu. Co v ní zazní, máte sbalené pod „Co zazní v nahrávce“. Nečtěte to nahlas, dítě má poslouchat. Pasti: pátý odpovídá na kolikátý?, je to číslovka, i když se mění jako přídavné jméno nový. My stojí místo jmen lidí, je to zájmeno, ne podstatné jméno.",
         "reseni": "pátý: číslovka (kolikátý den? pátý)\n\nmy: zájmeno (stojí místo jmen, my = já a kamarád)\n\n**Výsledek:** krok 1 číslovka, krok 2 zájmeno",
         "otazky": [
-          "„Jak poznáš číslovku a jak zájmeno? Řekni to vlastními slovy.“",
+          "„Jak poznáš slovní druh slova, které jen slyšíš? Řekni to vlastními slovy.“",
           "„Zeptej se na slovo pátý: jaký den, nebo kolikátý den? Která otázka sedí líp?“",
-          "„Slovo my: je to název, nebo to stojí místo jmen? Za koho můžeš říct my?“"
+          "„Slovo my: je to název, nebo to stojí místo jmen? Jak to poznáš?“"
         ],
         "otocena_role": "„Vysvětli mi, proč pátý není přídavné jméno, i když se mění stejně jako nový.“",
         "otocena_role_odpoved": "Pátý říká pořadí, ptám se kolikátý? Taková slova jsou číslovky. Přídavné jméno říká, jaký kdo nebo co je.",
@@ -442,7 +442,7 @@
         "otazky": [
           {
             "k": "Celá úloha",
-            "text": "„Řekni mi vlastními slovy, co je zájmeno. Která tři slova Petr určil?“"
+            "text": "„Řekni mi vlastními slovy, jak poznáš přídavné jméno, podstatné jméno a číslovku. Která tři slova Petr určil?“"
           },
           {
             "k": "Krok 1",
@@ -450,7 +450,7 @@
           },
           {
             "k": "Krok 1 a 2",
-            "text": "„Které Petrovo slovo odpovídá na čí? Zkus místo něj říct něčí jméno. Jaký druh to potom je?“"
+            "text": "„U slova, kde má Petr chybu, zkus: ptáš se jaký?, kolik?, nebo jde místo něj říct něčí jméno? Co sedí?“"
           }
         ],
         "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a jak si ji příště ohlídám.“",
@@ -538,7 +538,7 @@
         "otazky": [
           "„Řekni mi vlastními slovy, jak poznáš pět ohebných druhů.“",
           "„Vezmi slovo, u kterého váháš. Zeptej se na něj: ten? jaký? kolik? kolikátý? on ___? Která otázka sedí?“",
-          "„Vezmi slova Naše a několik. U prvního zkus místo něj říct něčí jméno, u druhého se zeptej kolik?, nebo jaký?“"
+          "„Vezmi slova Naše a několik. Ptáš se na ně jaký?, kolik?, nebo jde místo nich říct něčí jméno? Co sedí u kterého?“"
         ],
         "otocena_role": "„Najdi v těch větách slovo, které vypadá jako přídavné jméno, ale není. Dokaž mi to.“",
         "otocena_role_odpoved": "Třeba Třetí: neříká jaký, ale kolikátý den, je to číslovka. Nebo Naše: místo něj jde říct něčí jméno, je to zájmeno.",
@@ -556,9 +556,9 @@
   ],
   "kontrola": {
     "jistota": "jista",
-    "poznamka": "Autor 1. 10. podle cestina/Obsah/OSNOVA.md §5 (L1) a rozpisu cestina/Obsah/TEMA-1.md. Slovní druh každého hodnoceného slova ověřen v příručce ÚJČ (SSČ) přes nastroje/ujc.sh; u homonym odkaz na konkrétní heslo (?id=…). [OVĚŘIT] žádné. Vzorová odpověď každého kroku vyjde správně a každá známá chyba vrací svůj kód (seed:validace + vyhodnotKrok). Validátor hlásí jen chybějící soubory nahrávek a řádek t1/l1-u3.mp3 v AUDIO.md (řádek je v TEMA-1.md, sloučí vedoucí). Odchylky od osnovy: U1 řady slov z jedné rodiny (hra/hraje/hravý/včera …); U2 obecné chyby (chybí dva, náš) nejsou v zname_chyby, schéma chce typ_chyby. U5 text: Naše třída jela na výlet do hor. Třetí den jsme potkali několik nových kamarádů. Tvar tří/třech (dubleta) se nikde nepoužívá, jen se třemi.",
-    "zkontroloval": "autor",
-    "datum": "2026-10-01",
+    "poznamka": "Korektor 4. 10.: slovní druh každého hodnoceného slova znovu ověřen přes nastroje/ujc.sh (SSČ); jazykové chyby v hodnocených tvarech 0, dublety 0, sporné jevy OSNOVA §16 jen neoznačené. Indexy tokenů přepočítány (tokenizuj), vzorová odpověď každého kroku a každá známá chyba ověřeny skriptem přes vyhodnotKrok. Opraveno: „Platí“ prozrazovalo odpověď U3 a U4 (pátý = číslovka, můj = zájmeno) → šestý, tvůj; otázky taháku U3, U4, U5 v režimu „Dnes samo“ napovídaly odpověď (Otázka 1 detektiva „co je zájmeno“, Otázka 3 ukazovala na chybné slovo) → přepsány jako výběr testů; úvod pro rodiče přeformulován (nejasná věta). Nahrávka t1/l1-u3.mp3 je nahraná, přepis beze změny a bez chyby. Předchozí poznámka autora: Autor 1. 10. podle cestina/Obsah/OSNOVA.md §5 (L1) a rozpisu cestina/Obsah/TEMA-1.md. Slovní druh každého hodnoceného slova ověřen v příručce ÚJČ (SSČ) přes nastroje/ujc.sh; u homonym odkaz na konkrétní heslo (?id=…). [OVĚŘIT] žádné. Vzorová odpověď každého kroku vyjde správně a každá známá chyba vrací svůj kód (seed:validace + vyhodnotKrok). Validátor hlásí jen chybějící soubory nahrávek a řádek t1/l1-u3.mp3 v AUDIO.md (řádek je v TEMA-1.md, sloučí vedoucí). Odchylky od osnovy: U1 řady slov z jedné rodiny (hra/hraje/hravý/včera …); U2 obecné chyby (chybí dva, náš) nejsou v zname_chyby, schéma chce typ_chyby. U5 text: Naše třída jela na výlet do hor. Třetí den jsme potkali několik nových kamarádů. Tvar tří/třech (dubleta) se nikde nepoužívá, jen se třemi.",
+    "zkontroloval": "korektor",
+    "datum": "2026-10-04",
     "zdroj": [
       "https://prirucka.ujc.cas.cz/?slovo=hra",
       "https://prirucka.ujc.cas.cz/?slovo=hr%C3%A1t",
@@ -602,7 +602,10 @@
       "https://prirucka.ujc.cas.cz/?slovo=jet",
       "https://prirucka.ujc.cas.cz/?slovo=v%C3%BDlet",
       "https://prirucka.ujc.cas.cz/?slovo=hora",
-      "https://prirucka.ujc.cas.cz/?slovo=n%C4%9Bkolik"
+      "https://prirucka.ujc.cas.cz/?slovo=n%C4%9Bkolik",
+      "https://prirucka.ujc.cas.cz/?id=tv%C5%AFj_1",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1est%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C4%9Bt"
     ],
     "testovaci_rodic": null
   }
