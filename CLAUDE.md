@@ -1,3 +1,13 @@
+# Spolu 8 — opakování 8. třídy (matematika + čeština)
+
+**Tento repozitář je jen Spolu 8** (`mrkvicka-studentbase/spolu-osma`): samostatná aplikace, vlastní Supabase projekt, vlastní web. Závazné je `ZADANI-OSMA.md`, technika `TECHNIKA-OSMA.md`, stav `STAV.md`, spuštění `SPUSTENI.md`.
+
+**Přijímačky sem nepatří** (Pavel 6. 10. 2026). „Spolu na přijímačky“ je jiný produkt v jiném chatu: 9. třída, pilot CJ-P / P1–P4, `spolu.studentbase.cz`, Supabase `spolu-na-prijimacky`, `Desktop\MVP`, repo `mrkvicka-studentbase/spolu`. Když přijde požadavek k přijímačkám, nic neměň a odkaž Pavla na chat k přijímačkám.
+
+Níže je původní kostra ze Spolu (základ, ze kterého Spolu 8 vzniklo). Kde se liší od `ZADANI-OSMA.md`, platí zadání Spolu 8.
+
+---
+
 # Spolu na přijímačky — pokyny pro hlavního agenta (Opus)
 
 Jsi vedoucí projektu a hlavní architekt. Klient je Pavel (StudentBase.cz). Zadavatel a produktový dohled je Claude v Coworku, který napsal tuto kostru a čte tvoje reporty ze složky `reporty/`.
