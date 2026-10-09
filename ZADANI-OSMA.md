@@ -65,3 +65,11 @@ Pro každou lekci platí:
 9. Prahy `semafor_tydne` ~90 % zelená, ~70 % oranžová — přijato.
 10. Diagnostika: položka s více mezerami se počítá jen celá; „7 a více slabých témat → pořadí osnovy“ — přijato.
 11. Jméno Honzík: mimo T6 jen vytištěné, ne v diktátu ani v mezeře.
+
+## 9. Rozšíření na celý školní rok (Pavel 9. 10. 2026)
+1. **Období:** listopad 2026 – konec května 2027 (30 kalendářních týdnů, ~27 učebních po odečtení prázdnin), **3 lekce matematiky + 3 lekce češtiny týdně**. Délka lekce beze změny (matematika 20 min, čeština ~25 min); ze začátku budou děti rychlejší, to nevadí.
+2. **Každá lekce má „naostro“ dvojče** na stejné téma, trochu těžší nebo objemnější („teď ukaž, že to opravdu umíš“). Ze 40 lekcí na předmět je 80 (40 učebních + 40 naostro).
+3. **Pořadí s odstupem:** naostro lekce přijde o jednu lekci později, v tématu: L1 → L2 → L1 naostro → L3 → L2 naostro → L4 → L3 naostro → L4 naostro.
+4. **Semafor → B-varianta:** ke každé z 80 lekcí je B-varianta (stejná lekce, stejná obtížnost, jiná slova / čísla / věty), kterou aplikace nabídne po červené (u oranžové viz otevřené body v `PLAN-ROZSIRENI.md`). B-varianta se nepočítá do 3 lekcí týdně. Celkem 160 lekcí na předmět.
+5. **Otevírání postupně:** 3 + 3 lekce týdně podle kalendáře (ne všechno najednou).
+Plán prací a otevřené body: `PLAN-ROZSIRENI.md`.
