@@ -1,0 +1,464 @@
+{
+  "id": "M8-T03-L4N",
+  "faze": "osma",
+  "tyden": 3,
+  "poradi": 4,
+  "tema": "Kontrola: jednotky a obsah",
+  "kapitola": "jednotky",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo spočítá obvod i obsah se stranami v různých jednotkách, výsledek uvede v jednotce ze zadání a pozná, jestli úloha chce okraj, nebo plochu.",
+  "uvod_pro_rodice": "Dítě tuhle látku dělalo v lekci „Kontrola: jednotky a obsah“. Dnes ukáže, že celé téma zvládne samo: víc příkladů ze všech lekcí, nenápadnější chyba u Petra a úloha o krok delší.",
+  "uvod_pravidla": [
+    {
+      "znak": "$70\\ \\text{cm} = 0{,}7\\ \\text{m}$",
+      "text": "před počítáním převést"
+    },
+    {
+      "znak": "$1\\ \\text{dm}^2 = 100\\ \\text{cm}^2$",
+      "text": "obsah: po stu"
+    },
+    {
+      "znak": "$o = 2 \\cdot (a + b)$",
+      "text": "okraj: všechny strany"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T03-L4N-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Kolik gramů je $0{,}06$ kg?\n\nB) Kolik decimetrů čtverečních je $5\\,400\\ \\text{cm}^2$?\n\nC) Obdélník má strany $7$ m a $2{,}5$ m. Jaký má obsah?\n\nD) Obdélník má strany $1{,}3$ m a $40$ cm. Kolik centimetrů měří jeho obvod?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $0{,}06$ kg v gramech",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$600$ g",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "b",
+                "text": "$0{,}00006$ g",
+                "spravne": false,
+                "typ_chyby": "prevod-spatnym-smerem"
+              },
+              {
+                "id": "c",
+                "text": "$60$ g",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $5\\,400\\ \\text{cm}^2$ v $\\text{dm}^2$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$54\\ \\text{dm}^2$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$540\\ \\text{dm}^2$",
+                "spravne": false,
+                "typ_chyby": "obsah-po-desitkach"
+              },
+              {
+                "id": "c",
+                "text": "$540\\,000\\ \\text{dm}^2$",
+                "spravne": false,
+                "typ_chyby": "prevod-spatnym-smerem"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: obsah obdélníku",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$19\\ \\text{m}^2$",
+                "spravne": false,
+                "typ_chyby": "obvod-obsah-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$17{,}5\\ \\text{m}^2$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$175\\ \\text{m}^2$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-nasobeni"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: obvod v centimetrech",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$82{,}6$ cm",
+                "spravne": false,
+                "typ_chyby": "zapomnel-prevest-jednotky"
+              },
+              {
+                "id": "b",
+                "text": "$170$ cm",
+                "spravne": false,
+                "typ_chyby": "obvod-jen-dve-strany"
+              },
+              {
+                "id": "c",
+                "text": "$340$ cm",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "$5\\,200$ cm",
+                "spravne": false,
+                "typ_chyby": "obvod-obsah-zamena"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá. Příklady jsou z celého tématu: převod hmotnosti, převod obsahu, obsah obdélníku a obvod se stranami v různých jednotkách. Čte se: $0{,}06$ kg „nula celá nula šest kilogramu“ (šest setin), $17{,}5$ „sedmnáct celých pět“. Otázky jsou po příkladech, první patří k A i B: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $0{,}06$ kg v gramech\n\n$0{,}06 \\cdot 1\\,000 = 60$ (kilogram je tisíc gramů)\n\n#### B) $5\\,400\\ \\text{cm}^2$ v $\\text{dm}^2$\n\n$5\\,400 : 100 = 54$ (decimetr čtvereční je sto centimetrů čtverečních)\n\n#### C) Obsah obdélníku\n\n$S = 7 \\cdot 2{,}5 = 17{,}5$ (strana krát strana, metry čtvereční)\n\n#### D) Obvod v centimetrech\n\n$1{,}3\\ \\text{m} = 130\\ \\text{cm}$ (nejdřív stejné jednotky)\n\n$o = 2 \\cdot (130 + 40) = 340$ (všechny čtyři strany)\n\n**Výsledek:** A) $60$ g, B) $54\\ \\text{dm}^2$, C) $17{,}5\\ \\text{m}^2$, D) $340$ cm",
+        "otazky": [
+          {
+            "k": "A a B",
+            "text": "„Neklikej, nejdřív řekni: je to hmotnost, nebo obsah? Kolik menších jednotek se vejde do jedné větší?“"
+          },
+          {
+            "k": "C",
+            "text": "„Chce příklad okraj, nebo plochu? Jak se to u obdélníku počítá?“"
+          },
+          {
+            "k": "D",
+            "text": "„Jsou obě strany ve stejné jednotce? Co uděláš dřív, než začneš sčítat? Kolik stran obejdeš?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč u D nemůžeš rovnou sečíst jedna celá tři a čtyřicet.“",
+        "otocena_role_odpoved": "Protože jedna strana je v metrech a druhá v centimetrech. Nejdřív převedu metry na sto třicet centimetrů a pak teprve počítám obvod ze všech čtyř stran.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $600$: posune čárku o jiný počet míst; $0{,}00006$ nebo $540\\,000$: plete si směr. $540$: obsah po deseti. $19$ nebo $5\\,200$: plete obvod a obsah. $175$: čárka při násobení. $82{,}6$: nepřevede. Zeptejte se: „Jsou strany ve stejné jednotce?“ (Ne.) $170$: dvě strany."
+      },
+      "semafor": {
+        "zelena": "Výborně — převody, obvod i obsah sedí. Pochvalte, že dítě u každého příkladu nejdřív zkontrolovalo jednotky, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Kolik gramů je $0{,}3$ kg? Kolik $\\text{dm}^2$ je $700\\ \\text{cm}^2$? Obdélník má strany $2$ m a $50$ cm. Jaký má obvod v centimetrech?“ Kontrola pro vás: $300$ g; $7\\ \\text{dm}^2$; $200$ cm a $50$ cm, obvod $500$ cm.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: svinovací metr a kuchyňskou váhu. Zítra ať dítě změří šířku dveří v centimetrech a řekne ji v metrech. Pak ať zváží jablko a řekne jeho hmotnost v kilogramech. Pak ať samo zapíše oba převody. Potom zopakujte lekci „Kontrola: jednotky a obsah“. Kontrola pro vás: centimetry děleno stem, gramy děleno tisícem."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Kolik gramů je $0{,}06$ kg? — a) $600$ g b) $0{,}00006$ g c) $60$ g\n\nB) Kolik decimetrů čtverečních je $5\\,400\\ \\text{cm}^2$? — a) $54\\ \\text{dm}^2$ b) $540\\ \\text{dm}^2$ c) $540\\,000\\ \\text{dm}^2$\n\nC) Obdélník má strany $7$ m a $2{,}5$ m. Jaký má obsah? — a) $19\\ \\text{m}^2$ b) $17{,}5\\ \\text{m}^2$ c) $175\\ \\text{m}^2$\n\nD) Obdélník má strany $1{,}3$ m a $40$ cm. Kolik centimetrů měří jeho obvod? — a) $82{,}6$ cm b) $170$ cm c) $340$ cm d) $5\\,200$ cm"
+      }
+    },
+    {
+      "id": "M8-T03-L4N-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Ema obšívá ubrus tvaru obdélníku $1{,}4$ m × $90$ cm krajkou po celém okraji. Kolik centimetrů krajky potřebuje?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $90\\ \\text{cm} = 0{,}9\\ \\text{m}$\n\n2. řádek: $o = 1{,}4 + 0{,}9 = 2{,}3\\ \\text{m}$\n\n3. řádek: $2{,}3\\ \\text{m} = 230\\ \\text{cm}$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$90\\ \\text{cm} = 0{,}9\\ \\text{m}$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$o = 1{,}4 + 0{,}9 = 2{,}3\\ \\text{m}$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$2{,}3\\ \\text{m} = 230\\ \\text{cm}$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$o = 1{,}4 \\cdot 0{,}9 = 1{,}26\\ \\text{m}$",
+                "spravne": false,
+                "typ_chyby": "obvod-obsah-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$o = 2 \\cdot (1{,}4 + 0{,}9) = 4{,}6\\ \\text{m}$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$o = 2 \\cdot (1{,}4 + 90) = 182{,}8\\ \\text{m}$",
+                "spravne": false,
+                "typ_chyby": "zapomnel-prevest-jednotky"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm"
+          },
+          "spravne": {
+            "hodnota": 460
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 230,
+              "typ_chyby": "obvod-jen-dve-strany"
+            },
+            {
+              "hodnota": 4.6,
+              "typ_chyby": "jednotka-ve-vysledku-spatne"
+            },
+            {
+              "hodnota": 46,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Krajka jde po celém okraji ubrusu, hledá se tedy obvod. Strany jsou v metrech a centimetrech, výsledek se chce v centimetrech. Chyba je jedna a řádek za ní je spočítaný dobře, jen se špatným číslem. Čte se: $1{,}4$ „jedna celá čtyři“, $0{,}9$ „nula celá devět“ (devět desetin).",
+        "reseni": "Chyba je ve 2. řádku: Petr sečetl jen dvě strany. Ubrus má stran čtyři, dvě delší a dvě kratší.\n\n$90\\ \\text{cm} = 0{,}9\\ \\text{m}$ (metr je sto centimetrů)\n\n$o = 2 \\cdot (1{,}4 + 0{,}9) = 4{,}6$ (obvod v metrech)\n\n$4{,}6\\ \\text{m} = 460\\ \\text{cm}$ (výsledek v centimetrech)\n\nDlaždice $1{,}26$ m a $182{,}8$ m nesedí (první počítá obsah, druhá sčítá metry s centimetry)\n\n**Výsledek:** $460$ cm",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, kudy krajka vede a v jaké jednotce má být výsledek.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky. U každého řekni, co Petr počítá: převod, obvod, nebo obsah?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: sedí jednotky? A když jde o obvod, je v něm každá strana ubrusu?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč krajka není dlouhá dvě stě třicet centimetrů.“",
+        "otocena_role_odpoved": "Protože ubrus má čtyři strany a Petr sečetl jen dvě. Delší i kratší strana jsou v obvodu dvakrát, takže obvod je čtyři celé šest metru, to je čtyři sta šedesát centimetrů.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 1. řádek? Převod je správně. Zeptejte se: „Kolik stran má ubrus?“ (Čtyři.) Klikne na 3. řádek? Ten jen převádí. Výsledek $230$: opíše Petra; $4{,}6$: odpoví v metrech; $46$: metry převede na centimetry jen desetkrát."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že dítě kromě jednotek zkontrolovalo, jestli obvod obejde všechny strany, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Petr tvrdí: obrázek $50$ cm × $0{,}3$ m má rám dlouhý $80$ cm. Má pravdu?“ Ať nahlas řekne převod a správnou délku rámu. Kontrola pro vás: nemá; $0{,}3$ m je $30$ cm; rám měří $2 \\cdot (50 + 30) = 160$ cm.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: svinovací metr a utěrku nebo ručník. Zítra ať dítě změří obě strany utěrky v centimetrech. Zeptejte se: „Kolik stran má utěrka? Kolik centimetrů měří celý okraj?“ Ať prstem obejde okraj a sčítá strany. Pak ať samo zapíše obvod a převede ho na metry. Potom zopakujte lekci „Kontrola: jednotky a obsah“. Kontrola pro vás: čtyři strany; obvod je dvakrát součet obou stran."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\nEma obšívá ubrus tvaru obdélníku $1{,}4$ m × $90$ cm krajkou po celém okraji. Kolik centimetrů krajky potřebuje?\n\na udělal jednu chybu.\n\n1. řádek: $90\\ \\text{cm} = 0{,}9\\ \\text{m}$\n\n2. řádek: $o = 1{,}4 + 0{,}9 = 2{,}3\\ \\text{m}$\n\n3. řádek: $2{,}3\\ \\text{m} = 230\\ \\text{cm}$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $o = 1{,}4 \\cdot 0{,}9 = 1{,}26\\ \\text{m}$ b) $o = 2 \\cdot (1{,}4 + 0{,}9) = 4{,}6\\ \\text{m}$ c) $o = 2 \\cdot (1{,}4 + 90) = 182{,}8\\ \\text{m}$\n\nC) Kolik centimetrů krajky je opravdu potřeba? ______ cm"
+      }
+    },
+    {
+      "id": "M8-T03-L4N-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Honzíkův táta pokládá dlažbu v dílně. Podlaha je obdélník $3{,}6$ m × $2{,}5$ m. Dlaždice jsou obdélníky $36$ cm × $25$ cm, neřežou se a prodávají se v balení po $5$ kusech.\n\nSpočítej obsah podlahy v $\\text{m}^2$, obsah jedné dlaždice v $\\text{cm}^2$ a kolik balení je potřeba.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Mezivýsledek: obsah podlahy",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m²"
+          },
+          "spravne": {
+            "hodnota": 9
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 12.2,
+              "typ_chyby": "obvod-obsah-zamena"
+            },
+            {
+              "hodnota": 90,
+              "typ_chyby": "carka-pri-nasobeni"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: obsah dlaždice",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm²"
+          },
+          "spravne": {
+            "hodnota": 900
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 122,
+              "typ_chyby": "obvod-obsah-zamena"
+            },
+            {
+              "hodnota": 9,
+              "typ_chyby": "jednotka-ve-vysledku-spatne"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "balení"
+          },
+          "spravne": {
+            "hodnota": 20
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 100,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 2,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 0.2,
+              "typ_chyby": "obsah-po-desitkach"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce. Podlaha je v metrech, dlaždice v centimetrech a kupují se po balení. Než se dělí, musí být oba obsahy ve stejné jednotce: metr čtvereční je deset tisíc centimetrů čtverečních. Rovnocenná cesta: podél delší strany se vejde deset dlaždic a řad je deset. Čte se: $3{,}6$ „tři celé šest“, $2{,}5$ „dvě celé pět“.",
+        "reseni": "$S = 3{,}6 \\cdot 2{,}5 = 9$ (obsah podlahy v metrech čtverečních)\n\n$S = 36 \\cdot 25 = 900$ (obsah dlaždice v centimetrech čtverečních)\n\n$9\\ \\text{m}^2 = 90\\,000\\ \\text{cm}^2$ (metr čtvereční je deset tisíc centimetrů čtverečních)\n\n$90\\,000 : 900 = 100$ (počet dlaždic)\n\n$100 : 5 = 20$ (počet balení)\n\n$10 \\cdot 10 = 100$ (zkouška: deset dlaždic podél delší strany, deset řad)\n\n**Výsledek:** $20$ balení",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co táta kupuje a v jakých jednotkách jsou podlaha a dlaždice.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Které dva rozměry násobíš u podlahy a které u dlaždice? Jaká jednotka vyjde u každého obsahu?“"
+          },
+          {
+            "k": "Výsledek",
+            "text": "„Tady máš začátek: převeď obsah podlahy na centimetry čtvereční. Kolik dlaždic se na podlahu vejde? Kolik je to balení?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč výsledek není počet dlaždic.“",
+        "otocena_role_odpoved": "Protože dlaždice se neprodávají po jedné, ale v balení po pěti. Potřebuju sto dlaždic, a to je dvacet balení. Správně je i: deset dlaždic v řadě, deset řad, sto kusů.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 $12{,}2$ nebo v kroku 2 $122$: počítá obvod. Zeptejte se: „Pokrývá dlažba okraj, nebo plochu?“ (Plochu.) Krok 1 $90$: čárka při násobení. Krok 2 $9$: odpoví v decimetrech čtverečních. Výsledek $100$: počet dlaždic, ne balení; $2$ nebo $0{,}2$: metry čtvereční převede špatně."
+      },
+      "semafor": {
+        "zelena": "Výborně — obsahy, převod i balení sedí. Pochvalte, že dítě před dělením sjednotilo jednotky a nezapomnělo na balení, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Chodba má $3$ m × $1{,}5$ m. Dlaždice má $30$ cm × $30$ cm, v balení je $10$ kusů. Kolik balení je potřeba?“ Ať řeší na papír a nahlas řekne oba obsahy, počet dlaždic a balení. Kontrola pro vás: $45\\,000\\ \\text{cm}^2$ a $900\\ \\text{cm}^2$; $50$ dlaždic ($10$ v řadě, $5$ řad); $5$ balení.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: list papíru A4 a balíček hracích karet nebo stejných kartiček. Zítra ať dítě skládá karty na papír vedle sebe a pod sebe, dokud se vejde celá karta. Zeptejte se: „Kolik karet je v řadě? Kolik řad? Kolik karet celkem?“ Pak ať samo zapíše počet v řadě krát počet řad. Potom zopakujte lekci „Kontrola: jednotky a obsah“. Kontrola pro vás: karet je počet v řadě krát počet řad."
+      },
+      "tisk": {
+        "zadani": "Honzíkův táta pokládá dlažbu v dílně. Podlaha je obdélník $3{,}6$ m × $2{,}5$ m. Dlaždice jsou obdélníky $36$ cm × $25$ cm, neřežou se a prodávají se v balení po $5$ kusech.\n\nSpočítej obsah podlahy v $\\text{m}^2$, obsah jedné dlaždice v $\\text{cm}^2$ a kolik balení je potřeba.\n\nA) Obsah podlahy: ______ m²\n\nB) Obsah dlaždice: ______ cm²\n\nC) Výsledek: ______ balení"
+      }
+    },
+    {
+      "id": "M8-T03-L4N-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Adam s tátou zakrývají pískoviště plachtou tvaru obdélníku. Plachta je $25$ dm dlouhá a $160$ cm široká.\n\nKolik metrů čtverečních má plachta?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m²"
+          },
+          "spravne": {
+            "hodnota": 4
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 4000,
+              "typ_chyby": "zapomnel-prevest-jednotky"
+            },
+            {
+              "hodnota": 40,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 400,
+              "typ_chyby": "jednotka-ve-vysledku-spatne"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Strany jsou ve dvou různých jednotkách a výsledek se chce ve třetí. Obě strany se proto nejdřív převedou na metry. Čte se: $\\text{m}^2$ „metr čtvereční“.",
+        "reseni": "$25\\ \\text{dm} = 2{,}5\\ \\text{m}$ (metr je deset decimetrů)\n\n$160\\ \\text{cm} = 1{,}6\\ \\text{m}$ (metr je sto centimetrů)\n\n$S = 2{,}5 \\cdot 1{,}6 = 4$ (obsah v metrech čtverečních; jiná cesta: dvacet pět krát šestnáct decimetrů je čtyři sta decimetrů čtverečních, děleno stem)\n\n**Výsledek:** $4\\ \\text{m}^2$",
+        "otazky": [
+          "„Přečti mi zadání a ke každému číslu řekni jeho jednotku. Na co se úloha ptá?“",
+          "„Na jakou jednotku převedeš obě strany, aby obsah vyšel rovnou v metrech čtverečních?“",
+          "„Tady máš začátek: metr je deset decimetrů a sto centimetrů. Kolik metrů měří každá strana? Co s nimi pak uděláš?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč nemůžeš rovnou vynásobit dvacet pět krát sto šedesát.“",
+        "otocena_role_odpoved": "Protože jedna strana je v decimetrech a druhá v centimetrech. Nejdřív převedu obě na metry, dvě celé pět a jedna celá šest, a vyjdou čtyři metry čtvereční. Správně je i: počítat v decimetrech a pak dělit stem.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $4\\,000$: nepřevede nic. Zeptejte se: „V jakých jednotkách jsou strany?“ (V decimetrech a centimetrech.) $40$: centimetry převede o jiný počet míst. $400$: odpoví v decimetrech čtverečních."
+      },
+      "semafor": {
+        "zelena": "Výborně — dvě různé jednotky i výsledek v metrech čtverečních zvládá samo. Pochvalte, že nejdřív převedlo obě strany. Zítra můžete pokračovat dalším tématem.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Stůl má desku $15$ dm × $80$ cm. Kolik metrů čtverečních má deska?“ Ať řeší na papír a nahlas řekne oba převody a obsah. Kontrola pro vás: $1{,}5$ m a $0{,}8$ m; $1{,}2\\ \\text{m}^2$ (nebo $15 \\cdot 8 = 120\\ \\text{dm}^2$, to je $1{,}2\\ \\text{m}^2$).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: svinovací metr. Zítra ať dítě na metru ukáže $1$ m, pak $10$ dm a pak $100$ cm a řekne, co mají společného. Pak ať změří delší stranu postele v centimetrech a řekne ji v metrech. Pak ať samo zapíše oba převody. Potom zopakujte lekci „Kontrola: jednotky a obsah“. Kontrola pro vás: všechno je jeden metr; centimetry děleno stem."
+      },
+      "tisk": {
+        "zadani": "Adam s tátou zakrývají pískoviště plachtou tvaru obdélníku. Plachta je $25$ dm dlouhá a $160$ cm široká.\n\nKolik metrů čtverečních má plachta?\n\nVýsledek: ______ m²"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 9. 10. 2026: vše přepočítáno nezávisle (python Fraction) a ověřeno přes vyhodnotKrok. U1 60 g, 54 dm², 17,5 m², 340 cm; U2 2 · (1,4 + 0,9) = 4,6 m = 460 cm; U3 9 m², 900 cm², 90 000 : 900 = 100 dlaždic (10 × 10), 20 balení; U4 2,5 · 1,6 = 4 m². Ověřené kódy U3: 0,2 = převod m² na cm² krát sto (dva kroky po deseti, obsah-po-desitkach podle slovníku), 2 = krát tisíc (posun-carky-o-spatny-pocet, slovník výslovně uvádí „1 000 místo 10 000“). Opraveno: U4 kontext koberce v pokoji (je v učební M8-T03-L4 U2) nahrazen plachtou na pískoviště, čísla beze změny. Odchylky povolené vedoucím 9. 10. (PLAN-ROZSIRENI §3): hlavní úloha 5 výpočtů, úvod 2 věty, rozcvička 4 příklady se 3 otázkami. Úroveň 6.–7. ročníku, nic z 8. ročníku; čísla, kontext ani věty nepřebírá z učební lekce; texty v limitech slov, bez rodu, zlomky a CERMAT nikde.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-09"
+  }
+}

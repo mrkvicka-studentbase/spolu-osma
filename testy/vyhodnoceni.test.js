@@ -31,7 +31,7 @@ async function souboryLekci() {
   for (const adr of ADRESARE_LEKCI) {
     let nazvy = [];
     try { nazvy = await readdir(adr); } catch { continue; }
-    for (const n of nazvy.filter((f) => /^M8-T\d{2}-(L\d|DIAG)\.json$/.test(f)).sort()) vse.push(path.join(adr, n));
+    for (const n of nazvy.filter((f) => /^M8-T\d{2}-(L\dN?B?|DIAG|POL)\.json$/.test(f)).sort()) vse.push(path.join(adr, n));
   }
   return vse;
 }

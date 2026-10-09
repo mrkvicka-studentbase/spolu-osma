@@ -30,6 +30,10 @@ Oba předměty: **240 nových lekcí + 2 pololetní testy**. Čeština navíc po
   - smíšené úlohy z celé lekce;
   - delší text nebo slovní úloha;
   - méně opory v „Platí“ (dítě už pravidlo zná).
+- **Rozhodnutí vedoucího 9. 10. (naostro):**
+  - hlavní úloha smí mít až 5 výpočtů (SABLONA §21.9 doporučuje 4), když lekce vejde do 20 / 25 minut;
+  - `uvod_pro_rodice` smí mít o jednu větu víc („naostro“ / „po červené“);
+  - rozcvička se 4 příklady smí mít 3 otázky taháku (jedna pro dva příklady).
 - **B-varianta:** kopie struktury lekce (stejné typy úloh, stejná obtížnost, stejný tahák), jiná slova, čísla a věty. Id `…-B`, například `M8-T03-L2-B`, `cj-t3-l10-B`.
 - **ID naostro lekcí:** návrh `M8-T03-L2N`, `cj-t3-l10n`. Konečné id rozhodne technika (validátor, seed, doporučení).
 

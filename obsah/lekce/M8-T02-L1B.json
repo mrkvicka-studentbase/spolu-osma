@@ -1,0 +1,403 @@
+{
+  "id": "M8-T02-L1B",
+  "faze": "osma",
+  "tyden": 2,
+  "poradi": 1,
+  "tema": "Porovnání a zaokrouhlení",
+  "kapitola": "desetinna-cisla",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě porovná a seřadí desetinná čísla po řádech a zaokrouhlí je na desetiny, setiny i celé.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes je stejná látka s jinými úlohami: jak poznat větší desetinné číslo a jak desetinné číslo zaokrouhlit.",
+  "uvod_pravidla": [
+    {
+      "znak": "$0{,}7 = 0{,}70$",
+      "text": "nula na konci nevadí"
+    },
+    {
+      "znak": "$0{,}7 > 0{,}65$",
+      "text": "porovnává se po řádech"
+    },
+    {
+      "znak": "$2{,}87 \\doteq 2{,}9$",
+      "text": "rozhoduje další číslice"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T02-L1B-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Které z čísel $0{,}72$; $0{,}8$; $0{,}702$ je největší?\n\nB) Zaokrouhli $15{,}27$ na desetiny.\n\nC) Jak se zapíše číslem „čtyři setiny“?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: největší číslo",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$0{,}72$",
+                "spravne": false,
+                "typ_chyby": "porovnani-desetinnych-podle-delky"
+              },
+              {
+                "id": "b",
+                "text": "$0{,}8$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$0{,}702$",
+                "spravne": false,
+                "typ_chyby": "porovnani-desetinnych-podle-delky"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $15{,}27$ na desetiny",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$15{,}2$",
+                "spravne": false,
+                "typ_chyby": "zaokrouhlil-useknutim"
+              },
+              {
+                "id": "b",
+                "text": "$15$",
+                "spravne": false,
+                "typ_chyby": "zaokrouhlil-na-spatny-rad"
+              },
+              {
+                "id": "c",
+                "text": "$15{,}3$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: čtyři setiny",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$0{,}04$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$0{,}004$",
+                "spravne": false,
+                "typ_chyby": "rad-cislice-zamena"
+              },
+              {
+                "id": "c",
+                "text": "$0{,}4$",
+                "spravne": false,
+                "typ_chyby": "rad-cislice-zamena"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě tu jen vybírá z nabídky. U A rozhoduje první místo za čárkou (desetiny), ne počet číslic. U B rozhoduje číslice hned za desetinami. Čte se: $0{,}702$ = sedm set dvě tisíciny, $0{,}72$ = sedmdesát dvě setiny, $0{,}04$ = čtyři setiny. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) Největší číslo\n\n$0{,}720$; $0{,}800$; $0{,}702$ (doplněné nuly, všechna čísla mají tři místa za čárkou)\n\n$0{,}800 > 0{,}720 > 0{,}702$ (porovnání po řádech: osm desetin je nejvíc)\n\n#### B) $15{,}27$ na desetiny\n\n$15{,}27 \\doteq 15{,}3$ (za desetinami je sedmička, desetiny se zvětší o jednu)\n\n#### C) Čtyři setiny\n\n$0{,}04$ (setiny jsou druhé místo za čárkou)\n\n**Výsledek:** A) $0{,}8$, B) $15{,}3$, C) $0{,}04$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, porovnej na papíře: doplň nuly, aby měla všechna čísla stejně míst za čárkou. Které číslo je pak největší?“"
+          },
+          {
+            "k": "B",
+            "text": "„Která číslice stojí hned za desetinami? Co podle ní uděláš s desetinami?“"
+          },
+          {
+            "k": "C",
+            "text": "„Kolik míst za čárkou mají setiny? Ukaž mi je prstem na čísle.“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč není větší to číslo, které má víc číslic za čárkou.“",
+        "otocena_role_odpoved": "Protože rozhoduje první místo za čárkou, desetiny. Nula celá osm má osm desetin, nula celá sedm set dvě jen sedm. Když doplním nuly, je to osm set tisícin proti sedmi stům dvěma tisícinám.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A vybere $0{,}702$ nebo $0{,}72$: delší zápis bere jako větší. Zeptejte se: „Kolik desetin má které číslo?“ (Nula celá osm má osm, ostatní dvě sedm.) U B $15{,}2$: jen usekne; $15$: zaokrouhlí na celé. U C $0{,}004$ nebo $0{,}4$: plete desetiny, setiny a tisíciny."
+      },
+      "semafor": {
+        "zelena": "Výborně — porovnání i zaokrouhlení sedí. Pochvalte, že se dítě dívalo na desetiny, ne na počet číslic, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Ukažte dítěti na telefonu dvojice $0{,}6$ a $0{,}58$, pak $3{,}1$ a $3{,}09$. U každé ať řekne, které číslo je větší a proč. Pak ať zaokrouhlí $7{,}84$ na desetiny. Kontrola pro vás: $0{,}6$ (šest desetin proti pěti); $3{,}1$ (jedna desetina proti žádné); $7{,}8$ (sedm celých osm).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko s milimetry. Zítra ať dítě najde na pravítku $7{,}5$ cm a $7{,}35$ cm a ukáže, která značka je dál od nuly. Pak ať samo zapíše $7{,}5 > 7{,}35$. Potom zopakujte lekci „Porovnání a zaokrouhlení“. Kontrola pro vás: dál je $7{,}5$ cm (75 milimetrů), $7{,}35$ cm je mezi 73 a 74 milimetry."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Které z čísel $0{,}72$; $0{,}8$; $0{,}702$ je největší? — a) $0{,}72$ b) $0{,}8$ c) $0{,}702$\n\nB) Zaokrouhli $15{,}27$ na desetiny. — a) $15{,}2$ b) $15$ c) $15{,}3$\n\nC) Jak se zapíše číslem „čtyři setiny“? — a) $0{,}04$ b) $0{,}004$ c) $0{,}4$"
+      }
+    },
+    {
+      "id": "M8-T02-L1B-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr zaokrouhloval číslo\n\n$$31{,}748$$\n\nna celé, na desetiny a na setiny a udělal **jednu** chybu. Najdi ji.\n\n1. řádek: na celé: $31{,}748 \\doteq 32$\n\n2. řádek: na desetiny: $31{,}748 \\doteq 31{,}7$\n\n3. řádek: na setiny: $31{,}748 \\doteq 31{,}74$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "na celé: $31{,}748 \\doteq 32$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "na desetiny: $31{,}748 \\doteq 31{,}7$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "na setiny: $31{,}748 \\doteq 31{,}74$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Číslo zaokrouhlené na setiny",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 31.75
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 31.74,
+              "typ_chyby": "zaokrouhlil-useknutim"
+            },
+            {
+              "hodnota": 31.7,
+              "typ_chyby": "zaokrouhlil-na-spatny-rad"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Každý řádek zaokrouhluje stejné číslo, jen na jiné místo; chyba je jen v jednom řádku. Desetiny jsou první místo za čárkou, setiny druhé. Čte se: $31{,}748$ = třicet jedna celá sedm set čtyřicet osm, $\\doteq$ = přibližně se rovná, $31{,}75$ = třicet jedna celá sedmdesát pět.",
+        "reseni": "Chyba je ve 3. řádku: Petr číslo jen usekl, o setinách ale rozhoduje další číslice, osmička.\n\n$31{,}748 \\doteq 32$ (za celými je sedmička, celé se zvětší)\n\n$31{,}748 \\doteq 31{,}7$ (za desetinami je čtyřka, desetiny zůstanou)\n\n$31{,}748 \\doteq 31{,}75$ (za setinami je osmička, setiny se zvětší)\n\n**Výsledek:** $31{,}75$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Petr v každém řádku dělá. Na které místo zaokrouhluje?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Ukaž mi prstem v čísle celé, desetiny a setiny. Která číslice stojí vždy hned za nimi?“"
+          },
+          {
+            "k": "Krok 1 a výsledek",
+            "text": "„U každého řádku najdi číslici hned za místem, na které se zaokrouhluje. Co podle ní musí Petr udělat?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč na setiny nevyjde třicet jedna celá sedmdesát čtyři.“",
+        "otocena_role_odpoved": "Za setinami je osmička, a to je pět nebo víc. Setiny se proto zvětší o jednu: třicet jedna celá sedmdesát pět. Useknout se smí, jen když je další číslice menší než pět.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 1. nebo 2. řádek? Ty jsou správně. Zeptejte se: „Jaká číslice stojí za celými? A za desetinami?“ (Sedmička, čtyřka.) Výsledek $31{,}74$: samo usekává. Zeptejte se: „Jaká číslice je za setinami?“ (Osmička.) $31{,}7$: zaokrouhlí na desetiny."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že u každého řádku hledalo číslici za zaokrouhlovaným místem, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu číslo $4{,}561$. Ať ho nahlas zaokrouhlí na celé, na desetiny a na setiny a u každého řekne, podle které číslice rozhodlo. Kontrola pro vás: $5$ (podle pětky); $4{,}6$ (podle šestky); $4{,}56$ (podle jedničky).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko s milimetry. Zítra ať dítě najde na pravítku značky $9{,}2$ cm a $9{,}3$ cm a mezi nimi místo $9{,}26$ cm. Zeptejte se: „Ke které značce má to místo blíž?“ Pak ať samo zapíše $9{,}26 \\doteq 9{,}3$. Potom zopakujte lekci „Porovnání a zaokrouhlení“. Kontrola pro vás: blíž je $9{,}3$ cm, šestka je víc než pět."
+      },
+      "tisk": {
+        "zadani": "Petr zaokrouhloval číslo\n\n$$31{,}748$$\n\nna celé, na desetiny a na setiny a udělal jednu chybu.\n\n1. řádek: na celé: $31{,}748 \\doteq 32$\n\n2. řádek: na desetiny: $31{,}748 \\doteq 31{,}7$\n\n3. řádek: na setiny: $31{,}748 \\doteq 31{,}74$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Číslo $31{,}748$ zaokrouhlené na setiny: ______"
+      }
+    },
+    {
+      "id": "M8-T02-L1B-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "V přírodopisu si děti měřily, jak vysoko jim vyrostly slunečnice. Výšky si zapsaly různě přesně:\n\nEma: $1{,}86$ m\n\nHonzík: $1{,}725$ m\n\nTomáš: $1{,}7$ m\n\nKlára: $1{,}09$ m\n\nČí slunečnice je nejvyšší? Jakou výšku má třetí nejvyšší slunečnice? Kolik metrů měří nejvyšší slunečnice po zaokrouhlení na desetiny?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Čí slunečnice je nejvyšší?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Honzíkova",
+                "spravne": false,
+                "typ_chyby": "porovnani-desetinnych-podle-delky"
+              },
+              {
+                "id": "b",
+                "text": "Klářina",
+                "spravne": false,
+                "typ_chyby": "rad-cislice-zamena"
+              },
+              {
+                "id": "c",
+                "text": "Emina",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: třetí nejvyšší slunečnice",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m"
+          },
+          "spravne": {
+            "hodnota": 1.7
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 1.09,
+              "typ_chyby": "porovnani-desetinnych-podle-delky"
+            },
+            {
+              "hodnota": 1.725,
+              "typ_chyby": "rad-cislice-zamena"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek: nejvyšší slunečnice na desetiny",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m"
+          },
+          "spravne": {
+            "hodnota": 1.9
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 1.8,
+              "typ_chyby": "zaokrouhlil-useknutim"
+            },
+            {
+              "hodnota": 1.7,
+              "typ_chyby": "porovnani-desetinnych-podle-delky"
+            },
+            {
+              "hodnota": 1.1,
+              "typ_chyby": "rad-cislice-zamena"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Výšky mají různý počet míst za čárkou. Delší zápis neznamená vyšší rostlinu: porovnává se po řádech, nejdřív celé, pak desetiny, pak setiny. Čte se: $1{,}725$ = jedna celá sedm set dvacet pět, $1{,}09$ = jedna celá nula devět (devět setin, tedy metr a devět centimetrů).",
+        "reseni": "$1{,}860$; $1{,}725$; $1{,}700$; $1{,}090$ (doplněné nuly, všechny výšky mají tři místa za čárkou)\n\n$1{,}860 > 1{,}725 > 1{,}700 > 1{,}090$ (pořadí Ema, Honzík, Tomáš, Klára)\n\n$1{,}7$ m (třetí je Tomášova slunečnice)\n\n$1{,}86 \\doteq 1{,}9$ (za desetinami je šestka, desetiny se zvětší)\n\n**Výsledek:** nejvyšší je Emina slunečnice, třetí výška $1{,}7$ m, nejvyšší po zaokrouhlení $1{,}9$ m",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, na co se úloha ptá. Kolik věcí máš zjistit?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Doplň nuly, aby měly všechny výšky stejně míst za čárkou. Porovnej je po řádech. Čí slunečnice je první, druhá a třetí?“"
+          },
+          {
+            "k": "Výsledek",
+            "text": "„Tady máš začátek: desetiny jsou první číslice za čárkou. Jaká číslice stojí u nejvyšší slunečnice hned za nimi a co podle ní uděláš?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč Klářina slunečnice není nejvyšší, když má za čárkou devítku.“",
+        "otocena_role_odpoved": "Protože ta devítka jsou setiny, ne desetiny. Klára má nula desetin, její slunečnice měří jen metr a devět centimetrů. Ema má osm desetin, a to je nejvíc.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Honzík v kroku 1, $1{,}09$ v kroku 2 nebo výsledek $1{,}7$: delší zápis bere jako větší. Zeptejte se: „Kolik desetin má Honzík a kolik Ema?“ (Sedm a osm.) Klára, $1{,}725$ nebo $1{,}1$: devítku čte jako desetiny. Výsledek $1{,}8$: jen usekne."
+      },
+      "semafor": {
+        "zelena": "Výborně — hlavní úlohu zvládlo. Pochvalte, že výšky porovnávalo po řádech, ne podle délky zápisu, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu čísla $3{,}6$; $3{,}57$; $3{,}605$. Ať je na papír seřadí od nejmenšího a nejmenší zaokrouhlí na desetiny. Kontrola pro vás: $3{,}57 < 3{,}6 < 3{,}605$ (po doplnění nul $3{,}570$, $3{,}600$, $3{,}605$); zaokrouhlené $3{,}6$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko s milimetry a papír. Zítra ať dítě nakreslí čáry dlouhé $6{,}4$ cm, $6{,}7$ cm a $6{,}25$ cm a řekne, která je nejdelší a která nejkratší. Pak ať samo zapíše $6{,}7 > 6{,}4 > 6{,}25$. Potom zopakujte lekci „Porovnání a zaokrouhlení“. Kontrola pro vás: nejdelší je $6{,}7$ cm (67 milimetrů), nejkratší $6{,}25$ cm."
+      },
+      "tisk": {
+        "zadani": "V přírodopisu si děti měřily, jak vysoko jim vyrostly slunečnice. Výšky si zapsaly různě přesně:\n\nEma: $1{,}86$ m, Honzík: $1{,}725$ m, Tomáš: $1{,}7$ m, Klára: $1{,}09$ m\n\nA) Čí slunečnice je nejvyšší? Zakroužkuj: a) Honzíkova b) Klářina c) Emina\n\nB) Výška třetí nejvyšší slunečnice: ______ m\n\nC) Výška nejvyšší slunečnice zaokrouhlená na desetiny: ______ m"
+      }
+    },
+    {
+      "id": "M8-T02-L1B-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Z čísel\n\n$$8{,}03 \\qquad 8{,}27 \\qquad 8{,}5 \\qquad 8{,}265 \\qquad 8{,}3$$\n\nvyber a napiš největší číslo, které je menší než $8{,}3$.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 8.27
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 8.265,
+              "typ_chyby": "porovnani-desetinnych-podle-delky"
+            },
+            {
+              "hodnota": 8.5,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Past: $8{,}265$ má víc číslic, ale je menší než $8{,}27$. Čte se: $8{,}27$ = osm celých dvacet sedm, $8{,}265$ = osm celých dvě stě šedesát pět, $8{,}03$ = osm celých nula tři.",
+        "reseni": "$8{,}030$; $8{,}270$; $8{,}500$; $8{,}265$; $8{,}300$ (doplněné nuly)\n\n$8{,}030$; $8{,}270$; $8{,}265$ (tato tři čísla jsou menší než osm celých tři)\n\n$8{,}270 > 8{,}265 > 8{,}030$ (porovnání po řádech: setiny sedm proti šesti)\n\n**Výsledek:** $8{,}27$",
+        "otazky": [
+          "„Řekni mi vlastními slovy, jaké číslo hledáš. Jaké dvě podmínky musí splnit?“",
+          "„Doplň nuly, aby měla všechna čísla stejně míst za čárkou. Která z nich jsou menší než osm celých tři?“",
+          "„Tady máš začátek: osm celých tři je osm celých tři sta tisícin. Která čísla mají tisícin méně? Které z nich je největší?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč osm celých dvě stě šedesát pět není větší než osm celých dvacet sedm.“",
+        "otocena_role_odpoved": "Když doplním nulu, porovnávám osm celých dvě stě sedmdesát a osm celých dvě stě šedesát pět. Desetiny jsou stejné, ale setin má první číslo sedm a druhé jen šest.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $8{,}265$: delší zápis bere jako větší. Zeptejte se: „Kolik setin má osm celých dvacet sedm a kolik osm celých dvě stě šedesát pět?“ (Sedm a šest.) $8{,}5$: přehlédne „menší než“."
+      },
+      "semafor": {
+        "zelena": "Výborně — porovnávání po řádech zvládá samo. Pochvalte, že si doplnilo nuly. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu čísla $4{,}9$; $4{,}85$; $4{,}895$; $4{,}09$. Ať najde největší číslo menší než $4{,}9$ a řekne, jak to poznalo. Kontrola pro vás: $4{,}895$ (čtyři celé osm set devadesát pět); po doplnění nul $4{,}895 > 4{,}850 > 4{,}090$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě nakreslí tabulku se sloupci jednotky, desetiny, setiny, tisíciny, zapíše do ní $8{,}3$ a $8{,}265$ a prázdná místa doplní nulami. Zeptejte se: „Ve kterém sloupci se čísla poprvé liší?“ Pak ať samo zapíše $8{,}3 > 8{,}265$. Potom zopakujte lekci „Porovnání a zaokrouhlení“. Kontrola pro vás: v desetinách, tři je víc než dva."
+      },
+      "tisk": {
+        "zadani": "Z čísel\n\n$$8{,}03 \\qquad 8{,}27 \\qquad 8{,}5 \\qquad 8{,}265 \\qquad 8{,}3$$\n\nvyber a napiš největší číslo, které je menší než $8{,}3$.\n\nVýsledek: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 9. 10.: matematika přepočítána skriptem (Fraction, matematické zaokrouhlení) včetně pořadí výšek, mezivýsledků v řešení, čísel v taháku, oranžové a červené; dlaždice i známé chyby ověřeny přes vyhodnotKrok. Věcné chyby žádné. Obtížnost a stavba jako hlavní lekce, čísla a kontext nové. Opraveno: U1 C „čtyři tisíciny“ → „čtyři setiny“ ($0{,}04$; dlaždice $0{,}004$ a $0{,}4$), protože hlavní lekce i osnova chtějí setiny; U3 „slunečnice, která skončila třetí“ → „třetí nejvyšší slunečnice“ (zadání, popisek k2, tisk). Ponecháno jako v hlavní lekci: v U3 je pořadí v seznamu shodné s pořadím podle výšky; tvary Honzíkova / Klářina / Emina k otázce „Čí slunečnice“ jsou správně.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-09"
+  }
+}

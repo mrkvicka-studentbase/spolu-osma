@@ -1,0 +1,432 @@
+{
+  "id": "M8-T03-L4B",
+  "faze": "osma",
+  "tyden": 3,
+  "poradi": 4,
+  "tema": "Kontrola: jednotky a obsah",
+  "kapitola": "jednotky",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo spočítá obsah nebo obvod se stranami v různých jednotkách a výsledek uvede v jednotce ze zadání.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami. Je to kontrola celého tématu: převody délky a obsahu, obvod a obsah, a hlavně stejné jednotky dřív, než se začne počítat.",
+  "uvod_pravidla": [
+    {
+      "znak": "$2\\ \\text{m} = 200\\ \\text{cm}$",
+      "text": "nejdřív stejné jednotky"
+    },
+    {
+      "znak": "$1\\ \\text{m}^2 = 100\\ \\text{dm}^2$",
+      "text": "obsah: po stu"
+    },
+    {
+      "znak": "$S = 3\\ \\text{m} \\cdot 4\\ \\text{m}$",
+      "text": "výsledek v $\\text{m}^2$"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T03-L4B-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Kolik centimetrů je $3{,}4$ m?\n\nB) Kolik arů je $500\\ \\text{m}^2$?\n\nC) Kluziště na zahradě je obdélník $8$ m × $5$ m. Kolik metrů prken je potřeba na mantinel kolem celého kluziště?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $3{,}4$ m v centimetrech",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$0{,}034$ cm",
+                "spravne": false,
+                "typ_chyby": "prevod-spatnym-smerem"
+              },
+              {
+                "id": "b",
+                "text": "$34\\,000$ cm",
+                "spravne": false,
+                "typ_chyby": "delka-po-stovkach"
+              },
+              {
+                "id": "c",
+                "text": "$340$ cm",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $500\\ \\text{m}^2$ v arech",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$5$ a",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$50$ a",
+                "spravne": false,
+                "typ_chyby": "obsah-po-desitkach"
+              },
+              {
+                "id": "c",
+                "text": "$50\\,000$ a",
+                "spravne": false,
+                "typ_chyby": "prevod-spatnym-smerem"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: prkna na mantinel",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$40$ m",
+                "spravne": false,
+                "typ_chyby": "obvod-obsah-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$13$ m",
+                "spravne": false,
+                "typ_chyby": "obvod-jen-dve-strany"
+              },
+              {
+                "id": "c",
+                "text": "$26$ m",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá. Každý příklad je z jedné lekce tématu: převod délky, převod obsahu a rozhodnutí, jestli úloha chce obvod (okraj), nebo obsah (plochu). Čte se: $3{,}4$ m „tři celé čtyři metru“, značka $\\text{a}$ je ar. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $3{,}4$ m v centimetrech\n\n$3{,}4 \\cdot 100 = 340$ (metr je sto centimetrů, na menší jednotku se násobí)\n\n#### B) $500\\ \\text{m}^2$ v arech\n\n$500 : 100 = 5$ (ar je sto metrů čtverečních, na větší jednotku se dělí)\n\n#### C) Prkna na mantinel\n\n$o = 2 \\cdot (8 + 5) = 26$ (mantinel vede po okraji, je to obvod)\n\n**Výsledek:** A) $340$ cm, B) $5$ a, C) $26$ m",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, spočítej na papíře: kolik centimetrů má jeden metr? Bude centimetrů víc, nebo míň než metrů?“"
+          },
+          {
+            "k": "B",
+            "text": "„Kolik metrů čtverečních má jeden ar? Kolik takových arů se vejde do pěti set metrů čtverečních?“"
+          },
+          {
+            "k": "C",
+            "text": "„Vede mantinel po okraji, nebo pokrývá plochu? Kolik stran kluziště obejde?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč na mantinel potřebuješ obvod, a ne obsah.“",
+        "otocena_role_odpoved": "Mantinel vede jen kolem dokola po okraji kluziště, proto se sčítají délky všech čtyř stran. Obsah by řekl, kolik ledu je uvnitř, ne kolik metrů prken.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $34\\,000$: převádí délku po stovkách; $0{,}034$: dělí místo násobení. Zeptejte se: „Kolik centimetrů má metr?“ (Sto.) U B $50$: převádí obsah po deseti; $50\\,000$: násobí místo dělení. U C $40$: počítá obsah; $13$: sečte jen dvě strany."
+      },
+      "semafor": {
+        "zelena": "Výborně — všechny tři části tématu sedí. Pochvalte, že u každého příkladu rozhodlo, v jakých jednotkách a co se počítá, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Kolik centimetrů je $4{,}5$ m? Kolik arů je $700\\ \\text{m}^2$? Obdélník má strany $9$ m a $2$ m. Jaký má obvod?“ Kontrola pro vás: $450$ cm; $7$ arů; obvod $22$ m.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: svinovací metr. Zítra ať dítě změří šířku dveří v centimetrech a řekne, kolik je to metrů. Pak ať změří i výšku dveří a spočítá, kolik metrů lišty by obešlo dveře kolem dokola. Pak ať samo zapíše převod i obvod. Potom zopakujte lekci „Kontrola: jednotky a obsah“. Kontrola pro vás: metr je sto centimetrů; lišta je dvakrát součet šířky a výšky."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Kolik centimetrů je $3{,}4$ m? — a) $0{,}034$ cm b) $34\\,000$ cm c) $340$ cm\n\nB) Kolik arů je $500\\ \\text{m}^2$? — a) $5$ a b) $50$ a c) $50\\,000$ a\n\nC) Kluziště na zahradě je obdélník $8$ m × $5$ m. Kolik metrů prken je potřeba na mantinel kolem celého kluziště? — a) $40$ m b) $13$ m c) $26$ m"
+      }
+    },
+    {
+      "id": "M8-T03-L4B-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Lucčin balkon má tvar obdélníku $5$ m × $260$ cm. Dlažba stojí $400$ Kč za $1\\ \\text{m}^2$. Kolik korun bude stát dlažba na celý balkon?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $S = a \\cdot b$\n\n2. řádek: $S = 5 \\cdot 260 = 1\\,300\\ \\text{m}^2$\n\n3. řádek: cena $= 1\\,300 \\cdot 400 = 520\\,000$ Kč",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$S = a \\cdot b$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$S = 5 \\cdot 260 = 1\\,300\\ \\text{m}^2$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "cena $= 1\\,300 \\cdot 400 = 520\\,000$ Kč",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$S = 2 \\cdot (5 + 2{,}6) = 15{,}2\\ \\text{m}^2$",
+                "spravne": false,
+                "typ_chyby": "obvod-obsah-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$S = 5 \\cdot 26 = 130\\ \\text{m}^2$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "c",
+                "text": "$S = 5 \\cdot 2{,}6 = 13\\ \\text{m}^2$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 5200
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 520000,
+              "typ_chyby": "zapomnel-prevest-jednotky"
+            },
+            {
+              "hodnota": 52000,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 6080,
+              "typ_chyby": "obvod-obsah-zamena"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Balkon má jednu stranu v metrech a druhou v centimetrech. Cena je za metr čtvereční, takže obsah musí vyjít v metrech čtverečních. V 1. řádku je vzorec: $S$ obsah, $a$ a $b$ strany. Chyba je jedna a řádek za ní je spočítaný dobře, jen se špatným číslem. Čte se: $2{,}6$ m „dvě celé šest metru“.",
+        "reseni": "Chyba je ve 2. řádku: Petr násobí pět metrů dvěma sty šedesáti centimetry. Centimetry nepřevedl na metry, takže obsah nevyjde v metrech čtverečních.\n\n$260\\ \\text{cm} = 2{,}6\\ \\text{m}$ (metr je sto centimetrů)\n\n$S = 5 \\cdot 2{,}6 = 13$ (obsah balkonu v metrech čtverečních)\n\n$13 \\cdot 400 = 5\\,200$ (cena dlažby v korunách)\n\nDlaždice $15{,}2\\ \\text{m}^2$ a $130\\ \\text{m}^2$ nesedí (první počítá obvod, druhá převádí po deseti)\n\n**Výsledek:** $5\\,200$ Kč",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Lucka kupuje a za co se platí.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky. U každého čísla řekni, v jaké jednotce je.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: jsou obě násobená čísla ve stejné jednotce? Vyjde obsah opravdu v metrech čtverečních?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč dlažba nestojí pět set dvacet tisíc korun.“",
+        "otocena_role_odpoved": "Protože Petr násobil pět metrů dvěma sty šedesáti centimetry. Správně je pět krát dvě celé šest metru, to je třináct metrů čtverečních, a dlažba stojí pět tisíc dvě stě korun.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 3. řádek? Ten jen násobí cenou. Zeptejte se: „Odkud je tisíc tři sta?“ (Ze 2. řádku.) 1. řádek je správně. Výsledek $520\\,000$: opíše Petra; $52\\,000$: převádí po deseti; $6\\,080$: počítá obvod. Zkouška pro vás: balkon má třináct metrů čtverečních."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že dítě u každého čísla hlídalo jednotku, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Petr tvrdí: koberec $2$ m × $140$ cm má obsah $280\\ \\text{m}^2$. Má pravdu?“ Ať nahlas řekne převod a správný obsah. Kontrola pro vás: nemá; $140$ cm je $1{,}4$ m (metr a čtyřicet centimetrů); obsah je $2{,}8\\ \\text{m}^2$ (dvě celé osm).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: svinovací metr a sešit. Zítra ať dítě změří delší stranu sešitu v centimetrech a řekne, kolik je to metrů. Zeptejte se: „Je to víc, nebo míň než metr?“ Pak ať samo zapíše převod, například $20\\ \\text{cm} = 0{,}2\\ \\text{m}$. Potom zopakujte lekci „Kontrola: jednotky a obsah“. Kontrola pro vás: asi $20$ až $30$ cm, to je $0{,}2$ až $0{,}3$ m, míň než metr."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\nLucčin balkon má tvar obdélníku $5$ m × $260$ cm. Dlažba stojí $400$ Kč za $1\\ \\text{m}^2$. Kolik korun bude stát dlažba na celý balkon?\n\na udělal jednu chybu.\n\n1. řádek: $S = a \\cdot b$\n\n2. řádek: $S = 5 \\cdot 260 = 1\\,300\\ \\text{m}^2$\n\n3. řádek: cena $= 1\\,300 \\cdot 400 = 520\\,000$ Kč\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $S = 2 \\cdot (5 + 2{,}6) = 15{,}2\\ \\text{m}^2$ b) $S = 5 \\cdot 26 = 130\\ \\text{m}^2$ c) $S = 5 \\cdot 2{,}6 = 13\\ \\text{m}^2$\n\nC) Kolik korun bude dlažba opravdu stát? ______ Kč"
+      }
+    },
+    {
+      "id": "M8-T03-L4B-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Ema s mámou obkládají pruh stěny mezi kuchyňskou linkou a skříňkami. Pruh je obdélník $2{,}8$ m × $0{,}5$ m. Obkladačky jsou obdélníky $25$ cm × $10$ cm a neřežou se.\n\nSpočítej obsah pruhu v $\\text{m}^2$, obsah jedné obkladačky v $\\text{cm}^2$ a kolik obkladaček je potřeba.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Mezivýsledek: obsah pruhu",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m²"
+          },
+          "spravne": {
+            "hodnota": 1.4
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 6.6,
+              "typ_chyby": "obvod-obsah-zamena"
+            },
+            {
+              "hodnota": 14,
+              "typ_chyby": "carka-pri-nasobeni"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: obsah obkladačky",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm²"
+          },
+          "spravne": {
+            "hodnota": 250
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 70,
+              "typ_chyby": "obvod-obsah-zamena"
+            },
+            {
+              "hodnota": 2.5,
+              "typ_chyby": "jednotka-ve-vysledku-spatne"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "obkladaček"
+          },
+          "spravne": {
+            "hodnota": 56
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 5.6,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 0.56,
+              "typ_chyby": "obsah-po-desitkach"
+            },
+            {
+              "hodnota": 0.0056,
+              "typ_chyby": "zapomnel-prevest-jednotky"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce. Pruh stěny je v metrech, obkladačky v centimetrech. Než se dělí, musí být oba obsahy ve stejné jednotce: metr čtvereční je deset tisíc centimetrů čtverečních. Rovnocenná cesta: do délky pruhu se vejde dvacet osm obkladaček a do výšky dvě řady. Čte se: $0{,}5$ „nula celá pět“ (půl metru), $1{,}4$ „jedna celá čtyři“.",
+        "reseni": "$S = 2{,}8 \\cdot 0{,}5 = 1{,}4$ (obsah pruhu v metrech čtverečních)\n\n$S = 25 \\cdot 10 = 250$ (obsah obkladačky v centimetrech čtverečních)\n\n$1{,}4\\ \\text{m}^2 = 14\\,000\\ \\text{cm}^2$ (metr čtvereční je deset tisíc centimetrů čtverečních)\n\n$14\\,000 : 250 = 56$ (počet obkladaček)\n\n$28 \\cdot 2 = 56$ (zkouška: dvacet osm obkladaček vedle sebe a dvě řady nad sebou)\n\n**Výsledek:** $56$ obkladaček",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Ema s mámou dělají. Která čísla jsou v metrech a která v centimetrech?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Jak se počítá obsah obdélníku? V jaké jednotce vyjde obsah pruhu a v jaké obsah obkladačky?“"
+          },
+          {
+            "k": "Výsledek",
+            "text": "„Tady máš začátek: jeden metr čtvereční je deset tisíc centimetrů čtverečních. Kolik centimetrů čtverečních má pruh? Kolikrát se do něj vejde obkladačka?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč nemůžeš dělit jedna celá čtyři dvěma sty padesáti.“",
+        "otocena_role_odpoved": "Protože obsah pruhu je v metrech čtverečních a obkladačky v centimetrech čtverečních. Nejdřív se pruh převede na čtrnáct tisíc centimetrů čtverečních a pak vyjde padesát šest obkladaček. Správně je i: dvacet osm v řadě, dvě řady.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 $6{,}6$ nebo v kroku 2 $70$: počítá obvod. Zeptejte se: „Chceme okraj, nebo plochu?“ (Plochu.) Krok 1 $14$: čárka při násobení. Krok 2 $2{,}5$: odpoví v decimetrech čtverečních. Výsledek $5{,}6$ nebo $0{,}56$: převede metry čtvereční špatným číslem; $0{,}0056$: nepřevede vůbec."
+      },
+      "semafor": {
+        "zelena": "Výborně — obsahy i převod sedí. Pochvalte, že dítě před dělením sjednotilo jednotky, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Stěna má $3$ m × $1$ m. Obkladačka má $10$ cm × $10$ cm. Kolik obkladaček je potřeba?“ Ať řeší na papír a nahlas řekne obsah stěny, obsah obkladačky a počet. Kontrola pro vás: $3\\ \\text{m}^2 = 30\\,000\\ \\text{cm}^2$; obkladačka $100\\ \\text{cm}^2$; $300$ obkladaček (nebo $30$ v řadě a $10$ řad).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: velkou knihu a balíček hracích karet nebo stejných lístečků. Zítra ať dítě pokryje přední desku knihy kartami vedle sebe a pod sebou tak, aby se nepřekrývaly. Zeptejte se: „Kolik karet je v řadě? Kolik řad? Kolik celkem?“ Pak ať samo zapíše počet v řadě krát počet řad. Potom zopakujte lekci „Kontrola: jednotky a obsah“. Kontrola pro vás: celkem je počet v řadě krát počet řad."
+      },
+      "tisk": {
+        "zadani": "Ema s mámou obkládají pruh stěny mezi kuchyňskou linkou a skříňkami. Pruh je obdélník $2{,}8$ m × $0{,}5$ m. Obkladačky jsou obdélníky $25$ cm × $10$ cm a neřežou se.\n\nSpočítej obsah pruhu v $\\text{m}^2$, obsah jedné obkladačky v $\\text{cm}^2$ a kolik obkladaček je potřeba.\n\nA) Obsah pruhu: ______ m²\n\nB) Obsah obkladačky: ______ cm²\n\nC) Výsledek: ______ obkladaček"
+      }
+    },
+    {
+      "id": "M8-T03-L4B-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Honzíkův psací stůl má obdélníkovou desku. Je $1{,}3$ m široká a $6$ dm hluboká.\n\nKolik decimetrů čtverečních má deska?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "dm²"
+          },
+          "spravne": {
+            "hodnota": 78
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 7.8,
+              "typ_chyby": "zapomnel-prevest-jednotky"
+            },
+            {
+              "hodnota": 780,
+              "typ_chyby": "delka-po-stovkach"
+            },
+            {
+              "hodnota": 0.78,
+              "typ_chyby": "jednotka-ve-vysledku-spatne"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Šířka je v metrech, hloubka v decimetrech a výsledek se chce v decimetrech čtverečních. Čte se: $1{,}3$ m „jedna celá tři metru“, $\\text{dm}^2$ „decimetr čtvereční“.",
+        "reseni": "$1{,}3\\ \\text{m} = 13\\ \\text{dm}$ (metr je deset decimetrů)\n\n$S = 13 \\cdot 6 = 78$ (obsah v decimetrech čtverečních; jiná cesta: nula celá sedmdesát osm metru čtverečního krát sto)\n\n**Výsledek:** $78\\ \\text{dm}^2$",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co o desce stolu víš a v jaké jednotce má být výsledek.“",
+          "„Jsou obě strany ve stejné jednotce? Co uděláš, než je vynásobíš?“",
+          "„Tady máš začátek: metr je deset decimetrů. Kolik decimetrů je jedna celá tři metru?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč nestačí vynásobit jedna celá tři krát šest.“",
+        "otocena_role_odpoved": "Protože šířka je v metrech a hloubka v decimetrech. Nejdřív se šířka převede na třináct decimetrů a třináct krát šest je sedmdesát osm decimetrů čtverečních. Správně je i: v metrech čtverečních nula celá sedmdesát osm, krát sto.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $7{,}8$: násobí metry s decimetry. Zeptejte se: „Kolik decimetrů má metr?“ (Deset.) $780$: převádí délku po stovkách. $0{,}78$: počítá v metrech čtverečních a nepřevede."
+      },
+      "semafor": {
+        "zelena": "Výborně — jednotky i obsah zvládá samo. Pochvalte, že nejdřív převedlo stranu. Zítra můžete pokračovat dalším tématem.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Běhoun je $3$ m dlouhý a $7$ dm široký. Kolik decimetrů čtverečních má?“ Ať řeší na papír a nahlas řekne převod a obsah. Kontrola pro vás: $30$ dm; $210\\ \\text{dm}^2$ (nebo $3 \\cdot 0{,}7 = 2{,}1\\ \\text{m}^2$, to je $210\\ \\text{dm}^2$).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: list papíru A4, pravítko a tužku. Zítra ať dítě nakreslí čtverec o straně $20$ cm a rozdělí ho na čtverce o straně $10$ cm. Řekněte: „Jeden malý čtverec je decimetr čtvereční.“ Zeptejte se: „Kolik decimetrů měří strana velkého čtverce? Kolik malých čtverců se vešlo?“ Pak ať samo zapíše $2 \\cdot 2 = 4$. Potom zopakujte lekci „Kontrola: jednotky a obsah“. Kontrola pro vás: strana 2 dm, čtyři čtverce, čtyři decimetry čtvereční."
+      },
+      "tisk": {
+        "zadani": "Honzíkův psací stůl má obdélníkovou desku. Je $1{,}3$ m široká a $6$ dm hluboká.\n\nKolik decimetrů čtverečních má deska?\n\nVýsledek: ______ dm²"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 9. 10. 2026: všechna čísla, mezivýsledky a známé chyby přepočítány nezávisle (python Fraction, vzorec každé chyby), správné odpovědi, dlaždice a známé chyby ověřeny přes vyhodnotKrok. U1 340 cm; 5 a; 26 m. U2 5 · 2,6 = 13 m², 13 · 400 = 5 200 Kč (520 000; 52 000; 15,2 · 400 = 6 080). U3 2,8 · 0,5 = 1,4 m² (6,6; 14); 250 cm² (70; 2,5); 14 000 : 250 = 56 = 28 · 2 (5,6; 0,56; 0,0056). U4 13 · 6 = 78 dm² (7,8; 780; 0,78). Bod autora: pruh 0,5 m obtížnost nesnižuje, násobení desetinných čísel zůstává (2,8 · 0,5, chyba čárky dá 14), dělení 14 000 : 250 je o kus pracnější než 36 000 : 600, celkem 4 výpočty jako v hlavní lekci; obkladačky nastojato vycházejí přesně (28 · 2), jako v hlavní lekci. Opraveno: U1 oranžová měla obvod 16 m stejně jako hlavní lekce, nově 9 m a 2 m, obvod 22 m. Věcné chyby: žádné.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-09"
+  }
+}

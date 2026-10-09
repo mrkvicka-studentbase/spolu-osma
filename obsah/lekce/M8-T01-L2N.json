@@ -1,0 +1,436 @@
+{
+  "id": "M8-T01-L2N",
+  "faze": "osma",
+  "tyden": 1,
+  "poradi": 2,
+  "tema": "Dělitelnost a prvočísla",
+  "kapitola": "pocetni-operace",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo podle znaků rozhodne, čím je číslo dělitelné, i u dvanáctky a patnáctky, a rozloží čtyřmístné číslo na prvočísla.",
+  "uvod_pro_rodice": "Naostro: dítě tuhle látku dělalo v lekci „Dělitelnost a prvočísla“ a dnes ukáže, že znaky dělitelnosti a rozklad na prvočísla zvládne samo.",
+  "uvod_pravidla": [
+    {
+      "znak": "$2\\,451$: $2 + 4 + 5 + 1 = 12$",
+      "text": "trojka: součet číslic"
+    },
+    {
+      "znak": "$1\\,324$: $24 = 4 \\cdot 6$",
+      "text": "čtyřka: poslední dvojčíslí"
+    },
+    {
+      "znak": "$84 = 2 \\cdot 2 \\cdot 3 \\cdot 7$",
+      "text": "jen prvočísla"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T01-L2N-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Které číslo je dělitelné čtyřmi?\n\nB) Které číslo je prvočíslo?\n\nC) Které číslo je dělitelné šesti?\n\nD) Které číslo je dělitelné patnácti?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: dělitelné čtyřmi",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$926$",
+                "spravne": false,
+                "typ_chyby": "delitelnost-4-podle-posledni-cislice"
+              },
+              {
+                "id": "b",
+                "text": "$832$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$718$",
+                "spravne": false,
+                "typ_chyby": "delitelnost-4-podle-posledni-cislice"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: prvočíslo",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$91$",
+                "spravne": false,
+                "typ_chyby": "liche-je-prvocislo"
+              },
+              {
+                "id": "b",
+                "text": "$57$",
+                "spravne": false,
+                "typ_chyby": "liche-je-prvocislo"
+              },
+              {
+                "id": "c",
+                "text": "$59$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: dělitelné šesti",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$474$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$386$",
+                "spravne": false,
+                "typ_chyby": "delitelnost-slozena-jedna-podminka"
+              },
+              {
+                "id": "c",
+                "text": "$591$",
+                "spravne": false,
+                "typ_chyby": "delitelnost-slozena-jedna-podminka"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: dělitelné patnácti",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$425$",
+                "spravne": false,
+                "typ_chyby": "delitelnost-slozena-jedna-podminka"
+              },
+              {
+                "id": "b",
+                "text": "$612$",
+                "spravne": false,
+                "typ_chyby": "delitelnost-slozena-jedna-podminka"
+              },
+              {
+                "id": "c",
+                "text": "$735$",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Naostro: o příklad víc než v lekci a nabídky jsou zrádnější. Dítě jen vybírá. U A jsou všechna čísla sudá, rozhodují poslední dvě číslice. U C a D musí platit dvě podmínky najednou: šestka je dvě krát tři, patnáctka tři krát pět. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) Dělitelné čtyřmi\n\n$832$: $32 = 4 \\cdot 8$ (poslední dvojčíslí je dělitelné čtyřmi)\n\n$926$: $26$ čtyřmi dělitelné není (čtyři krát šest je dvacet čtyři, čtyři krát sedm dvacet osm)\n\n$718$: $18$ čtyřmi dělitelné není (mezi šestnácti a dvaceti)\n\n#### B) Prvočíslo\n\n$59$ (dělí ho jen jednička a samo sebe)\n\n$91 = 7 \\cdot 13$, $57 = 3 \\cdot 19$ (nejsou prvočísla)\n\n#### C) Dělitelné šesti\n\n$474$: sudé, $4 + 7 + 4 = 15$ (dělitelné dvěma i třemi)\n\n$386$: sudé, ale $3 + 8 + 6 = 17$ (třemi dělitelné není)\n\n$591$: $5 + 9 + 1 = 15$, ale liché (dvěma dělitelné není)\n\n#### D) Dělitelné patnácti\n\n$735$: končí pětkou, $7 + 3 + 5 = 15$ (dělitelné pěti i třemi)\n\n$425$: končí pětkou, ale $4 + 2 + 5 = 11$ (třemi dělitelné není)\n\n$612$: $6 + 1 + 2 = 9$, ale končí dvojkou (pěti dělitelné není)\n\n**Výsledek:** A) $832$, B) $59$, C) $474$, D) $735$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, podívej se na poslední dvě číslice každého čísla. Které dvojčíslí jde vydělit čtyřmi beze zbytku?“"
+          },
+          {
+            "k": "B",
+            "text": "„Prvočíslo má přesně dva dělitele: jedničku a samo sebe. Zkus každé číslo vydělit dvěma, třemi, pěti, sedmi. Které to splňuje?“"
+          },
+          {
+            "k": "C a D",
+            "text": "„Šestka je dvě krát tři, patnáctka tři krát pět. Co tedy musí číslo splnit u šestky? A co u patnáctky?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč čtyři sta dvacet pět není dělitelné patnácti, i když končí pětkou.“",
+        "otocena_role_odpoved": "Patnáct je tři krát pět, takže číslo musí jít vydělit pěti i třemi. Pětkou končí, ale součet číslic je jedenáct a ten třemi dělitelný není.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $926$ nebo $718$: stačí mu sudé číslo. Zeptejte se: „Které číslo tvoří poslední dvě číslice?“ U B $91$ (sedm krát třináct) nebo $57$ (tři krát devatenáct). U C a D ověří jen jednu podmínku. Zeptejte se: „Z jakých dvou čísel se skládá?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — znaky dělitelnosti sedí. Pochvalte, že u šestky i patnáctky hlídalo obě podmínky, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Ukažte dítěti na telefonu čísla $540$, $372$ a $915$. U každého řekne, jestli je dělitelné šesti a jestli patnácti, a podle čeho to pozná. Kontrola pro vás: $540$ obojím (sudé, končí nulou, součet $9$); $372$ jen šesti (sudé, součet $12$); $915$ jen patnácti (končí pětkou, součet $15$, liché).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 20 kostek nebo knoflíků. Zítra ať dítě kostky rozdělí do hromádek po pěti, pak po třech, a řekne, kdy nic nezbude. Pak ať samo zapíše $20 = 4 \\cdot 5$ a řekne, proč dvacet není dělitelné patnácti. Potom zopakujte lekci „Dělitelnost a prvočísla“. Kontrola pro vás: po pěti nic nezbude, po třech zbudou 2; patnáctka potřebuje trojku i pětku."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Které číslo je dělitelné čtyřmi? — a) $926$ b) $832$ c) $718$\n\nB) Které číslo je prvočíslo? — a) $91$ b) $57$ c) $59$\n\nC) Které číslo je dělitelné šesti? — a) $474$ b) $386$ c) $591$\n\nD) Které číslo je dělitelné patnácti? — a) $425$ b) $612$ c) $735$"
+      }
+    },
+    {
+      "id": "M8-T01-L2N-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr zjišťoval, kterými z čísel $2$, $3$, $4$, $5$, $6$, $9$, $10$, $15$ je dělitelné číslo\n\n$$3\\,250$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $2$, $5$ a $10$ ano (poslední číslice je $0$)\n\n2. řádek: $3$, $6$ a $9$ ne ($3 + 2 + 5 + 0 = 10$)\n\n3. řádek: $4$ ne ($50$ čtyřmi dělitelné není), $15$ ano (dělitelné pěti)\n\n4. řádek: celkem $4$ čísla: $2$, $5$, $10$, $15$\n\nKolika čísly z nabídky je $3\\,250$ opravdu dělitelné?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$2$, $5$ a $10$ ano",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$3$, $6$ a $9$ ne, součet $10$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$4$ ne, $15$ ano (dělitelné pěti)",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "celkem $4$ čísla",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo"
+          },
+          "spravne": {
+            "hodnota": 3
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 4,
+              "typ_chyby": "delitelnost-slozena-jedna-podminka"
+            },
+            {
+              "hodnota": 5,
+              "typ_chyby": "delitelnost-slozena-jedna-podminka"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák, každý řádek je jedno jeho rozhodnutí. Chyba je jedna a naostro je schovaná vedle správného rozhodnutí. Výsledek je počet čísel z nabídky, kterými je $3\\,250$ dělitelné. Pro vás: patnáctka je tři krát pět, číslo musí být dělitelné třemi i pěti.",
+        "reseni": "Chyba je ve 3. řádku: u patnáctky nestačí pětka, číslo musí být dělitelné i třemi a $3\\,250$ není.\n\n$2$, $5$ a $10$ ano (poslední číslice je nula)\n\n$3$, $6$ a $9$ ne (součet číslic deset)\n\n$4$ ne (poslední dvojčíslí padesát)\n\n$15$ ne (třemi dělitelné není)\n\nDělitelé z nabídky: $2$, $5$, $10$ (tři čísla)\n\n**Výsledek:** $3$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Petr zjišťuje a na co se úloha ptá na konci.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každého čísla z nabídky mi řekni, podle čeho se o něm rozhoduje: podle poslední číslice, posledních dvou, součtu číslic, nebo dvou podmínek?“"
+          },
+          {
+            "k": "Krok 1 a výsledek",
+            "text": "„U každého Petrova rozhodnutí se zeptej: platí pro to číslo opravdu tohle pravidlo? Pak spočítej, kolik čísel z nabídky platí.“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč číslo dělitelné pěti nemusí být dělitelné patnácti.“",
+        "otocena_role_odpoved": "Patnáct je tři krát pět, takže číslo musí jít vydělit pěti i třemi. Tady je součet číslic deset, takže třemi ani patnácti dělitelné není.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 4. řádek? Zeptejte se: „Odkud se vzala čtyři čísla?“ (Z 3. řádku.) 1. a 2. řádek jsou správně. Výsledek $4$: opíše Petra; $5$: přidá i šestku, protože je číslo sudé. Zeptejte se: „Jaký je součet číslic?“ (Deset.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — i schovanou chybu našlo. Pochvalte, že u patnáctky hlídalo obě podmínky, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Ukažte dítěti na telefonu: „Petr tvrdí, že $1\\,240$ je dělitelné patnácti, protože končí nulou.“ Zeptejte se: „Má Petr pravdu? Podle čeho to poznáš?“ Kontrola pro vás: nemá; pěti dělitelné je, ale součet číslic $7$ třemi dělitelný není.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 25 kostek nebo knoflíků. Zítra ať dítě kostky rozdělí do hromádek po pěti a pak zkusí po třech. Ať řekne, kdy nic nezbude. Pak ať samo zapíše $25 = 5 \\cdot 5$ a řekne, proč pětadvacet není dělitelné patnácti. Potom zopakujte lekci „Dělitelnost a prvočísla“. Kontrola pro vás: po pěti nic nezbude, po třech zbude 1; patnáctka potřebuje trojku i pětku."
+      },
+      "tisk": {
+        "zadani": "Petr zjišťoval, kterými z čísel $2$, $3$, $4$, $5$, $6$, $9$, $10$, $15$ je dělitelné číslo\n\n$$3\\,250$$\n\na udělal jednu chybu.\n\n1. řádek: $2$, $5$ a $10$ ano (poslední číslice je $0$)\n\n2. řádek: $3$, $6$ a $9$ ne ($3 + 2 + 5 + 0 = 10$)\n\n3. řádek: $4$ ne ($50$ čtyřmi dělitelné není), $15$ ano (dělitelné pěti)\n\n4. řádek: celkem $4$ čísla: $2$, $5$, $10$, $15$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Kolika čísly z nabídky je $3\\,250$ opravdu dělitelné? ______"
+      }
+    },
+    {
+      "id": "M8-T01-L2N-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Na místo čtverečku doplň jednu číslici tak, aby bylo číslo dělitelné dvanácti:\n\n$$23\\square 4$$\n\nKolik různých číslic se na to místo hodí? Jaké největší číslo tak může vzniknout?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Vyber, co platí",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "musí být dělitelné třemi i čtyřmi",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "stačí, když je dělitelné třemi",
+                "spravne": false,
+                "typ_chyby": "delitelnost-slozena-jedna-podminka"
+              },
+              {
+                "id": "c",
+                "text": "stačí, když je dělitelné čtyřmi",
+                "spravne": false,
+                "typ_chyby": "delitelnost-slozena-jedna-podminka"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Kolik číslic se hodí?",
+          "vstup": {
+            "typ": "cislo"
+          },
+          "spravne": {
+            "hodnota": 2
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 4,
+              "typ_chyby": "delitelnost-4-podle-posledni-cislice"
+            },
+            {
+              "hodnota": 5,
+              "typ_chyby": "delitelnost-slozena-jedna-podminka"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Jaké největší číslo vznikne?",
+          "vstup": {
+            "typ": "cislo"
+          },
+          "spravne": {
+            "hodnota": 2364
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 2394,
+              "typ_chyby": "delitelnost-4-podle-posledni-cislice"
+            },
+            {
+              "hodnota": 2384,
+              "typ_chyby": "delitelnost-slozena-jedna-podminka"
+            },
+            {
+              "hodnota": 6,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Naostro: místo šestky je tu dvanáctka a čtvereček stojí uprostřed. Číslo je dělitelné dvanácti, když je dělitelné třemi i čtyřmi zároveň. Past: číslice ve čtverečku mění součet číslic i poslední dvojčíslí. Nula se počítá taky. Ve výsledku se chce celé číslo, ne číslice.",
+        "reseni": "$2 + 3 + 4 = 9$ (součet známých číslic)\n\n$0$, $3$, $6$, $9$ (s nimi je součet číslic dělitelný třemi)\n\n$04$, $24$, $44$, $64$, $84$ (dvojčíslí dělitelná čtyřmi, ve čtverečku musí být sudá číslice)\n\n$0$ a $6$ (splňují obojí)\n\n$2\\,304$ a $2\\,364$ (obě čísla jsou dělitelná dvanácti)\n\n**Výsledek:** hodí se $2$ číslice, největší číslo je $2\\,364$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co máš do čísla doplnit a na co se úloha ptá.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Dvanáct je tři krát čtyři. Čím vším musí jít číslo vydělit? A podle čeho to u každého poznáš?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: dva plus tři plus čtyři je devět. Se kterými číslicemi jde součet vydělit třemi? A dvojčíslí čtyřmi?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč se do čtverečku nehodí devítka, i když je s ní součet číslic dělitelný třemi.“",
+        "otocena_role_odpoved": "S devítkou by poslední dvojčíslí bylo devadesát čtyři a to čtyřmi dělitelné není. Pro dvanáctku musí platit obojí, dělitelné třemi i čtyřmi.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 2 $4$, výsledek $2\\,394$: čtyřku nehlídá (číslo přece končí čtyřkou, nebo stačí trojka). Zeptejte se: „Jde devadesát čtyři vydělit čtyřmi?“ (Nejde.) $5$, výsledek $2\\,384$: hlídá jen čtyřku; zeptejte se na součet číslic. $1$: zapomene na nulu. $6$: číslice místo čísla."
+      },
+      "semafor": {
+        "zelena": "Výborně — obě podmínky sedí i u dvanáctky. Pochvalte, že dítě hlídalo součet číslic i poslední dvojčíslí, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: „Do čísla $5\\square 6$ doplň číslici tak, aby bylo dělitelné dvanácti. Které číslice se hodí?“ Ať nahlas řekne, podle čeho rozhoduje. Kontrola pro vás: čtyřmi jen s lichou číslicí ($16$, $36$, $56$, $76$, $96$), třemi s $1$, $4$, $7$; hodí se $1$ a $7$ ($516$, $576$).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 30 kostek nebo bonbonů. Zítra ať dítě odpočítá 24 kusů a zkusí je rozdělit na 3 stejné hromádky, pak na 4. Pak totéž se všemi 30 kusy. Ať řekne, kdy jde obojí. Pak ať samo zapíše $24 = 3 \\cdot 8 = 4 \\cdot 6$. Potom zopakujte lekci „Dělitelnost a prvočísla“. Kontrola pro vás: 24 jde na 3 i na 4, je dělitelné dvanácti; 30 jen na 3."
+      },
+      "tisk": {
+        "zadani": "Na místo čtverečku doplň jednu číslici tak, aby bylo číslo dělitelné dvanácti:\n\n$$23\\square 4$$\n\nA) Co platí pro číslo dělitelné dvanácti? Zakroužkuj: a) musí být dělitelné třemi i čtyřmi b) stačí, když je dělitelné třemi c) stačí, když je dělitelné čtyřmi\n\nB) Kolik různých číslic se na to místo hodí? ______\n\nC) Jaké největší číslo tak může vzniknout? ______"
+      }
+    },
+    {
+      "id": "M8-T01-L2N-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Rozlož na součin prvočísel:\n\n$$1\\,386$$\n\nPak sečti všechna prvočísla z rozkladu, i ta, která se opakují. Jaký součet ti vyjde?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo"
+          },
+          "spravne": {
+            "hodnota": 26
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 23,
+              "typ_chyby": "rozklad-bez-opakovani"
+            },
+            {
+              "hodnota": 29,
+              "typ_chyby": "rozklad-neuplny"
+            },
+            {
+              "hodnota": 27,
+              "typ_chyby": "jednicka-je-prvocislo"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Naostro je číslo čtyřmístné a v rozkladu je pět prvočísel. Součet na konci je jen kontrola rozkladu.",
+        "reseni": "$1\\,386 = 2 \\cdot 693$ (sudé číslo, dělí se dvěma)\n\n$693 = 3 \\cdot 231$ (součet číslic osmnáct, dělí se třemi)\n\n$231 = 3 \\cdot 77$ (součet číslic šest, znovu třemi)\n\n$77 = 7 \\cdot 11$ (malá násobilka)\n\n$1\\,386 = 2 \\cdot 3 \\cdot 3 \\cdot 7 \\cdot 11$ (jen prvočísla, rozklad je hotový)\n\n$2 + 3 + 3 + 7 + 11 = 26$ (součet i s opakovanou trojkou)\n\n**Výsledek:** $26$",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co máš udělat a co potom sečíst.“",
+          "„Jakým prvočíslem jde tisíc tři sta osmdesát šest vydělit jako první? Podle čeho to poznáš?“",
+          "„Tady máš začátek: tisíc tři sta osmdesát šest je dva krát šest set devadesát tři. Čím jde dělit šest set devadesát tři?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč v rozkladu nesmí zůstat devítka ani sedmdesát sedm.“",
+        "otocena_role_odpoved": "Devítka je tři krát tři a sedmdesát sedm je sedm krát jedenáct, takže to nejsou prvočísla. V rozkladu smí být jen prvočísla, proto se rozkládá až do konce.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $29$: v rozkladu nechá devítku. Zeptejte se: „Je devítka prvočíslo?“ (Není.) $23$: trojku napíše jen jednou; zeptejte se: „Kolikrát se dělí třemi?“ (Dvakrát.) $27$: přičte i jedničku."
+      },
+      "semafor": {
+        "zelena": "Výborně — rozklad velkého čísla zvládá samo. Pochvalte, že dělilo, dokud nezůstala jen prvočísla. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu číslo $390$. Ať ho rozloží na součin prvočísel a nahlas řekne každé dělení. Kontrola pro vás: $390 = 2 \\cdot 195$, $195 = 3 \\cdot 65$, $65 = 5 \\cdot 13$, tedy $390 = 2 \\cdot 3 \\cdot 5 \\cdot 13$ (součet $23$).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 18 kostek nebo bonbonů. Zítra ať je dítě rozdělí na 2 stejné hromádky. Jednu z nich pak na 3 a jednu z menších zase na 3. Ať řekne, na kolik dílů pokaždé dělilo. Pak ať samo zapíše $18 = 2 \\cdot 3 \\cdot 3$. Potom zopakujte lekci „Dělitelnost a prvočísla“. Kontrola pro vás: dělilo na 2, na 3 a na 3; nakonec zbydou hromádky po 1."
+      },
+      "tisk": {
+        "zadani": "Rozlož na součin prvočísel:\n\n$$1\\,386$$\n\nPak sečti všechna prvočísla z rozkladu, i ta, která se opakují.\n\nRozklad: $1\\,386 =$ ______\n\nSoučet: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenze 9. 10. (naostro dvojče M8-T01-L2): vše přepočítáno nezávisle a přes vyhodnotKrok: U1 $832$, $59$, $474$, $735$; U2 $3$ ($4$, $5$); U3 číslice $0$ a $6$ → $2$, největší $2\\,364$; U4 $1\\,386 = 2 \\cdot 3 \\cdot 3 \\cdot 7 \\cdot 11$ → $26$; oranžové a červené kontroly sedí. Opraveno: úvod pro rodiče na jednu větu; typická chyba U3 doplněna o druhý zdroj hodnoty $4$. Rozhodnuto: dělitelnost $12$ a $15$ není nová látka, osnova tématu 1 ji uvádí u kódu delitelnost-slozena-jedna-podminka (6, 12, 15, 18) a složené znaky jsou 6. ročník; hodnota $4$ v U3 k2 (a $2\\,394$ ve final) vzniká z „končí čtyřkou“ i ze „stačí trojka“, u čtverečku v řádu desítek nejdou tyto chyby čísly oddělit (každá číslice dá sudé dvojčíslí), proto čísla zůstávají a kód delitelnost-4-podle-posledni-cislice platí, protože „stačí trojka“ zachytí už krok 1; U2 bez k2 jako učební L2 a osnova.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-09"
+  }
+}

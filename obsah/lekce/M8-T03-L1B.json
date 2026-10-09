@@ -1,0 +1,464 @@
+{
+  "id": "M8-T03-L1B",
+  "faze": "osma",
+  "tyden": 3,
+  "poradi": 1,
+  "tema": "Převody délky a hmotnosti",
+  "kapitola": "jednotky",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě převede délku a hmotnost na jinou jednotku a ví, kterým směrem a o kolik míst posunout čárku.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami. Jde o převody délky a hmotnosti: na menší jednotku se násobí, na větší dělí a čárka se posune o tolik míst, kolik má převodní číslo nul.",
+  "uvod_pravidla": [
+    {
+      "znak": "$1\\ \\text{km} = 1\\,000\\ \\text{m}$",
+      "text": "kilo znamená tisíc"
+    },
+    {
+      "znak": "$1\\ \\text{t} = 1\\,000\\ \\text{kg}$",
+      "text": "tuna je tisíc kilogramů"
+    },
+    {
+      "znak": "$350\\ \\text{g} = 0{,}35\\ \\text{kg}$",
+      "text": "na větší jednotku: dělení"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T03-L1B-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Kolik metrů je $5{,}3\\ \\text{km}$?\n\nB) Kolik kilogramů je $650\\ \\text{g}$?\n\nC) Kolik metrů je $64\\ \\text{cm}$?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $5{,}3\\ \\text{km}$ v metrech",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$0{,}0053$ m",
+                "spravne": false,
+                "typ_chyby": "prevod-spatnym-smerem"
+              },
+              {
+                "id": "b",
+                "text": "$530$ m",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "c",
+                "text": "$5\\,300$ m",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $650\\ \\text{g}$ v kilogramech",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$6{,}5$ kg",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "b",
+                "text": "$0{,}65$ kg",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$650\\,000$ kg",
+                "spravne": false,
+                "typ_chyby": "prevod-spatnym-smerem"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: $64\\ \\text{cm}$ v metrech",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$0{,}64$ m",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$6\\,400$ m",
+                "spravne": false,
+                "typ_chyby": "prevod-spatnym-smerem"
+              },
+              {
+                "id": "c",
+                "text": "$0{,}0064$ m",
+                "spravne": false,
+                "typ_chyby": "delka-po-stovkach"
+              },
+              {
+                "id": "d",
+                "text": "$6{,}4$ m",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě tu jen vybírá z nabídky. U každého příkladu rozhoduje dvě věci: násobit, nebo dělit (na menší jednotku se násobí, na větší dělí), a o kolik míst posunout čárku. Metr má sto centimetrů, kilometr tisíc metrů, kilogram tisíc gramů. Čte se: $0{,}65$ „nula celá šedesát pět“. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $5{,}3\\ \\text{km}$ v metrech\n\n$1\\ \\text{km} = 1\\,000\\ \\text{m}$ (kilo znamená tisíc)\n\n$5{,}3 \\cdot 1\\,000 = 5\\,300$ (na menší jednotku se násobí, čárka o tři místa doprava)\n\n#### B) $650\\ \\text{g}$ v kilogramech\n\n$1\\ \\text{kg} = 1\\,000\\ \\text{g}$ (kilogram je tisíc gramů)\n\n$650 : 1\\,000 = 0{,}65$ (na větší jednotku se dělí, čárka o tři místa doleva)\n\n#### C) $64\\ \\text{cm}$ v metrech\n\n$1\\ \\text{m} = 100\\ \\text{cm}$ (metr je sto centimetrů)\n\n$64 : 100 = 0{,}64$ (na větší jednotku se dělí, čárka o dvě místa doleva)\n\n**Výsledek:** A) $5\\,300$ m, B) $0{,}65$ kg, C) $0{,}64$ m",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, spočítej na papíře: kolik metrů má jeden kilometr? Vyjde metrů víc, nebo míň, než je kilometrů?“"
+          },
+          {
+            "k": "B",
+            "text": "„Kolik gramů má jeden kilogram? Je gram menší, nebo větší jednotka než kilogram? Budeš tedy násobit, nebo dělit?“"
+          },
+          {
+            "k": "C",
+            "text": "„Kolik centimetrů má jeden metr? Je šedesát čtyři centimetrů víc než metr, nebo míň?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč u převodu kilometrů na metry násobíš, a ne dělíš.“",
+        "otocena_role_odpoved": "Metr je menší jednotka, do kilometru se jich vejde tisíc. Metrů proto vyjde víc než kilometrů, a tak se násobí tisícem. Pět celých tři kilometru je pět tisíc tři sta metrů.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. $0{,}0053$ m, $650\\,000$ kg nebo $6\\,400$ m: plete si směr. Zeptejte se: „Vyjde větší, nebo menší číslo?“ (U A větší, u B a C menší.) $530$ m, $6{,}5$ kg nebo $6{,}4$ m: posune čárku o jiný počet míst. $0{,}0064$ m: převádí délku po stovkách."
+      },
+      "semafor": {
+        "zelena": "Výborně — převody sedí. Pochvalte, že dítě u každého příkladu nejdřív rozhodlo, jestli násobí, nebo dělí, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Kolik metrů je $7$ km? Kolik kilogramů je $200$ g? Kolik metrů je $90$ cm?“ U každého ať řekne, jestli násobí, nebo dělí, a čím. Kontrola pro vás: krát tisíc, $7\\,000$ m; děleno tisícem, $0{,}2$ kg (dvě desetiny kila); děleno stem, $0{,}9$ m (devět desetin metru).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko a tabulku čokolády $100$ g. Zítra ať dítě na pravítku ukáže $10$ cm a řekne, kolikrát se vejdou do metru. Pak ať vezme čokoládu a řekne, kolik takových tabulek váží kilogram. Pak ať samo zapíše $1\\ \\text{m} = 100\\ \\text{cm}$ a $1\\ \\text{kg} = 1\\,000\\ \\text{g}$. Potom zopakujte lekci „Převody délky a hmotnosti“. Kontrola pro vás: desetkrát, deset tabulek."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Kolik metrů je $5{,}3\\ \\text{km}$? — a) $0{,}0053$ m b) $530$ m c) $5\\,300$ m\n\nB) Kolik kilogramů je $650\\ \\text{g}$? — a) $6{,}5$ kg b) $0{,}65$ kg c) $650\\,000$ kg\n\nC) Kolik metrů je $64\\ \\text{cm}$? — a) $0{,}64$ m b) $6\\,400$ m c) $0{,}0064$ m d) $6{,}4$ m"
+      }
+    },
+    {
+      "id": "M8-T03-L1B-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Honzík jel na koloběžce nejdřív $0{,}32\\ \\text{km}$ po chodníku, pak $48\\ \\text{m}$ přes náměstí a nakonec $130\\ \\text{cm}$ ke stojanu. Kolik metrů ujel celkem?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $0{,}32\\ \\text{km} = 320\\ \\text{m}$\n\n2. řádek: $320 + 48 = 368\\ \\text{m}$\n\n3. řádek: $130\\ \\text{cm} = 13\\ \\text{m}$\n\n4. řádek: $368 + 13 = 381\\ \\text{m}$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$0{,}32\\ \\text{km} = 320\\ \\text{m}$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$320 + 48 = 368\\ \\text{m}$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$130\\ \\text{cm} = 13\\ \\text{m}$",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$368 + 13 = 381\\ \\text{m}$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$130\\ \\text{cm} = 0{,}013\\ \\text{m}$",
+                "spravne": false,
+                "typ_chyby": "delka-po-stovkach"
+              },
+              {
+                "id": "b",
+                "text": "$130\\ \\text{cm} = 13\\,000\\ \\text{m}$",
+                "spravne": false,
+                "typ_chyby": "prevod-spatnym-smerem"
+              },
+              {
+                "id": "c",
+                "text": "$130\\ \\text{cm} = 1{,}3\\ \\text{m}$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m"
+          },
+          "spravne": {
+            "hodnota": 369.3
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 381,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 498,
+              "typ_chyby": "zapomnel-prevest-jednotky"
+            },
+            {
+              "hodnota": 36930,
+              "typ_chyby": "jednotka-ve-vysledku-spatne"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Cesta má tři úseky v různých jednotkách: kilometry, metry a centimetry. Petr je převádí na metry a sčítá. Chyba je jedna a řádek za ní je spočítaný dobře, jen se špatným číslem. Čte se: $0{,}32$ km „nula celá třicet dva kilometru“, výsledek $369{,}3$ „tři sta šedesát devět celých tři“.",
+        "reseni": "Chyba je ve 3. řádku: metr má sto centimetrů, ne deset. Petr posunul čárku jen o jedno místo.\n\n$0{,}32\\ \\text{km} = 320\\ \\text{m}$ (kilometr je tisíc metrů)\n\n$320 + 48 = 368$ (první dva úseky v metrech)\n\n$130\\ \\text{cm} = 1{,}3\\ \\text{m}$ (metr je sto centimetrů, dělí se stem)\n\n$368 + 1{,}3 = 369{,}3$ (celá cesta v metrech)\n\nDlaždice $0{,}013$ m a $13\\,000$ m nesedí (první převádí délku po stovkách, druhá násobí místo dělení)\n\n**Výsledek:** $369{,}3$ m",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, kudy Honzík jel a v jakých jednotkách jsou jednotlivé úseky.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky jeden po druhém. U každého řekni, jestli v něm Petr převádí, nebo sčítá, a které jednotky.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého převodu se zeptej: kolik menších jednotek je v jedné větší? Posunul Petr čárku o tolik míst, kolik to číslo má nul?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč sto třicet centimetrů není třináct metrů.“",
+        "otocena_role_odpoved": "Metr má sto centimetrů, takže sto třicet centimetrů je jen metr a třicet centimetrů, tedy jedna celá tři metru. Třináct metrů by bylo tisíc tři sta centimetrů.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 4. řádek? Ten jen sčítá, chyba je dřív. Zeptejte se: „Odkud je třináct?“ (Ze 3. řádku.) Kdo sám dělí deseti, klikne na 1. nebo 2. řádek; ty jsou správně. Výsledek $381$: opíše Petra; $498$: centimetry nepřevede; $36\\,930$: odpoví v centimetrech."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že u každého převodu hlídalo, kolik centimetrů má metr, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Petr tvrdí, že $70$ cm je $7$ m. Má pravdu?“ Pak: „Kolik metrů je $190$ cm?“ Ať nahlas řekne, kolik centimetrů má metr a co s tím udělá. Kontrola pro vás: nemá, $70$ cm je $0{,}7$ m (necelý metr); $190$ cm je $1{,}9$ m (metr a devadesát centimetrů).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: svinovací nebo krejčovský metr. Zítra ať dítě na metru ukáže $1$ m a pak $130$ cm, tedy celý metr a ještě kus. Zeptejte se: „Kolik je to metrů?“ Pak ať samo zapíše $130 : 100 = 1{,}3$. Potom zopakujte lekci „Převody délky a hmotnosti“. Kontrola pro vás: jedna celá tři metru (metr a třicet centimetrů)."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\nHonzík jel na koloběžce nejdřív $0{,}32\\ \\text{km}$ po chodníku, pak $48\\ \\text{m}$ přes náměstí a nakonec $130\\ \\text{cm}$ ke stojanu. Kolik metrů ujel celkem?\n\na udělal jednu chybu.\n\n1. řádek: $0{,}32\\ \\text{km} = 320\\ \\text{m}$\n\n2. řádek: $320 + 48 = 368\\ \\text{m}$\n\n3. řádek: $130\\ \\text{cm} = 13\\ \\text{m}$\n\n4. řádek: $368 + 13 = 381\\ \\text{m}$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $130\\ \\text{cm} = 0{,}013\\ \\text{m}$ b) $130\\ \\text{cm} = 13\\,000\\ \\text{m}$ c) $130\\ \\text{cm} = 1{,}3\\ \\text{m}$\n\nC) Kolik metrů Honzík opravdu ujel? ______ m"
+      }
+    },
+    {
+      "id": "M8-T03-L1B-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Adam ($46$ kg) a jeho strýc ($74$ kg) převážejí na přívozu přes řeku trámy na stavbu chaty. Každý trám váží $30$ kg. Přívoz má nosnost $0{,}9\\ \\text{t}$, víc uvézt nesmí.\n\nKolik trámů nejvýš mohou naložit, když jedou na přívozu s nimi?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Vyber, co platí",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$0{,}9\\ \\text{t} = 9\\,000\\ \\text{kg}$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "b",
+                "text": "$0{,}9\\ \\text{t} = 900\\ \\text{kg}$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$0{,}9\\ \\text{t} = 90\\ \\text{kg}$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "d",
+                "text": "$0{,}9\\ \\text{t} = 0{,}0009\\ \\text{kg}$",
+                "spravne": false,
+                "typ_chyby": "prevod-spatnym-smerem"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: hmotnost všech trámů",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "kg"
+          },
+          "spravne": {
+            "hodnota": 780
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 854,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 826,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 120,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 8880,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "trámů"
+          },
+          "spravne": {
+            "hodnota": 26
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 30,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 296,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 4,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce. Nosnost je nejvyšší hmotnost, kterou přívoz uveze. Je v tunách, lidé a trámy v kilogramech, proto se nejdřív převádí. Past: na přívozu jedou i Adam se strýcem, na trámy zbude jen to, co po nich zůstane. Čte se: $0{,}9$ t „nula celá devět tuny“ (devět desetin tuny).",
+        "reseni": "$0{,}9\\ \\text{t} = 900\\ \\text{kg}$ (tuna je tisíc kilogramů)\n\n$46 + 74 = 120$ (Adam a strýc dohromady)\n\n$900 - 120 = 780$ (kilogramy, které zbývají na trámy)\n\n$780 : 30 = 26$ (počet trámů)\n\n$26 \\cdot 30 + 120 = 900$ (zkouška, přívoz je přesně plný)\n\n**Výsledek:** $26$ trámů",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, kdo a co pojede na přívozu. Na co se úloha ptá?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„V jakých jednotkách je nosnost přívozu a v jakých lidé a trámy? Kolik kilogramů má jedna tuna?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: desetina tuny je sto kilogramů. Kolik kilogramů zbude na trámy, když jedou i Adam se strýcem? Kolik trámů to je?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč nestačí vydělit devět set kilogramů třiceti.“",
+        "otocena_role_odpoved": "Protože na přívozu jedou i Adam se strýcem a ti váží dohromady sto dvacet kilogramů. Na trámy zbývá jen sedm set osmdesát kilogramů, a to je dvacet šest trámů.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Výsledek $30$: zapomene na lidi. Zeptejte se: „Kdo pojede na přívozu?“ (Adam, strýc, trámy.) V kroku 2 $854$, $826$: odečte jen jednoho; $120$ (pak $4$): hmotnost lidí. V kroku 1 jiná než $900$ kg: „Kolik kilogramů má tuna?“ (Tisíc.) Z $9\\,000$ pak $8\\,880$ a $296$."
+      },
+      "semafor": {
+        "zelena": "Výborně — převod i hmotnost lidí ohlídalo. Pochvalte, že si dítě nejdřív převedlo tuny na kilogramy, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Vozík lanovky uveze $0{,}4$ t. Obsluha váží $92$ kg. Kolik beden po $22$ kg ještě naloží?“ Ať řeší na papír a nahlas řekne převod, kolik kilogramů zbývá a počet beden. Kontrola pro vás: $400$ kg; zbývá $308$ kg; $14$ beden.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 12 kostek nebo knoflíků a krabičku jako přívoz. Zítra řekněte: „Přívoz uveze 12 kostek. Adam zabere jednu, strýc dvě, zbytek je pro trámy.“ Ať dítě dá do krabičky nejdřív tři kostky za lidi, pak přidává trámy, dokud je místo, a spočítá je. Pak ať samo zapíše $12 - 3 = 9$. Potom zopakujte lekci „Převody délky a hmotnosti“. Kontrola pro vás: devět trámů, tři místa zaberou lidé."
+      },
+      "tisk": {
+        "zadani": "Adam ($46$ kg) a jeho strýc ($74$ kg) převážejí na přívozu přes řeku trámy na stavbu chaty. Každý trám váží $30$ kg. Přívoz má nosnost $0{,}9\\ \\text{t}$, víc uvézt nesmí.\n\nKolik trámů nejvýš mohou naložit, když jedou na přívozu s nimi?\n\nA) Co platí? Zakroužkuj: a) $0{,}9\\ \\text{t} = 9\\,000\\ \\text{kg}$ b) $0{,}9\\ \\text{t} = 900\\ \\text{kg}$ c) $0{,}9\\ \\text{t} = 90\\ \\text{kg}$ d) $0{,}9\\ \\text{t} = 0{,}0009\\ \\text{kg}$\n\nB) Hmotnost všech trámů: ______ kg\n\nC) Výsledek: ______ trámů"
+      }
+    },
+    {
+      "id": "M8-T03-L1B-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Lucka má $2{,}2\\ \\text{kg}$ zrní pro ptáky. Sype ho do sáčků po $200\\ \\text{g}$.\n\nKolik sáčků naplní?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "sáčků"
+          },
+          "spravne": {
+            "hodnota": 11
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 110,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 1.1,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 0.011,
+              "typ_chyby": "zapomnel-prevest-jednotky"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Zrní je v kilogramech, sáček v gramech: před dělením musí být obě hmotnosti ve stejné jednotce. Čte se: $2{,}2$ kg „dvě celé dva kilogramu“.",
+        "reseni": "$2{,}2\\ \\text{kg} = 2\\,200\\ \\text{g}$ (kilogram je tisíc gramů)\n\n$2\\,200 : 200 = 11$ (počet sáčků; jiná cesta: do kilogramu se vejde pět sáčků, do dvou kilogramů deset a do zbylých dvou set gramů ještě jeden)\n\n**Výsledek:** $11$ sáčků",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co Lucka dělá a na co se úloha ptá.“",
+          "„V jakých jednotkách je zrní a v jakých sáček? Co uděláš, než začneš dělit?“",
+          "„Tady máš začátek: kolik sáčků po dvou stech gramech se vejde do jednoho kilogramu? Kolik jich bude ze dvou kilogramů a kolik ze zbytku?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč nemůžeš rovnou dělit dvě celé dva dvěma sty.“",
+        "otocena_role_odpoved": "Protože zrní je v kilogramech a sáček v gramech. Nejdřív musí být obojí v gramech: dvě celé dva kilogramu je dva tisíce dvě stě gramů. Pak vyjde jedenáct sáčků.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $110$ nebo $1{,}1$: převede o jiný počet míst. Zeptejte se: „Kolik gramů má kilogram?“ (Tisíc.) $0{,}011$: nepřevede vůbec a dělí rovnou dvě celé dva."
+      },
+      "semafor": {
+        "zelena": "Výborně — převod i dělení zvládá samo. Pochvalte, že si nejdřív sjednotilo jednotky. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Kolik sáčků po $100$ g naplníš ze $7$ kg čaje? A kolik kousků po $30$ cm ustřihneš ze $3$ m provázku?“ Ať u každého nejdřív řekne převod. Kontrola pro vás: $7\\,000$ g, $70$ sáčků; $300$ cm, $10$ kousků.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: kilogramový balíček cukru nebo mouky, misku a kuchyňskou váhu. Zítra ať dítě odváží do misky $200$ g a řekne, kolikrát by se to vešlo do celého balíčku. Pak ať samo zapíše $1\\,000 : 200 = 5$. Potom zopakujte lekci „Převody délky a hmotnosti“. Kontrola pro vás: pětkrát, kilogram je tisíc gramů."
+      },
+      "tisk": {
+        "zadani": "Lucka má $2{,}2\\ \\text{kg}$ zrní pro ptáky. Sype ho do sáčků po $200\\ \\text{g}$.\n\nKolik sáčků naplní?\n\nVýsledek: ______ sáčků"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 9. 10. 2026: všechna čísla, mezivýsledky a známé chyby přepočítány nezávisle (python Fraction, vzorec každé chyby), správné odpovědi, dlaždice a známé chyby ověřeny přes vyhodnotKrok. U1 5 300 m; 0,65 kg; 0,64 m. U2 320 + 48 + 1,3 = 369,3 m (381; 498; 36 930). U3 900 − 120 = 780 kg, 780 : 30 = 26 (854, 826, 120, 8 880; 30, 296, 4). U4 2 200 : 200 = 11 (110; 1,1; 0,011). Oranžové a červené přepočítány (308 : 22 = 14; 12 − 3 = 9). Struktura, kroky, vstupy, kódy chyb a obtížnost odpovídají M8-T03-L1, čísla a kontexty hlavní lekce se neopakují. Limity slov, otázky (bez rodu, bez výsledku kroku) a tisk v pořádku. Věcné chyby: žádné.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-09"
+  }
+}

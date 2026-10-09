@@ -1,0 +1,470 @@
+{
+  "id": "M8-T01-L3N",
+  "faze": "osma",
+  "tyden": 1,
+  "poradi": 3,
+  "tema": "Dělitel a násobek v úlohách",
+  "kapitola": "pocetni-operace",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo pozná, jestli úloha chce největší společný dělitel, nebo nejmenší společný násobek, a spočítá ho i pro tři čísla.",
+  "uvod_pro_rodice": "Naostro: dítě tuhle látku dělalo v lekci „Dělitel a násobek v úlohách“ a dnes ukáže, že společný dělitel a násobek pozná a spočítá samo, i pro tři čísla.",
+  "uvod_pravidla": [
+    {
+      "znak": "$D(14, 21) = 7$",
+      "text": "největší, co dělí obě"
+    },
+    {
+      "znak": "$n(6, 15) = 30$",
+      "text": "nejmenší násobek obou"
+    },
+    {
+      "znak": "$n(6, 9) = 18$, ne $54$",
+      "text": "ne vždy součin"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T01-L3N-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) $D(36, 48)$\n\nB) $n(10, 12)$\n\nC) $D(18, 45)$\n\nD) Adam má $30$ modrých a $42$ zelených korálků. Chce z nich udělat co nejvíc stejných náramků a nic nesmí zbýt. Co hledá?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $D(36, 48)$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$6$",
+                "spravne": false,
+                "typ_chyby": "rozklad-bez-opakovani"
+              },
+              {
+                "id": "b",
+                "text": "$144$",
+                "spravne": false,
+                "typ_chyby": "nsd-nsn-zamena"
+              },
+              {
+                "id": "c",
+                "text": "$12$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $n(10, 12)$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$60$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$120$",
+                "spravne": false,
+                "typ_chyby": "nsn-soucin-cisel"
+              },
+              {
+                "id": "c",
+                "text": "$2$",
+                "spravne": false,
+                "typ_chyby": "nsd-nsn-zamena"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: $D(18, 45)$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$90$",
+                "spravne": false,
+                "typ_chyby": "nsd-nsn-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$9$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$3$",
+                "spravne": false,
+                "typ_chyby": "rozklad-bez-opakovani"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: co Adam hledá?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$n(30, 42)$",
+                "spravne": false,
+                "typ_chyby": "nsd-nsn-zamena"
+              },
+              {
+                "id": "b",
+                "text": "největší dělitel jen čísla $42$",
+                "spravne": false,
+                "typ_chyby": "prehledl-udaj"
+              },
+              {
+                "id": "c",
+                "text": "$D(30, 42)$",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Naostro: o příklad víc než v lekci, dělitel a násobek se střídají. Dítě jen vybírá z nabídky. Čte se: $D(36, 48)$ „největší společný dělitel čísel třicet šest a čtyřicet osm“, $n(10, 12)$ „nejmenší společný násobek čísel deset a dvanáct“. U D nic nepočítá, jen pozná, co se hledá. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $D(36, 48)$\n\n$36 = 2 \\cdot 2 \\cdot 3 \\cdot 3$, $48 = 2 \\cdot 2 \\cdot 2 \\cdot 2 \\cdot 3$ (rozklady)\n\n$D(36, 48) = 2 \\cdot 2 \\cdot 3 = 12$ (společné jsou dvě dvojky a jedna trojka)\n\n#### B) $n(10, 12)$\n\n$12$, $24$, $36$, $48$, $60$ (násobky dvanácti)\n\n$60 : 10 = 6$ (šedesát je první, které jde vydělit i deseti)\n\n#### C) $D(18, 45)$\n\n$18 = 2 \\cdot 3 \\cdot 3$, $45 = 3 \\cdot 3 \\cdot 5$ (rozklady)\n\n$D(18, 45) = 3 \\cdot 3 = 9$ (společné jsou dvě trojky)\n\n#### D) Náramky\n\n$D(30, 42)$ (počet náramků musí dělit obě čísla a má být co největší; vyšlo by šest náramků)\n\n**Výsledek:** A) $12$, B) $60$, C) $9$, D) $D(30, 42)$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, rozlož obě čísla na prvočísla. Která prvočísla mají společná a kolikrát?“"
+          },
+          {
+            "k": "B",
+            "text": "„Napiš si pár násobků dvanácti. Který z nich jde vydělit i deseti?“"
+          },
+          {
+            "k": "C a D",
+            "text": "„U C najdi co největší číslo, které dělí obě čísla. U D se korálky rozdělují. Hledáš číslo menší, nebo větší než třicet?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč největší společný dělitel třiceti šesti a čtyřiceti osmi není šest.“",
+        "otocena_role_odpoved": "Šest dělí obě čísla, ale není největší. Obě čísla mají v rozkladu dvě dvojky a trojku, takže jde vzít dvanáct a to dělí obě taky.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. A $144$, B $2$, C $90$, D $n$: plete si dělitel a násobek; zeptejte se: „Má vyjít víc, nebo míň než zadaná čísla?“ (Dělitel míň, násobek víc.) A $6$, C $3$: opakované prvočíslo bere jednou. B $120$: jen vynásobí. D „jen $42$“: přehlédne modré korálky."
+      },
+      "semafor": {
+        "zelena": "Výborně — dělitel i násobek sedí. Pochvalte, že dítě u každého příkladu poznalo, co hledá, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu $D(24, 40)$, pak $n(6, 14)$. U každého řekne výsledek a jak ho našlo. Pak se zeptejte: „Ze $16$ jablek a $24$ hrušek chceš co nejvíc stejných košíků. Hledáš dělitel, nebo násobek?“ Kontrola pro vás: $8$; $42$; dělitel, $8$ košíků.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 6 kostek jedné barvy a 9 jiné (nebo knoflíky). Zítra ať dítě udělá co nejvíc stejných hromádek tak, aby nic nezbylo. Pak ať samo zapíše $D(6, 9) = 3$. Potom zopakujte lekci „Dělitel a násobek v úlohách“. Kontrola pro vás: 3 hromádky, v každé 2 kostky první barvy a 3 druhé."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) $D(36, 48)$ — a) $6$ b) $144$ c) $12$\n\nB) $n(10, 12)$ — a) $60$ b) $120$ c) $2$\n\nC) $D(18, 45)$ — a) $90$ b) $9$ c) $3$\n\nD) Adam má $30$ modrých a $42$ zelených korálků. Chce z nich udělat co nejvíc stejných náramků a nic nesmí zbýt. Co hledá? — a) $n(30, 42)$ b) největší dělitel jen čísla $42$ c) $D(30, 42)$"
+      }
+    },
+    {
+      "id": "M8-T01-L3N-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr hledal největší společný dělitel\n\n$$D(84, 126)$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $84 = 2 \\cdot 2 \\cdot 3 \\cdot 7$\n\n2. řádek: $126 = 2 \\cdot 7 \\cdot 9$\n\n3. řádek: $D(84, 126) = 2 \\cdot 7$\n\n4. řádek: $D(84, 126) = 14$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$84 = 2 \\cdot 2 \\cdot 3 \\cdot 7$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$126 = 2 \\cdot 7 \\cdot 9$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$D(84, 126) = 2 \\cdot 7$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$D(84, 126) = 14$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$126 = 2 \\cdot 3 \\cdot 7$",
+                "spravne": false,
+                "typ_chyby": "rozklad-bez-opakovani"
+              },
+              {
+                "id": "b",
+                "text": "$126 = 2 \\cdot 3 \\cdot 21$",
+                "spravne": false,
+                "typ_chyby": "rozklad-neuplny"
+              },
+              {
+                "id": "c",
+                "text": "$126 = 2 \\cdot 3 \\cdot 3 \\cdot 7$",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "$126 = 1 \\cdot 2 \\cdot 3 \\cdot 3 \\cdot 7$",
+                "spravne": false,
+                "typ_chyby": "jednicka-je-prvocislo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo"
+          },
+          "spravne": {
+            "hodnota": 42
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 14,
+              "typ_chyby": "rozklad-neuplny"
+            },
+            {
+              "hodnota": 252,
+              "typ_chyby": "nsd-nsn-zamena"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Rozložil obě čísla na prvočísla a z rozkladů skládá dělitel. Pro vás: v rozkladu smějí být jen prvočísla a do dělitele patří, co mají oba rozklady společné. Zkouška: výsledek dělí obě čísla. Čte se: $D(84, 126)$ „největší společný dělitel čísel osmdesát čtyři a sto dvacet šest“.",
+        "reseni": "Chyba je ve 2. řádku: devítka není prvočíslo, rozklad má pokračovat.\n\n$84 = 2 \\cdot 2 \\cdot 3 \\cdot 7$ (rozklad)\n\n$126 = 2 \\cdot 3 \\cdot 3 \\cdot 7$ (rozklad jen z prvočísel, devítka je tři krát tři)\n\n$D(84, 126) = 2 \\cdot 3 \\cdot 7$ (společná je jedna dvojka, jedna trojka a sedmička)\n\n$D(84, 126) = 42$ (zkouška: osmdesát čtyři je dvakrát čtyřicet dva, sto dvacet šest třikrát)\n\nDlaždice $2 \\cdot 3 \\cdot 7$ vynechává opakovanou trojku, dlaždice s $21$ nemá rozklad dokončený, jednička do rozkladu nepatří (není prvočíslo)\n\n**Výsledek:** $42$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Petr hledá. Má vyjít číslo menší, nebo větší než osmdesát čtyři?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky. U každého mi řekni, co v něm Petr dělá.“"
+          },
+          {
+            "k": "Krok 1 a výsledek",
+            "text": "„U každého řádku se zeptej: jsou v rozkladu jen prvočísla? Jde výsledek vydělit oběma čísly a je opravdu největší?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč v rozkladu nesmím nechat devítku.“",
+        "otocena_role_odpoved": "Devítka není prvočíslo, je to tři krát tři. Když ji nechám, nevidím, že trojku mají obě čísla, a dělitel vyjde moc malý. Správně je čtyřicet dva.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 3. nebo 4. řádek? Ty navazují dobře na 2. řádek. Zeptejte se: „Je devítka prvočíslo?“ (Není.) 1. řádek je správně. V kroku 2 jednička: ta prvočíslo není. Výsledek $14$: opíše Petra; $252$: hledá násobek. Zeptejte se: „Jde osmdesát čtyři vydělit tvým výsledkem?“ (Nejde.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — schovanou chybu v rozkladu našlo. Pochvalte, že hlídalo, jestli jsou v rozkladu jen prvočísla, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: „Petr tvrdí, že $90 = 2 \\cdot 5 \\cdot 9$ je rozklad na prvočísla.“ Zeptejte se: „Má Petr pravdu? Jak rozklad dokončíš?“ Kontrola pro vás: nemá, devítka není prvočíslo; $90 = 2 \\cdot 3 \\cdot 3 \\cdot 5$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše všechny dělitele čísla 20 a pod ně všechny dělitele čísla 30. Ať zakroužkuje čísla, která jsou v obou řádcích. Pak ať samo zapíše $D(20, 30) = 10$. Potom zopakujte lekci „Dělitel a násobek v úlohách“. Kontrola pro vás: dělitelé 20: 1, 2, 4, 5, 10, 20; dělitelé 30: 1, 2, 3, 5, 6, 10, 15, 30; společné 1, 2, 5, 10."
+      },
+      "tisk": {
+        "zadani": "Petr hledal největší společný dělitel\n\n$$D(84, 126)$$\n\na udělal jednu chybu.\n\n1. řádek: $84 = 2 \\cdot 2 \\cdot 3 \\cdot 7$\n\n2. řádek: $126 = 2 \\cdot 7 \\cdot 9$\n\n3. řádek: $D(84, 126) = 2 \\cdot 7$\n\n4. řádek: $D(84, 126) = 14$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $126 = 2 \\cdot 3 \\cdot 7$ b) $126 = 2 \\cdot 3 \\cdot 21$ c) $126 = 2 \\cdot 3 \\cdot 3 \\cdot 7$ d) $126 = 1 \\cdot 2 \\cdot 3 \\cdot 3 \\cdot 7$\n\nC) Výsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T01-L3N-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Klára a Adam chystají pro závodníky na sportovní den stejné balíčky. Mají $48$ müsli tyčinek, $72$ jablek a $60$ lahví vody. Chtějí udělat co nejvíc stejných balíčků tak, aby nic nezbylo.\n\nKolik balíčků udělají? Kolik lahví vody bude v jednom balíčku?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Co potřebuješ zjistit nejdřív?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "největší společný dělitel $48$ a $72$",
+                "spravne": false,
+                "typ_chyby": "prehledl-udaj"
+              },
+              {
+                "id": "b",
+                "text": "největší společný dělitel všech tří čísel",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "nejmenší společný násobek všech tří čísel",
+                "spravne": false,
+                "typ_chyby": "nsd-nsn-zamena"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Kolik balíčků udělají?",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "balíčků"
+          },
+          "spravne": {
+            "hodnota": 12
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 24,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 6,
+              "typ_chyby": "rozklad-bez-opakovani"
+            },
+            {
+              "hodnota": 720,
+              "typ_chyby": "nsd-nsn-zamena"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Kolik lahví vody je v balíčku?",
+          "vstup": {
+            "typ": "cislo"
+          },
+          "spravne": {
+            "hodnota": 5
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 10,
+              "typ_chyby": "rozklad-bez-opakovani"
+            },
+            {
+              "hodnota": 12,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Naostro: místo dvou druhů věcí jsou tři. Počet balíčků musí beze zbytku dělit všechna tři čísla a má být co největší: hledá se největší společný dělitel všech tří. Pak se spočítá, kolik lahví vody připadne na jeden balíček. Pomůže rozklad na prvočísla, jde to i zkoušením dělitelů.",
+        "reseni": "$48 = 2 \\cdot 2 \\cdot 2 \\cdot 2 \\cdot 3$ (rozklad)\n\n$72 = 2 \\cdot 2 \\cdot 2 \\cdot 3 \\cdot 3$ (rozklad)\n\n$60 = 2 \\cdot 2 \\cdot 3 \\cdot 5$ (rozklad)\n\n$D(48, 72, 60) = 2 \\cdot 2 \\cdot 3 = 12$ (společné všem třem: dvě dvojky a trojka)\n\n$60 : 12 = 5$ (lahví vody v jednom balíčku)\n\n**Výsledek:** $12$ balíčků, v každém $5$ lahví vody",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Klára s Adamem chystají a na co se úloha ptá.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Počet balíčků musí beze zbytku rozdělit tyčinky, jablka i vodu. Hledáš dělitel, nebo násobek? A kterých čísel?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: čtyřicet osm je dva krát dva krát dva krát dva krát tři. Jak rozložíš zbylá dvě čísla? Co mají všechna společné?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč nemůžou udělat dvacet čtyři balíčků, i když dvacet čtyři dělí tyčinky i jablka.“",
+        "otocena_role_odpoved": "Šedesát lahví vody nejde rozdělit do dvaceti čtyř balíčků beze zbytku. Počet balíčků musí dělit všechna tři čísla a největší takové číslo je dvanáct.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 2 $24$: přehlédne vodu. Zeptejte se: „Jde šedesát lahví rozdělit do dvaceti čtyř balíčků?“ (Nejde.) $6$ a výsledek $10$: opakovanou dvojku bere jednou. $720$: hledá násobek. Výsledek $12$: počet balíčků místo lahví v balíčku."
+      },
+      "semafor": {
+        "zelena": "Výborně — dělitel tří čísel sedí. Pochvalte, že dítě ohlídalo všechny tři druhy věcí, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Máš $18$ jablek, $30$ hrušek a $42$ švestek. Chceš co nejvíc stejných košíků a nic nesmí zbýt. Kolik bude košíků a kolik ovoce v každém?“ Ať nahlas řekne, jestli hledá dělitel, nebo násobek. Kontrola pro vás: dělitel, $D(18, 30, 42) = 6$ košíků, v každém $3 + 5 + 7 = 15$ kusů.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 4 kostky jedné barvy, 6 druhé a 8 třetí (nebo knoflíky). Zítra ať dítě udělá co nejvíc stejných hromádek tak, aby nic nezbylo. Pak ať samo zapíše $D(4, 6, 8) = 2$. Potom zopakujte lekci „Dělitel a násobek v úlohách“. Kontrola pro vás: 2 hromádky, v každé 2 kostky první barvy, 3 druhé a 4 třetí."
+      },
+      "tisk": {
+        "zadani": "Klára a Adam chystají pro závodníky na sportovní den stejné balíčky. Mají $48$ müsli tyčinek, $72$ jablek a $60$ lahví vody. Chtějí udělat co nejvíc stejných balíčků tak, aby nic nezbylo.\n\nKolik balíčků udělají? Kolik lahví vody bude v jednom balíčku?\n\nA) Co potřebuješ zjistit nejdřív? Zakroužkuj: a) největší společný dělitel $48$ a $72$ b) největší společný dělitel všech tří čísel c) nejmenší společný násobek všech tří čísel\n\nB) Počet balíčků: ______\n\nC) Lahví vody v jednom balíčku: ______"
+      }
+    },
+    {
+      "id": "M8-T01-L3N-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Na vánočním stromku jsou tři řetězy světýlek. První blikne každých $8$ sekund, druhý každých $12$ sekund a třetí každých $18$ sekund. Teď blikly všechny tři najednou.\n\nZa kolik sekund bliknou zase všechny tři najednou?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "s"
+          },
+          "spravne": {
+            "hodnota": 72
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 24,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 2,
+              "typ_chyby": "nsd-nsn-zamena"
+            },
+            {
+              "hodnota": 1728,
+              "typ_chyby": "nsn-soucin-cisel"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Naostro jsou čísla tři: hledá se nejmenší číslo, které jde vydělit osmi, dvanácti i osmnácti.",
+        "reseni": "$8 = 2 \\cdot 2 \\cdot 2$ (rozklad)\n\n$12 = 2 \\cdot 2 \\cdot 3$ (rozklad)\n\n$18 = 2 \\cdot 3 \\cdot 3$ (rozklad)\n\n$n(8, 12, 18) = 2 \\cdot 2 \\cdot 2 \\cdot 3 \\cdot 3 = 72$ (každé prvočíslo tolikrát, kolikrát je ho nejvíc)\n\n$18$, $36$, $54$, $72$ (jiná cesta: násobky osmnácti, až sedmdesát dva jde vydělit osmi i dvanácti)\n\n**Výsledek:** za $72$ sekund",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co se na stromku děje a na co se úloha ptá.“",
+          "„Hledáš dělitel, nebo násobek? Bude to dřív, nebo později než za osmnáct sekund?“",
+          "„Tady máš začátek: třetí řetěz blikne za osmnáct a za třicet šest sekund. Kdy blikají ty další? Kdy se sejdou všechny tři?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč nebliknou všechny tři najednou už za dvacet čtyři sekund.“",
+        "otocena_role_odpoved": "Za dvacet čtyři sekund bliknou jen první dva řetězy. Třetí bliká po osmnácti a dvacet čtyři nejde vydělit osmnácti. Všechny tři se sejdou až za sedmdesát dva sekund.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $24$: zapomene na třetí řetěz. Zeptejte se: „Jde dvacet čtyři vydělit osmnácti?“ (Nejde.) $2$: hledá dělitel místo násobku. $1\\,728$: jen vynásobí; zeptejte se: „Jaký menší společný násobek najdeš?“ (Sedmdesát dva.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — společný násobek tří čísel zvládá samo. Pochvalte, že ohlídalo všechny tři řetězy. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Tomáš běhá každý druhý den, Ema každý třetí a Klára každý čtvrtý. Dnes běželi všichni. Za kolik dní poběží zase všichni tři?“ Ať řekne, jestli hledá dělitel, nebo násobek. Kontrola pro vás: násobek, za $12$ dní (dvanáct jde vydělit dvěma, třemi i čtyřmi).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír s čísly 1 až 30 a tři pastelky. Zítra ať dítě zakroužkuje každé 2. číslo jednou barvou, každé 3. druhou a každé 5. třetí. Ať najde první číslo se třemi kroužky. Pak ať samo zapíše $n(2, 3, 5) = 30$. Potom zopakujte lekci „Dělitel a násobek v úlohách“. Kontrola pro vás: tři kroužky má poprvé až 30."
+      },
+      "tisk": {
+        "zadani": "Na vánočním stromku jsou tři řetězy světýlek. První blikne každých $8$ sekund, druhý každých $12$ sekund a třetí každých $18$ sekund. Teď blikly všechny tři najednou.\n\nZa kolik sekund bliknou zase všechny tři najednou?\n\nVýsledek: ______ sekund"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenze 9. 10. (naostro dvojče M8-T01-L3): vše přepočítáno nezávisle a přes vyhodnotKrok: U1 $12$, $60$, $9$, $D(30, 42)$; U2 $D(84, 126) = 42$ ($14$, $252$); U3 $D(48, 72, 60) = 12$ ($24$, $6$, $720$), $5$ lahví ($10$, $12$); U4 $n(8, 12, 18) = 72$ ($24$, $2$, $1\\,728$). Opraveno: typická chyba U2 měla u $252$ otázku „Jde tvůj výsledek vydělit osmdesáti čtyřmi? (Nejde.)“, ale $252 = 3 \\cdot 84$ jde, nově „Jde osmdesát čtyři vydělit tvým výsledkem?“; v U2 k2 byla správná dlaždice nejdelší, přidán distraktor s jedničkou (jednicka-je-prvocislo) i do tisku a řešení; U3 měla 3 rozklady, 3 dělení a součet, zkráceno na nejvýš 4 výpočty: ptá se na lahve vody v balíčku ($60 : 12 = 5$); úvod na jednu větu. Rozhodnuto: dělitel a násobek tří čísel je učivo 6. ročníku a stejná dovednost (rozklad, společná prvočísla), jako naostro rozšíření v pořádku; semafor jde i vypisováním násobků osmnácti.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-09"
+  }
+}
