@@ -1,0 +1,671 @@
+{
+  "id": "cj-t1-l2b",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 1,
+  "poradi": 2,
+  "tema": "Neohebné slovní druhy",
+  "kapitola": "slovni-druhy",
+  "cil_pro_rodice": "Dítě rozliší pět neohebných druhů testem: příslovce (jak? kde? kdy? u slovesa), předložka (stojí před jménem), spojka (spojuje slova nebo věty), částice (přání na začátku věty: kéž, ať), citoslovce (zvuk, výkřik).",
+  "uvod_pro_rodice": "Opakování po červeném semaforu: stejná lekce „Neohebné slovní druhy“ s jinými větami a slovy, aby si dítě pět neohebných druhů a jejich testy vyzkoušelo znovu.",
+  "uvod_pravidla": [
+    {
+      "znak": "Příslovce: jak? kde? kdy? (doma)",
+      "text": "co to je"
+    },
+    {
+      "znak": "Předložka stojí před jménem: na",
+      "text": "test"
+    },
+    {
+      "znak": "nebo = spojka · fuj = citoslovce",
+      "text": "příklad"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "neohebné slovo": "slovo, které nemění tvar (venku, pod, ale, kéž, hurá); neohebné druhy jsou příslovce, předložka, spojka, částice a citoslovce",
+    "příslovce": "říká jak, kde, kam, kdy (rychle, venku, dolů, zítra); stojí samo, většinou u slovesa",
+    "předložka": "krátké slovo, které stojí před jménem: na stole, pod stolem, k babičce, kolem rybníka",
+    "spojka": "spojuje slova nebo věty: a, ale, nebo",
+    "částice": "tady jen kéž a ať na začátku věty, která vyjadřuje přání (Kéž by už byl pátek!)",
+    "citoslovce": "zvuk nebo výkřik: hurá, fuj, bum",
+    "ohebné slovo": "slovo, které mění tvar (kniha – bez knihy); téma minulé lekce",
+    "zájmeno": "stojí místo jména (on, my, můj, náš); z minulé lekce",
+    "číslovka": "říká počet nebo pořadí (dva, několik, třetí, pátý); z minulé lekce"
+  },
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "cas_min": 25,
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t1-l2b-U1",
+      "typ": "rozcvicka",
+      "cil": "Ledoborec z lekce 1: najít zájmeno, číslovku, ohebné slovo a přídavné jméno; pasti tvůj a desátý (mění se jako přídavná jména) a vysoko (jde stupňovat).",
+      "cas_min": 4,
+      "zadani": "Najdi v řadě A zájmeno, v řadě B číslovku, v řadě C ohebné slovo a v řadě D přídavné jméno.\n\nA) sestra, chytrý, ona, pozdě\n\nB) čtvrtý, hřiště, domů, starý\n\nC) letos, sešit, vysoko, vždycky\n\nD) radost, tvůj, radostný, desátý",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "sestra",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "chytrý",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "ona",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "pozdě",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "čtvrtý",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "hřiště",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "domů",
+                "spravne": false
+              },
+              {
+                "id": "d",
+                "text": "starý",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "letos",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "sešit",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "vysoko",
+                "spravne": false,
+                "typ_chyby": "ohebnost-stupnovani"
+              },
+              {
+                "id": "d",
+                "text": "vždycky",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "radost",
+                "spravne": false,
+                "typ_chyby": "sd-podstatne-za-pridavne"
+              },
+              {
+                "id": "b",
+                "text": "tvůj",
+                "spravne": false,
+                "typ_chyby": "zajmeno-za-pridavne"
+              },
+              {
+                "id": "c",
+                "text": "radostný",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "desátý",
+                "spravne": false,
+                "typ_chyby": "cislovka-za-pridavne"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje minulou lekci: zájmeno stojí místo jména, číslovka odpovídá na kolik? nebo kolikátý?, ohebné slovo mění tvar. Pasti: vysoko jde stupňovat, ale je neohebné; tvůj a desátý se mění jako přídavná jména, ale jsou to zájmeno a číslovka. Otázky jsou po řadách: čtěte tu u řady, kde se dítě zasekne.",
+        "reseni": "#### A) sestra, chytrý, ona, pozdě\n\nona (stojí místo jména: ona = sestra; sestra je podstatné jméno, chytrý přídavné jméno, pozdě příslovce)\n\n#### B) čtvrtý, hřiště, domů, starý\n\nčtvrtý (kolikátý?; hřiště je podstatné jméno, domů příslovce, starý přídavné jméno)\n\n#### C) letos, sešit, vysoko, vždycky\n\nsešit (bez sešitu, k sešitu; vysoko – výš je jen stupňování; letos a vždycky se nemění)\n\n#### D) radost, tvůj, radostný, desátý\n\nradostný (jaký?; radost je podstatné jméno, tvůj zájmeno, desátý číslovka)\n\n**Výsledek:** A) ona, B) čtvrtý, C) sešit, D) radostný",
+        "otazky": [
+          {
+            "k": "A a B",
+            "text": "„Které slovo z řady A může stát místo jména? A na které slovo z řady B se zeptáš kolikátý?“"
+          },
+          {
+            "k": "C",
+            "text": "„Zkus každé slovo říct v jiném tvaru: bez ___, k ___. Které se změní? Je výš jiný tvar?“"
+          },
+          {
+            "k": "D",
+            "text": "„Zeptej se jaký? u každého slova z řady. Kde váháš, zkus i kolikátý? a jestli jde místo slova říct něčí jméno.“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč tvůj není přídavné jméno, i když se na něj ptám čí?“",
+        "otocena_role_odpoved": "Tvůj je zájmeno: místo něj můžu říct něčí jméno, třeba Tomášův. Přídavné jméno říká, jaký kdo nebo co je, třeba radostný.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V řadě D vybere tvůj, desátý nebo radost. Zeptejte se: „Jde místo toho říct něčí jméno? Ptáš se jaký, nebo kolikátý?“ V řadě C vybere vysoko: „Je stupňování totéž jako jiný tvar?“ V řadě A vybere sestra: „Je to jméno, nebo stojí místo jména?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — ohebné druhy z minulé lekce drží. Pochvalte, že dítě zkoušelo otázky nahlas, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti tři slova: můj, šestý, nahoře. U každého řekne, jaký je to druh a jestli mění tvar. Kontrola pro vás: můj zájmeno, ohebné; šestý číslovka, ohebné; nahoře příslovce, neohebné.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra přečtěte dítěti slova tvůj, radostný, desátý, starý. Dítě je napíše do dvou sloupců: přídavná jména (jaký?) a ostatní; u ostatních připíše druh. Potom zopakujte lekci „Neohebné slovní druhy“. Kontrola pro vás: přídavná jména radostný a starý; tvůj je zájmeno, desátý číslovka."
+      },
+      "tisk": {
+        "zadani": "Zakroužkuj v řadě A zájmeno, v řadě B číslovku, v řadě C ohebné slovo a v řadě D přídavné jméno.\n\nA) sestra, chytrý, ona, pozdě\n\nB) čtvrtý, hřiště, domů, starý\n\nC) letos, sešit, vysoko, vždycky\n\nD) radost, tvůj, radostný, desátý"
+      }
+    },
+    {
+      "id": "cj-t1-l2b-U2",
+      "typ": "nova",
+      "cil": "Přiřadit k tučnému slovu ve větě jeden z pěti neohebných druhů podle jeho testu.",
+      "cas_min": 5,
+      "zadani": "Urči slovní druh tučného slova.\n\nA) Batohy necháme **dole**.\n\nB) Tužka leží **mezi** sešity.\n\nC) Pojedeme na výlet, **když** bude hezky.\n\nD) **Ať** to dobře dopadne!",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "A) dole",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "příslovce",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "předložka",
+                "spravne": false,
+                "typ_chyby": "prislovce-za-predlozku"
+              },
+              {
+                "id": "c",
+                "text": "spojka",
+                "spravne": false
+              },
+              {
+                "id": "d",
+                "text": "částice",
+                "spravne": false
+              },
+              {
+                "id": "e",
+                "text": "citoslovce",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "B) mezi",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "příslovce",
+                "spravne": false,
+                "typ_chyby": "predlozka-za-prislovce"
+              },
+              {
+                "id": "b",
+                "text": "předložka",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "spojka",
+                "spravne": false
+              },
+              {
+                "id": "d",
+                "text": "částice",
+                "spravne": false
+              },
+              {
+                "id": "e",
+                "text": "citoslovce",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "C) když",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "příslovce",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "předložka",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "spojka",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "částice",
+                "spravne": false,
+                "typ_chyby": "spojka-za-castici"
+              },
+              {
+                "id": "e",
+                "text": "citoslovce",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "D) Ať",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "příslovce",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "předložka",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "spojka",
+                "spravne": false,
+                "typ_chyby": "spojka-za-castici"
+              },
+              {
+                "id": "d",
+                "text": "částice",
+                "spravne": true
+              },
+              {
+                "id": "e",
+                "text": "citoslovce",
+                "spravne": false
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě u každé věty vybere druh tučného slova; nabídka je ve všech čtyřech krocích stejná. Testy: příslovce odpovídá na jak? kde? kdy?, předložka stojí před jménem, spojka spojuje slova nebo věty, částice uvádí přání, citoslovce je zvuk nebo výkřik. Past: dole i mezi říkají místo, ale mezi stojí před slovem sešity.",
+        "reseni": "A) dole: příslovce (necháme kde? dole; stojí samo)\n\nB) mezi: předložka (stojí před jménem: mezi sešity)\n\nC) když: spojka (spojuje dvě věty)\n\nD) Ať: částice (uvádí přání)\n\n**Výsledek:** A) příslovce, B) předložka, C) spojka, D) částice",
+        "otazky": [
+          "„Řekni vlastními slovy, jak poznáš každý z pěti neohebných druhů.“",
+          "„U slova mezi: stojí samo, nebo před nějakým jménem? A slovo dole?“",
+          "„Ve větě D: spojuje Ať dvě věci, nebo vyjadřuje přání? A co dělá když ve větě C?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč dole a mezi nejsou stejný druh, i když obě říkají, kde něco je.“",
+        "otocena_role_odpoved": "Mezi stojí před jménem, mezi sešity, je to předložka. Dole stojí samo a odpovídá na kde?, je to příslovce.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A zvolí předložku nebo u B příslovce. Zeptejte se: „Stojí to slovo před nějakým jménem, nebo samo?“ U C zvolí částici nebo u D spojku: „Spojuje to dvě věci, nebo vyjadřuje přání?“ Zvolí citoslovce: „Je to zvuk nebo výkřik?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — pět neohebných druhů dítě rozliší testem. Pochvalte, že zkoušelo, jestli slovo stojí před jménem, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti dvě věty: „Míč je nahoře.“ „Míč je za brankou.“ Dítě řekne, jaký druh je nahoře a jaký za. Kontrola pro vás: nahoře je příslovce (stojí samo, kde?), za je předložka (stojí před jménem: za brankou).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše pět řádků: jak? kde? kdy?, před jménem, spojuje, přání, zvuk. Přečtěte mu slova venku, za, nebo, kéž, bum; dítě každé zapíše na řádek, kam patří. Potom zopakujte lekci „Neohebné slovní druhy“. Kontrola pro vás: venku příslovce, za předložka, nebo spojka, kéž částice, bum citoslovce."
+      },
+      "tisk": {
+        "zadani": "Ke každému tučnému slovu napiš jeho slovní druh: příslovce, předložka, spojka, částice, nebo citoslovce.\n\nA) Batohy necháme **dole**.\n\nB) Tužka leží **mezi** sešity.\n\nC) Pojedeme na výlet, **když** bude hezky.\n\nD) **Ať** to dobře dopadne!"
+      }
+    },
+    {
+      "id": "cj-t1-l2b-U3",
+      "typ": "nova",
+      "cil": "Poznat, že o druhu slova vedle rozhoduje věta: stojí samo (příslovce), nebo před jménem (předložka).",
+      "cas_min": 5,
+      "zadani": "Jaký slovní druh je slovo **vedle**?\n\nA) Adam střílel **vedle**.\n\nB) Ema si sedla **vedle** Lucky.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "A) Adam střílel **vedle**.",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "příslovce",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "předložka",
+                "spravne": false,
+                "typ_chyby": "prislovce-za-predlozku"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "B) Ema si sedla **vedle** Lucky.",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "příslovce",
+                "spravne": false,
+                "typ_chyby": "predlozka-za-prislovce"
+              },
+              {
+                "id": "b",
+                "text": "předložka",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Stejné slovo vedle je jednou příslovce a jednou předložka; rozhoduje věta. Když vedle stojí před jménem (vedle Lucky), je to předložka. Když stojí samo a odpovídá na kam? nebo kde?, je to příslovce. Slovník uvádí vedle jako obojí.",
+        "reseni": "A) vedle: příslovce (střílel kam? vedle; za ním žádné jméno)\n\nB) vedle: předložka (stojí před jménem: vedle Lucky)\n\n**Výsledek:** A) příslovce, B) předložka",
+        "otazky": [
+          "„Řekni vlastními slovy, čím se liší příslovce a předložka.“",
+          "„Ve větě A: stojí za slovem vedle nějaké jméno? A ve větě B?“",
+          "„Ve větě B se zeptej: vedle koho si sedla? Je ta odpověď ve větě? A ve větě A?“"
+        ],
+        "otocena_role": "„Vymysli dvě věty se slovem vedle: jednou jako příslovce, jednou jako předložku.“",
+        "otocena_role_odpoved": "Třeba: Klára bydlí hned vedle. To je příslovce, stojí samo. Klára bydlí vedle školy. To je předložka, stojí před jménem.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V obou krocích zvolí stejný druh. Zeptejte se: „Stojí to slovo před nějakým jménem, nebo samo?“ V kroku 2 (B) zvolí příslovce: „Vedle koho si sedla? Je to slovo ve větě?“ (Je, Lucky, proto předložka.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — dítě ví, že o druhu rozhoduje věta. Pochvalte, že hledalo jméno za slovem vedle, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti dvě věty: „Kočka spí vedle.“ „Kočka spí vedle psa.“ U každé řekne, jestli je vedle příslovce, nebo předložka. Kontrola pro vás: v první příslovce (stojí samo), ve druhé předložka (před jménem: vedle psa).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše dvě věty: Lucka bydlí vedle. Lucka bydlí vedle Adama. Ve druhé zakroužkuje jméno za slovem vedle a ke každé větě připíše příslovce, nebo předložka. Potom zopakujte lekci „Neohebné slovní druhy“. Kontrola pro vás: první věta příslovce, druhá předložka (vedle Adama)."
+      },
+      "tisk": {
+        "zadani": "Jaký slovní druh je slovo vedle? Zakroužkuj.\n\nA) Adam střílel vedle. a) příslovce b) předložka\n\nB) Ema si sedla vedle Lucky. a) příslovce b) předložka"
+      }
+    },
+    {
+      "id": "cj-t1-l2b-U4",
+      "typ": "detektiv",
+      "cil": "Najít u Petra příslovce vesele určené jako přídavné jméno a říct správný druh.",
+      "cas_min": 5,
+      "zadani": "Petr měl ve větě určit slovní druhy:\n\nKlára běžela vesele domů, když skončila škola.\n\nNapsal: **vesele** – přídavné jméno, **domů** – příslovce, **když** – spojka. Udělal **jednu** chybu. Najdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na slovo, které Petr určil špatně.",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Klára běžela vesele domů, když skončila škola.",
+            "cil": "slova",
+            "min": 1,
+            "max": 1
+          },
+          "spravne": [
+            2
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                3,
+                4
+              ],
+              "typ_chyby": "detektiv-jine-slovo"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Jaký druh to slovo je?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "spojka",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "b",
+                "text": "příslovce",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "předložka",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "d",
+                "text": "přídavné jméno",
+                "spravne": false,
+                "typ_chyby": "sd-prislovce-za-pridavne"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr určil tři slova, jedno špatně. Dítě je projde testem a v kroku 2 (Jaký druh to slovo je?) vybere správný druh. Past: vesele zní skoro jako veselý. Veselý odpovídá na jaký?, vesele na jak?. Domů odpovídá na kam? a když spojuje dvě věty, ta dvě slova Petr určil správně.",
+        "reseni": "Chyba je vesele: Petr ho určil jako přídavné jméno.\n\nvesele: příslovce (běžela jak? vesele)\n\ndomů: příslovce (běžela kam? domů), Petr má dobře\n\nkdyž: spojka (spojuje dvě věty), Petr má dobře\n\n**Výsledek:** krok 1 vesele, krok 2 příslovce",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, jak poznáš přídavné jméno, příslovce a spojku. Která tři slova Petr určil?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každého Petrova slova zkus jeho test: jaký? jak? kam? spojuje něco? Sedí všude?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U slova, kde má Petr chybu, zkus všechny testy: jaká?, jak?, kam?, stojí před jménem?, spojuje něco? Který sedí?“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a jak si ji příště ohlídám.“",
+        "otocena_role_odpoved": "Vesele není přídavné jméno. Běžela jak? vesele, je to příslovce. Přídavné jméno by bylo veselý. Slova domů a když máš dobře.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na domů nebo když. Zeptejte se: „Kam běžela? Co spojuje když?“ (Petr to má dobře.) V kroku 2 zvolí přídavné jméno: „Ptáš se jaká, nebo jak?“ Zvolí spojku nebo předložku: „Stojí to slovo před jménem? Spojuje něco?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — Petrovu chybu dítě našlo i opravilo. Pochvalte, že se ptalo jaký?, nebo jak?, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr napsal, že pomalu ve větě Klára jde pomalu je přídavné jméno.“ Zeptejte se: „Má Petr pravdu? Jak to ověříš?“ Kontrola pro vás: nemá, pomalu je příslovce (jde jak?); přídavné jméno by bylo pomalý.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše dvojice veselý – vesele, smutný – smutně, pomalý – pomalu. Ke každému slovu připíše otázku jaký?, nebo jak? a druh. Potom zopakujte lekci „Neohebné slovní druhy“. Kontrola pro vás: veselý, smutný, pomalý jsou přídavná jména (jaký?); vesele, smutně, pomalu příslovce (jak?)."
+      },
+      "tisk": {
+        "zadani": "Petr měl ve větě určit slovní druhy:\n\nKlára běžela vesele domů, když skončila škola.\n\nNapsal: vesele – přídavné jméno, domů – příslovce, když – spojka. Udělal jednu chybu.\n\nA) Podtrhni slovo, které Petr určil špatně.\n\nB) Jaký druh to slovo je? Zakroužkuj: a) spojka b) příslovce c) předložka d) přídavné jméno"
+      }
+    },
+    {
+      "id": "cj-t1-l2b-U5",
+      "typ": "kontrolni",
+      "cil": "Samostatně určit pět neohebných druhů u šesti slov ve dvou větách (s před jménem, Kéž s přáním, a mezi dvěma větami).",
+      "cas_min": 6,
+      "zadani": "U každého označeného slova vyber slovní druh.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Jejda, letos pojedeme s tátou na hory! Kéž tam vydržíme dlouho a nikdo neonemocní.",
+            "slova": [
+              0,
+              1,
+              3,
+              7,
+              10,
+              11
+            ],
+            "role": [
+              "příslovce",
+              "předložka",
+              "spojka",
+              "částice",
+              "citoslovce"
+            ]
+          },
+          "spravne": {
+            "0": "citoslovce",
+            "1": "příslovce",
+            "3": "předložka",
+            "7": "částice",
+            "10": "příslovce",
+            "11": "spojka"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "7": "spojka"
+              },
+              "typ_chyby": "spojka-za-castici"
+            },
+            {
+              "hodnota": {
+                "11": "částice"
+              },
+              "typ_chyby": "spojka-za-castici"
+            },
+            {
+              "hodnota": {
+                "3": "příslovce"
+              },
+              "typ_chyby": "predlozka-za-prislovce"
+            },
+            {
+              "hodnota": {
+                "1": "předložka"
+              },
+              "typ_chyby": "prislovce-za-predlozku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Šest slov, pět druhů, příslovce jsou dvě. Pasti: s stojí před jménem (s tátou), je to předložka; Kéž uvádí přání, je to částice; a spojuje dvě věty, je to spojka. Slova na a tam označená nejsou.",
+        "reseni": "Jejda: citoslovce (výkřik)\n\nletos: příslovce (pojedeme kdy?)\n\ns: předložka (stojí před jménem: s tátou)\n\nKéž: částice (uvádí přání)\n\ndlouho: příslovce (vydržíme jak dlouho?)\n\na: spojka (spojuje dvě věty)\n\n**Výsledek:** citoslovce, příslovce, předložka, částice, příslovce, spojka",
+        "otazky": [
+          "„Řekni mi vlastními slovy, jak poznáš pět neohebných druhů.“",
+          "„Vezmi slovo, u kterého váháš. Stojí před jménem? Odpovídá na jak, kde, kdy? Spojuje něco? Je to přání, nebo výkřik?“",
+          "„Podívej se na krátká slova s a a. Co je hned před nimi a co za nimi? Jaký test na ně sedí?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč Kéž není spojka, i když stojí na začátku věty.“",
+        "otocena_role_odpoved": "Kéž nic nespojuje, jen uvádí přání: Kéž tam vydržíme dlouho. Spojka spojuje dvě slova nebo věty, jako a.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: Kéž jako spojka nebo a jako částice: „Spojuje to dvě věci, nebo vyjadřuje přání?“ s jako příslovce: „Stojí to samo, nebo před nějakým jménem?“ letos jako předložka: „Stojí za ním jméno?“ Jejda jako jiný druh: „Je to výkřik?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — neohebné druhy dítě určí samo. Pochvalte, že zkoušelo test u každého slova. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti dvě věty: „Bum, nahoře něco spadlo.“ „Ať už je víkend!“ Dítě řekne druh slov bum, nahoře a ať. Kontrola pro vás: bum citoslovce (zvuk), nahoře příslovce (kde?), ať částice (přání).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše větu: Jejda, letos jedeme k moři. Nad slova jejda, letos a k napíše druh a k němu test (výkřik, kdy?, před jménem). Potom zopakujte lekci „Neohebné slovní druhy“. Kontrola pro vás: jejda citoslovce, letos příslovce, k předložka (k moři)."
+      },
+      "tisk": {
+        "zadani": "Nad každé tučné slovo napiš jeho slovní druh.\n\n**Jejda**, **letos** pojedeme **s** tátou na hory! **Kéž** tam vydržíme **dlouho** **a** nikdo neonemocní."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "B-varianta lekce cj-t1-l2 (opakování po červené, ZADANI-OSMA §9 bod 4), autor 9. 10. 2026. Struktura 1:1 s cj-t1-l2 (5 úloh, stejné typy vstupů, počty kroků, dlaždic a označených slov, stejné kódy známých chyb). Hodnocená slova a věty jsou nové; z cj-t1-l2 a cj-t1-l2n se opakují jen částice kéž a ať (OSNOVA §5 jiné částice nepřipouští), ve zcela nových větách. U3: vedle místo kolem (SSČ přísl. i předl., ověřeno v TEMA-1.md); blízko vyřazeno (SSČ jen přísl.). Slovní druh každého hodnoceného slova ověřen přes nastroje/ujc.sh (SSČ), sporné jevy OSNOVA §16 nehodnoceny (tam a na v U5 neoznačeny). Indexy tokenů přepočítány přes tokenizuj, vzorová odpověď každého kroku a každá známá chyba ověřeny přes vyhodnotKrok. Lekce nahrávku nemá. KOREKTOR 9. 10. 2026: Opraveno: U2 C „Pojedeme na kolo“ (hovorové) → „Pojedeme na výlet, když bude hezky.“ (zadání i tisk); U4 otázka 3 taháku ukazovala test jen pro chybné slovo (běžela jaká/jak) → neutrální výčet všech testů. Hodnocené tvary znovu ověřeny přes ujc.sh (vedle přísl. „střela šla vedle“ i předl. s 2. p.; ať část. rozk./přací; kéž část. přací; jejda citosl. vyj. podiv; dole přísl.; mezi předl.). Opakují se jen kéž, ať a spojka a (výjimky vedoucího). Obtížnost odpovídá cj-t1-l2.",
+    "zkontroloval": "korektor",
+    "datum": "2026-10-09",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?slovo=sestra",
+      "https://prirucka.ujc.cas.cz/?slovo=chytr%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=ona",
+      "https://prirucka.ujc.cas.cz/?slovo=pozd%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=%C4%8Dtvrt%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=h%C5%99i%C5%A1t%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=dom%C5%AF",
+      "https://prirucka.ujc.cas.cz/?slovo=star%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=letos",
+      "https://prirucka.ujc.cas.cz/?slovo=se%C5%A1it",
+      "https://prirucka.ujc.cas.cz/?slovo=vysoko",
+      "https://prirucka.ujc.cas.cz/?slovo=v%C5%BEdycky",
+      "https://prirucka.ujc.cas.cz/?slovo=radost",
+      "https://prirucka.ujc.cas.cz/?slovo=tv%C5%AFj",
+      "https://prirucka.ujc.cas.cz/?slovo=radostn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=des%C3%A1t%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=dole",
+      "https://prirucka.ujc.cas.cz/?slovo=mezi",
+      "https://prirucka.ujc.cas.cz/?slovo=kdy%C5%BE",
+      "https://prirucka.ujc.cas.cz/?slovo=a%C5%A5",
+      "https://prirucka.ujc.cas.cz/?slovo=vedle",
+      "https://prirucka.ujc.cas.cz/?slovo=vesel%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=Kl%C3%A1ra",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1kola",
+      "https://prirucka.ujc.cas.cz/?slovo=a",
+      "https://prirucka.ujc.cas.cz/?slovo=jejda",
+      "https://prirucka.ujc.cas.cz/?slovo=s",
+      "https://prirucka.ujc.cas.cz/?slovo=k%C3%A9%C5%BE",
+      "https://prirucka.ujc.cas.cz/?slovo=dlouho",
+      "https://prirucka.ujc.cas.cz/?slovo=naho%C5%99e",
+      "https://prirucka.ujc.cas.cz/?slovo=venku",
+      "https://prirucka.ujc.cas.cz/?slovo=za",
+      "https://prirucka.ujc.cas.cz/?slovo=nebo",
+      "https://prirucka.ujc.cas.cz/?slovo=bum",
+      "https://prirucka.ujc.cas.cz/?slovo=pomalu",
+      "https://prirucka.ujc.cas.cz/?slovo=smutn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=vesele",
+      "https://prirucka.ujc.cas.cz/?slovo=v%C3%BDlet"
+    ],
+    "testovaci_rodic": null
+  }
+}
