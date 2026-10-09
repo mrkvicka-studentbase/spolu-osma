@@ -1,0 +1,256 @@
+{
+  "id": "M8-T04-L1B",
+  "faze": "osma",
+  "tyden": 4,
+  "poradi": 1,
+  "tema": "Krácení a rozšiřování",
+  "kapitola": "zlomky",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě zkrátí zlomek na základní tvar a rozšíří ho na zadaný jmenovatel.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami: krácení a rozšiřování zlomku, čitatel i jmenovatel se vždy dělí, nebo násobí stejným číslem.",
+  "uvod_pravidla": [
+    {"znak": "$\\frac{12}{18} = \\frac{2}{3}$", "text": "obojí děleno šesti"},
+    {"znak": "$\\frac{2}{3} = \\frac{8}{12}$", "text": "obojí krát čtyři"},
+    {"znak": "$\\frac{2}{3}$", "text": "základní tvar, dál nejde"}
+  ],
+  "pomucky": ["sešit", "propiska", "tužka"],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T04-L1B-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Zkrať na základní tvar: $\\frac{42}{54}$\n\nB) Doplň číslo místo otazníku: $\\frac{4}{9} = \\frac{?}{36}$\n\nC) Který zlomek se rovná $\\frac{5}{6}$?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $\\frac{42}{54}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {"id": "a", "text": "$\\frac{21}{27}$", "spravne": false, "typ_chyby": "kratil-jen-castecne"},
+              {"id": "b", "text": "$\\frac{7}{54}$", "spravne": false, "typ_chyby": "upravil-jen-cast-zlomku"},
+              {"id": "c", "text": "$\\frac{7}{9}$", "spravne": true},
+              {"id": "d", "text": "$\\frac{14}{9}$", "spravne": false, "typ_chyby": "kratil-ruznym-cislem"}
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $\\frac{4}{9} = \\frac{?}{36}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {"id": "a", "text": "$16$", "spravne": true},
+              {"id": "b", "text": "$4$", "spravne": false, "typ_chyby": "upravil-jen-cast-zlomku"},
+              {"id": "c", "text": "$31$", "spravne": false, "typ_chyby": "pricetl-misto-nasobeni"}
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: co se rovná $\\frac{5}{6}$?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {"id": "a", "text": "$\\frac{7}{8}$", "spravne": false, "typ_chyby": "pricetl-misto-nasobeni"},
+              {"id": "b", "text": "$\\frac{15}{18}$", "spravne": true},
+              {"id": "c", "text": "$\\frac{5}{18}$", "spravne": false, "typ_chyby": "upravil-jen-cast-zlomku"}
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá z nabídky. U A se krátí, dokud to jde: $\\frac{21}{27}$ je sice stejně velký zlomek, ale ještě není v základním tvaru. U B a C se hlídá, že se čitatel i jmenovatel násobí stejným číslem, nic se k nim nepřičítá. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $\\frac{42}{54}$\n\n$\\frac{42}{54} = \\frac{7}{9}$ (čitatel i jmenovatel děleno šesti)\n\n#### B) $\\frac{4}{9} = \\frac{?}{36}$\n\n$36 : 9 = 4$ (kolikrát je nový jmenovatel větší)\n\n$4 \\cdot 4 = 16$ (čitatel krát stejné číslo)\n\n#### C) Co se rovná $\\frac{5}{6}$\n\n$\\frac{5}{6} = \\frac{15}{18}$ (obojí krát tři)\n\n$\\frac{7}{8} \\neq \\frac{5}{6}$ (vzniklo přičtením dvojky nahoře i dole)\n\n$\\frac{5}{18} \\neq \\frac{5}{6}$ (krát tři jen jmenovatel)\n\n**Výsledek:** A) $\\frac{7}{9}$, B) $16$, C) $\\frac{15}{18}$",
+        "otazky": [
+          {"k": "A", "text": "„Neklikej, spočítej na papíře: kterým číslem jde vydělit čtyřicet dva i padesát čtyři? Jde to pak zkrátit ještě dál?“"},
+          {"k": "B", "text": "„Neklikej, spočítej na papíře: kolikrát je třicet šest víc než devět? Co pak uděláš s čitatelem?“"},
+          {"k": "C", "text": "„Zkrať každý zlomek, jak nejvíc to jde. Který z nich vyjde jako pět šestin?“"}
+        ],
+        "otocena_role": "„Vysvětli mi, proč se čtyři devítiny nerovnají třiceti jedné šestatřicetině, když se nahoře i dole přičetlo dvacet sedm.“",
+        "otocena_role_odpoved": "Zlomek zůstane stejně velký, jen když se nahoře i dole násobí stejným číslem. Devítina jsou čtyři šestatřicetiny, takže čtyři devítiny jsou šestnáct šestatřicetin, ne třicet jedna.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $\\frac{21}{27}$: krátí jen dvěma a skončí. Zeptejte se: „Jde to ještě zkrátit?“ (Ano, třemi.) $\\frac{7}{54}$, u B $4$ nebo u C $\\frac{5}{18}$: upraví jen jednu část zlomku; $\\frac{14}{9}$: dělí nahoře a dole jiným číslem. U B $31$, u C $\\frac{7}{8}$: přičítá místo násobení."
+      },
+      "semafor": {
+        "zelena": "Výborně — krácení i rozšiřování sedí. Pochvalte, že hlídalo stejné číslo nahoře i dole, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: zkrátit $\\frac{21}{28}$ a doplnit $\\frac{3}{8} = \\frac{?}{24}$. Ať nahlas řekne, čím dělí a čím násobí. Kontrola pro vás: děleno sedmi, $\\frac{3}{4}$; krát tři, chybí $9$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 18 kostek nebo knoflíků. Zítra ať je dítě rozdělí na 6 stejných hromádek a 5 hromádek odsune. Zeptejte se: „Kolik kostek je pět šestin?“ Pak ať samo zapíše $\\frac{5}{6} = \\frac{15}{18}$ a řekne, čím násobí nahoře i dole. Potom zopakujte lekci „Krácení a rozšiřování“. Kontrola pro vás: 15 kostek, nahoře i dole krát tři."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Zkrať na základní tvar: $\\frac{42}{54}$ — a) $\\frac{21}{27}$ b) $\\frac{7}{54}$ c) $\\frac{7}{9}$ d) $\\frac{14}{9}$\n\nB) Doplň číslo místo otazníku: $\\frac{4}{9} = \\frac{?}{36}$ — a) $16$ b) $4$ c) $31$\n\nC) Který zlomek se rovná $\\frac{5}{6}$? — a) $\\frac{7}{8}$ b) $\\frac{15}{18}$ c) $\\frac{5}{18}$"
+      }
+    },
+    {
+      "id": "M8-T04-L1B-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr krátil zlomek na základní tvar\n\n$$\\frac{48}{56}$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $= \\frac{24}{28}$\n\n2. řádek: $= \\frac{8}{14}$\n\n3. řádek: $= \\frac{4}{7}$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {"id": "r1", "stitek": "1. řádek", "text": "$= \\frac{24}{28}$", "spravne": false, "typ_chyby": "oznacil-radek-pred-chybou"},
+              {"id": "r2", "stitek": "2. řádek", "text": "$= \\frac{8}{14}$", "spravne": true},
+              {"id": "r3", "stitek": "3. řádek", "text": "$= \\frac{4}{7}$", "spravne": false, "typ_chyby": "nasel-az-dusledek"}
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {"id": "a", "text": "$= \\frac{12}{28}$", "spravne": false, "typ_chyby": "upravil-jen-cast-zlomku"},
+              {"id": "b", "text": "$= \\frac{21}{25}$", "spravne": false, "typ_chyby": "pricetl-misto-nasobeni"},
+              {"id": "c", "text": "$= \\frac{12}{14}$", "spravne": true}
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {"typ": "zlomek"},
+          "spravne": {"c": 6, "j": 7},
+          "zname_chyby": [
+            {"c": 4, "j": 7, "typ_chyby": "kratil-ruznym-cislem"},
+            {"c": 6, "j": 14, "typ_chyby": "upravil-jen-cast-zlomku"}
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Krátí postupně: v každém řádku má dělit čitatel i jmenovatel stejným číslem. Chyba je jedna a řádek za ní je spočítaný dobře, jen ze špatného zlomku. Výsledek má být v základním tvaru.",
+        "reseni": "Chyba je ve 2. řádku: Petr vydělil dvacet čtyři třemi, ale dvacet osm jen dvěma.\n\n$\\frac{48}{56} = \\frac{24}{28}$ (obojí děleno dvěma)\n\n$\\frac{24}{28} = \\frac{12}{14}$ (obojí děleno dvěma)\n\n$\\frac{12}{14} = \\frac{6}{7}$ (obojí děleno dvěma)\n\nDlaždice $= \\frac{12}{28}$ a $= \\frac{21}{25}$ nesedí (první dělí jen čitatel, druhá odečítá trojku nahoře i dole)\n\n**Výsledek:** $\\frac{6}{7}$",
+        "otazky": [
+          {"k": "Celá úloha", "text": "„Řekni mi vlastními slovy, co Petr se zlomkem dělá a jak má vypadat konec.“"},
+          {"k": "Krok 1", "text": "„U každého řádku zjisti: čím Petr dělil nahoře a čím dole? Je to pokaždé stejné číslo?“"},
+          {"k": "Krok 2 a výsledek", "text": "„Tady máš začátek: čtyřicet osm šestapadesátin jsou dvacet čtyři osmadvacetin, obojí děleno dvěma. Čím vydělíš dál, aby to sedělo nahoře i dole?“"}
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, co je špatně na tom, že nahoře dělím třemi a dole dvěma.“",
+        "otocena_role_odpoved": "Zlomek zůstane stejně velký, jen když se nahoře i dole dělí stejným číslem. Při dělení různými čísly vznikne jiný zlomek. Dvacet čtyři osmadvacetin je dvanáct čtrnáctin, ne osm čtrnáctin.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 1. nebo 3. řádek? Ty jsou správně. Zeptejte se: „Čím Petr dělil nahoře a čím dole ve 2. řádku?“ (Třemi a dvěma.) Výsledek $\\frac{4}{7}$: opíše Petra; $\\frac{6}{14}$: dělí jen čitatel. $\\frac{12}{14}$ aplikace uzná a požádá o zkrácení."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že u každého řádku hlídalo stejné číslo nahoře i dole, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu: „Petr tvrdí, že $\\frac{16}{24} = \\frac{8}{6}$, protože šestnáct vydělil dvěma a dvacet čtyři čtyřmi.“ Zeptejte se: „Má Petr pravdu? Jak to má být?“ Kontrola pro vás: nemá; $\\frac{16}{24} = \\frac{2}{3}$ (obojí děleno osmi), nebo $\\frac{8}{12}$ (obojí děleno dvěma).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 16 bonbonů nebo kostek. Zítra ať je dítě rozdělí na 4 stejné hromádky a 3 hromádky odsune. Zeptejte se: „Kolik bonbonů je to ze všech?“ Pak ať samo zapíše $\\frac{12}{16} = \\frac{3}{4}$ a řekne, čím dělí nahoře i dole. Potom zopakujte lekci „Krácení a rozšiřování“. Kontrola pro vás: 12 z 16, nahoře i dole děleno čtyřmi."
+      },
+      "tisk": {
+        "zadani": "Petr krátil zlomek na základní tvar\n\n$$\\frac{48}{56}$$\n\na udělal jednu chybu.\n\n1. řádek: $= \\frac{24}{28}$\n\n2. řádek: $= \\frac{8}{14}$\n\n3. řádek: $= \\frac{4}{7}$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $= \\frac{12}{28}$ b) $= \\frac{21}{25}$ c) $= \\frac{12}{14}$\n\nC) Správný výsledek v základním tvaru: ______"
+      }
+    },
+    {
+      "id": "M8-T04-L1B-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Ema má v knihovničce $35$ knih a $14$ z nich jsou komiksy.\n\na) Jakou část Eminy knihovničky tvoří komiksy?\n\nb) Jakou část knihovničky tvoří ostatní knihy?\n\nObě části zapiš jako zlomek v základním tvaru.\n\nc) Adam má $45$ knih a komiksy u něj tvoří stejnou část jako u Emy. Kolik komiksů má Adam?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Část knihovničky, kterou tvoří komiksy",
+          "vstup": {"typ": "zlomek"},
+          "spravne": {"c": 2, "j": 5},
+          "zname_chyby": [
+            {"c": 2, "j": 35, "typ_chyby": "upravil-jen-cast-zlomku"},
+            {"c": 2, "j": 3, "typ_chyby": "zamenil-cast-a-zbytek"}
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        },
+        {
+          "id": "k2",
+          "popisek": "Část knihovničky, kterou tvoří ostatní knihy",
+          "vstup": {"typ": "zlomek"},
+          "spravne": {"c": 3, "j": 5},
+          "zname_chyby": [
+            {"c": 2, "j": 5, "typ_chyby": "zamenil-cast-a-zbytek"}
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {"typ": "cislo", "jednotka": "komiksů"},
+          "spravne": {"hodnota": 18},
+          "zname_chyby": [
+            {"hodnota": 9, "typ_chyby": "zlomek-z-cisla-jen-deleni"},
+            {"hodnota": 27, "typ_chyby": "zamenil-cast-a-zbytek"},
+            {"hodnota": 24, "typ_chyby": "pricetl-misto-nasobeni"}
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Část knihovničky je zlomek: kolik knih z kolika. Pak se krátí na základní tvar. V části c) má Adam stejný zlomek, jen jiný jmenovatel. Dá se počítat zlomkem z čísla, nebo rozšířením zlomku na pětačtyřicetiny; obě cesty jsou správně.",
+        "reseni": "$\\frac{14}{35} = \\frac{2}{5}$ (část s komiksy, obojí děleno sedmi)\n\n$35 - 14 = 21$ (ostatní knihy)\n\n$\\frac{21}{35} = \\frac{3}{5}$ (část ostatních knih, obojí děleno sedmi; také jedna celá bez dvou pětin)\n\n$45 : 5 = 9$ (jedna pětina Adamových knih)\n\n$9 \\cdot 2 = 18$ (dvě pětiny; jiná cesta: dvě pětiny jsou osmnáct pětačtyřicetin)\n\n**Výsledek:** a) $\\frac{2}{5}$, b) $\\frac{3}{5}$, c) $18$ komiksů",
+        "otazky": [
+          {"k": "Celá úloha", "text": "„Řekni mi vlastními slovy, co víš o Emině knihovničce a na co se úloha ptá.“"},
+          {"k": "Krok 1 a 2", "text": "„Kolik knih jsou komiksy a kolik knih je v knihovničce celkem? Zapiš to jako zlomek. Dá se zkrátit?“"},
+          {"k": "Výsledek", "text": "„Tady máš začátek: čtyřicet pět knih je pět stejných skupin po devíti. Kolik takových skupin jsou komiksy?“"}
+        ],
+        "otocena_role": "„Vysvětli mi, proč Adam nemá dvacet čtyři komiksů, když má o deset knih víc než Ema.“",
+        "otocena_role_odpoved": "Protože stejná část neznamená přičíst stejně nahoře i dole. Komiksy jsou dvě pětiny knih. Pětina ze čtyřiceti pěti je devět, dvě pětiny jsou osmnáct komiksů.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 $\\frac{2}{3}$: dělí počtem ostatních knih. Zeptejte se: „Kolik knih je v knihovničce celkem?“ (Třicet pět.) $\\frac{2}{35}$: krátí jen čitatel. V kroku 2 $\\frac{2}{5}$: píše znovu část s komiksy. Výsledek $9$: jen vydělí pěti; $27$: počítá ostatní knihy; $24$: přičte deset."
+      },
+      "semafor": {
+        "zelena": "Výborně — zlomek z knihovničky i přepočet pro Adama sedí. Pochvalte, že zlomek zkrátilo a pak násobilo, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Ve skupině je $27$ dětí, $18$ z nich chodí do kroužku. Jaká část skupiny chodí do kroužku? Kolik dětí by chodilo ve skupině $21$ dětí, kdyby chodila stejná část?“ Kontrola pro vás: $\\frac{2}{3}$ (obojí děleno devíti); $14$ dětí (třetina z dvaceti jedna je sedm, dvě třetiny čtrnáct).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 15 kostek nebo knoflíků, 6 červených a 9 jiných. Zítra ať je dítě rozdělí na trojice stejné barvy. Zeptejte se: „Kolik trojic je červených a kolik je všech?“ Pak ať samo zapíše $\\frac{6}{15} = \\frac{2}{5}$. Potom zopakujte lekci „Krácení a rozšiřování“. Kontrola pro vás: 2 červené trojice z 5, nahoře i dole děleno třemi."
+      },
+      "tisk": {
+        "zadani": "Ema má v knihovničce $35$ knih a $14$ z nich jsou komiksy.\n\na) Jakou část Eminy knihovničky tvoří komiksy?\n\nb) Jakou část knihovničky tvoří ostatní knihy?\n\nObě části zapiš jako zlomek v základním tvaru.\n\nc) Adam má $45$ knih a komiksy u něj tvoří stejnou část jako u Emy. Kolik komiksů má Adam?\n\na) Část knihovničky, kterou tvoří komiksy: ______\n\nb) Část knihovničky, kterou tvoří ostatní knihy: ______\n\nc) Výsledek: ______ komiksů"
+      }
+    },
+    {
+      "id": "M8-T04-L1B-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Doplň číslo místo otazníku, aby se zlomky rovnaly:\n\n$$\\frac{25}{35} = \\frac{?}{42}$$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {"typ": "cislo", "jednotka": null},
+          "spravne": {"hodnota": 30},
+          "zname_chyby": [
+            {"hodnota": 32, "typ_chyby": "pricetl-misto-nasobeni"},
+            {"hodnota": 25, "typ_chyby": "upravil-jen-cast-zlomku"}
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Třicet pět krát celé číslo nedá čtyřicet dva, proto se zlomek nejdřív zkrátí a teprve pak rozšíří.",
+        "reseni": "$\\frac{25}{35} = \\frac{5}{7}$ (obojí děleno pěti)\n\n$42 : 7 = 6$ (kolikrát je nový jmenovatel větší)\n\n$5 \\cdot 6 = 30$ (čitatel krát stejné číslo)\n\n$\\frac{5}{7} = \\frac{30}{42}$ (zkouška: obojí krát šest)\n\n**Výsledek:** $30$",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co má platit pro oba zlomky.“",
+          "„Dá se třicet pět vynásobit celým číslem tak, aby vyšlo čtyřicet dva? Co můžeš se zlomkem udělat nejdřív?“",
+          "„Tady máš začátek: dvacet pět třicetipětin je pět sedmin. Kolikrát se vejde sedm do čtyřiceti dvou?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč nestačí k dvaceti pěti přičíst sedm, když se ke třiceti pěti přičetlo sedm.“",
+        "otocena_role_odpoved": "Protože přičítáním se zlomek změní. Stejný zůstane, jen když se nahoře i dole dělí nebo násobí stejným číslem. Pět sedmin krát šest je třicet dvaačtyřicetin.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $32$: přičte sedm nahoře i dole. Zeptejte se: „Jak se z třiceti pěti stane čtyřicet dva, přičtením, nebo násobením?“ (Přes sedm: děleno pěti, krát šest.) $25$: čitatel nechá beze změny."
+      },
+      "semafor": {
+        "zelena": "Výborně — rozšiřování zvládá samo. Pochvalte, že zlomek nejdřív zkrátilo. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: $\\frac{6}{15} = \\frac{?}{25}$. Ať nahlas řekne, na co zlomek zkrátí, čím pak násobí a jaké číslo chybí. Kontrola pro vás: $\\frac{2}{5}$ (obojí děleno třemi), krát pět, chybí $10$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a pastelku. Zítra ať dítě nakreslí obdélník, rozdělí ho na 5 stejných pruhů a 2 vybarví. Pak ať každý pruh rozdělí ještě na 3 díly. Zeptejte se: „Kolik dílů je vybarvených a kolik všech?“ Pak ať samo zapíše $\\frac{2}{5} = \\frac{6}{15}$. Potom zopakujte lekci „Krácení a rozšiřování“. Kontrola pro vás: 6 vybarvených z 15, nahoře i dole krát tři."
+      },
+      "tisk": {
+        "zadani": "Doplň číslo místo otazníku, aby se zlomky rovnaly:\n\n$$\\frac{25}{35} = \\frac{?}{42}$$\n\nVýsledek: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "B-varianta M8-T04-L1 (po červené). Struktura, typy úloh i vstupů, počty kroků a kódy chyb jako v hlavní lekci; čísla a kontexty jiné než v L1 i L1N. Recenzent (9. 10.) přepočítal skriptem (python Fraction) a přes vyhodnotKrok: U1 A $\\frac{7}{9}$ ($\\frac{21}{27}$, $\\frac{7}{54}$, $\\frac{14}{9}$), B $16$, C $\\frac{15}{18}$; U2 chyba ve 2. řádku, oprava $\\frac{12}{14}$, výsledek $\\frac{6}{7}$ ($\\frac{4}{7}$, $\\frac{6}{14}$); U3 $\\frac{2}{5}$ ($\\frac{2}{35}$, $\\frac{2}{3}$), $\\frac{3}{5}$ ($\\frac{2}{5}$), $18$ ($9$, $27$, $24$); U4 $30$ ($32$, $25$). Zásah recenzenta: U1 A $\\frac{50}{70}$ a U2 $\\frac{60}{96}$ měly jmenovatel nad 60 (osnova: do 60) a U1 A krátila deseti; nově U1 A $\\frac{42}{54}$ (krácení šesti jako v hlavní lekci, $\\frac{30}{42}$ je v L1N), U2 $\\frac{48}{56}$ krácené postupně dvěma, dvěma, dvěma, Petr ve 2. řádku dělí nahoře třemi a dole dvěma. Žebříček „Platí“ převzat z hlavní lekce.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-09"
+  }
+}
