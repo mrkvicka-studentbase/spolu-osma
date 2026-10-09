@@ -71,7 +71,7 @@ Verze 1.0, 29. 9. 2026. Vede autor úloh, generuje Pavel. Soubory do `web/audio/
 | `t10/l40-d3.mp3` | 40 / úloha 5 (diktát, věta 3) | diktát | Ten oddíl má cenný pohár. | Dvakrát: poprvé celá věta přirozeně, pauza 2 s, podruhé pomalu po slovech (0,75×, 0,7 s mezi slovy). Interpunkci nevyslovovat; u velkého písmene říct „velké písmeno — …“. | čeká na Pavla |
 | `t10/l40-d4.mp3` | 40 / úloha 5 (diktát, věta 4) | diktát | Klára shodila hrnek na zem. | Dvakrát: poprvé celá věta přirozeně, pauza 2 s, podruhé pomalu po slovech (0,75×, 0,7 s mezi slovy). Interpunkci nevyslovovat; u velkého písmene říct „velké písmeno — …“. | čeká na Pavla |
 
-Témata 3–10 doplnil vedoucí 4. 10. z JSON po korektuře (`prepis`, diktát `vety[].text`). Pro ElevenLabs je hotový text i s pauzami v `cestina/Obsah/nahravky-t3-t10.csv`. Před odevzdáním týdne musí být řádky pro všechny `poslech` a `diktat` kroky v tabulce, jinak QA týden nepustí (kontrola: každý `audio` odkaz v JSON má řádek tady a soubor na disku).
+Témata 3–10 doplnil vedoucí 4. 10. z JSON po korektuře (`prepis`, diktát `vety[].text`). Pro ElevenLabs je hotový text i s pauzami v `cestina/Obsah/nahravky-k-nataceni.md` / `.csv` (generuje `node nastroje/seznam-nahravek.mjs`; postup pro agenta s ElevenLabs: `NAHRAVKY-NAVOD.md`). Před odevzdáním týdne musí být řádky pro všechny `poslech` a `diktat` kroky v tabulce, jinak QA týden nepustí (kontrola: každý `audio` odkaz v JSON má řádek tady a soubor na disku).
 
 ## Postup (ověřený 30. 9., model Eleven v4)
 1. ElevenLabs → Text to Speech, hlas **Jana – Warm, Confident Czech Female**, model **Eleven v4**, Stability ≈ 75 % (Robust), Similarity 75 %.

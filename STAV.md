@@ -18,7 +18,7 @@
 
 ## Chybí, než to půjde k dětem
 1. **45 nahrávek češtiny témat 3–10** (16 poslechů, 29 vět diktátu).
-   - Texty jsou v `cestina/Obsah/AUDIO.md`, text pro ElevenLabs i s pauzami je v `cestina/Obsah/nahravky-t3-t10.csv`.
+   - Texty jsou v `cestina/Obsah/AUDIO.md`, text pro ElevenLabs i s pauzami je v `cestina/Obsah/nahravky-k-nataceni.md` (a `.csv`); natáčet je bude agent podle `cestina/Obsah/NAHRAVKY-NAVOD.md`.
    - Soubory patří do `web/audio/cestina/t3/` … `t10/`.
    - Bez nich poslech nebo diktát dané lekce ukáže hlášku „Nahrávka se nenačetla“.
    - 4 nahrávky témat 1–2 jsou hotové.

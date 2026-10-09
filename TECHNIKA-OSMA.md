@@ -134,7 +134,7 @@ node nastroje/qa-osma.mjs                  # až budou lekce v obsah/ (všechny 
 ## 4. Otevřené body
 1. **Názvy témat** (`tema_mat.t*`, `tema_cj.t*` v `obsah/hlasky.md`) doplní metodici z osnov. Do té doby se název skládá z kapitol.
 2. ~~Manuál rodiče češtiny~~ upraven 2. 10. (5 úloh, ~25 min, „Dnes samo“).
-3. **Nahrávky:** `cestina/Obsah/AUDIO.md` má řádky pro všechny nahrávky Spolu 8 (4. 10.). Natočené jsou jen 4 nahrávky témat 1–2; 45 nahrávek témat 3–10 čeká na Pavla (`cestina/Obsah/nahravky-t3-t10.csv`). Lekce bez souboru ukáže dítěti `cj.audio_chyba`.
+3. **Nahrávky:** `cestina/Obsah/AUDIO.md` má řádky pro všechny nahrávky Spolu 8 (4. 10.). Natočené jsou jen 4 nahrávky témat 1–2; 45 nahrávek témat 3–10 čeká na Pavla (`cestina/Obsah/nahravky-k-nataceni.md` / `.csv` (generuje `node nastroje/seznam-nahravek.mjs`, postup pro agenta `cestina/Obsah/NAHRAVKY-NAVOD.md`)). Lekce bez souboru ukáže dítěti `cj.audio_chyba`.
 4. **Stupně a minuty (T07-L1):** `cislo.jednotka` zobrazí i `°` a `′` (jednotka je prostý text za polem). Dva kroky ale nejsou v jednom řádku, každý krok je samostatný blok pod sebou.
 5. **Datum otevření a `verejna`** rozhodne Pavel (`--otevrit-od`, `--verejna`). Nový Supabase projekt zatím neexistuje. Migrace jsou ověřené jen lokálně (PostgreSQL 16 + stuby `auth`).
 6. **SOS** nabízí placenou konzultaci (150 Kč) jako ve Spolu, jen u rodiče. Jestli zůstane, rozhodne Pavel.

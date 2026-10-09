@@ -70,6 +70,9 @@ Pro každou lekci platí:
 1. **Období:** listopad 2026 – konec května 2027 (30 kalendářních týdnů, ~27 učebních po odečtení prázdnin), **3 lekce matematiky + 3 lekce češtiny týdně**. Délka lekce beze změny (matematika 20 min, čeština ~25 min); ze začátku budou děti rychlejší, to nevadí.
 2. **Každá lekce má „naostro“ dvojče** na stejné téma, trochu těžší nebo objemnější („teď ukaž, že to opravdu umíš“). Ze 40 lekcí na předmět je 80 (40 učebních + 40 naostro).
 3. **Pořadí s odstupem:** naostro lekce přijde o jednu lekci později, v tématu: L1 → L2 → L1 naostro → L3 → L2 naostro → L4 → L3 naostro → L4 naostro.
-4. **Semafor → B-varianta:** ke každé z 80 lekcí je B-varianta (stejná lekce, stejná obtížnost, jiná slova / čísla / věty), kterou aplikace nabídne po červené (u oranžové viz otevřené body v `PLAN-ROZSIRENI.md`). B-varianta se nepočítá do 3 lekcí týdně. Celkem 160 lekcí na předmět.
-5. **Otevírání postupně:** 3 + 3 lekce týdně podle kalendáře (ne všechno najednou).
+4. **Semafor → B-varianta:** ke každé z 80 lekcí je B-varianta (stejná lekce a obtížnost, jiná slova / čísla / věty). Celkem 160 lekcí na předmět.
+   - **Červená** → aplikace nabídne B-variantu. Ta se nepočítá do 3 lekcí týdně.
+   - **Oranžová** → **jen** ústní pětiminutovka pro rodiče následující den (text v `semafor.oranzova`, jako dnes). B-varianta se nenabízí. (Pavel 9. 10.)
+5. **Kalendář pro každé dítě zvlášť** (Pavel 9. 10.): od prvního dne dítěte se otevírají 3 lekce matematiky + 3 češtiny týdně, v pořadí podle úvodního testu (slabá témata první). Ne společné datum pro všechny.
+6. **Pololetní test** v lednu, 1 na předmět (formát jako úvodní test). Přeskládá zbytek roku podle toho, co dítěti jde a nejde.
 Plán prací a otevřené body: `PLAN-ROZSIRENI.md`.

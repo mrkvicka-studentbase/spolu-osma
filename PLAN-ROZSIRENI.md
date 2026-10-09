@@ -10,9 +10,10 @@ Verze 1, 9. 10. 2026. Rozhodnutí Pavla: `ZADANI-OSMA.md` §9.
 | Naostro lekce (dvojče každé lekce, o kus těžší) | 0 | 40 |
 | B-varianty (po červené; ke každé z 80 lekcí) | 0 | 80 |
 | Úvodní test | 1 | 0 |
-| **Celkem** | **41** | **120** |
+| Pololetní test (leden) | 0 | 1 |
+| **Celkem** | **41** | **121** |
 
-Oba předměty: **240 nových lekcí**. Čeština navíc potřebuje nahrávky. Dnes je 49 nahrávek na 40 lekcí, takže na 120 nových lekcí to bude odhadem **~150 nahrávek**.
+Oba předměty: **240 nových lekcí + 2 pololetní testy**. Čeština navíc potřebuje nahrávky. Dnes je 49 nahrávek na 40 lekcí, takže na 120 nových lekcí to bude odhadem **~150 nahrávek**.
 
 ## 2. Kalendář (3 + 3 týdně)
 - Start pondělí 2. 11. 2026, konec neděle 30. 5. 2027: 30 týdnů.
@@ -48,9 +49,12 @@ Oba předměty: **240 nových lekcí**. Čeština navíc potřebuje nahrávky. D
 
 **Časová rezerva:** listopad a prosinec pokryjí témata 1–3 (~8 týdnů × 3 = 24 lekcí = 3 témata). Dál stačí, když je každé další téma hotové 2–3 týdny před tím, než se otevře.
 
-## 6. Otevřené body (k rozhodnutí Pavla)
-1. **Oranžová:** B-varianta až po červené a u oranžové zůstane ústní pětiminutovka pro rodiče jako dnes? Nebo B-varianta nabídnout i po oranžové?
-2. **Kalendář společný, nebo pro každé dítě?**
-   - **Společný:** všichni otevírají lekce ve stejný den. Jednoduché, ale úvodní test pak pořadí neovlivní.
-   - **Pro každé dítě:** od jeho prvního dne 3 + 3 týdně, v pořadí podle úvodního testu (slabá témata první). Lépe to sedí na „učí se, co mu nejde“, ale je to víc techniky.
-3. **Pololetní test** v lednu (přeskládá zbytek roku podle toho, co jde a nejde)? Návrh ano, 1 na předmět.
+## 6. Rozhodnuto 9. 10. (dřívější otevřené body)
+1. **Oranžová:** jen ústní pětiminutovka pro rodiče následující den. B-varianta jen po červené.
+2. **Kalendář pro každé dítě:** od jeho prvního dne 3 + 3 týdně, v pořadí podle úvodního testu. Technika: kalendář se počítá v aplikaci podle data první lekce dítěte; DB `otevrit_od` zůstává jen jako „nejdřív od“.
+3. **Pololetní test:** ano, v lednu, 1 na předmět.
+
+## 7. Nahrávky
+- Seznam se generuje z lekcí: `node nastroje/seznam-nahravek.mjs` → `cestina/Obsah/nahravky-k-nataceni.md` a `.csv`.
+- Natáčí agent přes noc podle `cestina/Obsah/NAHRAVKY-NAVOD.md` (ElevenLabs, Claude in Chrome).
+- Po každé dávce nových lekcí češtiny se seznam přegeneruje.
