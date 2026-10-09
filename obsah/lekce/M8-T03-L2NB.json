@@ -1,0 +1,480 @@
+{
+  "id": "M8-T03-L2NB",
+  "faze": "osma",
+  "tyden": 3,
+  "poradi": 2,
+  "tema": "Převody obsahu",
+  "kapitola": "jednotky",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo převádí jednotky obsahu oběma směry, i přes dvě jednotky, a převody použije ve slovní úloze s ary a hektary.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami. Dítě ukáže, že převody obsahu zvládne samo: víc převodů oběma směry, nenápadnější chyba u Petra a úloha o krok delší.",
+  "uvod_pravidla": [
+    {
+      "znak": "$5\\ \\text{dm}^2 = 500\\ \\text{cm}^2$",
+      "text": "každý krok: sto"
+    },
+    {
+      "znak": "$3\\ \\text{ha} = 300\\ \\text{a}$",
+      "text": "ary, hektary: po stu"
+    },
+    {
+      "znak": "$200\\ \\text{cm}^2 = 2\\ \\text{dm}^2$",
+      "text": "na větší: dělení"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T03-L2NB-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Kolik decimetrů čtverečních je $380\\ \\text{cm}^2$?\n\nB) Kolik centimetrů čtverečních je $0{,}03\\ \\text{m}^2$?\n\nC) Kolik arů je $4\\,200\\ \\text{m}^2$?\n\nD) Kolik metrů čtverečních je $1{,}08\\ \\text{ha}$?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $380\\ \\text{cm}^2$ v $\\text{dm}^2$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$38\\ \\text{dm}^2$",
+                "spravne": false,
+                "typ_chyby": "obsah-po-desitkach"
+              },
+              {
+                "id": "b",
+                "text": "$3{,}8\\ \\text{dm}^2$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$38\\,000\\ \\text{dm}^2$",
+                "spravne": false,
+                "typ_chyby": "prevod-spatnym-smerem"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $0{,}03\\ \\text{m}^2$ v $\\text{cm}^2$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$300\\ \\text{cm}^2$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$3\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "obsah-po-desitkach"
+              },
+              {
+                "id": "c",
+                "text": "$30\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: $4\\,200\\ \\text{m}^2$ v arech",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$42$ a",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$420$ a",
+                "spravne": false,
+                "typ_chyby": "obsah-po-desitkach"
+              },
+              {
+                "id": "c",
+                "text": "$420\\,000$ a",
+                "spravne": false,
+                "typ_chyby": "prevod-spatnym-smerem"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: $1{,}08\\ \\text{ha}$ v $\\text{m}^2$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$108\\ \\text{m}^2$",
+                "spravne": false,
+                "typ_chyby": "obsah-po-desitkach"
+              },
+              {
+                "id": "b",
+                "text": "$1\\,080\\ \\text{m}^2$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "c",
+                "text": "$10\\,800\\ \\text{m}^2$",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá, ale převody jdou oběma směry a u B a D přes dvě jednotky (metr čtvereční, decimetr čtvereční, centimetr čtvereční; hektar, ar, metr čtvereční). Každý krok je sto, dva kroky deset tisíc. Čte se: $0{,}03$ „nula celá nula tři“ (tři setiny), $1{,}08$ „jedna celá nula osm“. Otázky jsou po příkladech, první patří k A i C.",
+        "reseni": "#### A) $380\\ \\text{cm}^2$ v $\\text{dm}^2$\n\n$380 : 100 = 3{,}8$ (decimetr čtvereční je sto centimetrů čtverečních, na větší jednotku se dělí)\n\n#### B) $0{,}03\\ \\text{m}^2$ v $\\text{cm}^2$\n\n$1\\ \\text{m}^2 = 100\\ \\text{dm}^2 = 10\\,000\\ \\text{cm}^2$ (dva kroky po stu)\n\n$0{,}03 \\cdot 10\\,000 = 300$ (čárka o čtyři místa doprava)\n\n#### C) $4\\,200\\ \\text{m}^2$ v arech\n\n$4\\,200 : 100 = 42$ (ar je sto metrů čtverečních)\n\n#### D) $1{,}08\\ \\text{ha}$ v $\\text{m}^2$\n\n$1\\ \\text{ha} = 100\\ \\text{a} = 10\\,000\\ \\text{m}^2$ (dva kroky po stu)\n\n$1{,}08 \\cdot 10\\,000 = 10\\,800$ (čárka o čtyři místa doprava)\n\n**Výsledek:** A) $3{,}8\\ \\text{dm}^2$, B) $300\\ \\text{cm}^2$, C) $42$ a, D) $10\\,800\\ \\text{m}^2$",
+        "otazky": [
+          {
+            "k": "A a C",
+            "text": "„Neklikej a nejdřív řekni: převádíš na větší, nebo na menší jednotku? Kolik menších jednotek obsahu je v jedné větší?“"
+          },
+          {
+            "k": "B",
+            "text": "„Přes kterou jednotku vede cesta od metru čtverečního k centimetru čtverečnímu? Kolikrát tedy násobíš stem?“"
+          },
+          {
+            "k": "D",
+            "text": "„Řekni mi cestu od hektaru k metru čtverečnímu. Čím násobíš na každém kroku a čím celkem?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč je mezi metrem čtverečním a centimetrem čtverečním deset tisíc, a ne sto.“",
+        "otocena_role_odpoved": "Metr čtvereční je sto decimetrů čtverečních a každý z nich má sto centimetrů čtverečních. Sto krát sto je deset tisíc. Sto platí jen u délky, mezi metrem a centimetrem.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. $38$, $3$, $420$ nebo $108$: převádí po deseti jako u délky. Zeptejte se: „Kolik čtverečků je v deseti řadách po deseti?“ (Sto.) $30$ nebo $1\\,080$: násobí tisícem, správně je deset tisíc. $38\\,000$ nebo $420\\,000$: plete si směr."
+      },
+      "semafor": {
+        "zelena": "Výborně — převody obsahu sedí oběma směry i přes dvě jednotky. Pochvalte, že dítě na každém kroku počítalo se stem, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Kolik $\\text{dm}^2$ je $600\\ \\text{cm}^2$? Kolik $\\text{cm}^2$ je $5\\ \\text{m}^2$? Kolik arů je $2\\,700\\ \\text{m}^2$?“ Ať u každého řekne, čím násobí, nebo dělí. Kontrola pro vás: děleno stem, $6\\ \\text{dm}^2$; krát deset tisíc, $50\\,000\\ \\text{cm}^2$; děleno stem, $27$ arů.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: čtverečkovaný papír a pastelku. Zítra ať dítě obtáhne čtverec $10 \\times 10$ čtverečků a řekněte: „Jeden čtvereček je centimetr čtvereční, celý čtverec decimetr čtvereční.“ Zeptejte se: „Kolik čtverečků je v jedné řadě? Kolik je řad? Kolik čtverečků celkem?“ Pak ať samo zapíše $10 \\cdot 10 = 100$ a $1\\ \\text{dm}^2 = 100\\ \\text{cm}^2$. Potom zopakujte lekci „Převody obsahu“. Kontrola pro vás: deset v řadě, deset řad, sto čtverečků."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Kolik decimetrů čtverečních je $380\\ \\text{cm}^2$? — a) $38\\ \\text{dm}^2$ b) $3{,}8\\ \\text{dm}^2$ c) $38\\,000\\ \\text{dm}^2$\n\nB) Kolik centimetrů čtverečních je $0{,}03\\ \\text{m}^2$? — a) $300\\ \\text{cm}^2$ b) $3\\ \\text{cm}^2$ c) $30\\ \\text{cm}^2$\n\nC) Kolik arů je $4\\,200\\ \\text{m}^2$? — a) $42$ a b) $420$ a c) $420\\,000$ a\n\nD) Kolik metrů čtverečních je $1{,}08\\ \\text{ha}$? — a) $108\\ \\text{m}^2$ b) $1\\,080\\ \\text{m}^2$ c) $10\\,800\\ \\text{m}^2$"
+      }
+    },
+    {
+      "id": "M8-T03-L2NB-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Adamův strýc má louku o výměře $0{,}7\\ \\text{ha}$ a k ní ještě zahradu o výměře $840\\ \\text{m}^2$. Kolik arů mají louka a zahrada dohromady?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $1\\ \\text{ha} = 100\\ \\text{a}$\n\n2. řádek: $0{,}7\\ \\text{ha} = 70\\ \\text{a}$\n\n3. řádek: $840\\ \\text{m}^2 = 84\\ \\text{a}$\n\n4. řádek: $70 + 84 = 154\\ \\text{a}$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$1\\ \\text{ha} = 100\\ \\text{a}$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$0{,}7\\ \\text{ha} = 70\\ \\text{a}$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$840\\ \\text{m}^2 = 84\\ \\text{a}$",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$70 + 84 = 154\\ \\text{a}$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$840\\ \\text{m}^2 = 84\\,000\\ \\text{a}$",
+                "spravne": false,
+                "typ_chyby": "prevod-spatnym-smerem"
+              },
+              {
+                "id": "b",
+                "text": "$840\\ \\text{m}^2 = 0{,}84\\ \\text{a}$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "c",
+                "text": "$840\\ \\text{m}^2 = 8{,}4\\ \\text{a}$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "a"
+          },
+          "spravne": {
+            "hodnota": 78.4
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 154,
+              "typ_chyby": "obsah-po-desitkach"
+            },
+            {
+              "hodnota": 910,
+              "typ_chyby": "zapomnel-prevest-jednotky"
+            },
+            {
+              "hodnota": 7840,
+              "typ_chyby": "jednotka-ve-vysledku-spatne"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Louka je v hektarech, zahrada v metrech čtverečních a výsledek se chce v arech. Petr převádí obojí na ary a sčítá. Chyba je jedna a řádek za ní je spočítaný dobře, jen se špatným číslem. Čte se: $0{,}7$ ha „nula celá sedm hektaru“, výsledek $78{,}4$ „sedmdesát osm celých čtyři“, značka $\\text{a}$ je ar.",
+        "reseni": "Chyba je ve 3. řádku: ar je sto metrů čtverečních, ne deset. Petr převedl metry čtvereční na ary po deseti.\n\n$1\\ \\text{ha} = 100\\ \\text{a}$ (hektar je sto arů)\n\n$0{,}7 \\cdot 100 = 70$ (louka v arech)\n\n$840 : 100 = 8{,}4$ (zahrada v arech, ar je sto metrů čtverečních)\n\n$70 + 8{,}4 = 78{,}4$ (louka a zahrada dohromady)\n\nDlaždice $84\\,000$ a a $0{,}84$ a nesedí (první násobí místo dělení, druhá dělí tisícem)\n\n**Výsledek:** $78{,}4$ a",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Petr sčítá a v jakých jednotkách to má dostat.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky. U každého převodu řekni, z jaké jednotky na jakou Petr převádí.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého převodu se zeptej: kolik menších jednotek je v jedné větší? Počítá Petr přesně s tímto číslem?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč osm set čtyřicet metrů čtverečních není osmdesát čtyři arů.“",
+        "otocena_role_odpoved": "Ar je sto metrů čtverečních, takže osm set čtyřicet metrů čtverečních je jen osm celých čtyři aru. Osmdesát čtyři arů by bylo osm tisíc čtyři sta metrů čtverečních.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 4. řádek? Ten jen sčítá. Zeptejte se: „Odkud je osmdesát čtyři?“ (Ze 3. řádku.) Kdo sám převádí po deseti, klikne na 1. nebo 2. řádek; ty jsou správně. Výsledek $154$: opíše Petra; $910$: zahradu nepřevede; $7\\,840$: odpoví v metrech čtverečních."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že dítě u každého převodu ověřilo, kolik metrů čtverečních má ar, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Petr tvrdí, že $760\\ \\text{m}^2$ je $76$ arů. Má pravdu?“ Pak: „Kolik arů je $0{,}9$ ha?“ Ať nahlas řekne, kolik metrů čtverečních má ar a kolik arů hektar. Kontrola pro vás: nemá, $760\\ \\text{m}^2$ je $7{,}6$ aru; $0{,}9$ ha je $90$ arů.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: čtverečkovaný papír a pastelku. Zítra řekněte: „Jeden čtvereček je metr čtvereční. Ar je čtverec $10 \\times 10$ čtverečků.“ Ať dítě obtáhne tři ary vedle sebe a pastelkou ohraničí dva celé ary a dvě řady třetího. Zeptejte se: „Kolik čtverečků je uvnitř? Kolik je to arů?“ Pak ať samo zapíše $220 : 100 = 2{,}2$. Potom zopakujte lekci „Převody obsahu“. Kontrola pro vás: dvě stě dvacet čtverečků, dvě celé dvě desetiny aru."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\nAdamův strýc má louku o výměře $0{,}7\\ \\text{ha}$ a k ní ještě zahradu o výměře $840\\ \\text{m}^2$. Kolik arů mají louka a zahrada dohromady?\n\na udělal jednu chybu.\n\n1. řádek: $1\\ \\text{ha} = 100\\ \\text{a}$\n\n2. řádek: $0{,}7\\ \\text{ha} = 70\\ \\text{a}$\n\n3. řádek: $840\\ \\text{m}^2 = 84\\ \\text{a}$\n\n4. řádek: $70 + 84 = 154\\ \\text{a}$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $840\\ \\text{m}^2 = 84\\,000\\ \\text{a}$ b) $840\\ \\text{m}^2 = 0{,}84\\ \\text{a}$ c) $840\\ \\text{m}^2 = 8{,}4\\ \\text{a}$\n\nC) Kolik arů mají louka a zahrada opravdu? ______ a"
+      }
+    },
+    {
+      "id": "M8-T03-L2NB-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Emina teta má zahradnictví na pozemku o výměře $1{,}1\\ \\text{ha}$. Na $30\\ \\text{a}$ stojí skleníky a $2\\,000\\ \\text{m}^2$ zabírá sklad s dvorem. Zbytek pozemku osází tulipány a rozdělí ho na záhony po $4\\ \\text{a}$. Na každý záhon bude potřeba jeden zavlažovač.\n\nSpočítej, kolik metrů čtverečních zaberou tulipány a kolik zavlažovačů bude teta potřebovat.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Vyber, co platí",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$1{,}1\\ \\text{ha} = 110\\ \\text{m}^2$",
+                "spravne": false,
+                "typ_chyby": "obsah-po-desitkach"
+              },
+              {
+                "id": "b",
+                "text": "$1{,}1\\ \\text{ha} = 1\\,100\\ \\text{m}^2$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "c",
+                "text": "$1{,}1\\ \\text{ha} = 0{,}00011\\ \\text{m}^2$",
+                "spravne": false,
+                "typ_chyby": "prevod-spatnym-smerem"
+              },
+              {
+                "id": "d",
+                "text": "$1{,}1\\ \\text{ha} = 11\\,000\\ \\text{m}^2$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: plocha tulipánů",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m²"
+          },
+          "spravne": {
+            "hodnota": 6000
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 8000,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 9000,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 60,
+              "typ_chyby": "jednotka-ve-vysledku-spatne"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "zavlažovačů"
+          },
+          "spravne": {
+            "hodnota": 15
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 1500,
+              "typ_chyby": "zapomnel-prevest-jednotky"
+            },
+            {
+              "hodnota": 150,
+              "typ_chyby": "obsah-po-desitkach"
+            },
+            {
+              "hodnota": 20,
+              "typ_chyby": "prehledl-udaj"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce. Údaje jsou ve třech jednotkách: hektary, ary a metry čtvereční. Dítě je musí sjednotit; plochu tulipánů chce zadání v metrech čtverečních. Rovnocenná cesta je počítat všechno v arech a nakonec převést. Past: z pozemku ubírají skleníky i sklad. Čte se: $1{,}1$ ha „jedna celá jedna hektaru“, značka $\\text{a}$ je ar.",
+        "reseni": "$1{,}1\\ \\text{ha} = 11\\,000\\ \\text{m}^2$ (hektar je deset tisíc metrů čtverečních)\n\n$30\\ \\text{a} = 3\\,000\\ \\text{m}^2$ (ar je sto metrů čtverečních)\n\n$11\\,000 - 3\\,000 - 2\\,000 = 6\\,000$ (plocha tulipánů v metrech čtverečních)\n\n$4\\ \\text{a} = 400\\ \\text{m}^2$ (jeden záhon)\n\n$6\\,000 : 400 = 15$ (počet záhonů, tedy zavlažovačů)\n\n$60 : 4 = 15$ (zkouška v arech: sto deset minus třicet minus dvacet je šedesát)\n\n**Výsledek:** $15$ zavlažovačů",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co všechno na pozemku je a na co se úloha ptá.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Ve kterých jednotkách jsou jednotlivé údaje? Kolik metrů čtverečních má ar a kolik hektar?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: převeď všechno na metry čtvereční. Co od celého pozemku odečteš? Kolik metrů čtverečních má jeden záhon?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč plochu tulipánů nemůžeš vydělit rovnou čtyřmi.“",
+        "otocena_role_odpoved": "Protože plocha tulipánů je v metrech čtverečních a záhon v arech. Čtyři ary jsou čtyři sta metrů čtverečních a teprve tím se dělí. Správně je i: počítat všechno v arech.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 jiná dlaždice než $11\\,000$: „Kolik metrů čtverečních má hektar?“ (Deset tisíc.) V kroku 2 $8\\,000$ (pak $20$) nebo $9\\,000$: odečte jen skleníky, nebo jen sklad; $60$: plochu uvede v arech. Výsledek $1\\,500$: záhon nepřevede; $150$: ar bere jako deset metrů čtverečních."
+      },
+      "semafor": {
+        "zelena": "Výborně — jednotky sjednotilo a skleníky ani sklad nevynechalo. Pochvalte, že dítě nejdřív všechno převedlo na jednu jednotku, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Pole má $0{,}8$ ha. Stodola zabírá $15$ a a dvůr $500\\ \\text{m}^2$. Zbytek se rozdělí na políčka po $20$ a. Kolik políček bude?“ Ať řeší na papír a nahlas řekne převody, zbytek a počet. Kontrola pro vás: $80$ arů, dvůr $5$ arů; zbude $60$ arů; $3$ políčka.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: čtverečkovaný papír a tužku. Zítra řekněte: „Čtverec $10 \\times 10$ čtverečků je ar, jeden čtvereček metr čtvereční.“ Ať dítě obtáhne tři takové ary vedle sebe a pak v nich zakroužkuje $30$ čtverečků. Zeptejte se: „Kolik metrů čtverečních mají tři ary? Kolik arů je třicet čtverečků?“ Pak ať samo zapíše $3\\ \\text{a} = 300\\ \\text{m}^2$ a $30\\ \\text{m}^2 = 0{,}3\\ \\text{a}$. Potom zopakujte lekci „Převody obsahu“. Kontrola pro vás: tři sta metrů čtverečních; tři desetiny aru."
+      },
+      "tisk": {
+        "zadani": "Emina teta má zahradnictví na pozemku o výměře $1{,}1\\ \\text{ha}$. Na $30\\ \\text{a}$ stojí skleníky a $2\\,000\\ \\text{m}^2$ zabírá sklad s dvorem. Zbytek pozemku osází tulipány a rozdělí ho na záhony po $4\\ \\text{a}$. Na každý záhon bude potřeba jeden zavlažovač.\n\nSpočítej, kolik metrů čtverečních zaberou tulipány a kolik zavlažovačů bude teta potřebovat.\n\nA) Co platí? Zakroužkuj: a) $1{,}1\\ \\text{ha} = 110\\ \\text{m}^2$ b) $1{,}1\\ \\text{ha} = 1\\,100\\ \\text{m}^2$ c) $1{,}1\\ \\text{ha} = 0{,}00011\\ \\text{m}^2$ d) $1{,}1\\ \\text{ha} = 11\\,000\\ \\text{m}^2$\n\nB) Plocha tulipánů: ______ m²\n\nC) Výsledek: ______ zavlažovačů"
+      }
+    },
+    {
+      "id": "M8-T03-L2NB-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Adam chce v pokoji obložit část stěny čtvercovými pěnovými panely proti hluku. Ta část stěny má $6{,}3\\ \\text{m}^2$, jeden panel $900\\ \\text{cm}^2$. Panely se neřežou.\n\nKolik panelů potřebuje?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "panelů"
+          },
+          "spravne": {
+            "hodnota": 70
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 7,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 0.7,
+              "typ_chyby": "obsah-po-desitkach"
+            },
+            {
+              "hodnota": 0.007,
+              "typ_chyby": "zapomnel-prevest-jednotky"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Stěna je v metrech čtverečních, panel v centimetrech čtverečních; převádí se přes dvě jednotky. Čte se: $6{,}3$ „šest celých tři“, $\\text{cm}^2$ „centimetr čtvereční“.",
+        "reseni": "$6{,}3\\ \\text{m}^2 = 63\\,000\\ \\text{cm}^2$ (metr čtvereční je deset tisíc centimetrů čtverečních)\n\n$63\\,000 : 900 = 70$ (počet panelů; jiná cesta: panel je devět decimetrů čtverečních, stěna šest set třicet)\n\n**Výsledek:** $70$ panelů",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co Adam dělá a na co se úloha ptá.“",
+          "„V jakých jednotkách je stěna a v jakých panel? Přes kterou jednotku se mezi nimi převádí?“",
+          "„Tady máš začátek: metr čtvereční je deset tisíc centimetrů čtverečních. Kolik jich má stěna? Kolikrát se do ní vejde panel?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč nemůžeš rovnou vydělit šest celých tři devíti sty.“",
+        "otocena_role_odpoved": "Protože stěna je v metrech čtverečních a panel v centimetrech čtverečních. Stěna má šedesát tři tisíc centimetrů čtverečních a teprve to se dělí. Správně je i: počítat v decimetrech čtverečních.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $7$: násobí jen tisícem. Zeptejte se: „Kolik centimetrů čtverečních má metr čtvereční?“ (Deset tisíc.) $0{,}7$: převádí po deseti; $0{,}007$: nepřevede vůbec."
+      },
+      "semafor": {
+        "zelena": "Výborně — převod přes dvě jednotky zvládá samo. Pochvalte, že nejdřív sjednotilo jednotky. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Stěna má $3\\ \\text{m}^2$. Kolik obrázků po $500\\ \\text{cm}^2$ se na ni vejde? A kolik map po $30\\ \\text{dm}^2$?“ Ať nahlas řekne oba převody a oba počty. Kontrola pro vás: $30\\,000\\ \\text{cm}^2$, $60$ obrázků; $300\\ \\text{dm}^2$, $10$ map.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: list papíru A4, pravítko a tužku. Zítra ať dítě nakreslí čtverec o straně $1$ dm. Zeptejte se: „Kolik centimetrů má jeho strana? Kolik centimetrových čtverečků by se do něj vešlo? Kolik takových čtverců se vejde do metru čtverečního?“ Pak ať samo zapíše $10 \\cdot 10 = 100$ a $100 \\cdot 100 = 10\\,000$. Potom zopakujte lekci „Převody obsahu“. Kontrola pro vás: deset centimetrů, sto čtverečků, sto čtverců."
+      },
+      "tisk": {
+        "zadani": "Adam chce v pokoji obložit část stěny čtvercovými pěnovými panely proti hluku. Ta část stěny má $6{,}3\\ \\text{m}^2$, jeden panel $900\\ \\text{cm}^2$. Panely se neřežou.\n\nKolik panelů potřebuje?\n\nVýsledek: ______ panelů"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 9. 10. 2026: vše přepočítáno nezávisle (python Fraction) a ověřeno přes vyhodnotKrok. U1 $3{,}8\\ \\text{dm}^2$, $300\\ \\text{cm}^2$, $42$ a, $10\\,800\\ \\text{m}^2$; U2 $70 + 8{,}4 = 78{,}4$ a; U3 $11\\,000 - 3\\,000 - 2\\,000 = 6\\,000\\ \\text{m}^2$, $15$ zavlažovačů; U4 $63\\,000 : 900 = 70$. Změna „Platí:“ ($200\\ \\text{cm}^2 = 2\\ \\text{dm}^2$ místo $900\\ \\text{cm}^2 = 9\\ \\text{dm}^2$) schválena: původní řádek by napovídal cestu v U4. Opraveno: typická chyba U3 nyní pokrývá všechny chybné dlaždice kroku 1 (chyběla $0{,}00011$). Kódy chyb sedí ke slovníku, dlaždice mají právě jednu správnou, každá chybná volba i známá chyba je v taháku. Struktura, typy vstupů, délka a obtížnost odpovídají hlavní lekci; texty v limitech slov, bez rodu, otázky neprozrazují výsledek ani Petrův řádek, zlomky a CERMAT nikde, nic z 8. ročníku. Odchylky naostro povolené vedoucím 9. 10. (PLAN-ROZSIRENI §3).",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-09"
+  }
+}

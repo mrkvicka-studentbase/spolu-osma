@@ -1,0 +1,482 @@
+{
+  "id": "M8-T03-L3NB",
+  "faze": "osma",
+  "tyden": 3,
+  "poradi": 3,
+  "tema": "Obvod a obsah obdélníku",
+  "kapitola": "geometrie",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo rozliší obvod a obsah, dopočítá chybějící stranu z obvodu i z obsahu a spočítá obsah útvaru složeného z obdélníků.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami. Dítě ukáže, že obvod a obsah obdélníku zvládne samo: víc příkladů, nenápadnější chyba u Petra a úloha o krok delší.",
+  "uvod_pravidla": [
+    {
+      "znak": "$o = 2 \\cdot (7 + 3)$",
+      "text": "obvod: všechny strany"
+    },
+    {
+      "znak": "$S = 7 \\cdot 3$",
+      "text": "obsah: strana krát strana"
+    },
+    {
+      "znak": "$S = 8 \\cdot 6 - 2 \\cdot 2$",
+      "text": "výřez se odečte"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka",
+    "pravítko"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T03-L3NB-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Obdélník má strany $14$ m a $5{,}5$ m. Jaký má obvod?\n\nB) Čtverec má obvod $28$ cm. Jaký má obsah?\n\nC) Obdélník má obvod $78$ cm, jedna strana měří $15$ cm. Kolik měří druhá?\n\nD) Zahrádka je obdélník $10$ m × $6$ m bez rohu $4$ m × $3$ m. Jaký má obsah?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: obvod obdélníku",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$77$ m",
+                "spravne": false,
+                "typ_chyby": "obvod-obsah-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$39$ m",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$19{,}5$ m",
+                "spravne": false,
+                "typ_chyby": "obvod-jen-dve-strany"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: obsah čtverce",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$28\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "obvod-obsah-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$196\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "obvod-jen-dve-strany"
+              },
+              {
+                "id": "c",
+                "text": "$49\\ \\text{cm}^2$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: druhá strana obdélníku",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$24$ cm",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$5{,}2$ cm",
+                "spravne": false,
+                "typ_chyby": "obvod-obsah-zamena"
+              },
+              {
+                "id": "c",
+                "text": "$63$ cm",
+                "spravne": false,
+                "typ_chyby": "strana-z-obvodu-bez-poloviny"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: obsah zahrádky",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$60\\ \\text{m}^2$",
+                "spravne": false,
+                "typ_chyby": "slozeny-utvar-cast-navic"
+              },
+              {
+                "id": "b",
+                "text": "$48\\ \\text{m}^2$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$32\\ \\text{m}^2$",
+                "spravne": false,
+                "typ_chyby": "obvod-obsah-zamena"
+              },
+              {
+                "id": "d",
+                "text": "$72\\ \\text{m}^2$",
+                "spravne": false,
+                "typ_chyby": "slozeny-utvar-cast-navic"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá, ale u B, C a D jsou dva kroky. Písmena: $o$ obvod (délka okraje), $S$ obsah (plocha uvnitř, jednotky s malou dvojkou). U B se z obvodu čtverce nejdřív zjistí strana, u D se od celého obdélníku odečte chybějící roh. Čte se: $5{,}5$ „pět celých pět“. Otázky jsou po příkladech, první patří k A i C.",
+        "reseni": "#### A) Obvod obdélníku\n\n$o = 2 \\cdot (14 + 5{,}5) = 2 \\cdot 19{,}5 = 39$ (dvě delší a dvě kratší strany)\n\n#### B) Obsah čtverce\n\n$28 : 4 = 7$ (čtverec má čtyři stejné strany)\n\n$S = 7 \\cdot 7 = 49$ (strana krát strana)\n\n#### C) Druhá strana\n\n$78 : 2 = 39$ (polovina obvodu, jedna a druhá strana dohromady)\n\n$39 - 15 = 24$ (druhá strana)\n\n#### D) Obsah zahrádky\n\n$10 \\cdot 6 = 60$ (celý obdélník)\n\n$60 - 4 \\cdot 3 = 48$ (bez rohu, který chybí)\n\n**Výsledek:** A) $39$ m, B) $49\\ \\text{cm}^2$, C) $24$ cm, D) $48\\ \\text{m}^2$",
+        "otazky": [
+          {
+            "k": "A a C",
+            "text": "„Neklikej, nakresli si obdélník a popiš strany, které znáš. Kolik stran obejdeš kolem dokola a kolik jich patří do půlky obvodu?“"
+          },
+          {
+            "k": "B",
+            "text": "„Kolik stran má čtverec a jak dlouhé jsou? Jak z obvodu zjistíš jednu stranu?“"
+          },
+          {
+            "k": "D",
+            "text": "„Nakresli si celý obdélník a vyšrafuj roh, který chybí. Jak spočítáš plochu, která zbude?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč obvod čtverce dělíš čtyřmi, a ne dvěma.“",
+        "otocena_role_odpoved": "Čtverec má čtyři stejně dlouhé strany a obvod jsou všechny dohromady, takže jedna strana je čtvrtina obvodu. Dvěma se dělí u obdélníku, když hledám jednu delší a jednu kratší stranu.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. $19{,}5$: sečte jen dvě strany. Zeptejte se: „Kolik stran má obdélník?“ (Čtyři.) $77$, $28$, $5{,}2$ nebo $32$: plete obvod a obsah. U B $196$: za stranu vezme polovinu obvodu. $63$: nevezme polovinu obvodu. U D $60$ nebo $72$: roh neodečte nebo přičte."
+      },
+      "semafor": {
+        "zelena": "Výborně — obvod, obsah i složený útvar sedí. Pochvalte, že si dítě u každého příkladu ujasnilo, jestli jde o okraj, nebo plochu, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Čtverec má obvod $24$ cm. Jaký má obsah?“ Pak: „Obdélník $7$ m × $5$ m bez rohu $2$ m × $2$ m. Jaký má obsah?“ Ať řeší na papír a nahlas řekne mezikroky. Kontrola pro vás: strana $6$ cm, obsah $36\\ \\text{cm}^2$; celý $35\\ \\text{m}^2$, roh $4\\ \\text{m}^2$, zbytek $31\\ \\text{m}^2$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: čtverečkovaný papír a pastelku. Zítra ať dítě obtáhne čtverec $3 \\times 3$ čtverečky. Zeptejte se: „Kolik dílků má celý okraj? Kolik dílků má jedna strana?“ Pak ať vybarví čtverečky uvnitř a spočítá je. Pak ať samo zapíše $12 : 4 = 3$ a $3 \\cdot 3 = 9$. Potom zopakujte lekci „Obvod a obsah obdélníku“. Kontrola pro vás: okraj 12 dílků, strana 3, uvnitř 9 čtverečků."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Obdélník má strany $14$ m a $5{,}5$ m. Jaký má obvod? — a) $77$ m b) $39$ m c) $19{,}5$ m\n\nB) Čtverec má obvod $28$ cm. Jaký má obsah? — a) $28\\ \\text{cm}^2$ b) $196\\ \\text{cm}^2$ c) $49\\ \\text{cm}^2$\n\nC) Obdélník má obvod $78$ cm, jedna strana měří $15$ cm. Kolik měří druhá? — a) $24$ cm b) $5{,}2$ cm c) $63$ cm\n\nD) Zahrádka je obdélník $10$ m × $6$ m bez rohu $4$ m × $3$ m. Jaký má obsah? — a) $60\\ \\text{m}^2$ b) $48\\ \\text{m}^2$ c) $32\\ \\text{m}^2$ d) $72\\ \\text{m}^2$"
+      }
+    },
+    {
+      "id": "M8-T03-L3NB-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Podlaha školní jídelny má tvar písmene L (viz obrázek). Kolik metrů čtverečních linolea je potřeba na celou podlahu?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $11 - 7 = 4$\n\n2. řádek: $S_1 = 5 \\cdot 11 = 55$\n\n3. řádek: $S_2 = 13 \\cdot 4 = 52$\n\n4. řádek: $S = 55 + 52 = 107$",
+      "obrazek": "<svg viewBox=\"0 0 240 190\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"48,25 108,25 108,109 204,109 204,157 48,157\" fill=\"currentColor\" fill-opacity=\"0.15\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"126\" y=\"177\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">13 m</text><text x=\"40\" y=\"96\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">11 m</text><text x=\"78\" y=\"18\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">5 m</text><text x=\"116\" y=\"72\" text-anchor=\"start\" font-size=\"14\" fill=\"currentColor\">7 m</text></svg>",
+      "obrazek_popis": "Podlaha tvaru písmene L: dolní strana má 13 m, levá strana 11 m, horní strana 5 m a vnitřní svislá strana 7 m; vnitřní vodorovná strana a pravá strana nejsou popsané.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$11 - 7 = 4$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$S_1 = 5 \\cdot 11 = 55$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$S_2 = 13 \\cdot 4 = 52$",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$S = 55 + 52 = 107$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$S_2 = 8 \\cdot 11 = 88$",
+                "spravne": false,
+                "typ_chyby": "slozeny-utvar-cast-navic"
+              },
+              {
+                "id": "b",
+                "text": "$S_2 = 8 \\cdot 4 = 32$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$S_2 = 2 \\cdot (8 + 4) = 24$",
+                "spravne": false,
+                "typ_chyby": "obvod-obsah-zamena"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m²"
+          },
+          "spravne": {
+            "hodnota": 87
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 107,
+              "typ_chyby": "slozeny-utvar-cast-navic"
+            },
+            {
+              "hodnota": 143,
+              "typ_chyby": "slozeny-utvar-cast-navic"
+            },
+            {
+              "hodnota": 48,
+              "typ_chyby": "obvod-obsah-zamena"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Linoleum pokrývá plochu, hledá se tedy obsah ($S$). Petr rozdělí podlahu na dva obdélníky: levý pruh přes celou výšku a dolní pruh. Chyba je jedna. Zkouška pro vás: celý obdélník třináct krát jedenáct je sto čtyřicet tři, chybějící roh osm krát sedm je padesát šest, rozdíl osmdesát sedm.",
+        "reseni": "Chyba je ve 3. řádku: dolní pruh nezačíná na levém okraji, ale až za levým pruhem. Petr počítá levý dolní roh dvakrát.\n\n$11 - 7 = 4$ (výška dolního pruhu)\n\n$S_1 = 5 \\cdot 11 = 55$ (levý pruh přes celou výšku)\n\n$13 - 5 = 8$ (šířka dolního pruhu vpravo od levého)\n\n$S_2 = 8 \\cdot 4 = 32$ (dolní pruh)\n\n$S = 55 + 32 = 87$ (celá podlaha)\n\nDlaždice $88$ a $24$ nesedí (první započítá i chybějící roh, druhá počítá obvod)\n\n**Výsledek:** $87\\ \\text{m}^2$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co se na podlahu pokládá. Hledáš okraj, nebo plochu?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Ukaž mi na obrázku oba obdélníky, se kterými Petr počítá. Kde každý z nich začíná a kde končí?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: odpovídají čísla stranám toho obdélníku na obrázku? Je každý kus podlahy spočítaný právě jednou?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč dolní pruh není třináct krát čtyři.“",
+        "otocena_role_odpoved": "Protože levý dolní roh už patří do levého pruhu. Dolní pruh začíná až za ním a je široký jen osm metrů. Jinak by se ten roh počítal dvakrát.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 1. nebo 2. řádek? Ty jsou správně. Zeptejte se: „Kde začíná dolní pruh?“ (Až za levým pruhem.) Klikne na 4. řádek? Ten jen sčítá. Výsledek $107$: opíše Petra; $143$: započítá i chybějící roh; $48$: počítá obvod."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že dítě hlídalo, aby každý kus podlahy spočítalo právě jednou, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Nakresli útvar L: dole $9$ cm, vlevo $8$ cm, nahoře $3$ cm, vnitřní svislá strana $5$ cm. Rozděl ho na dva obdélníky a spočítej obsah.“ Ať řeší na papír. Kontrola pro vás: $3 \\cdot 8 = 24$ a $6 \\cdot 3 = 18$, celkem $42\\ \\text{cm}^2$ (nebo $72 - 30$).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: čtverečkovaný papír a dvě pastelky. Zítra ať dítě obtáhne útvar L: obdélník $7 \\times 6$ čtverečků bez pravého horního rohu $5 \\times 4$. Pak ať jednou barvou vybarví levý pruh přes celou výšku a druhou zbytek, aby žádný čtvereček nebyl dvakrát. Pak ať samo zapíše oba obsahy a součet. Potom zopakujte lekci „Obvod a obsah obdélníku“. Kontrola pro vás: 12 a 10 čtverečků, celkem 22."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\nPodlaha školní jídelny má tvar písmene L (viz obrázek). Kolik metrů čtverečních linolea je potřeba na celou podlahu?\n\na udělal jednu chybu.\n\n1. řádek: $11 - 7 = 4$\n\n2. řádek: $S_1 = 5 \\cdot 11 = 55$\n\n3. řádek: $S_2 = 13 \\cdot 4 = 52$\n\n4. řádek: $S = 55 + 52 = 107$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $S_2 = 8 \\cdot 11 = 88$ b) $S_2 = 8 \\cdot 4 = 32$ c) $S_2 = 2 \\cdot (8 + 4) = 24$\n\nC) Kolik metrů čtverečních linolea je opravdu potřeba? ______ m²"
+      }
+    },
+    {
+      "id": "M8-T03-L3NB-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Lucčin děda má výběh pro slepice tvaru obdélníku. Pletivo kolem celého výběhu měří $58$ m a jedna strana výběhu $24$ m. Ve výběhu stojí kurník, který zabírá $32\\ \\text{m}^2$. Zbytek výběhu vysype dřevěnou štěpkou. Jeden pytel štěpky vystačí na $8\\ \\text{m}^2$.\n\nKolik pytlů štěpky musí koupit?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Mezivýsledek: druhá strana výběhu",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m"
+          },
+          "spravne": {
+            "hodnota": 5
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 34,
+              "typ_chyby": "strana-z-obvodu-bez-poloviny"
+            },
+            {
+              "hodnota": 29,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 10,
+              "typ_chyby": "strana-z-obvodu-bez-poloviny"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: plocha štěpky",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m²"
+          },
+          "spravne": {
+            "hodnota": 88
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 120,
+              "typ_chyby": "slozeny-utvar-cast-navic"
+            },
+            {
+              "hodnota": 152,
+              "typ_chyby": "slozeny-utvar-cast-navic"
+            },
+            {
+              "hodnota": 784,
+              "typ_chyby": "strana-z-obvodu-bez-poloviny"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "pytlů"
+          },
+          "spravne": {
+            "hodnota": 11
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 15,
+              "typ_chyby": "slozeny-utvar-cast-navic"
+            },
+            {
+              "hodnota": 19,
+              "typ_chyby": "slozeny-utvar-cast-navic"
+            },
+            {
+              "hodnota": 98,
+              "typ_chyby": "strana-z-obvodu-bez-poloviny"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce. Pletivo kolem výběhu je obvod, štěpka pokrývá plochu, tedy obsah. Z obvodu a jedné strany se zjistí druhá strana: polovina obvodu je jedna a druhá strana dohromady. Past: ve výběhu stojí kurník a pod něj se štěpka nesype. Pomůže náčrtek s popsanými stranami.",
+        "reseni": "$58 : 2 = 29$ (polovina pletiva, jedna a druhá strana dohromady)\n\n$29 - 24 = 5$ (druhá strana)\n\n$S = 24 \\cdot 5 = 120$ (celý výběh v metrech čtverečních)\n\n$120 - 32 = 88$ (výběh bez kurníku)\n\n$88 : 8 = 11$ (počet pytlů)\n\n**Výsledek:** $11$ pytlů",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co o výběhu víš. Co znamená pletivo kolem celého výběhu a co se bude sypat?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Kolikrát je v pletivu kolem výběhu strana dvacet čtyři metrů a kolikrát ta druhá? Co z toho plyne pro polovinu pletiva?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: polovina pletiva jsou dvě sousední strany. Jak velký je celý výběh? Co od něj odečteš, než spočítáš pytle?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč od obsahu výběhu odečítáš kurník.“",
+        "otocena_role_odpoved": "Protože kurník stojí ve výběhu a pod něj se štěpka sypat nebude. Štěpka se kupuje jen na zbytek výběhu, to je osmdesát osm metrů čtverečních, a na ten stačí jedenáct pytlů.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 $34$ (pak $784$ a $98$) nebo $10$: nevezme polovinu pletiva. Zeptejte se: „Kolikrát je strana dvacet čtyři metrů v pletivu?“ (Dvakrát.) $29$: neodečte známou stranu. V kroku 2 $120$ (pak $15$): neodečte kurník; $152$ (pak $19$): kurník přičte."
+      },
+      "semafor": {
+        "zelena": "Výborně — strana, plocha bez kurníku i pytle sedí. Pochvalte, že dítě nejdřív vzalo polovinu pletiva a pak hlídalo kurník, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Obdélníkový dvorek má obvod $30$ m a jednu stranu $9$ m. Jaký má obsah? Kolik zbude na trávník, když pískoviště zabere $6\\ \\text{m}^2$?“ Ať řeší na papír a nahlas řekne polovinu obvodu, druhou stranu, obsah a zbytek. Kontrola pro vás: $15$ m; $6$ m; $54\\ \\text{m}^2$; $48\\ \\text{m}^2$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 14 párátek nebo sirek a čtverečkovaný papír. Zítra ať dítě z párátek složí obdélník, jehož jedna strana má 4 kusy. Zeptejte se: „Kolik kusů má polovina okraje? Kolik má druhá strana?“ Pak ať obdélník překreslí na čtverečky a spočítá čtverečky uvnitř. Pak ať samo zapíše $14 : 2 - 4 = 3$ a $4 \\cdot 3 = 12$. Potom zopakujte lekci „Obvod a obsah obdélníku“. Kontrola pro vás: druhá strana 3 kusy, uvnitř 12 čtverečků."
+      },
+      "tisk": {
+        "zadani": "Lucčin děda má výběh pro slepice tvaru obdélníku. Pletivo kolem celého výběhu měří $58$ m a jedna strana výběhu $24$ m. Ve výběhu stojí kurník, který zabírá $32\\ \\text{m}^2$. Zbytek výběhu vysype dřevěnou štěpkou. Jeden pytel štěpky vystačí na $8\\ \\text{m}^2$.\n\nKolik pytlů štěpky musí koupit?\n\nA) Druhá strana výběhu: ______ m\n\nB) Plocha štěpky: ______ m²\n\nC) Výsledek: ______ pytlů"
+      }
+    },
+    {
+      "id": "M8-T03-L3NB-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Adam s tátou staví u stodoly ohradu pro kozy tvaru obdélníku. Ohrada má obsah $84\\ \\text{m}^2$. Její delší strana měří $12$ m a celá vede podél zdi stodoly. Na ostatních stranách ohrady bude plot.\n\nKolik metrů plotu je potřeba?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m"
+          },
+          "spravne": {
+            "hodnota": 26
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 38,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 19,
+              "typ_chyby": "obvod-jen-dve-strany"
+            },
+            {
+              "hodnota": 72,
+              "typ_chyby": "obvod-obsah-zamena"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Z obsahu a jedné strany se nejdřív zjistí druhá strana. Plot je jen část obvodu: strana u stodoly se nepočítá. Pomůže náčrtek.",
+        "reseni": "$84 : 12 = 7$ (kratší strana, obsah je delší strana krát kratší)\n\n$12 + 7 + 7 = 26$ (druhá delší strana a obě kratší, strana u stodoly ne; jiná cesta: obvod třicet osm minus dvanáct)\n\n**Výsledek:** $26$ m",
+        "otazky": [
+          "„Řekni mi vlastními slovy, jak ohrada vypadá a kde bude plot.“",
+          "„Nakresli si ohradu a stodolu. Kterou stranu znáš a jak z obsahu zjistíš tu druhou?“",
+          "„Tady máš začátek: obsah je delší strana krát kratší strana. Kolik tedy měří kratší strana? Které strany obejde plot?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč do plotu nepočítáš celý obvod ohrady.“",
+        "otocena_role_odpoved": "Protože jedna delší strana vede podél zdi stodoly a tam plot není. Počítám jen druhou delší stranu a obě kratší: dvanáct plus sedm plus sedm je dvacet šest metrů.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $38$: počítá celý obvod. Zeptejte se: „Je plot i u stodoly?“ (Ne.) $19$: sečte jen dvě strany. $72$: obsah bere jako obvod (druhá strana mu vyjde $30$)."
+      },
+      "semafor": {
+        "zelena": "Výborně — stranu z obsahu i plot zvládá samo. Pochvalte, že si nakreslilo náčrtek a hlídalo stranu u stodoly. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Obdélníkové pískoviště má obsah $24\\ \\text{m}^2$ a delší stranu $8$ m. Kolik metrů obrubníku je potřeba, když jedna delší strana vede podél zdi?“ Ať řeší na papír a nahlas řekne kratší stranu a délku obrubníku. Kontrola pro vás: kratší strana $3$ m; obrubník $8 + 3 + 3 = 14$ m (nebo obvod $22$ minus $8$).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: čtverečkovaný papír, tužku a pastelku. Zítra ať dítě obtáhne obdélník $5 \\times 3$ čtverečky a jednu delší stranu obtáhne pastelkou jako zeď stodoly. Zeptejte se: „Kolik čtverečků je uvnitř? Kolik dílků okraje obejde plot, když u stodoly žádný není?“ Pak ať samo zapíše $5 \\cdot 3 = 15$ a $5 + 3 + 3 = 11$. Potom zopakujte lekci „Obvod a obsah obdélníku“. Kontrola pro vás: 15 čtverečků, plot 11 dílků."
+      },
+      "tisk": {
+        "zadani": "Adam s tátou staví u stodoly ohradu pro kozy tvaru obdélníku. Ohrada má obsah $84\\ \\text{m}^2$. Její delší strana měří $12$ m a celá vede podél zdi stodoly. Na ostatních stranách ohrady bude plot.\n\nKolik metrů plotu je potřeba?\n\nVýsledek: ______ m"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 9. 10. 2026: vše přepočítáno nezávisle (python Fraction) a ověřeno přes vyhodnotKrok; SVG v U2 sedí na rozměry (12 jednotek na metr, $13 \\times 11$, roh $8 \\times 7$), popisky ve viewBoxu. U1 $39$ m, $49\\ \\text{cm}^2$, $24$ cm, $48\\ \\text{m}^2$; U2 $55 + 32 = 87 = 143 - 56$; U3 $58 : 2 - 24 = 5$, $120 - 32 = 88$, $11$ pytlů; U4 $84 : 12 = 7$, $12 + 7 + 7 = 26$. Opraveno: U1 C opakovalo z hlavní lekce „jedna strana měří $20$ cm“, nově obvod $78$ cm a strana $15$ cm ($24$ cm; chyby $63$ a $5{,}2$), řešení, typická chyba a tisk sladěny; zelená U1 zkrácena na 25 slov. Kódy chyb sedí ke slovníku, dlaždice mají právě jednu správnou, každá chybná volba i známá chyba je v taháku. Struktura, typy vstupů, délka a obtížnost odpovídají hlavní lekci; texty v limitech slov, bez rodu, otázky neprozrazují výsledek ani Petrův řádek, zlomky a CERMAT nikde, nic z 8. ročníku. Odchylky naostro povolené vedoucím 9. 10. (PLAN-ROZSIRENI §3).",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-09"
+  }
+}
