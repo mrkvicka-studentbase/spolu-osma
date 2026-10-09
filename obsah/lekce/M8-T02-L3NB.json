@@ -1,0 +1,494 @@
+{
+  "id": "M8-T02-L3NB",
+  "faze": "osma",
+  "tyden": 2,
+  "poradi": 3,
+  "tema": "Desetinná čísla: krát, děleno",
+  "kapitola": "desetinna-cisla",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo umístí čárku při násobení a dělení desetinných čísel, i když součin končí nulami nebo jde o slovní úlohu se dvěma nákupy.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami. Naostro: dítě tuhle látku dělalo v lekci „Desetinná čísla: krát, děleno“ a dnes ukáže, že ji zvládne samo i na delších příkladech.",
+  "uvod_pravidla": [
+    {
+      "znak": "$0{,}3 \\cdot 0{,}02 = 0{,}006$",
+      "text": "místa se sečtou"
+    },
+    {
+      "znak": "$0{,}6 : 0{,}02 = 60 : 2$",
+      "text": "posun u obou"
+    },
+    {
+      "znak": "$3 : 4 = 0{,}75$",
+      "text": "dělí se za čárkou"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T02-L3NB-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) $0{,}07 \\cdot 0{,}6$\n\nB) $2{,}7 : 0{,}03$\n\nC) $8 : 25$\n\nD) $3{,}5 \\cdot 0{,}4$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $0{,}07 \\cdot 0{,}6$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$0{,}042$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$0{,}42$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-nasobeni"
+              },
+              {
+                "id": "c",
+                "text": "$0{,}0042$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-nasobeni"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $2{,}7 : 0{,}03$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$9$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-deleni"
+              },
+              {
+                "id": "b",
+                "text": "$90$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$0{,}9$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-deleni"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: $8 : 25$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$3{,}125$",
+                "spravne": false,
+                "typ_chyby": "deleni-obracene"
+              },
+              {
+                "id": "b",
+                "text": "$3{,}2$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-deleni"
+              },
+              {
+                "id": "c",
+                "text": "$0{,}32$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: $3{,}5 \\cdot 0{,}4$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$14$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-nasobeni"
+              },
+              {
+                "id": "b",
+                "text": "$1{,}4$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$0{,}14$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-nasobeni"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě tu jen vybírá. U A a D se násobí bez čárek a sečtou se desetinná místa obou čísel; u D se nula na konci škrtá až potom. U B se čárka posune u obou čísel stejně. U C se dělí menší číslo větším. Čte se: $0{,}042$ = čtyřicet dva tisícin, $0{,}32$ = třicet dva setin. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $0{,}07 \\cdot 0{,}6$\n\n$7 \\cdot 6 = 42$ (nejdřív bez čárek)\n\n$0{,}07 \\cdot 0{,}6 = 0{,}042$ (dvě a jedno desetinné místo, dohromady tři)\n\n#### B) $2{,}7 : 0{,}03$\n\n$= 270 : 3$ (čárka u obou čísel o dvě místa doprava)\n\n$= 90$ (dělí se celým číslem)\n\n#### C) $8 : 25$\n\n$= 8{,}00 : 25$ (za osmičku se dopíše čárka a nuly)\n\n$= 0{,}32$ (osm celých pětadvaceti dělit nejde, píše se nula celá)\n\n#### D) $3{,}5 \\cdot 0{,}4$\n\n$35 \\cdot 4 = 140$ (nejdřív bez čárek)\n\n$3{,}5 \\cdot 0{,}4 = 1{,}40 = 1{,}4$ (jedno a jedno desetinné místo, dohromady dvě; nula na konci se škrtne až teď)\n\n**Výsledek:** A) $0{,}042$, B) $90$, C) $0{,}32$, D) $1{,}4$",
+        "otazky": [
+          {
+            "k": "A a D",
+            "text": "„Neklikej, spočítej na papíře bez čárek. Kolik míst za čárkou mají obě čísla dohromady? Kdy smíš škrtnout nulu na konci?“"
+          },
+          {
+            "k": "B",
+            "text": "„O kolik míst posuneš čárku u tří setin, aby bylo celé? Co pak musíš udělat se dvěma celými sedmi?“"
+          },
+          {
+            "k": "C",
+            "text": "„Kolikrát se dvacet pět vejde do osmi? Dopiš za osmičku čárku a nuly. Jak budeš dělit dál?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč tři celé pět krát nula celá čtyři není nula celá čtrnáct.“",
+        "otocena_role_odpoved": "Třicet pět krát čtyři je sto čtyřicet. Čísla mají dohromady dvě desetinná místa, takže jedna celá čtyřicet. Nulu na konci smím škrtnout až potom, vyjde jedna celá čtyři.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A a D jiná dlaždice: špatně spočítá desetinná místa. Zeptejte se: „Kolik míst za čárkou mají obě čísla dohromady?“ (U A tři, u D dvě.) U B $9$ nebo $0{,}9$: posun jen u jednoho čísla. U C $3{,}125$: dělí obráceně; $3{,}2$: vynechá nulu celých."
+      },
+      "semafor": {
+        "zelena": "Výborně — čárka sedí u násobení i dělení. Pochvalte, že u násobení počítalo desetinná místa i s nulami, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu $0{,}08 \\cdot 0{,}3$, $4{,}5 \\cdot 0{,}2$ a $1{,}8 : 0{,}03$. Ať řeší na papír a u každého řekne, kam dalo čárku. Kontrola pro vás: $0{,}024$ (dvacet čtyři tisícin); $0{,}9$ (devadesát setin, nula se škrtne); $60$ ($180 : 3$).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: proužek papíru dlouhý 10 cm a pravítko. Zítra: celý proužek je jedna celá. Ať dítě na proužku vyznačí $0{,}6$ délky, tedy 6 cm, a z vyznačené části pak polovinu. Zeptejte se: „Kolik centimetrů je ta polovina a jaká je to část proužku?“ Pak ať samo zapíše $0{,}5 \\cdot 0{,}6 = 0{,}30 = 0{,}3$. Potom zopakujte lekci „Desetinná čísla: krát, děleno“. Kontrola pro vás: 3 cm, tři desetiny proužku."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) $0{,}07 \\cdot 0{,}6$ — a) $0{,}042$ b) $0{,}42$ c) $0{,}0042$\n\nB) $2{,}7 : 0{,}03$ — a) $9$ b) $90$ c) $0{,}9$\n\nC) $8 : 25$ — a) $3{,}125$ b) $3{,}2$ c) $0{,}32$\n\nD) $3{,}5 \\cdot 0{,}4$ — a) $14$ b) $1{,}4$ c) $0{,}14$"
+      }
+    },
+    {
+      "id": "M8-T02-L3NB-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr počítal příklad\n\n$$5{,}6 : 0{,}14 - 0{,}75 \\cdot 0{,}8$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $= 40 - 0{,}75 \\cdot 0{,}8$\n\n2. řádek: $= 40 - 0{,}006$\n\n3. řádek: $= 39{,}994$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$= 40 - 0{,}75 \\cdot 0{,}8$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$= 40 - 0{,}006$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$= 39{,}994$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$= 40 - 0{,}6$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$= 4 - 0{,}6$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-deleni"
+              },
+              {
+                "id": "c",
+                "text": "$= 40 - 6$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-nasobeni"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 39.4
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 39.994,
+              "typ_chyby": "carka-pri-nasobeni"
+            },
+            {
+              "hodnota": 3.4,
+              "typ_chyby": "carka-pri-deleni"
+            },
+            {
+              "hodnota": 31.4,
+              "typ_chyby": "scital-pred-nasobenim"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. V příkladu je děleno a krát, odčítá se až nakonec. Chybný je jen jeden řádek; řádky po něm počítají dobře, ale s chybným číslem. Past: součin může končit nulami. Čte se: $0{,}14$ = čtrnáct setin, $0{,}75$ = sedmdesát pět setin, $0{,}006$ = šest tisícin, $39{,}4$ = třicet devět celých čtyři.",
+        "reseni": "Chyba je ve 2. řádku: sedmdesát pět krát osm je šest set, se třemi desetinnými místy šest set tisícin, tedy šest desetin. Petr nejdřív škrtl nuly a pak oddělil tři místa.\n\n$5{,}6 : 0{,}14 = 560 : 14 = 40$ (čárka u obou čísel o dvě místa doprava)\n\n$0{,}75 \\cdot 0{,}8 = 0{,}600 = 0{,}6$ (sedmdesát pět krát osm je šest set, tři desetinná místa)\n\n$40 - 0{,}6 = 39{,}4$ (odčítání nakonec, čárka pod čárkou)\n\n**Výsledek:** $39{,}4$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Přečti mi příklad nahlas. Které výpočty mají přednost a co přijde na řadu nakonec?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky postupně a u každého řekni, který výpočet v něm Petr udělal.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U dělení udělej zkoušku násobením. U násobení napiš součin bez čárek i s nulami a pak odděl desetinná místa. Sedí to?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč sedmdesát pět setin krát osm desetin není šest tisícin.“",
+        "otocena_role_odpoved": "Sedmdesát pět krát osm je šest set. Desetinná místa jsou tři, takže šest set tisícin, a to je šest desetin. Nuly se smí škrtnout až po oddělení míst.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 3. řádek? Ten je jen důsledek. Zeptejte se: „Odkud je šest tisícin?“ (Z 2. řádku.) 1. řádek je správně: $40 \\cdot 0{,}14 = 5{,}6$. Výsledek $39{,}994$, oprava $40 - 6$: desetinná místa; $3{,}4$, oprava $4 - 0{,}6$: posun u jednoho čísla; $31{,}4$: odčítá dřív než násobí."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že u součinu oddělilo desetinná místa dřív, než škrtlo nuly, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu: „Petr tvrdí, že $0{,}4 \\cdot 0{,}5 = 0{,}02$.“ Ať řekne, jestli má Petr pravdu, a spočítá to správně. Pak ať spočítá $0{,}75 \\cdot 0{,}2$. Kontrola pro vás: nemá, čtyři krát pět je dvacet, dvě místa, správně $0{,}2$ (dvě desetiny); $0{,}75 \\cdot 0{,}2 = 0{,}15$ (patnáct setin).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 8 desetikorun (nebo 8 papírků s číslem 10). Zítra: stovka je jedna celá, takže 8 desetikorun je $0{,}8$ stovky. Ať dítě vezme tři čtvrtiny z nich a řekne, jaká je to část stovky. Pak ať samo zapíše $0{,}75 \\cdot 0{,}8 = 0{,}6$. Potom zopakujte lekci „Desetinná čísla: krát, děleno“. Kontrola pro vás: tři čtvrtiny jsou 6 desetikorun, tedy 60 korun, šest desetin stovky."
+      },
+      "tisk": {
+        "zadani": "Petr počítal příklad\n\n$$5{,}6 : 0{,}14 - 0{,}75 \\cdot 0{,}8$$\n\na udělal jednu chybu.\n\n1. řádek: $= 40 - 0{,}75 \\cdot 0{,}8$\n\n2. řádek: $= 40 - 0{,}006$\n\n3. řádek: $= 39{,}994$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $= 40 - 0{,}6$ b) $= 4 - 0{,}6$ c) $= 40 - 6$\n\nC) Spočítej správný výsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T02-L3NB-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "V bezobalovém obchodě stojí $0{,}6$ kg müsli $84$ Kč. Sušené brusinky se prodávají na váhu, $1$ kg stojí $160$ Kč. Lucka si natočí $1{,}5$ kg müsli a $0{,}2$ kg brusinek.\n\nKolik korun stojí $1$ kg müsli? Kolik zaplatí za müsli? Kolik zaplatí celkem?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Který zápis odpovídá ceně 1 kg müsli?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$84 \\cdot 1{,}5$",
+                "spravne": false,
+                "typ_chyby": "prehledl-udaj"
+              },
+              {
+                "id": "b",
+                "text": "$84 : 6$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-deleni"
+              },
+              {
+                "id": "c",
+                "text": "$84 : 0{,}6$",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "$0{,}6 : 84$",
+                "spravne": false,
+                "typ_chyby": "deleni-obracene"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: cena 1 kg müsli",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 140
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 14,
+              "typ_chyby": "carka-pri-deleni"
+            },
+            {
+              "hodnota": 1400,
+              "typ_chyby": "carka-pri-deleni"
+            }
+          ]
+        },
+        {
+          "id": "k3",
+          "popisek": "Mezivýsledek: müsli",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 210
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 2100,
+              "typ_chyby": "carka-pri-nasobeni"
+            },
+            {
+              "hodnota": 21,
+              "typ_chyby": "carka-pri-nasobeni"
+            },
+            {
+              "hodnota": 126,
+              "typ_chyby": "prehledl-udaj"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek: celkem",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 242
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 53,
+              "typ_chyby": "carka-pri-deleni"
+            },
+            {
+              "hodnota": 158,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 213.2,
+              "typ_chyby": "carka-pri-nasobeni"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Cena $84$ Kč patří k $0{,}6$ kg müsli, ne k jednomu kilogramu. U brusinek je cena za kilogram už daná. Nakonec se obě částky sečtou. Čte se: $0{,}6$ = šest desetin kila ($600$ g), $1{,}5$ = jedna celá pět (kilo a půl), $0{,}2$ = dvě desetiny kila.",
+        "reseni": "$84 : 0{,}6 = 840 : 6$ (čárka u obou čísel o jedno místo doprava)\n\n$= 140$ (cena jednoho kilogramu müsli)\n\n$140 \\cdot 1{,}5 = 210$ (müsli, kilo a půl)\n\n$160 \\cdot 0{,}2 = 32$ (brusinky, dvě desetiny ceny kilogramu)\n\n$210 + 32 = 242$ (celkem)\n\nJiná cesta: půl kila müsli stojí $140 : 2 = 70$ Kč, kilo a půl $140 + 70 = 210$ Kč\n\n**Výsledek:** $1$ kg müsli $140$ Kč, müsli $210$ Kč, celkem $242$ Kč",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Lucka kupuje a co všechno máš zjistit.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Kolik müsli je za čtyřiaosmdesát korun? Jak z toho zjistíš cenu jednoho kila? Co uděláš s čárkami?“"
+          },
+          {
+            "k": "Krok 3 a výsledek",
+            "text": "„Tady máš začátek: jedna celá pět kila je kilo a půl. Kolik stojí půl kila müsli? Co ještě přičteš?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč Lucka za müsli nezaplatí čtyřiaosmdesát krát jedna celá pět.“",
+        "otocena_role_odpoved": "Protože čtyřiaosmdesát korun stojí jen šest desetin kila, ne celé kilo. Nejdřív musím zjistit cenu kila, sto čtyřicet korun, a z ní vzít kilo a půl.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Krok 1 $84 \\cdot 1{,}5$, krok 3 $126$, výsledek $158$: počítá se špatnou cenou. Zeptejte se: „Kolik müsli je za čtyřiaosmdesát korun?“ (Šest desetin kila.) $0{,}6 : 84$: dělí obráceně; $84 : 6$, $14$, $1\\,400$ nebo $53$: čárka při dělení; $2\\,100$, $21$ nebo $213{,}2$: při násobení."
+      },
+      "semafor": {
+        "zelena": "Výborně — hlavní úlohu zvládlo. Pochvalte, že nejdřív zjistilo cenu kilogramu a nezapomnělo na brusinky, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu: „$0{,}3$ kg kakaa stojí $57$ Kč. Kolik stojí $1$ kg a kolik $0{,}5$ kg?“ Ať řeší na papír a řekne obě ceny. Kontrola pro vás: $1$ kg $190$ Kč ($570 : 3$); $0{,}5$ kg $95$ Kč (polovina ceny kila).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 3 stejné misky a papírek „2 misky = 1 kg“. Zítra: celé kilo stojí $140$ Kč. Ať dítě rozdělí cenu na 2 misky a řekne, kolik stojí jedna miska, tedy půl kila. Pak ať vezme 3 misky a spočítá jejich cenu. Pak ať samo zapíše $140 \\cdot 1{,}5 = 210$. Potom zopakujte lekci „Desetinná čísla: krát, děleno“. Kontrola pro vás: jedna miska 70 Kč, tři misky 210 Kč."
+      },
+      "tisk": {
+        "zadani": "V bezobalovém obchodě stojí $0{,}6$ kg müsli $84$ Kč. Sušené brusinky se prodávají na váhu, $1$ kg stojí $160$ Kč. Lucka si natočí $1{,}5$ kg müsli a $0{,}2$ kg brusinek.\n\nA) Který zápis odpovídá ceně 1 kg müsli? Zakroužkuj: a) $84 \\cdot 1{,}5$ b) $84 : 6$ c) $84 : 0{,}6$ d) $0{,}6 : 84$\n\nB) Cena 1 kg müsli: ______ Kč\n\nC) Lucka zaplatí za müsli: ______ Kč\n\nD) Lucka zaplatí celkem: ______ Kč"
+      }
+    },
+    {
+      "id": "M8-T02-L3NB-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Adamova třída dělá na výtvarce sádrové odlitky. Má $2$ pytlíky sádry a v každém je $3{,}3$ kg. Na jeden odlitek je potřeba $0{,}15$ kg sádry.\n\nKolik odlitků udělají?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "odlitků"
+          },
+          "spravne": {
+            "hodnota": 44
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 4.4,
+              "typ_chyby": "carka-pri-deleni"
+            },
+            {
+              "hodnota": 440,
+              "typ_chyby": "carka-pri-deleni"
+            },
+            {
+              "hodnota": 22,
+              "typ_chyby": "prehledl-udaj"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Nejdřív se zjistí, kolik sádry je v obou pytlících, pak kolikrát se do ní vejde jeden odlitek. Čte se: $0{,}15$ = nula celá patnáct (patnáct setin kila), $3{,}3$ = tři celé tři.",
+        "reseni": "$2 \\cdot 3{,}3 = 6{,}6$ (sádra v obou pytlících)\n\n$6{,}6 : 0{,}15 = 660 : 15$ (čárka u obou čísel o dvě místa doprava)\n\n$= 44$ (dělení celým číslem)\n\nJiná cesta: z jednoho pytlíku je $330 : 15 = 22$ odlitků, ze dvou pytlíků $2 \\cdot 22 = 44$\n\n**Výsledek:** $44$ odlitků",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co třída má a co máš zjistit.“",
+          "„Kolik sádry je dohromady? Jakým počítáním zjistíš, kolikrát se do ní vejde jeden odlitek?“",
+          "„Tady máš začátek: když posuneš čárku u obou čísel stejně, podíl se nezmění. O kolik míst ji posuneš, aby se dělilo celým číslem?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč třída neudělá jen čtyři celé čtyři odlitku.“",
+        "otocena_role_odpoved": "Na jeden odlitek stačí patnáct setin kila a sádry je přes šest kil, takže odlitků musí být hodně. Posunu čárku u obou čísel o dvě místa: šest set šedesát děleno patnácti je čtyřicet čtyři.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $4{,}4$ nebo $440$: čárku posune jen u jednoho čísla. Zeptejte se: „Kolik odlitků by bylo z jednoho kila sádry?“ (Šest až sedm, ze šesti kil tedy přes čtyřicet.) $22$: počítá jen s jedním pytlíkem."
+      },
+      "semafor": {
+        "zelena": "Výborně — dělení desetinným číslem zvládá samo. Pochvalte, že nezapomnělo na oba pytlíky. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu: „Ze $2$ balení hlíny po $1{,}5$ kg se modelují misky, na každou je potřeba $0{,}3$ kg. Kolik misek?“ Ať řeší na papír. Kontrola pro vás: hlíny je $3$ kg, misek $10$ ($30 : 3$).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko s milimetry. Zítra ať dítě od nuly odpočítává kousky po $1{,}2$ cm, tedy po dvanácti milimetrech, až ke značce $6$ cm a kousky počítá. Pak ať samo zapíše $6 : 1{,}2 = 60 : 12 = 5$. Potom zopakujte lekci „Desetinná čísla: krát, děleno“. Kontrola pro vás: pět kousků (značky $1{,}2$; $2{,}4$; $3{,}6$; $4{,}8$; $6$ cm)."
+      },
+      "tisk": {
+        "zadani": "Adamova třída dělá na výtvarce sádrové odlitky. Má $2$ pytlíky sádry a v každém je $3{,}3$ kg. Na jeden odlitek je potřeba $0{,}15$ kg sádry.\n\nKolik odlitků udělají?\n\nVýsledek: ______ odlitků"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 9. 10.: vše přepočítáno skriptem (Fraction, zaokrouhlení půl nahoru) a ověřeno přes vyhodnotKrok (správné odpovědi, každá dlaždice a známá chyba s kódem); B-varianta má stejnou strukturu, vstupy, kódy chyb a obtížnost jako hlavní lekce, čísla zadání se neopakují (společné jsou jen $10$, $100$, $1\\,000$ a dvě stokoruny, které patří k látce). Posouzeno U1 C $8 : 25$ místo $5 : 8$: obtížnost srovnatelná (dvě místa za čárkou místo tří, dělitel $25$ je dítěti známý), obrácené dělení $25 : 8 = 3{,}125$ vychází čistě, ponecháno. U3 $54$ ↔ $53$ (dvojí cesta přes $21$) stejně jako v hlavní lekci. Jazyk: „osmdesát čtyři korun“ → „čtyřiaosmdesát korun“.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-09"
+  }
+}

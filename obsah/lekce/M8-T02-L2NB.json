@@ -1,0 +1,507 @@
+{
+  "id": "M8-T02-L2NB",
+  "faze": "osma",
+  "tyden": 2,
+  "poradi": 2,
+  "tema": "Desetinná čísla: plus, mínus",
+  "kapitola": "desetinna-cisla",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo sčítá a odčítá desetinná čísla pod sebou i s celými čísly a správně posune čárku při násobení a dělení 10, 100 a 1 000.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami. Naostro: dítě tuhle látku dělalo v lekci „Desetinná čísla: plus, mínus“ a dnes ukáže, že ji zvládne samo i na delších příkladech.",
+  "uvod_pravidla": [
+    {
+      "znak": "$5 + 0{,}36 = 5{,}36$",
+      "text": "čárka pod čárkou"
+    },
+    {
+      "znak": "$0{,}4 \\cdot 1\\,000 = 400$",
+      "text": "krát: doprava"
+    },
+    {
+      "znak": "$8 : 100 = 0{,}08$",
+      "text": "děleno: doleva"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T02-L2NB-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) $3{,}6 + 0{,}85 + 2$\n\nB) $0{,}036 \\cdot 100$\n\nC) $3 : 1\\,000$\n\nD) $23 - 0{,}6$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $3{,}6 + 0{,}85 + 2$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$4{,}47$",
+                "spravne": false,
+                "typ_chyby": "carka-scitani-pod-sebe"
+              },
+              {
+                "id": "b",
+                "text": "$1{,}23$",
+                "spravne": false,
+                "typ_chyby": "carka-scitani-pod-sebe"
+              },
+              {
+                "id": "c",
+                "text": "$6{,}45$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $0{,}036 \\cdot 100$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$0{,}36$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "b",
+                "text": "$3{,}6$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$0{,}00036$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-spatnym-smerem"
+              },
+              {
+                "id": "d",
+                "text": "$0{,}03600$",
+                "spravne": false,
+                "typ_chyby": "pripsal-nuly-k-desetinnemu"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: $3 : 1\\,000$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$3\\,000$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-spatnym-smerem"
+              },
+              {
+                "id": "b",
+                "text": "$0{,}03$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "c",
+                "text": "$0{,}003$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: $23 - 0{,}6$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$22{,}4$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$17$",
+                "spravne": false,
+                "typ_chyby": "carka-scitani-pod-sebe"
+              },
+              {
+                "id": "c",
+                "text": "$22{,}94$",
+                "spravne": false,
+                "typ_chyby": "rad-cislice-zamena"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá. U A a D se počítá pod sebou, čárka pod čárkou; celé číslo má čárku za poslední číslicí, i když se nepíše. U B a C se posouvá čárka o tolik míst, kolik nul má sto nebo tisíc. Čte se: $0{,}036$ = třicet šest tisícin, $0{,}003$ = tři tisíciny, $22{,}4$ = dvacet dva celých čtyři. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $3{,}6 + 0{,}85 + 2$\n\n$3{,}60 + 0{,}85 + 2{,}00$ (doplněné nuly, čárka pod čárkou)\n\n$= 6{,}45$ (setiny, desetiny, celé)\n\n#### B) $0{,}036 \\cdot 100$\n\n$= 3{,}6$ (sto má dvě nuly, čárka o dvě místa doprava)\n\n#### C) $3 : 1\\,000$\n\n$= 0{,}003$ (tisíc má tři nuly, čárka za trojkou se posune o tři místa doleva, prázdná místa jsou nuly)\n\n#### D) $23 - 0{,}6$\n\n$23{,}0 - 0{,}6 = 22{,}4$ (šest desetin pod desetiny, za dvacet tři se doplní čárka a nula)\n\n**Výsledek:** A) $6{,}45$, B) $3{,}6$, C) $0{,}003$, D) $22{,}4$",
+        "otazky": [
+          {
+            "k": "A a D",
+            "text": "„Neklikej, spočítej to na papíře pod sebou. Kde má čárku celé číslo, které ji nepíše?“"
+          },
+          {
+            "k": "B",
+            "text": "„Kolik nul má sto? Kterým směrem a o kolik míst se při násobení posune čárka?“"
+          },
+          {
+            "k": "C",
+            "text": "„Trojka má čárku hned za sebou. O kolik míst a kam ji při dělení tisícem posuneš? Co napíšeš na prázdná místa?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč dvacet tři minus nula celá šest není sedmnáct.“",
+        "otocena_role_odpoved": "Nula celá šest je jen šest desetin, ne šest celých. Píšu je pod desetiny, za čárku. Od dvaceti tří uberu jen kousek, vyjde dvacet dva celých čtyři.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $4{,}47$ nebo $1{,}23$, u D $17$: zarovná čísla doprava. Zeptejte se: „Kde má čárku číslo dva?“ (Za dvojkou.) U D $22{,}94$: desetiny bere jako setiny. U B a C jiný počet nul: posune čárku o jiný počet míst, opačně, nebo jen připíše nuly."
+      },
+      "semafor": {
+        "zelena": "Výborně — čárka sedí ve všech čtyřech příkladech. Pochvalte, že u celých čísel našlo neviditelnou čárku, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu $3 + 4{,}58$, pak $30 - 0{,}6$ a $0{,}07 \\cdot 1\\,000$. Ať řeší na papír a u každého řekne, jak čísla podepsalo nebo kam posunulo čárku. Kontrola pro vás: $7{,}58$; $29{,}4$ (dvacet devět celých čtyři); $70$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko s milimetry. Zítra ať dítě položí prst na značku $23$ cm a posune ho o $0{,}6$ cm, tedy o 6 milimetrů, zpátky k nule. Zeptejte se: „Na které značce je prst?“ Pak ať samo zapíše $23 - 0{,}6 = 22{,}4$. Potom zopakujte lekci „Desetinná čísla: plus, mínus“. Kontrola pro vás: prst je na 22 centimetrech a 4 milimetrech, tedy na $22{,}4$ cm, ne na 17 cm."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) $3{,}6 + 0{,}85 + 2$ — a) $4{,}47$ b) $1{,}23$ c) $6{,}45$\n\nB) $0{,}036 \\cdot 100$ — a) $0{,}36$ b) $3{,}6$ c) $0{,}00036$ d) $0{,}03600$\n\nC) $3 : 1\\,000$ — a) $3\\,000$ b) $0{,}03$ c) $0{,}003$\n\nD) $23 - 0{,}6$ — a) $22{,}4$ b) $17$ c) $22{,}94$"
+      }
+    },
+    {
+      "id": "M8-T02-L2NB-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Honzík kupuje na výtvarku $10$ bloků po $11{,}8$ Kč a $100$ dřevěných kolíčků po $0{,}62$ Kč. Platí dvěma stokorunami. Kolik korun dostane zpátky?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $11{,}8 \\cdot 10 = 118$\n\n2. řádek: $0{,}62 \\cdot 100 = 6{,}2$\n\n3. řádek: $118 + 6{,}2 = 124{,}2$\n\n4. řádek: $200 - 124{,}2 = 75{,}8$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$11{,}8 \\cdot 10 = 118$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$0{,}62 \\cdot 100 = 6{,}2$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$118 + 6{,}2 = 124{,}2$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$200 - 124{,}2 = 75{,}8$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$0{,}62 \\cdot 100 = 62$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$0{,}62 \\cdot 100 = 0{,}6200$",
+                "spravne": false,
+                "typ_chyby": "pripsal-nuly-k-desetinnemu"
+              },
+              {
+                "id": "c",
+                "text": "$0{,}62 \\cdot 100 = 0{,}0062$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-spatnym-smerem"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 20
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 75.8,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 81.38,
+              "typ_chyby": "pripsal-nuly-k-desetinnemu"
+            },
+            {
+              "hodnota": 180,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Nejdřív násobí deseti a stem, pak sčítá a odčítá. Chybný je jen jeden řádek; řádky po něm počítají dobře, ale s chybným číslem. Čte se: $0{,}62$ = nula celá šedesát dva (dvaašedesát haléřů), $124{,}2$ = sto dvacet čtyři celých dva, $75{,}8$ = sedmdesát pět celých osm.",
+        "reseni": "Chyba je ve 2. řádku: sto má dvě nuly, Petr posunul čárku jen o jedno místo.\n\n$11{,}8 \\cdot 10 = 118$ (bloky, čárka o jedno místo doprava)\n\n$0{,}62 \\cdot 100 = 62$ (kolíčky, čárka o dvě místa doprava)\n\n$118 + 62 = 180$ (nákup celkem)\n\n$200 - 180 = 20$ (Honzík dostane zpátky)\n\n**Výsledek:** $20$ Kč",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Honzík kupuje, čím platí a co máš zjistit.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky postupně. U každého řekni, co v něm Petr počítá.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého násobení spočítej nuly a ověř, kterým směrem a o kolik míst se posunula čárka. Sedí to všude?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč sto kolíčků nestojí jen šest korun dvacet.“",
+        "otocena_role_odpoved": "Jeden kolíček stojí dvaašedesát haléřů, sto kolíčků tedy stokrát víc. Čárka se posune o dvě místa doprava, vyjde dvaašedesát korun.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 3. nebo 4. řádek? Ty jsou jen důsledek. Zeptejte se: „Odkud je šest celých dva?“ (Z 2. řádku.) 1. řádek je správně. Výsledek $75{,}8$: počítá jako Petr; $81{,}38$ nebo oprava s nulami: jen připíše nuly; oprava $0{,}0062$: posouvá doleva; $180$: cena nákupu."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že u násobení stem počítalo nuly, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu: „Petr tvrdí, že $0{,}8 \\cdot 100 = 8$.“ Ať řekne, jestli má Petr pravdu, a spočítá to správně. Pak ať spočítá $3{,}6 \\cdot 10 + 0{,}25 \\cdot 100$. Kontrola pro vás: nemá, správně $80$; $36 + 25 = 61$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě spočítá po krocích: jeden kolíček stojí $0{,}62$ Kč, kolik deset kolíčků a kolik sto? U každého kroku ať posune čárku o jedno místo doprava a nahlas řekne cenu. Pak ať samo zapíše $0{,}62 \\cdot 100 = 62$. Potom zopakujte lekci „Desetinná čísla: plus, mínus“. Kontrola pro vás: deset kolíčků $6{,}2$ Kč (šest korun dvacet), sto kolíčků $62$ Kč."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\n*Honzík kupuje na výtvarku $10$ bloků po $11{,}8$ Kč a $100$ dřevěných kolíčků po $0{,}62$ Kč. Platí dvěma stokorunami. Kolik korun dostane zpátky?*\n\na udělal jednu chybu.\n\n1. řádek: $11{,}8 \\cdot 10 = 118$\n\n2. řádek: $0{,}62 \\cdot 100 = 6{,}2$\n\n3. řádek: $118 + 6{,}2 = 124{,}2$\n\n4. řádek: $200 - 124{,}2 = 75{,}8$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $0{,}62 \\cdot 100 = 62$ b) $0{,}62 \\cdot 100 = 0{,}6200$ c) $0{,}62 \\cdot 100 = 0{,}0062$\n\nC) Kolik korun Honzík opravdu dostane zpátky? ______ Kč"
+      }
+    },
+    {
+      "id": "M8-T02-L2NB-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Balení $100$ stejných vrutů váží $237$ g. Ema potřebuje na stavbu záhonu $40$ vrutů a nasype je do misky, která váží $18$ g.\n\nKolik gramů váží jeden vrut? Kolik gramů váží $40$ vrutů? Kolik gramů váží miska i s vruty?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Který zápis odpovídá jednomu vrutu?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$237 : 100$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$237 \\cdot 100$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-spatnym-smerem"
+              },
+              {
+                "id": "c",
+                "text": "$237 : 1\\,000$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "d",
+                "text": "$100 : 237$",
+                "spravne": false,
+                "typ_chyby": "deleni-obracene"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: jeden vrut",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "g"
+          },
+          "spravne": {
+            "hodnota": 2.37
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 23.7,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 0.237,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 23700,
+              "typ_chyby": "posun-carky-spatnym-smerem"
+            }
+          ]
+        },
+        {
+          "id": "k3",
+          "popisek": "Mezivýsledek: 40 vrutů",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "g"
+          },
+          "spravne": {
+            "hodnota": 94.8
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 948,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 9.48,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek: miska i s vruty",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "g"
+          },
+          "spravne": {
+            "hodnota": 112.8
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 96.6,
+              "typ_chyby": "carka-scitani-pod-sebe"
+            },
+            {
+              "hodnota": 94.8,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 27.48,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hmotnost sta vrutů se dělí stem, čárka jde o dvě místa doleva. Čtyřicet vrutů je čtyřikrát deset vrutů. Nakonec se přičte miska: osmnáct gramů jsou celé gramy, patří pod celé. Čte se: $2{,}37$ = dvě celé třicet sedm, $94{,}8$ = devadesát čtyři celých osm, $112{,}8$ = sto dvanáct celých osm.",
+        "reseni": "$237 : 100 = 2{,}37$ (jeden vrut, čárka o dvě místa doleva)\n\n$2{,}37 \\cdot 4 = 9{,}48$ (čtyři vruty)\n\n$9{,}48 \\cdot 10 = 94{,}8$ (čtyřicet vrutů, čárka o jedno místo doprava)\n\n$94{,}8 + 18 = 112{,}8$ (i s miskou, celé gramy pod celé)\n\nJiná cesta: $237 \\cdot 40 = 9\\,480$ a $9\\,480 : 100 = 94{,}8$\n\n**Výsledek:** jeden vrut $2{,}37$ g, čtyřicet vrutů $94{,}8$ g, miska s vruty $112{,}8$ g",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co víš o balení a o misce. Kolik věcí máš zjistit?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Kolik vrutů váží dvě stě třicet sedm gramů? Jak z toho zjistíš váhu jednoho? Kam se posune čárka?“"
+          },
+          {
+            "k": "Krok 3 a výsledek",
+            "text": "„Tady máš začátek: čtyřicet vrutů je čtyřikrát deset vrutů. Kolik váží čtyři vruty? A kam pod sebe napíšeš misku?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, kam patří osmnáct gramů misky, když je píšeš pod devadesát čtyři celých osm.“",
+        "otocena_role_odpoved": "Osmnáct jsou celé gramy, takže jednotky pod jednotky a desítky pod desítky, za čárkou nic. Osmička za čárkou zůstane a vyjde sto dvanáct celých osm.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Krok 1 jiný než $237 : 100$, krok 2 $23{,}7$, $0{,}237$ nebo $23\\,700$: plete posun čárky. Zeptejte se: „Kolik nul má sto?“ (Dvě.) Krok 3 $948$ nebo $9{,}48$: čárka o místo vedle. Výsledek $96{,}6$: osmnáct zarovná doprava, za čárku; $94{,}8$: bez misky; $27{,}48$: chyba z kroku 3."
+      },
+      "semafor": {
+        "zelena": "Výborně — hlavní úlohu zvládlo. Pochvalte, že hlídalo čárku při dělení stem i při sčítání s celými gramy, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu: „$1\\,000$ zrnek rýže váží $25$ g. Kolik váží jedno zrnko a kolik $80$ zrnek?“ Ať řeší na papír a řekne oba výsledky. Kontrola pro vás: jedno zrnko $0{,}025$ g (dvacet pět tisícin gramu), osmdesát zrnek $2$ g.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě nakreslí tabulku se sloupci stovky, desítky, jednotky, desetiny, setiny a zapíše do ní $237$. Pak ať každou číslici napíše do druhého řádku o dva sloupce doprava, to je děleno sto, a nové číslo přečte. Pak ať samo zapíše $237 : 100 = 2{,}37$. Potom zopakujte lekci „Desetinná čísla: plus, mínus“. Kontrola pro vás: dvojka je v jednotkách, trojka v desetinách, sedmička v setinách: dvě celé třicet sedm."
+      },
+      "tisk": {
+        "zadani": "Balení $100$ stejných vrutů váží $237$ g. Ema potřebuje na stavbu záhonu $40$ vrutů a nasype je do misky, která váží $18$ g.\n\nA) Který zápis odpovídá jednomu vrutu? Zakroužkuj: a) $237 : 100$ b) $237 \\cdot 100$ c) $237 : 1\\,000$ d) $100 : 237$\n\nB) Jeden vrut: ______ g\n\nC) Čtyřicet vrutů: ______ g\n\nD) Miska i s vruty: ______ g"
+      }
+    },
+    {
+      "id": "M8-T02-L2NB-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Na turnaji je v barelu $8$ l pití. Klára nalila $10$ spoluhráčkám každé $0{,}55$ l a pak ještě $1{,}7$ l do konvice pro trenéry.\n\nKolik litrů pití zbylo v barelu?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "l"
+          },
+          "spravne": {
+            "hodnota": 0.8
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 5.75,
+              "typ_chyby": "pripsal-nuly-k-desetinnemu"
+            },
+            {
+              "hodnota": 6.245,
+              "typ_chyby": "posun-carky-spatnym-smerem"
+            },
+            {
+              "hodnota": 7.2,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Úloha spojuje násobení deseti, sčítání a odčítání od celého čísla. Čte se: $0{,}55$ = nula celá padesát pět (padesát pět setin litru), $1{,}7$ = jedna celá sedm, $0{,}8$ = nula celá osm.",
+        "reseni": "$0{,}55 \\cdot 10 = 5{,}5$ (deset spoluhráček, čárka o jedno místo doprava)\n\n$5{,}5 + 1{,}7 = 7{,}2$ (Klára nalila celkem)\n\n$8{,}0 - 7{,}2 = 0{,}8$ (zbylo v barelu, za osmičku se doplní čárka a nula)\n\nJiná cesta: $8 - 5{,}5 = 2{,}5$ a $2{,}5 - 1{,}7 = 0{,}8$\n\n**Výsledek:** $0{,}8$ l",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co Klára s pitím dělá a na co se úloha ptá.“",
+          "„Kolik pití dostane deset spoluhráček? Kam se posune čárka, když násobíš deseti?“",
+          "„Tady máš začátek: nejdřív zjisti, kolik pití Klára nalila dohromady. Jak to pak pod sebou odečteš od osmi litrů?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč deset spoluhráček po nula celá padesát pět litru nedostane nula celá pět set padesát litru.“",
+        "otocena_role_odpoved": "Krát deset se čárka posune o jedno místo doprava, vyjde pět celých pět litru. Když jen připíšu nulu za čárku, číslo se nezmění, je to pořád nula celá padesát pět.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $5{,}75$: krát deset jen připíše nulu; $6{,}245$: posune čárku doleva. Zeptejte se: „Kolik litrů dostane deset spoluhráček?“ (Pět celých pět.) $7{,}2$: napíše, kolik Klára nalila."
+      },
+      "semafor": {
+        "zelena": "Výborně — násobení deseti i odčítání zvládá samo. Pochvalte, že za osmičku doplnilo čárku a nulu. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu: „Ve džbánu jsou $3$ l šťávy. Deset dětí si nalije po $0{,}18$ l. Kolik zbude?“ Ať řeší na papír a řekne, kolik děti vypily a kolik zbylo. Kontrola pro vás: vypily $1{,}8$ l (jedna celá osm), zbylo $1{,}2$ l (jedna celá dva).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko s milimetry. Zítra ať dítě od nuly desetkrát po sobě odměří $0{,}6$ cm (šest milimetrů) a řekne, kam došlo. Pak ať od značky $8$ cm odpočítá $7{,}2$ cm zpátky a přečte značku. Pak ať samo zapíše $0{,}6 \\cdot 10 = 6$ a $8 - 7{,}2 = 0{,}8$. Potom zopakujte lekci „Desetinná čísla: plus, mínus“. Kontrola pro vás: došlo na 6 cm; zpátky skončí na $0{,}8$ cm (osm milimetrů)."
+      },
+      "tisk": {
+        "zadani": "Na turnaji je v barelu $8$ l pití. Klára nalila $10$ spoluhráčkám každé $0{,}55$ l a pak ještě $1{,}7$ l do konvice pro trenéry.\n\nKolik litrů pití zbylo v barelu?\n\nVýsledek: ______ l"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 9. 10.: vše přepočítáno skriptem (Fraction, zaokrouhlení půl nahoru) a ověřeno přes vyhodnotKrok (správné odpovědi, každá dlaždice a známá chyba s kódem); B-varianta má stejnou strukturu, vstupy, kódy chyb a obtížnost jako hlavní lekce, čísla zadání se neopakují (společné jsou jen $10$, $100$, $1\\,000$ a dvě stokoruny, které patří k látce). Upraveno (větší zásah do čísel): U3 $60 \\to 40$ vrutů, protože $2{,}37 \\cdot 6$ bylo těžší než $2{,}45 \\cdot 3$ v hlavní lekci; teď $2{,}37 \\cdot 4 = 9{,}48$, $40$ vrutů $94{,}8$ g, s miskou $112{,}8$ g; známé chyby krok 3 $948$, $9{,}48$, výsledek $96{,}6$ (osmnáct za čárku), $94{,}8$ (bez misky), $27{,}48$ (z kroku 3); tahák, tisk a popisek kroku 3 upraveny. Jazyk: U2 „šedesát dva haléřů/korun“ → „dvaašedesát“.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-09"
+  }
+}
