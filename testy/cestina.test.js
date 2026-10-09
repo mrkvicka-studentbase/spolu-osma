@@ -179,7 +179,7 @@ describe('schéma a validátor', async () => {
   const schema = JSON.parse(await readFile(path.join(KOREN, 'obsah', 'schema.json'), 'utf8'));
   const slovnikCj = parsujSlovnikChybCj(await readFile(path.join(KOREN, 'cestina', 'Obsah', 'TYPY-CHYB.md'), 'utf8'));
   const audioMd = await readFile(path.join(KOREN, 'testy', 'data', 'osma', 'AUDIO.md'), 'utf8') // syntetické lekce mají vlastní seznam nahrávek;
-  const soubory = (await readdir(ADRESAR_CJ)).filter((n) => /^cj-t\d+-l\d+\.json$/.test(n)).sort();
+  const soubory = (await readdir(ADRESAR_CJ)).filter((n) => /^cj-t\d+-l\d+n?b?\.json$/.test(n)).sort();
 
   test('slovník chyb češtiny se načte (detektiv, diktát, dvojice kódů a zkratka vs-m-*)', () => {
     assert.ok(!slovnikCj.has('diktat-pravopis-<kód>') && slovnikCj.size > 80, String(slovnikCj.size));

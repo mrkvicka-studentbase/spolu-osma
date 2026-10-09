@@ -1,0 +1,465 @@
+{
+  "id": "M8-T01-L4NB",
+  "faze": "osma",
+  "tyden": 1,
+  "poradi": 4,
+  "tema": "Kontrola: čísla a dělitelnost",
+  "kapitola": "pocetni-operace",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo vyřeší smíšené úlohy na pořadí operací, dělitelnost a společný dělitel nebo násobek, i když se v jedné úloze spojí.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami: dítě ukáže, že celé téma zvládne samo, i když se v jedné úloze spojí dvě části.",
+  "uvod_pravidla": [
+    {
+      "znak": "$60 - 20 + 5$",
+      "text": "plus a mínus zleva"
+    },
+    {
+      "znak": "$1\\,148$: $48 = 4 \\cdot 12$",
+      "text": "čtyřka: poslední dvojčíslí"
+    },
+    {
+      "znak": "$D(8, 10) = 2$, $n(8, 10) = 40$",
+      "text": "dělit, nebo opakovat?"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T01-L4NB-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Kolik vyjde $74 - 26 + 8$?\n\nB) Které číslo je dělitelné čtyřmi?\n\nC) $n(10, 16)$\n\nD) $D(88, 132)$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $74 - 26 + 8$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$40$ i $56$, pořadí je jedno",
+                "spravne": false,
+                "typ_chyby": "poradi-nezalezi"
+              },
+              {
+                "id": "b",
+                "text": "$40$",
+                "spravne": false,
+                "typ_chyby": "neslo-zleva"
+              },
+              {
+                "id": "c",
+                "text": "$56$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: dělitelné čtyřmi",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$1\\,936$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$4\\,158$",
+                "spravne": false,
+                "typ_chyby": "delitelnost-4-podle-posledni-cislice"
+              },
+              {
+                "id": "c",
+                "text": "$6\\,326$",
+                "spravne": false,
+                "typ_chyby": "delitelnost-4-podle-posledni-cislice"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: $n(10, 16)$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$2$",
+                "spravne": false,
+                "typ_chyby": "nsd-nsn-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$80$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$160$",
+                "spravne": false,
+                "typ_chyby": "nsn-soucin-cisel"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: $D(88, 132)$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$264$",
+                "spravne": false,
+                "typ_chyby": "nsd-nsn-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$22$",
+                "spravne": false,
+                "typ_chyby": "rozklad-bez-opakovani"
+              },
+              {
+                "id": "c",
+                "text": "$44$",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrola tématu: čtyři rychlé příklady z celého tématu. Dítě jen vybírá z nabídky. Čte se: $n(10, 16)$ „nejmenší společný násobek čísel deset a šestnáct“, $D(88, 132)$ „největší společný dělitel čísel osmdesát osm a sto třicet dva“. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $74 - 26 + 8$\n\n$74 - 26 = 48$, pak $48 + 8 = 56$ (plus a mínus zleva)\n\n#### B) Dělitelné čtyřmi\n\n$1\\,936$: $36 = 4 \\cdot 9$ (poslední dvojčíslí je dělitelné čtyřmi)\n\n$4\\,158$: $58$; $6\\,326$: $26$ (čtyřmi dělitelné nejsou, i když jsou sudé)\n\n#### C) $n(10, 16)$\n\n$16$, $32$, $48$, $64$, $80$ (násobky šestnácti)\n\n$80 : 10 = 8$ (osmdesát je první, které jde vydělit i deseti)\n\n#### D) $D(88, 132)$\n\n$88 = 2 \\cdot 2 \\cdot 2 \\cdot 11$, $132 = 2 \\cdot 2 \\cdot 3 \\cdot 11$ (rozklady)\n\n$D(88, 132) = 2 \\cdot 2 \\cdot 11 = 44$ (společné jsou dvě dvojky a jedenáctka)\n\n**Výsledek:** A) $56$, B) $1\\,936$, C) $80$, D) $44$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, spočítej na papíře. Plus a mínus mají stejnou přednost. Odkud tedy začneš?“"
+          },
+          {
+            "k": "B",
+            "text": "„Podívej se na poslední dvě číslice každého čísla. Které dvojčíslí jde vydělit čtyřmi beze zbytku?“"
+          },
+          {
+            "k": "C a D",
+            "text": "„U C si napiš pár násobků šestnácti. Který jde vydělit i deseti? U D: které co největší číslo dělí osmdesát osm i sto třicet dva?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč u A nevyjde čtyřicet.“",
+        "otocena_role_odpoved": "Plus a mínus mají stejnou přednost, takže se jde zleva. Sedmdesát čtyři mínus dvacet šest je čtyřicet osm a k tomu se přičte osm. Čtyřicet vyjde, jen když se nejdřív sečte dvacet šest a osm.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $40$: sčítá dřív, než odečítá; „pořadí je jedno“: pořadí nehlídá. U B $4\\,158$ nebo $6\\,326$: stačí mu sudé; zeptejte se: „Které číslo tvoří poslední dvě číslice?“ C $160$: jen vynásobí. C $2$, D $264$: plete dělitel a násobek. D $22$: dvojku bere jednou."
+      },
+      "semafor": {
+        "zelena": "Výborně — všechny části tématu sedí. Pochvalte, že u každého příkladu poznalo, na co se ptá, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu $70 - 30 + 10$, číslo $5\\,124$ a $D(24, 36)$. Ať řekne výsledek prvního příkladu, jestli je číslo dělitelné čtyřmi a kolik je společný dělitel. Kontrola pro vás: $50$; ano, $24 = 4 \\cdot 6$; $12$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 15 kostek nebo bonbonů. Zítra: „Máš 15 bonbonů, 6 rozdáš a pak dostaneš 3.“ Ať to dítě předvede a řekne, kolik má. Pak ať samo zapíše $15 - 6 + 3$ a bonbony rozdělí do hromádek po třech. Potom zopakujte lekci „Kontrola: čísla a dělitelnost“. Kontrola pro vás: má 12; nejdřív $15 - 6 = 9$, pak $9 + 3 = 12$; po třech nic nezbude."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Kolik vyjde $74 - 26 + 8$? — a) $40$ i $56$, pořadí je jedno b) $40$ c) $56$\n\nB) Které číslo je dělitelné čtyřmi? — a) $1\\,936$ b) $4\\,158$ c) $6\\,326$\n\nC) $n(10, 16)$ — a) $2$ b) $80$ c) $160$\n\nD) $D(88, 132)$ — a) $264$ b) $22$ c) $44$"
+      }
+    },
+    {
+      "id": "M8-T01-L4NB-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr počítal příklad\n\n$$n(20, 30) - D(20, 30) \\cdot 2$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $20 = 2 \\cdot 2 \\cdot 5$, $30 = 2 \\cdot 3 \\cdot 5$\n\n2. řádek: $D(20, 30) = 2 \\cdot 5 = 10$\n\n3. řádek: $n(20, 30) = 2 \\cdot 3 \\cdot 5 = 30$\n\n4. řádek: $30 - 10 \\cdot 2 = 10$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$20 = 2 \\cdot 2 \\cdot 5$, $30 = 2 \\cdot 3 \\cdot 5$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$D(20, 30) = 2 \\cdot 5 = 10$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$n(20, 30) = 2 \\cdot 3 \\cdot 5 = 30$",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$30 - 10 \\cdot 2 = 10$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$n(20, 30) = 2 \\cdot 5$",
+                "spravne": false,
+                "typ_chyby": "nsd-nsn-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$n(20, 30) = 20 \\cdot 30$",
+                "spravne": false,
+                "typ_chyby": "nsn-soucin-cisel"
+              },
+              {
+                "id": "c",
+                "text": "$n(20, 30) = 2 \\cdot 2 \\cdot 3 \\cdot 5$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo"
+          },
+          "spravne": {
+            "hodnota": 40
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 10,
+              "typ_chyby": "rozklad-bez-opakovani"
+            },
+            {
+              "hodnota": 100,
+              "typ_chyby": "scital-pred-nasobenim"
+            },
+            {
+              "hodnota": 580,
+              "typ_chyby": "nsn-soucin-cisel"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrola tématu: úloha spojuje společný dělitel a násobek s pořadím operací. Petr je vymyšlený spolužák, chyba je jedna a řádky za ní jsou spočítané dobře, jen se špatným číslem. Pro vás: násobek musí obsahovat celý rozklad každého čísla. Čte se: $n(20, 30)$ „nejmenší společný násobek čísel dvacet a třicet“, $D$ „největší společný dělitel“.",
+        "reseni": "Chyba je ve 3. řádku: dvacet má v rozkladu dvě dvojky, Petr vzal jen jednu. Třicet dvaceti dělitelné není.\n\n$20 = 2 \\cdot 2 \\cdot 5$, $30 = 2 \\cdot 3 \\cdot 5$ (rozklady)\n\n$D(20, 30) = 2 \\cdot 5 = 10$ (společná je dvojka a pětka)\n\n$n(20, 30) = 2 \\cdot 2 \\cdot 3 \\cdot 5 = 60$ (dvě dvojky z dvaceti, trojka z třiceti)\n\n$60 - 10 \\cdot 2 = 60 - 20$ (násobení před odčítáním)\n\n$= 40$ (odčítání)\n\nDlaždice $2 \\cdot 5$ je dělitel, ne násobek; $20 \\cdot 30$ je jen součin obou čísel\n\n**Výsledek:** $40$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Petr počítá. Co se s dělitelem a násobkem dělá na konci?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky. U každého mi řekni, co v něm Petr dělá.“"
+          },
+          {
+            "k": "Krok 1 a výsledek",
+            "text": "„U každého řádku se zeptej: jde násobek vydělit oběma čísly? Dělí dělitel obě? A dodržel Petr na konci přednost?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč třicet nemůže být společný násobek dvaceti a třiceti.“",
+        "otocena_role_odpoved": "Třicet nejde vydělit dvaceti beze zbytku. V násobku chybí druhá dvojka z dvaceti. S ní vyjde šedesát a to jde vydělit oběma.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 4. řádek? Zeptejte se: „Odkud je ve 4. řádku třicet?“ (Ze 3. řádku.) 1. a 2. řádek jsou správně. Výsledek $10$: opíše Petra; $100$: odečítá dřív, než násobí; zeptejte se: „Co má přednost, mínus, nebo krát?“ (Krát.) $580$: místo násobku vezme součin $20 \\cdot 30$."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu v násobku našlo i dopočítalo. Pochvalte, že ohlídalo rozklad i přednost násobení, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: „Petr tvrdí, že $n(8, 12) = 12$.“ Zeptejte se: „Má Petr pravdu? Jak to ověříš?“ Ať najde správný násobek. Kontrola pro vás: nemá, dvanáct nejde vydělit osmi; správně $n(8, 12) = 24$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír s čísly 1 až 20 a dvě pastelky. Zítra ať dítě zakroužkuje každé 4. číslo jednou barvou a každé 6. číslo druhou. Ať najde první číslo se dvěma kroužky. Pak ať samo zapíše $n(4, 6) = 12$ a řekne, proč to není šest. Potom zopakujte lekci „Kontrola: čísla a dělitelnost“. Kontrola pro vás: poprvé 12; šest nejde vydělit čtyřmi."
+      },
+      "tisk": {
+        "zadani": "Petr počítal příklad\n\n$$n(20, 30) - D(20, 30) \\cdot 2$$\n\na udělal jednu chybu.\n\n1. řádek: $20 = 2 \\cdot 2 \\cdot 5$, $30 = 2 \\cdot 3 \\cdot 5$\n\n2. řádek: $D(20, 30) = 2 \\cdot 5 = 10$\n\n3. řádek: $n(20, 30) = 2 \\cdot 3 \\cdot 5 = 30$\n\n4. řádek: $30 - 10 \\cdot 2 = 10$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $n(20, 30) = 2 \\cdot 5$ b) $n(20, 30) = 20 \\cdot 30$ c) $n(20, 30) = 2 \\cdot 2 \\cdot 3 \\cdot 5$\n\nC) Výsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T01-L4NB-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Honzík vypěstoval $28$ sazenic rajčat a $70$ sazenic paprik. Rozsadí je do co nejvíc stejných truhlíků tak, aby žádná sazenice nezbyla. Na farmářském trhu prodá každý truhlík za $30$ Kč. Jeden prázdný truhlík ho stál $6$ Kč.\n\nKolik truhlíků naplní? Kolik korun mu zůstane, když od tržby odečte cenu truhlíků?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Který zápis odpovídá zadání?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$n(28, 70) \\cdot (30 - 6)$",
+                "spravne": false,
+                "typ_chyby": "nsd-nsn-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$D(28, 70) \\cdot 30 - 6$",
+                "spravne": false,
+                "typ_chyby": "chybi-zavorka"
+              },
+              {
+                "id": "c",
+                "text": "$D(28, 70) \\cdot (30 - 6)$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Kolik truhlíků naplní?",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "truhlíků"
+          },
+          "spravne": {
+            "hodnota": 14
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 140,
+              "typ_chyby": "nsd-nsn-zamena"
+            },
+            {
+              "hodnota": 2,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Kolik korun mu zůstane?",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 336
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 414,
+              "typ_chyby": "chybi-zavorka"
+            },
+            {
+              "hodnota": 420,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 84,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrola tématu: úloha spojuje společný dělitel a zápis se závorkou. Počet truhlíků musí dělit rajčata i papriky a má být co největší. Z každého truhlíku Honzíkovi zůstane cena bez truhlíku, proto je rozdíl v závorce. Kdo spočítá tržbu a pak odečte všechny truhlíky, počítá taky správně.",
+        "reseni": "$28 = 2 \\cdot 2 \\cdot 7$, $70 = 2 \\cdot 5 \\cdot 7$ (rozklady)\n\n$D(28, 70) = 2 \\cdot 7 = 14$ (truhlíků; v každém dvě rajčata a pět paprik)\n\n$30 - 6 = 24$ (z jednoho truhlíku zůstane)\n\n$14 \\cdot 24 = 336$ (zůstane celkem)\n\n$14 \\cdot 30 - 14 \\cdot 6 = 420 - 84 = 336$ (jiná cesta: tržba bez ceny všech truhlíků)\n\n**Výsledek:** $14$ truhlíků, zůstane $336$ Kč",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Honzík dělá a na co se úloha ptá.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Hledáš u truhlíků dělitel, nebo násobek? A kolikrát Honzík platí truhlík: jednou, nebo u každého?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: dvacet osm je dva krát dva krát sedm. Jak rozložíš sedmdesát? A co pak s počtem truhlíků?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč je v zápisu třicet mínus šest v závorce.“",
+        "otocena_role_odpoved": "Truhlík se platí u každého prodaného truhlíku, ne jen jednou. Z každého zůstane dvacet čtyři korun a to se násobí počtem truhlíků. Bez závorky by se šest korun odečetlo jen jednou.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 2 $140$: hledá násobek; zeptejte se: „Může mít Honzík víc truhlíků než sazenic rajčat?“ (Nemůže.) $2$: rajčata v truhlíku. Výsledek $414$: truhlík odečte jen jednou; zeptejte se: „Kolik truhlíků Honzík kupuje?“ (Čtrnáct.) $420$: zapomene truhlíky; $84$: cena truhlíků."
+      },
+      "semafor": {
+        "zelena": "Výborně — dělitel i zápis se závorkou sedí. Pochvalte, že dítě poznalo, že se truhlík platí u každého, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Z $16$ sešitů a $40$ propisek uděláš co nejvíc stejných sad. Každou prodáš za $25$ Kč, sáček stojí $5$ Kč. Kolik bude sad a kolik ti zůstane?“ Kontrola pro vás: $D(16, 40) = 8$ sad; $8 \\cdot (25 - 5) = 160$ Kč (nebo $200 - 40$).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 8 kostek jedné barvy, 12 druhé a 20 mincí nebo knoflíků. Zítra ať dítě udělá z kostek co nejvíc stejných hromádek, aby nic nezbylo. Každou „prodá“ za 5 mincí a 1 minci vrátí za obal. Pak ať samo zapíše $4 \\cdot (5 - 1)$. Potom zopakujte lekci „Kontrola: čísla a dělitelnost“. Kontrola pro vás: 4 hromádky; zůstane 16 mincí."
+      },
+      "tisk": {
+        "zadani": "Honzík vypěstoval $28$ sazenic rajčat a $70$ sazenic paprik. Rozsadí je do co nejvíc stejných truhlíků tak, aby žádná sazenice nezbyla. Na farmářském trhu prodá každý truhlík za $30$ Kč. Jeden prázdný truhlík ho stál $6$ Kč.\n\nKolik truhlíků naplní? Kolik korun mu zůstane, když od tržby odečte cenu truhlíků?\n\nA) Který zápis odpovídá tomu, kolik Honzíkovi zůstane? Zakroužkuj: a) $n(28, 70) \\cdot (30 - 6)$ b) $D(28, 70) \\cdot 30 - 6$ c) $D(28, 70) \\cdot (30 - 6)$\n\nB) Počet truhlíků: ______\n\nC) Zůstane: ______ Kč"
+      }
+    },
+    {
+      "id": "M8-T01-L4NB-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Ema šije podložky pod hrnky. Má modrý pruh látky dlouhý $100$ cm a zelený pruh dlouhý $140$ cm. Oba pruhy rozstříhá na kousky, které budou všechny stejně dlouhé a co nejdelší. Z látky nesmí nic zbýt. Z každého kousku ušije jednu podložku.\n\nKolik podložek Ema ušije?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "kusů"
+          },
+          "spravne": {
+            "hodnota": 12
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 24,
+              "typ_chyby": "rozklad-bez-opakovani"
+            },
+            {
+              "hodnota": 20,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha tématu: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Úloha se neptá na délku kousku, ale na počet podložek: nejdřív se najde délka kousku, pak se spočítá, kolikrát se vejde do každého pruhu.",
+        "reseni": "$100 = 2 \\cdot 2 \\cdot 5 \\cdot 5$ (rozklad)\n\n$140 = 2 \\cdot 2 \\cdot 5 \\cdot 7$ (rozklad)\n\n$D(100, 140) = 2 \\cdot 2 \\cdot 5 = 20$ (délka kousku v centimetrech)\n\n$100 : 20 = 5$, $140 : 20 = 7$ (kousky z každého pruhu)\n\n$5 + 7 = 12$ (podložek celkem)\n\n**Výsledek:** $12$ podložek",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co chce Ema udělat a na co se úloha ptá.“",
+          "„Délka kousku musí beze zbytku dělit oba pruhy. Hledáš dělitel, nebo násobek? Největší, nebo nejmenší?“",
+          "„Tady máš začátek: sto je dva krát dva krát pět krát pět. Jak rozložíš sto čtyřicet? A co uděláš, až znáš délku kousku?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč kousek látky nemůže měřit padesát centimetrů.“",
+        "otocena_role_odpoved": "Padesát se do sta vejde dvakrát, ale sto čtyřicet beze zbytku nerozdělí, zbylo by čtyřicet centimetrů. Kousek musí dělit oba pruhy a nejdelší takový je dvacet.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $20$: napíše délku kousku. Zeptejte se: „Na co se úloha ptá?“ (Na počet podložek.) $24$: opakovanou dvojku bere jednou, kousky má po deseti centimetrech; zeptejte se: „Kolik dvojek mají oba rozklady?“ (Dvě.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — téma čísla a dělitelnost zvládá samo. Pochvalte, že poznalo, že hledá dělitel. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Dva provázky mají $18$ cm a $42$ cm. Rozstříháš je na co nejdelší stejné kusy, nic nezbude. Kolik kusů bude celkem?“ Ať nahlas řekne, jestli hledá dělitel, nebo násobek. Kontrola pro vás: dělitel, $D(18, 42) = 6$ cm; $3 + 7 = 10$ kusů.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: dva proužky papíru, 8 cm a 12 cm, a pravítko. Zítra ať dítě na obou proužcích zkusí odměřit stejně dlouhé díly: po 3, po 4 a po 5 cm. Ať řekne, kdy nic nezbude, a spočítá díly. Pak ať samo zapíše $D(8, 12) = 4$. Potom zopakujte lekci „Kontrola: čísla a dělitelnost“. Kontrola pro vás: nic nezbude jen u 4 cm; dílů je 2 + 3 = 5."
+      },
+      "tisk": {
+        "zadani": "Ema šije podložky pod hrnky. Má modrý pruh látky dlouhý $100$ cm a zelený pruh dlouhý $140$ cm. Oba pruhy rozstříhá na kousky, které budou všechny stejně dlouhé a co nejdelší. Z látky nesmí nic zbýt. Z každého kousku ušije jednu podložku.\n\nKolik podložek Ema ušije?\n\nVýsledek: ______ podložek"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenze 9. 10. (B-varianta naostro lekce M8-T01-L4N): vše přepočítáno nezávisle a přes vyhodnotKrok. Změněno: U3 měla $D(39, 52) = 13$; jediní společní dělitelé jsou $1$ a $13$, dítě zkoušející malé dělitele snadno skončí u „nemají společného dělitele“, což je těžší než $D(45, 60) = 15$ v hlavní lekci. Nově $28$ rajčat a $70$ paprik, $D(28, 70) = 14$ (dvě dvojky nebo přes sedmičku), truhlík $6$ Kč (s $5$ Kč by cena truhlíků $70$ splývala s počtem paprik): $14 \\cdot 24 = 336$ Kč ($414$ bez závorky, $420$ bez truhlíků, $84$ cena truhlíků; k2 $140$ násobek, $2$ rajčata v truhlíku); zadání, dlaždice, řešení, otázka, otočená role, typická chyba a tisk upraveny. U1 $56$ ($40$), $1\\,936$, $80$ ($2$, $160$), $44$ ($22$, $264$); U2 $60 - 20 = 40$ (Petr $10$, $100$, $580$); U4 $D(100, 140) = 20$, $5 + 7 = 12$ ($24$, $20$); oranžové a červené kontroly sedí. Rozhodnuto: $D(88, 132)$ v rozcvičce ponecháno, dlaždici $44$ dítě ověří ($88 = 2 \\cdot 44$, $132 = 3 \\cdot 44$); Petrův výsledek $10$ shodný s dělitelem ve 2. řádku nevadí.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-09"
+  }
+}
