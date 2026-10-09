@@ -1,0 +1,754 @@
+{
+  "id": "cj-t1-l3nb",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 1,
+  "poradi": 3,
+  "tema": "Všech deset druhů: rozhoduje věta",
+  "kapitola": "slovni-druhy",
+  "cil_pro_rodice": "Dítě ukáže, že slovo zařadí do jednoho z deseti druhů podle věty i v delším textu: večer jako název (nedělní večer) i jako kdy?, vedle a uvnitř před jménem i samostatně.",
+  "uvod_pro_rodice": "Opakování po červeném semaforu: stejná naostro lekce „Všech deset druhů: rozhoduje věta“ s jinými větami, aby si dítě znovu vyzkoušelo, že druh slova pozná testem přímo ve větě.",
+  "uvod_pravidla": [
+    {
+      "znak": "Stejné slovo, jiná věta, jiný druh",
+      "text": "co to je"
+    },
+    {
+      "znak": "Stojí před jménem? Ptám se kdy?",
+      "text": "test"
+    },
+    {
+      "znak": "naproti domu × bydlí naproti",
+      "text": "příklad"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "slovní druh": "skupina slov se stejným testem; je jich deset: pět ohebných (podstatné jméno, přídavné jméno, zájmeno, číslovka, sloveso) a pět neohebných (příslovce, předložka, spojka, částice, citoslovce)",
+    "podstatné jméno": "název; jde před něj říct ten, ta, to, nebo k němu patří slovo, které říká jaký (ten den, celý týden)",
+    "příslovce": "říká jak, kde, kam, kdy (dlouho, venku, dnes; večer ve větě Uvidíme se večer); stojí samo",
+    "předložka": "stojí před jménem (u lesa, do školy, s kamarádem)",
+    "zájmeno": "stojí místo jména nebo na ně ukazuje (ten, náš, my)",
+    "číslovka": "říká počet nebo pořadí (dvě, sedm, pátý)",
+    "spojka": "spojuje slova nebo věty (ale, nebo, protože)",
+    "částice": "tady jen kéž a ať na začátku věty s přáním",
+    "citoslovce": "zvuk nebo výkřik (fuj, bum, haf)"
+  },
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "cas_min": 25,
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t1-l3nb-U1",
+      "typ": "rozcvicka",
+      "cil": "Ledoborec z lekce 2 ve ztížené podobě: v pěti větách určit neohebný druh tučného slova (pod, dole, či, Ať, Hurá).",
+      "cas_min": 4,
+      "zadani": "Urči slovní druh tučného slova.\n\nA) Klíče spadly **pod** židli.\n\nB) Počkám na tebe **dole**.\n\nC) Chceš jablko, **či** hrušku?\n\nD) **Ať** se ti na táboře líbí!\n\nE) **Hurá**, vyhráli jsme!",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "příslovce",
+                "spravne": false,
+                "typ_chyby": "predlozka-za-prislovce"
+              },
+              {
+                "id": "b",
+                "text": "předložka",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "spojka",
+                "spravne": false
+              },
+              {
+                "id": "d",
+                "text": "částice",
+                "spravne": false
+              },
+              {
+                "id": "e",
+                "text": "citoslovce",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "příslovce",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "předložka",
+                "spravne": false,
+                "typ_chyby": "prislovce-za-predlozku"
+              },
+              {
+                "id": "c",
+                "text": "spojka",
+                "spravne": false
+              },
+              {
+                "id": "d",
+                "text": "částice",
+                "spravne": false
+              },
+              {
+                "id": "e",
+                "text": "citoslovce",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "příslovce",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "předložka",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "spojka",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "částice",
+                "spravne": false,
+                "typ_chyby": "spojka-za-castici"
+              },
+              {
+                "id": "e",
+                "text": "citoslovce",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k4",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "příslovce",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "předložka",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "spojka",
+                "spravne": false,
+                "typ_chyby": "spojka-za-castici"
+              },
+              {
+                "id": "d",
+                "text": "částice",
+                "spravne": true
+              },
+              {
+                "id": "e",
+                "text": "citoslovce",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Řada E",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "příslovce",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "předložka",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "spojka",
+                "spravne": false
+              },
+              {
+                "id": "d",
+                "text": "částice",
+                "spravne": false
+              },
+              {
+                "id": "e",
+                "text": "citoslovce",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje minulou lekci, naostro v pěti větách: příslovce odpovídá na jak? kde? kam? kdy?, předložka stojí před jménem, spojka spojuje, částice uvádí přání, citoslovce je zvuk nebo výkřik. Nabídka je ve všech řadách stejná. Otázky jsou po řadách: čtěte tu u řady, kde se dítě zasekne.",
+        "reseni": "#### A) Klíče spadly pod židli.\n\npod: předložka (stojí před jménem: pod židli)\n\n#### B) Počkám na tebe dole.\n\ndole: příslovce (počkám kde? stojí samo)\n\n#### C) Chceš jablko, či hrušku?\n\nči: spojka (spojuje dvě možnosti)\n\n#### D) Ať se ti na táboře líbí!\n\nAť: částice (uvádí přání)\n\n#### E) Hurá, vyhráli jsme!\n\nHurá: citoslovce (radostný výkřik)\n\n**Výsledek:** A) předložka, B) příslovce, C) spojka, D) částice, E) citoslovce",
+        "otazky": [
+          {
+            "k": "A a B",
+            "text": "„Co stojí hned za tučným slovem: jméno, nebo nic? Odpovídá slovo samo na kde?“"
+          },
+          {
+            "k": "C a D",
+            "text": "„Spojuje tučné slovo dvě možnosti, nebo uvádí přání? Zkus to u obou vět.“"
+          },
+          {
+            "k": "E",
+            "text": "„Je tučné slovo zvuk nebo výkřik, nebo něco spojuje či stojí před jménem?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč pod a dole nejsou ve svých větách stejný druh.“",
+        "otocena_role_odpoved": "Pod stojí před jménem, pod židli, je to předložka. Dole stojí samo a odpovídá na kde?, je to příslovce.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V řadě A zvolí příslovce nebo v řadě B předložku. Zeptejte se: „Stojí za tím slovem jméno?“ V řadě C zvolí částici nebo v řadě D spojku: „Spojuje to dvě věci, nebo je to přání?“ V řadě E zvolí jiný druh: „Je to výkřik?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — neohebné druhy z minulé lekce drží i v pěti větách. Pochvalte, že dítě zkoušelo testy nahlas, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti tři věty: „Čekej dole.“ „Sedni si pod strom.“ „Fuj!“ Dítě řekne druh slov dole, pod, fuj. Kontrola pro vás: dole příslovce (kde? stojí samo), pod předložka (před jménem: pod strom), fuj citoslovce (výkřik).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše pět řádků s testy: jak? kde? kam? kdy?, před jménem, spojuje, přání, zvuk. Přečtěte mu slova dole, pod, či, ať, hurá; dítě každé zapíše na řádek, kam patří. Potom zopakujte lekci „Všech deset druhů: rozhoduje věta“. Kontrola pro vás: dole příslovce, pod předložka, či spojka, ať částice, hurá citoslovce."
+      },
+      "tisk": {
+        "zadani": "Ke každému tučnému slovu napiš jeho slovní druh: příslovce, předložka, spojka, částice, nebo citoslovce.\n\nA) Klíče spadly **pod** židli.\n\nB) Počkám na tebe **dole**.\n\nC) Chceš jablko, **či** hrušku?\n\nD) **Ať** se ti na táboře líbí!\n\nE) **Hurá**, vyhráli jsme!"
+      }
+    },
+    {
+      "id": "cj-t1-l3nb-U2",
+      "typ": "nova",
+      "cil": "Ve slyšených dvou větách určit druh tří slov podle toho, jak jsou použitá: večer (název: nedělní večer), vedle (před jménem: předložka), uvnitř (samo: příslovce).",
+      "cas_min": 5,
+      "zadani": "Poslechni si dvě věty. Pak urči slovní druh tří slov z nich. Nahrávku si můžeš pustit, kolikrát chceš.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Slovo „večer“",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t1/l3nb-u2.mp3",
+            "prepis": "Nedělní večer jsme byli na chatě vedle lesa. Děda zůstal uvnitř a my jsme na ohni vařili čaj.",
+            "max_prehrani": 0,
+            "otazka": "Jaký slovní druh je ve větě slovo „večer“?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "podstatné jméno",
+                  "spravne": true
+                },
+                {
+                  "id": "b",
+                  "text": "příslovce",
+                  "spravne": false,
+                  "typ_chyby": "sd-podstatne-za-prislovce"
+                },
+                {
+                  "id": "c",
+                  "text": "předložka",
+                  "spravne": false
+                },
+                {
+                  "id": "d",
+                  "text": "spojka",
+                  "spravne": false
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Slovo „vedle“",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t1/l3nb-u2.mp3",
+            "prepis": "Nedělní večer jsme byli na chatě vedle lesa. Děda zůstal uvnitř a my jsme na ohni vařili čaj.",
+            "max_prehrani": 0,
+            "otazka": "Jaký slovní druh je ve větě slovo „vedle“?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "podstatné jméno",
+                  "spravne": false
+                },
+                {
+                  "id": "b",
+                  "text": "příslovce",
+                  "spravne": false,
+                  "typ_chyby": "predlozka-za-prislovce"
+                },
+                {
+                  "id": "c",
+                  "text": "předložka",
+                  "spravne": true
+                },
+                {
+                  "id": "d",
+                  "text": "spojka",
+                  "spravne": false
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Slovo „uvnitř“",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t1/l3nb-u2.mp3",
+            "prepis": "Nedělní večer jsme byli na chatě vedle lesa. Děda zůstal uvnitř a my jsme na ohni vařili čaj.",
+            "max_prehrani": 0,
+            "otazka": "Jaký slovní druh je ve větě slovo „uvnitř“?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "podstatné jméno",
+                  "spravne": false
+                },
+                {
+                  "id": "b",
+                  "text": "příslovce",
+                  "spravne": true
+                },
+                {
+                  "id": "c",
+                  "text": "předložka",
+                  "spravne": false,
+                  "typ_chyby": "prislovce-za-predlozku"
+                },
+                {
+                  "id": "d",
+                  "text": "spojka",
+                  "spravne": false
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě věty jen slyší, text nevidí; nahrávku si může pustit znovu. Co v ní zazní, máte sbalené pod „Co zazní v nahrávce“. Nečtěte to nahlas, dítě má poslouchat. Naostro jdou pasti oběma směry: večer je tu název (nedělní večer, jako nedělní den), vedle stojí před jménem (vedle lesa), uvnitř stojí samo (zůstal uvnitř). Spojka je v nabídce navíc.",
+        "reseni": "večer: podstatné jméno (jaký večer? nedělní; jde říct i ten nedělní večer; je to název, jako nedělní den)\n\nvedle: předložka (stojí před jménem: vedle lesa)\n\nuvnitř: příslovce (zůstal kde? uvnitř; za ním žádné jméno)\n\n**Výsledek:** krok 1 podstatné jméno, krok 2 předložka, krok 3 příslovce",
+        "otazky": [
+          "„Podle čeho ve větě poznáš, jestli je slovo název, příslovce, nebo předložka? Řekni to vlastními slovy.“",
+          "„U slova večer poslouchej, co stojí těsně před ním. Říká slovo kdy, nebo je to název, na který jde ukázat?“",
+          "„Pusť si nahrávku znovu. Co stojí hned za slovy vedle a uvnitř? Je to jméno?“"
+        ],
+        "otocena_role": "„Řekni mi větu, ve které bude večer odpovídat na otázku kdy?, a vysvětli, jaký je to druh.“",
+        "otocena_role_odpoved": "Třeba: Zavolám ti večer. Večer tu stojí samo a odpovídá na kdy?, je to příslovce.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 (Slovo „večer“) zvolí příslovce. Zeptejte se: „Jaký večer? Patří k němu nějaké slovo?“ V kroku 2 zvolí příslovce: „Co stojí za slovem vedle?“ V kroku 3 zvolí předložku: „Stojí za slovem uvnitř nějaké jméno?“ Spojku zvolí málokdo: „Spojuje to něco?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — dítě poznalo druh jen poslechem a v obou směrech. Pochvalte, že hledalo, co stojí před slovem a za ním, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Řekněte dítěti dvě věty: „Nedělní večer pršelo.“ „Večer pršelo.“ U každé řekne, jaký druh je večer. Kontrola pro vás: v první podstatné jméno (jaký večer? nedělní), ve druhé příslovce (pršelo kdy? večer).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše věty: Čekali jsme uvnitř. Čekali jsme uvnitř chaty. Nedělní večer jsme hráli. Přijdu večer. U slov uvnitř a večer připíše druh a test (stojí před jménem?, jaký večer?, kdy?). Potom zopakujte lekci „Všech deset druhů: rozhoduje věta“. Kontrola pro vás: uvnitř nejdřív příslovce, pak předložka (uvnitř chaty); večer nejdřív podstatné jméno (nedělní večer), pak příslovce (kdy?)."
+      },
+      "tisk": {
+        "zadani": "Poslouchej dvě věty (pustí ti je rodič). Pak urči slovní druh tří slov z nich.\n\nA) Jaký slovní druh je ve větě slovo „večer“? Zakroužkuj: a) podstatné jméno b) příslovce c) předložka d) spojka\n\nB) Jaký slovní druh je ve větě slovo „vedle“? Zakroužkuj: a) podstatné jméno b) příslovce c) předložka d) spojka\n\nC) Jaký slovní druh je ve větě slovo „uvnitř“? Zakroužkuj: a) podstatné jméno b) příslovce c) předložka d) spojka"
+      }
+    },
+    {
+      "id": "cj-t1-l3nb-U3",
+      "typ": "nova",
+      "cil": "V jedné delší větě určit druh osmi slov z nabídky osmi druhů; pasti večer jako název (zimní večer), doma před slovem mým (příslovce) a mým (zájmeno).",
+      "cas_min": 5,
+      "zadani": "U každého označeného slova vyber slovní druh.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Zimní večer uvařil táta doma mým pěti bratrancům kakao k večeři.",
+            "slova": [
+              0,
+              1,
+              2,
+              4,
+              5,
+              6,
+              7,
+              9
+            ],
+            "role": [
+              "podstatné jméno",
+              "přídavné jméno",
+              "zájmeno",
+              "číslovka",
+              "sloveso",
+              "příslovce",
+              "předložka",
+              "spojka"
+            ]
+          },
+          "spravne": {
+            "0": "přídavné jméno",
+            "1": "podstatné jméno",
+            "2": "sloveso",
+            "4": "příslovce",
+            "5": "zájmeno",
+            "6": "číslovka",
+            "7": "podstatné jméno",
+            "9": "předložka"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "1": "příslovce"
+              },
+              "typ_chyby": "sd-podstatne-za-prislovce"
+            },
+            {
+              "hodnota": {
+                "5": "přídavné jméno"
+              },
+              "typ_chyby": "zajmeno-za-pridavne"
+            },
+            {
+              "hodnota": {
+                "4": "předložka"
+              },
+              "typ_chyby": "prislovce-za-predlozku"
+            },
+            {
+              "hodnota": {
+                "9": "příslovce"
+              },
+              "typ_chyby": "predlozka-za-prislovce"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě u osmi slov vybírá z osmi druhů; částice a citoslovce ve větě nejsou, proto nejsou ani v nabídce, spojka je navíc. Pasti: večer má před sebou zimní (jaký večer?), je to název; doma stojí před mým pěti bratrancům, ale odpovídá na kde?, je to příslovce; místo mým jde říct něčí jméno.",
+        "reseni": "Zimní: přídavné jméno (jaký večer?)\n\nvečer: podstatné jméno (ten zimní večer)\n\nuvařil: sloveso (on uvařil)\n\ndoma: příslovce (uvařil kde?)\n\nmým: zájmeno (místo něj jde říct něčí jméno: Tomášovým)\n\npěti: číslovka (kolika bratrancům?)\n\nbratrancům: podstatné jméno (ten bratranec)\n\nk: předložka (stojí před jménem: k večeři)\n\n**Výsledek:** přídavné jméno, podstatné jméno, sloveso, příslovce, zájmeno, číslovka, podstatné jméno, předložka",
+        "otazky": [
+          "„Proč může být stejné slovo v různých větách jiný druh? Řekni to vlastními slovy.“",
+          "„U slova večer zkus: patří k němu slovo, které říká jaký?, nebo stojí samo a říká kdy?“",
+          "„U slov doma a mým se zeptej: kde?, čí?, nebo stojí před jménem? Která otázka sedí?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč doma není předložka, i když stojí před mým pěti bratrancům.“",
+        "otocena_role_odpoved": "Předložka stojí hned před jménem a patří k němu. Doma odpovídá na kde? uvařil, k jménu bratrancům nepatří. Je to příslovce.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Večer označí jako příslovce. Zeptejte se: „Jaký večer? Patří k němu nějaké slovo?“ doma jako předložka: „Kde uvařil? Patří doma k jménu?“ mým jako přídavné jméno: „Jde místo toho říct něčí jméno?“ k jako příslovce: „Stojí to před jménem?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — dítě poznalo, že večer je tu název a doma příslovce. Pochvalte, že zkoušelo testy u sporných slov, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti větu „Jarní večer jsme hráli s mými dvěma bratranci.“ Dítě řekne druh slov večer, mými a dvěma. Kontrola pro vás: večer podstatné jméno (jaký večer? jarní), mými zájmeno (místo něj jde říct něčí jméno), dvěma číslovka (s kolika bratranci?).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše větu Zimní večer uvařil táta doma mým bratrancům kakao. Pod slova večer, doma a mým napíše test, který sedí (jaký?, kde?, místo jména?), a druh. Potom zopakujte lekci „Všech deset druhů: rozhoduje věta“. Kontrola pro vás: večer podstatné jméno (jaký večer? zimní), doma příslovce (kde?), mým zájmeno."
+      },
+      "tisk": {
+        "zadani": "Nad každé tučné slovo napiš jeho slovní druh.\n\n**Zimní** **večer** **uvařil** táta **doma** **mým** **pěti** **bratrancům** kakao **k** večeři."
+      }
+    },
+    {
+      "id": "cj-t1-l3nb-U4",
+      "typ": "detektiv",
+      "cil": "Najít u Petra mezi pěti určenými slovy příslovce večer určené jako podstatné jméno (přijela kdy?); předložku k, číslovku třetím i podstatné jméno autobusem má Petr dobře.",
+      "cas_min": 5,
+      "zadani": "Petr měl ve větě určit slovní druhy:\n\nEma přijela k babičce až večer třetím autobusem.\n\nNapsal: **přijela** – sloveso, **k** – předložka, **večer** – podstatné jméno, **třetím** – číslovka, **autobusem** – podstatné jméno. Udělal **jednu** chybu. Najdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na slovo, které Petr určil špatně.",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Ema přijela k babičce až večer třetím autobusem.",
+            "cil": "slova",
+            "min": 1,
+            "max": 1
+          },
+          "spravne": [
+            5
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                1,
+                2,
+                6,
+                7
+              ],
+              "typ_chyby": "detektiv-jine-slovo"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Jaký druh to slovo je?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "sloveso",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "b",
+                "text": "podstatné jméno",
+                "spravne": false,
+                "typ_chyby": "sd-prislovce-za-podstatne"
+              },
+              {
+                "id": "c",
+                "text": "příslovce",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "předložka",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "e",
+                "text": "číslovka",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr určil pět slov, jedno špatně; naostro je chyba schovaná mezi předložkou, číslovkou a podstatným jménem. Past: večer bývá podstatné jméno, tady ale nic jako ten nebo celý k němu nepatří a odpovídá na kdy? (přijela kdy? až večer), je to příslovce. Dítě slova projde testem a v kroku 2 (Jaký druh to slovo je?) vybere správný druh.",
+        "reseni": "Chyba je večer: Petr ho určil jako podstatné jméno.\n\nvečer: příslovce (přijela kdy? až večer; ten ani celý k němu nepatří)\n\npřijela: sloveso (ona přijela), Petr má dobře\n\nk: předložka (před jménem: k babičce), Petr má dobře\n\ntřetím: číslovka (kolikátým autobusem?), Petr má dobře\n\nautobusem: podstatné jméno (ten autobus), Petr má dobře\n\n**Výsledek:** krok 1 večer, krok 2 příslovce",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, jak poznáš sloveso, předložku, podstatné jméno a číslovku.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každého Petrova slova zkus jeho test: ona ___? stojí před jménem? ten? kolikátý? Sedí všude?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U slova, kde má Petr chybu, zkus všechny testy: ten?, jaký?, kdy?, on ___?, kolikátý?, stojí před jménem?“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a jak si ji příště ohlídám.“",
+        "otocena_role_odpoved": "Večer tu není podstatné jméno. Přijela kdy? až večer, nic jako ten nebo celý k němu nepatří. Je to příslovce. Ostatní slova máš dobře.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na třetím nebo autobusem. Zeptejte se: „Kolikátým autobusem? Ten autobus?“ (Petr to má dobře.) Klikne na přijela nebo k: „Ona přijela? K čemu?“ Klikne na večer, ale v kroku 2 zvolí podstatné jméno nebo jiný druh: „Patří k tomu slovu ten nebo celý?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — Petrovu chybu dítě našlo mezi pěti slovy i opravilo. Pochvalte, že zkoušelo ten i kdy?, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr napsal, že ve větě Zavolám ti večer je večer podstatné jméno.“ Zeptejte se: „Má Petr pravdu? Jak to ověříš?“ Kontrola pro vás: nemá, je to příslovce (zavolám kdy? večer; nic jako ten k němu nepatří).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše dvě věty: Nedělní večer jsme hráli hry. Ema přijela večer. U slova večer v obou větách zkusí ten?, jaký? a kdy? a připíše druh. Potom zopakujte lekci „Všech deset druhů: rozhoduje věta“. Kontrola pro vás: v první větě podstatné jméno (jaký večer? nedělní), ve druhé příslovce (přijela kdy?)."
+      },
+      "tisk": {
+        "zadani": "Petr měl ve větě určit slovní druhy:\n\nEma přijela k babičce až večer třetím autobusem.\n\nNapsal: přijela – sloveso, k – předložka, večer – podstatné jméno, třetím – číslovka, autobusem – podstatné jméno. Udělal jednu chybu.\n\nA) Podtrhni slovo, které Petr určil špatně.\n\nB) Jaký druh to slovo je? Zakroužkuj: a) sloveso b) podstatné jméno c) příslovce d) předložka e) číslovka"
+      }
+    },
+    {
+      "id": "cj-t1-l3nb-U5",
+      "typ": "kontrolni",
+      "cil": "Samostatně určit druh deseti slov ve třech větách se všemi pastmi tématu (Čtvrtý, tvým, několik, podél před jménem, Doma, večer).",
+      "cas_min": 6,
+      "zadani": "U každého označeného slova vyber slovní druh.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Čtvrtý den výletu jsme s tvým bratrem šli podél potoka. Bratr zpíval a my jsme nasbírali několik malých hub. Doma jsme byli až večer.",
+            "slova": [
+              0,
+              2,
+              5,
+              8,
+              12,
+              15,
+              16,
+              17,
+              19,
+              23
+            ],
+            "role": [
+              "podstatné jméno",
+              "přídavné jméno",
+              "zájmeno",
+              "číslovka",
+              "sloveso",
+              "příslovce",
+              "předložka",
+              "spojka"
+            ]
+          },
+          "spravne": {
+            "0": "číslovka",
+            "2": "podstatné jméno",
+            "5": "zájmeno",
+            "8": "předložka",
+            "12": "spojka",
+            "15": "sloveso",
+            "16": "číslovka",
+            "17": "přídavné jméno",
+            "19": "příslovce",
+            "23": "příslovce"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "8": "příslovce"
+              },
+              "typ_chyby": "predlozka-za-prislovce"
+            },
+            {
+              "hodnota": {
+                "23": "podstatné jméno"
+              },
+              "typ_chyby": "sd-prislovce-za-podstatne"
+            },
+            {
+              "hodnota": {
+                "5": "přídavné jméno"
+              },
+              "typ_chyby": "zajmeno-za-pridavne"
+            },
+            {
+              "hodnota": {
+                "0": "přídavné jméno"
+              },
+              "typ_chyby": "cislovka-za-pridavne"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Naostro: deset slov ve třech větách, nabídka osmi druhů. Pasti: podél stojí před jménem, večer odpovídá na kdy?, tvým a Čtvrtý se mění jako přídavná jména, Doma stojí samo.",
+        "reseni": "Čtvrtý: číslovka (kolikátý den?)\n\nvýletu: podstatné jméno (ten výlet)\n\ntvým: zájmeno (místo něj jde říct něčí jméno)\n\npodél: předložka (před jménem: podél potoka)\n\na: spojka (spojuje dvě věty)\n\nnasbírali: sloveso (oni nasbírali)\n\nněkolik: číslovka (kolik hub?)\n\nmalých: přídavné jméno (jakých hub?)\n\nDoma: příslovce (byli jsme kde?)\n\nvečer: příslovce (byli jsme doma kdy?)\n\n**Výsledek:** číslovka, podstatné jméno, zájmeno, předložka, spojka, sloveso, číslovka, přídavné jméno, příslovce, příslovce",
+        "otazky": [
+          "„Proč musíš u některých slov číst celou větu, než řekneš jejich druh? Řekni to vlastními slovy.“",
+          "„U slova, kde váháš, zkus: ten?, jaký?, kolik?, kolikátý?, oni ___?, kdy? kde?, stojí před jménem?“",
+          "„Najdi slova, která mohou být v jiné větě jiný druh. Co stojí hned před nimi a za nimi?“"
+        ],
+        "otocena_role": "„Vyber jedno slovo z textu, které umí být dvěma druhy, a ukaž mi to na dvou větách.“",
+        "otocena_role_odpoved": "Třeba večer: tady odpovídá na kdy?, je to příslovce. Ve větě Zimní večer byl dlouhý je to podstatné jméno.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: podél jako příslovce: „Stojí za ním jméno?“ večer jako podstatné jméno: „Patří k němu ten nebo celý?“ tvým nebo Čtvrtý jako přídavné jméno: „Místo něčího jména? Kolikátý?“ Doma jako předložka: „Kde?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — druhy podle věty dítě určí samo i v delším textu. Pochvalte, že zkoušelo testy u sporných slov. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti větu „Ema stála uvnitř.“ a potom „Nedělní večer stála Ema uvnitř stanu.“ Dítě řekne druh slov uvnitř a večer. Kontrola pro vás: v první uvnitř příslovce (stojí samo); ve druhé uvnitř předložka (uvnitř stanu) a večer podstatné jméno (nedělní večer).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše věty: Stáli jsme vedle. Stáli jsme vedle potoka. Přijdu večer. Nedělní večer pršelo. U slov vedle a večer připíše druh a test. Potom zopakujte lekci „Všech deset druhů: rozhoduje věta“. Kontrola pro vás: vedle nejdřív příslovce, pak předložka (vedle potoka); večer nejdřív příslovce (kdy?), pak podstatné jméno (nedělní večer)."
+      },
+      "tisk": {
+        "zadani": "Nad každé tučné slovo napiš jeho slovní druh.\n\n**Čtvrtý** den **výletu** jsme s **tvým** bratrem šli **podél** potoka. Bratr zpíval **a** my jsme **nasbírali** **několik** **malých** hub. **Doma** jsme byli až **večer**."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "stredni",
+    "poznamka": "B-varianta naostro lekce cj-t1-l3n (opakování po červené, ZADANI-OSMA §9 bod 4), autor 9. 10. 2026. Struktura 1:1 s cj-t1-l3n (5 úloh, stejné typy vstupů, počty kroků, dlaždic a označených slov, poslech U2 se 3 kroky, 8 rolí v U3 a U5, stejné kódy a počty známých chyb), stejná obtížnost jako naostro (pasti oběma směry: nedělní/zimní večer = podstatné jméno, vedle předložka, uvnitř příslovce; detektiv s 5 slovy; kontrolní 10 slov ve 3 větách). Věty jsou nové. ÚJČ byl 9. 10. od 13:35 nedostupný: hodnocená slova i celá nahrávka jsou jen z hesel už ověřených v cache nastroje/ujc.sh (SSČ). Neohebných slov a řadových číslovek je v cache málo, proto se některá hodnocená slova z jiných lekcí tématu 1 opakují v nových větách (pod, dole, či, hurá, vedle, uvnitř, podél, k, třetím, čtvrtý, tvým); z hlavní lekce cj-t1-l3n jen večer, ať, několik a a (výjimka vedoucího). SSČ: večer m. neživ. i přísl.; vedle a uvnitř přísl. i předl. s 2. p.; podél předl. s 2. p.; doma přísl.; dole přísl.; či sp. souř.; ať část.; hurá citosl.; pět čísl. zákl. (heslo pátý), třetí a čtvrtý čísl. řad. Sporné jevy OSNOVA §16 nehodnoceny (až neoznačeno). Indexy tokenů přes tokenizuj, vzorová odpověď každého kroku a každá chybná dlaždice i známá chyba ověřeny přes vyhodnotKrok (/tmp/b-cj1nb/kontrola.mjs). Nahrávka t1/l3nb-u2.mp3 zatím chybí, řádek pro AUDIO.md je v cestina/Obsah/TEMA-1-B.md. jistota střední do korektury (ověřeno jen z cache).",
+    "zkontroloval": "autor",
+    "datum": "2026-10-09",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?slovo=pod",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%BEidle",
+      "https://prirucka.ujc.cas.cz/?slovo=kl%C3%AD%C4%8D",
+      "https://prirucka.ujc.cas.cz/?slovo=spadnout",
+      "https://prirucka.ujc.cas.cz/?slovo=dole",
+      "https://prirucka.ujc.cas.cz/?slovo=%C4%8Di",
+      "https://prirucka.ujc.cas.cz/?slovo=jablko",
+      "https://prirucka.ujc.cas.cz/?slovo=hru%C5%A1ka",
+      "https://prirucka.ujc.cas.cz/?slovo=a%C5%A5",
+      "https://prirucka.ujc.cas.cz/?slovo=t%C3%A1bor",
+      "https://prirucka.ujc.cas.cz/?slovo=hur%C3%A1",
+      "https://prirucka.ujc.cas.cz/?slovo=vyhr%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?slovo=ned%C4%9Bln%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=ve%C4%8Der",
+      "https://prirucka.ujc.cas.cz/?slovo=b%C3%BDt",
+      "https://prirucka.ujc.cas.cz/?slovo=chata",
+      "https://prirucka.ujc.cas.cz/?slovo=vedle",
+      "https://prirucka.ujc.cas.cz/?slovo=les",
+      "https://prirucka.ujc.cas.cz/?slovo=d%C4%9Bda",
+      "https://prirucka.ujc.cas.cz/?slovo=z%C5%AFstat",
+      "https://prirucka.ujc.cas.cz/?slovo=uvnit%C5%99",
+      "https://prirucka.ujc.cas.cz/?slovo=ohe%C5%88",
+      "https://prirucka.ujc.cas.cz/?slovo=va%C5%99it",
+      "https://prirucka.ujc.cas.cz/?slovo=%C4%8Daj",
+      "https://prirucka.ujc.cas.cz/?slovo=zimn%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=uva%C5%99it",
+      "https://prirucka.ujc.cas.cz/?slovo=t%C3%A1ta",
+      "https://prirucka.ujc.cas.cz/?slovo=doma",
+      "https://prirucka.ujc.cas.cz/?slovo=m%C5%AFj",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C3%A1t%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=bratranec",
+      "https://prirucka.ujc.cas.cz/?slovo=kakao",
+      "https://prirucka.ujc.cas.cz/?slovo=k",
+      "https://prirucka.ujc.cas.cz/?slovo=ve%C4%8De%C5%99e",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C5%99ijet",
+      "https://prirucka.ujc.cas.cz/?slovo=babi%C4%8Dka",
+      "https://prirucka.ujc.cas.cz/?slovo=t%C5%99et%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=autobus",
+      "https://prirucka.ujc.cas.cz/?slovo=%C4%8Dtvrt%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=v%C3%BDlet",
+      "https://prirucka.ujc.cas.cz/?slovo=tv%C5%AFj",
+      "https://prirucka.ujc.cas.cz/?slovo=bratr",
+      "https://prirucka.ujc.cas.cz/?slovo=pod%C3%A9l",
+      "https://prirucka.ujc.cas.cz/?slovo=potok",
+      "https://prirucka.ujc.cas.cz/?slovo=zp%C3%ADvat",
+      "https://prirucka.ujc.cas.cz/?slovo=a",
+      "https://prirucka.ujc.cas.cz/?slovo=nasb%C3%ADrat",
+      "https://prirucka.ujc.cas.cz/?slovo=n%C4%9Bkolik",
+      "https://prirucka.ujc.cas.cz/?slovo=mal%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=houba",
+      "https://prirucka.ujc.cas.cz/?id=tv%C5%AFj_1",
+      "https://prirucka.ujc.cas.cz/?id=m%C5%AFj_2",
+      "https://prirucka.ujc.cas.cz/?id=p%C4%9Bt"
+    ],
+    "testovaci_rodic": null
+  }
+}

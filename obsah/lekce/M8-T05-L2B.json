@@ -1,0 +1,457 @@
+{
+  "id": "M8-T05-L2B",
+  "faze": "osma",
+  "tyden": 5,
+  "poradi": 2,
+  "tema": "Dělení zlomků",
+  "kapitola": "zlomky",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě dělí zlomkem jako násobení převráceným zlomkem a spočítá složený zlomek.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami: dělení zlomků, dělí se násobením převráceným zlomkem a dlouhá čára ve složeném zlomku znamená děleno.",
+  "uvod_pravidla": [
+    {
+      "znak": "$\\frac{3}{4}$ a $\\frac{4}{3}$",
+      "text": "převrácená čísla"
+    },
+    {
+      "znak": "$: \\frac{2}{5} = \\cdot \\frac{5}{2}$",
+      "text": "děleno: krát převrácený"
+    },
+    {
+      "znak": "$\\dfrac{\\frac{1}{2}}{\\frac{3}{4}}$",
+      "text": "dlouhá čára: děleno"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T05-L2B-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Které číslo je převrácené k $\\frac{7}{9}$?\n\nB) $\\frac{5}{11} : 5$\n\nC) $\\frac{5}{12} : \\frac{5}{8}$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: převrácené k $\\frac{7}{9}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$-\\frac{9}{7}$",
+                "spravne": false,
+                "typ_chyby": "opacne-prevracene-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$-\\frac{7}{9}$",
+                "spravne": false,
+                "typ_chyby": "opacne-prevracene-zamena"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{9}{7}$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $\\frac{5}{11} : 5$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{1}{11}$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{25}{11}$",
+                "spravne": false,
+                "typ_chyby": "delil-bez-prevraceni"
+              },
+              {
+                "id": "c",
+                "text": "$11$",
+                "spravne": false,
+                "typ_chyby": "deleni-obracene"
+              },
+              {
+                "id": "d",
+                "text": "$\\frac{11}{25}$",
+                "spravne": false,
+                "typ_chyby": "prevratil-oba"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: $\\frac{5}{12} : \\frac{5}{8}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{25}{96}$",
+                "spravne": false,
+                "typ_chyby": "delil-bez-prevraceni"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{3}{2}$",
+                "spravne": false,
+                "typ_chyby": "prevratil-prvni"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{2}{3}$",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá. Převrácené číslo vznikne prohozením čitatele a jmenovatele; opačné číslo jen změní znaménko, to je jiná věc. Při dělení se převrací jen číslo, kterým se dělí (za dvojtečkou). Celé číslo $5$ je totéž co $\\frac{5}{1}$. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) Převrácené k $\\frac{7}{9}$\n\n$\\frac{7}{9} \\to \\frac{9}{7}$ (čitatel a jmenovatel se prohodí, znaménko zůstane)\n\n$\\frac{7}{9} \\cdot \\frac{9}{7} = 1$ (zkouška, převrácená čísla dají krát jedničku)\n\n#### B) $\\frac{5}{11} : 5$\n\n$= \\frac{5}{11} \\cdot \\frac{1}{5}$ (děleno pěti je krát jedna pětina)\n\n$= \\frac{5}{55} = \\frac{1}{11}$ (zkrácení pěti)\n\n#### C) $\\frac{5}{12} : \\frac{5}{8}$\n\n$= \\frac{5}{12} \\cdot \\frac{8}{5}$ (převrátí se zlomek za dvojtečkou)\n\n$= \\frac{40}{60} = \\frac{2}{3}$ (zkrácení dvaceti)\n\n**Výsledek:** A) $\\frac{9}{7}$, B) $\\frac{1}{11}$, C) $\\frac{2}{3}$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Co se ve zlomku prohodí, když hledáš převrácené číslo? Mění se přitom znaménko?“"
+          },
+          {
+            "k": "B",
+            "text": "„Neklikej, spočítej na papíře: kolik je pětina z pěti jedenáctin? Dělit pěti je totéž co vzít pětinu.“"
+          },
+          {
+            "k": "C",
+            "text": "„Který zlomek se při dělení převrací, ten před dvojtečkou, nebo ten za ní? Co pak se zlomky uděláš?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč se v příkladu C převrací pět osmin, a ne pět dvanáctin.“",
+        "otocena_role_odpoved": "Protože pěti osminami se dělí. Dělit zlomkem je totéž jako násobit převráceným zlomkem a převrací se jen ten, kterým dělím. Pět dvanáctin zůstane, jak je.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $-\\frac{9}{7}$, $-\\frac{7}{9}$: plete převrácené a opačné číslo. Zeptejte se: „Co dá převrácené číslo krát původní?“ (Jedničku.) $\\frac{25}{11}$, $\\frac{25}{96}$: násobí bez převrácení; $\\frac{3}{2}$: převrací první zlomek; $\\frac{11}{25}$: převrací oba; $11$: dělí obráceně. „Kterým číslem se dělí?“ (Tím za dvojtečkou.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — převrácené číslo i dělení sedí. Pochvalte, že převracelo jen číslo za dvojtečkou, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu $\\frac{3}{5} : \\frac{3}{10}$, pak $\\frac{8}{9} : 8$. Ať u každého řekne, co převrátí, a na papír spočítá. Kontrola pro vás: $\\frac{3}{5} \\cdot \\frac{10}{3} = 2$; $\\frac{8}{9} \\cdot \\frac{1}{8} = \\frac{1}{9}$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: proužek papíru a tužku. Zítra ať dítě proužek rozdělí čarami na šest stejných dílů, šestin. Zeptejte se: „Kolikrát se šestina vejde do celého proužku? A do jeho poloviny?“ Pak ať samo zapíše $\\frac{1}{2} : \\frac{1}{6} = \\frac{1}{2} \\cdot 6 = 3$. Potom zopakujte lekci „Dělení zlomků“. Kontrola pro vás: do celého proužku 6 šestin, do poloviny 3."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Které číslo je převrácené k $\\frac{7}{9}$? — a) $-\\frac{9}{7}$ b) $-\\frac{7}{9}$ c) $\\frac{9}{7}$\n\nB) $\\frac{5}{11} : 5$ — a) $\\frac{1}{11}$ b) $\\frac{25}{11}$ c) $11$ d) $\\frac{11}{25}$\n\nC) $\\frac{5}{12} : \\frac{5}{8}$ — a) $\\frac{25}{96}$ b) $\\frac{3}{2}$ c) $\\frac{2}{3}$"
+      }
+    },
+    {
+      "id": "M8-T05-L2B-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr počítal příklad\n\n$$\\dfrac{\\frac{3}{10}}{\\frac{4}{5}}$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $= \\frac{3}{10} : \\frac{4}{5}$\n\n2. řádek: $= \\frac{10}{3} \\cdot \\frac{4}{5}$\n\n3. řádek: $= \\frac{40}{15}$\n\n4. řádek: $= \\frac{8}{3}$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$= \\frac{3}{10} : \\frac{4}{5}$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$= \\frac{10}{3} \\cdot \\frac{4}{5}$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$= \\frac{40}{15}$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$= \\frac{8}{3}$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$= \\frac{3}{10} \\cdot \\frac{5}{4}$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$= \\frac{10}{3} \\cdot \\frac{5}{4}$",
+                "spravne": false,
+                "typ_chyby": "prevratil-oba"
+              },
+              {
+                "id": "c",
+                "text": "$= \\frac{3}{10} \\cdot \\frac{4}{5}$",
+                "spravne": false,
+                "typ_chyby": "delil-bez-prevraceni"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 3,
+            "j": 8
+          },
+          "zname_chyby": [
+            {
+              "c": 8,
+              "j": 3,
+              "typ_chyby": "slozeny-zlomek-prevratil-horni"
+            },
+            {
+              "c": 25,
+              "j": 6,
+              "typ_chyby": "prevratil-oba"
+            },
+            {
+              "c": 6,
+              "j": 25,
+              "typ_chyby": "delil-bez-prevraceni"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Čte se: patrový zlomek, nahoře tři desetiny, dole čtyři pětiny; dlouhá čára znamená děleno. Chyba je jedna a řádky za ní jsou spočítané dobře, jen se špatným číslem.",
+        "reseni": "Chyba je ve 2. řádku: Petr převrátil horní zlomek. Převrací se ale dolní, tím se dělí.\n\n$= \\frac{3}{10} : \\frac{4}{5}$ (dlouhá čára je děleno)\n\n$= \\frac{3}{10} \\cdot \\frac{5}{4}$ (krát převrácený dolní zlomek)\n\n$= \\frac{15}{40}$ (čitatel krát čitatel, jmenovatel krát jmenovatel)\n\n$= \\frac{3}{8}$ (zkrácení pěti)\n\nDlaždice $\\frac{10}{3} \\cdot \\frac{5}{4}$ a $\\frac{3}{10} \\cdot \\frac{4}{5}$ nesedí (první převrací oba zlomky, druhá žádný)\n\n**Výsledek:** $\\frac{3}{8}$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Přečti mi příklad nahlas. Co znamená ta dlouhá čára uprostřed?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky jeden po druhém. U každého řekni, co Petr udělal: přepsal, převrátil, vynásobil, nebo zkrátil?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: kterým zlomkem se tu dělí? A který zlomek Petr převrátil?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč se má převrátit dolní zlomek, a ne horní.“",
+        "otocena_role_odpoved": "Dlouhá čára znamená, že horní zlomek dělím dolním. Při dělení se převrací to číslo, kterým dělím, tedy dolní. Horní zůstane, jak je.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 3. nebo 4. řádek? Ty jsou jen důsledek. 1. řádek je správně: dlouhá čára je děleno. Zeptejte se: „Kterým zlomkem se dělí?“ (Dolním, čtyřmi pětinami.) Výsledek $\\frac{8}{3}$: opíše Petra; $\\frac{25}{6}$: převrátí oba; $\\frac{6}{25}$: nepřevrátí nic. „Který zlomek se převrací?“ (Jen dolní.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že hlídalo, kterým zlomkem se dělí, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu, jak Petr počítá: $\\dfrac{\\frac{2}{9}}{\\frac{4}{3}} = \\frac{9}{2} \\cdot \\frac{4}{3} = 6$. Zeptejte se: „Kde se Petr spletl? Kolik má vyjít?“ Kontrola pro vás: převrátil horní zlomek místo dolního; správně $\\frac{2}{9} \\cdot \\frac{3}{4} = \\frac{6}{36} = \\frac{1}{6}$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: list papíru a tužku. Zítra ať dítě nakreslí obdélník, rozdělí ho na 10 stejných dílů a vybarví 8 z nich, tedy čtyři pětiny. Zeptejte se: „Kolikrát se do vybarvené části vejde jedna pětina, tedy dva díly?“ Pak ať samo zapíše $\\frac{4}{5} : \\frac{1}{5} = \\frac{4}{5} \\cdot 5 = 4$. Potom zopakujte lekci „Dělení zlomků“. Kontrola pro vás: čtyřikrát, po dvou dílech."
+      },
+      "tisk": {
+        "zadani": "Petr počítal příklad\n\n$$\\dfrac{\\frac{3}{10}}{\\frac{4}{5}}$$\n\na udělal jednu chybu.\n\n1. řádek: $= \\frac{3}{10} : \\frac{4}{5}$\n\n2. řádek: $= \\frac{10}{3} \\cdot \\frac{4}{5}$\n\n3. řádek: $= \\frac{40}{15}$\n\n4. řádek: $= \\frac{8}{3}$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $= \\frac{3}{10} \\cdot \\frac{5}{4}$ b) $= \\frac{10}{3} \\cdot \\frac{5}{4}$ c) $= \\frac{3}{10} \\cdot \\frac{4}{5}$\n\nC) Správný výsledek (zlomek v základním tvaru): ______"
+      }
+    },
+    {
+      "id": "M8-T05-L2B-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Tomáš má pytlík s $\\frac{5}{4}$ kg granulí pro psa. Jedna denní dávka je $\\frac{1}{8}$ kg.\n\nNa kolik dní granule vystačí? Kolik kilogramů zbude v pytlíku po $8$ dnech? Zbytek zapiš zlomkem.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Který zápis odpovídá počtu dní?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{5}{4} \\cdot \\frac{1}{8}$",
+                "spravne": false,
+                "typ_chyby": "delil-bez-prevraceni"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{1}{8} : \\frac{5}{4}$",
+                "spravne": false,
+                "typ_chyby": "deleni-obracene"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{5}{4} : \\frac{1}{8}$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: počet dní",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 10
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 0.1,
+              "typ_chyby": "deleni-obracene"
+            },
+            {
+              "hodnota": 0.15625,
+              "typ_chyby": "delil-bez-prevraceni"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek: zbude v pytlíku (kg)",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 1,
+            "j": 4
+          },
+          "zname_chyby": [
+            {
+              "c": 1,
+              "j": 1,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "c": 9,
+              "j": 8,
+              "typ_chyby": "cele-cislo-do-citatele-i-jmenovatele"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce. Otázka „na kolik dní“ je dělení: celý pytlík děleno jedna dávka. Druhá část je odčítání zlomků: z pytlíku se ubere osm dávek. Čte se: „pět čtvrtin kilogramu“, to je kilo a čtvrt, a „jedna osmina kilogramu“, to je sto dvacet pět gramů.",
+        "reseni": "$\\frac{5}{4} : \\frac{1}{8}$ (kolikrát se dávka vejde do pytlíku)\n\n$= \\frac{5}{4} \\cdot \\frac{8}{1} = \\frac{40}{4} = 10$ (krát převrácený zlomek)\n\n$8 \\cdot \\frac{1}{8} = \\frac{8}{8} = 1$ (osm dávek, celé číslo násobí jen čitatel)\n\n$\\frac{5}{4} - 1 = \\frac{10}{8} - \\frac{8}{8} = \\frac{2}{8}$ (co zbude, počítáno na osminách)\n\n$\\frac{2}{8} = \\frac{1}{4}$ (zkrácení dvěma)\n\n**Výsledek:** na $10$ dní, zbude $\\frac{1}{4}$ kg",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, kolik granulí je v pytlíku a kolik je jedna dávka. Na co se úloha ptá?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Kdyby měl pytlík deset kilo a dávka dvě kila, na kolik dní by vystačil? Jakým počtem to zjistíš?“"
+          },
+          {
+            "k": "Výsledek",
+            "text": "„Tady máš začátek: osm dávek je osm krát jedna osmina. Kolik to je a kolik zbude z pěti čtvrtin?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč se počet dní počítá dělením, a ne násobením.“",
+        "otocena_role_odpoved": "Protože zjišťuju, kolikrát se jedna dávka vejde do celého pytlíku. To je dělení, stejně jako deset kilo děleno dvěma kily dá pět dní. Násobením by vyšlo míň než jeden den.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Krok 2 $0{,}1$ (jedna desetina): dělí dávku pytlíkem; $\\frac{5}{32}$: násobí. Zeptejte se: „Vystačí pytlík na víc dní, nebo na míň než jeden?“ (Na víc, na deset.) Výsledek $1$: kolik pes snědl; $\\frac{9}{8}$: osmičkou násobí i jmenovatel. „Kolik kilogramů zůstalo v pytlíku?“ (Jedna čtvrtina.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — počet dní i zbytek sedí. Pochvalte, že poznalo, že jde o dělení, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Hrnec má tři litry polévky, talíř pojme tři osminy litru. Kolik talířů hrnec naplní?“ Zlomek ukažte na telefonu: $\\frac{3}{8}$. Ať řekne zápis a na papír spočítá. Kontrola pro vás: $3 : \\frac{3}{8} = 3 \\cdot \\frac{8}{3} = 8$ talířů.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: proužek papíru a tužku; proužek je kilo granulí. Zítra ať ho dítě přeloží napůl, pak ještě dvakrát napůl, aby vzniklo osm dílů, osmin. Ať vybarví polovinu proužku a zjistí, kolik osminových dávek v ní je. Pak ať samo zapíše $\\frac{1}{2} : \\frac{1}{8} = \\frac{1}{2} \\cdot 8 = 4$. Potom zopakujte lekci „Dělení zlomků“. Kontrola pro vás: čtyři, polovina jsou čtyři osminy."
+      },
+      "tisk": {
+        "zadani": "Tomáš má pytlík s $\\frac{5}{4}$ kg granulí pro psa. Jedna denní dávka je $\\frac{1}{8}$ kg.\n\nNa kolik dní granule vystačí? Kolik kilogramů zbude v pytlíku po $8$ dnech? Zbytek zapiš zlomkem.\n\nA) Který zápis odpovídá počtu dní? Zakroužkuj: a) $\\frac{5}{4} \\cdot \\frac{1}{8}$ b) $\\frac{1}{8} : \\frac{5}{4}$ c) $\\frac{5}{4} : \\frac{1}{8}$\n\nB) Počet dní: ______\n\nC) Zbude v pytlíku: ______ kg"
+      }
+    },
+    {
+      "id": "M8-T05-L2B-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Vypočítej a výsledek zapiš jako zlomek v základním tvaru:\n\n$$\\dfrac{\\frac{1}{2} + \\frac{1}{5}}{\\frac{7}{8}}$$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 4,
+            "j": 5
+          },
+          "zname_chyby": [
+            {
+              "c": 5,
+              "j": 4,
+              "typ_chyby": "slozeny-zlomek-prevratil-horni"
+            },
+            {
+              "c": 16,
+              "j": 49,
+              "typ_chyby": "scital-citatele-i-jmenovatele"
+            },
+            {
+              "c": 49,
+              "j": 80,
+              "typ_chyby": "delil-bez-prevraceni"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Čte se: patrový zlomek, nahoře jedna polovina plus jedna pětina, dole sedm osmin. Nahoře se nejdřív sečte, pak se dělí.",
+        "reseni": "$\\frac{1}{2} + \\frac{1}{5} = \\frac{5}{10} + \\frac{2}{10} = \\frac{7}{10}$ (horní patro, součet na desetinách)\n\n$\\frac{7}{10} : \\frac{7}{8}$ (dlouhá čára je děleno)\n\n$= \\frac{7}{10} \\cdot \\frac{8}{7}$ (krát převrácený dolní zlomek)\n\n$= \\frac{8}{10} = \\frac{4}{5}$ (sedmičky se zkrátí, pak zkrácení dvěma)\n\n**Výsledek:** $\\frac{4}{5}$",
+        "otazky": [
+          "„Přečti mi příklad nahlas. Co je nahoře, co dole a co znamená dlouhá čára?“",
+          "„Co spočítáš jako první? Proč zrovna tohle?“",
+          "„Tady máš začátek: polovina a pětina jsou pět desetin a dvě desetiny. Co uděláš se součtem a se sedmi osminami?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč se nahoře nejdřív sčítá a teprve potom dělí.“",
+        "otocena_role_odpoved": "Dlouhá čára funguje jako závorka: celé horní patro se dělí celým dolním. Proto musím horní součet spočítat celý a až potom ho vydělím sedmi osminami.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $\\frac{5}{4}$: převrátí horní patro. Zeptejte se: „Kterým zlomkem se dělí?“ (Dolním.) $\\frac{16}{49}$: sečte čitatele i jmenovatele. „Kolik je polovina a pětina?“ (Sedm desetin.) $\\frac{49}{80}$: nepřevrátí nic. „Co se při dělení převrací?“ (Dolní zlomek.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — složený zlomek zvládá samo. Pochvalte, že nejdřív spočítalo horní patro. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu $\\dfrac{\\frac{1}{3} + \\frac{1}{6}}{\\frac{3}{4}}$. Ať na papír spočítá a nahlas řekne horní patro, co převrátí a výsledek. Kontrola pro vás: nahoře $\\frac{1}{2}$, převrátí se dolní zlomek na $\\frac{4}{3}$, výsledek $\\frac{2}{3}$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: list papíru a tužku. Zítra ať dítě nakreslí obdélník rozdělený na 10 stejných dílů, vybarví polovinu a k tomu pětinu a řekne, kolik desetin je vybarveno. Pak ať zapíše $\\frac{1}{2} + \\frac{1}{5} = \\frac{7}{10}$ a samo spočítá $\\frac{7}{10} : \\frac{7}{20}$. Potom zopakujte lekci „Dělení zlomků“. Kontrola pro vás: sedm desetin; $\\frac{7}{10} \\cdot \\frac{20}{7} = 2$."
+      },
+      "tisk": {
+        "zadani": "Vypočítej a výsledek zapiš jako zlomek v základním tvaru:\n\n$$\\dfrac{\\frac{1}{2} + \\frac{1}{5}}{\\frac{7}{8}}$$\n\nVýsledek: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "stredni",
+    "poznamka": "B-varianta M8-T05-L2 (po červené), autor 9. 10. 2026. Struktura, typy úloh i vstupů, počty kroků a kódy chyb jako v hlavní lekci; čísla a kontexty jiné než v L2 i L2N. Přepočítáno skriptem (python Fraction) a přes vyhodnotKrok: U1 $\\frac{9}{7}$; $\\frac{1}{11}$ ($\\frac{25}{11}$, $11$, $\\frac{11}{25}$); $\\frac{2}{3}$ ($\\frac{25}{96}$, $\\frac{3}{2}$). U2 $\\frac{3}{10} \\cdot \\frac{5}{4} = \\frac{3}{8}$ ($\\frac{8}{3}$, $\\frac{25}{6}$, $\\frac{6}{25}$). U3 $10$ dní ($0{,}1$; $0{,}15625$, i jako $\\frac{1}{10}$ a $\\frac{5}{32}$ s lomítkem), zbude $\\frac{1}{4}$ kg ($1$, $\\frac{9}{8}$). U4 $\\frac{7}{10} : \\frac{7}{8} = \\frac{4}{5}$ ($\\frac{5}{4}$, $\\frac{16}{49}$, $\\frac{49}{80}$). Sporné: U3 dávka $\\frac{1}{8}$ kg má čitatel jedna (hlavní lekce $\\frac{3}{20}$), protože jiná čísla s rozlišitelnými chybami a konečnými desetinnými čísly v kroku 2 vycházela nepřirozeně ($\\frac{3}{40}$, $\\frac{7}{32}$) nebo s $\\frac{3}{20}$ z hlavní lekce; zkracování zůstává ($\\frac{40}{4}$, $\\frac{2}{8}$). Známá chyba výsledku $1$ (kolik pes snědl) se zadá jako celé číslo. Žebříček „Platí“ převzat z hlavní lekce, výsledky B-varianty v něm nejsou.",
+    "zkontroloval": "autor",
+    "datum": "2026-10-09"
+  }
+}

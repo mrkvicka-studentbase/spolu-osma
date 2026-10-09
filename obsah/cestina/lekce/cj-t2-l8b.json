@@ -1,0 +1,851 @@
+{
+  "id": "cj-t2-l8b",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 2,
+  "poradi": 4,
+  "tema": "Kontrola tématu: podstatná jména",
+  "kapitola": "podstatna-jmena",
+  "cil_pro_rodice": "Dítě u jmen v textu samo určí vzor a v deseti koncovkách doplní i, nebo y a u každé řekne, který vzor dosadilo.",
+  "uvod_pro_rodice": "Opakování po červeném semaforu: stejná kontrola tématu s jinými slovy a větami; dítě znovu samo určí vzor podstatného jména a podle něj doplní i, nebo y.",
+  "uvod_pravidla": [
+    {
+      "znak": "Vzor: rod + 1. a 2. pád",
+      "text": "co rozhoduje"
+    },
+    {
+      "znak": "Dosadím vzor ve stejném pádě",
+      "text": "test"
+    },
+    {
+      "znak": "u stodoly → u ženy → y",
+      "text": "příklad"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "vzor": "14 slov, podle kterých se skloňují ostatní: pán, hrad, muž, stroj, předseda, soudce; žena, růže, píseň, kost; město, moře, kuře, stavení",
+    "životné a neživotné": "jen u rodu mužského. Životné: ve 4. pádě jako vidím pána. Neživotné: jako vidím hrad. Rozhoduje test, ne to, jestli věc žije.",
+    "2. pád": "tvar po slově bez (bez kuřete, bez růže, bez stroje); podle něj se pozná vzor",
+    "koncovka": "konec slova, který se mění podle pádu (pán-i, pán-y)",
+    "obojetné souhlásky": "b, f, l, m, p, s, v, z: po nich se píše i i y a zní stejně, proto se dosazuje vzor",
+    "dosadit vzor": "říct místo slova jeho vzor ve stejném tvaru: s osly → s pány. U vzoru je rozdíl slyšet, píše se stejné písmeno."
+  },
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "cas_min": 25,
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t2-l8b-U1",
+      "typ": "rozcvicka",
+      "cil": "Zopakovat celé téma po kouskách: vzor jména rodu mužského (gymnasta), životnost (baobab), koncovku 4. pádu životného jména (soby) a vzor jména rodu středního (oddělení).",
+      "cas_min": 4,
+      "zadani": "V řadách A a D vyber vzor, v řadě B životnost, v řadě C doplň i, nebo y.\n\nA) gymnasta\n\nB) baobab\n\nC) Lucka si v knize prohlíží sob_.\n\nD) oddělení",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "pán",
+                "spravne": false,
+                "typ_chyby": "vzor-pan-za-predseda"
+              },
+              {
+                "id": "b",
+                "text": "předseda",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "žena",
+                "spravne": false,
+                "typ_chyby": "vzor-zena-za-predseda"
+              },
+              {
+                "id": "d",
+                "text": "hrad",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "životný",
+                "spravne": false,
+                "typ_chyby": "zivotnost-podle-vyznamu"
+              },
+              {
+                "id": "b",
+                "text": "neživotný",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "i",
+                "spravne": false,
+                "typ_chyby": "koncovka-podst-i-za-y"
+              },
+              {
+                "id": "b",
+                "text": "y",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "město",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "moře",
+                "spravne": false,
+                "typ_chyby": "vzor-more-za-staveni"
+              },
+              {
+                "id": "c",
+                "text": "kuře",
+                "spravne": false
+              },
+              {
+                "id": "d",
+                "text": "stavení",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje celé téma po kouskách: vzor jména rodu mužského, životnost, jednu koncovku a vzor jména rodu středního. Past v řadě B: baobab žije, ale životnost se pozná testem vidím ___. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) gymnasta\n\npředseda (ten gymnasta; končí na -a)\n\n#### B) baobab\n\nneživotný (vidím baobab, ne baobaba; že baobab žije, nerozhoduje)\n\n#### C) prohlíží soby\n\ny (prohlíží koho, co? pány → y)\n\n#### D) oddělení\n\nstavení (to oddělení; končí na -í)\n\n**Výsledek:** A) předseda, B) neživotný, C) y, D) stavení",
+        "otazky": [
+          {
+            "k": "A a D",
+            "text": "„Řekni slovo s ten nebo to. Jak končí? Který vzor končí stejně?“"
+          },
+          {
+            "k": "B",
+            "text": "„Řekni: vidím ___. Zní to jako vidím pána, nebo jako vidím hrad?“"
+          },
+          {
+            "k": "C",
+            "text": "„Prohlíží koho, co? Dosaď vzor pán ve stejném tvaru.“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč baobab není životný, i když roste a žije.“",
+        "otocena_role_odpoved": "Životnost se pozná testem, ne tím, jestli to žije. Řeknu vidím baobab, jako vidím hrad, ne jako vidím pána. Proto neživotný.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U gymnasty vybere pán nebo žena: „Ten, nebo ta gymnasta? Jak končí?“ U baobabu životný: „Vidím baobab, nebo vidím baobaba?“ U sobů i: „Prohlíží koho? Dosaď pán.“ U oddělení moře: „Jak končí oddělení? A moře?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — celé téma v kostce sedí. Pochvalte, že dítě zkoušelo testy nahlas, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti tři slova: policista, ananas, obydlí. U každého řekne vzor. Kontrola pro vás: policista předseda (končí na -a), ananas hrad (vidím ananas, bez ananasu), obydlí stavení (končí na -í).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše pod sebe: gymnasta, baobab, oddělení. Ke každému napíše 2. pád s bez a vzor. Pak napíše větu Prohlížím soby a pod ni Prohlížím pány. Potom zopakujte lekci „Kontrola tématu: podstatná jména“. Kontrola pro vás: bez gymnasty – předseda; bez baobabu – hrad; bez oddělení – stavení; soby i pány s y."
+      },
+      "tisk": {
+        "zadani": "A) gymnasta — zakroužkuj vzor: pán, předseda, žena, hrad\n\nB) baobab — zakroužkuj: životný, neživotný\n\nC) Doplň i, nebo y: Lucka si v knize prohlíží sob_.\n\nD) oddělení — zakroužkuj vzor: město, moře, kuře, stavení"
+      }
+    },
+    {
+      "id": "cj-t2-l8b-U2",
+      "typ": "nova",
+      "cil": "Určit vzor u sedmi jmen všech tří rodů ve dvou větách; vzory jsou rozdělené po rodech (nejvýš 8 tlačítek v kroku).",
+      "cas_min": 5,
+      "zadani": "U každého označeného slova vyber vzor. Ve větě 1 jsou jména rodu mužského, ve větě 2 rodu ženského a středního.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Věta 1",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Šachista podal vítězi pomeranč.",
+            "slova": [
+              0,
+              2,
+              3
+            ],
+            "role": [
+              "pán",
+              "hrad",
+              "muž",
+              "stroj",
+              "předseda",
+              "soudce"
+            ]
+          },
+          "spravne": {
+            "0": "předseda",
+            "2": "muž",
+            "3": "stroj"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "0": "pán"
+              },
+              "typ_chyby": "vzor-pan-za-predseda"
+            },
+            {
+              "hodnota": {
+                "2": "pán"
+              },
+              "typ_chyby": "vzor-pan-za-muz"
+            },
+            {
+              "hodnota": {
+                "2": "soudce"
+              },
+              "typ_chyby": "vzor-muz-za-soudce"
+            },
+            {
+              "hodnota": {
+                "3": "hrad"
+              },
+              "typ_chyby": "vzor-hrad-za-stroj"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Věta 2",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Děvče ze sídliště u vesnice dostalo za odměnu sladkost.",
+            "slova": [
+              0,
+              2,
+              4,
+              8
+            ],
+            "role": [
+              "žena",
+              "růže",
+              "píseň",
+              "kost",
+              "město",
+              "moře",
+              "kuře",
+              "stavení"
+            ]
+          },
+          "spravne": {
+            "0": "kuře",
+            "2": "moře",
+            "4": "růže",
+            "8": "kost"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "0": "moře",
+                "2": "kuře"
+              },
+              "typ_chyby": "vzor-more-za-kure"
+            },
+            {
+              "hodnota": {
+                "4": "píseň"
+              },
+              "typ_chyby": "vzor-ruze-za-pisen"
+            },
+            {
+              "hodnota": {
+                "8": "píseň"
+              },
+              "typ_chyby": "vzor-pisen-za-kost"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě určuje vzor u sedmi jmen ve dvou větách. Ve větě 1 vybírá ze šesti vzorů rodu mužského, ve větě 2 z osmi vzorů rodu ženského a středního. Pasti: vítězi je jiný tvar slova vítěz; děvče a sídliště končí stejně, liší se s bez; sladkost končí souhláskou, rozhodne bez ___.",
+        "reseni": "Věta 1:\n\nŠachista: předseda (končí na -a)\n\nvítězi: muž (ten vítěz, bez vítěze)\n\npomeranč: stroj (vidím pomeranč, bez pomeranče)\n\nVěta 2:\n\nDěvče: kuře (bez děvčete; přibude kousek)\n\nsídliště: moře (to sídliště, bez sídliště)\n\nvesnice: růže (končí na -e)\n\nsladkost: kost (ta sladkost, bez sladkosti)\n\n**Výsledek:** předseda, muž, stroj; kuře, moře, růže, kost",
+        "otazky": [
+          "„Řekni mi vlastními slovy, podle čeho najdeš vzor podstatného jména.“",
+          "„Vezmi slovo, u kterého váháš. Řekni ho v 1. pádě s ten, ta nebo to. Pak řekni bez ___.“",
+          "„Řekni to slovo s bez a potom s bez všechny vzory toho rodu. Který zní stejně?“"
+        ],
+        "otocena_role": "„Vyber si jedno slovo z věty 2 a dokaž mi, ke kterému vzoru patří.“",
+        "otocena_role_odpoved": "Třeba sladkost: řeknu ta sladkost, bez sladkosti. Končí to na -i jako bez kosti, takže kost.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Šachista jako pán: „Jak končí?“ Vítězi jako pán nebo soudce: „Ten vítěz, bez vítěze. Jak končí?“ Pomeranč jako hrad: „Bez pomeranče?“ Sídliště jako kuře, děvče jako moře: „Přibude s bez kousek?“ Vesnice nebo sladkost jako píseň: „Bez vesnice? Bez sladkosti?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — vzory všech tří rodů sedí. Pochvalte, že dítě vracelo slova do 1. pádu, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti čtyři slova: tvůrce, chránič, láhev, kachně. U každého řekne vzor. Kontrola pro vás: tvůrce soudce (končí na -e), chránič stroj (bez chrániče), láhev píseň (bez láhve), kachně kuře (bez kachněte).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše 14 vzorů ve třech řádcích podle rodu. Pak k nim přiřadí slova vítěz, pomeranč, sladkost, děvče. Potom zopakujte lekci „Kontrola tématu: podstatná jména“. Kontrola pro vás: pán, hrad, muž, stroj, předseda, soudce; žena, růže, píseň, kost; město, moře, kuře, stavení; vítěz – muž, pomeranč – stroj, sladkost – kost, děvče – kuře."
+      },
+      "tisk": {
+        "zadani": "Nad každé tučné slovo napiš vzor.\n\n1. **Šachista** podal **vítězi** **pomeranč**. (vzory: pán, hrad, muž, stroj, předseda, soudce)\n\n2. **Děvče** ze **sídliště** u **vesnice** dostalo za odměnu **sladkost**. (vzory: žena, růže, píseň, kost, město, moře, kuře, stavení)"
+      }
+    },
+    {
+      "id": "cj-t2-l8b-U3",
+      "typ": "nova",
+      "cil": "Doplnit i/y v šesti koncovkách na místech nejčastější chyby: 1. × 4. pád životných jmen (buvoli × buvoly, čápi), 7. pád jmen podle vzorů hrad, muž a kost.",
+      "cas_min": 5,
+      "zadani": "Doplň i, nebo y.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "V ohradě spí dva buvol_. Ema hladí buvol_ po hřbetě. Na stole mezi mobil_ leží nabíječka. Krmení nosíme s ošetřovatel_ a krabice s drobnostm_ necháváme u vchodu. Na střeše stojí dva čáp_.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 2,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 3,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 4,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 5,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "i",
+            "y",
+            "y",
+            "i",
+            "i",
+            "i"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "y",
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "koncovka-podst-y-za-i"
+            },
+            {
+              "hodnota": [
+                null,
+                "i",
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "koncovka-podst-i-za-y"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                "i",
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "koncovka-podst-i-za-y"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                "y"
+              ],
+              "typ_chyby": "koncovka-podst-y-za-i"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Šest koncovek na místech, kde se v tématu chybuje nejčastěji. Buvol je v textu dvakrát: jednou spí (kdo? jako páni → i), jednou ho Ema hladí (koho? jako pány → y). Ošetřovatel patří ke vzoru muž (s ošetřovateli jako s muži), drobnost ke kosti, čápi stojí jako páni.",
+        "reseni": "buvoli (kdo spí? dva páni → i)\n\nbuvoly (hladí koho? pány → y)\n\nmobily (mezi čím? mezi hrady → y)\n\nošetřovateli (s kým? s muži → i)\n\ndrobnostmi (s čím? s kostmi → i)\n\nčápi (kdo stojí? dva páni → i)\n\n**Výsledek:** i, y, y, i, i, i",
+        "otazky": [
+          "„Jak poznáš, jestli na konci slova napsat i, nebo y? Řekni to vlastními slovy.“",
+          "„Vezmi slovo buvol. Zeptej se v obou větách slovem z věty a dosaď vzor pán. Co slyšíš?“",
+          "„Ke kterému vzoru patří ošetřovatel a drobnost? Řekni ten vzor ve stejném tvaru: s ___.“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč je v textu jednou buvoli a jednou buvoly.“",
+        "otocena_role_odpoved": "Dva buvoli spí, to je kdo, co: páni, takže i. Ema hladí koho: pány, takže y.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U prvních buvolů nebo u čápů napíše y: „Kdo spí? Kdo stojí? Dosaď pán.“ U druhých buvolů i: „Hladí koho? Dosaď pán.“ U mobilů i: „Mezi čím? Dosaď hrad.“ U ošetřovatelů nebo drobností y: „Ke kterému vzoru patří? Řekni s ___.“"
+      },
+      "semafor": {
+        "zelena": "Výborně — všech šest pastí dítě zvládlo. Pochvalte, že se ptalo slovem z věty a dosazovalo vzor, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Napište dítěti na papír: Dva sob_ odpočívají. Vidím sob_. Dítě doplní a řekne vzor ve stejném tvaru. Kontrola pro vás: sobi (dva páni → i), soby (vidím pány → y).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše tři dvojice: páni spí – buvoli spí, vidím pány – vidím buvoly, s muži – s ošetřovateli. V každé dvojici zakroužkuje poslední písmeno. Potom zopakujte lekci „Kontrola tématu: podstatná jména“. Kontrola pro vás: i, y, i; slovo má stejné písmeno jako vzor ve stejném tvaru."
+      },
+      "tisk": {
+        "zadani": "Doplň i, nebo y.\n\nV ohradě spí dva buvol_. Ema hladí buvol_ po hřbetě. Na stole mezi mobil_ leží nabíječka. Krmení nosíme s ošetřovatel_ a krabice s drobnostm_ necháváme u vchodu. Na střeše stojí dva čáp_."
+      }
+    },
+    {
+      "id": "cj-t2-l8b-U4",
+      "typ": "detektiv",
+      "cil": "Najít u Petra jméno rodu ženského na -e, které dal ke vzoru píseň (jeskyně), a vybrat správný vzor.",
+      "cas_min": 5,
+      "zadani": "Petr určoval vzory ve větě:\n\nV jeskyni pod horou leží staré listí.\n\nNapsal: **jeskyni** – píseň, **horou** – žena, **listí** – stavení. Udělal **jednu** chybu. Najdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na slovo, které Petr určil špatně.",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "V jeskyni pod horou leží staré listí.",
+            "cil": "slova",
+            "min": 1,
+            "max": 1
+          },
+          "spravne": [
+            1
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                3,
+                6
+              ],
+              "typ_chyby": "detektiv-jine-slovo"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Jaký vzor má to slovo?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "růže",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "píseň",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "c",
+                "text": "stavení",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "d",
+                "text": "žena",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr určil tři vzory, jeden špatně. Dítě v kroku 1 klikne na chybné slovo a v kroku 2 (Jaký vzor má to slovo?) vybere správný vzor. Slova jsou ve větě v jiném tvaru; dítě si je řekne v 1. pádě: ta jeskyně, ta hora, to listí.",
+        "reseni": "Chyba je „jeskyni“: Petr ji dal ke vzoru píseň.\n\njeskyni: růže (ta jeskyně; končí na -e jako růže, bez jeskyně)\n\nhorou: žena (ta hora; Petr má dobře)\n\nlistí: stavení (to listí; Petr má dobře)\n\n**Výsledek:** krok 1 jeskyni, krok 2 růže",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Co měl Petr udělat? Řekni to vlastními slovy.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Řekni každé Petrovo slovo v 1. pádě s ta nebo to. Jak končí? Sedí Petrův vzor?“"
+          },
+          {
+            "k": "Krok 2",
+            "text": "„Jak končí to slovo v 1. pádě? Který vzor končí stejně?“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a jak si ji příště ohlídám.“",
+        "otocena_role_odpoved": "Jeskyně není píseň. Ta jeskyně končí na -e, stejně jako růže; píseň končí souhláskou. Horu a listí máš dobře.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na „horou“ nebo „listí“: „Řekni to slovo v 1. pádě. Jak končí? Sedí Petrův vzor?“ (Sedí.) V kroku 2 vybere píseň nebo jiný vzor: „Jak končí ta jeskyně? A píseň?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — Petrovu chybu dítě našlo i opravilo. Pochvalte, že vracelo slova do 1. pádu, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr napsal, že učebnice patří ke vzoru píseň.“ Zeptejte se: „Má Petr pravdu? Jak to ověříš?“ Kontrola pro vás: nemá; ta učebnice končí na -e, patří ke vzoru růže.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše pod sebe: jeskyně, hora, listí, píseň. Ke každému připíše 2. pád s bez a vzor. Potom zopakujte lekci „Kontrola tématu: podstatná jména“. Kontrola pro vás: bez jeskyně – růže, bez hory – žena, bez listí – stavení, bez písně – píseň."
+      },
+      "tisk": {
+        "zadani": "Petr určoval vzory ve větě:\n\nV jeskyni pod horou leží staré listí.\n\nNapsal: jeskyni – píseň, horou – žena, listí – stavení. Udělal jednu chybu.\n\nA) Podtrhni slovo, které Petr určil špatně.\n\nB) Jaký vzor má to slovo? Zakroužkuj: a) růže b) píseň c) stavení d) žena"
+      }
+    },
+    {
+      "id": "cj-t2-l8b-U5",
+      "typ": "kontrolni",
+      "cil": "Kontrola tématu: samostatně určit vzor pěti jmen všech tří rodů a doplnit i/y v deseti koncovkách; semafor tématu podle doplňování (krok final).",
+      "cas_min": 6,
+      "tydenni": true,
+      "zadani": "Krok 1: u každého označeného slova vyber vzor. Krok 2: doplň i, nebo y.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Krok 1: vzory",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Policista našel u tábořiště za silnicí malé kachně a starý gauč.",
+            "slova": [
+              0,
+              3,
+              5,
+              7,
+              10
+            ],
+            "role": [
+              "pán",
+              "předseda",
+              "hrad",
+              "stroj",
+              "růže",
+              "píseň",
+              "moře",
+              "kuře"
+            ]
+          },
+          "spravne": {
+            "0": "předseda",
+            "3": "moře",
+            "5": "růže",
+            "7": "kuře",
+            "10": "stroj"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "0": "pán"
+              },
+              "typ_chyby": "vzor-pan-za-predseda"
+            },
+            {
+              "hodnota": {
+                "10": "hrad"
+              },
+              "typ_chyby": "vzor-hrad-za-stroj"
+            },
+            {
+              "hodnota": {
+                "5": "píseň"
+              },
+              "typ_chyby": "vzor-ruze-za-pisen"
+            },
+            {
+              "hodnota": {
+                "3": "kuře",
+                "7": "moře"
+              },
+              "typ_chyby": "vzor-more-za-kure"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Krok 2: koncovky",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "V neděli pojedeme se sestram_ na výlet. Sejdeme se ráno u líp_ s vítěz_ soutěže. Vodu poneseme v láhv_. Na louce pobíhají dva sysl_ a koně dupou kopyt_. Na statku budeme pozorovat čáp_ a v ohradě se pasou sob_. Večer se vyfotíme s orl_ a doma budeme dělat pokus_ s vodou.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 2,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 3,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 4,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 5,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 6,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 7,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 8,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 9,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "i",
+            "y",
+            "i",
+            "i",
+            "i",
+            "y",
+            "y",
+            "i",
+            "y",
+            "y"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                null,
+                "y",
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "koncovka-podst-y-za-i"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                "i",
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "koncovka-podst-i-za-y"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                "i",
+                null
+              ],
+              "typ_chyby": "koncovka-podst-i-za-y"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                "y",
+                null,
+                null
+              ],
+              "typ_chyby": "koncovka-podst-y-za-i"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha tématu: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. V kroku 1 určí vzor pěti slov, v kroku 2 doplní deset koncovek. Doporučení na zítřek se řídí krokem 2.",
+        "reseni": "Krok 1:\n\nPolicista: předseda (končí na -a)\n\ntábořiště: moře (bez tábořiště, nic nepřibude)\n\nsilnicí: růže (ta silnice; končí na -e)\n\nkachně: kuře (bez kachněte)\n\ngauč: stroj (bez gauče)\n\nKrok 2:\n\nse sestrami (koncovka -mi je vždy s i)\n\nu lípy (u ženy → y)\n\ns vítězi (s muži → i)\n\nv láhvi (v písni → i)\n\nsysli (kdo pobíhá? páni → i)\n\nkopyty (čím? městy → y)\n\nčápy (pozorovat koho? pány → y)\n\nsobi (kdo se pase? páni → i)\n\ns orly (s pány → y)\n\npokusy (dělat co? hrady → y)\n\n**Výsledek:** krok 1 předseda, moře, růže, kuře, stroj; krok 2 i, y, i, i, i, y, y, i, y, y",
+        "otazky": [
+          "„Řekni mi vlastními slovy, jak najdeš vzor a jak podle něj doplníš i, nebo y.“",
+          "„Vezmi slovo, u kterého váháš. Řekni ho v 1. pádě, najdi vzor a řekni vzor ve stejném tvaru jako ve větě.“",
+          "„Zeptej se slovem z věty: kdo pobíhá? Budeme pozorovat koho? Pak dosaď vzor pán.“"
+        ],
+        "otocena_role": "„Vyber si v kroku 2 jedno slovo a dokaž mi, proč tam patří i, nebo y.“",
+        "otocena_role_odpoved": "Třeba s orly: orel je jako pán, říká se s pány, takže y. Nebo sysli pobíhají: kdo? páni, takže i.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: v kroku 1 policista jako pán: „Jak končí?“ Tábořiště a kachně zaměněné: „Přibude s bez kousek?“ V kroku 2 sysly s y: „Kdo pobíhá? Dosaď pán.“ Čápi nebo orli s i: „Koho? S kým? Dosaď pán.“ Soby: „Kdo se pase?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — vzory i koncovky dítě zvládá samo. Pochvalte, že dosazovalo vzor ve stejném tvaru. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, potom další lekce. Napište dítěti na papír: Dva sob_ stojí u kůln_. Dívám se na sob_. Dítě doplní a ke každé koncovce řekne vzor. Kontrola pro vás: sobi (dva páni → i), u kůlny (u ženy → y), na soby (na pány → y).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše pod sebe vzory: páni pobíhají, pozoruji pány, s pány, u ženy, v písni. Vedle každého napíše totéž se slovy sysel, čáp, orel, lípa, láhev. Potom zopakujte lekci „Kontrola tématu: podstatná jména“. Kontrola pro vás: sysli pobíhají, pozoruji čápy, s orly, u lípy, v láhvi."
+      },
+      "tisk": {
+        "zadani": "1. Nad každé tučné slovo napiš vzor (pán, předseda, hrad, stroj, růže, píseň, moře, kuře).\n\n**Policista** našel u **tábořiště** za **silnicí** malé **kachně** a starý **gauč**.\n\n2. Doplň i, nebo y.\n\nV neděli pojedeme se sestram_ na výlet. Sejdeme se ráno u líp_ s vítěz_ soutěže. Vodu poneseme v láhv_. Na louce pobíhají dva sysl_ a koně dupou kopyt_. Na statku budeme pozorovat čáp_ a v ohradě se pasou sob_. Večer se vyfotíme s orl_ a doma budeme dělat pokus_ s vodou."
+      },
+      "semafor_tydne": {
+        "zelena": {
+          "podminka": "9 nebo 10 koncovek z 10 správně (krok 2), bez otázky",
+          "min_spravne": 9,
+          "doporuceni": "Zítra začíná další téma: pokračujte lekcí 9."
+        },
+        "oranzova": {
+          "podminka": "7 nebo 8 koncovek z 10 správně (krok 2)",
+          "min_spravne": 7,
+          "doporuceni": "Zítra 5 minut podle oranžové rady u úlohy 5, potom další lekce (lekce 9)."
+        },
+        "cervena": {
+          "podminka": "6 a méně koncovek z 10 správně (krok 2)",
+          "min_spravne": 0,
+          "doporuceni": "Zítra zopakujte celou lekci „Kontrola tématu: podstatná jména“."
+        }
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "B-varianta lekce cj-t2-l8 (opakování po červené, ZADANI-OSMA §9 bod 4), autor 9. 10. 2026. Korektura 9. 10. 2026 (korektor): každý hodnocený tvar (správné odpovědi, dlaždice, označená slova, mezery, známé chyby) a text nahrávky znovu ověřen v tabulkách tvarů ÚJČ z cache nastroje/ujc.sh (ÚJČ od 13:35 neodpovídá, nové dotazy 15:43 a 16:05 bez odpovědi); jména na -ost a láhev, obec podle id=251 (skupina A = kost, H = píseň). Indexy přepočítány tokenizuj, vzorová odpověď každého kroku, každá chybná dlaždice i známá chyba ověřeny přes vyhodnotKrok; struktura 1:1 s hlavní lekcí (typy vstupů, počty, pořadí dlaždic, kódy, vzory odpovědí) ověřena skriptem. Opraveno (jazykové chyby): šimpanz se podle ÚJČ skloňuje podle vzoru muž (poznámka k 6. p. mn. č. u hesla ananas), tahák U5 uváděl „páni“; rorýs kolísá mezi pán a muž (sporné). Neověřené tulipán, pudl, sele, jedle, hala, vychovatel, větev, hotel, kotel, vůz a překryvy albatros (hodnotí cj-t2-l8n, l7n) nahrazeny ověřenými: U1 baobab, soby; U2 Děvče (kuře); U3 buvoli/buvoly/mobily/ošetřovateli/drobnostmi/čápi (stroj na b, l, m, p, s, v, z má cache jen pytel, který hodnotí hlavní lekce, proto 7. p. vzoru muž); U5 k1 silnicí (růže); U5 final sestrami/lípy/vítězi/láhvi/sysli/kopyty/čápy/sobi/orly/pokusy. Překryv s cj-t2-l8/l8n v hodnocených místech žádný (čáp je jen v ústním cvičení semaforu cj-t2-l8); sídliště, děvče, buvol, sysel, ošetřovatel, lípa, čáp, orel hodnotí i cj-t2-l6n/l7/l7n (jiné lekce). semafor_tydne stejné jako cj-t2-l8.",
+    "zkontroloval": "korektor",
+    "datum": "2026-10-09",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?id=222",
+      "https://prirucka.ujc.cas.cz/?id=251",
+      "https://prirucka.ujc.cas.cz/?slovo=gymnasta",
+      "https://prirucka.ujc.cas.cz/?slovo=baobab",
+      "https://prirucka.ujc.cas.cz/?slovo=sob",
+      "https://prirucka.ujc.cas.cz/?slovo=odd%C4%9Blen%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=policista",
+      "https://prirucka.ujc.cas.cz/?slovo=ananas",
+      "https://prirucka.ujc.cas.cz/?slovo=obydl%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1achista",
+      "https://prirucka.ujc.cas.cz/?slovo=v%C3%ADt%C4%9Bz",
+      "https://prirucka.ujc.cas.cz/?slovo=pomeran%C4%8D",
+      "https://prirucka.ujc.cas.cz/?slovo=d%C4%9Bv%C4%8De",
+      "https://prirucka.ujc.cas.cz/?slovo=s%C3%ADdli%C5%A1t%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=vesnice",
+      "https://prirucka.ujc.cas.cz/?slovo=tv%C5%AFrce",
+      "https://prirucka.ujc.cas.cz/?slovo=chr%C3%A1ni%C4%8D",
+      "https://prirucka.ujc.cas.cz/?slovo=l%C3%A1hev",
+      "https://prirucka.ujc.cas.cz/?slovo=kachn%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=buvol",
+      "https://prirucka.ujc.cas.cz/?slovo=mobil",
+      "https://prirucka.ujc.cas.cz/?slovo=o%C5%A1et%C5%99ovatel",
+      "https://prirucka.ujc.cas.cz/?slovo=%C4%8D%C3%A1p",
+      "https://prirucka.ujc.cas.cz/?slovo=jeskyn%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=hora",
+      "https://prirucka.ujc.cas.cz/?slovo=list%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=u%C4%8Debnice",
+      "https://prirucka.ujc.cas.cz/?slovo=t%C3%A1bo%C5%99i%C5%A1t%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=silnice",
+      "https://prirucka.ujc.cas.cz/?slovo=gau%C4%8D",
+      "https://prirucka.ujc.cas.cz/?slovo=k%C5%AFlna",
+      "https://prirucka.ujc.cas.cz/?slovo=sestra",
+      "https://prirucka.ujc.cas.cz/?slovo=l%C3%ADpa",
+      "https://prirucka.ujc.cas.cz/?slovo=sysel",
+      "https://prirucka.ujc.cas.cz/?slovo=kopyto",
+      "https://prirucka.ujc.cas.cz/?slovo=orel",
+      "https://prirucka.ujc.cas.cz/?slovo=pokus"
+    ],
+    "testovaci_rodic": null
+  }
+}

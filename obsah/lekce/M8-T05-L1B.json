@@ -1,0 +1,439 @@
+{
+  "id": "M8-T05-L1B",
+  "faze": "osma",
+  "tyden": 5,
+  "poradi": 1,
+  "tema": "Násobení, zlomek z čísla",
+  "kapitola": "zlomky",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě vynásobí zlomky (a předem zkrátí) a spočítá zlomek z čísla i ze zbytku.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami: násobení zlomků a zlomek z čísla, krátí se před násobením a část zbytku se počítá ze zbytku, ne z celku.",
+  "uvod_pravidla": [
+    {
+      "znak": "$\\frac{2}{3} \\cdot \\frac{9}{10}$",
+      "text": "před násobením krátit"
+    },
+    {
+      "znak": "$3 \\cdot \\frac{2}{5} = \\frac{6}{5}$",
+      "text": "číslo násobí jen čitatel"
+    },
+    {
+      "znak": "$\\frac{3}{4}$ z $40$ je $30$",
+      "text": "děleno dole, krát nahoře"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T05-L1B-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) $\\frac{4}{5} \\cdot \\frac{5}{12}$\n\nB) $3 \\cdot \\frac{2}{11}$\n\nC) Kolik je $\\frac{4}{11}$ ze $44$?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $\\frac{4}{5} \\cdot \\frac{5}{12}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{1}{15}$",
+                "spravne": false,
+                "typ_chyby": "upravil-jen-cast-zlomku"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{1}{3}$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{1200}{60}$",
+                "spravne": false,
+                "typ_chyby": "spolecny-jmenovatel-pri-nasobeni"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $3 \\cdot \\frac{2}{11}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{6}{33}$",
+                "spravne": false,
+                "typ_chyby": "cele-cislo-do-citatele-i-jmenovatele"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{66}{11}$",
+                "spravne": false,
+                "typ_chyby": "spolecny-jmenovatel-pri-nasobeni"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{6}{11}$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: $\\frac{4}{11}$ ze $44$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$16$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$4$",
+                "spravne": false,
+                "typ_chyby": "zlomek-z-cisla-jen-deleni"
+              },
+              {
+                "id": "c",
+                "text": "$121$",
+                "spravne": false,
+                "typ_chyby": "zlomek-z-cisla-obracene"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě tu jen vybírá z nabídky. U A a B jde o násobení: čitatel krát čitatel, jmenovatel krát jmenovatel, a co jde, se zkrátí předem. Celé číslo násobí jen čitatel. U C jde o zlomek z čísla. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $\\frac{4}{5} \\cdot \\frac{5}{12}$\n\n$= \\frac{4 \\cdot 5}{5 \\cdot 12}$ (čitatel krát čitatel, jmenovatel krát jmenovatel)\n\n$= \\frac{4}{12}$ (pětka nahoře i dole se zkrátí)\n\n$= \\frac{1}{3}$ (zkrácení čtyřmi)\n\n#### B) $3 \\cdot \\frac{2}{11}$\n\n$= \\frac{3 \\cdot 2}{11}$ (celé číslo násobí jen čitatel)\n\n$= \\frac{6}{11}$ (dílky zůstanou jedenáctiny)\n\n#### C) $\\frac{4}{11}$ ze $44$\n\n$44 : 11 = 4$ (jedna jedenáctina)\n\n$4 \\cdot 4 = 16$ (čtyři jedenáctiny)\n\n**Výsledek:** A) $\\frac{1}{3}$, B) $\\frac{6}{11}$, C) $16$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, spočítej na papíře: co dostaneš, když vynásobíš čitatele spolu a jmenovatele spolu? Dá se něco zkrátit?“"
+          },
+          {
+            "k": "B",
+            "text": "„Představ si dvě jedenáctiny třikrát za sebou. Mění se tím velikost dílku, nebo jen počet dílků?“"
+          },
+          {
+            "k": "C",
+            "text": "„Na kolik stejných dílů rozdělíš čtyřicet čtyři? Kolik takových dílů pak vezmeš?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč tři krát dvě jedenáctiny nejsou šest třicetitřetin.“",
+        "otocena_role_odpoved": "Trojka říká, kolikrát dvě jedenáctiny vezmu. Dílky zůstanou jedenáctiny, jen jich je šest. Šest třicetitřetin jsou jen dvě jedenáctiny, tím by se nic nenásobilo.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $\\frac{1}{15}$: pětku krátí jen nahoře. Zeptejte se: „Čím dělíš dole?“ (Taky pěti.) U B $\\frac{6}{33}$: násobí i jmenovatel. „Jak velký je dílek?“ (Pořád jedenáctina.) $\\frac{1200}{60}$, $\\frac{66}{11}$: hledá společného jmenovatele. U C $4$, $121$: jen dělí, nebo obráceně. „Kolik jedenáctin bereš?“ (Čtyři.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — násobení i zlomek z čísla sedí. Pochvalte, že u B nechalo jmenovatel beze změny, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu $5 \\cdot \\frac{2}{13}$, pak $\\frac{6}{7} \\cdot \\frac{7}{12}$ a $\\frac{3}{7}$ z $35$. Ať na papír spočítá a nahlas řekne, co vyšlo a co zkrátilo. Kontrola pro vás: $\\frac{10}{13}$; $\\frac{1}{2}$ (zkrátí se sedmička i šestka s dvanáctkou); $15$ (sedmina je pět, krát tři).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 27 kostek, knoflíků nebo bonbonů. Zítra ať je dítě rozdělí na devět stejných hromádek a řekne, kolik je v jedné. Pak ať vezme čtyři hromádky a spočítá je. Pak ať samo zapíše $27 : 9 = 3$ a $3 \\cdot 4 = 12$. Potom zopakujte lekci „Násobení, zlomek z čísla“. Kontrola pro vás: v jedné hromádce 3, ve čtyřech 12."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) $\\frac{4}{5} \\cdot \\frac{5}{12}$ — a) $\\frac{1}{15}$ b) $\\frac{1}{3}$ c) $\\frac{1200}{60}$\n\nB) $3 \\cdot \\frac{2}{11}$ — a) $\\frac{6}{33}$ b) $\\frac{66}{11}$ c) $\\frac{6}{11}$\n\nC) Kolik je $\\frac{4}{11}$ ze $44$? — a) $16$ b) $4$ c) $121$"
+      }
+    },
+    {
+      "id": "M8-T05-L1B-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Adam měl ve sbírce $320$ fotbalových kartiček. Osminu vyměnil s kamarády, potom dal dvě pětiny zbytku bratrovi. Kolik kartiček Adamovi zůstalo?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $\\frac{1}{8} \\cdot 320 = 40$\n\n2. řádek: $320 - 40 = 280$\n\n3. řádek: $\\frac{2}{5} \\cdot 320 = 128$\n\n4. řádek: $280 - 128 = 152$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$\\frac{1}{8} \\cdot 320 = 40$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$320 - 40 = 280$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$\\frac{2}{5} \\cdot 320 = 128$",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$280 - 128 = 152$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{1}{5} \\cdot 280 = 56$",
+                "spravne": false,
+                "typ_chyby": "zlomek-z-cisla-jen-deleni"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{2}{5} \\cdot 280 = 112$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{2}{5} \\cdot 40 = 16$",
+                "spravne": false,
+                "typ_chyby": "zamenil-cast-a-zbytek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "kartiček"
+          },
+          "spravne": {
+            "hodnota": 168
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 152,
+              "typ_chyby": "z-celku-misto-ze-zbytku"
+            },
+            {
+              "hodnota": 224,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            },
+            {
+              "hodnota": 112,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Jeho řádky jdou po sobě: vyměněné kartičky, zbytek, kartičky pro bratra, co zůstalo. Chyba je jedna a řádky za ní jsou spočítané dobře, jen se špatným číslem. Čte se: „dvě pětiny krát tři sta dvacet“, to je totéž jako dvě pětiny ze tří set dvaceti.",
+        "reseni": "Chyba je ve 3. řádku: Petr počítal dvě pětiny ze všech $320$ kartiček, bratrovi ale šly dvě pětiny zbytku.\n\n$\\frac{1}{8} \\cdot 320 = 40$ (vyměněné kartičky, osmina ze všech)\n\n$320 - 40 = 280$ (zbytek po výměně)\n\n$\\frac{2}{5} \\cdot 280 = 112$ (kartičky pro bratra, dvě pětiny zbytku)\n\n$280 - 112 = 168$ (kartičky, které Adamovi zůstaly)\n\nDlaždice $\\frac{1}{5} \\cdot 280$ a $\\frac{2}{5} \\cdot 40$ nesedí (první je jen jedna pětina, druhá bere vyměněné kartičky místo zbytku)\n\n**Výsledek:** $168$ kartiček",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Adam s kartičkami dělá a na co se úloha ptá.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky jeden po druhém. U každého řekni, co v něm Petr počítá: vyměněné kartičky, zbytek, nebo kartičky pro bratra?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: z kolika kartiček se to počítá? Ze všech, nebo z těch, které po výměně zůstaly?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč Adam nedává bratrovi dvě pětiny ze všech kartiček.“",
+        "otocena_role_odpoved": "Protože osminu kartiček už vyměnil a zbylo mu jich jen dvě stě osmdesát. Dvě pětiny se berou z těch dvou set osmdesáti, takže bratr dostane sto dvanáct kartiček.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 4. řádek? Je jen důsledek: „Odkud je sto dvacet osm?“ (Ze 3. řádku.) 1. a 2. řádek jsou správně. Výsledek $152$: opíše Petra; $224$: jen vydělí pěti; $112$: kartičky pro bratra. Zeptejte se: „Kolik kartiček zbylo po výměně?“ (Dvě stě osmdesát.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že u každého řádku hlídalo, z kolika kartiček se počítá, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Petr má $80$ samolepek. Čtvrtinu rozdá, pak polovinu zbytku. Tvrdí, že podruhé rozdá $40$ samolepek.“ Zeptejte se: „Má Petr pravdu? Kde se spletl?“ Kontrola pro vás: nemá, polovinu vzal ze všech $80$; zbytek je $60$, podruhé rozdá $30$ samolepek.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 24 kostek nebo knoflíků jako kartičky. Zítra: „Máš 24 kartiček. Třetinu vyměníš, pak tři čtvrtiny zbytku dáš bratrovi.“ Ať dítě kostky opravdu odebírá a řekne, kolik vymění, kolik dá a kolik zůstane. Pak ať samo zapíše $24 : 3 = 8$, $24 - 8 = 16$, $16 : 4 \\cdot 3 = 12$. Potom zopakujte lekci „Násobení, zlomek z čísla“. Kontrola pro vás: vymění 8, dá 12, zůstane 4."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\nAdam měl ve sbírce $320$ fotbalových kartiček. Osminu vyměnil s kamarády, potom dal dvě pětiny zbytku bratrovi. Kolik kartiček Adamovi zůstalo?\n\na udělal jednu chybu.\n\n1. řádek: $\\frac{1}{8} \\cdot 320 = 40$\n\n2. řádek: $320 - 40 = 280$\n\n3. řádek: $\\frac{2}{5} \\cdot 320 = 128$\n\n4. řádek: $280 - 128 = 152$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $\\frac{1}{5} \\cdot 280 = 56$ b) $\\frac{2}{5} \\cdot 280 = 112$ c) $\\frac{2}{5} \\cdot 40 = 16$\n\nC) Kolik kartiček Adamovi opravdu zůstalo? ______ kartiček"
+      }
+    },
+    {
+      "id": "M8-T05-L1B-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Lucka a Klára natírají na chalupě plot dlouhý $63$ m. Lucka natře $\\frac{7}{9}$ plotu, Klára $\\frac{3}{7}$ zbytku a zbytek natře táta.\n\nKolik metrů natře Lucka, kolik Klára a kolik metrů natře táta?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Mezivýsledek: Lucka",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m"
+          },
+          "spravne": {
+            "hodnota": 49
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 7,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            },
+            {
+              "hodnota": 81,
+              "typ_chyby": "zlomek-z-cisla-obracene"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: Klára",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m"
+          },
+          "spravne": {
+            "hodnota": 6
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 27,
+              "typ_chyby": "z-celku-misto-ze-zbytku"
+            },
+            {
+              "hodnota": 2,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            },
+            {
+              "hodnota": 21,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek: táta",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m"
+          },
+          "spravne": {
+            "hodnota": 8
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 12,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            },
+            {
+              "hodnota": 6,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce: dítě zadá tři čísla, pro Lucku, Kláru a tátu. Past je slovo „zbytku“: tři sedminy se neberou z celého plotu, ale z toho, co zbude po Lucce. Táta natře to, co zbude po Kláře.",
+        "reseni": "$63 : 9 = 7$ (jedna devítina plotu)\n\n$7 \\cdot 7 = 49$ (Lucka, sedm devítin)\n\n$63 - 49 = 14$ (zbytek po Lucce)\n\n$\\frac{3}{7} \\cdot 14 = 6$ (Klára, tři sedminy zbytku)\n\n$14 - 6 = 8$ (táta, co zbude po Kláře)\n\n$49 + 6 + 8 = 63$ (zkouška, části dají celý plot)\n\n**Výsledek:** Lucka $49$ m, Klára $6$ m, táta $8$ m",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, kdo plot natírá. Na kolik částí se plot dělí?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Tři sedminy zbytku: zbytek čeho to je? Kolik metrů zbude, když odečteš Lucčin kus?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: jedna devítina ze šedesáti tří metrů je sedm. Co spočítáš dál a z jakého čísla?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč Klára nenatře tři sedminy ze šedesáti tří metrů.“",
+        "otocena_role_odpoved": "Protože tři sedminy se berou ze zbytku. Lucka natře čtyřicet devět metrů, zbude čtrnáct a Klára natře tři sedminy z těch čtrnácti, tedy šest metrů.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Krok 2 $27$: bere z celého plotu. Zeptejte se: „Kolik zbylo po Lucce?“ (Čtrnáct.) $7$, $2$, výsledek $12$: jen vydělí; $81$: obráceně. „Kolik dílů bereš?“ (Sedm, v kroku 2 tři.) Krok 2 $21$, výsledek $6$: jiný kus. „Na čí kus se krok ptá?“ (Klářin, tátův.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — všechny tři části plotu sedí. Pochvalte, že tři sedminy počítalo ze zbytku, ne z celého plotu, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Provázek má $72$ cm. Třetinu odstřihneme, pak tři čtvrtiny zbytku. Kolik cm zbude?“ Ať na papír spočítá a nahlas řekne první kus, zbytek, druhý kus a co zbude. Kontrola pro vás: $24$ cm, $48$ cm, $36$ cm, zbude $12$ cm.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 28 kostek nebo knoflíků jako 28 m plotu. Zítra ať je dítě rozdělí na sedm hromádek a pět odsune jako Lucčin kus. Ze zbytku ať odsune tři čtvrtiny jako Klářin kus. Pak ať samo zapíše $28 : 7 \\cdot 5 = 20$, $28 - 20 = 8$, $8 : 4 \\cdot 3 = 6$. Potom zopakujte lekci „Násobení, zlomek z čísla“. Kontrola pro vás: Lucka 20, Klára 6, táta 2."
+      },
+      "tisk": {
+        "zadani": "Lucka a Klára natírají na chalupě plot dlouhý $63$ m. Lucka natře $\\frac{7}{9}$ plotu, Klára $\\frac{3}{7}$ zbytku a zbytek natře táta.\n\nKolik metrů natře Lucka, kolik Klára a kolik metrů natře táta?\n\nA) Lucka: ______ m\n\nB) Klára: ______ m\n\nC) Táta: ______ m"
+      }
+    },
+    {
+      "id": "M8-T05-L1B-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Na sportovní den objednala škola $630$ lahví vody. Sedminu rozdali hned ráno a ze zbytku připravil Tomáš $\\frac{5}{9}$ na odpolední štafety.\n\nKolik lahví připravil Tomáš na štafety?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "lahví"
+          },
+          "spravne": {
+            "hodnota": 300
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 350,
+              "typ_chyby": "z-celku-misto-ze-zbytku"
+            },
+            {
+              "hodnota": 60,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            },
+            {
+              "hodnota": 50,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Úloha se ptá na lahve pro štafety, ne na to, kolik lahví zbylo.",
+        "reseni": "$630 : 7 = 90$ (ráno, sedmina ze všech lahví)\n\n$630 - 90 = 540$ (zbytek po ránu)\n\n$540 : 9 = 60$ (devítina zbytku)\n\n$60 \\cdot 5 = 300$ (štafety, pět devítin zbytku)\n\n**Výsledek:** $300$ lahví",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co se s lahvemi děje a na co se úloha ptá.“",
+          "„Co spočítáš jako první? Z jakých lahví se pak bere pět devítin?“",
+          "„Tady máš začátek: sedmina ze šesti set třiceti je devadesát. Kolik lahví zbude? A kolik je z toho pět devítin?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč Tomáš nepřipravil pět devítin ze šesti set třiceti lahví.“",
+        "otocena_role_odpoved": "Protože devadesát lahví už rozdali ráno. Pět devítin se bere jen ze zbytku, tedy z pěti set čtyřiceti lahví, a to je tři sta.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $350$ (ze všech lahví) nebo $50$ (z ranních lahví): pět devítin bere z jiného čísla. Zeptejte se: „Kolik lahví zbylo po ránu?“ (Pět set čtyřicet.) $60$: jen vydělí devíti. „Kolik devítin Tomáš připravil?“ (Pět.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — zlomek ze zbytku zvládá samo. Pochvalte, že si nejdřív spočítalo zbytek. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Na táboře je $45$ dětí. Pětina jede na výlet, dvě třetiny zbytku jdou ke koupališti. Kolik dětí jde ke koupališti?“ Ať na papír spočítá a nahlas řekne, kolik jede na výlet, kolik zbylo a kolik jde ke koupališti. Kontrola pro vás: na výlet $9$, zbylo $36$, ke koupališti $24$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 14 kostek nebo knoflíků jako lahve. Zítra: „Máš 14 lahví. Sedminu rozdáš ráno, ze zbytku připravíš tři čtvrtiny na štafety.“ Ať dítě kostky opravdu odsouvá a řekne, kolik rozdá ráno, kolik zbude a kolik připraví. Pak ať samo zapíše $14 : 7 = 2$, $14 - 2 = 12$, $12 : 4 \\cdot 3 = 9$. Potom zopakujte lekci „Násobení, zlomek z čísla“. Kontrola pro vás: ráno 2, zbude 12, na štafety 9."
+      },
+      "tisk": {
+        "zadani": "Na sportovní den objednala škola $630$ lahví vody. Sedminu rozdali hned ráno a ze zbytku připravil Tomáš $\\frac{5}{9}$ na odpolední štafety.\n\nKolik lahví připravil Tomáš na štafety?\n\nVýsledek: ______ lahví"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "stredni",
+    "poznamka": "B-varianta M8-T05-L1 (po červené), autor 9. 10. 2026. Struktura, typy úloh i vstupů, počty kroků a kódy chyb jako v hlavní lekci; čísla a kontexty jiné než v L1 i L1N. Přepočítáno skriptem (python Fraction) a přes vyhodnotKrok: U1 A $\\frac{1}{3}$ ($\\frac{1}{15}$, $\\frac{1200}{60}$), B $\\frac{6}{11}$ ($\\frac{6}{33}$, $\\frac{66}{11}$), C $16$ ($4$, $121$); U2 $320 \\to 40 \\to 280 \\to 112 \\to 168$ ($152$, $224$, $112$), oprava 3. řádku $\\frac{2}{5} \\cdot 280 = 112$; U3 $49$, $6$, $8$ m (k1 $7$, $81$; k2 $27$, $2$, $21$; výsledek $12$, $6$); U4 $630 \\to 90 \\to 540 \\to 300$ ($350$, $60$, $50$). Sporné: U2 a U3 mají jiné zlomky než hlavní lekce ($\\frac{1}{8}$ a $\\frac{2}{5}$, $\\frac{7}{9}$ a $\\frac{3}{7}$), protože $\\frac{1}{6}$ a $\\frac{3}{5}$ má L1N (stejně se vynechávají $\\frac{4}{9}$, $\\frac{3}{8}$ a $\\frac{3}{10}$ z L1N); čitatel druhého zlomku není o jedna menší než jmenovatel, aby se chyby jen-dělení a záměna části a zbytku daly rozlišit. U4 dělí sedmi a devíti (hlavní lekce třemi a čtyřmi), mezivýsledky jsou násobky deseti. U1 A dlaždice se společným jmenovatelem je $\\frac{1200}{60}$ (v hlavní lekci $\\frac{72}{12}$), U1 C v jedenáctinách, aby se nepoužily zlomky z L1 a L1N. Žebříček „Platí“ převzat z hlavní lekce.",
+    "zkontroloval": "autor",
+    "datum": "2026-10-09"
+  }
+}

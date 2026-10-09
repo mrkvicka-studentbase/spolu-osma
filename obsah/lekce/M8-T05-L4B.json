@@ -1,0 +1,449 @@
+{
+  "id": "M8-T05-L4B",
+  "faze": "osma",
+  "tyden": 5,
+  "poradi": 4,
+  "tema": "Kontrola: zlomky II",
+  "kapitola": "zlomky",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo násobí a dělí zlomky a smíšená čísla a spočítá část ze zbytku.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami: kontrola tématu, násobení a dělení zlomků, smíšená čísla a část ze zbytku dohromady.",
+  "uvod_pravidla": [
+    {
+      "znak": "$\\frac{4}{9} \\cdot \\frac{3}{8}$",
+      "text": "před násobením krátit"
+    },
+    {
+      "znak": "$: \\frac{3}{4} = \\cdot \\frac{4}{3}$",
+      "text": "děleno: krát převrácený"
+    },
+    {
+      "znak": "$2\\frac{1}{2} = \\frac{5}{2}$",
+      "text": "smíšené číslo se převede"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T05-L4B-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) $\\frac{2}{15} \\cdot \\frac{5}{4}$\n\nB) $\\frac{7}{10} : \\frac{7}{2}$\n\nC) Zapiš $3\\frac{2}{7}$ jako zlomek.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $\\frac{2}{15} \\cdot \\frac{5}{4}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{1}{3}$",
+                "spravne": false,
+                "typ_chyby": "upravil-jen-cast-zlomku"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{600}{60}$",
+                "spravne": false,
+                "typ_chyby": "spolecny-jmenovatel-pri-nasobeni"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{1}{6}$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $\\frac{7}{10} : \\frac{7}{2}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{1}{5}$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$5$",
+                "spravne": false,
+                "typ_chyby": "prevratil-prvni"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{49}{20}$",
+                "spravne": false,
+                "typ_chyby": "delil-bez-prevraceni"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: $3\\frac{2}{7}$ jako zlomek",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{6}{7}$",
+                "spravne": false,
+                "typ_chyby": "smisene-jako-soucin"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{23}{21}$",
+                "spravne": false,
+                "typ_chyby": "smisene-zmenil-jmenovatel"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{5}{7}$",
+                "spravne": false,
+                "typ_chyby": "smisene-scital-celou-cast"
+              },
+              {
+                "id": "d",
+                "text": "$\\frac{23}{7}$",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá. Každý příklad je z jedné lekce tématu: A násobení, B dělení, C převod smíšeného čísla. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $\\frac{2}{15} \\cdot \\frac{5}{4}$\n\n$= \\frac{2 \\cdot 5}{15 \\cdot 4}$ (čitatel krát čitatel, jmenovatel krát jmenovatel)\n\n$= \\frac{1 \\cdot 1}{3 \\cdot 2} = \\frac{1}{6}$ (dvojka se čtyřkou se zkrátí dvěma, pětka s patnáctkou pěti)\n\n#### B) $\\frac{7}{10} : \\frac{7}{2}$\n\n$= \\frac{7}{10} \\cdot \\frac{2}{7}$ (převrátí se zlomek za dvojtečkou)\n\n$= \\frac{14}{70} = \\frac{1}{5}$ (zkrácení čtrnácti)\n\n#### C) $3\\frac{2}{7}$ jako zlomek\n\n$3 \\cdot 7 + 2 = 23$ (tři celé jsou dvacet jedna sedmin, a dvě navíc)\n\n$3\\frac{2}{7} = \\frac{23}{7}$ (jmenovatel zůstává)\n\n**Výsledek:** A) $\\frac{1}{6}$, B) $\\frac{1}{5}$, C) $\\frac{23}{7}$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, spočítej na papíře. Co se dá zkrátit, ještě než začneš násobit?“"
+          },
+          {
+            "k": "B",
+            "text": "„Který zlomek se při dělení převrací? Ten před dvojtečkou, nebo ten za ní?“"
+          },
+          {
+            "k": "C",
+            "text": "„Kolik sedmin je v jedné celé? Kolik ve třech celých a kolik k tomu přidáš?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč se v příkladu B převrací sedm polovin, a ne sedm desetin.“",
+        "otocena_role_odpoved": "Protože sedmi polovinami se dělí. Dělení zlomkem je násobení převráceným zlomkem a převrací se jen ten, kterým dělím, tedy ten za dvojtečkou.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $\\frac{1}{3}$: krátí jen dole; $\\frac{600}{60}$: společný jmenovatel. Zeptejte se: „Čím dělíš dole?“ (Dvěma, a nahoře taky.) U B $5$, $\\frac{49}{20}$: převrací první, nebo nic. „Kterým zlomkem dělíš?“ (Sedmi polovinami.) U C $\\frac{5}{7}$, $\\frac{6}{7}$, $\\frac{23}{21}$: chybný převod. „Kolik sedmin jsou tři celé?“ (Dvacet jedna.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — násobení, dělení i převod sedí. Pochvalte, že u každého příkladu poznalo, co dělat, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu $\\frac{6}{7} \\cdot \\frac{7}{9}$, $\\frac{4}{7} : \\frac{8}{21}$ a $4\\frac{1}{2}$. Ať první dva spočítá, třetí zapíše jako zlomek a nahlas řekne, jak. Kontrola pro vás: $\\frac{2}{3}$; $\\frac{3}{2}$ (krát dvacet jedna osmin); $\\frac{9}{2}$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 2 listy papíru a nůžky. Zítra ať dítě oba listy rozstřihne na čtvrtiny a spočítá je. Zeptejte se: „Kolikrát se čtvrtina vejde do dvou celých listů?“ Pak ať odloží jednu čtvrtinu a řekne, kolik čtvrtin zbylo. Pak ať samo zapíše $2 : \\frac{1}{4} = 8$ a $1\\frac{3}{4} = \\frac{7}{4}$. Potom zopakujte lekci „Kontrola: zlomky II“. Kontrola pro vás: 8 čtvrtin; zbylo 7 čtvrtin, tedy jeden list a tři čtvrtiny."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) $\\frac{2}{15} \\cdot \\frac{5}{4}$ — a) $\\frac{1}{3}$ b) $\\frac{600}{60}$ c) $\\frac{1}{6}$\n\nB) $\\frac{7}{10} : \\frac{7}{2}$ — a) $\\frac{1}{5}$ b) $5$ c) $\\frac{49}{20}$\n\nC) Zapiš $3\\frac{2}{7}$ jako zlomek. — a) $\\frac{6}{7}$ b) $\\frac{23}{21}$ c) $\\frac{5}{7}$ d) $\\frac{23}{7}$"
+      }
+    },
+    {
+      "id": "M8-T05-L4B-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr počítal příklad\n\n$$\\frac{5}{7} : 1\\frac{1}{4}$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $= \\frac{5}{7} : \\frac{5}{4}$\n\n2. řádek: $= \\frac{7}{5} \\cdot \\frac{5}{4}$\n\n3. řádek: $= \\frac{35}{20}$\n\n4. řádek: $= \\frac{7}{4}$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$= \\frac{5}{7} : \\frac{5}{4}$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$= \\frac{7}{5} \\cdot \\frac{5}{4}$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$= \\frac{35}{20}$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$= \\frac{7}{4}$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$= \\frac{7}{5} \\cdot \\frac{4}{5}$",
+                "spravne": false,
+                "typ_chyby": "prevratil-oba"
+              },
+              {
+                "id": "b",
+                "text": "$= \\frac{5}{7} \\cdot \\frac{5}{4}$",
+                "spravne": false,
+                "typ_chyby": "delil-bez-prevraceni"
+              },
+              {
+                "id": "c",
+                "text": "$= \\frac{5}{7} \\cdot \\frac{4}{5}$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 4,
+            "j": 7
+          },
+          "zname_chyby": [
+            {
+              "c": 7,
+              "j": 4,
+              "typ_chyby": "prevratil-prvni"
+            },
+            {
+              "c": 25,
+              "j": 28,
+              "typ_chyby": "delil-bez-prevraceni"
+            },
+            {
+              "c": 10,
+              "j": 7,
+              "typ_chyby": "smisene-scital-celou-cast"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Čte se: „pět sedmin děleno jednou celou a jednou čtvrtinou“. Smíšené číslo se nejdřív převede na zlomek, pak se dělí. Chyba je jedna a řádky za ní jsou spočítané dobře, jen se špatným číslem.",
+        "reseni": "Chyba je ve 2. řádku: Petr převrátil první zlomek, tedy číslo, které se dělí. Převrací se to, kterým se dělí.\n\n$= \\frac{5}{7} : \\frac{5}{4}$ (jedna celá jsou čtyři čtvrtiny, a jedna navíc)\n\n$= \\frac{5}{7} \\cdot \\frac{4}{5}$ (krát převrácený zlomek za dvojtečkou)\n\n$= \\frac{20}{35}$ (čitatel krát čitatel, jmenovatel krát jmenovatel)\n\n$= \\frac{4}{7}$ (zkrácení pěti)\n\nDlaždice $\\frac{7}{5} \\cdot \\frac{4}{5}$ a $\\frac{5}{7} \\cdot \\frac{5}{4}$ nesedí (první převrací oba zlomky, druhá žádný)\n\n**Výsledek:** $\\frac{4}{7}$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Přečti mi příklad nahlas. Čím se tu dělí?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky jeden po druhém. U každého řekni, co Petr udělal: převedl, převrátil, nebo zkrátil?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: který zlomek se má převracet? Je to ten, který Petr převrátil?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč se nepřevrací pět sedmin.“",
+        "otocena_role_odpoved": "Pět sedmin je číslo, které dělím. Převrací se jen to, kterým dělím, tedy pět čtvrtin. Správně je pět sedmin krát čtyři pětiny, a to jsou čtyři sedminy.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. 3. a 4. řádek jsou jen důsledek, 1. řádek je správně (pět čtvrtin). Zeptejte se: „Kterým číslem se dělí?“ (Pěti čtvrtinami.) Výsledek $\\frac{7}{4}$: opíše Petra; $\\frac{25}{28}$: nic nepřevrátí; $\\frac{10}{7}$: smíšené číslo převede jako dvě čtvrtiny. „Kolik čtvrtin je jedna celá?“ (Čtyři.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že hlídalo, kterým číslem se dělí, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu, jak Petr počítá: $\\frac{2}{3} : 1\\frac{1}{5} = \\frac{3}{2} \\cdot \\frac{6}{5} = \\frac{9}{5}$. Zeptejte se: „Kde se Petr spletl? Kolik má vyjít?“ Kontrola pro vás: převrátil první zlomek; správně $\\frac{2}{3} \\cdot \\frac{5}{6} = \\frac{10}{18} = \\frac{5}{9}$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 2 listy papíru a nůžky. Zítra ať dítě oba listy rozstřihne na třetiny. Zeptejte se: „Kolikrát se do dvou listů vejde kus velký dvě třetiny?“ Ať třetiny skládá po dvou. Pak ať samo zapíše $2 : \\frac{2}{3} = 2 \\cdot \\frac{3}{2} = 3$. Potom zopakujte lekci „Kontrola: zlomky II“. Kontrola pro vás: třikrát, šest třetin jsou tři dvojice."
+      },
+      "tisk": {
+        "zadani": "Petr počítal příklad\n\n$$\\frac{5}{7} : 1\\frac{1}{4}$$\n\na udělal jednu chybu.\n\n1. řádek: $= \\frac{5}{7} : \\frac{5}{4}$\n\n2. řádek: $= \\frac{7}{5} \\cdot \\frac{5}{4}$\n\n3. řádek: $= \\frac{35}{20}$\n\n4. řádek: $= \\frac{7}{4}$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $= \\frac{7}{5} \\cdot \\frac{4}{5}$ b) $= \\frac{5}{7} \\cdot \\frac{5}{4}$ c) $= \\frac{5}{7} \\cdot \\frac{4}{5}$\n\nC) Správný výsledek (zlomek v základním tvaru): ______"
+      }
+    },
+    {
+      "id": "M8-T05-L4B-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Honzíkův oddíl měl na táboře $28$ m lana. Na stavbu lanového mostu spotřebovali $\\frac{2}{7}$ lana. Zbytek rozstříhali na kusy po $\\frac{5}{4}$ m na nácvik uzlů.\n\nKolik metrů lana spotřebovali na most, kolik metrů zbylo a kolik kusů nastříhali?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Mezivýsledek: lano na most",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m"
+          },
+          "spravne": {
+            "hodnota": 8
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 4,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            },
+            {
+              "hodnota": 98,
+              "typ_chyby": "zlomek-z-cisla-obracene"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: zbytek lana",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m"
+          },
+          "spravne": {
+            "hodnota": 20
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 8,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            },
+            {
+              "hodnota": 24,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek: počet kusů",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 16
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 25,
+              "typ_chyby": "delil-bez-prevraceni"
+            },
+            {
+              "hodnota": 0.0625,
+              "typ_chyby": "deleni-obracene"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha kontroly spojuje zlomek z čísla a dělení zlomkem. Past: kusy se stříhají jen ze zbytku, ne z celých dvaceti osmi metrů. Počet kusů je dělení: zbytek lana děleno jeden kus. Čte se: „pět čtvrtin metru“, to je metr a čtvrt.",
+        "reseni": "$28 : 7 \\cdot 2 = 8$ (most, dvě sedminy z dvaceti osmi metrů)\n\n$28 - 8 = 20$ (zbytek lana)\n\n$20 : \\frac{5}{4} = 20 \\cdot \\frac{4}{5} = \\frac{80}{5} = 16$ (kolikrát se kus vejde do zbytku)\n\n$16 \\cdot \\frac{5}{4} = 20$ (zkouška, šestnáct kusů je dvacet metrů)\n\n**Výsledek:** na most $8$ m, zbylo $20$ m, nastříhali $16$ kusů",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co se s lanem stalo nejdřív a co potom.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Na kolik stejných dílů rozdělíš dvacet osm metrů? Kolik dílů spotřebovali a kolik jich zbylo?“"
+          },
+          {
+            "k": "Výsledek",
+            "text": "„Kdyby zbyly čtyři metry a kus měl půl metru, kolik kusů by bylo? Jakým počtem to spočítáš?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč je kusů méně než dvacet, když zbylo dvacet metrů.“",
+        "otocena_role_odpoved": "Protože jeden kus je delší než metr, metr a čtvrt. Na každý kus padne víc než jeden metr, takže kusů je méně než metrů. Dvacet děleno pěti čtvrtinami je šestnáct.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Krok 1 $4$, $98$: jen dělí, nebo obráceně. Zeptejte se: „Kolik jsou dvě sedminy lana?“ (Osm metrů.) Krok 2 $8$: most; $24$: navazuje na $4$. Výsledek $25$: násobí; $0{,}0625$ (jedna šestnáctina): dělí obráceně. „Bude kusů víc, nebo míň než metrů?“ (Míň.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — zbytek i počet kusů sedí. Pochvalte, že kusy počítalo jen ze zbytku a poznalo dělení, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Máme $20$ metrů stuhy. Čtvrtinu použijeme na dárky, zbytek nastříháme na kusy po třech pětinách metru. Kolik kusů bude?“ Zlomek $\\frac{3}{5}$ ukažte na telefonu. Ať na papír spočítá a nahlas řekne použito, zbytek a počet kusů. Kontrola pro vás: $5$ m, $15$ m, $25$ kusů ($15 \\cdot \\frac{5}{3}$).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 4 listy papíru a nůžky; každý list je metr lana. Zítra ať dítě jeden list odloží jako lano na most. Zbylé tři ať rozstřihne na poloviny jako kusy po půl metru a spočítá je. Pak ať samo zapíše $4 - 1 = 3$ a $3 : \\frac{1}{2} = 3 \\cdot 2 = 6$. Potom zopakujte lekci „Kontrola: zlomky II“. Kontrola pro vás: zbyly 3 metry, 6 kusů."
+      },
+      "tisk": {
+        "zadani": "Honzíkův oddíl měl na táboře $28$ m lana. Na stavbu lanového mostu spotřebovali $\\frac{2}{7}$ lana. Zbytek rozstříhali na kusy po $\\frac{5}{4}$ m na nácvik uzlů.\n\nKolik metrů lana spotřebovali na most, kolik metrů zbylo a kolik kusů nastříhali?\n\nA) Lano na most: ______ m\n\nB) Zbylo: ______ m\n\nC) Počet kusů: ______"
+      }
+    },
+    {
+      "id": "M8-T05-L4B-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Vypočítej a výsledek zapiš jako zlomek v základním tvaru:\n\n$$3\\frac{1}{3} : \\frac{5}{4} + \\frac{1}{6}$$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 17,
+            "j": 6
+          },
+          "zname_chyby": [
+            {
+              "c": 13,
+              "j": 24,
+              "typ_chyby": "prevratil-prvni"
+            },
+            {
+              "c": 13,
+              "j": 3,
+              "typ_chyby": "delil-bez-prevraceni"
+            },
+            {
+              "c": 37,
+              "j": 30,
+              "typ_chyby": "smisene-scital-celou-cast"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Čte se: „tři celé a jedna třetina děleno pěti čtvrtinami plus jedna šestina“. Dělení má přednost před sčítáním.",
+        "reseni": "$3\\frac{1}{3} = \\frac{10}{3}$ (tři celé jsou devět třetin, a jedna navíc)\n\n$\\frac{10}{3} : \\frac{5}{4} = \\frac{10}{3} \\cdot \\frac{4}{5} = \\frac{40}{15} = \\frac{8}{3}$ (dělení má přednost, krát převrácený zlomek)\n\n$\\frac{8}{3} + \\frac{1}{6} = \\frac{16}{6} + \\frac{1}{6} = \\frac{17}{6}$ (sčítání na šestinách)\n\n**Výsledek:** $\\frac{17}{6}$",
+        "otazky": [
+          "„Přečti mi příklad nahlas. Co v něm spočítáš jako první a proč?“",
+          "„Co uděláš se smíšeným číslem a co se zlomkem, kterým dělíš?“",
+          "„Tady máš začátek: tři celé a jedna třetina je deset třetin. Jak zapíšeš dělení jako násobení? A co pak s jednou šestinou?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč se převrací pět čtvrtin, a ne deset třetin.“",
+        "otocena_role_odpoved": "Protože pěti čtvrtinami se dělí. Při dělení zlomkem se násobí převráceným zlomkem a převrací se jen ten, kterým dělím. Deset třetin zůstane.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $\\frac{13}{24}$: převrátí první zlomek; $\\frac{13}{3}$: nepřevrátí nic. Zeptejte se: „Kterým číslem se dělí?“ (Pěti čtvrtinami, ty se převracejí.) $\\frac{37}{30}$: smíšené číslo převede jako čtyři třetiny. „Kolik třetin jsou tři celé?“ (Devět.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — kontrolu tématu zvládlo samo. Pochvalte převod smíšeného čísla i dělení. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu $1\\frac{1}{5} : \\frac{3}{5} + \\frac{1}{2}$. Ať na papír spočítá a nahlas řekne převod, dělení a výsledek. Kontrola pro vás: $\\frac{6}{5}$; $\\frac{6}{5} \\cdot \\frac{5}{3} = 2$; $2 + \\frac{1}{2} = \\frac{5}{2}$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 2 listy papíru a nůžky. Zítra ať dítě jeden list nechá celý a druhý rozstřihne na třetiny. Ať vyskládá jeden a dvě třetiny listu a zjistí, kolikrát se do toho vejde třetina listu. Pak ať samo zapíše $1\\frac{2}{3} = \\frac{5}{3}$ a $\\frac{5}{3} : \\frac{1}{3} = \\frac{5}{3} \\cdot 3 = 5$. Potom zopakujte lekci „Kontrola: zlomky II“. Kontrola pro vás: pětkrát, celý list jsou tři třetiny a k tomu dvě."
+      },
+      "tisk": {
+        "zadani": "Vypočítej a výsledek zapiš jako zlomek v základním tvaru:\n\n$$3\\frac{1}{3} : \\frac{5}{4} + \\frac{1}{6}$$\n\nVýsledek: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "stredni",
+    "poznamka": "B-varianta M8-T05-L4 (po červené), autor 9. 10. 2026. Struktura, typy úloh i vstupů, počty kroků a kódy chyb jako v hlavní lekci; čísla a kontexty jiné než v L4 i L4N. Přepočítáno skriptem (python Fraction) a přes vyhodnotKrok: U1 $\\frac{1}{6}$ ($\\frac{1}{3}$, $\\frac{600}{60}$); $\\frac{1}{5}$ ($5$, $\\frac{49}{20}$); $\\frac{23}{7}$ ($\\frac{6}{7}$, $\\frac{23}{21}$, $\\frac{5}{7}$). U2 $\\frac{5}{7} \\cdot \\frac{4}{5} = \\frac{4}{7}$ ($\\frac{7}{4}$, $\\frac{25}{28}$, $\\frac{10}{7}$). U3 $28$ m: most $8$ ($4$, $98$), zbylo $20$ ($8$, $24$), kusů $16$ ($25$; $0{,}0625$, i jako $\\frac{1}{16}$ s lomítkem). U4 $\\frac{8}{3} + \\frac{1}{6} = \\frac{17}{6}$ ($\\frac{13}{24}$, $\\frac{13}{3}$, $\\frac{37}{30}$). Sporné: U1 A $\\frac{1}{3}$ jako upravil-jen-cast-zlomku (pětka s patnáctkou zkrácena správně, čtyřka dělena dvěma jen dole), stejný vzor jako $\\frac{3}{4}$ v hlavní lekci; společný jmenovatel je $60$ (v hlavní lekci $30$), protože dvojice s menším společným jmenovatelem a krácením obou párů vede vždy na $\\frac{5}{6}$ nebo $\\frac{3}{10}$ z hlavní lekce. U3 lano místo čaje, kus $\\frac{5}{4}$ m je delší než metr (v hlavní lekci termoska $\\frac{3}{4}$ l kratší), proto otočená role „kusů je méně než metrů“; známá chyba $0{,}0625$ je méně pravděpodobná než $0{,}125$ v hlavní lekci. Žebříček „Platí“ převzat z hlavní lekce.",
+    "zkontroloval": "autor",
+    "datum": "2026-10-09"
+  }
+}
