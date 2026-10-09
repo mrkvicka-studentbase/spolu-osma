@@ -1,0 +1,507 @@
+{
+  "id": "M8-T02-L2N",
+  "faze": "osma",
+  "tyden": 2,
+  "poradi": 2,
+  "tema": "Desetinná čísla: plus, mínus",
+  "kapitola": "desetinna-cisla",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo sčítá a odčítá desetinná čísla pod sebou i s celými čísly a správně posune čárku při násobení a dělení 10, 100 a 1 000.",
+  "uvod_pro_rodice": "Naostro: dítě tuhle látku dělalo v lekci „Desetinná čísla: plus, mínus“ a dnes ukáže, že ji zvládne samo i na delších příkladech.",
+  "uvod_pravidla": [
+    {
+      "znak": "$7 + 0{,}25 = 7{,}25$",
+      "text": "čárka pod čárkou"
+    },
+    {
+      "znak": "$0{,}3 \\cdot 1\\,000 = 300$",
+      "text": "krát: doprava"
+    },
+    {
+      "znak": "$5 : 100 = 0{,}05$",
+      "text": "děleno: doleva"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T02-L2N-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) $4{,}8 + 0{,}75 + 3$\n\nB) $0{,}058 \\cdot 100$\n\nC) $7 : 1\\,000$\n\nD) $16 - 0{,}4$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $4{,}8 + 0{,}75 + 3$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$5{,}58$",
+                "spravne": false,
+                "typ_chyby": "carka-scitani-pod-sebe"
+              },
+              {
+                "id": "b",
+                "text": "$8{,}55$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$1{,}26$",
+                "spravne": false,
+                "typ_chyby": "carka-scitani-pod-sebe"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $0{,}058 \\cdot 100$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$0{,}58$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "b",
+                "text": "$0{,}00058$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-spatnym-smerem"
+              },
+              {
+                "id": "c",
+                "text": "$0{,}05800$",
+                "spravne": false,
+                "typ_chyby": "pripsal-nuly-k-desetinnemu"
+              },
+              {
+                "id": "d",
+                "text": "$5{,}8$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: $7 : 1\\,000$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$0{,}007$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$7\\,000$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-spatnym-smerem"
+              },
+              {
+                "id": "c",
+                "text": "$0{,}07$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: $16 - 0{,}4$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$12$",
+                "spravne": false,
+                "typ_chyby": "carka-scitani-pod-sebe"
+              },
+              {
+                "id": "b",
+                "text": "$15{,}96$",
+                "spravne": false,
+                "typ_chyby": "rad-cislice-zamena"
+              },
+              {
+                "id": "c",
+                "text": "$15{,}6$",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě tu jen vybírá. U A a D se počítá pod sebou, čárka pod čárkou; celé číslo má čárku za poslední číslicí, i když se nepíše. U B a C se posouvá čárka o tolik míst, kolik nul má sto nebo tisíc. Čte se: $0{,}058$ = padesát osm tisícin, $0{,}007$ = sedm tisícin, $15{,}6$ = patnáct celých šest. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $4{,}8 + 0{,}75 + 3$\n\n$4{,}80 + 0{,}75 + 3{,}00$ (doplněné nuly, čárka pod čárkou)\n\n$= 8{,}55$ (setiny, desetiny, celé)\n\n#### B) $0{,}058 \\cdot 100$\n\n$= 5{,}8$ (sto má dvě nuly, čárka o dvě místa doprava)\n\n#### C) $7 : 1\\,000$\n\n$= 0{,}007$ (tisíc má tři nuly, čárka za sedmičkou se posune o tři místa doleva, prázdná místa jsou nuly)\n\n#### D) $16 - 0{,}4$\n\n$16{,}0 - 0{,}4 = 15{,}6$ (čtyři desetiny pod desetiny, za šestnáctku se doplní čárka a nula)\n\n**Výsledek:** A) $8{,}55$, B) $5{,}8$, C) $0{,}007$, D) $15{,}6$",
+        "otazky": [
+          {
+            "k": "A a D",
+            "text": "„Neklikej, spočítej to na papíře pod sebou. Kde má čárku celé číslo, které ji nepíše?“"
+          },
+          {
+            "k": "B",
+            "text": "„Kolik nul má sto? Kterým směrem a o kolik míst se při násobení posune čárka?“"
+          },
+          {
+            "k": "C",
+            "text": "„Sedmička má čárku hned za sebou. O kolik míst a kam ji při dělení tisícem posuneš? Co napíšeš na prázdná místa?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč šestnáct minus nula celá čtyři není dvanáct.“",
+        "otocena_role_odpoved": "Nula celá čtyři jsou jen čtyři desetiny, ne čtyři celé. Píšu je pod desetiny, za čárku. Od šestnácti uberu jen kousek, vyjde patnáct celých šest.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $5{,}58$ nebo $1{,}26$, u D $12$: zarovná čísla doprava. Zeptejte se: „Kde má čárku číslo tři?“ (Za trojkou.) U D $15{,}96$: desetiny bere jako setiny. U B a C jiný počet nul: posune čárku o jiný počet míst, opačně, nebo jen připíše nuly."
+      },
+      "semafor": {
+        "zelena": "Výborně — čárka sedí ve všech čtyřech příkladech. Pochvalte, že u celých čísel našlo neviditelnou čárku, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu $5 + 2{,}36$, pak $20 - 0{,}7$ a $0{,}09 \\cdot 1\\,000$. Ať řeší na papír a u každého řekne, jak čísla podepsalo nebo kam posunulo čárku. Kontrola pro vás: $7{,}36$; $19{,}3$ (devatenáct celých tři); $90$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko s milimetry. Zítra ať dítě položí prst na značku $16$ cm a posune ho o $0{,}4$ cm, tedy o 4 milimetry, zpátky k nule. Zeptejte se: „Na které značce je prst?“ Pak ať samo zapíše $16 - 0{,}4 = 15{,}6$. Potom zopakujte lekci „Desetinná čísla: plus, mínus“. Kontrola pro vás: prst je na 15 centimetrech a 6 milimetrech, tedy na $15{,}6$ cm, ne na 12 cm."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) $4{,}8 + 0{,}75 + 3$ — a) $5{,}58$ b) $8{,}55$ c) $1{,}26$\n\nB) $0{,}058 \\cdot 100$ — a) $0{,}58$ b) $0{,}00058$ c) $0{,}05800$ d) $5{,}8$\n\nC) $7 : 1\\,000$ — a) $0{,}007$ b) $7\\,000$ c) $0{,}07$\n\nD) $16 - 0{,}4$ — a) $12$ b) $15{,}96$ c) $15{,}6$"
+      }
+    },
+    {
+      "id": "M8-T02-L2N-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Tomáš kupuje pro třídu $10$ sešitů po $12{,}9$ Kč a $100$ samolepek po $0{,}35$ Kč. Platí dvěma stokorunami. Kolik korun dostane zpátky?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $12{,}9 \\cdot 10 = 129$\n\n2. řádek: $0{,}35 \\cdot 100 = 3{,}5$\n\n3. řádek: $129 + 3{,}5 = 132{,}5$\n\n4. řádek: $200 - 132{,}5 = 67{,}5$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$12{,}9 \\cdot 10 = 129$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$0{,}35 \\cdot 100 = 3{,}5$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$129 + 3{,}5 = 132{,}5$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$200 - 132{,}5 = 67{,}5$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$0{,}35 \\cdot 100 = 0{,}0035$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-spatnym-smerem"
+              },
+              {
+                "id": "b",
+                "text": "$0{,}35 \\cdot 100 = 35$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$0{,}35 \\cdot 100 = 0{,}3500$",
+                "spravne": false,
+                "typ_chyby": "pripsal-nuly-k-desetinnemu"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 36
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 67.5,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 70.65,
+              "typ_chyby": "pripsal-nuly-k-desetinnemu"
+            },
+            {
+              "hodnota": 164,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Nejdřív násobí deseti a stem, pak sčítá a odčítá. Chybný je jen jeden řádek; řádky po něm počítají dobře, ale s chybným číslem. Čte se: $0{,}35$ = nula celá třicet pět (třicet pět haléřů), $132{,}5$ = sto třicet dva celých pět, $67{,}5$ = šedesát sedm celých pět.",
+        "reseni": "Chyba je ve 2. řádku: sto má dvě nuly, Petr posunul čárku jen o jedno místo.\n\n$12{,}9 \\cdot 10 = 129$ (sešity, čárka o jedno místo doprava)\n\n$0{,}35 \\cdot 100 = 35$ (samolepky, čárka o dvě místa doprava)\n\n$129 + 35 = 164$ (nákup celkem)\n\n$200 - 164 = 36$ (Tomáš dostane zpátky)\n\n**Výsledek:** $36$ Kč",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Tomáš kupuje, čím platí a co máš zjistit.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky postupně. U každého řekni, co v něm Petr počítá.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého násobení spočítej nuly a ověř, kterým směrem a o kolik míst se posunula čárka. Sedí to všude?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč sto samolepek nestojí jen tři koruny padesát.“",
+        "otocena_role_odpoved": "Jedna samolepka stojí třicet pět haléřů, sto samolepek tedy stokrát víc. Čárka se posune o dvě místa doprava, vyjde třicet pět korun.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 3. nebo 4. řádek? Ty jsou jen důsledek. Zeptejte se: „Odkud je tři celé pět?“ (Z 2. řádku.) 1. řádek je správně. Výsledek $67{,}5$: počítá jako Petr; $70{,}65$ nebo oprava s nulami: jen připíše nuly; oprava $0{,}0035$: posouvá doleva; $164$: cena nákupu."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že u násobení stem počítalo nuly, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu: „Petr tvrdí, že $0{,}6 \\cdot 100 = 6$.“ Ať řekne, jestli má Petr pravdu, a spočítá to správně. Pak ať spočítá $2{,}4 \\cdot 10 + 0{,}15 \\cdot 100$. Kontrola pro vás: nemá, správně $60$; $24 + 15 = 39$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě spočítá po krocích: jedna samolepka stojí $0{,}35$ Kč, kolik deset samolepek a kolik sto? U každého kroku ať posune čárku o jedno místo doprava a nahlas řekne cenu. Pak ať samo zapíše $0{,}35 \\cdot 100 = 35$. Potom zopakujte lekci „Desetinná čísla: plus, mínus“. Kontrola pro vás: deset samolepek $3{,}5$ Kč (tři koruny padesát), sto samolepek $35$ Kč."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\n*Tomáš kupuje pro třídu $10$ sešitů po $12{,}9$ Kč a $100$ samolepek po $0{,}35$ Kč. Platí dvěma stokorunami. Kolik korun dostane zpátky?*\n\na udělal jednu chybu.\n\n1. řádek: $12{,}9 \\cdot 10 = 129$\n\n2. řádek: $0{,}35 \\cdot 100 = 3{,}5$\n\n3. řádek: $129 + 3{,}5 = 132{,}5$\n\n4. řádek: $200 - 132{,}5 = 67{,}5$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $0{,}35 \\cdot 100 = 0{,}0035$ b) $0{,}35 \\cdot 100 = 35$ c) $0{,}35 \\cdot 100 = 0{,}3500$\n\nC) Kolik korun Tomáš opravdu dostane zpátky? ______ Kč"
+      }
+    },
+    {
+      "id": "M8-T02-L2N-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Balení $100$ stejných hřebíků váží $245$ g. Tomáš potřebuje na poličku $30$ hřebíků a dá je do krabičky, která váží $15$ g.\n\nKolik gramů váží jeden hřebík? Kolik gramů váží $30$ hřebíků? Kolik gramů váží krabička i s hřebíky?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Který zápis odpovídá jednomu hřebíku?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$245 \\cdot 100$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-spatnym-smerem"
+              },
+              {
+                "id": "b",
+                "text": "$100 : 245$",
+                "spravne": false,
+                "typ_chyby": "deleni-obracene"
+              },
+              {
+                "id": "c",
+                "text": "$245 : 1\\,000$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "d",
+                "text": "$245 : 100$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: jeden hřebík",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "g"
+          },
+          "spravne": {
+            "hodnota": 2.45
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 24.5,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 0.245,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 24500,
+              "typ_chyby": "posun-carky-spatnym-smerem"
+            }
+          ]
+        },
+        {
+          "id": "k3",
+          "popisek": "Mezivýsledek: 30 hřebíků",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "g"
+          },
+          "spravne": {
+            "hodnota": 73.5
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 735,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 7.35,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek: krabička i s hřebíky",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "g"
+          },
+          "spravne": {
+            "hodnota": 88.5
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 75,
+              "typ_chyby": "carka-scitani-pod-sebe"
+            },
+            {
+              "hodnota": 73.5,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 22.35,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hmotnost sta hřebíků se dělí stem, čárka jde o dvě místa doleva. Třicet hřebíků je třikrát deset hřebíků. Nakonec se přičte krabička: patnáct gramů jsou celé gramy, patří pod celé. Čte se: $2{,}45$ = dvě celé čtyřicet pět, $73{,}5$ = sedmdesát tři celých pět, $88{,}5$ = osmdesát osm celých pět.",
+        "reseni": "$245 : 100 = 2{,}45$ (jeden hřebík, čárka o dvě místa doleva)\n\n$2{,}45 \\cdot 3 = 7{,}35$ (tři hřebíky)\n\n$7{,}35 \\cdot 10 = 73{,}5$ (třicet hřebíků, čárka o jedno místo doprava)\n\n$73{,}5 + 15 = 88{,}5$ (i s krabičkou, celé gramy pod celé)\n\nJiná cesta: $245 \\cdot 30 = 7\\,350$ a $7\\,350 : 100 = 73{,}5$\n\n**Výsledek:** jeden hřebík $2{,}45$ g, třicet hřebíků $73{,}5$ g, krabička s hřebíky $88{,}5$ g",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co víš o balení a o krabičce. Kolik věcí máš zjistit?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Kolik hřebíků váží dvě stě čtyřicet pět gramů? Jak z toho zjistíš váhu jednoho? Kam se posune čárka?“"
+          },
+          {
+            "k": "Krok 3 a výsledek",
+            "text": "„Tady máš začátek: třicet hřebíků je třikrát deset hřebíků. Kolik váží tři hřebíky? A kam pod sebe napíšeš krabičku?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, kam patří patnáct gramů krabičky, když je píšeš pod sedmdesát tři celých pět.“",
+        "otocena_role_odpoved": "Patnáct jsou celé gramy, takže jednotky pod jednotky a desítky pod desítky, za čárkou nic. Pětka za čárkou zůstane a vyjde osmdesát osm celých pět.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Krok 1 jiný než $245 : 100$, krok 2 $24{,}5$, $0{,}245$ nebo $24\\,500$: plete posun čárky. Zeptejte se: „Kolik nul má sto?“ (Dvě.) Krok 3 $735$ nebo $7{,}35$: čárka o místo vedle. Výsledek $75$: patnáct podepíše pod pětku; $73{,}5$: bez krabičky; $22{,}35$: chyba z kroku 3."
+      },
+      "semafor": {
+        "zelena": "Výborně — hlavní úlohu zvládlo. Pochvalte, že hlídalo čárku při dělení stem i při sčítání s celými gramy, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu: „$1\\,000$ špendlíků váží $150$ g. Kolik váží jeden špendlík a kolik $60$ špendlíků?“ Ať řeší na papír a řekne oba výsledky. Kontrola pro vás: jeden špendlík $0{,}15$ g (patnáct setin gramu), šedesát špendlíků $9$ g.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě nakreslí tabulku se sloupci stovky, desítky, jednotky, desetiny, setiny a zapíše do ní $245$. Pak ať každou číslici napíše do druhého řádku o dva sloupce doprava, to je děleno sto, a nové číslo přečte. Pak ať samo zapíše $245 : 100 = 2{,}45$. Potom zopakujte lekci „Desetinná čísla: plus, mínus“. Kontrola pro vás: dvojka je v jednotkách, čtyřka v desetinách, pětka v setinách: dvě celé čtyřicet pět."
+      },
+      "tisk": {
+        "zadani": "Balení $100$ stejných hřebíků váží $245$ g. Tomáš potřebuje na poličku $30$ hřebíků a dá je do krabičky, která váží $15$ g.\n\nA) Který zápis odpovídá jednomu hřebíku? Zakroužkuj: a) $245 \\cdot 100$ b) $100 : 245$ c) $245 : 1\\,000$ d) $245 : 100$\n\nB) Jeden hřebík: ______ g\n\nC) Třicet hřebíků: ______ g\n\nD) Krabička i s hřebíky: ______ g"
+      }
+    },
+    {
+      "id": "M8-T02-L2N-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Konev má $10$ l vody. Tomáš z ní zalil $10$ sazenic, každou $0{,}45$ l, a pak ještě rajčata $2{,}8$ l.\n\nKolik litrů vody zbylo v konvi?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "l"
+          },
+          "spravne": {
+            "hodnota": 2.7
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 6.75,
+              "typ_chyby": "pripsal-nuly-k-desetinnemu"
+            },
+            {
+              "hodnota": 7.155,
+              "typ_chyby": "posun-carky-spatnym-smerem"
+            },
+            {
+              "hodnota": 7.3,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Úloha spojuje násobení deseti, sčítání a odčítání od celého čísla. Čte se: $0{,}45$ = nula celá čtyřicet pět (čtyřicet pět setin litru), $2{,}8$ = dvě celé osm, $2{,}7$ = dvě celé sedm.",
+        "reseni": "$0{,}45 \\cdot 10 = 4{,}5$ (deset sazenic, čárka o jedno místo doprava)\n\n$4{,}5 + 2{,}8 = 7{,}3$ (Tomáš zalil celkem)\n\n$10{,}0 - 7{,}3 = 2{,}7$ (zbylo v konvi, za desítku se doplní čárka a nula)\n\nJiná cesta: $10 - 4{,}5 = 5{,}5$ a $5{,}5 - 2{,}8 = 2{,}7$\n\n**Výsledek:** $2{,}7$ l",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co Tomáš s vodou dělá a na co se úloha ptá.“",
+          "„Kolik vody spotřebuje deset sazenic? Kam se posune čárka, když násobíš deseti?“",
+          "„Tady máš začátek: nejdřív zjisti, kolik vody Tomáš vylil dohromady. Jak to pak pod sebou odečteš od deseti litrů?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč deset sazenic po nula celá čtyřicet pět litru nespotřebuje nula celá čtyři sta padesát litru.“",
+        "otocena_role_odpoved": "Krát deset se čárka posune o jedno místo doprava, vyjde čtyři celé pět litru. Když jen připíšu nulu za čárku, číslo se nezmění, je to pořád nula celá čtyřicet pět.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $6{,}75$: krát deset jen připíše nulu; $7{,}155$: posune čárku doleva. Zeptejte se: „Kolik litrů spotřebuje deset sazenic?“ (Čtyři celé pět.) $7{,}3$: napíše, kolik Tomáš zalil."
+      },
+      "semafor": {
+        "zelena": "Výborně — násobení deseti i odčítání zvládá samo. Pochvalte, že za desítku doplnilo čárku a nulu. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu: „V láhvi jsou $2$ l. Deset dětí si nalije po $0{,}15$ l. Kolik zbude?“ Ať řeší na papír a řekne, kolik děti vypily a kolik zbylo. Kontrola pro vás: vypily $1{,}5$ l (jedna celá pět), zbylo $0{,}5$ l (půl litru).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko s milimetry. Zítra ať dítě od nuly desetkrát po sobě odměří $0{,}5$ cm (pět milimetrů) a řekne, kam došlo. Pak ať od značky $10$ cm odpočítá $7{,}3$ cm zpátky a přečte značku. Pak ať samo zapíše $0{,}5 \\cdot 10 = 5$ a $10 - 7{,}3 = 2{,}7$. Potom zopakujte lekci „Desetinná čísla: plus, mínus“. Kontrola pro vás: došlo na 5 cm; zpátky skončí na $2{,}7$ cm."
+      },
+      "tisk": {
+        "zadani": "Konev má $10$ l vody. Tomáš z ní zalil $10$ sazenic, každou $0{,}45$ l, a pak ještě rajčata $2{,}8$ l.\n\nKolik litrů vody zbylo v konvi?\n\nVýsledek: ______ l"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 9. 10.: vše přepočítáno skriptem (Decimal) a ověřeno přes vyhodnotKrok; naostro těžší než M8-T02-L2 (4 příklady v rozcvičce, detektiv o 4 řádcích s k2, hlavní úloha o krok delší), jiná čísla i kontext. U3 krok 3 hodnota $7{,}35$ vzniká dvěma cestami (krát deset jen připsáním nuly, nebo dopočet z chybného $0{,}245$ v kroku 2); změna čísel to nevyřeší (jakýkoli posun o jedno místo dá totéž), proto kód sjednocen na posun-carky-o-spatny-pocet, který sedí na obě cesty; stejně výsledek $22{,}35$ (dopočet z $7{,}35$). Typická chyba upravena. Krok 3 násobí desetinné číslo třiceti, stejně jako učební lekce ($0{,}38 \\cdot 40$), v pořádku. U1 A dvě dlaždice se stejným kódem carka-scitani-pod-sebe jsou dvě různé podoby téže chyby, v pořádku.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-09"
+  }
+}

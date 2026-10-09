@@ -1,0 +1,496 @@
+{
+  "id": "M8-T02-L4N",
+  "faze": "osma",
+  "tyden": 2,
+  "poradi": 4,
+  "tema": "Kontrola: desetinná čísla",
+  "kapitola": "desetinna-cisla",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo porovná, zaokrouhlí a spočítá desetinná čísla v delším příkladu i v nákupu se dvěma položkami na váhu.",
+  "uvod_pro_rodice": "Naostro: dítě tohle téma uzavíralo v lekci „Kontrola: desetinná čísla“ a dnes ukáže, že porovnání, zaokrouhlení i počítání zvládne samo i na těžších příkladech.",
+  "uvod_pravidla": [
+    {
+      "znak": "$3{,}09 < 3{,}9$",
+      "text": "nejdřív desetiny"
+    },
+    {
+      "znak": "$0{,}6 \\cdot 0{,}05 = 0{,}030$",
+      "text": "místa se sečtou"
+    },
+    {
+      "znak": "$24{,}5 \\doteq 25$ Kč",
+      "text": "pětka: nahoru"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T02-L4N-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Které z čísel $1{,}205$; $1{,}25$; $1{,}2$; $1{,}052$ je největší?\n\nB) $5{,}4 : 100$\n\nC) $2{,}4 : 0{,}08$\n\nD) Zaokrouhli $9{,}952$ na desetiny.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: největší číslo",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$1{,}205$",
+                "spravne": false,
+                "typ_chyby": "porovnani-desetinnych-podle-delky"
+              },
+              {
+                "id": "b",
+                "text": "$1{,}052$",
+                "spravne": false,
+                "typ_chyby": "rad-cislice-zamena"
+              },
+              {
+                "id": "c",
+                "text": "$1{,}25$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $5{,}4 : 100$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$0{,}054$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$0{,}54$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "c",
+                "text": "$540$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-spatnym-smerem"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: $2{,}4 : 0{,}08$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$3$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-deleni"
+              },
+              {
+                "id": "b",
+                "text": "$30$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$0{,}3$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-deleni"
+              },
+              {
+                "id": "d",
+                "text": "$300$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-deleni"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: $9{,}952$ na desetiny",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$9{,}95$",
+                "spravne": false,
+                "typ_chyby": "zaokrouhlil-na-spatny-rad"
+              },
+              {
+                "id": "b",
+                "text": "$10{,}0$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$9{,}9$",
+                "spravne": false,
+                "typ_chyby": "zaokrouhlil-useknutim"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě tu jen vybírá; příklady jsou z celého tématu. U A rozhodují řády po doplnění nul, u D číslice za desetinami. U B se posouvá čárka, u C se posune u obou čísel stejně. Čte se: $1{,}052$ = jedna celá nula padesát dva, $0{,}054$ = padesát čtyři tisícin, $10{,}0$ = deset celých nula. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) Největší číslo\n\n$1{,}205$; $1{,}250$; $1{,}200$; $1{,}052$ (doplněné nuly, všechna čísla mají tři místa za čárkou)\n\n$1{,}250 > 1{,}205 > 1{,}200 > 1{,}052$ (porovnání po řádech: desetiny jsou stejné kromě posledního čísla, rozhodují setiny)\n\n#### B) $5{,}4 : 100$\n\n$= 0{,}054$ (sto má dvě nuly, čárka o dvě místa doleva, prázdné místo je nula)\n\n#### C) $2{,}4 : 0{,}08$\n\n$= 240 : 8 = 30$ (čárka u obou čísel o dvě místa doprava)\n\n#### D) $9{,}952$ na desetiny\n\n$9{,}952 \\doteq 10{,}0$ (za desetinami je pětka, devět desetin se zvětší na deset, tedy na celou)\n\n**Výsledek:** A) $1{,}25$, B) $0{,}054$, C) $30$, D) $10{,}0$",
+        "otazky": [
+          {
+            "k": "A a D",
+            "text": "„Neklikej, napiš si čísla na papír. U A doplň nuly a porovnávej po řádech. U D najdi číslici hned za desetinami. Co z toho plyne?“"
+          },
+          {
+            "k": "B",
+            "text": "„Kolik nul má sto? Kterým směrem se při dělení posune čárka? Co napíšeš na prázdné místo?“"
+          },
+          {
+            "k": "C",
+            "text": "„O kolik míst posuneš čárku u osmi setin, aby bylo celé? O kolik pak musíš posunout čárku u dvou celých čtyř?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč devět celých devět set padesát dva na desetiny není devět celých devět.“",
+        "otocena_role_odpoved": "Za desetinami je pětka, takže se desetiny zvětší. Devět desetin a jedna je deset desetin, to je celá navíc. Vyjde deset celých nula.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $1{,}205$: delší zápis bere jako větší; $1{,}052$: přehlédne nulu. Zeptejte se: „Doplň nuly. Které číslo má nejvíc tisícin?“ (Jedna celá dvě stě padesát.) U B jiná dlaždice: plete posun čárky; u C: posun u jednoho čísla. U D $9{,}9$: usekne; $9{,}95$: na setiny."
+      },
+      "semafor": {
+        "zelena": "Výborně — všechny čtyři části tématu sedí. Pochvalte, že u každého příkladu hlídalo řády a čárku, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu dvojici $2{,}6$ a $2{,}58$ (které je větší?), pak $0{,}7 : 100$ a $1{,}8 : 0{,}09$. Ať řeší na papír a řekne, jak hlídalo čárku. Kontrola pro vás: větší je $2{,}6$; $0{,}007$ (sedm tisícin); $20$ ($180 : 9$).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko s milimetry. Zítra ať dítě najde na pravítku místo $9{,}97$ cm, tedy kousek před značkou 10 cm, a řekne, ke které značce je blíž: $9{,}9$ cm, nebo $10$ cm. Pak ať samo zapíše $9{,}97 \\doteq 10{,}0$. Potom zopakujte lekci „Kontrola: desetinná čísla“. Kontrola pro vás: blíž je značka 10 cm, místo $9{,}97$ cm je skoro na ní."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Které z čísel $1{,}205$; $1{,}25$; $1{,}2$; $1{,}052$ je největší? — a) $1{,}205$ b) $1{,}052$ c) $1{,}25$\n\nB) $5{,}4 : 100$ — a) $0{,}054$ b) $0{,}54$ c) $540$\n\nC) $2{,}4 : 0{,}08$ — a) $3$ b) $30$ c) $0{,}3$ d) $300$\n\nD) Zaokrouhli $9{,}952$ na desetiny. — a) $9{,}95$ b) $10{,}0$ c) $9{,}9$"
+      }
+    },
+    {
+      "id": "M8-T02-L4N-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr počítal příklad\n\n$$7{,}5 : 0{,}25 + 0{,}6 \\cdot 0{,}05 - 1{,}2$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $= 30 + 0{,}6 \\cdot 0{,}05 - 1{,}2$\n\n2. řádek: $= 30 + 0{,}3 - 1{,}2$\n\n3. řádek: $= 30{,}3 - 1{,}2$\n\n4. řádek: $= 29{,}1$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$= 30 + 0{,}6 \\cdot 0{,}05 - 1{,}2$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$= 30 + 0{,}3 - 1{,}2$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$= 30{,}3 - 1{,}2$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$= 29{,}1$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$= 30 + 0{,}003 - 1{,}2$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-nasobeni"
+              },
+              {
+                "id": "b",
+                "text": "$= 30 + 0{,}03 - 1{,}2$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$= 3 + 0{,}03 - 1{,}2$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-deleni"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 28.83
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 29.1,
+              "typ_chyby": "carka-pri-nasobeni"
+            },
+            {
+              "hodnota": 1.83,
+              "typ_chyby": "carka-pri-deleni"
+            },
+            {
+              "hodnota": 29.91,
+              "typ_chyby": "carka-scitani-pod-sebe"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Příklad má podíl a součin, sčítá a odčítá se až potom, zleva doprava. Chybný je jen jeden řádek; řádky po něm počítají dobře, ale s chybným číslem. Čte se: $0{,}25$ = dvacet pět setin, $0{,}05$ = pět setin, $0{,}03$ = tři setiny, $28{,}83$ = dvacet osm celých osmdesát tři.",
+        "reseni": "Chyba je ve 2. řádku: šest desetin krát pět setin má tři desetinná místa, Petr oddělil jen dvě.\n\n$7{,}5 : 0{,}25 = 750 : 25 = 30$ (čárka u obou čísel o dvě místa doprava)\n\n$0{,}6 \\cdot 0{,}05 = 0{,}030 = 0{,}03$ (šest krát pět je třicet, tři desetinná místa)\n\n$30 + 0{,}03 = 30{,}03$ (sčítání, čárka pod čárkou)\n\n$30{,}03 - 1{,}20 = 28{,}83$ (odčítání, doplněná nula)\n\n**Výsledek:** $28{,}83$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Přečti mi příklad nahlas. Co spočítáš jako první a v jakém pořadí pak sčítáš a odčítáš?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky postupně a u každého řekni, co se v něm oproti předchozímu změnilo.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U dělení udělej zkoušku násobením. U součinu spočítej desetinná místa obou čísel a porovnej je s Petrovým zápisem.“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč šest desetin krát pět setin nejsou tři desetiny.“",
+        "otocena_role_odpoved": "Šest krát pět je třicet. Šest desetin má jedno desetinné místo a pět setin dvě, dohromady tři. Třicet tisícin jsou tři setiny, ne tři desetiny.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 3. nebo 4. řádek? Ty jsou jen důsledek. Zeptejte se: „Odkud je nula celá tři?“ (Z 2. řádku.) 1. řádek je správně: $30 \\cdot 0{,}25 = 7{,}5$. Výsledek $29{,}1$, oprava s $0{,}003$: desetinná místa; $1{,}83$, oprava se $3$: posun u jednoho čísla; $29{,}91$: odčítá zarovnané doprava."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že u dělení udělalo zkoušku a u součinu počítalo desetinná místa, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu: „Petr tvrdí, že $0{,}8 \\cdot 0{,}05 = 0{,}4$.“ Ať řekne, jestli má Petr pravdu, a spočítá to správně. Pak ať spočítá $4{,}5 : 0{,}15$. Kontrola pro vás: nemá, desetinná místa jsou tři, správně $0{,}04$ (čtyři setiny); $4{,}5 : 0{,}15 = 450 : 15 = 30$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 2 listy papíru a nůžky. Zítra ať dítě každý list přeloží a rozstřihne na čtvrtiny a kousky spočítá. Každý kousek je $0{,}25$ listu. Pak ať samo zapíše $2 : 0{,}25 = 200 : 25 = 8$. Potom zopakujte lekci „Kontrola: desetinná čísla“. Kontrola pro vás: osm kousků, ve dvou listech je osm čtvrtin."
+      },
+      "tisk": {
+        "zadani": "Petr počítal příklad\n\n$$7{,}5 : 0{,}25 + 0{,}6 \\cdot 0{,}05 - 1{,}2$$\n\na udělal jednu chybu.\n\n1. řádek: $= 30 + 0{,}6 \\cdot 0{,}05 - 1{,}2$\n\n2. řádek: $= 30 + 0{,}3 - 1{,}2$\n\n3. řádek: $= 30{,}3 - 1{,}2$\n\n4. řádek: $= 29{,}1$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $= 30 + 0{,}003 - 1{,}2$ b) $= 30 + 0{,}03 - 1{,}2$ c) $= 3 + 0{,}03 - 1{,}2$\n\nC) Spočítej správný výsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T02-L4N-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Na trhu stojí kilogram pomerančů $39{,}8$ Kč a kilogram sýra $215$ Kč. Tomáš si vezme $2{,}5$ kg pomerančů a $0{,}4$ kg sýra. Trhovec bere jen hotovost a celkovou cenu zaokrouhluje na celé koruny. Tomáš mu podá dvě stokoruny.\n\nKolik stojí pomeranče? Kolik sýr? Kolik Tomáš trhovci zaplatí? Kolik korun mu trhovec vrátí?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Mezivýsledek: pomeranče",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 99.5
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 9.95,
+              "typ_chyby": "carka-pri-nasobeni"
+            },
+            {
+              "hodnota": 995,
+              "typ_chyby": "carka-pri-nasobeni"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: sýr",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 86
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 8.6,
+              "typ_chyby": "carka-pri-nasobeni"
+            },
+            {
+              "hodnota": 860,
+              "typ_chyby": "carka-pri-nasobeni"
+            }
+          ]
+        },
+        {
+          "id": "k3",
+          "popisek": "Mezivýsledek: Tomáš zaplatí",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 186
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 185,
+              "typ_chyby": "zaokrouhlil-useknutim"
+            },
+            {
+              "hodnota": 185.5,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 108,
+              "typ_chyby": "carka-pri-nasobeni"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek: trhovec vrátí",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 14
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 15,
+              "typ_chyby": "zaokrouhlil-useknutim"
+            },
+            {
+              "hodnota": 14.5,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 92,
+              "typ_chyby": "carka-pri-nasobeni"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dva nákupy na váhu, jejich součet a zaokrouhlení na celé koruny. Rozhodují desetiny: pět desetin a víc nahoru, méně dolů. Pomeranče jdou spočítat i jako dvě kila a půl kila. Čte se: $39{,}8$ = třicet devět celých osm, $99{,}5$ = devadesát devět celých pět, $185{,}5$ = sto osmdesát pět celých pět.",
+        "reseni": "$39{,}8 \\cdot 2{,}5 = 99{,}5$ (pomeranče; dvě kila za sedmdesát devět celých šest a půl kila za devatenáct celých devět)\n\n$215 \\cdot 0{,}4 = 86$ (sýr, čtyři desetiny ceny kilogramu)\n\n$99{,}5 + 86 = 185{,}5$ (cena celkem před zaokrouhlením)\n\n$185{,}5 \\doteq 186$ (za celými je pětka, zaokrouhlí se nahoru)\n\n$200 - 186 = 14$ (trhovec vrátí)\n\n**Výsledek:** pomeranče $99{,}5$ Kč, sýr $86$ Kč, zaplatí $186$ Kč, vrátí mu $14$ Kč",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Tomáš kupuje a co všechno máš postupně zjistit.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Kolik stojí kilo pomerančů a kolik kil Tomáš bere? Jak to spočítáš a kolik desetinných míst bude mít součin?“"
+          },
+          {
+            "k": "Krok 3 a výsledek",
+            "text": "„Tady máš začátek: o celých korunách rozhoduje číslice hned za čárkou. Kdy se zaokrouhluje nahoru a kdy dolů? Co spočítáš nakonec?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč Tomáš nezaplatí sto osmdesát pět korun, když nákup stojí sto osmdesát pět celých pět.“",
+        "otocena_role_odpoved": "Za celými korunami je pět desetin a při pětce se zaokrouhluje nahoru. Tomáš zaplatí sto osmdesát šest korun a ze dvou stokorun mu trhovec vrátí čtrnáct.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Krok 1 $9{,}95$ nebo $995$, krok 2 $8{,}6$ nebo $860$, krok 3 $108$, výsledek $92$: čárka při násobení. Zeptejte se: „Kilo pomerančů stojí skoro čtyřicet korun. Kolik asi dvě a půl kila?“ (Asi sto.) $185$ a $15$: pětku usekne; $185{,}5$ a $14{,}5$: nezaokrouhlí."
+      },
+      "semafor": {
+        "zelena": "Výborně — hlavní úlohu zvládlo. Pochvalte, že hlídalo čárku v obou součinech a pětku zaokrouhlilo nahoru, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu: „$0{,}5$ kg jahod po $87$ Kč a $0{,}3$ kg sýra po $160$ Kč. Platíš stokorunou v hotovosti. Kolik dostaneš zpátky?“ Ať řeší na papír a řekne obě ceny i cenu celkem. Kontrola pro vás: jahody $43{,}5$ Kč, sýr $48$ Kč, celkem $91{,}5$ Kč, zaplatí $92$ Kč, zpátky $8$ Kč.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír, tužku a pravítko. Zítra ať dítě nakreslí úsečku od $64$ do $65$ rozdělenou na deset dílků po desetinách a vyznačí $64{,}3$, $64{,}5$ a $64{,}8$. Zeptejte se: „Ke které celé koruně má které číslo blíž?“ Pak ať samo zapíše $64{,}3 \\doteq 64$, $64{,}5 \\doteq 65$ a $64{,}8 \\doteq 65$. Potom zopakujte lekci „Kontrola: desetinná čísla“. Kontrola pro vás: $64{,}3$ k 64, $64{,}8$ k 65; $64{,}5$ je uprostřed a pětka jde nahoru."
+      },
+      "tisk": {
+        "zadani": "Na trhu stojí kilogram pomerančů $39{,}8$ Kč a kilogram sýra $215$ Kč. Tomáš si vezme $2{,}5$ kg pomerančů a $0{,}4$ kg sýra. Trhovec bere jen hotovost a celkovou cenu zaokrouhluje na celé koruny. Tomáš mu podá dvě stokoruny.\n\nA) Kolik stojí pomeranče? ______ Kč\n\nB) Kolik stojí sýr? ______ Kč\n\nC) Kolik Tomáš trhovci zaplatí? ______ Kč\n\nD) Kolik korun mu trhovec vrátí? ______ Kč"
+      }
+    },
+    {
+      "id": "M8-T02-L4N-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Vypočítej:\n\n$$4{,}5 : 0{,}09 - 2{,}4 \\cdot 0{,}5 + 0{,}75$$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 49.55
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 4.55,
+              "typ_chyby": "carka-pri-deleni"
+            },
+            {
+              "hodnota": 50.63,
+              "typ_chyby": "carka-pri-nasobeni"
+            },
+            {
+              "hodnota": 48.05,
+              "typ_chyby": "neslo-zleva"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Nejdřív se dělí a násobí, pak se odčítá a sčítá zleva doprava. Čte se: $0{,}09$ = devět setin, $0{,}75$ = sedmdesát pět setin, $49{,}55$ = čtyřicet devět celých padesát pět.",
+        "reseni": "$4{,}5 : 0{,}09 = 450 : 9 = 50$ (čárka u obou čísel o dvě místa doprava)\n\n$2{,}4 \\cdot 0{,}5 = 1{,}20 = 1{,}2$ (dvacet čtyři krát pět je sto dvacet, dvě desetinná místa)\n\n$50 - 1{,}2 = 48{,}8$ (odčítání je vlevo, proto první)\n\n$48{,}8 + 0{,}75 = 49{,}55$ (sčítání nakonec, čárka pod čárkou)\n\n**Výsledek:** $49{,}55$",
+        "otazky": [
+          "„Přečti mi příklad nahlas. Které výpočty uděláš jako první a v jakém pořadí pak zbytek?“",
+          "„Jak upravíš dělení, aby se dělilo celým číslem? Jak poznáš, kolik míst za čárkou bude mít součin?“",
+          "„Tady máš začátek: když zbude jen mínus a plus, počítá se zleva doprava. Co z nich uděláš jako první?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč nesmíš nejdřív sečíst jednu celou dva a nula celou sedmdesát pět.“",
+        "otocena_role_odpoved": "Mínus a plus mají stejnou přednost, takže se počítá zleva. Nejdřív odečtu jednu celou dva od padesáti, teprve potom přičtu sedmdesát pět setin.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $4{,}55$: u dělení posune čárku jen u jednoho čísla. Zeptejte se: „Kolik je padesát krát devět setin?“ (Čtyři celé pět.) $50{,}63$: čárka při násobení; $48{,}05$: sčítá dřív, než odečte."
+      },
+      "semafor": {
+        "zelena": "Výborně — desetinná čísla zvládá samo i v delším příkladu. Pochvalte, že hlídalo čárku i pořadí výpočtů. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu $2{,}8 : 0{,}07 - 1{,}5 \\cdot 0{,}4 + 0{,}35$. Ať řeší na papír a nahlas řekne podíl, součin a výsledek. Kontrola pro vás: podíl $40$ ($280 : 7$), součin $0{,}6$ (šest desetin), výsledek $39{,}75$ (třicet devět celých sedmdesát pět).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko s centimetry. Zítra ať dítě položí prst na značku $10$ cm, posune ho o $2{,}5$ cm zpátky k nule a pak o $1{,}5$ cm dopředu. Zeptejte se: „Na které značce je prst?“ Pak ať samo zapíše $10 - 2{,}5 + 1{,}5 = 9$. Potom zopakujte lekci „Kontrola: desetinná čísla“. Kontrola pro vás: na 9 cm; kdo nejdřív sečte dvě celé pět a jednu celou pět, dostane 6 cm, a to nesedí."
+      },
+      "tisk": {
+        "zadani": "Vypočítej:\n\n$$4{,}5 : 0{,}09 - 2{,}4 \\cdot 0{,}5 + 0{,}75$$\n\nVýsledek: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 9. 10.: vše přepočítáno skriptem (Decimal, zaokrouhlení na koruny půl nahoru) a ověřeno přes vyhodnotKrok; naostro těžší než M8-T02-L4, rozcvička ze všech tří lekcí. Opraveno: U3 přebírala věty z učební lekce („Platí v hotovosti, proto pokladna…“, „Kolik … zaplatí po zaokrouhlení? Kolik korun dostane zpátky?“), zadání, popisky k3 a final, řešení, otočená role a tisk přepsány (trh, trhovec). U3 posouzeno: počítá se $39{,}8 \\cdot 2{,}5$, $215 \\cdot 0{,}4$, součet a $200 - 186$; zaokrouhlení je rozhodnutí podle desetin, ne výpočet, a jediné písemné násobení je první; na 7–8 minut únosné, ponecháno jako „o krok navíc“. U4 kód neslo-zleva (oddíl K, T01) pro $50 - (1{,}2 + 0{,}75) = 48{,}05$ sedí: jde o pořadí operací se stejnou předností ve smíšeném výpočtu, popis kódu je obecný. U3 krok 3 $108$ je dopočet z chybného sýra $8{,}6$ ($108{,}1 \\doteq 108$), jediná cesta.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-09"
+  }
+}
