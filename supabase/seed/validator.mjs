@@ -638,15 +638,16 @@ export function domenoveKontroly(l, nazevSouboru, slovnik = null, { audioMd = nu
   if (nazevSouboru !== `${l.id}.json`) chyba(`název souboru má být "${l.id}.json"`);
 
   let m;
-  if (typeof l.id === 'string' && (m = /^M8-T(\d{2})-(L([1-4])|DIAG)$/.exec(l.id))) {
-    // Spolu 8 (ZADANI-OSMA §5): M8-T01-L1 … M8-T10-L4, diagnostika M8-T00-DIAG
+  if (typeof l.id === 'string' && (m = /^M8-T(\d{2})-(L([1-4])N?B?|DIAG|POL)$/.exec(l.id))) {
+    // Spolu 8 (ZADANI-OSMA §5, §9): M8-T01-L1 … M8-T10-L4, naostro …N, B-varianta …B / …NB; testy M8-T00-DIAG a M8-T00-POL
+    const test = m[2] === 'DIAG' || m[2] === 'POL';
     if (l.faze !== 'osma') chyba(`id ${l.id}: faze musí být "osma"`);
     if (l.tyden !== Number(m[1])) chyba(`id ${l.id}: tyden musí být ${Number(m[1])}`);
     if (m[3] && l.poradi !== Number(m[3])) chyba(`id ${l.id}: poradi musí být ${m[3]}`);
-    if (m[2] === 'DIAG' && (l.typ !== 'diagnostika' || m[1] !== '00')) chyba(`id ${l.id}: diagnostika je jen M8-T00-DIAG s "typ": "diagnostika"`);
-    if (m[2] !== 'DIAG' && (Number(m[1]) < 1 || Number(m[1]) > OSMA.temat)) chyba(`id ${l.id}: téma musí být 01–${OSMA.temat}`);
+    if (test && (l.typ !== 'diagnostika' || m[1] !== '00')) chyba(`id ${l.id}: úvodní a pololetní test jsou jen M8-T00-DIAG a M8-T00-POL s "typ": "diagnostika"`);
+    if (!test && (Number(m[1]) < 1 || Number(m[1]) > OSMA.temat)) chyba(`id ${l.id}: téma musí být 01–${OSMA.temat}`);
   } else if (l.faze === 'osma') {
-    chyba(`faze "osma" má id M8-T<tt>-L<n> nebo M8-T00-DIAG, je ${l.id}`);
+    chyba(`faze "osma" má id M8-T<tt>-L<n>[N][B], M8-T00-DIAG nebo M8-T00-POL, je ${l.id}`);
   } else if (typeof l.id === 'string' && /^P\d+$/.test(l.id)) {
     if (l.faze !== 'pilot') chyba(`id ${l.id}: pilotní lekce musí mít faze "pilot"`);
   } else if (typeof l.id === 'string' && (m = /^F([12])-T(\d{2})-(L([1-4])|DIAG)$/.exec(l.id))) {

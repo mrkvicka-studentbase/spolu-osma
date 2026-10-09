@@ -71,9 +71,9 @@ export function domenoveKontrolyCj(l, nazevSouboru, { slovnik = null, audioMd = 
   const var_ = (m) => varovani.push(m);
 
   if (nazevSouboru !== `${l.id}.json`) chyba(`název souboru má být "${l.id}.json"`);
-  if (l.typ === 'diagnostika' || l.id === 'cj-t0-diag') return diagnostikaCj(l, { chyba, var_, slovnik, chyby, varovani });
+  if (l.typ === 'diagnostika' || l.id === 'cj-t0-diag' || l.id === 'cj-t0-pol') return diagnostikaCj(l, { chyba, var_, slovnik, chyby, varovani });
   const osma = l.faze === 'osma';
-  const m = /^cj-t(\d+)-l(\d+)$/.exec(String(l.id));
+  const m = /^cj-t(\d+)-l(\d+)(?:n?b?)$/.exec(String(l.id)); // naostro …n, B-varianta …b / …nb (ZADANI-OSMA §9)
   if (m) {
     const [t, n] = [Number(m[1]), Number(m[2])];
     if (l.tyden !== t) chyba(`id ${l.id}: tyden musí být ${t}`);
@@ -194,9 +194,9 @@ function varovaniKapitolyCj(kod, kde = 'kapitola') {
  * každá úloha s kapitolou (a číslem tématu `tema`), automaticky vyhodnotitelná (žádný diktát), známé chyby s kódy.
  */
 function diagnostikaCj(l, { chyba, var_, slovnik, chyby, varovani }) {
-  if (l.id !== 'cj-t0-diag') chyba(`diagnostika češtiny má id "cj-t0-diag", je ${l.id}`);
-  if (l.typ !== 'diagnostika') chyba('cj-t0-diag musí mít "typ": "diagnostika"');
-  if (l.faze !== 'osma') chyba('cj-t0-diag musí mít "faze": "osma"');
+  if (l.id !== 'cj-t0-diag' && l.id !== 'cj-t0-pol') chyba(`test češtiny má id "cj-t0-diag" (úvodní) nebo "cj-t0-pol" (pololetní), je ${l.id}`);
+  if (l.typ !== 'diagnostika') chyba(`${l.id} musí mít "typ": "diagnostika"`);
+  if (l.faze !== 'osma') chyba(`${l.id} musí mít "faze": "osma"`);
   const ulohy = Array.isArray(l.ulohy) ? l.ulohy : [];
   if (ulohy.length < 20 || ulohy.length > 25) var_(`diagnostika má ${ulohy.length} úloh (Spolu 8: 20–25)`);
   if (Number.isInteger(l.cas_min) && Math.abs(l.cas_min - 25) > 5) var_(`diagnostika má cas_min ${l.cas_min} (Spolu 8: ~25 min)`);

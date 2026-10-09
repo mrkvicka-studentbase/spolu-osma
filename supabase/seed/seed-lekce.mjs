@@ -364,7 +364,7 @@ async function hlavni() {
 }
 
 /**
- * Spolu 8: které lekce předmětu ještě chybí (40 lekcí + diagnostika). Jen informace pro autory, ne chyba.
+ * Spolu 8: které lekce předmětu ještě chybí (celý rok: 160 lekcí + 2 testy). Jen informace pro autory, ne chyba.
  * @param {object[]} nactene
  */
 function vypisChybejici(nactene) {
@@ -373,10 +373,12 @@ function vypisChybejici(nactene) {
   const ma = new Set(osma.map((l) => l.id));
   for (const cj of [false, true]) {
     if (!osma.some((l) => (l.predmet === 'cestina') === cj)) continue;
-    const ocekavane = [cj ? 'cj-t0-diag' : 'M8-T00-DIAG'];
+    // celý rok (ZADANI-OSMA §9): učební + naostro + B-varianty obou, úvodní a pololetní test = 162 souborů
+    const ocekavane = cj ? ['cj-t0-diag', 'cj-t0-pol'] : ['M8-T00-DIAG', 'M8-T00-POL'];
     for (let t = 1; t <= OSMA.temat; t++) {
       for (let n = 1; n <= OSMA.lekciVTematu; n++) {
-        ocekavane.push(cj ? `cj-t${t}-l${(t - 1) * OSMA.lekciVTematu + n}` : `M8-T${String(t).padStart(2, '0')}-L${n}`);
+        const id = cj ? `cj-t${t}-l${(t - 1) * OSMA.lekciVTematu + n}` : `M8-T${String(t).padStart(2, '0')}-L${n}`;
+        for (const pripona of cj ? ['', 'n', 'b', 'nb'] : ['', 'N', 'B', 'NB']) ocekavane.push(`${id}${pripona}`);
       }
     }
     const chybi = ocekavane.filter((id) => !ma.has(id));

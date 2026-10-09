@@ -2,9 +2,10 @@
 // prehled.js — Spolu 8: přehled dítěte (rodič i žák, jiný důraz) + volba role (obr. 3) + modal režimu (obr. 5).
 //
 // Záložky „Matematika | Čeština“ (předměty dítěte, výchozí oba; zdroj pravdy URL ?predmet=, localStorage jen pohodlí).
-// V záložce: úvodní test (25 min) → „Doporučeno teď“ (další lekce podle doporučeného pořadí) → 10 témat
-// („Téma 3 · Zlomky I“), u každého 4 lekce. Doporučené pořadí témat: po úvodním testu slabá témata nahoru,
-// silná na konec (doporuceni.js); bez testu pořadí osnovy. Lekce jsou otevřené všechny (zámek jen podle otevrit_od).
+// V záložce: úvodní test (25 min) → „Doporučeno teď“ → 10 témat („Téma 3 · Zlomky I“), u každého učební
+// a naostro lekce v pořadí s odstupem (plan-roku.js). Doporučené pořadí témat: po úvodním (pololetním) testu slabá
+// témata nahoru, silná na konec; bez testu pořadí osnovy. Celý rok (ZADANI-OSMA §9): kalendář dítěte otevírá
+// 3 lekce týdně od prvního sezení; B-varianta (jiné úlohy) se nabídne jen po červené; pololetní test od 11. týdne.
 // Bez přijímaček, pilotu, fází, platby, dotazníku, simulací a bloků; časová osa sezóny (R63) je pryč, odznaky (R62) zůstaly.
 // Rodič navíc: manuál „Jak vést lekci“, SOS u kapitoly (mailto), výsledek úvodního testu, souhrn hotové lekce (R19).
 // Výsledek testu se bere ze souhrnu sezení diagnostiky; když chybí, dopočítá se z odpovědí v DB (bez nové tabulky).
@@ -22,9 +23,12 @@ import {
 } from './predmet.js';
 import { pocetOdevzdanych } from './diagnostika.js';
 import {
-  jeDiagnostikaOsma, jeSouhrnOsma, sestavSouhrnOsma, mapaKapitolNaTemata, doporucenePoradiTemat, seradLekce, dalsiDoporucenaLekce,
-  cislaTemat,
+  jeDiagnostikaOsma, jeSouhrnOsma, sestavSouhrnOsma, mapaKapitolNaTemata, doporucenePoradiTemat, cislaTemat,
 } from './doporuceni.js';
+import {
+  druhLekce, jeBVarianta, jePololetniTest, poradiVTematu, planRoku, zacatekKalendare, kalendar, otevreniPololetniho,
+  bVariantaPoCervene, dalsiLekceRoku,
+} from './plan-roku.js';
 import { nazevTematu, pocetUlohLekce, casLekce, zeZ } from './temata.js';
 import * as KONFIG from './config.js';
 import { spocitejOdznaky, svgOdznaku } from './odznaky.js';
@@ -43,7 +47,7 @@ const STAV_TEMATU = {
   silne: { ikona: 'fajfka', trida: 'stitek--zelena', klic: 'osma.tema_silne' },
 };
 
-const stav = { rodina: null, deti: [], dite: null, role: null, vybranaLekce: null, odznaky: null, predmet: 'matematika', lekce: [] };
+const stav = { rodina: null, deti: [], dite: null, role: null, vybranaLekce: null, odznaky: null, predmet: 'matematika', lekce: [], podleId: new Map() };
 
 const $ = (id) => document.getElementById(id);
 
@@ -67,9 +71,10 @@ function jeDnes(iso) {
   return d.getFullYear() === t.getFullYear() && d.getMonth() === t.getMonth() && d.getDate() === t.getDate();
 }
 
-/** Text zámku karty: kdy se otevře (seed --otevrit-od), u uzavřeného účtu konec. Nikdy cena. */
+/** Text zámku karty: kdy se otevře (kalendář dítěte nebo seed --otevrit-od), u uzavřeného účtu konec. Nikdy cena. */
 function textZamku(l) {
   if (l.zamceno === 'uzavreno') return h('osma.zamceno_uzavreno');
+  if (l.zamceno === 'kalendar') return h(jePololetniTest(l) ? 'osma.pol_zamceno' : 'osma.zamceno_kalendar', { datum: formatDatum(l.kalendarOd).replace(/\.$/, '') });
   const od = Date.parse(l.otevrit_od || '');
   if (Number.isFinite(od) && od > Date.now()) return h('zamceno.faze', { datum: formatDatum(l.otevrit_od).replace(/\.$/, '') });
   return h('osma.zamceno');
@@ -129,15 +134,20 @@ function vysledekLekce(barva) {
 /** Fajfka v rohu hotové karty (R61). */
 const ROH_FAJFKA = '<svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="20" fill="#1FC27E" stroke="#0F172A" stroke-width="3"/><path d="M13 22.5l6 6 12-12" fill="none" stroke="#0F172A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
-/** „Lekce 2“ / „Lekce 4 · kontrola tématu“. */
-const textPoradi = (l) => h(Number(l.poradi) === 4 ? 'osma.lekce_kontrola' : 'osma.lekce_poradi', { n: l.poradi });
+/** „Lekce 2“ / „Lekce 2 · naostro“ / „Lekce 4 · kontrola tématu“ / „Lekce 2 · jiné úlohy“ (B-varianta). */
+function textPoradi(l) {
+  const d = druhLekce(l.id);
+  if (d?.b) return h('osma.lekce_b', { n: l.poradi });
+  if (Number(l.poradi) === 4) return h(d?.naostro ? 'osma.lekce_kontrola_naostro' : 'osma.lekce_kontrola', { n: l.poradi });
+  return h(d?.naostro ? 'osma.lekce_naostro' : 'osma.lekce_poradi', { n: l.poradi });
+}
 
 /**
  * Karta lekce. `doporucena` = „Doporučeno teď“ (nahoře název tématu).
  * @param {object} l  položka lekceProDite
  * @param {number|null} pokrok  hotové úlohy rozpracovaného sezení
  */
-function kartaLekce(l, pokrok, { doporucena = false, volitelna = false } = {}) {
+function kartaLekce(l, pokrok, { doporucena = false } = {}) {
   const poradi = el('span', { class: 'karta-lekce__poradi', text: doporucena
     ? h('osma.tema_nadpis', { tema: l.tyden, nazev: nazevTematu(stav.predmet, l.tyden, stav.lekce) })
     : textPoradi(l) });
@@ -174,6 +184,12 @@ function kartaLekce(l, pokrok, { doporucena = false, volitelna = false } = {}) {
     vysledek = vysledekLekce(l.souhrn?.hlavniBarva);
     if (l.dokoncene?.rezim === 'samo') vysledek = [vysledek, el('span', { class: 'stitek stitek--samo', text: h('samo.stitek') })]; // R64
     const znovu = el('button', { class: 'tlacitko tlacitko--tiche', type: 'button', onClick: () => otevritRezim(l) }, ikona('opakovat'), 'Projít znovu');
+    // ZADANI-OSMA §9 bod 4: po červené B-varianta (stejná látka, jiné úlohy); oranžová jen ústní pětiminutovka rodiče
+    const b = bVariantaPoCervene(l, stav.podleId);
+    if (b && b.stavLekce === 'hotovo') vysledek = [vysledek, el('span', { class: 'stitek' }, ikona('fajfka'), h('osma.b_hotovo'))];
+    else if (b && !b.zamceno) {
+      vysledek = [vysledek, el('button', { class: 'tlacitko tlacitko--sekundarni', type: 'button', onClick: () => otevritRezim(b) }, ikona('opakovat'), h('osma.b_tlacitko'))];
+    }
     // R19: rodič vidí souhrn posledního dokončeného sezení (jen pro čtení), žák jen „Projít znovu"
     akce = rodic && l.sezeni?.stav === 'dokonceno'
       ? [el('a', {
@@ -189,8 +205,7 @@ function kartaLekce(l, pokrok, { doporucena = false, volitelna = false } = {}) {
     roh,
     el('div', { class: 'karta-lekce__hlavicka' }, poradi, stitek),
     doporucena ? el('p', { class: 'karta-lekce__popis text-tlumeny', text: textPoradi(l) }) : null,
-    doporucena && l.znovu ? el('p', { class: 'karta-lekce__popis', text: h('osma.znovu_kontrola') }) : null,
-    volitelna && l.stavLekce !== 'hotovo' ? el('span', { class: 'stitek karta-lekce__typ', text: h('osma.volitelne') }) : null,
+    doporucena && l.bPo ? el('p', { class: 'karta-lekce__popis', text: h('osma.b_popis') }) : null,
     tema, meta, vysledek,
     el('div', { class: 'karta-lekce__akce' }, akce, rodic ? tlacitkoSos(l) : null));
 }
@@ -201,9 +216,10 @@ function kartaLekce(l, pokrok, { doporucena = false, volitelna = false } = {}) {
  */
 function kartaTestu(l, pokrok, vysledek) {
   const rodic = stav.role === 'rodic';
+  const pol = jePololetniTest(l);
   const celkem = Number(l.pocet_uloh) || null;
-  const hlavicka = (stitek) => el('div', { class: 'karta-lekce__hlavicka' }, el('span', { class: 'karta-lekce__poradi', text: h('osma.test_stitek') }), stitek);
-  const nazev = el('h3', { class: 'karta-lekce__tema', text: h('osma.test_nazev', { min: l.cas_min || 25 }) });
+  const hlavicka = (stitek) => el('div', { class: 'karta-lekce__hlavicka' }, el('span', { class: 'karta-lekce__poradi', text: h(pol ? 'osma.pol_stitek' : 'osma.test_stitek') }), stitek);
+  const nazev = el('h3', { class: 'karta-lekce__tema', text: h(pol ? 'osma.pol_nazev' : 'osma.test_nazev', { min: l.cas_min || 25 }) });
   if (l.zamceno) {
     return el('article', { class: 'karta-lekce karta-lekce--zamceno karta-lekce--diagnostika', 'aria-disabled': 'true' },
       hlavicka(el('span', { class: 'stitek' }, ikona('zamek'), h('osma.zamceno'))), nazev,
@@ -211,7 +227,7 @@ function kartaTestu(l, pokrok, vysledek) {
   }
   let stitek;
   let akce = null;
-  let text = h(rodic ? 'osma.test_text_rodic' : 'osma.test_text_zak');
+  let text = h(pol ? (rodic ? 'osma.pol_text_rodic' : 'osma.pol_text_zak') : (rodic ? 'osma.test_text_rodic' : 'osma.test_text_zak'));
   if (l.stavLekce === 'probiha') {
     stitek = el('span', { class: 'stitek stitek--navy', text: 'Probíhá' });
     akce = [el('button', {
@@ -226,7 +242,7 @@ function kartaTestu(l, pokrok, vysledek) {
       ? el('a', {
         class: 'tlacitko tlacitko--sekundarni',
         href: `rodic.html?${new URLSearchParams({ lekce: l.id, dite: stav.dite.id, sezeni: l.dokoncene.id })}`,
-      }, ikona('oko'), h('osma.test_vysledek'))
+      }, ikona('oko'), h(pol ? 'osma.pol_vysledek' : 'osma.test_vysledek'))
       : null;
   } else {
     stitek = el('span', { class: 'stitek', text: 'Nezačato' });
@@ -365,9 +381,8 @@ function hlaska(druh, ikonaNazev, obsah) {
   return el('div', { class: `hlaska hlaska--${druh}`, role: 'status' }, ikona(ikonaNazev), el('div', { class: 'hlaska__text' }, obsah));
 }
 
-/** Sekce tématu: „Téma 3 · Zlomky I“ + štítek z úvodního testu + 4 karty lekcí. */
+/** Sekce tématu: „Téma 3 · Zlomky I“ + štítek z testu + karty učebních a naostro lekcí v pořadí s odstupem (bez B-variant). */
 function sekceTematu(t, lekceTematu, stavTematu, pokroky) {
-  const silne = stavTematu === 'silne'; // silné téma: doporučená je jen L4, L1–L3 volitelné (doporuceni.js planLekci)
   const nadpis = h('osma.tema_nadpis', { tema: t, nazev: nazevTematu(stav.predmet, t, stav.lekce) });
   const s = STAV_TEMATU[stavTematu];
   const celeZamcene = lekceTematu.length > 1 && lekceTematu.every((l) => l.zamceno);
@@ -375,9 +390,8 @@ function sekceTematu(t, lekceTematu, stavTematu, pokroky) {
     el('div', { class: 'radek radek--mezi tema-sekce__hlavicka' },
       el('h2', { class: 'nadpis-sekce', text: nadpis }),
       s ? el('span', { class: ['stitek', s.trida] }, ikona(s.ikona), h(s.klic)) : null),
-    silne ? el('p', { class: 'text-tlumeny', text: h('osma.tema_silne_pozn') }) : null,
     celeZamcene ? radekZamcenehoTematu(lekceTematu)
-      : el('div', { class: 'mrizka-karet' }, lekceTematu.map((l) => kartaLekce(l, pokroky.get(l.id), { volitelna: silne && Number(l.poradi) !== 4 }))));
+      : el('div', { class: 'mrizka-karet' }, lekceTematu.map((l) => kartaLekce(l, pokroky.get(l.id)))));
 }
 
 async function vykresli() {
@@ -414,16 +428,18 @@ async function vykresli() {
   try {
     const vsechny = await lekceProDite(stav.dite.id);
     const predmetu = vsechny.filter((l) => predmetLekce(l) === stav.predmet);
-    const diag = predmetu.find(jeDiagnostikaOsma) || null;
+    const testy = predmetu.filter(jeDiagnostikaOsma);
+    const diag = testy.find((l) => !jePololetniTest(l)) || null;
     const lekce = predmetu.filter((l) => !jeDiagnostikaOsma(l));
-    stav.lekce = lekce;
+    const hlavni = lekce.filter((l) => !jeBVarianta(l)); // učební + naostro; B-varianty jen po červené
+    stav.lekce = hlavni;
     const pokroky = new Map(await Promise.all(predmetu.filter((l) => l.stavLekce === 'probiha' && l.sezeni)
       .map((l) => stavSezeni(l.sezeni.id).then((s) => [l.id, jeDiagnostikaOsma(l) ? pocetOdevzdanych(s.odpovedi) : hotoveUlohy(s)])
         .catch(() => [l.id, null]))));
 
     const rodic = stav.role === 'rodic';
     stav.odznaky = spocitejOdznaky(vsechny); // R61–R63: odznaky patří dítěti, ne předmětu
-    const casti = [hlavickaPrehledu(), ukazatelPostupu(lekce, stav.odznaky), radekOdznaku(stav.odznaky.ziskane)];
+    const casti = [hlavickaPrehledu(), ukazatelPostupu(hlavni, stav.odznaky), radekOdznaku(stav.odznaky.ziskane)];
 
     if (rodic && dveSamoZaSebou(vsechny)) casti.push(hlaska('info', 'uzivatel', h('samo.pripominka'))); // R64
     if (lekce.some((l) => l.dokoncene && jeDnes(l.dokoncene.konec))) {
@@ -441,30 +457,49 @@ async function vykresli() {
         el('p', { class: 'prazdny-stav__text', text: h('predmet.prazdny') })));
     }
 
-    // úvodní test → doporučené pořadí témat (bez testu pořadí osnovy)
-    const vysledek = await vysledekTestu(diag, predmetu);
+    // úvodní (po něm pololetní) test → doporučené pořadí témat (bez testu pořadí osnovy)
+    const start = zacatekKalendare(predmetu);
+    const odPol = otevreniPololetniho(start);
+    const pol = testy.find(jePololetniTest);
+    const polZobraz = pol && !pol.zamceno && pol.stavLekce === 'nezacato' && (!odPol || odPol > new Date())
+      ? { ...pol, zamceno: 'kalendar', kalendarOd: odPol } : pol;
+    const vysledekUvodni = await vysledekTestu(diag, predmetu);
+    const vysledekPol = await vysledekTestu(pol, predmetu);
+    const vysledek = vysledekPol || vysledekUvodni;
     const stavTemat = new Map((vysledek?.temata || []).map((x) => [x.tema, x.stav]));
-    const silna = new Set([...stavTemat].filter(([, s]) => s === 'silne').map(([t]) => t));
-    const poradi = doporucenePoradiTemat(cislaTemat(lekce), vysledek?.temata || null, { predmet: stav.predmet });
+    const poradi = doporucenePoradiTemat(cislaTemat(hlavni), vysledek?.temata || null, { predmet: stav.predmet });
+
+    // plán roku + kalendář dítěte (3 týdně); lekce zamčená jen kalendářem dostane zamceno 'kalendar' + datum
+    const plan = planRoku(hlavni, poradi);
+    const kal = kalendar(plan, start);
+    const zobraz = (l) => {
+      const k = kal.get(l.id);
+      return !l.zamceno && k && !k.otevreno ? { ...l, zamceno: 'kalendar', kalendarOd: k.od } : l;
+    };
+    const planZobraz = plan.map(zobraz);
+    stav.podleId = new Map([...lekce.map((l) => [l.id, l]), ...planZobraz.map((l) => [l.id, l])]);
 
     // úvodní test je nahoře, dokud není hotový; hotový jde pod „Doporučeno teď“
-    const sekceTestu = diag ? el('section', { class: 'zasobnik', 'aria-label': h('osma.test_stitek') }, kartaTestu(diag, pokroky.get(diag.id), vysledek)) : null;
+    const sekceTestu = diag ? el('section', { class: 'zasobnik', 'aria-label': h('osma.test_stitek') }, kartaTestu(diag, pokroky.get(diag.id), vysledekUvodni)) : null;
     if (sekceTestu && diag.stavLekce !== 'hotovo') casti.push(sekceTestu);
-    if (lekce.length) {
-      const dalsi = dalsiDoporucenaLekce(lekce, poradi, silna);
-      const podnadpis = vysledek ? 'osma.doporuceno_podle_testu' : diag ? 'osma.doporuceno_bez_testu' : 'osma.doporuceno_osnova';
+    // pololetní test: jen když už dítě začalo (kalendář běží); po hotovém testu dolů k úvodnímu
+    const sekcePol = pol && start ? el('section', { class: 'zasobnik', 'aria-label': h('osma.pol_stitek') }, kartaTestu(polZobraz, pokroky.get(pol.id), vysledekPol)) : null;
+    if (sekcePol && !polZobraz.zamceno && pol.stavLekce !== 'hotovo') casti.push(sekcePol);
+    if (hlavni.length) {
+      const dalsi = dalsiLekceRoku(planZobraz, kal, stav.podleId);
+      const podnadpis = vysledekPol ? 'osma.doporuceno_podle_pololetniho' : vysledek ? 'osma.doporuceno_podle_testu' : diag ? 'osma.doporuceno_bez_testu' : 'osma.doporuceno_osnova';
       casti.push(el('section', { class: 'zasobnik doporuceno', 'aria-labelledby': 'doporucenoNadpis' },
         el('h2', { class: 'nadpis-sekce', id: 'doporucenoNadpis', text: h('osma.doporuceno_nadpis') }),
         el('p', { class: 'text-tlumeny', text: h(podnadpis) }),
         dalsi ? kartaLekce(dalsi, pokroky.get(dalsi.id), { doporucena: true })
-          : hlaska('uspech', 'fajfka', h(lekce.every((l) => l.stavLekce === 'hotovo') ? 'osma.vse_hotovo' : 'osma.nic_otevreno'))));
+          : hlaska('uspech', 'fajfka', h(hlavni.every((l) => l.stavLekce === 'hotovo') ? 'osma.vse_hotovo' : 'osma.nic_otevreno'))));
     }
+    if (sekcePol && (polZobraz.zamceno || pol.stavLekce === 'hotovo')) casti.push(sekcePol);
     if (sekceTestu && diag.stavLekce === 'hotovo') casti.push(sekceTestu);
 
-    // témata v doporučeném pořadí, v každém 4 lekce
-    const serazene = seradLekce(lekce, poradi);
+    // témata v doporučeném pořadí, v každém učební a naostro lekce s odstupem
     for (const t of poradi) {
-      const lekceTematu = serazene.filter((l) => Number(l.tyden) === t);
+      const lekceTematu = poradiVTematu(planZobraz.filter((l) => Number(l.tyden) === t));
       if (lekceTematu.length) casti.push(sekceTematu(t, lekceTematu, stavTemat.get(t), pokroky));
     }
     obsah.removeAttribute('aria-busy');

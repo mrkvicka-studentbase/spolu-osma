@@ -10,11 +10,9 @@
 //   Čeština: co není silné, je slabé (rozhodnutí vedoucího 1. 10., u 2 úloh 0–1 správně = slabé).
 // Doporučené pořadí (rozhodnutí vedoucího 1. 10., obsah/OSNOVA-MATEMATIKA.md §6 a §8 bod 9): slabá, nejistá,
 // nezjištěná i témata bez úlohy v testu v JEDNÉ skupině v pořadí osnovy, silná až na konec. Bez úvodního testu = osnova.
-// Lekce uvnitř tématu: nesilné téma = L1 → L4; silné téma = jen L4 (kontrola tématu), L1–L3 jsou volitelné.
+// Lekce uvnitř tématu a kalendář: plan-roku.js (celý rok, ZADANI-OSMA §9 — i silná témata celá, jen na konci).
 // Čeština (ZADANI-OSMA §8 bod 10): 7 a více slabých témat → pořadí osnovy (test pak o pořadí nic neříká).
 //   Položka diagnostiky s víc mezerami / slovy se počítá jen celá — vyhodnocení kroku je vždy celé (spravne true/false).
-// Pojistka: když L4 silného tématu dopadne oranžově nebo červeně (souhrn.hlavniBarva = barva semaforu kontrolní úlohy),
-// doporučí se L1–L3 tématu a po nich znovu L4.
 // =====================================================================
 
 import { stavKapitoly, celkovePasmo } from './diagnostika.js';
@@ -192,67 +190,4 @@ export function jeSouhrnOsma(souhrn) {
   return Boolean(souhrn && souhrn.typ === 'diagnostika' && souhrn.osma && Number(souhrn.verze) >= VERZE_DOPORUCENI && Array.isArray(souhrn.temata));
 }
 
-/**
- * Lekce předmětu v doporučeném pořadí: témata podle `poradi`, uvnitř tématu podle lekce.poradi.
- * Diagnostika ani lekce mimo `poradi` (téma bez čísla) se nevynechají: jdou na konec.
- * @param {Array<{id: string, tyden: number, poradi: number}>} lekce  bez diagnostiky
- * @param {number[]} poradi  doporučené pořadí témat
- */
-export function seradLekce(lekce, poradi) {
-  const index = new Map(poradi.map((t, i) => [t, i]));
-  return [...lekce].sort((a, b) => (index.get(Number(a.tyden)) ?? 99) - (index.get(Number(b.tyden)) ?? 99)
-    || Number(a.poradi) - Number(b.poradi) || String(a.id).localeCompare(String(b.id)));
-}
-
-/**
- * Lekce v doporučeném pořadí podle výsledku testu: nesilné téma L1 → L4, silné téma jen L4;
- * po oranžové / červené L4 silného tématu (pojistka) L1–L3 a znovu L4.
- * Vrací položky {lekce, znovu} — znovu = L4 po pojistce (lekce je hotová, ale doporučuje se projít znovu).
- * @param {Array<{id: string, tyden: number, poradi: number, stavLekce?: string, souhrn?: object, dokoncene?: object}>} lekce  bez diagnostiky
- * @param {number[]} poradi  doporučené pořadí témat
- * @param {Set<number>} [silna]  silná témata z úvodního testu
- * @returns {Array<{lekce: object, znovu: boolean}>}
- */
-export function planLekci(lekce, poradi, silna = new Set()) {
-  const plan = [];
-  const serazene = seradLekce(lekce, poradi);
-  const temata = [...new Set(serazene.map((l) => Number(l.tyden)))];
-  for (const t of temata) {
-    const lt = serazene.filter((l) => Number(l.tyden) === t);
-    if (!silna.has(t)) { lt.forEach((l) => plan.push({ lekce: l, znovu: false })); continue; }
-    const kontrola = lt.find((l) => Number(l.poradi) === 4) || lt.at(-1);
-    const ostatni = lt.filter((l) => l !== kontrola);
-    plan.push({ lekce: kontrola, znovu: false });
-    if (kontrola.stavLekce === 'hotovo' && ['oranzova', 'cervena'].includes(kontrola.souhrn?.hlavniBarva)) {
-      ostatni.forEach((l) => plan.push({ lekce: l, znovu: false }));
-      // po L1–L3 znovu L4 (dalsiDoporucenaLekce ji nabídne, jen když jsou L1–L3 hotové PO poslední L4)
-      plan.push({ lekce: kontrola, znovu: true });
-    }
-  }
-  return plan;
-}
-
-/**
- * „Doporučeno teď“: rozpracovaná lekce má přednost; jinak první lekce plánu (planLekci), která je otevřená
- * a ještě není hotová (u „znovu“ = L4 po pojistce: když už jsou L1–L3 hotové po poslední L4).
- * @param {Array<object>} lekce  bez diagnostiky (položky lekceProDite)
- * @param {number[]} poradi
- * @param {Set<number>} [silna]
- * @returns {object|null}  lekce (s příznakem `znovu` v návratové kopii, když jde o opakování L4)
- */
-export function dalsiDoporucenaLekce(lekce, poradi, silna = new Set()) {
-  const plan = planLekci(lekce, poradi, silna);
-  const rozpracovana = plan.find((p) => !p.lekce.zamceno && p.lekce.stavLekce === 'probiha');
-  if (rozpracovana) return rozpracovana.lekce;
-  for (const [i, p] of plan.entries()) {
-    if (p.lekce.zamceno) continue;
-    if (!p.znovu && p.lekce.stavLekce !== 'hotovo') return p.lekce;
-    if (p.znovu) {
-      const konecKontroly = Date.parse(p.lekce.dokoncene?.konec || '') || 0;
-      const predtim = plan.slice(0, i).filter((x) => Number(x.lekce.tyden) === Number(p.lekce.tyden) && x.lekce !== p.lekce);
-      const opakovanoPo = predtim.every((x) => (Date.parse(x.lekce.dokoncene?.konec || '') || 0) > konecKontroly);
-      if (opakovanoPo && predtim.every((x) => x.lekce.stavLekce === 'hotovo')) return { ...p.lekce, znovu: true };
-    }
-  }
-  return null;
-}
+// Plán lekcí, kalendář dítěte a „Doporučeno teď“ pro celý rok: plan-roku.js (ZADANI-OSMA §9).

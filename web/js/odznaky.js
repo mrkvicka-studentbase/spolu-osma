@@ -4,6 +4,8 @@
 // databáze se nemění. Obrázky odznaků jsou SVG řetězce tady v repozitáři (DOM z nich dělá odznaky-ui.js).
 // =====================================================================
 
+import { jeBVarianta } from './plan-roku.js';
+
 /**
  * Řada (R62): mezi dvěma sousedními dokončenými lekcemi nejvýš 7 KALENDÁŘNÍCH dní v Europe/Prague
  * (pondělí večer → další pondělí ráno i večer je v řadě; víkend ani týden pauzy ji neruší).
@@ -34,7 +36,7 @@ export const ODZNAKY = Object.freeze([
   { id: 'prvni', pochvala: 'Máš za sebou první lekci. Tak se začíná!', nazev: 'První lekce', popis: 'Dokonči první lekci.', barva: 'zelena', znak: (b) => CISLO(b, '1') },
   { id: 'spravne', pochvala: 'Všechny úlohy lekce zelené. Paráda!', nazev: 'Celá správně', popis: 'Lekce, kde jsou všechny úlohy zelené.', barva: 'zlata',
     znak: (b) => `<path d="M36 17l5.6 11.6 12.7 1.8-9.2 8.9 2.2 12.6L36 46l-11.3 5.9 2.2-12.6-9.2-8.9 12.7-1.8z" fill="${b.znak}"/>` },
-  { id: 'tyden', pochvala: 'Celé téma hotové. To je vytrvalost!', nazev: 'Celé téma', popis: 'Dokonči všechny 4 lekce jednoho tématu.', barva: 'zelena',
+  { id: 'tyden', pochvala: 'Celé téma hotové. To je vytrvalost!', nazev: 'Celé téma', popis: 'Dokonči všechny lekce jednoho tématu (i naostro).', barva: 'zelena',
     znak: (b) => `<rect x="21" y="23" width="30" height="27" rx="4" fill="none" stroke="${b.znak}" stroke-width="3"/><path d="M21 31h30M28 19v7M44 19v7" stroke="${b.znak}" stroke-width="3" stroke-linecap="round"/><path d="M28 40l5 5 9-9" fill="none" stroke="${b.znak}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>` },
   { id: 'rada3', pochvala: 'Tři lekce za sebou. Jen tak dál!', nazev: 'Řada 3', popis: 'Tři lekce za sebou (pauza nejvýš týden).', barva: 'zelena', znak: (b) => CISLO(b, '3', 41, 24) + SIPKY(b) },
   { id: 'rada5', pochvala: 'Pět lekcí za sebou. Výborně!', nazev: 'Řada 5', popis: 'Pět lekcí za sebou (pauza nejvýš týden).', barva: 'zelena', znak: (b) => CISLO(b, '5', 41, 24) + SIPKY(b) },
@@ -106,8 +108,9 @@ export function spocitejOdznaky(lekce, { navic = null } = {}) {
   if (hotove.size >= 1) ziskane.add('prvni');
   if (celaSpravne.size >= 1) ziskane.add('spravne');
   const tydny = new Map();
-  for (const l of lekce) {
-    // Spolu 8: téma = předmět + číslo tématu (matematika i čeština mají témata 1–10 ve stejné fázi)
+  for (const l of lekce.filter((x) => !jeBVarianta(x))) {
+    // Spolu 8: téma = předmět + číslo tématu (matematika i čeština mají témata 1–10 ve stejné fázi);
+    // B-varianty (jen po červené, ZADANI-OSMA §9) se do celého tématu ani předmětu nepočítají
     const k = `${l.predmet || 'matematika'}|${l.faze}|${l.tyden}`;
     tydny.set(k, [...(tydny.get(k) || []), l.id]);
   }
@@ -118,7 +121,7 @@ export function spocitejOdznaky(lekce, { navic = null } = {}) {
   // Spolu 8: úvodní test (diagnostika, tyden 0) v aspoň jednom předmětu; celý předmět = všechny lekce kromě testu
   if (lekce.some((l) => Number(l.tyden) === 0 && hotove.has(l.id))) ziskane.add('test');
   for (const p of ['matematika', 'cestina']) {
-    const lp = lekce.filter((l) => (l.predmet || 'matematika') === p && Number(l.tyden) > 0);
+    const lp = lekce.filter((l) => (l.predmet || 'matematika') === p && Number(l.tyden) > 0 && !jeBVarianta(l));
     if (lp.length >= 4 && lp.every((l) => hotove.has(l.id))) ziskane.add('predmet');
   }
 

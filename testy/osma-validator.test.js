@@ -218,7 +218,7 @@ describe('seed Spolu 8', () => {
   test('celá složka vypíše, které lekce ještě chybí', async () => {
     const r = await seed(['--jen-validace', '--adresar', 'testy/data/osma/lekce']);
     assert.equal(r.kod, 0, r.vystup);
-    assert.match(r.vystup, /Matematika Spolu 8: 10\/41 souborů; chybí: M8-T03-L2/);
+    assert.match(r.vystup, /Matematika Spolu 8: 10\/162 souborů; chybí: M8-T00-POL, M8-T01-L1N/);
   });
 
   test('v obsah/ jen fáze osma a každý předmět ve své složce', async () => {

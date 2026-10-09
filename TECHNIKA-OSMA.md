@@ -104,6 +104,32 @@ Repo je kopie aplikace Spolu (matematika na přijímačky + čeština základy).
 - **Odstraněné nástroje** vázané na lekce a stránky Spolu: `qa-cestina.mjs`, `qa-sezona.mjs`, `screenshoty.mjs`, `screenshoty-f2.mjs`, `testy-rls.sql`. Nahrazuje je `nastroje/qa-osma.mjs` a `supabase/test/`.
 - `kontrola-dlazdic.mjs` bere lekce `M8-*`. Potřebuje Chrome (`CHROME=…`).
 
+### Celý školní rok (9. 10. 2026, ZADANI-OSMA §9, `web/js/plan-roku.js`)
+- **Id lekcí** (DB beze změny, druh se pozná z id):
+
+  | Druh | Matematika | Čeština |
+  |---|---|---|
+  | učební | `M8-T03-L2` | `cj-t3-l10` |
+  | naostro | `M8-T03-L2N` | `cj-t3-l10n` |
+  | B-varianta | `M8-T03-L2B`, `M8-T03-L2NB` | `cj-t3-l10b`, `cj-t3-l10nb` |
+  | testy | `M8-T00-DIAG`, `M8-T00-POL` | `cj-t0-diag`, `cj-t0-pol` |
+
+  - Naostro i B mají stejné `tyden` a `poradi` jako učební lekce.
+  - Schéma, validátory i seed je znají. Kontrola celé složky hlásí x/162 souborů na předmět.
+- **Plán a kalendář:**
+  - `planRoku`: začaté lekce první, pak témata podle testu, v tématu s odstupem L1, L2, L1N, L3, L2N, L4, L3N, L4N.
+  - `kalendar`: od prvního sezení dítěte v předmětu 3 lekce týdně, zameškané se sčítají.
+  - Zamčené kalendářem: na přehledu `zamceno: 'kalendar'` + datum. Je to jen v aplikaci, DB zámek zůstává `otevrit_od`.
+  - Silná témata jsou celá, jen na konci. Dřívější „silné téma jen L4“ a pojistka jsou pryč.
+- **B-varianta:**
+  - `bVariantaPoCervene`: jen když je hotová lekce červená (`souhrn.hlavniBarva`).
+  - Přehled ukáže „Zkusit znovu s jinými úlohami“ a B-variantu jako „Doporučeno teď“.
+  - B-varianty nejsou v plánu ani v kalendáři a nepočítají se do odznaků „Celé téma“ a „Celý předmět“.
+- **Pololetní test:**
+  - Otevře se na začátku 11. týdne kalendáře dítěte (`otevreniPololetniho`).
+  - Po dokončení se pořadí témat bere z něj (`vysledekPol`). Hotové lekce zůstávají, přeskládá se jen zbytek.
+- **Testy:** `testy/plan-roku.test.js`.
+
 ## 2. Jak spustit lokálně
 ```
 npm test                                   # unit testy (node --test)

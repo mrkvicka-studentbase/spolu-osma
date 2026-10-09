@@ -606,7 +606,7 @@ Skupina `cj`. Žákovi tykáme bez rodu, rodiči vykáme.
 
 | klíč | kde | text |
 |---|---|---|
-| `osma.rytmus` | přehled, pod jménem dítěte | Aspoň 4× týdně jedna lekce. V každém předmětu nejvýš jedna denně. |
+| `osma.rytmus` | přehled, pod jménem dítěte | Každý týden se otevřou 3 lekce z každého předmětu. Nejvýš jedna lekce denně v každém předmětu. |
 | `osma.postup` | přehled, pruh postupu předmětu ({z} = z / ze) | hotovo {hotovo} {z} {celkem} lekcí |
 | `osma.max_lekce_den` | přehled, po dnešní dokončené lekci předmětu | Dnešní lekce z předmětu {predmet} je hotová. Další doporučujeme až zítra. |
 | `osma.zamceno` | přehled, štítek zamčené lekce | Zamčeno |
@@ -617,15 +617,26 @@ Skupina `cj`. Žákovi tykáme bez rodu, rodiči vykáme.
 | `osma.tema_silne` | přehled, štítek tématu po úvodním testu | Jde to |
 | `osma.lekce_poradi` | přehled, karta lekce | Lekce {n} |
 | `osma.lekce_kontrola` | přehled, karta 4. lekce tématu | Lekce {n} · kontrola tématu |
+| `osma.lekce_naostro` | přehled, karta naostro lekce (ZADANI-OSMA §9) | Lekce {n} · naostro |
+| `osma.lekce_kontrola_naostro` | přehled, karta naostro 4. lekce tématu | Lekce {n} · kontrola tématu naostro |
+| `osma.lekce_b` | přehled, karta / doporučení B-varianty | Lekce {n} · jiné úlohy |
+| `osma.zamceno_kalendar` | přehled, lekce zamčená kalendářem dítěte (3 týdně) | Otevře se {datum}. Každý týden 3 lekce. |
+| `osma.b_tlacitko` | přehled, hotová lekce s červenou, tlačítko | Zkusit znovu s jinými úlohami |
+| `osma.b_popis` | přehled, „Doporučeno teď“ u B-varianty | Lekce dopadla červeně. Teď stejná látka s jinými úlohami, ať to sedne. |
+| `osma.b_hotovo` | přehled, hotová lekce, B-varianta je hotová | Jiné úlohy: hotovo |
+| `osma.pol_stitek` | přehled, karta pololetního testu; lekce (lišta) | Pololetní test |
+| `osma.pol_nazev` | přehled, karta pololetního testu | Pololetní test ({min} min) |
+| `osma.pol_text_rodic` | přehled rodiče, karta pololetního testu | Po 10 týdnech: dítě znovu vyřeší krátké úlohy ze všech témat. Podle výsledku přeskládáme zbytek roku. |
+| `osma.pol_text_zak` | přehled žáka, karta pololetního testu | Krátké úlohy ze všech témat. Ukážou, co už jde a co ještě potrénovat. |
+| `osma.pol_zamceno` | přehled, pololetní test zamčený | Otevře se {datum}, po 10 týdnech. |
+| `osma.pol_vysledek` | přehled rodiče, odkaz | Výsledek pololetního testu |
+| `osma.doporuceno_podle_pololetniho` | přehled, pod nadpisem (pololetní test hotový) | Podle pololetního testu: nejdřív témata, která zatím nejdou. |
 | `osma.pocet_uloh_2` | přehled, karta lekce (2–4 úlohy) | {n} úlohy |
 | `osma.pocet_uloh_5` | přehled, karta lekce (5 a víc úloh) | {n} úloh |
 | `osma.doporuceno_nadpis` | přehled, nadpis | Doporučeno teď |
 | `osma.doporuceno_podle_testu` | přehled, pod nadpisem (test hotový) | Podle úvodního testu: nejdřív témata, která zatím nejdou. Ta, která jdou, jsou na konci. |
 | `osma.doporuceno_bez_testu` | přehled, pod nadpisem (test není hotový) | Zatím od základů ke složitějšímu. Po úvodním testu pořadí upravíme podle toho, co dítěti nejde. |
 | `osma.doporuceno_osnova` | přehled, pod nadpisem (předmět bez testu) | Od základů ke složitějšímu. |
-| `osma.volitelne` | přehled, karta L1–L3 silného tématu | Volitelné |
-| `osma.tema_silne_pozn` | přehled, pod nadpisem silného tématu | Téma jde. Stačí kontrola tématu (lekce 4). Když nedopadne zeleně, doporučíme lekce 1–3. |
-| `osma.znovu_kontrola` | přehled, „Doporučeno teď“: L4 silného tématu po pojistce | Lekce 1–3 jsou hotové. Teď ještě jednou kontrola tématu. |
 | `osma.vse_hotovo` | přehled, všechny lekce předmětu hotové | Všechny lekce jsou hotové. Výborně! Kterékoli téma můžete projít znovu. |
 | `osma.nic_otevreno` | přehled, žádná otevřená nehotová lekce | Další lekce se teprve otevřou. |
 | `osma.test_stitek` | přehled, karta úvodního testu | Úvodní test |

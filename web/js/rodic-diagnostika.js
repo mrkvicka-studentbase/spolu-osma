@@ -145,7 +145,7 @@ export function vytvorVysledekOsma(souhrn, { jmeno = '', datum = null, lekce = [
   const datumText = datum ? formatDatum(datum, { rok: true }) : '';
   return el('div', { class: 'zasobnik zasobnik--volny diag-vysledek diag-vysledek--osma' },
     el('header', { class: 'diag-vysledek__hlavicka' },
-      el('h1', { text: h('osma.vysledek_nadpis') }),
+      el('h1', { text: h(/-(POL|pol)$/.test(String(souhrn.lekce_id || '')) ? 'osma.pol_vysledek' : 'osma.vysledek_nadpis') }),
       el('p', { class: 'text-tlumeny', text: [h(`predmet.${predmet}`), jmeno, datumText].filter(Boolean).join(' · ') }),
       el('p', { text: h('osma.vysledek_celkem', { odevzdano: souhrn.odevzdano, celkem: souhrn.celkem, z: zeZ(souhrn.celkem) }) })),
     souhrn.celkove === 'nezjisteno' ? el('div', { class: 'hlaska hlaska--info', role: 'status' }, ikona('info'),

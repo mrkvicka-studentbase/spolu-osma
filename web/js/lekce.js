@@ -890,7 +890,7 @@ function aktualizujListu() {
     const sim = stav.lekce.simulace || {};
     const pozice = lekce.ulohy[Math.min(ulohaIndex, n - 1)]?.pozice ?? Math.min(ulohaIndex + 1, n);
     $('podtitul').textContent = stav.sim ? `Simulace ${sim.cislo ?? ''} · ${sim.cast ?? 1}. část`.replace('  ', ' ')
-      : lekce.faze === 'osma' ? h('osma.test_stitek') : 'Fáze 1 · týden 0';
+      : lekce.faze === 'osma' ? h(/-(POL|pol)$/.test(lekce.id) ? 'osma.pol_stitek' : 'osma.test_stitek') : 'Fáze 1 · týden 0';
     $('prubehText').textContent = stav.sim
       ? (ulohaIndex >= n ? `${sim.cast ?? 1}. část · hotovo` : h('sim.prubeh', { pozice, cast: sim.cast ?? 1 }))
       : h('diag.prubeh', { n: Math.min(ulohaIndex + 1, n), celkem: n, z: zeZ(n) });

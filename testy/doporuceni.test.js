@@ -8,7 +8,7 @@ import { readFileSync } from 'node:fs';
 
 import {
   vysledekPoTematech, doporucenePoradiTemat, sestavSouhrnOsma, jeSouhrnOsma, mapaKapitolNaTemata, temataUlohy,
-  seradLekce, planLekci, dalsiDoporucenaLekce, cislaTemat, jeDiagnostikaOsma,
+  cislaTemat, jeDiagnostikaOsma,
 } from '../web/js/doporuceni.js';
 import { nazevTematu, pocetUlohLekce, zeZ } from '../web/js/temata.js';
 
@@ -133,46 +133,7 @@ describe('souhrn úvodního testu (syntetická diagnostika)', () => {
   });
 });
 
-describe('lekce v doporučeném pořadí', () => {
-  test('seřazení: téma podle pořadí, uvnitř L1 → L4', () => {
-    const k = katalog().filter((l) => l.tyden <= 3);
-    assert.deepEqual(seradLekce(k, [3, 1, 2]).map((l) => `${l.tyden}-${l.poradi}`).slice(0, 5), ['3-1', '3-2', '3-3', '3-4', '1-1']);
-  });
-
-  test('„Doporučeno teď“: první nehotová; rozpracovaná má přednost; zamčená se přeskočí', () => {
-    const k = katalog('matematika', { '1-1': { stavLekce: 'hotovo' }, '1-2': { zamceno: 'datum' } });
-    assert.equal(dalsiDoporucenaLekce(k, [1, 2]).id, 'M8-T01-L3');
-    const k2 = katalog('matematika', { '2-3': { stavLekce: 'probiha' } });
-    assert.equal(dalsiDoporucenaLekce(k2, [1, 2]).id, 'M8-T02-L3');
-    const hotovo = katalog().map((l) => ({ ...l, stavLekce: 'hotovo' }));
-    assert.equal(dalsiDoporucenaLekce(hotovo, cislaTemat(hotovo)), null);
-  });
-
-  test('silné téma: jen L4 (kontrola tématu), L1–L3 volitelné', () => {
-    const k = katalog().filter((l) => l.tyden <= 2);
-    const plan = planLekci(k, [2, 1], new Set([1]));
-    assert.deepEqual(plan.map((p) => p.lekce.id), ['M8-T02-L1', 'M8-T02-L2', 'M8-T02-L3', 'M8-T02-L4', 'M8-T01-L4']);
-    const hotovo2 = k.map((l) => (l.tyden === 2 ? { ...l, stavLekce: 'hotovo' } : l));
-    assert.equal(dalsiDoporucenaLekce(hotovo2, [2, 1], new Set([1])).id, 'M8-T01-L4');
-  });
-
-  test('pojistka: L4 silného tématu oranžová/červená → L1–L3, pak znovu L4; zelená → téma hotové', () => {
-    const den = (d) => `2026-10-${String(d).padStart(2, '0')}T18:00:00Z`;
-    const k = katalog().filter((l) => l.tyden === 1);
-    const l4 = (barva) => ({ stavLekce: 'hotovo', souhrn: { hlavniBarva: barva }, dokoncene: { konec: den(1) } });
-    const zelena = k.map((l) => (l.poradi === 4 ? { ...l, ...l4('zelena') } : l));
-    assert.equal(dalsiDoporucenaLekce(zelena, [1], new Set([1])), null);
-    const oranzova = k.map((l) => (l.poradi === 4 ? { ...l, ...l4('oranzova') } : l));
-    assert.equal(dalsiDoporucenaLekce(oranzova, [1], new Set([1])).id, 'M8-T01-L1');
-    const poOpakovani = oranzova.map((l) => (l.poradi < 4 ? { ...l, stavLekce: 'hotovo', dokoncene: { konec: den(2 + l.poradi) } } : l));
-    const znovu = dalsiDoporucenaLekce(poOpakovani, [1], new Set([1]));
-    assert.equal(znovu.id, 'M8-T01-L4');
-    assert.equal(znovu.znovu, true);
-    // L4 zopakovaná a zase červená: L1–L3 jsou starší než nová L4 → téma se nedoporučuje dokola
-    const znovuCervena = poOpakovani.map((l) => (l.poradi === 4 ? { ...l, ...l4('cervena'), dokoncene: { konec: den(9) } } : l));
-    assert.equal(dalsiDoporucenaLekce(znovuCervena, [1], new Set([1])), null);
-  });
-
+describe('katalog: diagnostika a čísla témat (plán roku: testy/plan-roku.test.js)', () => {
   test('diagnostika se v katalogu pozná (tyden 0 ve fázi osma)', () => {
     assert.equal(jeDiagnostikaOsma({ faze: 'osma', tyden: 0 }), true);
     assert.equal(jeDiagnostikaOsma({ faze: 'osma', tyden: 1 }), false);
