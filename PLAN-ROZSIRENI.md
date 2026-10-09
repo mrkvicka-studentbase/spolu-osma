@@ -59,6 +59,6 @@ Oba předměty: **240 nových lekcí + 2 pololetní testy**. Čeština navíc po
 3. **Pololetní test:** ano, v lednu, 1 na předmět.
 
 ## 7. Nahrávky
-- Seznam se generuje z lekcí: `node nastroje/seznam-nahravek.mjs` → `cestina/Obsah/nahravky-k-nataceni.md` a `.csv`.
+- Seznam se generuje z lekcí: `node nastroje/seznam-nahravek.mjs` → `cestina/Obsah/nahravky-k-nataceni.md` a `.csv`. Bere jen lekce po korektuře (`kontrola.zkontroloval: "korektor"`).
 - Natáčí agent přes noc podle `cestina/Obsah/NAHRAVKY-NAVOD.md` (ElevenLabs, Claude in Chrome).
 - Po každé dávce nových lekcí češtiny se seznam přegeneruje.

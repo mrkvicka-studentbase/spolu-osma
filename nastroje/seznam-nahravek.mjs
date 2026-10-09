@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // =====================================================================
 // seznam-nahravek.mjs — seznam nahrávek češtiny k natočení (pro agenta s ElevenLabs, cestina/Obsah/NAHRAVKY-NAVOD.md).
-// Projde obsah/cestina/lekce/*.json, vezme každý odkaz na nahrávku (poslech: `prepis`, diktát: `vety[].text`),
+// Projde obsah/cestina/lekce/*.json (jen lekce po korektuře, kontrola.zkontroloval = korektor), vezme každý odkaz na nahrávku (poslech: `prepis`, diktát: `vety[].text`),
 // vynechá ty, které už leží ve web/audio/cestina/, a zapíše cestina/Obsah/nahravky-k-nataceni.csv
 // (UTF-8 s BOM, středník — otevře se rovnou v Excelu) a totéž čitelně pro agenta: nahravky-k-nataceni.md (text v bloku ke zkopírování). Pusťte znovu po každé nové dávce lekcí.
 //
@@ -31,8 +31,11 @@ function proElevenLabs(typ, text) {
 }
 
 const radky = new Map();
+const vynechano = [];
 for (const soubor of readdirSync(LEKCE).filter((n) => n.endsWith('.json')).sort(podle)) {
   const l = JSON.parse(readFileSync(path.join(LEKCE, soubor), 'utf8'));
+  // jen lekce po korektuře ÚJČ: text nahrávky se pak už nemění (jinak by se natáčelo zbytečně)
+  if (l.kontrola?.zkontroloval !== 'korektor') { vynechano.push(l.id); continue; }
   l.ulohy?.forEach((u, ui) => {
     for (const k of u.kroky || []) {
       const v = k.vstup || {};
@@ -66,4 +69,5 @@ for (const r of vystup.slice(1)) {
 }
 writeFileSync(VYSTUP_MD, md.join('\n'));
 console.log(`Nahrávek v lekcích: ${radky.size}, hotových: ${hotovo}, k natočení: ${radky.size - hotovo}.`);
+if (vynechano.length) console.log(`Vynechané lekce bez korektury (${vynechano.length}): ${vynechano.join(', ')}`);
 console.log(`Zapsáno: ${path.relative(KOREN, VYSTUP)} a ${path.relative(KOREN, VYSTUP_MD)} (${n} nahrávek)`);
