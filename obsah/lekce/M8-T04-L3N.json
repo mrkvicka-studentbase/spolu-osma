@@ -1,0 +1,494 @@
+{
+  "id": "M8-T04-L3N",
+  "faze": "osma",
+  "tyden": 4,
+  "poradi": 3,
+  "tema": "Sčítání a odčítání zlomků",
+  "kapitola": "zlomky",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo sečte a odečte i tři zlomky s různými jmenovateli nebo zlomky od celého čísla, výsledek zkrátí a použije to ve slovní úloze se dvěma mezivýsledky.",
+  "uvod_pro_rodice": "Dítě tuhle látku dělalo v lekci „Sčítání a odčítání zlomků“. Dnes ukáže, že ji zvládne samo: čtyři příklady, nenápadnější chyba u Petra a slovní úloha se dvěma mezivýsledky.",
+  "uvod_pravidla": [
+    {
+      "znak": "$\\frac{2}{5} = \\frac{6}{15}$",
+      "text": "nejdřív stejné díly"
+    },
+    {
+      "znak": "$\\frac{5}{9} - \\frac{2}{9}$",
+      "text": "odčítají se čitatelé"
+    },
+    {
+      "znak": "$1 = \\frac{7}{7}$",
+      "text": "celek: všechny díly"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T04-L3N-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "Spočítej v hlavě nebo na papíře a vyber, kolik vyjde. Výsledek D má být v základním tvaru.\n\nA) $\\frac{2}{9} + \\frac{1}{6}$\n\nB) $\\frac{7}{10} - \\frac{1}{4}$\n\nC) $3 - \\frac{2}{5}$\n\nD) $\\frac{1}{4} + \\frac{5}{12}$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $\\frac{2}{9} + \\frac{1}{6}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{3}{15}$",
+                "spravne": false,
+                "typ_chyby": "scital-citatele-i-jmenovatele"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{7}{18}$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{3}{18}$",
+                "spravne": false,
+                "typ_chyby": "neprepocital-citatel"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $\\frac{7}{10} - \\frac{1}{4}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{6}{20}$",
+                "spravne": false,
+                "typ_chyby": "neprepocital-citatel"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{6}{6}$",
+                "spravne": false,
+                "typ_chyby": "scital-citatele-i-jmenovatele"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{9}{20}$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: $3 - \\frac{2}{5}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$2\\frac{3}{5}$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$2\\frac{2}{5}$",
+                "spravne": false,
+                "typ_chyby": "odcital-zlomek-od-celeho-spatne"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{1}{5}$",
+                "spravne": false,
+                "typ_chyby": "neprepocital-citatel"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: $\\frac{1}{4} + \\frac{5}{12}$ v základním tvaru",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{4}{6}$",
+                "spravne": false,
+                "typ_chyby": "kratil-jen-castecne"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{6}{16}$",
+                "spravne": false,
+                "typ_chyby": "scital-citatele-i-jmenovatele"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{6}{12}$",
+                "spravne": false,
+                "typ_chyby": "neprepocital-citatel"
+              },
+              {
+                "id": "d",
+                "text": "$\\frac{2}{3}$",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá. U každého příkladu se zlomky nejdřív převedou na stejné díly: osmnáctiny, dvacetiny, pětiny, dvanáctiny. U C se jedna ze tří celých rozmění na pět pětin. U D se výsledek ještě krátí. Čte se: $2\\frac{3}{5}$ dvě celé a tři pětiny. Otázky jsou po příkladech, první patří k A i D: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $\\frac{2}{9} + \\frac{1}{6}$\n\n$\\frac{2}{9} = \\frac{4}{18}$, $\\frac{1}{6} = \\frac{3}{18}$ (oba zlomky na osmnáctiny)\n\n$\\frac{4}{18} + \\frac{3}{18} = \\frac{7}{18}$ (sčítají se čitatelé)\n\n#### B) $\\frac{7}{10} - \\frac{1}{4}$\n\n$\\frac{7}{10} = \\frac{14}{20}$, $\\frac{1}{4} = \\frac{5}{20}$ (oba zlomky na dvacetiny)\n\n$\\frac{14}{20} - \\frac{5}{20} = \\frac{9}{20}$ (odčítají se čitatelé)\n\n#### C) $3 - \\frac{2}{5}$\n\n$3 = 2 + \\frac{5}{5}$ (jedna celá je pět pětin)\n\n$\\frac{5}{5} - \\frac{2}{5} = \\frac{3}{5}$ (z poslední celé zbudou tři pětiny)\n\n$3 - \\frac{2}{5} = 2\\frac{3}{5}$ (také třináct pětin)\n\n#### D) $\\frac{1}{4} + \\frac{5}{12}$\n\n$\\frac{3}{12} + \\frac{5}{12} = \\frac{8}{12}$ (čtvrtina jsou tři dvanáctiny)\n\n$\\frac{8}{12} = \\frac{2}{3}$ (obojí děleno čtyřmi)\n\n**Výsledek:** A) $\\frac{7}{18}$, B) $\\frac{9}{20}$, C) $2\\frac{3}{5}$, D) $\\frac{2}{3}$",
+        "otazky": [
+          {
+            "k": "A a D",
+            "text": "„Neklikej, spočítej na papíře: na jaké stejné díly převedeš oba zlomky? Dá se výsledek ještě zkrátit?“"
+          },
+          {
+            "k": "B",
+            "text": "„Neklikej, spočítej na papíře: jaký nejmenší jmenovatel se hodí pro desetiny i čtvrtiny? Co pak uděláš s čitateli?“"
+          },
+          {
+            "k": "C",
+            "text": "„Kolik pětin je jedna celá? Kolik celých zůstane netknutých a kolik pětin zbude z té, ze které ubíráš?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč čtyři šestiny ještě nejsou správná odpověď u příkladu D.“",
+        "otocena_role_odpoved": "Protože čtyři šestiny jde ještě zkrátit dvěma. Výsledek je osm dvanáctin, a když se nahoře i dole vydělí čtyřmi, vyjdou dvě třetiny. Ty už zkrátit nejdou.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. $\\frac{3}{15}$, $\\frac{6}{6}$, $\\frac{6}{16}$: počítá zvlášť čitatele a jmenovatele. Zeptejte se: „Jsou to stejné díly?“ (Ne.) $\\frac{3}{18}$, $\\frac{6}{20}$, $\\frac{6}{12}$, u C $\\frac{1}{5}$: nepřepočítá čitatel. U C $2\\frac{2}{5}$: ubere celou jedničku. U D $\\frac{4}{6}$: nedokrátí."
+      },
+      "semafor": {
+        "zelena": "Výborně — sčítání, odčítání i krácení sedí ve všech čtyřech příkladech. Pochvalte, že vždy převedlo na stejné díly, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: $\\frac{3}{10} + \\frac{1}{6}$ a $2 - \\frac{3}{4}$. U každého ať řekne, jaké stejné díly volí a co vyjde. Kontrola pro vás: na třicetiny, $\\frac{9}{30} + \\frac{5}{30} = \\frac{14}{30} = \\frac{7}{15}$; jedna celá jsou čtyři čtvrtiny, vyjde $1\\frac{1}{4}$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 15 knoflíků nebo kostek. Zítra ať dítě udělá 3 hromádky po 5 kusech; každá hromádka je jedna celá. Pak ať z jedné hromádky vezme 2 kusy. Zeptejte se: „Kolik celých hromádek zůstalo a kolik pětin z načaté?“ Pak ať samo zapíše $3 - \\frac{2}{5} = 2\\frac{3}{5}$. Potom zopakujte lekci „Sčítání a odčítání zlomků“. Kontrola pro vás: dvě celé hromádky a tři pětiny."
+      },
+      "tisk": {
+        "zadani": "Spočítej a zakroužkuj, kolik vyjde. Výsledek D má být v základním tvaru.\n\nA) $\\frac{2}{9} + \\frac{1}{6}$ — a) $\\frac{3}{15}$ b) $\\frac{7}{18}$ c) $\\frac{3}{18}$\n\nB) $\\frac{7}{10} - \\frac{1}{4}$ — a) $\\frac{6}{20}$ b) $\\frac{6}{6}$ c) $\\frac{9}{20}$\n\nC) $3 - \\frac{2}{5}$ — a) $2\\frac{3}{5}$ b) $2\\frac{2}{5}$ c) $\\frac{1}{5}$\n\nD) $\\frac{1}{4} + \\frac{5}{12}$ — a) $\\frac{4}{6}$ b) $\\frac{6}{16}$ c) $\\frac{6}{12}$ d) $\\frac{2}{3}$"
+      }
+    },
+    {
+      "id": "M8-T04-L3N-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr počítal příklad\n\n$$\\frac{3}{8} + \\frac{5}{6} - \\frac{3}{4}$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $= \\frac{9}{24} + \\frac{20}{24} - \\frac{3}{4}$\n\n2. řádek: $= \\frac{29}{24} - \\frac{3}{24}$\n\n3. řádek: $= \\frac{26}{24}$\n\n4. řádek: $= \\frac{13}{12}$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$= \\frac{9}{24} + \\frac{20}{24} - \\frac{3}{4}$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$= \\frac{29}{24} - \\frac{3}{24}$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$= \\frac{26}{24}$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$= \\frac{13}{12}$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$= \\frac{29}{24} - \\frac{23}{24}$",
+                "spravne": false,
+                "typ_chyby": "pricetl-misto-nasobeni"
+              },
+              {
+                "id": "b",
+                "text": "$= \\frac{26}{20}$",
+                "spravne": false,
+                "typ_chyby": "scital-citatele-i-jmenovatele"
+              },
+              {
+                "id": "c",
+                "text": "$= \\frac{29}{24} - \\frac{18}{24}$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 11,
+            "j": 24
+          },
+          "zname_chyby": [
+            {
+              "c": 13,
+              "j": 12,
+              "typ_chyby": "neprepocital-citatel"
+            },
+            {
+              "c": 1,
+              "j": 2,
+              "typ_chyby": "scital-citatele-i-jmenovatele"
+            },
+            {
+              "c": 1,
+              "j": 4,
+              "typ_chyby": "pricetl-misto-nasobeni"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Převádí zlomky na čtyřiadvacetiny, dva najednou a třetí až v dalším řádku. Chyba je jedna a řádky za ní jsou spočítané dobře, jen ze špatného čísla. Pozor: Petr na konci pečlivě krátí, takže výpočet vypadá hotově. Mezivýsledek $\\frac{29}{24}$ je víc než celek, to je v pořádku.",
+        "reseni": "Chyba je ve 2. řádku: Petr změnil jmenovatel tří čtvrtin na dvacet čtyři, ale čitatel nevynásobil šesti.\n\n$\\frac{3}{8} = \\frac{9}{24}$, $\\frac{5}{6} = \\frac{20}{24}$ (převod na čtyřiadvacetiny)\n\n$\\frac{9}{24} + \\frac{20}{24} = \\frac{29}{24}$ (sčítají se čitatelé)\n\n$\\frac{3}{4} = \\frac{18}{24}$ (obojí krát šest)\n\n$\\frac{29}{24} - \\frac{18}{24} = \\frac{11}{24}$ (odčítají se čitatelé, dál zkrátit nejde)\n\nDlaždice $\\frac{29}{24} - \\frac{23}{24}$ a $\\frac{26}{20}$ nesedí (první přičítá dvacet nahoře i dole, druhá odčítá zvlášť čitatele a jmenovatele)\n\n**Výsledek:** $\\frac{11}{24}$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Petr dělá se třemi zlomky a proč je převádí na čtyřiadvacetiny.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi řádky jeden po druhém. Kde se objeví nový jmenovatel, ověř: násobil Petr stejným číslem i čitatel?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: zjisti, kolikrát se do dvaceti čtyř vejde osm, šest a čtyři. Stejným číslem pak vynásob čitatel každého zlomku.“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, co se stane se zlomkem, když změním jen jmenovatel.“",
+        "otocena_role_odpoved": "Zlomek se zmenší, protože díly jsou menší, ale je jich pořád stejně. Tři čtvrtiny jsou osmnáct čtyřiadvacetin, ne tři. Čitatel se musí násobit stejně jako jmenovatel.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 1., 3. nebo 4. řádek? Ty jsou správně, poslední dva jen počítají ze špatného čísla. Zeptejte se: „Kolik čtyřiadvacetin jsou tři čtvrtiny?“ (Osmnáct.) Výsledek $\\frac{13}{12}$: opíše Petra; $\\frac{1}{2}$: sčítá čitatele i jmenovatele; $\\frac{1}{4}$: přičítá."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo, i když byla schovaná v řádku s dalším výpočtem. Pochvalte, že kontrolovalo každý čitatel, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu: „Petr počítá $\\frac{3}{5} + \\frac{1}{10} - \\frac{1}{2} = \\frac{6}{10} + \\frac{1}{10} - \\frac{1}{10} = \\frac{6}{10}$.“ Zeptejte se: „Ve kterém kroku Petr chybuje a jak to má vyjít?“ Kontrola pro vás: jedna polovina je pět desetin, ne jedna; správně $\\frac{6}{10} + \\frac{1}{10} - \\frac{5}{10} = \\frac{2}{10} = \\frac{1}{5}$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 24 pastelek nebo kostek lega. Zítra řekněte: „Celek je 24 pastelek.“ Ať je dítě rozdělí na 4 stejné hromádky a 3 hromádky odsune. Zeptejte se: „Kolik pastelek jsou tři čtvrtiny, tedy kolik čtyřiadvacetin?“ Pak ať samo zapíše $\\frac{3}{4} = \\frac{18}{24}$. Potom zopakujte lekci „Sčítání a odčítání zlomků“. Kontrola pro vás: 18 pastelek, tedy osmnáct čtyřiadvacetin, nahoře i dole krát šest."
+      },
+      "tisk": {
+        "zadani": "Petr počítal příklad\n\n$$\\frac{3}{8} + \\frac{5}{6} - \\frac{3}{4}$$\n\na udělal jednu chybu.\n\n1. řádek: $= \\frac{9}{24} + \\frac{20}{24} - \\frac{3}{4}$\n\n2. řádek: $= \\frac{29}{24} - \\frac{3}{24}$\n\n3. řádek: $= \\frac{26}{24}$\n\n4. řádek: $= \\frac{13}{12}$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $= \\frac{29}{24} - \\frac{23}{24}$ b) $= \\frac{26}{20}$ c) $= \\frac{29}{24} - \\frac{18}{24}$\n\nC) Správný výsledek v základním tvaru: ______"
+      }
+    },
+    {
+      "id": "M8-T04-L3N-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Honzík jede s tátou na kole po dálkové cyklostezce. V sobotu ujeli $\\frac{1}{3}$ celé trasy, v neděli o $\\frac{1}{4}$ celé trasy víc než v sobotu. Zbytek dojedou v pondělí.\n\nJakou část trasy ujeli v neděli? Jakou za oba dny? Jaká část jim zbývá na pondělí?\n\nVšechny části zapiš zlomkem v základním tvaru.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Mezivýsledek: část trasy v neděli",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 7,
+            "j": 12
+          },
+          "zname_chyby": [
+            {
+              "c": 2,
+              "j": 7,
+              "typ_chyby": "scital-citatele-i-jmenovatele"
+            },
+            {
+              "c": 1,
+              "j": 6,
+              "typ_chyby": "neprepocital-citatel"
+            },
+            {
+              "c": 1,
+              "j": 4,
+              "typ_chyby": "jen-cast-bez-celku"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: sobota a neděle dohromady",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 11,
+            "j": 12
+          },
+          "zname_chyby": [
+            {
+              "c": 7,
+              "j": 12,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "c": 1,
+              "j": 2,
+              "typ_chyby": "neprepocital-citatel"
+            },
+            {
+              "c": 13,
+              "j": 21,
+              "typ_chyby": "scital-citatele-i-jmenovatele"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 1,
+            "j": 12
+          },
+          "zname_chyby": [
+            {
+              "c": 11,
+              "j": 12,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            },
+            {
+              "c": 1,
+              "j": 2,
+              "typ_chyby": "neprepocital-citatel"
+            },
+            {
+              "c": 5,
+              "j": 12,
+              "typ_chyby": "prehledl-udaj"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce. Nedělní část v zadání není, dopočítá se ze soboty: o čtvrtinu celé trasy víc znamená k sobotní třetině přičíst čtvrtinu. Pak se sečtou oba dny a zbytek je to, co chybí do celé trasy. Všechno se nejlépe počítá ve dvanáctinách.",
+        "reseni": "$\\frac{1}{3} = \\frac{4}{12}$, $\\frac{1}{4} = \\frac{3}{12}$ (převod na dvanáctiny)\n\n$\\frac{4}{12} + \\frac{3}{12} = \\frac{7}{12}$ (neděle, o čtvrtinu víc než sobota)\n\n$\\frac{4}{12} + \\frac{7}{12} = \\frac{11}{12}$ (sobota a neděle dohromady)\n\n$\\frac{12}{12} - \\frac{11}{12} = \\frac{1}{12}$ (zbytek do celé trasy)\n\n**Výsledek:** neděle $\\frac{7}{12}$, oba dny $\\frac{11}{12}$, pondělí $\\frac{1}{12}$ trasy",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co víš o sobotě a neděli a na co se úloha ptá.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Co znamená, že v neděli ujeli o čtvrtinu celé trasy víc než v sobotu? Na jaké stejné díly převedeš třetiny i čtvrtiny?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: jedna třetina jsou čtyři dvanáctiny. Kolik dvanáctin ujeli v neděli a kolik za oba dny? Kolik jich chybí do celé trasy?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč v neděli neujeli jen čtvrtinu trasy, když se v zadání píše o čtvrtině.“",
+        "otocena_role_odpoved": "Protože čtvrtina je jen to, o kolik ujeli víc než v sobotu. K sobotní třetině se musí přičíst: čtyři dvanáctiny a tři dvanáctiny je sedm dvanáctin.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 $\\frac{1}{4}$: bere jen přírůstek; $\\frac{2}{7}$: sčítá čitatele i jmenovatele; $\\frac{1}{6}$: nepřepočítá čitatele. Zeptejte se: „Kolik dvanáctin je třetina?“ (Čtyři.) V kroku 2 $\\frac{7}{12}$: zapomene sobotu. Výsledek $\\frac{11}{12}$: píše ujetou část; $\\frac{5}{12}$, $\\frac{1}{2}$: počítá ze špatného mezivýsledku."
+      },
+      "semafor": {
+        "zelena": "Výborně — neděli, oba dny i zbytek trasy spočítalo samo. Pochvalte, že nedělní část nejdřív dopočítalo ze soboty, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Klára v pondělí vyluštila $\\frac{1}{6}$ křížovky, v úterý o $\\frac{1}{4}$ celé křížovky víc. Kolik vyluštila v úterý a kolik jí zbývá?“ Kontrola pro vás: na dvanáctiny; úterý $\\frac{2}{12} + \\frac{3}{12} = \\frac{5}{12}$; dohromady $\\frac{7}{12}$; zbývá $\\frac{5}{12}$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 12 kostek nebo knoflíků. Zítra řekněte: „Celá trasa je 12 kostek.“ Ať dítě odsune třetinu jako sobotu. Pak ať na neděli odsune tolik jako v sobotu a k tomu ještě čtvrtinu celé trasy. Zeptejte se: „Kolik kostek zbylo na pondělí?“ Pak ať samo zapíše $\\frac{4}{12} + \\frac{7}{12} = \\frac{11}{12}$. Potom zopakujte lekci „Sčítání a odčítání zlomků“. Kontrola pro vás: sobota 4, neděle 4 a 3, tedy 7, zbyla 1 kostka."
+      },
+      "tisk": {
+        "zadani": "Honzík jede s tátou na kole po dálkové cyklostezce. V sobotu ujeli $\\frac{1}{3}$ celé trasy, v neděli o $\\frac{1}{4}$ celé trasy víc než v sobotu. Zbytek dojedou v pondělí.\n\nJakou část trasy ujeli v neděli? Jakou za oba dny? Jaká část jim zbývá na pondělí?\n\nVšechny části zapiš zlomkem v základním tvaru.\n\nA) Část trasy v neděli: ______\n\nB) Sobota a neděle dohromady: ______\n\nC) Výsledek: ______ trasy"
+      }
+    },
+    {
+      "id": "M8-T04-L3N-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Vypočítej a výsledek zapiš zlomkem v základním tvaru:\n\n$$2 - \\frac{3}{4} - \\frac{5}{6}$$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 5,
+            "j": 12
+          },
+          "zname_chyby": [
+            {
+              "c": 11,
+              "j": 12,
+              "typ_chyby": "odcital-zlomek-od-celeho-spatne"
+            },
+            {
+              "c": 4,
+              "j": 3,
+              "typ_chyby": "neprepocital-citatel"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Dvě celé se převedou na dvanáctiny stejně jako oba zlomky a pak se odčítá zleva.",
+        "reseni": "$2 = \\frac{24}{12}$ (jedna celá je dvanáct dvanáctin)\n\n$\\frac{3}{4} = \\frac{9}{12}$, $\\frac{5}{6} = \\frac{10}{12}$ (převod na dvanáctiny)\n\n$\\frac{24}{12} - \\frac{9}{12} - \\frac{10}{12} = \\frac{5}{12}$ (odčítají se jen čitatelé)\n\n**Výsledek:** $\\frac{5}{12}$",
+        "otazky": [
+          "„Přečti mi příklad nahlas. Co je na něm jiné než na příkladu, kde jsou jen zlomky?“",
+          "„Na jaké stejné díly převedeš čtvrtiny i šestiny? Kolik takových dílů jsou dvě celé?“",
+          "„Tady máš začátek: jedna celá je dvanáct dvanáctin. Kolik dvanáctin jsou tři čtvrtiny a kolik pět šestin?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč dvě celé minus tři čtvrtiny nejsou jedna celá a tři čtvrtiny.“",
+        "otocena_role_odpoved": "Protože tři čtvrtiny se ubírají z jedné celé a zbude z ní jen jedna čtvrtina. Takže zůstane jedna celá a jedna čtvrtina, ne tři čtvrtiny.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $\\frac{11}{12}$: od dvou ubere celou jedničku a tři čtvrtiny nechá. Zeptejte se: „Kolik čtvrtin je jedna celá?“ (Čtyři.) $\\frac{4}{3}$ nebo $\\frac{16}{12}$: nepřepočítá čitatele. $\\frac{10}{24}$ aplikace uzná a požádá o zkrácení."
+      },
+      "semafor": {
+        "zelena": "Výborně — odčítání zlomků od celého čísla zvládá samo. Pochvalte, že převedlo i dvě celé na dvanáctiny. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: $1 - \\frac{2}{9} - \\frac{1}{6}$. Ať řekne, jaké stejné díly volí, kolik jich má celek a co vyjde. Kontrola pro vás: na osmnáctiny, $\\frac{18}{18} - \\frac{4}{18} - \\frac{3}{18} = \\frac{11}{18}$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 24 knoflíků nebo kostek. Zítra řekněte: „Jedna celá je 12 knoflíků, dvě celé 24.“ Ať dítě odsune tři čtvrtiny jedné celé a pak pět šestin jedné celé. Zeptejte se: „Kolik knoflíků zůstalo a jaká je to část jedné celé?“ Pak ať samo zapíše $\\frac{24}{12} - \\frac{9}{12} - \\frac{10}{12} = \\frac{5}{12}$. Potom zopakujte lekci „Sčítání a odčítání zlomků“. Kontrola pro vás: odsune 9 a 10, zůstane 5, tedy pět dvanáctin."
+      },
+      "tisk": {
+        "zadani": "Vypočítej a výsledek zapiš zlomkem v základním tvaru:\n\n$$2 - \\frac{3}{4} - \\frac{5}{6}$$\n\nVýsledek: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 9. 10. 2026: vše přepočítáno nezávisle (python Fraction) a přes vyhodnotKrok: správné odpovědi, mezivýsledky, tahák i semafor sedí, každá známá chyba vrací svůj kód. Naostro proti učební lekci: stejné tema/kapitola/tyden/poradi, jiná čísla i kontext, těžší (víc položek, krok navíc). Odchylky podle PLAN-ROZSIRENI §3 (5 výpočtů, úvod 2 věty, 3 otázky na 4 příklady) v pořádku. Opraveno: U3 k1 $\\frac{1}{4}$ (bere jen přírůstek „o čtvrtinu víc“) překódováno z odpovida-na-jinou-otazku na jen-cast-bez-celku, které slovník popisuje přesně („o třetinu víc než 270: 90“). U1 D: dlaždice $\\frac{4}{6}$ má hodnotu správné odpovědi, ale zadání i tisk výslovně chtějí základní tvar; doplněno i do popisku kroku, takže je volba jednoznačná.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-09"
+  }
+}
