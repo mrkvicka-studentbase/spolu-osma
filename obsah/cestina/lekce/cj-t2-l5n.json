@@ -1,0 +1,932 @@
+{
+  "id": "cj-t2-l5n",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 2,
+  "poradi": 1,
+  "tema": "Vzory rodu mužského",
+  "kapitola": "podstatna-jmena",
+  "cil_pro_rodice": "Dítě samo určí vzor u jmen rodu mužského ve větách i v delším textu: o životnosti rozhodne testem „vidím ___“ a vzor vybere podle 2. pádu a konce slova, i u jmen, která slyší jen v nahrávce.",
+  "uvod_pro_rodice": "Naostro: tuhle látku dítě dělalo v lekci „Vzory rodu mužského“ před pár dny. Dnes ukáže, že ji opravdu umí: víc slov, delší věty, žádné známé příklady. Pravidlo už zná, vy se jen ptáte.",
+  "uvod_pravidla": [
+    {
+      "znak": "Vidím ___: jako pána, nebo hrad?",
+      "text": "životnost"
+    },
+    {
+      "znak": "Bez ___: pána, hradu, muže, stroje",
+      "text": "vzor podle 2. pádu"
+    },
+    {
+      "znak": "Na -a předseda, na -e soudce",
+      "text": "konec slova"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "vzor": "slovo, podle kterého se skloňují podobná slova. Rodu mužského je šest: pán, hrad, muž, stroj, předseda, soudce.",
+    "rod mužský": "jde před slovo říct ten (ten bratr, ten dům)",
+    "životné a neživotné": "jen u rodu mužského. Životné: ve 4. pádě se řekne jako vidím pána. Neživotné: jako vidím hrad. Rozhoduje test, ne to, jestli věc žije (strom roste, a je neživotný).",
+    "pád": "tvar slova podle otázky: 1. kdo, co? · 2. bez koho, čeho? · 3. ke komu, čemu? · 4. vidím koho, co? · 5. oslovujeme, voláme · 6. o kom, o čem? · 7. s kým, čím?",
+    "2. pád": "tvar po slově bez: bez pána, bez hradu, bez muže, bez stroje, bez předsedy, bez soudce"
+  },
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "cas_min": 25,
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t2-l5n-U1",
+      "typ": "rozcvicka",
+      "cil": "Ledoborec ze společného základu (Z2): určit pád jména rodu mužského ve větě i tam, kde jméno stojí za slovesem nebo nemá předložku; pasti 1. × 4., 2. × 4., 3. × 6., 2. a 3. × 6. a 4. × 7. pád.",
+      "cas_min": 4,
+      "zadani": "V každé řadě urči, v jakém pádě je tučné slovo.\n\nA) Po tréninku čekal před halou **autobus**.\n\nB) Lucka pozvala na oslavu **bratrance**.\n\nC) Adam jel na prázdniny k **dědečkovi**.\n\nD) Tomáš celý večer přemýšlel o **zápasu**.\n\nE) Ema maluje plakát širokým **štětcem**.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1. pád",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "2. pád",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "3. pád",
+                "spravne": false
+              },
+              {
+                "id": "d",
+                "text": "4. pád",
+                "spravne": false,
+                "typ_chyby": "pad-4-za-1"
+              },
+              {
+                "id": "e",
+                "text": "6. pád",
+                "spravne": false
+              },
+              {
+                "id": "f",
+                "text": "7. pád",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1. pád",
+                "spravne": false,
+                "typ_chyby": "pad-1-za-4"
+              },
+              {
+                "id": "b",
+                "text": "2. pád",
+                "spravne": false,
+                "typ_chyby": "pad-2-za-4"
+              },
+              {
+                "id": "c",
+                "text": "3. pád",
+                "spravne": false
+              },
+              {
+                "id": "d",
+                "text": "4. pád",
+                "spravne": true
+              },
+              {
+                "id": "e",
+                "text": "6. pád",
+                "spravne": false
+              },
+              {
+                "id": "f",
+                "text": "7. pád",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1. pád",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "2. pád",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "3. pád",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "4. pád",
+                "spravne": false
+              },
+              {
+                "id": "e",
+                "text": "6. pád",
+                "spravne": false,
+                "typ_chyby": "pad-6-za-3"
+              },
+              {
+                "id": "f",
+                "text": "7. pád",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k4",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1. pád",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "2. pád",
+                "spravne": false,
+                "typ_chyby": "pad-2-za-6"
+              },
+              {
+                "id": "c",
+                "text": "3. pád",
+                "spravne": false,
+                "typ_chyby": "pad-3-za-6"
+              },
+              {
+                "id": "d",
+                "text": "4. pád",
+                "spravne": false
+              },
+              {
+                "id": "e",
+                "text": "6. pád",
+                "spravne": true
+              },
+              {
+                "id": "f",
+                "text": "7. pád",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Řada E",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1. pád",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "2. pád",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "3. pád",
+                "spravne": false
+              },
+              {
+                "id": "d",
+                "text": "4. pád",
+                "spravne": false,
+                "typ_chyby": "pad-4-za-7"
+              },
+              {
+                "id": "e",
+                "text": "6. pád",
+                "spravne": false
+              },
+              {
+                "id": "f",
+                "text": "7. pád",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje pády, které vzory potřebují. Proti minulé lekci je o řadu víc a pasti jsou schovanější: v řadě A stojí jméno až za slovesem, v řadě E před ním chybí předložka. Pád dítě pozná otázkou ze slova ve větě. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) Po tréninku čekal před halou autobus.\n\n1. pád (čekal kdo, co? autobus; čeká sám, nikdo s ním nic nedělá)\n\n#### B) Lucka pozvala na oslavu bratrance.\n\n4. pád (pozvala koho, co? bratrance)\n\n#### C) Adam jel na prázdniny k dědečkovi.\n\n3. pád (jel ke komu, čemu? k dědečkovi)\n\n#### D) Tomáš celý večer přemýšlel o zápasu.\n\n6. pád (přemýšlel o kom, o čem? o zápasu)\n\n#### E) Ema maluje plakát širokým štětcem.\n\n7. pád (maluje kým, čím? štětcem)\n\n**Výsledek:** A) 1. pád, B) 4. pád, C) 3. pád, D) 6. pád, E) 7. pád",
+        "otazky": [
+          {
+            "k": "A a B",
+            "text": "„Zeptej se na tučné slovo i se slovesem z věty: čekal …? pozvala …? Zkus pádové otázky po řadě. Která sedí?“"
+          },
+          {
+            "k": "C a D",
+            "text": "„Jaké krátké slovo stojí před tím jménem? Řekni otázku i s ním a se slovesem z věty.“"
+          },
+          {
+            "k": "E",
+            "text": "„Před tučným slovem žádné krátké slovo není. Zeptej se od slovesa maluje a zkus pádové otázky jednu po druhé.“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč dědečkovi v řadě C není 6. pád, i když se dá říct o dědečkovi.“",
+        "otocena_role_odpoved": "Ve větě je k: jel ke komu, čemu? K dědečkovi, takže 3. pád. O dědečkovi jen zní stejně, ale o ve větě není.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Řada A 4. pád: „Čekal kdo, co?“ Řada B 1. nebo 2. pád: „Pozvala koho, co?“ Řada C 6. pád: „Je tam k, nebo o?“ Řada D 2. nebo 3. pád: „Jaké krátké slovo tam je?“ Řada E 4. pád: „Čím maluje?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — všech pět pádů sedí. Pochvalte, že se dítě ptalo slovem z věty, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti dvě věty: „U dveří stojí kufr.“ „Táta balí kufr.“ U slova kufr v každé větě řekne otázku a pád. Kontrola pro vás: stojí kdo, co? 1. pád; balí koho, co? 4. pád. Tvar je stejný, rozhoduje otázka.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše pod sebe: bez bratra, k bratrovi, o bratrovi, s bratrem. Ke každému připíše otázku a pád. Potom zopakujte lekci „Vzory rodu mužského“. Kontrola pro vás: bez koho, čeho? 2. pád; ke komu, čemu? 3. pád; o kom, o čem? 6. pád; s kým, čím? 7. pád."
+      },
+      "tisk": {
+        "zadani": "V každé řadě zakroužkuj pád tučného slova: a) 1. pád b) 2. pád c) 3. pád d) 4. pád e) 6. pád f) 7. pád\n\nA) Po tréninku čekal před halou **autobus**.\n\nB) Lucka pozvala na oslavu **bratrance**.\n\nC) Adam jel na prázdniny k **dědečkovi**.\n\nD) Tomáš celý večer přemýšlel o **zápasu**.\n\nE) Ema maluje plakát širokým **štětcem**."
+      }
+    },
+    {
+      "id": "cj-t2-l5n-U2",
+      "typ": "nova",
+      "cil": "Přiřadit ke vzoru šest jmen rodu mužského, u kterých se vzor plete: ředitel a zajíc (muž), koberec (stroj), florbalista (předseda), poradce (soudce) a buk (hrad, i když roste).",
+      "cas_min": 5,
+      "zadani": "Ke kterému vzoru patří slovo?\n\nA) ředitel\n\nB) koberec\n\nC) florbalista\n\nD) poradce\n\nE) zajíc\n\nF) buk",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "A) ředitel",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "pán",
+                "spravne": false,
+                "typ_chyby": "vzor-pan-za-muz"
+              },
+              {
+                "id": "b",
+                "text": "hrad",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "muž",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "stroj",
+                "spravne": false
+              },
+              {
+                "id": "e",
+                "text": "předseda",
+                "spravne": false
+              },
+              {
+                "id": "f",
+                "text": "soudce",
+                "spravne": false,
+                "typ_chyby": "vzor-muz-za-soudce"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "B) koberec",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "pán",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "hrad",
+                "spravne": false,
+                "typ_chyby": "vzor-hrad-za-stroj"
+              },
+              {
+                "id": "c",
+                "text": "muž",
+                "spravne": false
+              },
+              {
+                "id": "d",
+                "text": "stroj",
+                "spravne": true
+              },
+              {
+                "id": "e",
+                "text": "předseda",
+                "spravne": false
+              },
+              {
+                "id": "f",
+                "text": "soudce",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "C) florbalista",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "pán",
+                "spravne": false,
+                "typ_chyby": "vzor-pan-za-predseda"
+              },
+              {
+                "id": "b",
+                "text": "hrad",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "muž",
+                "spravne": false
+              },
+              {
+                "id": "d",
+                "text": "stroj",
+                "spravne": false
+              },
+              {
+                "id": "e",
+                "text": "předseda",
+                "spravne": true
+              },
+              {
+                "id": "f",
+                "text": "soudce",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k4",
+          "popisek": "D) poradce",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "pán",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "hrad",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "muž",
+                "spravne": false,
+                "typ_chyby": "vzor-muz-za-soudce"
+              },
+              {
+                "id": "d",
+                "text": "stroj",
+                "spravne": false
+              },
+              {
+                "id": "e",
+                "text": "předseda",
+                "spravne": false
+              },
+              {
+                "id": "f",
+                "text": "soudce",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k5",
+          "popisek": "E) zajíc",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "pán",
+                "spravne": false,
+                "typ_chyby": "vzor-pan-za-muz"
+              },
+              {
+                "id": "b",
+                "text": "hrad",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "muž",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "stroj",
+                "spravne": false
+              },
+              {
+                "id": "e",
+                "text": "předseda",
+                "spravne": false
+              },
+              {
+                "id": "f",
+                "text": "soudce",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "F) buk",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "pán",
+                "spravne": false,
+                "typ_chyby": "zivotnost-podle-vyznamu"
+              },
+              {
+                "id": "b",
+                "text": "hrad",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "muž",
+                "spravne": false
+              },
+              {
+                "id": "d",
+                "text": "stroj",
+                "spravne": false,
+                "typ_chyby": "vzor-hrad-za-stroj"
+              },
+              {
+                "id": "e",
+                "text": "předseda",
+                "spravne": false
+              },
+              {
+                "id": "f",
+                "text": "soudce",
+                "spravne": false
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě v šesti krocích vybírá ze šesti vzorů rodu mužského. Proti minulé lekci přibyly dvě pasti: zvíře, které nepatří k pánovi (zajíc: bez zajíce), a strom, který roste, ale je neživotný (vidím buk). Rozhoduje test vidím ___, 2. pád s bez a konec slova v 1. pádě.",
+        "reseni": "#### A) ředitel\n\nmuž (vidím ředitele, bez ředitele; končí souhláskou)\n\n#### B) koberec\n\nstroj (vidím koberec, bez koberce)\n\n#### C) florbalista\n\npředseda (ten florbalista; končí na -a)\n\n#### D) poradce\n\nsoudce (ten poradce; končí na -e)\n\n#### E) zajíc\n\nmuž (vidím zajíce, bez zajíce)\n\n#### F) buk\n\nhrad (vidím buk, bez buku; že strom roste, nerozhoduje)\n\n**Výsledek:** A) muž, B) stroj, C) předseda, D) soudce, E) muž, F) hrad",
+        "otazky": [
+          "„Jak najdeš vzor slova rodu mužského? Řekni to vlastními slovy.“",
+          "„Vezmi slovo, u kterého váháš. Řekni: vidím ___ a bez ___. Který vzor zní stejně?“",
+          "„Řekni to slovo s ten. Jakým písmenem končí? Který ze šesti vzorů končí stejně?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč zajíc nepatří ke vzoru pán, i když je to zvíře.“",
+        "otocena_role_odpoved": "Řeknu bez zajíce. Končí to na -e jako bez muže, ne na -a jako bez pána. Proto muž.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U ředitele nebo zajíce vybere pán: „Bez zajíce, nebo bez zajíca?“ U koberce hrad: „Končí bez ___ jako bez hradu, nebo jako bez stroje?“ U florbalisty pán: „Jak končí?“ U poradce muž: „Jak končí poradce? A muž?“ U buku pán: „Vidím buk, nebo vidím buka?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — všech šest vzorů sedí. Pochvalte, že dítě zkoušelo vidím a bez u každého slova, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti čtyři slova: malíř, pomeranč, pianista, dárce. U každého řekne vzor a proč. Kontrola pro vás: malíř muž (bez malíře), pomeranč stroj (bez pomeranče), pianista předseda (končí na -a), dárce soudce (končí na -e).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše do řádku šest vzorů a pod každý 2. pád s bez. Pak k nim přiřadí slova zajíc, buk a florbalista. Potom zopakujte lekci „Vzory rodu mužského“. Kontrola pro vás: bez pána, hradu, muže, stroje, předsedy, soudce; zajíc – muž, buk – hrad, florbalista – předseda."
+      },
+      "tisk": {
+        "zadani": "U každého slova zakroužkuj vzor.\n\nA) ředitel: pán, hrad, muž, stroj, předseda, soudce\n\nB) koberec: pán, hrad, muž, stroj, předseda, soudce\n\nC) florbalista: pán, hrad, muž, stroj, předseda, soudce\n\nD) poradce: pán, hrad, muž, stroj, předseda, soudce\n\nE) zajíc: pán, hrad, muž, stroj, předseda, soudce\n\nF) buk: pán, hrad, muž, stroj, předseda, soudce"
+      }
+    },
+    {
+      "id": "cj-t2-l5n-U3",
+      "typ": "nova",
+      "cil": "Určit vzor tří jmen rodu mužského, která dítě jen slyší v jiném pádě (turistu, jezevčíkem, strážci): samo si je vrátí do 1. pádu.",
+      "cas_min": 5,
+      "zadani": "Poslechni si nahrávku. Pak odpověz na tři otázky. Nahrávku si můžeš pustit, kolikrát chceš.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Otázka 1",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t2/l5n-u3.mp3",
+            "prepis": "Na horách jsme potkali turistu s jezevčíkem a pak jsme poděkovali strážci parku za mapu.",
+            "max_prehrani": 0,
+            "otazka": "Ke kterému vzoru patří slovo „turistu“?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "pán",
+                  "spravne": false,
+                  "typ_chyby": "vzor-pan-za-predseda"
+                },
+                {
+                  "id": "b",
+                  "text": "předseda",
+                  "spravne": true
+                },
+                {
+                  "id": "c",
+                  "text": "žena",
+                  "spravne": false,
+                  "typ_chyby": "vzor-zena-za-predseda"
+                },
+                {
+                  "id": "d",
+                  "text": "hrad",
+                  "spravne": false
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Otázka 2",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t2/l5n-u3.mp3",
+            "prepis": "Na horách jsme potkali turistu s jezevčíkem a pak jsme poděkovali strážci parku za mapu.",
+            "max_prehrani": 0,
+            "otazka": "Ke kterému vzoru patří slovo „jezevčíkem“?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "pán",
+                  "spravne": true
+                },
+                {
+                  "id": "b",
+                  "text": "hrad",
+                  "spravne": false
+                },
+                {
+                  "id": "c",
+                  "text": "muž",
+                  "spravne": false,
+                  "typ_chyby": "vzor-pan-za-muz"
+                },
+                {
+                  "id": "d",
+                  "text": "předseda",
+                  "spravne": false
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Otázka 3",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t2/l5n-u3.mp3",
+            "prepis": "Na horách jsme potkali turistu s jezevčíkem a pak jsme poděkovali strážci parku za mapu.",
+            "max_prehrani": 0,
+            "otazka": "Ke kterému vzoru patří slovo „strážci“?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "muž",
+                  "spravne": false,
+                  "typ_chyby": "vzor-muz-za-soudce"
+                },
+                {
+                  "id": "b",
+                  "text": "soudce",
+                  "spravne": true
+                },
+                {
+                  "id": "c",
+                  "text": "pán",
+                  "spravne": false
+                },
+                {
+                  "id": "d",
+                  "text": "stroj",
+                  "spravne": false
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě nahrávku jen slyší, text nevidí; co zazní, máte sbalené pod „Co zazní v nahrávce“. Nečtěte to nahlas. Proti minulé lekci jsou otázky tři a nahrávka je delší. Všechna tři slova zazní v jiném tvaru než v 1. pádě; dítě si je samo vrátí (ten turista, ten jezevčík, ten strážce) a teprve potom hledá vzor.",
+        "reseni": "Otázka 1: předseda (ten turista; v 1. pádě končí na -a, bez turisty)\n\nOtázka 2: pán (ten jezevčík; vidím jezevčíka, bez jezevčíka)\n\nOtázka 3: soudce (ten strážce; v 1. pádě končí na -e)\n\n**Výsledek:** 1. předseda, 2. pán, 3. soudce",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Co se v nahrávce stalo? Řekni to vlastními slovy.“"
+          },
+          {
+            "k": "Otázka 1 a 2",
+            "text": "„Řekni to slovo tak, aby před něj šlo říct ten. Jak končí? Pak zkus: vidím ___ a bez ___.“"
+          },
+          {
+            "k": "Otázka 3",
+            "text": "„Řekni to slovo s ten. Jakým písmenem končí v 1. pádě? Který vzor končí stejně?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, jak poznáš vzor slova, které v nahrávce slyšíš v jiném tvaru.“",
+        "otocena_role_odpoved": "Řeknu si ho v 1. pádě s ten: ten strážce. Končí na -e, takže soudce. Ten turista končí na -a, takže předseda.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 (Otázka 1) vybere žena nebo pán: „Řekneš ten, nebo ta turista? Jak končí?“ V kroku 2 (Otázka 2) muž: „Řekni bez ___. Jak to končí?“ V kroku 3 (Otázka 3) muž, protože slyší -i: „Jak končí ten strážce? A muž?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — tři vzory sedí jen podle poslechu. Pochvalte, že si dítě slova vrátilo do tvaru s ten, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Řekněte dítěti větu: „Klára hraje v kapele s houslistou.“ Zeptejte se, ke kterému vzoru patří slovo houslistou. Kontrola pro vás: předseda (ten houslista; je to muž a končí na -a).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra řekněte dítěti tři spojení: s pianistou, bez jezevčíka, ke strážci. Dítě každé slovo napíše tak, aby před něj šlo říct ten, a připíše vzor. Potom zopakujte lekci „Vzory rodu mužského“. Kontrola pro vás: ten pianista – předseda, ten jezevčík – pán, ten strážce – soudce."
+      },
+      "tisk": {
+        "zadani": "Poslouchej nahrávku (pustí rodič). Můžeš si ji pustit, kolikrát chceš. Pak zakroužkuj odpovědi.\n\n1. Ke kterému vzoru patří slovo „turistu“? — a) pán b) předseda c) žena d) hrad\n\n2. Ke kterému vzoru patří slovo „jezevčíkem“? — a) pán b) hrad c) muž d) předseda\n\n3. Ke kterému vzoru patří slovo „strážci“? — a) muž b) soudce c) pán d) stroj"
+      }
+    },
+    {
+      "id": "cj-t2-l5n-U4",
+      "typ": "detektiv",
+      "cil": "Najít u Petra neživotné jméno na -ec, které dal ke vzoru hrad (kopec), mezi třemi slovy, která má u vzorů hrad a pán správně, a vybrat správný vzor.",
+      "cas_min": 5,
+      "zadani": "Petr určoval vzory ve větě:\n\nNa výletě vedl Adam nováčka na kopec za parkem.\n\nNapsal: **výletě** – hrad, **nováčka** – pán, **kopec** – hrad, **parkem** – hrad. Udělal **jednu** chybu. Najdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na slovo, které Petr určil špatně.",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Na výletě vedl Adam nováčka na kopec za parkem.",
+            "cil": "slova",
+            "min": 1,
+            "max": 1
+          },
+          "spravne": [
+            6
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                1,
+                4,
+                8
+              ],
+              "typ_chyby": "detektiv-jine-slovo"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Jaký vzor má to slovo?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "stroj",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "hrad",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "c",
+                "text": "pán",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "d",
+                "text": "muž",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr určil čtyři vzory, jeden špatně. Chyba je nenápadná: tři slova má Petr správně a to chybné vypadá na první pohled stejně jako hrad. Dítě v kroku 1 klikne na chybné slovo a v kroku 2 (Jaký vzor má to slovo?) vybere vzor. Nabídka má vzory všech slov, takže krok 2 neprozradí krok 1.",
+        "reseni": "Chyba je „kopec“: Petr ho dal ke vzoru hrad.\n\nkopec: stroj (vidím kopec, bez kopce jako bez stroje)\n\nvýletě: hrad (ten výlet, bez výletu; Petr má dobře)\n\nnováčka: pán (ten nováček, vidím nováčka; Petr má dobře)\n\nparkem: hrad (ten park, bez parku; Petr má dobře)\n\n**Výsledek:** krok 1 kopec, krok 2 stroj",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Co měl Petr udělat? Řekni to vlastními slovy.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrova slova jedno po druhém. Každé řekni s ten a s bez. Sedí vzor u všech čtyř?“"
+          },
+          {
+            "k": "Krok 2",
+            "text": "„Řekni to slovo s ten a s bez. Který vzor zní ve 2. pádě stejně?“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a jak si ji příště ohlídám.“",
+        "otocena_role_odpoved": "Kopec není hrad. Bez kopce končí na -e jako bez stroje. Příště to zkusit s bez. Výlet, nováčka a park máš dobře.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na jiné slovo nebo dlouho hledá, protože kopec zní jako hrad. Zeptejte se: „Řekni bez ___ u každého slova. Jak to končí?“ (Bez výletu, nováčka, parku má Petr dobře.) V kroku 2 vybere hrad: „Bez kopce, nebo bez kopcu?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — nenápadnou Petrovu chybu dítě našlo i opravilo. Pochvalte, že zkoušelo bez ___ u všech slov, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr napsal, že obličej patří ke vzoru hrad.“ Zeptejte se: „Má Petr pravdu? Jak to ověříš?“ Kontrola pro vás: nemá; bez obličeje končí na -e jako bez stroje, takže stroj.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše pod sebe: kopec, park, výlet, nováček. Ke každému připíše 2. pád s bez a vzor. Potom zopakujte lekci „Vzory rodu mužského“. Kontrola pro vás: bez kopce – stroj, bez parku – hrad, bez výletu – hrad, bez nováčka – pán."
+      },
+      "tisk": {
+        "zadani": "Petr určoval vzory ve větě:\n\nNa výletě vedl Adam nováčka na kopec za parkem.\n\nNapsal: výletě – hrad, nováčka – pán, kopec – hrad, parkem – hrad. Udělal jednu chybu.\n\nA) Podtrhni slovo, které Petr určil špatně.\n\nB) Jaký vzor má to slovo? Zakroužkuj: a) stroj b) hrad c) pán d) muž"
+      }
+    },
+    {
+      "id": "cj-t2-l5n-U5",
+      "typ": "kontrolni",
+      "cil": "Samostatně určit vzor šesti jmen rodu mužského v delším textu, každé k jinému vzoru: ochránce (soudce), starosta (předseda), smrk (hrad, roste), jezevec (muž, zvíře), keř (stroj), brouk (pán).",
+      "cas_min": 6,
+      "zadani": "U každého označeného slova vyber vzor.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Ochránce přírody provázel po naučné stezce starostu a naši třídu. Ve stínu smrku nám ukázal stopy jezevce. Pod keřem jsme pak našli brouka.",
+            "slova": [
+              0,
+              6,
+              12,
+              16,
+              18,
+              22
+            ],
+            "role": [
+              "pán",
+              "hrad",
+              "muž",
+              "stroj",
+              "předseda",
+              "soudce"
+            ]
+          },
+          "spravne": {
+            "0": "soudce",
+            "6": "předseda",
+            "12": "hrad",
+            "16": "muž",
+            "18": "stroj",
+            "22": "pán"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "12": "pán"
+              },
+              "typ_chyby": "zivotnost-podle-vyznamu"
+            },
+            {
+              "hodnota": {
+                "6": "pán"
+              },
+              "typ_chyby": "vzor-pan-za-predseda"
+            },
+            {
+              "hodnota": {
+                "0": "muž"
+              },
+              "typ_chyby": "vzor-muz-za-soudce"
+            },
+            {
+              "hodnota": {
+                "18": "hrad"
+              },
+              "typ_chyby": "vzor-hrad-za-stroj"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Šest slov, každé k jinému vzoru. Pasti: smrk roste, ale je neživotný; jezevec je zvíře, a přesto ne pán (bez jezevce); keř patří ke stroji (bez keře).",
+        "reseni": "Ochránce: soudce (ten ochránce; končí na -e)\n\nstarostu: předseda (ten starosta; končí na -a)\n\nsmrku: hrad (ten smrk; vidím smrk, bez smrku)\n\njezevce: muž (ten jezevec; vidím jezevce, bez jezevce)\n\nkeřem: stroj (ten keř; vidím keř, bez keře)\n\nbrouka: pán (ten brouk; vidím brouka, bez brouka)\n\n**Výsledek:** soudce, předseda, hrad, muž, stroj, pán",
+        "otazky": [
+          "„Řekni mi vlastními slovy, jak najdeš vzor jména rodu mužského.“",
+          "„Vezmi slovo, u kterého váháš. Řekni ho v 1. pádě s ten a pak: vidím ___ a bez ___. Který vzor zní stejně?“",
+          "„Když je slovo ve větě v jiném tvaru, řekni si ho nejdřív s ten. Jakým písmenem končí?“"
+        ],
+        "otocena_role": "„Najdi v textu dvě slova, u kterých se vzor snadno splete. Dokaž mi testem, jak to je.“",
+        "otocena_role_odpoved": "Smrk: vidím smrk, ne smrka, takže neživotný a hrad. Jezevec: bez jezevce, končí na -e jako bez muže, ne jako bez pána.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: smrk jako pán: „Vidím smrk, nebo smrka?“ Starostu jako pán, ochránce jako muž: „Jak končí v 1. pádě?“ Jezevce jako pán, keř jako hrad: „Bez ___? Jak to končí?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — všech šest vzorů sedí. Pochvalte, že dítě zkoušelo vidím a bez u každého slova. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti tři slova: vrabec, havran, deštník. U každého řekne vzor a test. Kontrola pro vás: vrabec muž (bez vrabce), havran pán (vidím havrana, bez havrana), deštník hrad (vidím deštník, bez deštníku).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše do sloupce: smrk, jezevec, keř, starosta. Ke každému připíše vidím ___, bez ___ a vzor. Potom zopakujte lekci „Vzory rodu mužského“. Kontrola pro vás: vidím smrk, bez smrku – hrad; vidím jezevce, bez jezevce – muž; vidím keř, bez keře – stroj; vidím starostu, bez starosty – předseda."
+      },
+      "tisk": {
+        "zadani": "Nad každé tučné slovo napiš vzor: pán, hrad, muž, stroj, předseda, soudce.\n\n**Ochránce** přírody provázel po naučné stezce **starostu** a naši třídu. Ve stínu **smrku** nám ukázal stopy **jezevce**. Pod **keřem** jsme pak našli **brouka**."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Naostro dvojče lekce cj-t2-l5 (ZADANI-OSMA §9), autor 9. 10. 2026 podle TEMA-2-NAOSTRO.md. Korektura 9. 10. 2026: každý hodnocený tvar (správné odpovědi, dlaždice, Petrova slova, mezery, text nahrávky) a slova v „Kontrole pro vás“ znovu ověřeny v tabulkách tvarů ÚJČ (nastroje/ujc.sh). Slova, která ÚJČ kvůli přetížení nepotvrdil, korektor nahradil ověřenými slovy se stejným jevem; Nahrazeno: most → park (detektiv). Bez dublet v hodnocených místech (1. p. mn. -i/-ové se hodnotí jen i × y; ženská jména na souhlásku jen nekolísající podle id=251). Hodnocená slova se neopakují z učebních lekcí cj-t2-l5 … l8. Indexy tokenů přepočítány, vzorové odpovědi i všechny známé chyby ověřeny přes vyhodnotKrok. Nahrávka t2/l5n-u3.mp3 zatím není (řádek v rozpisu, vedoucí sloučí do AUDIO.md).",
+    "zkontroloval": "korektor",
+    "datum": "2026-10-09",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?id=222",
+      "https://prirucka.ujc.cas.cz/?id=226",
+      "https://prirucka.ujc.cas.cz/?slovo=autobus",
+      "https://prirucka.ujc.cas.cz/?slovo=bratranec",
+      "https://prirucka.ujc.cas.cz/?slovo=d%C4%9Bde%C4%8Dek",
+      "https://prirucka.ujc.cas.cz/?slovo=z%C3%A1pas",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1t%C4%9Btec",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%99editel",
+      "https://prirucka.ujc.cas.cz/?slovo=koberec",
+      "https://prirucka.ujc.cas.cz/?slovo=florbalista",
+      "https://prirucka.ujc.cas.cz/?slovo=poradce",
+      "https://prirucka.ujc.cas.cz/?slovo=zaj%C3%ADc",
+      "https://prirucka.ujc.cas.cz/?slovo=buk",
+      "https://prirucka.ujc.cas.cz/?slovo=turista",
+      "https://prirucka.ujc.cas.cz/?slovo=jezev%C4%8D%C3%ADk",
+      "https://prirucka.ujc.cas.cz/?slovo=str%C3%A1%C5%BEce",
+      "https://prirucka.ujc.cas.cz/?slovo=v%C3%BDlet",
+      "https://prirucka.ujc.cas.cz/?slovo=nov%C3%A1%C4%8Dek",
+      "https://prirucka.ujc.cas.cz/?slovo=kopec",
+      "https://prirucka.ujc.cas.cz/?slovo=park",
+      "https://prirucka.ujc.cas.cz/?slovo=ochr%C3%A1nce",
+      "https://prirucka.ujc.cas.cz/?slovo=starosta",
+      "https://prirucka.ujc.cas.cz/?slovo=smrk",
+      "https://prirucka.ujc.cas.cz/?slovo=jezevec",
+      "https://prirucka.ujc.cas.cz/?slovo=ke%C5%99",
+      "https://prirucka.ujc.cas.cz/?slovo=brouk",
+      "https://prirucka.ujc.cas.cz/?slovo=mal%C3%AD%C5%99",
+      "https://prirucka.ujc.cas.cz/?slovo=pomeran%C4%8D",
+      "https://prirucka.ujc.cas.cz/?slovo=pianista",
+      "https://prirucka.ujc.cas.cz/?slovo=d%C3%A1rce",
+      "https://prirucka.ujc.cas.cz/?slovo=houslista",
+      "https://prirucka.ujc.cas.cz/?slovo=havran",
+      "https://prirucka.ujc.cas.cz/?slovo=vrabec",
+      "https://prirucka.ujc.cas.cz/?slovo=de%C5%A1tn%C3%ADk",
+      "https://prirucka.ujc.cas.cz/?slovo=obli%C4%8Dej",
+      "https://prirucka.ujc.cas.cz/?slovo=bratr"
+    ],
+    "testovaci_rodic": null
+  }
+}
