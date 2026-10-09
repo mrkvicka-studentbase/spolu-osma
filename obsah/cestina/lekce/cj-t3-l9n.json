@@ -1,0 +1,855 @@
+{
+  "id": "cj-t3-l9n",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 3,
+  "poradi": 1,
+  "tema": "Druhy přídavných jmen a stupňování",
+  "kapitola": "pridavna-jmena",
+  "cil_pro_rodice": "Dítě samo určí druh přídavného jména i v jiném tvaru (tmavá, bratrova, Lucčiny) a stupeň i u tvarů bez -ejší (vyšší, kratší, horší) a najde chybu schovanou ve 3. stupni.",
+  "uvod_pro_rodice": "Dítě tuhle látku dělalo v lekci „Druhy přídavných jmen a stupňování“. Dnes ukáže, že to opravdu umí: úloh je víc, slova jsou v různých tvarech a Petrova chyba je lépe schovaná. Otázky z taháku použijte, jen když se zasekne.",
+  "uvod_pravidla": [
+    {
+      "znak": "tvrdé · měkké · přivlastňovací",
+      "text": "co to je"
+    },
+    {
+      "znak": "ten/ta/to · čí? · srovnává?",
+      "text": "test"
+    },
+    {
+      "znak": "široký – širší – nejširší",
+      "text": "příklad"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "přídavné jméno": "slovo, které říká, jaký, který nebo čí kdo nebo co je; ptáme se na něj jaký? nebo čí?",
+    "tvrdé přídavné jméno": "mění konec podle jména: bílý pes, bílá kočka, bílé kotě",
+    "měkké přídavné jméno": "má stejný konec u ten, ta i to: lesní cesta, lesní potok, lesní jezero",
+    "přivlastňovací přídavné jméno": "odpovídá na otázku čí? a je utvořené od jména osoby nebo zvířete: strýcův, tetin, pejskův",
+    "stupeň": "1. stupeň nic nesrovnává, 2. stupeň srovnává dvě věci, 3. stupeň vybírá jednu ze všech a má nej-",
+    "stupňování": "tvoření 2. a 3. stupně; některá slova se stupňují jinak než ostatní a tvar se ověří ve větě (Tenhle je ještě … než ten druhý.)"
+  },
+  "cas_min": 25,
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t3-l9n-U1",
+      "typ": "rozcvicka",
+      "cil": "Rozehřát test přídavného jména (jaký?) na čtyřčlenných řadách z jedné rodiny: přídavné jméno, příslovce, podstatné jméno a sloveso (Z1).",
+      "cas_min": 4,
+      "zadani": "V každé řadě vyber přídavné jméno.\n\nA) radostně, radost, raduje se, radostný\n\nB) čistota, čistí, čistý, čistě\n\nC) odvážný, odvážně, odvaha, odváží se\n\nD) lenoší, líně, lenost, líný",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "radostně",
+                "spravne": false,
+                "typ_chyby": "sd-prislovce-za-pridavne"
+              },
+              {
+                "id": "b",
+                "text": "radost",
+                "spravne": false,
+                "typ_chyby": "sd-podstatne-za-pridavne"
+              },
+              {
+                "id": "c",
+                "text": "raduje se",
+                "spravne": false,
+                "typ_chyby": "sd-sloveso-za-pridavne"
+              },
+              {
+                "id": "d",
+                "text": "radostný",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "čistota",
+                "spravne": false,
+                "typ_chyby": "sd-podstatne-za-pridavne"
+              },
+              {
+                "id": "b",
+                "text": "čistí",
+                "spravne": false,
+                "typ_chyby": "sd-sloveso-za-pridavne"
+              },
+              {
+                "id": "c",
+                "text": "čistý",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "čistě",
+                "spravne": false,
+                "typ_chyby": "sd-prislovce-za-pridavne"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "odvážný",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "odvážně",
+                "spravne": false,
+                "typ_chyby": "sd-prislovce-za-pridavne"
+              },
+              {
+                "id": "c",
+                "text": "odvaha",
+                "spravne": false,
+                "typ_chyby": "sd-podstatne-za-pridavne"
+              },
+              {
+                "id": "d",
+                "text": "odváží se",
+                "spravne": false,
+                "typ_chyby": "sd-sloveso-za-pridavne"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "lenoší",
+                "spravne": false,
+                "typ_chyby": "sd-sloveso-za-pridavne"
+              },
+              {
+                "id": "b",
+                "text": "líně",
+                "spravne": false,
+                "typ_chyby": "sd-prislovce-za-pridavne"
+              },
+              {
+                "id": "c",
+                "text": "lenost",
+                "spravne": false,
+                "typ_chyby": "sd-podstatne-za-pridavne"
+              },
+              {
+                "id": "d",
+                "text": "líný",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje test přídavného jména: ptáme se jaký? a slovo se hodí před jméno. Proti učební lekci má každá řada čtyři slova z jedné rodiny: přídavné jméno, příslovce (říká jak), podstatné jméno (jde říct ten, ta) a sloveso (říká, co kdo dělá). Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) radostně, radost, raduje se, radostný\n\nradostný (jaký den? radostný; radostně říká jak, radost je název, raduje se říká, co kdo dělá)\n\n#### B) čistota, čistí, čistý, čistě\n\nčistý (jaké tričko? čisté; čistota je název, čistí říká, co kdo dělá, čistě říká jak)\n\n#### C) odvážný, odvážně, odvaha, odváží se\n\nodvážný (jaký kluk? odvážný; odvážně říká jak, odvaha je název, odváží se říká, co kdo dělá)\n\n#### D) lenoší, líně, lenost, líný\n\nlíný (jaký kocour? líný; lenoší říká, co kdo dělá, líně říká jak, lenost je název)\n\n**Výsledek:** A) radostný, B) čistý, C) odvážný, D) líný",
+        "otazky": [
+          {
+            "k": "A a B",
+            "text": "„Dej každé slovo z řady před slovo den nebo tričko. Které spojení řekne, jaké to je?“"
+          },
+          {
+            "k": "C",
+            "text": "„U každého slova z řady C se zeptej: jaký? jak? co dělá? Které slovo odpoví na jaký?“"
+          },
+          {
+            "k": "D",
+            "text": "„Zkus každé slovo z řady D ve větě: Náš kocour je ___. Které tam pasuje?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč odvážně není přídavné jméno, i když je ze stejné rodiny jako odvážný.“",
+        "otocena_role_odpoved": "Na odvážně se ptám jak? (skočil odvážně), ne jaký? Přídavné jméno říká, jaký kdo je: odvážný kluk.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Vybere radostně, čistě, odvážně nebo líně: „Ptáš se jaký, nebo jak?“ Vybere raduje se, čistí, odváží se nebo lenoší: „Říká to, jaký kdo je, nebo co dělá?“ Vybere radost, čistota, odvaha nebo lenost: „Jde před to říct ten nebo ta?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — přídavná jména sedí i ve čtyřčlenných řadách. Pochvalte, že dítě zkoušelo otázku jaký, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti tři slova: hlasitý, hlasitost, hlasitě. U každého řekne, jestli se na ně ptá jaký. Kontrola pro vás: jen hlasitý (jaký hovor? hlasitý); hlasitost je název (ta hlasitost), hlasitě říká jak.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše pod sebe čistý, čistě, čistota, čistí a ke každému připíše otázku: jaký?, jak?, ten/ta?, nebo co dělá? Ke slovu s jaký? dopíše jméno. Potom zopakujte lekci „Druhy přídavných jmen a stupňování“. Kontrola pro vás: čistý – jaký?, čistě – jak?, čistota – ta čistota, čistí – co dělá."
+      },
+      "tisk": {
+        "zadani": "V každé řadě zakroužkuj přídavné jméno.\n\nA) radostně, radost, raduje se, radostný\n\nB) čistota, čistí, čistý, čistě\n\nC) odvážný, odvážně, odvaha, odváží se\n\nD) lenoší, líně, lenost, líný"
+      }
+    },
+    {
+      "id": "cj-t3-l9n-U2",
+      "typ": "nova",
+      "cil": "Rozlišit tvrdé, měkké a přivlastňovací přídavné jméno u šesti slov, i když stojí v jiném tvaru než u ten (tmavá, bratrova).",
+      "cas_min": 5,
+      "zadani": "Jaké je tučné přídavné jméno: tvrdé, měkké, nebo přivlastňovací?\n\nA) **večerní** autobus\n\nB) **sestřin** pokoj\n\nC) **tmavá** mikina\n\nD) **bratrova** kytara\n\nE) **školní** hřiště\n\nF) **těžký** kufr",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "A) večerní autobus",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "tvrdé",
+                "spravne": false,
+                "typ_chyby": "pridavne-tvrde-za-mekke"
+              },
+              {
+                "id": "b",
+                "text": "měkké",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "přivlastňovací",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "B) sestřin pokoj",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "tvrdé",
+                "spravne": false,
+                "typ_chyby": "pridavne-privlastnovaci-za-tvrde"
+              },
+              {
+                "id": "b",
+                "text": "měkké",
+                "spravne": false,
+                "typ_chyby": "privlastnovaci-neuzna"
+              },
+              {
+                "id": "c",
+                "text": "přivlastňovací",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "C) tmavá mikina",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "tvrdé",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "měkké",
+                "spravne": false,
+                "typ_chyby": "pridavne-tvrde-za-mekke"
+              },
+              {
+                "id": "c",
+                "text": "přivlastňovací",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k4",
+          "popisek": "D) bratrova kytara",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "tvrdé",
+                "spravne": false,
+                "typ_chyby": "pridavne-privlastnovaci-za-tvrde"
+              },
+              {
+                "id": "b",
+                "text": "měkké",
+                "spravne": false,
+                "typ_chyby": "privlastnovaci-neuzna"
+              },
+              {
+                "id": "c",
+                "text": "přivlastňovací",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k5",
+          "popisek": "E) školní hřiště",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "tvrdé",
+                "spravne": false,
+                "typ_chyby": "pridavne-tvrde-za-mekke"
+              },
+              {
+                "id": "b",
+                "text": "měkké",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "přivlastňovací",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "F) těžký kufr",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "tvrdé",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "měkké",
+                "spravne": false,
+                "typ_chyby": "pridavne-tvrde-za-mekke"
+              },
+              {
+                "id": "c",
+                "text": "přivlastňovací",
+                "spravne": false
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Šest kroků se stejnou nabídkou. Test: přídavné jméno se řekne s ten, ta, to. Měkké konec nemění, tvrdé ho mění. Přivlastňovací odpovídá na čí? a je od jména osoby. Proti učební lekci jsou dvě slova v jiném tvaru než u ten (tmavá, bratrova): dítě je musí říct i s ten a to.",
+        "reseni": "A) večerní: měkké (večerní autobus, večerní procházka, večerní představení: konec stejný)\n\nB) sestřin: přivlastňovací (čí pokoj? sestřin, od slova sestra)\n\nC) tmavá: tvrdé (tmavý, tmavá, tmavé: konec se mění)\n\nD) bratrova: přivlastňovací (čí kytara? bratrova, od slova bratr)\n\nE) školní: měkké (školní hřiště, školní taška, školní výlet: konec stejný)\n\nF) těžký: tvrdé (těžký, těžká, těžké)\n\n**Výsledek:** A) měkké, B) přivlastňovací, C) tvrdé, D) přivlastňovací, E) měkké, F) tvrdé",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Jaké tři druhy přídavných jmen znáš? Jak každý z nich poznáš?“"
+          },
+          {
+            "k": "Každý krok",
+            "text": "„Řekni to slovo s ten, ta a to, třeba s pes, kočka, kotě. Mění se jeho konec?“"
+          },
+          {
+            "k": "Každý krok",
+            "text": "„Zeptej se na to slovo čí? a jaký? Která otázka sedí? Je utvořené od slova pro osobu?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč bratrova není tvrdé, i když se jí mění konec.“",
+        "otocena_role_odpoved": "Odpovídá na čí? (čí kytara?) a je od slova bratr. Takové slovo je přivlastňovací, i když se mění: bratrův, bratrova.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U večerní nebo školní zvolí tvrdé, u tmavá nebo těžký měkké: „Řekni to s ten, ta, to. Mění se konec?“ U sestřin nebo bratrova zvolí tvrdé či měkké: „Ptáš se jaký?, nebo čí?“ Zvolí přivlastňovací jinde: „Je to slovo od osoby?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — druhy sedí i u slov v jiném tvaru. Pochvalte, že dítě zkoušelo ten, ta, to i otázku čí, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti tři spojení: noční vlak, mámina taška, bílá čepice. U každého přídavného jména řekne, jestli je tvrdé, měkké, nebo přivlastňovací. Kontrola pro vás: noční měkké (noční vlak, noční obloha), mámina přivlastňovací (čí taška? od máma), bílá tvrdé (bílý, bílá).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě nakreslí tři sloupce: tvrdé, měkké, přivlastňovací. Řekněte mu slova denní, strýcův, kulatý, tetina, noční, hnědá a ať je zapíše do sloupců. Potom zopakujte lekci „Druhy přídavných jmen a stupňování“. Kontrola pro vás: tvrdé kulatý, hnědá; měkké denní, noční; přivlastňovací strýcův, tetina."
+      },
+      "tisk": {
+        "zadani": "Ke každému tučnému přídavnému jménu zakroužkuj: a) tvrdé b) měkké c) přivlastňovací\n\nA) **večerní** autobus\n\nB) **sestřin** pokoj\n\nC) **tmavá** mikina\n\nD) **bratrova** kytara\n\nE) **školní** hřiště\n\nF) **těžký** kufr"
+      }
+    },
+    {
+      "id": "cj-t3-l9n-U3",
+      "typ": "nova",
+      "cil": "Poslechem (bez textu) poznat, od kterého slova je nepravidelný 2. stupeň horší, určit druh slova Lucčina a najít ve slyšené větě 2. stupeň mezi dalšími přídavnými jmény.",
+      "cas_min": 5,
+      "zadani": "Poslechni si větu. Pak odpověz na tři otázky. Nahrávku si můžeš pustit, kolikrát chceš.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Otázka 1",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t3/l9n-u3.mp3",
+            "prepis": "Lucčina stará bunda je horší než moje, ale pořád je ze všech nejteplejší.",
+            "max_prehrani": 0,
+            "otazka": "Od kterého slova je utvořené slovo „horší“?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "hořký",
+                  "spravne": false
+                },
+                {
+                  "id": "b",
+                  "text": "špatný",
+                  "spravne": true
+                },
+                {
+                  "id": "c",
+                  "text": "hrubý",
+                  "spravne": false
+                },
+                {
+                  "id": "d",
+                  "text": "hodný",
+                  "spravne": false
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Otázka 2",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t3/l9n-u3.mp3",
+            "prepis": "Lucčina stará bunda je horší než moje, ale pořád je ze všech nejteplejší.",
+            "max_prehrani": 0,
+            "otazka": "Jaké přídavné jméno je slovo „Lucčina“?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "tvrdé",
+                  "spravne": false,
+                  "typ_chyby": "pridavne-privlastnovaci-za-tvrde"
+                },
+                {
+                  "id": "b",
+                  "text": "měkké",
+                  "spravne": false,
+                  "typ_chyby": "privlastnovaci-neuzna"
+                },
+                {
+                  "id": "c",
+                  "text": "přivlastňovací",
+                  "spravne": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Otázka 3",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t3/l9n-u3.mp3",
+            "prepis": "Lucčina stará bunda je horší než moje, ale pořád je ze všech nejteplejší.",
+            "max_prehrani": 0,
+            "otazka": "Které slovo z věty je ve 2. stupni?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "stará",
+                  "spravne": false
+                },
+                {
+                  "id": "b",
+                  "text": "horší",
+                  "spravne": true
+                },
+                {
+                  "id": "c",
+                  "text": "nejteplejší",
+                  "spravne": false,
+                  "typ_chyby": "stupnovani-zamena"
+                },
+                {
+                  "id": "d",
+                  "text": "Lucčina",
+                  "spravne": false
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě větu jen slyší, text nevidí. Co v nahrávce zazní, máte sbalené pod „Co zazní v nahrávce“; nahlas to nečtěte. Proti učební lekci je věta delší a otázky jsou tři. Krok 1: od kterého slova je horší (stupňuje se jinak). Krok 2: druh slova Lucčina (od jména Lucka). Krok 3: které slovo je 2. stupeň, i když nemá -ejší.",
+        "reseni": "Otázka 1: špatný (špatný – horší – nejhorší; hořký dá hořčejší, hrubý hrubší nebo hrubější, hodný hodnější)\n\nOtázka 2: přivlastňovací (čí bunda? Lucčina, od jména Lucka)\n\nOtázka 3: horší (srovnává dvě bundy; nejteplejší je 3. stupeň, stará 1. stupeň, Lucčina je přivlastňovací)\n\n**Výsledek:** 1. špatný, 2. přivlastňovací, 3. horší",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„O čem ta věta je? Řekni to vlastními slovy.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Řekni každé slovo z nabídky ve větě: Tahle bunda je ještě ___ než ta druhá. Které z nich dá horší?“"
+          },
+          {
+            "k": "Krok 2 a 3",
+            "text": "„Zeptej se na slova z nabídky: čí? jaký? Srovnává slovo dvě věci, vybírá ze všech, nebo nesrovnává nic?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, jak poznáš 2. stupeň, když slovo nekončí na -ejší.“",
+        "otocena_role_odpoved": "Podívám se, jestli srovnává dvě věci: horší než moje. To dělá 2. stupeň. Některá slova se stupňují jinak: špatný, horší, nejhorší.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 vybere hořký, hrubý nebo hodný: „Řekni 2. stupeň toho slova ve větě. Dá to horší?“ V kroku 2 zvolí tvrdé nebo měkké: „Ptáš se jaký?, nebo čí?“ V kroku 3 vybere nejteplejší: „Srovnává to dvě věci, nebo vybírá ze všech?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — dítě jen poslechem poznalo stupeň i druh. Pochvalte, že si větu pouštělo znovu, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Řekněte dítěti větu: „Strýcův pes je větší než náš, ale ze všech nejhlasitější.“ Dítě ji jen slyší. Řekne, od kterého slova je větší, jaký druh je strýcův a které slovo je 3. stupeň. Kontrola pro vás: větší je od velký; strýcův přivlastňovací (čí pes?); nejhlasitější je 3. stupeň.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše pod sebe špatný, velký, dlouhý a ke každému připíše 2. a 3. stupeň. Každý 2. stupeň řekne ve větě: Tenhle je ještě … Potom zopakujte lekci „Druhy přídavných jmen a stupňování“. Kontrola pro vás: špatný – horší – nejhorší (řidčeji i špatnější), velký – větší – největší, dlouhý – delší – nejdelší."
+      },
+      "tisk": {
+        "zadani": "Poslouchej nahrávku (pustí rodič). Můžeš si ji pustit, kolikrát chceš. Pak zakroužkuj odpovědi.\n\n1. Od kterého slova je utvořené slovo „horší“? — a) hořký b) špatný c) hrubý d) hodný\n\n2. Jaké přídavné jméno je slovo „Lucčina“? — a) tvrdé b) měkké c) přivlastňovací\n\n3. Které slovo z věty je ve 2. stupni? — a) stará b) horší c) nejteplejší d) Lucčina"
+      }
+    },
+    {
+      "id": "cj-t3-l9n-U4",
+      "typ": "detektiv",
+      "cil": "Najít u spolužáka chybu schovanou až ve 3. stupni (dlouhý – delší – nejdloužší) mezi správnými řadami, které vypadají neobvykle, a vybrat opravu.",
+      "cas_min": 5,
+      "zadani": "Petr stupňoval čtyři přídavná jména:\n\nhezký – hezčí – nejhezčí\n\ndlouhý – delší – nejdloužší\n\ntichý – tišší – nejtišší\n\nkrátký – kratší – nejkratší\n\nU jednoho slova udělal **chybu**. Najdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Kterou řadu má Petr špatně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "hezký – hezčí – nejhezčí",
+                "spravne": false,
+                "typ_chyby": "detektiv-jine-slovo"
+              },
+              {
+                "id": "b",
+                "text": "dlouhý – delší – nejdloužší",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "tichý – tišší – nejtišší",
+                "spravne": false,
+                "typ_chyby": "detektiv-jine-slovo"
+              },
+              {
+                "id": "d",
+                "text": "krátký – kratší – nejkratší",
+                "spravne": false,
+                "typ_chyby": "detektiv-jine-slovo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Která oprava je správná?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "hezký – hezkejší – nejhezkejší",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "b",
+                "text": "dlouhý – delší – nejdelší",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "tichý – tichší – nejtichší",
+                "spravne": false,
+                "typ_chyby": "stupnovani-nepravidelne-pravidelne"
+              },
+              {
+                "id": "d",
+                "text": "krátký – krátčí – nejkrátčí",
+                "spravne": false,
+                "typ_chyby": "stupnovani-nepravidelne-pravidelne"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Tři řady má dobře, jednu špatně. Proti učební lekci je chyba schovaná až ve 3. stupni a správné řady vypadají neobvykle (hezčí, tišší, kratší). V kroku 1 dítě vybere chybnou řadu, v kroku 2 její opravu; nabídka má opravu ke každé řadě, správná je jen jedna.",
+        "reseni": "Chyba je v řadě dlouhý: 2. stupeň delší je dobře, 3. stupeň má být nejdelší.\n\nhezký – hezčí – nejhezčí (správně)\n\ndlouhý – delší – nejdelší (Petr napsal nejdloužší)\n\ntichý – tišší – nejtišší (správně)\n\nkrátký – kratší – nejkratší (správně)\n\n**Výsledek:** krok 1 dlouhý – delší – nejdloužší, krok 2 dlouhý – delší – nejdelší",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Co Petr dělal? Jak se z 2. stupně udělá 3. stupeň?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každé řady řekni 2. i 3. stupeň ve větě. Sedí všechny tvary, které Petr napsal?“"
+          },
+          {
+            "k": "Krok 2",
+            "text": "„Vezmi řadu, která nesedí. Jak ty tvary říkáš, když mluvíš? Který řádek nabídky to je?“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a proč tišší chyba není.“",
+        "otocena_role_odpoved": "Chybu máš u dlouhý: 2. stupeň je delší, tak 3. stupeň je nejdelší. Tišší je dobře: tichý, tišší, nejtišší.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 vybere řadu hezký, tichý nebo krátký: „Přidej k 2. stupni nej-. Sedí to?“ (Ty řady jsou správně.) V kroku 2 vybere hezkejší, tichší nebo krátčí: „Řekni ten tvar ve větě. Říká se tak?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — Petrovu schovanou chybu dítě našlo i opravilo. Pochvalte, že kontrolovalo i 3. stupeň, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr napsal: velký – větší – nejvelčí.“ Zeptejte se: „Má Petr pravdu? Jak to řekneš ve větě?“ Kontrola pro vás: nemá; správně je největší (k 2. stupni větší se přidá nej-).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše tři řady: úzký, tenký, nízký, a ke každé 2. a 3. stupeň. 3. stupeň utvoří tak, že k 2. stupni přidá nej-. Potom zopakujte lekci „Druhy přídavných jmen a stupňování“. Kontrola pro vás: úzký – užší – nejužší, tenký – tenčí – nejtenčí, nízký – nižší – nejnižší."
+      },
+      "tisk": {
+        "zadani": "Petr stupňoval čtyři přídavná jména:\n\nhezký – hezčí – nejhezčí\n\ndlouhý – delší – nejdloužší\n\ntichý – tišší – nejtišší\n\nkrátký – kratší – nejkratší\n\nU jednoho slova udělal chybu.\n\nA) Zakroužkuj řadu, kterou má Petr špatně.\n\nB) Zakroužkuj správnou opravu: a) hezký – hezkejší – nejhezkejší b) dlouhý – delší – nejdelší c) tichý – tichší – nejtichší d) krátký – krátčí – nejkrátčí"
+      }
+    },
+    {
+      "id": "cj-t3-l9n-U5",
+      "typ": "kontrolni",
+      "cil": "Samostatně určit druh u šesti přídavných jmen v 1. stupni (i v jiném tvaru) a stupeň u šesti jiných (i vyšší, kratší bez -ejší).",
+      "cas_min": 6,
+      "zadani": "V kroku 1 vyber u každého označeného přídavného jména druh. V kroku 2 vyber stupeň.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Druh přídavného jména",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Tátův kamarád nám půjčil dřevěný stůl a zahradní lavici. Lucčiny staré brusle leží v sousední garáži.",
+            "slova": [
+              0,
+              4,
+              7,
+              9,
+              10,
+              14
+            ],
+            "role": [
+              "tvrdé",
+              "měkké",
+              "přivlastňovací"
+            ]
+          },
+          "spravne": {
+            "0": "přivlastňovací",
+            "4": "tvrdé",
+            "7": "měkké",
+            "9": "přivlastňovací",
+            "10": "tvrdé",
+            "14": "měkké"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "9": "tvrdé"
+              },
+              "typ_chyby": "pridavne-privlastnovaci-za-tvrde"
+            },
+            {
+              "hodnota": {
+                "7": "tvrdé"
+              },
+              "typ_chyby": "pridavne-tvrde-za-mekke"
+            },
+            {
+              "hodnota": {
+                "10": "měkké"
+              },
+              "typ_chyby": "pridavne-tvrde-za-mekke"
+            },
+            {
+              "hodnota": {
+                "0": "měkké"
+              },
+              "typ_chyby": "privlastnovaci-neuzna"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Stupeň přídavného jména",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Adam je nejvyšší z party, ale Tomáš je chytřejší. Klára má kratší vlasy než Ema a hnědé oči. Nejodvážnější je ale drobná Lucka.",
+            "slova": [
+              2,
+              8,
+              11,
+              16,
+              18,
+              21
+            ],
+            "role": [
+              "1. stupeň",
+              "2. stupeň",
+              "3. stupeň"
+            ]
+          },
+          "spravne": {
+            "2": "3. stupeň",
+            "8": "2. stupeň",
+            "11": "2. stupeň",
+            "16": "1. stupeň",
+            "18": "3. stupeň",
+            "21": "1. stupeň"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "2": "2. stupeň"
+              },
+              "typ_chyby": "stupnovani-zamena"
+            },
+            {
+              "hodnota": {
+                "8": "3. stupeň"
+              },
+              "typ_chyby": "stupnovani-zamena"
+            },
+            {
+              "hodnota": {
+                "11": "3. stupeň"
+              },
+              "typ_chyby": "stupnovani-zamena"
+            },
+            {
+              "hodnota": {
+                "18": "2. stupeň"
+              },
+              "typ_chyby": "stupnovani-zamena"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Proti učební lekci je slov dvakrát víc. V kroku 1 určí druh u šesti slov, v kroku 2 stupeň u šesti jiných. Pasti: Lucčiny a staré nejsou ve tvaru s ten; nejvyšší a kratší nemají -ejší.",
+        "reseni": "Krok 1: Tátův přivlastňovací (čí kamarád? od táta)\n\ndřevěný tvrdé (dřevěný, dřevěná, dřevěné)\n\nzahradní měkké (zahradní stůl, zahradní lavice: konec stejný)\n\nLucčiny přivlastňovací (čí brusle? od Lucka)\n\nstaré tvrdé (starý, stará, staré)\n\nsousední měkké (sousední dům, sousední garáž: konec stejný)\n\nKrok 2: nejvyšší 3. stupeň (vybírá z celé party; od vysoký)\n\nchytřejší 2. stupeň (srovnává Tomáše s Adamem)\n\nkratší 2. stupeň (srovnává Kláru a Emu; od krátký)\n\nhnědé 1. stupeň (nic nesrovnává)\n\nNejodvážnější 3. stupeň (vybírá ze všech)\n\ndrobná 1. stupeň\n\n**Výsledek:** krok 1 přivlastňovací, tvrdé, měkké, přivlastňovací, tvrdé, měkké; krok 2 3., 2., 2., 1., 3., 1. stupeň",
+        "otazky": [
+          "„Jak poznáš tvrdé, měkké a přivlastňovací přídavné jméno? A jak poznáš stupeň?“",
+          "„Vezmi slovo, u kterého váháš. Řekni ho s ten, ta, to a zeptej se na něj: jaký?, nebo čí?“",
+          "„U kroku 2: srovnává to slovo dvě osoby, vybírá jednu ze všech, nebo nesrovnává nic?“"
+        ],
+        "otocena_role": "„Vyber si jedno slovo z kroku 2 bez nej- a dokaž mi, jaký má stupeň.“",
+        "otocena_role_odpoved": "Třeba kratší: srovnává Kláru s Emou, takže 2. stupeň. Hnědé nesrovnává nic, to je 1. stupeň.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: Tátův nebo Lucčiny jako tvrdé či měkké: „Ptáš se jaký?, nebo čí?“ zahradní, sousední, dřevěný nebo staré špatně: „Mění se konec s ten, ta, to?“ Záměna stupňů: „Srovnává to dva, nebo vybírá ze všech?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — druh i stupeň dítě určí samo i v delším textu. Pochvalte, že zkoušelo ten, ta, to i srovnání. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti větu: „Strýcův pes je tlustší než náš, ale nejmenší je tetin pes.“ Dítě řekne druh slova strýcův a stupeň slov tlustší a nejmenší. Kontrola pro vás: strýcův přivlastňovací (čí pes?); tlustší 2. stupeň (srovnává dva), nejmenší 3. stupeň (ze všech).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše větu: Dědův sad je větší než náš, ale nejhezčí je lesní louka. Podtrhne přídavná jména a u každého připíše druh, nebo stupeň. Potom zopakujte lekci „Druhy přídavných jmen a stupňování“. Kontrola pro vás: dědův přivlastňovací, větší 2. stupeň, nejhezčí 3. stupeň, lesní měkké."
+      },
+      "tisk": {
+        "zadani": "1. Nad každé tučné přídavné jméno napiš druh: **t** = tvrdé, **m** = měkké, **p** = přivlastňovací.\n\n**Tátův** kamarád nám půjčil **dřevěný** stůl a **zahradní** lavici. **Lucčiny** **staré** brusle leží v **sousední** garáži.\n\n2. Nad každé tučné přídavné jméno napiš stupeň číslem 1, 2, nebo 3.\n\nAdam je **nejvyšší** z party, ale Tomáš je **chytřejší**. Klára má **kratší** vlasy než Ema a **hnědé** oči. **Nejodvážnější** je ale **drobná** Lucka."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Autor 9. 10.: naostro dvojče cj-t3-l9, všechny věty a hodnocená slova nová. Hodnocené tvary ověřeny v ÚJČ (stupňování: horší i řidč. špatnější → špatný jen jako odpověď „od kterého slova“, ne jako tvar k utvoření; hezčí, tišší, kratší, delší/nejdelší, vyšší, chytřejší; druhy podle hesel; přivlastňovací sestřin, bratrova, Lucčina/Lucčiny, Tátův podle id=400 a id=756). Indexy oznac_role spočítané tokenizerem aplikace. Nahrávka t3/l9n-u3 čeká na Pavla (řádek v TEMA-3-NAOSTRO.md). Korektor 9. 10.: všechny hodnocené tvary znovu ověřeny v ÚJČ (stupňování špatný – horší/špatnější, hořký – hořčejší, hrubý – hrubší/hrubější, hodný – hodnější → k1 jednoznačně špatný; hezčí, delší/nejdelší, tišší, kratší, vyšší, chytřejší, nejodvážnější, nejteplejší; druhy podle hesel). Indexy oznac_role přepočítány tokenizerem, vzorové odpovědi i všechny známé chyby prověřeny vyhodnotKrok. Opraveno: otázka 2 detektiva už neukazuje na 3. stupeň (v režimu Dnes samo by zúžila hledání na chybnou řadu).",
+    "zkontroloval": "korektor",
+    "datum": "2026-10-09",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?id=400",
+      "https://prirucka.ujc.cas.cz/?id=410",
+      "https://prirucka.ujc.cas.cz/?id=756",
+      "https://prirucka.ujc.cas.cz/?slovo=radostn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=radostn%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=radost",
+      "https://prirucka.ujc.cas.cz/?slovo=radovat%20se",
+      "https://prirucka.ujc.cas.cz/?slovo=%C4%8Dist%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=%C4%8Dist%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=%C4%8Distota",
+      "https://prirucka.ujc.cas.cz/?slovo=%C4%8Distit",
+      "https://prirucka.ujc.cas.cz/?slovo=odv%C3%A1%C5%BEn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=odv%C3%A1%C5%BEn%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=odvaha",
+      "https://prirucka.ujc.cas.cz/?slovo=odv%C3%A1%C5%BEit%20se",
+      "https://prirucka.ujc.cas.cz/?slovo=l%C3%ADn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=l%C3%ADn%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=lenost",
+      "https://prirucka.ujc.cas.cz/?slovo=leno%C5%A1it",
+      "https://prirucka.ujc.cas.cz/?slovo=ve%C4%8Dern%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=sestra",
+      "https://prirucka.ujc.cas.cz/?slovo=tmav%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=bratr",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1koln%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=t%C4%9B%C5%BEk%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1patn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=ho%C5%99k%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=hrub%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=hodn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=Lucka",
+      "https://prirucka.ujc.cas.cz/?slovo=star%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=tepl%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=hezk%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=dlouh%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=tich%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=kr%C3%A1tk%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=t%C3%A1ta",
+      "https://prirucka.ujc.cas.cz/?slovo=d%C5%99ev%C4%9Bn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=zahradn%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=sousedn%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=vysok%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=chytr%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=hn%C4%9Bd%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=drobn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1irok%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=n%C3%ADzk%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=hlasit%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=no%C4%8Dn%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=b%C3%ADl%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=kulat%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=denn%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=str%C3%BDc",
+      "https://prirucka.ujc.cas.cz/?slovo=teta",
+      "https://prirucka.ujc.cas.cz/?slovo=velk%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=%C3%BAzk%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=tenk%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=tlust%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=mal%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=lesn%C3%AD"
+    ],
+    "testovaci_rodic": null
+  }
+}
