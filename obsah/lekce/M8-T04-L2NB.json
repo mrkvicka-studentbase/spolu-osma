@@ -1,0 +1,473 @@
+{
+  "id": "M8-T04-L2NB",
+  "faze": "osma",
+  "tyden": 4,
+  "poradi": 2,
+  "tema": "Porovnání zlomků",
+  "kapitola": "zlomky",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo porovná a seřadí zlomky i desetinná čísla, převede zlomek na desetinné číslo i naopak a použije to ve slovní úloze se třemi dětmi.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami. Dítě ukáže, že porovnání zlomků zvládne samo: převody oběma směry, víc čísel najednou a nenápadnější chyba u Petra.",
+  "uvod_pravidla": [
+    {
+      "znak": "$\\frac{4}{7} > \\frac{4}{9}$",
+      "text": "stejný čitatel: větší díly"
+    },
+    {
+      "znak": "$\\frac{2}{3} > \\frac{7}{12}$",
+      "text": "převod na stejné díly"
+    },
+    {
+      "znak": "$\\frac{6}{25} = 0{,}24$",
+      "text": "převod přes setiny"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T04-L2NB-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Najdi číslo menší než $\\frac{5}{12}$.\n\nB) Porovnej $\\frac{1}{8}$ a $\\frac{3}{10}$. Co platí?\n\nC) Převeď $\\frac{9}{25}$ na desetinné číslo.\n\nD) Převeď $0{,}85$ na zlomek v základním tvaru.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: menší než $\\frac{5}{12}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{5}{9}$",
+                "spravne": false,
+                "typ_chyby": "porovnal-podle-jmenovatele"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{5}{6}$",
+                "spravne": false,
+                "typ_chyby": "porovnal-podle-jmenovatele"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{5}{14}$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $\\frac{1}{8}$ a $\\frac{3}{10}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "větší je $\\frac{3}{10}$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "větší je $\\frac{1}{8}$",
+                "spravne": false,
+                "typ_chyby": "porovnani-desetinnych-podle-delky"
+              },
+              {
+                "id": "c",
+                "text": "jsou stejně velká",
+                "spravne": false,
+                "typ_chyby": "porovnal-podle-rozdilu"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: $\\frac{9}{25}$ desetinně",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$0{,}925$",
+                "spravne": false,
+                "typ_chyby": "desetinne-jako-zlomek-spatne"
+              },
+              {
+                "id": "b",
+                "text": "$9{,}25$",
+                "spravne": false,
+                "typ_chyby": "zlomek-jako-cislice-s-carkou"
+              },
+              {
+                "id": "c",
+                "text": "$0{,}36$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: $0{,}85$ zlomkem",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{17}{20}$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{85}{10}$",
+                "spravne": false,
+                "typ_chyby": "desetinne-jako-zlomek-spatne"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{8}{5}$",
+                "spravne": false,
+                "typ_chyby": "zlomek-jako-cislice-s-carkou"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá, ale převádí oběma směry. U A mají zlomky stejný čitatel, rozhoduje velikost dílů. U B pomůže převod na čtyřicetiny. U C a D se jde přes setiny. Čte se: $0{,}36$ třicet šest setin, $0{,}85$ osmdesát pět setin, $0{,}125$ sto dvacet pět tisícin, $0{,}3$ tři desetiny. Otázky jsou po příkladech, poslední patří k C i D: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) Menší než $\\frac{5}{12}$\n\n$\\frac{5}{14} < \\frac{5}{12}$ (stejný počet dílů, čtrnáctiny jsou menší díly)\n\n$\\frac{5}{9} > \\frac{5}{12}$, $\\frac{5}{6} > \\frac{5}{12}$ (devítiny a šestiny jsou větší díly)\n\n#### B) $\\frac{1}{8}$ a $\\frac{3}{10}$\n\n$\\frac{1}{8} = \\frac{5}{40}$, $\\frac{3}{10} = \\frac{12}{40}$ (převod na čtyřicetiny)\n\n$\\frac{12}{40} > \\frac{5}{40}$ (jiná cesta: tři desetiny jsou víc než sto dvacet pět tisícin)\n\n#### C) $\\frac{9}{25}$ desetinně\n\n$\\frac{9}{25} = \\frac{36}{100} = 0{,}36$ (obojí krát čtyři, pak setiny)\n\n#### D) $0{,}85$ zlomkem\n\n$0{,}85 = \\frac{85}{100}$ (osmdesát pět setin)\n\n$\\frac{85}{100} = \\frac{17}{20}$ (obojí děleno pěti)\n\n**Výsledek:** A) $\\frac{5}{14}$, B) větší je $\\frac{3}{10}$, C) $0{,}36$, D) $\\frac{17}{20}$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, nejdřív řekni: když stejný celek rozdělíš na víc dílů, je jeden díl větší, nebo menší? Co to znamená pro pět dílů?“"
+          },
+          {
+            "k": "B",
+            "text": "„Neklikej, spočítej na papíře: na jaké stejné díly převedeš osminy i desetiny? Kolik takových dílů má každý zlomek?“"
+          },
+          {
+            "k": "C a D",
+            "text": "„Kolik setin je devět pětadvacetin? A naopak: kolik setin je nula celá osmdesát pět a jak ten zlomek zkrátíš?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč je pět čtrnáctin menší než pět dvanáctin, i když je čtrnáctka větší číslo.“",
+        "otocena_role_odpoved": "Protože čím víc dílů celek má, tím je každý díl menší. Čtrnáctina je menší kousek než dvanáctina, takže pět menších kousků dá méně.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $\\frac{5}{9}$ nebo $\\frac{5}{6}$: menší jmenovatel bere jako menší číslo. Zeptejte se: „Je kousek menší, když se celek dělí na víc dílů?“ (Ano.) U B „stejně“: počítá chybějící díly; $\\frac{1}{8}$: $0{,}125$ má víc číslic. U C a D chybná dlaždice: přepisuje číslice."
+      },
+      "semafor": {
+        "zelena": "Výborně — porovnání i převody oběma směry sedí. Pochvalte, že převádělo na stejné díly nebo na setiny, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu dvojici $\\frac{5}{6}$ a $\\frac{7}{9}$ a zlomek $\\frac{11}{25}$. Ať zjistí, které číslo z dvojice vyhrává, a zlomek zapíše desetinně. U obou ať řekne, jaké stejné díly volí. Kontrola pro vás: na osmnáctiny, $\\frac{15}{18} > \\frac{14}{18}$, větší je $\\frac{5}{6}$; $\\frac{11}{25} = \\frac{44}{100} = 0{,}44$ (čtyřicet čtyři setin).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: dva proužky papíru dlouhé 15 cm, pravítko a pastelku. Zítra ať dítě první proužek rozdělí po 5 cm na 3 díly a druhý po 3 cm na 5 dílů. Na obou ať vybarví 2 díly. Zeptejte se: „Kde je vybarveno víc?“ Pak ať samo zapíše $\\frac{2}{3} > \\frac{2}{5}$. Potom zopakujte lekci „Porovnání zlomků“. Kontrola pro vás: víc na prvním proužku (10 cm proti 6 cm), třetiny jsou větší díly než pětiny."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Najdi číslo menší než $\\frac{5}{12}$. — a) $\\frac{5}{9}$ b) $\\frac{5}{6}$ c) $\\frac{5}{14}$\n\nB) Porovnej $\\frac{1}{8}$ a $\\frac{3}{10}$. Co platí? — a) větší je $\\frac{3}{10}$ b) větší je $\\frac{1}{8}$ c) jsou stejně velká\n\nC) Převeď $\\frac{9}{25}$ na desetinné číslo. — a) $0{,}925$ b) $9{,}25$ c) $0{,}36$\n\nD) Převeď $0{,}85$ na zlomek v základním tvaru. — a) $\\frac{17}{20}$ b) $\\frac{85}{10}$ c) $\\frac{8}{5}$"
+      }
+    },
+    {
+      "id": "M8-T04-L2NB-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr hledal nejmenší z čísel\n\n$$\\frac{1}{4};\\quad 0{,}2;\\quad \\frac{4}{25}$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $\\frac{1}{4} = 0{,}25$\n\n2. řádek: $\\frac{4}{25} = 0{,}425$\n\n3. řádek: $0{,}2 < 0{,}25 < 0{,}425$\n\n4. řádek: nejmenší je $0{,}2$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$\\frac{1}{4} = 0{,}25$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$\\frac{4}{25} = 0{,}425$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$0{,}2 < 0{,}25 < 0{,}425$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "nejmenší je $0{,}2$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{4}{25} = 4{,}25$",
+                "spravne": false,
+                "typ_chyby": "zlomek-jako-cislice-s-carkou"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{4}{25} = 0{,}016$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{4}{25} = 0{,}16$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 4,
+            "j": 25
+          },
+          "zname_chyby": [
+            {
+              "c": 1,
+              "j": 5,
+              "typ_chyby": "zlomek-jako-cislice-s-carkou"
+            },
+            {
+              "c": 1,
+              "j": 4,
+              "typ_chyby": "porovnal-podle-jmenovatele"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Zlomky převádí na desetinná čísla, aby je mohl porovnat s $0{,}2$. Chyba je jedna a řádky za ní jsou správně, jen pracují se špatným číslem. Jako výsledek se zapisuje zlomek. Čte se: $0{,}25$ dvacet pět setin, $0{,}2$ dvě desetiny, $0{,}425$ čtyři sta dvacet pět tisícin, $0{,}16$ šestnáct setin.",
+        "reseni": "Chyba je ve 2. řádku: Petr napsal čtyřku a dvacet pět za čárku, místo aby dělil čtyři děleno dvaceti pěti.\n\n$\\frac{1}{4} = \\frac{25}{100} = 0{,}25$ (obojí krát dvacet pět)\n\n$\\frac{4}{25} = \\frac{16}{100} = 0{,}16$ (obojí krát čtyři; také $4 : 25$)\n\n$0{,}16 < 0{,}2 < 0{,}25$ (porovnání po řádech: nejdřív desetiny, pak setiny)\n\nDlaždice $4{,}25$ a $0{,}016$ nesedí (první jen přepisuje číslice, druhá má o nulu za čárkou víc)\n\n**Výsledek:** $\\frac{4}{25}$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, proč Petr převádí zlomky na desetinná čísla.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každého převodu zkontroluj: vyjde to číslo opravdu, když vydělíš čitatel jmenovatelem?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: čtvrtiny i pětadvacetiny se dají rozšířit na setiny. Jak pak porovnáš desetinná čísla s různým počtem míst?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč čtyři pětadvacetiny nejsou nula celá čtyři sta dvacet pět.“",
+        "otocena_role_odpoved": "Čtyři pětadvacetiny jsou šestnáct setin, tedy nula celá šestnáct. To je méně než dvě desetiny, proto jsou nejmenší čtyři pětadvacetiny.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 1., 3. nebo 4. řádek? Ty jsou správně, poslední dva jen porovnávají špatné číslo. Zeptejte se: „Kolik setin jsou čtyři pětadvacetiny?“ (Šestnáct.) Výsledek $\\frac{1}{5}$: opíše Petra; $\\frac{1}{4}$: menší jmenovatel bere jako menší číslo."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu v převodu našlo i opravilo. Pochvalte, že převod zkontrolovalo dělením, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Podle Petra je $\\frac{3}{5} = 0{,}35$, takže $0{,}5$ je víc než tři pětiny.“ Zeptejte se: „Má Petr pravdu? Kolik jsou tři pětiny desetinně?“ Kontrola pro vás: nemá; $\\frac{3}{5} = 0{,}6$ (šest desetin), to je víc než $0{,}5$ (pět desetin).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 25 papírků, na každý napište 4 Kč (dohromady 100 Kč). Zítra ať dítě vezme 4 papírky. Zeptejte se: „Kolik korun to je? Je to víc, nebo míň než 20 korun, tedy dvě desetiny ze sta?“ Pak ať samo zapíše $\\frac{4}{25} = \\frac{16}{100} = 0{,}16$ a $0{,}16 < 0{,}2$. Potom zopakujte lekci „Porovnání zlomků“. Kontrola pro vás: 16 Kč ze 100 Kč, méně než 20 Kč."
+      },
+      "tisk": {
+        "zadani": "Petr hledal nejmenší z čísel\n\n$$\\frac{1}{4};\\quad 0{,}2;\\quad \\frac{4}{25}$$\n\na udělal jednu chybu.\n\n1. řádek: $\\frac{1}{4} = 0{,}25$\n\n2. řádek: $\\frac{4}{25} = 0{,}425$\n\n3. řádek: $0{,}2 < 0{,}25 < 0{,}425$\n\n4. řádek: nejmenší je $0{,}2$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $\\frac{4}{25} = 4{,}25$ b) $\\frac{4}{25} = 0{,}016$ c) $\\frac{4}{25} = 0{,}16$\n\nC) Které číslo je opravdu nejmenší? Zapiš ho zlomkem: ______"
+      }
+    },
+    {
+      "id": "M8-T04-L2NB-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Klára, Tomáš a Lucka chodí na lukostřelbu. Klára trefila terč $10$krát z $12$ výstřelů, Tomáš $26$krát ze $30$ a Lucka $51$krát z $60$.\n\nKdo z nich trefil největší část výstřelů?\n\nKolik zásahů z $90$ výstřelů by se stejnou úspěšností měl ten nejúspěšnější?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Vyber, co platí",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{10}{12} = \\frac{50}{60}$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{10}{12} = \\frac{10}{60}$",
+                "spravne": false,
+                "typ_chyby": "upravil-jen-cast-zlomku"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{10}{12} = \\frac{58}{60}$",
+                "spravne": false,
+                "typ_chyby": "pricetl-misto-nasobeni"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Kdo trefil největší část výstřelů?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Klára",
+                "spravne": false,
+                "typ_chyby": "porovnal-podle-rozdilu"
+              },
+              {
+                "id": "b",
+                "text": "Tomáš",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "Lucka",
+                "spravne": false,
+                "typ_chyby": "porovnal-podle-jmenovatele"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "zásahů"
+          },
+          "spravne": {
+            "hodnota": 78
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 3,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            },
+            {
+              "hodnota": 12,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            },
+            {
+              "hodnota": 86,
+              "typ_chyby": "pricetl-misto-nasobeni"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce. Úspěšnost je zlomek: zásahy ze všech výstřelů. Kdo střílel víc, nemusí být úspěšnější, proto se zlomky porovnají, nejlépe na šedesátinách, protože Lucka má rovnou šedesát výstřelů. Rozdíly jsou malé, odhad nestačí.",
+        "reseni": "$\\frac{10}{12} = \\frac{50}{60}$ (Klára, obojí krát pět)\n\n$\\frac{26}{30} = \\frac{52}{60}$ (Tomáš, obojí krát dvě)\n\n$\\frac{52}{60} > \\frac{51}{60} > \\frac{50}{60}$ (nejúspěšnější je Tomáš, Lucka má rovnou šedesátiny)\n\n$90 : 30 = 3$ (jedna třicetina z devadesáti)\n\n$3 \\cdot 26 = 78$ (dvacet šest třicetin; jiná cesta: třináct patnáctin z devadesáti)\n\n**Výsledek:** Tomáš, $78$ zásahů",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co znamená, že se někomu dařilo nejlíp. Stačí, kdo trefil terč nejvíckrát?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Zapiš úspěch každého jako zlomek: kolik zásahů z kolika výstřelů. Na jaké stejné díly je převedeš, když Lucka má šedesát výstřelů?“"
+          },
+          {
+            "k": "Výsledek",
+            "text": "„Tady máš začátek: zapiš zlomkem úspěch nejlepšího střelce. Kolikrát se jeho jmenovatel vejde do devadesáti? Co pak uděláš s čitatelem?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč nejúspěšnější není Lucka, i když trefila terč nejvíckrát.“",
+        "otocena_role_odpoved": "Protože Lucka taky střílela nejvíckrát. Počítá se, jaká část výstřelů trefila: Lucce padesát jedna šedesátin, Tomášovi padesát dvě šedesátiny a Kláře padesát šedesátin. Tomáš je o kousek lepší.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 $\\frac{10}{60}$: mění jen jmenovatel; $\\frac{58}{60}$: přičítá. V kroku 2 Klára: počítá minuté výstřely; Lucka: počítá jen zásahy. Zeptejte se: „Kolik šedesátin trefil každý?“ (Klára 50, Tomáš 52, Lucka 51.) Výsledek $3$: jen vydělí; $12$: minuté výstřely; $86$: přičte šedesát."
+      },
+      "semafor": {
+        "zelena": "Výborně — porovnání úspěšnosti tří dětí sedí. Pochvalte, že převedlo všechny zlomky na šedesátiny, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Adam dal $7$ penalt z $10$, Ema $11$ z $15$. Komu se dařilo líp?“ Ať oba výsledky zapíše zlomkem a řekne, jak je porovná. Kontrola pro vás: na třicetiny, Adam $\\frac{21}{30}$, Ema $\\frac{22}{30}$, úspěšnější je Ema.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 8 knoflíků. Zítra řekněte: „Honzík trefil 3 šípy ze 4, Ema 5 z 8.“ Ať dítě z knoflíků udělá dvě čtveřice a v každé odsune 3 jako zásahy. Zeptejte se: „Kolikrát by Honzík trefil z osmi?“ Pak ať samo zapíše $\\frac{3}{4} = \\frac{6}{8}$ a $\\frac{6}{8} > \\frac{5}{8}$. Potom zopakujte lekci „Porovnání zlomků“. Kontrola pro vás: Honzík 6 z 8, Ema 5 z 8, úspěšnější je Honzík."
+      },
+      "tisk": {
+        "zadani": "Klára, Tomáš a Lucka chodí na lukostřelbu. Klára trefila terč $10$krát z $12$ výstřelů, Tomáš $26$krát ze $30$ a Lucka $51$krát z $60$.\n\nKdo z nich trefil největší část výstřelů?\n\nKolik zásahů z $90$ výstřelů by se stejnou úspěšností měl ten nejúspěšnější?\n\nA) Co platí? Zakroužkuj: a) $\\frac{10}{12} = \\frac{50}{60}$ b) $\\frac{10}{12} = \\frac{10}{60}$ c) $\\frac{10}{12} = \\frac{58}{60}$\n\nB) Kdo trefil největší část výstřelů? Zakroužkuj: a) Klára b) Tomáš c) Lucka\n\nC) Výsledek: ______ zásahů"
+      }
+    },
+    {
+      "id": "M8-T04-L2NB-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Najdi nejmenší z pěti čísel a zapiš ho zlomkem v základním tvaru.\n\n$$0{,}6;\\quad \\frac{7}{10};\\quad \\frac{11}{20};\\quad 0{,}56;\\quad \\frac{16}{25}$$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 11,
+            "j": 20
+          },
+          "zname_chyby": [
+            {
+              "c": 7,
+              "j": 10,
+              "typ_chyby": "porovnal-podle-jmenovatele"
+            },
+            {
+              "c": 14,
+              "j": 25,
+              "typ_chyby": "zlomek-jako-cislice-s-carkou"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Pět čísel se nejlépe porovná, když jsou všechna v setinách. Čte se: $0{,}6$ šest desetin, $0{,}56$ padesát šest setin, $0{,}55$ padesát pět setin, $0{,}64$ šedesát čtyři setiny.",
+        "reseni": "$\\frac{7}{10} = \\frac{70}{100} = 0{,}7$ (obojí krát deset)\n\n$\\frac{11}{20} = \\frac{55}{100} = 0{,}55$ (obojí krát pět)\n\n$\\frac{16}{25} = \\frac{64}{100} = 0{,}64$ (obojí krát čtyři)\n\n$0{,}55 < 0{,}56 < 0{,}6 < 0{,}64 < 0{,}7$ (porovnání po řádech)\n\n**Výsledek:** $\\frac{11}{20}$",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co máš najít a v jakém tvaru to máš zapsat.“",
+          "„Jak z pěti čísel uděláš čísla stejného druhu, aby šla porovnat? Na jaké díly se hodí desetiny, dvacetiny i pětadvacetiny?“",
+          "„Tady máš začátek: sedm desetin je sedmdesát setin. Kolik setin jsou další dva zlomky? Které číslo je pak nejmenší?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč nejmenší není padesát šest setin, když je to nejmenší z desetinných čísel.“",
+        "otocena_role_odpoved": "Protože porovnat se musí i zlomky. Jedenáct dvacetin je padesát pět setin, a to je ještě o setinu méně než padesát šest setin.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $\\frac{7}{10}$: menší jmenovatel bere jako menší číslo. Zeptejte se: „Kolik setin je sedm desetin?“ (Sedmdesát.) $\\frac{14}{25}$: zlomky nepřevede správně a porovná jen desetinná čísla. $\\frac{55}{100}$ aplikace uzná a požádá o zkrácení."
+      },
+      "semafor": {
+        "zelena": "Výborně — pět čísel porovnalo samo. Pochvalte, že všechna převedlo na setiny. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu řadu $0{,}3$; $\\frac{8}{25}$; $0{,}28$; $\\frac{7}{20}$. Ať řekne, které je nejmenší a které největší a jak to poznalo. Kontrola pro vás: nejmenší $0{,}28$ (dvacet osm setin), největší $\\frac{7}{20} = 0{,}35$ (třicet pět setin); mezi nimi $0{,}3$ a $\\frac{8}{25} = 0{,}32$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 20 kostek lega nebo knoflíků. Zítra řekněte: „Celek je 20 kostek.“ Ať dítě odsune 11 kostek, to je jedenáct dvacetin. Zeptejte se: „Kolik kostek by to bylo, kdyby celek byl pětkrát větší, tedy 100 kostek? Je to víc, nebo míň než 56?“ Pak ať samo zapíše $\\frac{11}{20} = \\frac{55}{100} < 0{,}56$. Potom zopakujte lekci „Porovnání zlomků“. Kontrola pro vás: 55 kostek ze 100, o jednu méně než 56."
+      },
+      "tisk": {
+        "zadani": "Najdi nejmenší z pěti čísel a zapiš ho zlomkem v základním tvaru.\n\n$$0{,}6;\\quad \\frac{7}{10};\\quad \\frac{11}{20};\\quad 0{,}56;\\quad \\frac{16}{25}$$\n\nVýsledek: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 9. 10. 2026: vše přepočítáno nezávisle (python Fraction) a ověřeno přes vyhodnotKrok; struktura, vstupy, kódy chyb a obtížnost jako M8-T04-L2N. Opraveno (opakování hlavní lekce): U1 D $0{,}65 = \\frac{13}{20}$ je v L2N U3 jako správná dlaždice, nově $0{,}85 = \\frac{17}{20}$ (dlaždice $\\frac{85}{10}$, $\\frac{8}{5}$); U2 řádek $\\frac{7}{20} = 0{,}35$ je odpověď L2N U1 D, nově $\\frac{1}{4} = 0{,}25$ (známá chyba porovnal-podle-jmenovatele $\\frac{1}{4}$, výsledek $\\frac{4}{25}$ beze změny); Čte se, řešení, otázka, typická chyba a tisk sladěny; červená U1 zkrácena na 75 slov. Posouzeno U1 B ($\\frac{1}{8}$ podle rozhodnutí vedoucího): rozdíl $\\frac{7}{40}$ proti $\\frac{1}{40}$ v L2N, tedy lehčí, ale s $\\frac{1}{8}$ a oběma kódy bližší dvojice neexistuje (zlomek se 7 chybějícími díly a kratším desetinným zápisem: nejbližší je právě $\\frac{3}{10}$). Dvojice s rozdílem do $\\frac{3}{40}$ ($\\frac{3}{4}$ a $\\frac{4}{5}$, $\\frac{5}{8}$ a $\\frac{7}{10}$, $\\frac{7}{8}$ a $\\frac{19}{20}$) jsou z L2, L2B nebo L2N. Ponecháno: jde o jednu položku rozcvičky, ostatní úlohy mají obtížnost hlavní lekce (U2 $\\frac{4}{25}$, U3 Tomáš $78$, U4 $\\frac{11}{20}$).",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-09"
+  }
+}

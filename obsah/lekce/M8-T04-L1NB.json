@@ -1,0 +1,474 @@
+{
+  "id": "M8-T04-L1NB",
+  "faze": "osma",
+  "tyden": 4,
+  "poradi": 1,
+  "tema": "Krácení a rozšiřování",
+  "kapitola": "zlomky",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo zkrátí zlomek až na základní tvar, rozšíří ho na zadaný jmenovatel i přes krácení a použije to ve slovní úloze.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami. Dítě ukáže, že krácení a rozšiřování zvládne samo: čtyři příklady, nenápadnější chyba u Petra a slovní úloha o krok delší.",
+  "uvod_pravidla": [
+    {
+      "znak": "$\\frac{35}{49} = \\frac{5}{7}$",
+      "text": "obojí děleno sedmi"
+    },
+    {
+      "znak": "$\\frac{4}{7} = \\frac{12}{21}$",
+      "text": "obojí krát tři"
+    },
+    {
+      "znak": "$\\frac{8}{15}$",
+      "text": "už nejde zkrátit"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T04-L1NB-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Uprav na základní tvar: $\\frac{45}{60}$\n\nB) Které číslo patří místo otazníku: $\\frac{3}{10} = \\frac{?}{50}$\n\nC) Kterým největším číslem jde zkrátit $\\frac{40}{48}$?\n\nD) Najdi zlomek se stejnou hodnotou jako $\\frac{21}{36}$.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $\\frac{45}{60}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{9}{12}$",
+                "spravne": false,
+                "typ_chyby": "kratil-jen-castecne"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{3}{60}$",
+                "spravne": false,
+                "typ_chyby": "upravil-jen-cast-zlomku"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{3}{4}$",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "$\\frac{9}{4}$",
+                "spravne": false,
+                "typ_chyby": "kratil-ruznym-cislem"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $\\frac{3}{10} = \\frac{?}{50}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$15$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$43$",
+                "spravne": false,
+                "typ_chyby": "pricetl-misto-nasobeni"
+              },
+              {
+                "id": "c",
+                "text": "$3$",
+                "spravne": false,
+                "typ_chyby": "upravil-jen-cast-zlomku"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: největší číslo pro $\\frac{40}{48}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$4$",
+                "spravne": false,
+                "typ_chyby": "kratil-jen-castecne"
+              },
+              {
+                "id": "b",
+                "text": "$2$",
+                "spravne": false,
+                "typ_chyby": "kratil-jen-castecne"
+              },
+              {
+                "id": "c",
+                "text": "$8$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: stejná hodnota jako $\\frac{21}{36}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{7}{36}$",
+                "spravne": false,
+                "typ_chyby": "upravil-jen-cast-zlomku"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{14}{24}$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{14}{29}$",
+                "spravne": false,
+                "typ_chyby": "pricetl-misto-nasobeni"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá, ale příkladů je víc a dva mají past. U C se hledá největší číslo, kterým jde vydělit čitatel i jmenovatel. U D se nejdřív krátí a pak rozšiřuje, protože ze třiceti šesti násobením dvacet čtyři nevznikne. Otázky jsou po příkladech, první patří k A i C: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $\\frac{45}{60}$\n\n$\\frac{45}{60} = \\frac{3}{4}$ (čitatel i jmenovatel děleno patnácti)\n\n#### B) $\\frac{3}{10} = \\frac{?}{50}$\n\n$50 : 10 = 5$ (kolikrát je nový jmenovatel větší)\n\n$3 \\cdot 5 = 15$ (čitatel krát stejné číslo)\n\n#### C) Největší číslo pro $\\frac{40}{48}$\n\n$40 = 8 \\cdot 5$, $48 = 8 \\cdot 6$ (osm dělí obě čísla)\n\n$\\frac{40}{48} = \\frac{5}{6}$ (po dělení osmi už zkrátit nejde)\n\n#### D) Stejná hodnota jako $\\frac{21}{36}$\n\n$\\frac{21}{36} = \\frac{7}{12}$ (obojí děleno třemi)\n\n$\\frac{7}{12} = \\frac{14}{24}$ (obojí krát dvě)\n\n**Výsledek:** A) $\\frac{3}{4}$, B) $15$, C) $8$, D) $\\frac{14}{24}$",
+        "otazky": [
+          {
+            "k": "A a C",
+            "text": "„Neklikej, spočítej na papíře: kterými čísly jde vydělit čitatel i jmenovatel? Které z nich je největší?“"
+          },
+          {
+            "k": "B",
+            "text": "„Kolikrát se deset vejde do padesáti? Co pak uděláš s čitatelem?“"
+          },
+          {
+            "k": "D",
+            "text": "„Zkrať dvacet jedna šestatřicetin, jak nejvíc to jde. Který zlomek z nabídky vyjde po zkrácení stejně?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč devět dvanáctin ještě není správná odpověď u příkladu A.“",
+        "otocena_role_odpoved": "Protože devět i dvanáct jde ještě vydělit třemi. Základní tvar jsou tři čtvrtiny, ty už zkrátit nejdou. Rovnou to jde, když se čtyřicet pět i šedesát vydělí patnácti.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $\\frac{9}{12}$, u C $4$ nebo $2$: krátí menším číslem. Zeptejte se: „Jde to ještě zkrátit?“ (Ano.) $\\frac{9}{4}$: dělí nahoře a dole jinak. $\\frac{3}{60}$, $3$, $\\frac{7}{36}$: upraví jen jednu část. $43$, $\\frac{14}{29}$: přičítá nebo odčítá."
+      },
+      "semafor": {
+        "zelena": "Výborně — krácení i rozšiřování sedí ve všech čtyřech příkladech. Pochvalte, že hledalo největší společné číslo, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: zkrátit $\\frac{22}{33}$ a doplnit $\\frac{16}{40} = \\frac{?}{25}$. U každého ať řekne, jakým číslem krátí nebo rozšiřuje. Kontrola pro vás: děleno jedenácti, $\\frac{2}{3}$; $\\frac{16}{40} = \\frac{2}{5}$ (děleno osmi), pak krát pět, chybí $10$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 20 pastelek (nebo 20 kostek). Zítra ať dítě vezme 12 pastelek. Zeptejte se: „Jaká část všech pastelek to je? Dá se to říct v desetinách? A v pětinách?“ Pak ať samo zapíše $\\frac{12}{20} = \\frac{6}{10} = \\frac{3}{5}$. Potom zopakujte lekci „Krácení a rozšiřování“. Kontrola pro vás: dvanáct dvacetin, šest desetin, tři pětiny."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Uprav na základní tvar: $\\frac{45}{60}$ — a) $\\frac{9}{12}$ b) $\\frac{3}{60}$ c) $\\frac{3}{4}$ d) $\\frac{9}{4}$\n\nB) Které číslo patří místo otazníku: $\\frac{3}{10} = \\frac{?}{50}$ — a) $15$ b) $43$ c) $3$\n\nC) Kterým největším číslem jde zkrátit $\\frac{40}{48}$? — a) $4$ b) $2$ c) $8$\n\nD) Najdi zlomek se stejnou hodnotou jako $\\frac{21}{36}$. — a) $\\frac{7}{36}$ b) $\\frac{14}{24}$ c) $\\frac{14}{29}$"
+      }
+    },
+    {
+      "id": "M8-T04-L1NB-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr hledal číslo místo otazníku\n\n$$\\frac{24}{54} = \\frac{?}{36}$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $\\frac{24}{54} = \\frac{12}{27}$\n\n2. řádek: $\\frac{12}{27} = \\frac{2}{9}$\n\n3. řádek: $36 : 9 = 4$\n\n4. řádek: $2 \\cdot 4 = 8$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$\\frac{24}{54} = \\frac{12}{27}$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$\\frac{12}{27} = \\frac{2}{9}$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$36 : 9 = 4$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$2 \\cdot 4 = 8$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{12}{27} = \\frac{4}{9}$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{12}{27} = \\frac{4}{27}$",
+                "spravne": false,
+                "typ_chyby": "upravil-jen-cast-zlomku"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{12}{27} = \\frac{10}{25}$",
+                "spravne": false,
+                "typ_chyby": "pricetl-misto-nasobeni"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 16
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 8,
+              "typ_chyby": "kratil-ruznym-cislem"
+            },
+            {
+              "hodnota": 24,
+              "typ_chyby": "upravil-jen-cast-zlomku"
+            },
+            {
+              "hodnota": 6,
+              "typ_chyby": "pricetl-misto-nasobeni"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Zlomek nejdřív krátí, aby dostal jmenovatel, který se vejde do třiceti šesti, a pak rozšiřuje. Chyba je jedna a řádky za ní jsou spočítané dobře, jen se špatným číslem. Pozor: chybný zlomek vypadá hezky a devítka se do třiceti šesti opravdu vejde, proto chyba není na první pohled vidět.",
+        "reseni": "Chyba je ve 2. řádku: Petr vydělil dvanáct šesti, ale dvacet sedm jen třemi.\n\n$\\frac{24}{54} = \\frac{12}{27}$ (obojí děleno dvěma)\n\n$\\frac{12}{27} = \\frac{4}{9}$ (obojí děleno třemi)\n\n$36 : 9 = 4$ (kolikrát je nový jmenovatel větší)\n\n$4 \\cdot 4 = 16$ (čitatel krát stejné číslo)\n\n$\\frac{16}{36} = \\frac{4}{9}$ (zkouška: obojí děleno čtyřmi)\n\nDlaždice $\\frac{4}{27}$ a $\\frac{10}{25}$ nesedí (první dělí jen čitatel, druhá odčítá dvojku nahoře i dole)\n\n**Výsledek:** $16$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Petr hledá a proč zlomek nejdřív krátí.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky jeden po druhém. Kde se zlomek mění, ověř, že Petr nahoře i dole použil stejné číslo.“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: zlomek se nezmění, když se čitatel i jmenovatel dělí stejným číslem. Kam až jde zkrátit dvacet čtyři čtyřiapadesátin? Kolikrát pak rozšíříš?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč dvanáct sedmadvacetin nejsou dvě devítiny.“",
+        "otocena_role_odpoved": "Petr dělil dvanáct šesti, ale dvacet sedm třemi, a tím se zlomek změní. Obojí se má dělit třemi: vyjdou čtyři devítiny, a to je šestnáct šestatřicetin.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 1., 3. nebo 4. řádek? Ty jsou správně, poslední jen počítá ze špatného čísla. Zeptejte se: „Čím Petr dělil ve 2. řádku nahoře a čím dole?“ (Šesti a třemi.) Výsledek $8$: opíše Petra; $24$: čitatel nechá; $6$: odečte osmnáct."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i v hezky vypadajícím zlomku. Pochvalte, že u krácení kontrolovalo čitatel i jmenovatel, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu: „Petr tvrdí: $\\frac{28}{42} = \\frac{4}{14} = \\frac{2}{7}$.“ Zeptejte se: „Ve kterém kroku Petr chybuje a jak to má vyjít?“ Kontrola pro vás: v prvním kroku dělil dvacet osm sedmi, ale čtyřicet dva třemi; správně $\\frac{28}{42} = \\frac{2}{3}$ (obojí děleno čtrnácti).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 27 knoflíků nebo mincí, 12 jedné barvy a 15 jiné. Zítra ať je dítě rozdělí na trojice stejné barvy. Zeptejte se: „Kolik trojic má první barvu a kolik je všech trojic?“ Pak ať samo zapíše $\\frac{12}{27} = \\frac{4}{9}$ a řekne, čím dělí nahoře i dole. Potom zopakujte lekci „Krácení a rozšiřování“. Kontrola pro vás: 4 trojice z 9, nahoře i dole děleno třemi."
+      },
+      "tisk": {
+        "zadani": "Petr hledal číslo místo otazníku\n\n$$\\frac{24}{54} = \\frac{?}{36}$$\n\na udělal jednu chybu.\n\n1. řádek: $\\frac{24}{54} = \\frac{12}{27}$\n\n2. řádek: $\\frac{12}{27} = \\frac{2}{9}$\n\n3. řádek: $36 : 9 = 4$\n\n4. řádek: $2 \\cdot 4 = 8$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $\\frac{12}{27} = \\frac{4}{9}$ b) $\\frac{12}{27} = \\frac{4}{27}$ c) $\\frac{12}{27} = \\frac{10}{25}$\n\nC) Které číslo patří místo otazníku opravdu? ______"
+      }
+    },
+    {
+      "id": "M8-T04-L1NB-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Lucka fotí na prázdninách. V mobilu má $45$ fotek, z toho $27$ z hor, ostatní od moře.\n\na) Jaká část Lucčiných fotek je od moře? Zapiš ji zlomkem v základním tvaru.\n\nb) Ema má $30$ fotek a od moře je u ní stejná část jako u Lucky. Kolik fotek od moře má Ema?\n\nc) Kolik fotek z hor má Ema?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Část Lucčiných fotek od moře",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 2,
+            "j": 5
+          },
+          "zname_chyby": [
+            {
+              "c": 3,
+              "j": 5,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            },
+            {
+              "c": 2,
+              "j": 45,
+              "typ_chyby": "upravil-jen-cast-zlomku"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: fotky od moře u Emy",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "fotek"
+          },
+          "spravne": {
+            "hodnota": 12
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 6,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            },
+            {
+              "hodnota": 18,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            },
+            {
+              "hodnota": 3,
+              "typ_chyby": "pricetl-misto-nasobeni"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "fotek"
+          },
+          "spravne": {
+            "hodnota": 18
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 12,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 24,
+              "typ_chyby": "zlomek-z-cisla-jen-deleni"
+            },
+            {
+              "hodnota": 27,
+              "typ_chyby": "pricetl-misto-nasobeni"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce. Počet fotek od moře v zadání není, nejdřív se dopočítá a teprve pak se zapíše a zkrátí zlomek. Ema má stejný zlomek, jen jiný celek: dá se počítat přes jednu pětinu, nebo rozšířením na třicetiny. Obě cesty jsou správně.",
+        "reseni": "$45 - 27 = 18$ (fotky od moře u Lucky)\n\n$\\frac{18}{45} = \\frac{2}{5}$ (obojí děleno devíti)\n\n$30 : 5 = 6$ (jedna pětina Eminých fotek)\n\n$6 \\cdot 2 = 12$ (dvě pětiny; jiná cesta: dvě pětiny jsou dvanáct třicetin)\n\n$30 - 12 = 18$ (hory; také tři pětiny ze třiceti)\n\n**Výsledek:** a) $\\frac{2}{5}$, b) $12$ fotek, c) $18$ fotek",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co víš o Lucčiných fotkách a na co se úloha ptá u Emy.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Kolik Lucčiných fotek je od moře a kolik jich má celkem? Zapiš to zlomkem. Čím ho zkrátíš?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: jmenovatel zlomku ti řekne, na kolik stejných hromádek rozdělíš Eminých třicet fotek. Kolik hromádek je od moře?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč Ema nemá tři fotky od moře, když má o patnáct fotek méně než Lucka.“",
+        "otocena_role_odpoved": "Protože stejná část neznamená ubrat stejný počet fotek. Od moře jsou dvě pětiny fotek. Pětina ze třiceti je šest, dvě pětiny jsou dvanáct fotek.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 $\\frac{3}{5}$: bere hory; $\\frac{2}{45}$: krátí jen čitatel. Zeptejte se: „Kolik fotek je od moře?“ (Osmnáct.) V kroku 2 $6$: jen vydělí; $18$: počítá hory; $3$: ubere patnáct. Výsledek $12$: fotky od moře; $24$, $27$: odečte špatné číslo."
+      },
+      "semafor": {
+        "zelena": "Výborně — zlomek z Lucčiných fotek i přepočet na Eminy fotky sedí. Pochvalte, že dopočítalo chybějící údaj a zlomek zkrátilo, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Ve sboru je $40$ dětí, $30$ z nich jsou dívky. Jaká část sboru jsou chlapci? Kolik chlapců by bylo ve sboru s $24$ dětmi, kdyby to byla stejná část?“ Kontrola pro vás: $10$ chlapců, $\\frac{10}{40} = \\frac{1}{4}$ (děleno deseti); čtvrtina z $24$ je $6$ chlapců.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 5 papírků a tužku. Zítra ať dítě položí 5 papírků a na 2 nakreslí vlnky: to jsou dvě pětiny fotek od moře. Pak řekněte: „Každý papírek je 6 fotek.“ Zeptejte se: „Kolik fotek je s vlnkami a kolik celkem?“ Pak ať samo zapíše $\\frac{2}{5} = \\frac{12}{30}$. Potom zopakujte lekci „Krácení a rozšiřování“. Kontrola pro vás: 12 fotek z 30, nahoře i dole krát šest."
+      },
+      "tisk": {
+        "zadani": "Lucka fotí na prázdninách. V mobilu má $45$ fotek, z toho $27$ z hor, ostatní od moře.\n\na) Jaká část Lucčiných fotek je od moře? Zapiš ji zlomkem v základním tvaru.\n\nb) Ema má $30$ fotek a od moře je u ní stejná část jako u Lucky. Kolik fotek od moře má Ema?\n\nc) Kolik fotek z hor má Ema?\n\na) Část fotek od moře: ______\n\nb) Fotky od moře u Emy: ______ fotek\n\nc) Výsledek: ______ fotek"
+      }
+    },
+    {
+      "id": "M8-T04-L1NB-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Jaké číslo patří místo otazníku? Oba zlomky mají mít stejnou hodnotu.\n\n$$\\frac{21}{28} = \\frac{?}{44}$$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 33
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 37,
+              "typ_chyby": "pricetl-misto-nasobeni"
+            },
+            {
+              "hodnota": 21,
+              "typ_chyby": "upravil-jen-cast-zlomku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Dvacet osm krát celé číslo nedá čtyřicet čtyři, proto je potřeba jít přes základní tvar: nejdřív zkrátit, pak rozšířit.",
+        "reseni": "$\\frac{21}{28} = \\frac{3}{4}$ (obojí děleno sedmi)\n\n$44 : 4 = 11$ (kolikrát je nový jmenovatel větší)\n\n$3 \\cdot 11 = 33$ (čitatel krát stejné číslo)\n\n$\\frac{33}{44} = \\frac{3}{4}$ (zkouška: obojí děleno jedenácti)\n\n**Výsledek:** $33$",
+        "otazky": [
+          "„Přečti mi úlohu nahlas. Co znamená, že dva zlomky mají stejnou hodnotu?“",
+          "„Jde čtyřicet čtyři dostat z dvaceti osmi násobením? Jakou úpravu se zlomkem můžeš udělat dřív?“",
+          "„Tady máš začátek: dvacet jedna i dvacet osm jde vydělit sedmi. Jaký zlomek dostaneš a kolikrát se jeho jmenovatel vejde do čtyřiceti čtyř?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč nestačí přičíst ke dvaceti jedné šestnáct, když se ke dvaceti osmi přičetlo šestnáct.“",
+        "otocena_role_odpoved": "Protože přičtením se hodnota zlomku změní. Stejná zůstane, jen když se nahoře i dole násobí nebo dělí stejným číslem. Tři čtvrtiny krát jedenáct je třicet tři čtyřiačtyřicetin.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $37$: přičte šestnáct nahoře i dole. Zeptejte se: „Jak z dvaceti osmi vznikne čtyřicet čtyři, sčítáním, nebo přes čtvrtiny?“ (Přes čtvrtiny: děleno sedmi, krát jedenáct.) $21$: čitatel nezmění."
+      },
+      "semafor": {
+        "zelena": "Výborně — rozšiřování přes základní tvar zvládá samo. Pochvalte, že zlomek nejdřív zkrátilo. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: $\\frac{10}{25} = \\frac{?}{35}$. Ať řekne, jaký základní tvar vyjde, kolikrát pak rozšíří a co patří místo otazníku. Kontrola pro vás: $\\frac{2}{5}$ (obojí děleno pěti), krát sedm, místo otazníku $14$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 12 kostek lega nebo knoflíků. Zítra ať z nich dítě postaví 4 sloupečky po 3 a 3 sloupečky odsune. Zeptejte se: „Jaká část sloupečků je odsunutá? Kolik kostek to je ze všech?“ Pak ať samo zapíše $\\frac{3}{4} = \\frac{9}{12}$. Potom zopakujte lekci „Krácení a rozšiřování“. Kontrola pro vás: tři čtvrtiny sloupečků, 9 kostek z 12, nahoře i dole krát tři."
+      },
+      "tisk": {
+        "zadani": "Jaké číslo patří místo otazníku? Oba zlomky mají mít stejnou hodnotu.\n\n$$\\frac{21}{28} = \\frac{?}{44}$$\n\nVýsledek: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 9. 10. 2026: vše přepočítáno nezávisle (python Fraction) a ověřeno přes vyhodnotKrok; struktura, vstupy, kódy chyb a obtížnost jako M8-T04-L1N. Opraveno (věcně): U2 $\\frac{30}{54} = \\frac{10}{18}$ a cíl $\\frac{?}{36}$: osmnáct se do třiceti šesti vejde, takže šlo rozšířit bez dalšího krácení a tahák („krátí, aby dostal jmenovatel, který se vejde“) neplatil. Nově $\\frac{24}{54} = \\frac{12}{27}$, Petr $\\frac{12}{27} = \\frac{2}{9}$ (dvanáct děleno šesti, dvacet sedm třemi), $36 : 9 = 4$, $8$; správně $\\frac{4}{9}$, $16$; chyby $8$, $24$ (čitatel nechá), $6$ (odečte osmnáct); dlaždice $\\frac{4}{27}$, $\\frac{10}{25}$; tahák, červená a tisk sladěny. Opraveno (opakování čísel hlavní lekce): U4 $\\frac{28}{36} = \\frac{?}{45}$ s výsledkem $35$ prohazovalo čísla $35$ a $45$ z U4 hlavní lekce; nově $\\frac{21}{28} = \\frac{?}{44}$ (děleno sedmi jako v L1N, $\\frac{3}{4}$, krát jedenáct) $= 33$, chyby $37$ (přičte šestnáct), $21$; tahák, červená a tisk sladěny. U1 $\\frac{3}{4}$, $15$, $8$, $\\frac{14}{24}$ a U3 $\\frac{2}{5}$, $12$, $18$ beze změny. Ponecháno: jednotlivá čísla $24$, $40$, $48$, $54$ se v hlavní lekci vyskytují v jiném zlomku nebo jiné roli, žádný zlomek ani úloha se neopakuje.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-09"
+  }
+}
