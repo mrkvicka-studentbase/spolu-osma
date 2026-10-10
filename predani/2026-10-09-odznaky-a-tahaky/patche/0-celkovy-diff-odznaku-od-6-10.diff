@@ -1,0 +1,519 @@
+diff --git a/web/js/odznaky-karty.js b/web/js/odznaky-karty.js
+index 8d02ee7..e9e9455 100644
+--- a/web/js/odznaky-karty.js
++++ b/web/js/odznaky-karty.js
+@@ -1,82 +1,144 @@
+ // =====================================================================
+ // odznaky-karty.js — nový odznak jako sběratelská karta (Pavel 6. 10.: „jako FIFA balíčky“, menší, uprostřed).
+-// Karta přijede rubem nahoru a „nabíjí se“; klepnutí (nebo tlačítko) ji otočí: záblesk, jiskry, lesk.
++// Redesign 8. 10. podle návrhu designérky: tmavá scéna s neonovým titulkem, karta se vznáší a naklání za myší/prstem
++// (odlesk), rub s otáčejícím se duhovým okrajem, prolétajícími světly a zlatou koulí s otazníkem; po otočení líc
++// s oknem (mřížka, paprsky, jiskry), odznak „vyskočí“, razítko „Získáno!“ a text vyjede zdola.
+ // Víc nových odznaků najednou = karty vedle sebe, listuje se šipkami, prstem nebo tečkami.
+-// Lícem nahoru se karta naklání za prstem/myší (holografický lesk). prefers-reduced-motion: karty rovnou lícem, bez animací.
++// prefers-reduced-motion: karty rovnou lícem, bez animací.
++// R78: stejné karty i pro nově odemčené taháky (oknoKaret s tlačítkem „Otevřít tahák“ na líci, tahaky-ui.js).
+ // =====================================================================
+ 
+ import { el, otevritModal, zavritModal } from './ui.js';
+-import { najdiOdznak, svgOdznaku } from './odznaky.js';
++import { najdiOdznak, htmlOdznaku } from './odznaky.js';
++import { h } from './hlasky.js';
+ 
+ const DRUH = { zlata: 'Zlatý odznak', zelena: 'Zelený odznak', modra: 'Modrý odznak' };
+-const predmetOdznaku = (id) => (id.startsWith('cj:') ? 'Čeština' : id.startsWith('oba:') ? 'Oba předměty' : 'Matematika');
++const predmetOdznaku = (id) => (id.startsWith('cj:') ? 'Čeština' : id.startsWith('oba:') ? 'Oba předměty'
++  : id.startsWith('vyzva:') || id.startsWith('sber:') ? 'Výzvy a taháky' : 'Matematika');
+ const bezAnimaci = () => Boolean(globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches);
+-const dnes = () => new Date().toLocaleDateString('cs-CZ', { day: 'numeric', month: 'numeric', year: 'numeric' }).replace(/\s/g, ' ');
+-const JISKER = 12;
++const dnes = () => new Date().toLocaleDateString('cs-CZ', { day: 'numeric', month: 'numeric', year: 'numeric' }).replace(/\s/g, ' ');
+ 
+-function karta(id, poradi, celkem, { datum = dnes() } = {}) {
++/** Popis odznaku pro kartu (oknoKaret). */
++function popisOdznaku(id) {
+   const o = najdiOdznak(id);
+   const barva = o?.barva || 'zelena';
+-  const lic = el('div', { class: 'karta-odznaku__lic' },
+-    el('div', { class: 'karta-odznaku__hlavicka' },
+-      el('span', { text: predmetOdznaku(id) }),
+-      el('span', { text: `${String(poradi).padStart(2, '0')}/${String(celkem).padStart(2, '0')}` })),
+-    el('div', { class: 'karta-odznaku__okno' },
+-      el('span', { class: 'karta-odznaku__obrazek', htmlBezpecne: svgOdznaku(id, { titulek: o?.nazev || '' }) })),
+-    el('span', { class: 'karta-odznaku__druh', text: DRUH[barva] || 'Odznak' }),
+-    el('strong', { class: 'karta-odznaku__nazev', text: o?.nazev || '' }),
+-    el('span', { class: 'karta-odznaku__pochvala', text: o?.pochvala || '' }),
+-    el('div', { class: 'karta-odznaku__pata' },
+-      el('span', { class: 'karta-odznaku__tecka', text: 'Spolu' }),
+-      datum ? el('span', { text: datum }) : null),
+-    el('span', { class: 'karta-odznaku__lesk', 'aria-hidden': 'true' }));
+-  const rub = el('div', { class: 'karta-odznaku__rub', 'aria-hidden': 'true' },
+-    el('span', { class: 'karta-odznaku__otaznik', text: '?' }),
+-    el('span', { class: 'karta-odznaku__vyzva', text: 'Klepni a otoč' }));
+-  const efekty = el('span', { class: 'karta-odznaku__efekty', 'aria-hidden': 'true' },
+-    el('span', { class: 'karta-odznaku__vlna' }),
+-    Array.from({ length: JISKER }, (_, i) => el('span', { class: 'karta-odznaku__jiskra', style: `--a:${(360 / JISKER) * i}deg;--d:${70 + (i % 3) * 22}px` })));
++  return {
++    barva, predmet: predmetOdznaku(id), obrazek: htmlOdznaku(id, { titulek: o?.nazev || '' }),
++    druh: DRUH[barva] || 'Odznak', nazev: o?.nazev || '', pochvala: o?.pochvala || '',
++  };
++}
++
++const span = (trida, ...deti) => el('span', { class: trida }, ...deti);
++/** Prolétající světla (v návrhu .streak a–e). */
++const svetla = (pismena) => el('span', { class: 'karta-odznaku__svetla', 'aria-hidden': 'true' },
++  pismena.map((x) => span(`karta-odznaku__svetlo karta-odznaku__svetlo--${x}`)));
++
++/**
++ * Jedna karta. `p` = {barva, predmet, obrazek (HTML/SVG řetězec), druh, nazev, pochvala, akce?: {text, onClick?, hodnota?}}.
++ * R78: `akce` = tlačítko na líci (tahák: „Otevřít tahák“). Je mimo tlačítko karty (tlačítko v tlačítku nejde),
++ * jen položené na líc; viditelné až po otočení. V tlačítku karty jsou jen spany.
++ */
++function karta(p, poradi, celkem, { datum = dnes() } = {}) {
++  const lic = span('karta-odznaku__lic',
++    span('karta-odznaku__okraj'),
++    span('karta-odznaku__plocha',
++      span('karta-odznaku__hlavicka',
++        el('span', { text: p.predmet }),
++        el('span', { text: `${String(poradi).padStart(2, '0')}/${String(celkem).padStart(2, '0')}` })),
++      span('karta-odznaku__okno',
++        el('span', { class: 'karta-odznaku__paprsky', 'aria-hidden': 'true' }),
++        svetla(['b', 'd']),
++        [1, 2, 3, 4].map((i) => el('span', { class: `karta-odznaku__jiskra karta-odznaku__jiskra--${i}`, 'aria-hidden': 'true' })),
++        el('span', { class: 'karta-odznaku__obrazek', htmlBezpecne: p.obrazek }),
++        el('span', { class: 'karta-odznaku__razitko', 'aria-hidden': 'true' },
++          el('span', { class: 'karta-odznaku__neon karta-odznaku__neon--mata', text: h('odznaky.razitko') }))),
++      span('karta-odznaku__text',
++        el('span', { class: 'karta-odznaku__druh', text: p.druh }),
++        el('strong', { class: 'karta-odznaku__nazev', text: p.nazev }),
++        el('span', { class: 'karta-odznaku__pochvala', text: p.pochvala })),
++      p.akce ? el('span', { class: 'karta-odznaku__misto-akce', 'aria-hidden': 'true' }) : null,
++      span('karta-odznaku__pata',
++        el('span', { class: 'karta-odznaku__tecka', text: 'Spolu' }),
++        datum ? el('span', { text: datum }) : null),
++      el('span', { class: 'karta-odznaku__lesk', 'aria-hidden': 'true' })));
++  const rub = el('span', { class: 'karta-odznaku__rub', 'aria-hidden': 'true' },
++    span('karta-odznaku__okraj'),
++    span('karta-odznaku__plocha',
++      svetla(['a', 'b', 'c', 'd', 'e']),
++      el('span', { class: 'karta-odznaku__roh karta-odznaku__roh--nahore', text: 'Spolu' }),
++      el('span', { class: 'karta-odznaku__roh karta-odznaku__roh--dole', text: 'Spolu' }),
++      span('karta-odznaku__koule-obal',
++        span('karta-odznaku__vlna'), span('karta-odznaku__vlna karta-odznaku__vlna--2'),
++        span('karta-odznaku__koule', el('span', { class: 'karta-odznaku__otaznik', text: '?' }))),
++      el('span', { class: 'karta-odznaku__vyzva karta-odznaku__neon karta-odznaku__neon--mata', text: 'Klepni a otoč' }),
++      span('karta-odznaku__lesk')));
+   const tlacitko = el('button', { class: 'karta-odznaku__tlacitko', type: 'button', 'aria-label': `Otoč kartu ${poradi} z ${celkem}` },
+-    el('span', { class: 'karta-odznaku__naklon' },
+-      el('span', { class: 'karta-odznaku__vnitrek' }, rub, lic)));
+-  return el('div', { class: `karta-odznaku karta-odznaku--${barva}`, 'data-i': String(poradi - 1) }, efekty, tlacitko);
++    span('karta-odznaku__naklon',
++      span('karta-odznaku__vnitrek', rub, lic)));
++  const akce = p.akce ? el('button', { class: 'tlacitko tlacitko--primarni karta-odznaku__akce', type: 'button' }, p.akce.text) : null;
++  return el('div', { class: ['karta-odznaku', `karta-odznaku--${p.barva}`, akce && 'karta-odznaku--s-akci'], 'data-i': String(poradi - 1) },
++    el('div', { class: 'karta-odznaku__vznaseni' },
++      el('span', { class: 'karta-odznaku__zare', 'aria-hidden': 'true' }), tlacitko, akce));
+ }
+ 
+-/** Naklánění lícem otočené karty za prstem/myší (--rx, --ry, --mx, --my). */
++/**
++ * Naklánění aktuální karty za prstem/myší (3D náklon s odleskem z návrhu): --rx, --ry, --mx, --my
++ * (+ --mxf zrcadlově pro líc, který je otočený o 180°).
++ */
+ function napojNaklon(k) {
+   const cil = k.querySelector('.karta-odznaku__naklon');
+-  const reset = () => { cil.style.removeProperty('--rx'); cil.style.removeProperty('--ry'); };
++  const reset = () => { for (const v of ['--rx', '--ry', '--mx', '--mxf', '--my']) cil.style.removeProperty(v); };
+   k.addEventListener('pointermove', (e) => {
+-    if (!k.classList.contains('je-otocena') || bezAnimaci()) return;
++    if (!k.classList.contains('je-aktualni') || bezAnimaci()) return;
+     const r = cil.getBoundingClientRect();
+-    const x = (e.clientX - r.left) / r.width; const y = (e.clientY - r.top) / r.height;
+-    cil.style.setProperty('--ry', `${(x - 0.5) * 18}deg`);
+-    cil.style.setProperty('--rx', `${(0.5 - y) * 14}deg`);
++    if (!r.width || !r.height) return;
++    const omez = (v) => Math.max(-0.4, Math.min(1.4, v));
++    const x = omez((e.clientX - r.left) / r.width); const y = omez((e.clientY - r.top) / r.height);
++    cil.style.setProperty('--rx', `${((0.5 - y) * 22).toFixed(2)}deg`);
++    cil.style.setProperty('--ry', `${((x - 0.5) * 28).toFixed(2)}deg`);
+     cil.style.setProperty('--mx', `${Math.round(x * 100)}%`);
++    cil.style.setProperty('--mxf', `${Math.round((1 - x) * 100)}%`);
+     cil.style.setProperty('--my', `${Math.round(y * 100)}%`);
+   });
+   k.addEventListener('pointerleave', reset);
+ }
+ 
++const TEXTY_ODZNAKU = {
++  titulek: (n, prohlizeni) => (prohlizeni ? 'Tvůj odznak' : n > 1 ? `Nové odznaky: ${n}` : 'Nový odznak!'),
++  seber: (n) => (n > 1 ? 'Seber odznaky' : 'Seber odznak'),
++  oznameni: 'Nový odznak',
++  pas: 'Karty odznaků, listuj doleva a doprava',
++};
++
+ /**
+  * Okno s kartami nových odznaků. Vrátí se po „Seber odznak(y)“ (nebo Esc).
+  * @param {string[]} ids
+  * @param {{prohlizeni?: boolean}} [volby]  prohlížení už získaného odznaku z přehledu odznaků (Pavel 6. 10.): jiný nadpis, „Zavřít“
+  */
+ export async function oknoNovychOdznaku(ids, { prohlizeni = false } = {}) {
+-  if (!ids.length) return;
+-  const n = ids.length;
+-  const karty = ids.map((id, i) => karta(id, i + 1, n, { datum: prohlizeni ? '' : dnes() })); // u prohlížení datum získání neznáme
+-  const pas = el('div', { class: 'karty-odznaku__pas', tabindex: n > 1 ? '0' : null, 'aria-label': n > 1 ? 'Karty odznaků, listuj doleva a doprava' : null }, karty);
++  return oknoKaret(ids.map(popisOdznaku), { prohlizeni, texty: TEXTY_ODZNAKU });
++}
++
++/**
++ * Okno s kartami k otočení (odznaky; R78 i nově odemčené taháky). Vrátí se po hlavním tlačítku nebo Esc.
++ * @param {Array<object>} polozky  popisy karet (viz karta())
++ * @param {{prohlizeni?: boolean, texty?: {titulek: (n: number, prohlizeni: boolean) => string, seber: (n: number) => string, oznameni: string, pas: string}}} [volby]
++ * @returns {Promise<string>} '' / 'sebrano', nebo `akce.hodnota` tlačítka na líci (tahák: „Otevřít tahák“)
++ */
++export async function oknoKaret(polozky, { prohlizeni = false, texty = TEXTY_ODZNAKU } = {}) {
++  if (!polozky.length) return '';
++  const n = polozky.length;
++  const karty = polozky.map((p, i) => karta(p, i + 1, n, { datum: prohlizeni ? '' : dnes() })); // u prohlížení datum získání neznáme
++  const pas = el('div', { class: 'karty-odznaku__pas', tabindex: n > 1 ? '0' : null, 'aria-label': n > 1 ? texty.pas : null }, karty);
+   const oznameni = el('p', { class: 'jen-ctecka', role: 'status', 'aria-live': 'polite' });
+-  const tecky = n > 1 ? el('div', { class: 'karty-odznaku__tecky', 'aria-hidden': 'true' }, ids.map(() => el('span'))) : null;
++  const tecky = n > 1 ? el('div', { class: 'karty-odznaku__tecky', 'aria-hidden': 'true' }, polozky.map(() => el('span'))) : null;
+   const sipka = (smer, text) => (n > 1 ? el('button', { class: `karty-odznaku__sipka karty-odznaku__sipka--${smer}`, type: 'button', 'aria-label': text }) : null);
+   const vlevo = sipka('vlevo', 'Předchozí karta');
+   const vpravo = sipka('vpravo', 'Další karta');
+   const hlavni = el('button', { class: 'tlacitko tlacitko--primarni tlacitko--velke tlacitko--cela-sirka', type: 'button' });
+   const d = el('dialog', { class: 'modal modal--karty-odznaku', 'aria-labelledby': 'kartyOdznakuNadpis' },
+     el('div', { class: 'karty-odznaku' },
+-      el('p', { class: 'karty-odznaku__titulek', id: 'kartyOdznakuNadpis', text: prohlizeni ? 'Tvůj odznak' : n > 1 ? `Nové odznaky: ${n}` : 'Nový odznak!' }),
++      el('p', { class: 'karty-odznaku__titulek', id: 'kartyOdznakuNadpis', text: texty.titulek(n, prohlizeni) }),
+       el('div', { class: 'karty-odznaku__scena' }, vlevo, pas, vpravo),
+       tecky, oznameni, hlavni));
+ 
+@@ -88,7 +150,7 @@ export async function oknoNovychOdznaku(ids, { prohlizeni = false } = {}) {
+     if (vlevo) vlevo.disabled = aktualni === 0;
+     if (vpravo) vpravo.disabled = aktualni === n - 1;
+     const vse = otocene.size === n;
+-    hlavni.textContent = !otocene.has(aktualni) ? 'Otoč kartu' : vse ? (prohlizeni ? 'Zavřít' : n > 1 ? 'Seber odznaky' : 'Seber odznak') : 'Další karta';
++    hlavni.textContent = !otocene.has(aktualni) ? 'Otoč kartu' : vse ? (prohlizeni ? 'Zavřít' : texty.seber(n)) : 'Další karta';
+   };
+   const naKartu = (i, plynule = true) => {
+     aktualni = Math.max(0, Math.min(n - 1, i));
+@@ -100,16 +162,18 @@ export async function oknoNovychOdznaku(ids, { prohlizeni = false } = {}) {
+     if (otocene.has(i)) return;
+     otocene.add(i);
+     const k = karty[i];
+-    k.classList.add('je-otocena');
+-    if (!bezAnimaci()) { k.classList.add('je-vybuch'); setTimeout(() => k.classList.remove('je-vybuch'), 1400); }
+-    const o = najdiOdznak(ids[i]);
+-    k.querySelector('.karta-odznaku__tlacitko').setAttribute('aria-label', `${o?.nazev}: ${o?.pochvala}`);
+-    oznameni.textContent = `Nový odznak: ${o?.nazev}. ${o?.pochvala}`;
++    k.classList.add('je-otocena'); // CSS: otočení, odznak vyskočí, razítko, text vyjede
++    const p = polozky[i];
++    k.querySelector('.karta-odznaku__tlacitko').setAttribute('aria-label', `${p.nazev}: ${p.pochvala}`);
++    oznameni.textContent = `${texty.oznameni}: ${p.nazev}. ${p.pochvala}`;
+     obnov();
+   };
+   karty.forEach((k, i) => {
+     k.querySelector('.karta-odznaku__tlacitko').addEventListener('click', () => { if (i !== aktualni) naKartu(i); else otoc(i); });
+-    napojNaklon(k);
++    const akce = k.querySelector('.karta-odznaku__akce');
++    // akce.onClick (tahák: otevře se nad kartami), jinak zavře okno s hodnotou akce; bez naklánění: tlačítko na líci by „ujíždělo“
++    if (akce) akce.addEventListener('click', () => { const a = polozky[i].akce; if (a.onClick) a.onClick(); else zavritModal(d, a.hodnota || ''); });
++    else napojNaklon(k);
+   });
+   vlevo?.addEventListener('click', () => naKartu(aktualni - 1));
+   vpravo?.addEventListener('click', () => naKartu(aktualni + 1));
+@@ -143,6 +207,7 @@ export async function oknoNovychOdznaku(ids, { prohlizeni = false } = {}) {
+   const hotovo = otevritModal(d);
+   naKartu(0, false);
+   hlavni.focus();
+-  await hotovo;
++  const volba = await hotovo;
+   d.remove();
++  return volba;
+ }
+diff --git a/web/js/odznaky-ui.js b/web/js/odznaky-ui.js
+index 68fd561..c09373b 100644
+--- a/web/js/odznaky-ui.js
++++ b/web/js/odznaky-ui.js
+@@ -5,16 +5,17 @@
+ // =====================================================================
+ 
+ import { el, otevritModal, zavritModal } from './ui.js';
+-import { ODZNAKY, ODZNAKY_OBA, svgOdznaku, noveOdznaky, odznakyPredmetu } from './odznaky.js';
++import { ODZNAKY, ODZNAKY_OBA, ODZNAKY_VYZVY_A_TAHAKY, htmlOdznaku, noveOdznaky, odznakyPredmetu } from './odznaky.js';
++import { h } from './hlasky.js';
+ import { oknoNovychOdznaku } from './odznaky-karty.js';
+ 
+-/** R69: odznaky k zobrazení — předmět (výchozí matematika) a společné, když dítě má oba předměty. */
+-const sadaOdznaku = ({ predmet = 'matematika', oba = false } = {}) => [...odznakyPredmetu(predmet), ...(oba ? ODZNAKY_OBA : [])];
++/** R69: odznaky k zobrazení — předmět (výchozí matematika), společné, když dítě má oba předměty; R80: vždy i výzvy a taháky. */
++const sadaOdznaku = ({ predmet = 'matematika', oba = false } = {}) => [...odznakyPredmetu(predmet), ...(oba ? ODZNAKY_OBA : []), ...ODZNAKY_VYZVY_A_TAHAKY];
+ const NAZEV_PREDMETU = { matematika: 'matematika', cestina: 'čeština' };
+ 
+ const klicVidene = (diteId) => `spolu.odznaky.videno.${diteId}`;
+ 
+-function nactiVidene(diteId) {
++export function nactiVidene(diteId) {
+   try {
+     const x = JSON.parse(localStorage.getItem(klicVidene(diteId)) || 'null');
+     return Array.isArray(x) ? x : null; // null = na tomto zařízení ještě nikdy
+@@ -25,21 +26,29 @@ function ulozVidene(diteId, ids) {
+   try { localStorage.setItem(klicVidene(diteId), JSON.stringify([...new Set(ids)])); } catch { /* bez úložiště se ukáže znovu */ }
+ }
+ 
+-/** Obrázek odznaku (span se SVG). `ziskan: false` = šedý. */
+-export function obrazekOdznaku(id, { ziskan = true, titulek = '' } = {}) {
+-  return el('span', { class: ['odznak__obrazek', !ziskan && 'odznak__obrazek--chybi'], htmlBezpecne: svgOdznaku(id, { titulek }) });
++/**
++ * Obrázek odznaku v novém stylu (redesign 8. 10., htmlOdznaku). `ziskan: false` = šedý se zámkem (pod 56 px jen šedý).
++ * @param {string} id
++ * @param {{ziskan?: boolean, titulek?: string, velikost?: number|null}} [volby]  velikost v px (jinak podle CSS)
++ */
++export function obrazekOdznaku(id, { ziskan = true, titulek = '', velikost = null } = {}) {
++  const t = document.createElement('template');
++  t.innerHTML = htmlOdznaku(id, { zamceno: !ziskan, titulek, velikost });
++  return t.content.firstElementChild || el('span');
+ }
+ 
+-/** Mřížka odznaků (získané barevně, nezískané šedé s popisem, co pro ně udělat). */
++/** Mřížka odznaků: dlaždice „Získáno“ (bílá, otevře kartu) a „Zamčeno“ (čárkovaná, s popisem, co pro odznak udělat). */
+ function mrizkaOdznaku(ziskane, sada = ODZNAKY) {
+   return el('div', { class: 'odznaky' }, sada.map((o) => {
+     const ma = ziskane.has(o.id);
+     const obsah = [obrazekOdznaku(o.id, { ziskan: ma }),
+-      el('span', { class: 'odznak__nazev', text: o.nazev }),
+-      el('small', { class: 'odznak__popis', text: ma ? o.pochvala : o.popis })];
++      el('span', { class: 'odznak__text' },
++        el('span', { class: 'odznak__stav', text: h(ma ? 'odznaky.ziskano' : 'odznaky.zamceno') }),
++        el('span', { class: 'odznak__nazev', text: o.nazev }),
++        el('small', { class: 'odznak__popis', text: ma ? o.pochvala : o.popis }))];
+     // Pavel 6. 10.: získaný odznak jde otevřít znovu jako karta (s otočením)
+     return ma
+-      ? el('button', { class: 'odznak odznak--tlacitko', type: 'button', 'aria-label': `${o.nazev}: zobrazit kartu`, onClick: () => oknoNovychOdznaku([o.id], { prohlizeni: true }) }, ...obsah)
++      ? el('button', { class: 'odznak odznak--ziskany odznak--tlacitko', type: 'button', 'aria-label': `${o.nazev}: zobrazit kartu`, onClick: () => oknoNovychOdznaku([o.id], { prohlizeni: true }) }, ...obsah)
+       : el('div', { class: 'odznak odznak--chybi' }, ...obsah);
+   }));
+ }
+@@ -57,6 +66,8 @@ export async function otevritOdznaky(ziskane, volby = {}) {
+       mrizkaOdznaku(ziskane, predmet),
+       volby.oba ? el('h3', { class: 'odznaky__nadpis', text: 'Za oba předměty' }) : null,
+       volby.oba ? mrizkaOdznaku(ziskane, ODZNAKY_OBA) : null,
++      el('h3', { class: 'odznaky__nadpis', text: 'Výzvy a taháky' }),
++      mrizkaOdznaku(ziskane, ODZNAKY_VYZVY_A_TAHAKY),
+       el('div', { class: 'modal__akce' },
+         el('button', { class: 'tlacitko tlacitko--primarni', type: 'button', onClick: () => zavritModal(d) }, 'Zavřít'))));
+   document.body.append(d);
+@@ -78,7 +89,7 @@ export function radekOdznaku(ziskane, volby = {}) {
+       el('strong', { text: `Odznaky: ${ma} z ${sada.length}` }),
+       el('span', { class: 'text-tlumeny', text: 'Zobrazit' })),
+     el('span', { class: 'odznaky-radek__pas', 'aria-hidden': 'true' },
+-      ukazat.map((o) => obrazekOdznaku(o.id, { ziskan: ziskane.has(o.id) }))));
++      ukazat.map((o) => obrazekOdznaku(o.id, { ziskan: ziskane.has(o.id), velikost: 40 }))));
+ }
+ 
+ /**
+diff --git a/web/js/odznaky.js b/web/js/odznaky.js
+index b648d96..36bb218 100644
+--- a/web/js/odznaky.js
++++ b/web/js/odznaky.js
+@@ -4,6 +4,8 @@
+ // databáze se nemění. Obrázky odznaků jsou SVG řetězce tady v repozitáři (DOM z nich dělá odznaky-ui.js).
+ // =====================================================================
+ 
++import { DATA as DATA_TAHAKU, tydenniTahaky, odemceneTahaky, pocetVMesici, konecVyzvy, sezonaZamcena } from './tahaky.js';
++
+ /**
+  * Řada (R62): mezi dvěma sousedními dokončenými lekcemi nejvýš 7 KALENDÁŘNÍCH dní v Europe/Prague
+  * (pondělí večer → další pondělí ráno i večer je v řadě; víkend ani týden pauzy ji neruší).
+@@ -125,7 +127,7 @@ export function spocitejOdznaky(lekce, { navic = null } = {}) {
+ /** Nově získané odznaky proti seznamu už ukázaných (v pořadí sady). */
+ export function noveOdznaky(ziskane, videne) {
+   const v = new Set(videne || []);
+-  return [...ODZNAKY, ...ODZNAKY_CESTINY, ...ODZNAKY_OBA].filter((o) => ziskane.has(o.id) && !v.has(o.id)).map((o) => o.id);
++  return [...ODZNAKY, ...ODZNAKY_CESTINY, ...ODZNAKY_OBA, ...ODZNAKY_VYZVY_A_TAHAKY].filter((o) => ziskane.has(o.id) && !v.has(o.id)).map((o) => o.id);
+ }
+ 
+ // ---------------------------------------------------------------------
+@@ -133,14 +135,15 @@ export function noveOdznaky(ziskane, videne) {
+ // Matematika má id beze změny (už viděné odznaky se neukážou znovu), čeština „cj:<id>“, společné „oba:<id>“.
+ // ---------------------------------------------------------------------
+ 
+-/** Odznaky češtiny: jen ty, které jdou splnit se 4 pilotními lekcemi (řada 5 a 10 ne, Fáze 1 je jen matematika). */
+-const ZAKLAD_CESTINY = ['prvni', 'spravne', 'tyden', 'rada3', 'pilot'];
++/** Odznaky češtiny (R80, 8. 10.: čeština má Fázi 1 se 16 lekcemi, proto i řada 5 a 10 a Fáze 1 hotová). */
++const ZAKLAD_CESTINY = ['prvni', 'spravne', 'tyden', 'rada3', 'rada5', 'rada10', 'pilot', 'faze1'];
++const POPIS_CESTINY = { faze1: 'Dokonči všechny lekce Fáze 1 z češtiny.' };
+ const BARVA_CESTINY = { zelena: 'modra', zlata: 'zlata' };
+ BARVY.modra = { telo: '#3B82F6', znak: '#FFFFFF', krouzek: '#FFFFFF' };
+ 
+ export const ODZNAKY_CESTINY = Object.freeze(ZAKLAD_CESTINY.map((id) => {
+   const o = ODZNAKY.find((x) => x.id === id);
+-  return { ...o, id: `cj:${id}`, zaklad: id, nazev: `${o.nazev} z češtiny`, barva: BARVA_CESTINY[o.barva] };
++  return { ...o, id: `cj:${id}`, zaklad: id, nazev: `${o.nazev} z češtiny`, barva: BARVA_CESTINY[o.barva], ...(POPIS_CESTINY[id] ? { popis: POPIS_CESTINY[id] } : {}) };
+ }));
+ 
+ export const ODZNAKY_OBA = Object.freeze([
+@@ -152,9 +155,139 @@ export const ODZNAKY_OBA = Object.freeze([
+     znak: (b) => CISLO(b, '3+3', 41, 18) + SIPKY(b) },
+ ]);
+ 
+-/** Definice odznaku podle id (matematika, cj:…, oba:…). */
++// ---------------------------------------------------------------------
++// R80 (Pavel 8. 10.): odznaky za splněné měsíční výzvy a za sbírku taháků (R78), společné pro oba předměty.
++// ---------------------------------------------------------------------
++
++const MESIC_V = { '01': 'v lednu', '02': 'v únoru', '03': 'v březnu', '04': 'v dubnu do 11. 4.', '11': 'v listopadu', '12': 'v prosinci' };
++const MESIC_ZKR = { '01': 'LED', '02': 'ÚNO', '03': 'BŘE', '04': 'DUB', '11': 'LIS', '12': 'PRO' };
++const HVEZDA = (b) => `<path d="M36 15l3.2 6.6 7.2 1-5.2 5 1.3 7.2L36 31.4l-6.5 3.4 1.3-7.2-5.2-5 7.2-1z" fill="${b.znak}"/>`;
++const KARTICKY = (b, t) => `<rect x="23" y="17" width="20" height="25" rx="3" fill="none" stroke="${b.znak}" stroke-width="2.4" opacity=".55"/>`
++  + `<rect x="28" y="21" width="21" height="26" rx="3" fill="${b.telo}" stroke="${b.znak}" stroke-width="2.6"/>${CISLO(b, t, 40, t.length > 2 ? 11 : 14)}`;
++
++export const ODZNAKY_VYZEV = Object.freeze(DATA_TAHAKU.vyzvy.map((v) => {
++  const m = v.mesic.slice(5);
++  return {
++    id: `vyzva:${v.mesic}`, mesic: v.mesic, barva: 'zlata', nazev: v.nazev,
++    pochvala: `${v.nazev} splněna. Zlatý tahák je tvůj!`,
++    popis: `Dokonči ${v.cil} ${Number(v.cil) === 1 ? 'lekci' : Number(v.cil) <= 4 ? 'lekce' : 'lekcí'} ${MESIC_V[m] || ''}`.trim().replace(/\.?$/, '.'),
++    znak: (b) => HVEZDA(b) + CISLO(b, MESIC_ZKR[m] || m, 52, 13),
++  };
++}));
++
++export const ODZNAKY_SBIRKY = Object.freeze([
++  { id: 'sber:5', nazev: 'Sběratel', pochvala: 'Pět taháků ve sbírce!', popis: 'Odemkni 5 taháků.', barva: 'zelena', pocet: 5, znak: (b) => KARTICKY(b, '5') },
++  { id: 'sber:15', nazev: 'Velký sběratel', pochvala: 'Patnáct taháků ve sbírce. Paráda!', popis: 'Odemkni 15 taháků.', barva: 'zelena', pocet: 15, znak: (b) => KARTICKY(b, '15') },
++  { id: 'sber:vse', nazev: 'Celá sbírka', pochvala: 'Máš všechny taháky. Jsi připravený(á)!', popis: 'Odemkni všechny týdenní taháky.', barva: 'zlata', pocet: Infinity, znak: (b) => KARTICKY(b, 'vše') },
++]);
++
++/** Výzvy a taháky v jednom seznamu (pořadí zobrazení). */
++export const ODZNAKY_VYZVY_A_TAHAKY = Object.freeze([...ODZNAKY_VYZEV, ...ODZNAKY_SBIRKY]);
++
++/**
++ * Získané odznaky za výzvy a taháky. Výzva = aspoň `cil` lekcí s posledním dokončením v měsíci (stejně jako R78);
++ * sbírka = počet odemčených TÝDENNÍCH taháků (bonusové se nepočítají).
++ * `videne` = už ukázané odznaky z tohoto zařízení: splněná výzva zůstane, i když dítě lekci z jejího měsíce
++ * později zopakuje a poslední dokončení se přesune do dalšího měsíce (stejně jako zlaté taháky v R78).
++ */
++export function odznakyVyzevATahaku(lekce, { navic = null, ted = Date.now(), videne = [] } = {}) {
++  const ziskane = new Set((videne || []).filter((id) => id.startsWith('vyzva:')));
++  // bez zaplacené sezóny se výzvy nepočítají (ODPOVED 8. 10., bod 3)
++  if (!sezonaZamcena(lekce)) for (const v of DATA_TAHAKU.vyzvy) {
++    if (pocetVMesici(lekce, v.mesic, { navic, konec: konecVyzvy(v) }) >= Number(v.cil)) ziskane.add(`vyzva:${v.mesic}`);
++  }
++  const tydenni = [...odemceneTahaky(lekce, { ted, navic })].filter((id) => !id.startsWith('b:')).length;
++  const celkem = tydenniTahaky().length;
++  for (const o of ODZNAKY_SBIRKY) if (celkem && tydenni >= Math.min(o.pocet, celkem)) ziskane.add(o.id);
++  return ziskane;
++}
++
++// ---------------------------------------------------------------------
++// Redesign 8. 10. (návrh designérky, Pavel: „drž se ho“): odznak z vrstev (rám, pruhovaný kruh, jádro, líc
++// s odleskem a přejíždějícím leskem), tvar podle skupiny, tón podle barvy, znak v currentColor.
++// Vykresluje se jako HTML řetězec (htmlOdznaku); styly v design-system.css, sekce „Redesign odznaků“.
++// svgOdznaku výše zůstává kvůli zpětné kompatibilitě a testům.
++// ---------------------------------------------------------------------
++
++const ZNAK_HVEZDA = (velka = false) => `<svg class="odz__hvezda${velka ? ' odz__hvezda--velka' : ''}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">`
++  + '<path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.9z"/></svg>';
++const ZNAK_SIPKY = '<svg class="odz__sipky" viewBox="0 0 30 12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'
++  + '<path d="M3 2l5 4-5 4M12.5 2l5 4-5 4M22 2l5 4-5 4"/></svg>';
++const ZNAK_CISLO = (t, maly = false) => `<span class="odz__cislo${maly ? ' odz__cislo--maly' : ''}">${t}</span>`;
++const ZNAK_POHAR = '<svg class="odz__pohar" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'
++  + '<path d="M7.5 4h9v4.5a4.5 4.5 0 0 1-9 0z"/><path d="M7.5 5.5H4.5v1.5a3 3 0 0 0 3 3M16.5 5.5h3v1.5a3 3 0 0 1-3 3M12 13v4" fill="none"/><path d="M8.5 17.5h7v2.5h-7z"/></svg>';
++/** Kalendář (tvar ze současného SVG „Celý týden“); `vnitrek` = fajfka nebo „2×“. */
++const ZNAK_KALENDAR = (vnitrek) => '<svg class="odz__ikona" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'
++  + `<rect x="3.5" y="5.5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10.5h17M8 3v4.5M16 3v4.5"/>${vnitrek}</svg>`;
++const FAJFKA_KALENDARE = '<path d="M8.4 15.6l2.6 2.6 4.8-4.8" stroke-width="2.4"/>';
++const DVAKRAT_KALENDARE = '<text x="12" y="18.6" text-anchor="middle" font-family="Sora, sans-serif" font-weight="800" font-size="7.6" fill="currentColor" stroke="none">2×</text>';
++const ZNAK_VLAJKA = '<svg class="odz__ikona" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">'
++  + '<path d="M6.5 21.5V3" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M7.5 3.8h12l-3.2 4.4 3.2 4.4h-12z"/></svg>';
++const ZNAK_ZAMEK = '<span class="odz__zamek" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">'
++  + '<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>';
++
++/** Znaky odznaků matematiky (čeština má stejné: `zaklad`). */
++const ZNAKY = {
++  prvni: () => ZNAK_CISLO('1'),
++  spravne: () => ZNAK_HVEZDA(true),
++  tyden: () => ZNAK_KALENDAR(FAJFKA_KALENDARE),
++  rada3: () => ZNAK_CISLO('3') + ZNAK_SIPKY,
++  rada5: () => ZNAK_CISLO('5') + ZNAK_SIPKY,
++  rada10: () => ZNAK_CISLO('10') + ZNAK_SIPKY,
++  pilot: () => ZNAK_VLAJKA,
++  faze1: () => ZNAK_POHAR,
++  'oba:prvni': () => ZNAK_CISLO('1+1', true),
++  'oba:tyden': () => ZNAK_KALENDAR(DVAKRAT_KALENDARE),
++  'oba:rada': () => ZNAK_CISLO('3+3', true) + ZNAK_SIPKY,
++};
++
++function znakOdznaku(o) {
++  if (o.id.startsWith('vyzva:')) return `${ZNAK_HVEZDA()}<span class="odz__zkratka">${MESIC_ZKR[o.mesic.slice(5)] || o.mesic.slice(5)}</span>`;
++  if (o.id.startsWith('sber:')) {
++    const t = o.id === 'sber:vse' ? 'vše' : o.id.slice(5);
++    return `<span class="odz__karticky${t.length > 2 ? ' odz__karticky--maly' : ''}">${t}</span>`;
++  }
++  return (ZNAKY[o.id] || ZNAKY[o.zaklad] || (() => ''))();
++}
++
++/**
++ * Tvar a tón odznaku: matematika a výzvy kruh, čeština štít, oba předměty a sbírka šestiúhelník;
++ * tón = barva odznaku (zelena, zlata, modra).
++ * @returns {{tvar: 'kruh'|'stit'|'sestiuhelnik', ton: 'zelena'|'zlata'|'modra'}|null}
++ */
++export function vzhledOdznaku(id) {
++  const o = najdiOdznak(id);
++  if (!o) return null;
++  const tvar = id.startsWith('cj:') ? 'stit' : id.startsWith('oba:') || id.startsWith('sber:') ? 'sestiuhelnik' : 'kruh';
++  return { tvar, ton: o.barva };
++}
++
++const escAtribut = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
++
++/**
++ * Odznak v novém stylu jako HTML řetězec (span, uvnitř jen spany a SVG — smí do tlačítka).
++ * @param {string} id
++ * @param {{velikost?: number|null, zamceno?: boolean, titulek?: string}} [volby]
++ *   velikost = px (jinak ji určí CSS, výchozí 96 px; pod 56 px bez lesku a bez zámku), zamceno = šedý se zámkem,
++ *   titulek = přístupný název (jinak aria-hidden)
++ */
++export function htmlOdznaku(id, { velikost = null, zamceno = false, titulek = '' } = {}) {
++  const o = najdiOdznak(id);
++  if (!o) return '';
++  const { tvar, ton } = vzhledOdznaku(id);
++  const px = Number(velikost) || 0;
++  const maly = px > 0 && px < 56;
++  const tridy = ['odz', `odz--${tvar}`, `odz--${ton}`, zamceno && 'odz--zamceno', maly && 'odz--maly'].filter(Boolean).join(' ');
++  const pristup = titulek ? `role="img" aria-label="${escAtribut(titulek)}"` : 'aria-hidden="true"';
++  return `<span class="${tridy}" ${pristup}${px ? ` style="--s:${px}px"` : ''} data-odznak="${escAtribut(id)}">`
++    + '<span class="odz__ram"></span><span class="odz__pruhy"></span><span class="odz__jadro"></span>'
++    + `<span class="odz__lic">${znakOdznaku(o)}</span>${zamceno && !maly ? ZNAK_ZAMEK : ''}</span>`;
++}
++
++/** Definice odznaku podle id (matematika, cj:…, oba:…, vyzva:…, sber:…). */
+ export function najdiOdznak(id) {
+-  return ODZNAKY.find((x) => x.id === id) || ODZNAKY_CESTINY.find((x) => x.id === id) || ODZNAKY_OBA.find((x) => x.id === id) || null;
++  return ODZNAKY.find((x) => x.id === id) || ODZNAKY_CESTINY.find((x) => x.id === id) || ODZNAKY_OBA.find((x) => x.id === id)
++    || ODZNAKY_VYZVY_A_TAHAKY.find((x) => x.id === id) || null;
+ }
+ 
+ /** Odznaky k zobrazení pro předmět (společné zvlášť přes ODZNAKY_OBA). */
+@@ -166,9 +299,9 @@ export function odznakyPredmetu(predmet) {
+  * Odznaky po předmětech (R69): spocitejOdznaky zvlášť pro matematiku a češtinu + společné.
+  * `ziskane` obsahuje všechna id (matematika bez předpony, cj:…, oba:…); hotove a celaSpravne jsou sjednocení.
+  * @param {Array<object>} lekce  katalog s průběhem (lekceProDite), `predmet` chybí = matematika
+- * @param {{navic?: {id: string, konec: string}}} [volby]
++ * @param {{navic?: {id: string, konec: string}, ted?: number, videne?: string[]}} [volby]  videne = už ukázané odznaky (splněná výzva zůstane, R80)
+  */
+-export function spocitejOdznakyPredmetu(lekce, { navic = null } = {}) {
++export function spocitejOdznakyPredmetu(lekce, { navic = null, ted = Date.now(), videne = [] } = {}) {
+   const predmet = (l) => l.predmet || 'matematika';
+   const mat = lekce.filter((l) => predmet(l) === 'matematika');
+   const cj = lekce.filter((l) => predmet(l) === 'cestina');
+@@ -188,7 +321,8 @@ export function spocitejOdznakyPredmetu(lekce, { navic = null } = {}) {
+     if (m.rada.nejlepsi >= 3 && c.rada.nejlepsi >= 3) oba.add('oba:rada');
+   }
+   const ziskane = new Set([...m.ziskane,
+-    ...ODZNAKY_CESTINY.filter((o) => c.ziskane.has(o.zaklad)).map((o) => o.id), ...oba]);
++    ...ODZNAKY_CESTINY.filter((o) => c.ziskane.has(o.zaklad)).map((o) => o.id), ...oba,
++    ...odznakyVyzevATahaku(lekce, { navic, ted, videne })]);
+   return {
+     ziskane, matematika: m, cestina: c, oba,
+     hotove: new Set([...m.hotove, ...c.hotove]), celaSpravne: new Set([...m.celaSpravne, ...c.celaSpravne]),

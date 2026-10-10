@@ -1,0 +1,272 @@
+diff --git a/web/js/lekce.js b/web/js/lekce.js
+index 059fe43..2da5bab 100644
+--- a/web/js/lekce.js
++++ b/web/js/lekce.js
+@@ -34,6 +34,7 @@ import { popisChyby, jeDetektivniChyba } from './chyby.js';
+ import { sestavSouhrn } from './rodic-souhrn.js';
+ import { spocitejOdznakyPredmetu } from './odznaky.js';
+ import { ukazNoveOdznaky } from './odznaky-ui.js';
++import { ukazNoveTahakyPoLekci } from './tahaky-ui.js';
+ import { ziskejDite, nastavDite } from './role.js';
+ import { napojMenu } from './menu.js';
+ import { pripojKlavesnici } from './klavesnice.js';
+@@ -802,8 +803,10 @@ async function vykresliKonecSamo({ driv = false } = {}) {
+ async function ukazOdznakyPoLekci() {
+   try {
+     const lekce = await lekceProDite(stav.dite.id);
+-    const { ziskane } = spocitejOdznakyPredmetu(lekce, { navic: { id: stav.lekce.id, konec: new Date().toISOString() } });
++    const navic = { id: stav.lekce.id, konec: new Date().toISOString() };
++    const { ziskane } = spocitejOdznakyPredmetu(lekce, { navic });
+     await ukazNoveOdznaky(stav.dite.id, ziskane, { prvniTise: false });
++    await ukazNoveTahakyPoLekci(stav.dite.id, lekce, navic); // R78: po odznacích nově odemčené taháky
+   } catch (e) {
+     console.warn('odznaky po lekci:', e); // odznak není důležitější než lekce — chyba se jen zaloguje
+   }
+diff --git a/web/js/menu.js b/web/js/menu.js
+index 7f1a8ba..be2325a 100644
+--- a/web/js/menu.js
++++ b/web/js/menu.js
+@@ -6,7 +6,7 @@
+ //   <header class="hlavicka"><div class="hlavicka__vnitrek"><a class="logo" href="prehled.html">…</a></div></header>
+ // napojMenu() do ní přidá tlačítko „Menu" a <dialog class="modal"> s položkami:
+ //   přepínač role zařízení (role.js) · Jak vést lekci + Jak číst zápisy nahlas (jen rodič)
+-//   · Zpět na přehled · Vzhled (Světlý / Tmavý / Podle zařízení, R26) · Odhlásit se
++//   · Zpět na přehled · Moje taháky (R78) · Vzhled (Světlý / Tmavý / Podle zařízení, R26) · Odhlásit se
+ // Přepínač motivu jen vykreslí tlačítka [data-motiv-nastav]; kliknutí a uložení (localStorage
+ // `spolu.motiv`) obsluhuje inline skript motivu v <head> každé stránky (window.spoluMotiv).
+ // Texty modalů: web/js/manual.js a web/js/cteni-zapisu.js (generuje nastroje/generuj-hlasky.mjs).
+@@ -136,6 +136,7 @@ export function napojMenu({ hlavicka, role = true, poZmeneRole, prehled = true }
+         role ? slotRole : null,
+         btnManual, btnCteni,
+         prehled ? el('a', { class: 'tlacitko tlacitko--sekundarni', href: 'prehled.html' }, ikona('sipka-vlevo'), 'Zpět na přehled') : null,
++        el('a', { class: 'tlacitko tlacitko--sekundarni', href: 'tahaky.html' }, ikona('kniha'), h('tahaky.nadpis')), // R78
+         el('p', { class: 'text-tlumeny', text: 'Vzhled:' }),
+         prepinacMotivu(),
+         btnOdhlasit)));
+diff --git a/web/js/odznaky-karty.js b/web/js/odznaky-karty.js
+index 8d02ee7..8c3c6a7 100644
+--- a/web/js/odznaky-karty.js
++++ b/web/js/odznaky-karty.js
+@@ -3,6 +3,7 @@
+ // Karta přijede rubem nahoru a „nabíjí se“; klepnutí (nebo tlačítko) ji otočí: záblesk, jiskry, lesk.
+ // Víc nových odznaků najednou = karty vedle sebe, listuje se šipkami, prstem nebo tečkami.
+ // Lícem nahoru se karta naklání za prstem/myší (holografický lesk). prefers-reduced-motion: karty rovnou lícem, bez animací.
++// R78: stejné karty i pro nově odemčené taháky (oknoKaret s tlačítkem „Otevřít tahák“ na líci, tahaky-ui.js).
+ // =====================================================================
+ 
+ import { el, otevritModal, zavritModal } from './ui.js';
+@@ -14,18 +15,32 @@ const bezAnimaci = () => Boolean(globalThis.matchMedia?.('(prefers-reduced-motio
+ const dnes = () => new Date().toLocaleDateString('cs-CZ', { day: 'numeric', month: 'numeric', year: 'numeric' }).replace(/\s/g, ' ');
+ const JISKER = 12;
+ 
+-function karta(id, poradi, celkem, { datum = dnes() } = {}) {
++/** Popis odznaku pro kartu (oknoKaret). */
++function popisOdznaku(id) {
+   const o = najdiOdznak(id);
+   const barva = o?.barva || 'zelena';
++  return {
++    barva, predmet: predmetOdznaku(id), obrazek: svgOdznaku(id, { titulek: o?.nazev || '' }),
++    druh: DRUH[barva] || 'Odznak', nazev: o?.nazev || '', pochvala: o?.pochvala || '',
++  };
++}
++
++/**
++ * Jedna karta. `p` = {barva, predmet, obrazek (SVG řetězec), druh, nazev, pochvala, akce?: {text, onClick?, hodnota?}}.
++ * R78: `akce` = tlačítko na líci (tahák: „Otevřít tahák“). Je mimo tlačítko karty (tlačítko v tlačítku nejde),
++ * jen položené na líc; viditelné až po otočení.
++ */
++function karta(p, poradi, celkem, { datum = dnes() } = {}) {
+   const lic = el('div', { class: 'karta-odznaku__lic' },
+     el('div', { class: 'karta-odznaku__hlavicka' },
+-      el('span', { text: predmetOdznaku(id) }),
++      el('span', { text: p.predmet }),
+       el('span', { text: `${String(poradi).padStart(2, '0')}/${String(celkem).padStart(2, '0')}` })),
+     el('div', { class: 'karta-odznaku__okno' },
+-      el('span', { class: 'karta-odznaku__obrazek', htmlBezpecne: svgOdznaku(id, { titulek: o?.nazev || '' }) })),
+-    el('span', { class: 'karta-odznaku__druh', text: DRUH[barva] || 'Odznak' }),
+-    el('strong', { class: 'karta-odznaku__nazev', text: o?.nazev || '' }),
+-    el('span', { class: 'karta-odznaku__pochvala', text: o?.pochvala || '' }),
++      el('span', { class: 'karta-odznaku__obrazek', htmlBezpecne: p.obrazek })),
++    el('span', { class: 'karta-odznaku__druh', text: p.druh }),
++    el('strong', { class: 'karta-odznaku__nazev', text: p.nazev }),
++    el('span', { class: 'karta-odznaku__pochvala', text: p.pochvala }),
++    p.akce ? el('span', { class: 'karta-odznaku__misto-akce', 'aria-hidden': 'true' }) : null,
+     el('div', { class: 'karta-odznaku__pata' },
+       el('span', { class: 'karta-odznaku__tecka', text: 'Spolu' }),
+       datum ? el('span', { text: datum }) : null),
+@@ -39,7 +54,8 @@ function karta(id, poradi, celkem, { datum = dnes() } = {}) {
+   const tlacitko = el('button', { class: 'karta-odznaku__tlacitko', type: 'button', 'aria-label': `Otoč kartu ${poradi} z ${celkem}` },
+     el('span', { class: 'karta-odznaku__naklon' },
+       el('span', { class: 'karta-odznaku__vnitrek' }, rub, lic)));
+-  return el('div', { class: `karta-odznaku karta-odznaku--${barva}`, 'data-i': String(poradi - 1) }, efekty, tlacitko);
++  const akce = p.akce ? el('button', { class: 'tlacitko tlacitko--primarni karta-odznaku__akce', type: 'button' }, p.akce.text) : null;
++  return el('div', { class: ['karta-odznaku', `karta-odznaku--${p.barva}`, akce && 'karta-odznaku--s-akci'], 'data-i': String(poradi - 1) }, efekty, tlacitko, akce);
+ }
+ 
+ /** Naklánění lícem otočené karty za prstem/myší (--rx, --ry, --mx, --my). */
+@@ -58,25 +74,42 @@ function napojNaklon(k) {
+   k.addEventListener('pointerleave', reset);
+ }
+ 
++const TEXTY_ODZNAKU = {
++  titulek: (n, prohlizeni) => (prohlizeni ? 'Tvůj odznak' : n > 1 ? `Nové odznaky: ${n}` : 'Nový odznak!'),
++  seber: (n) => (n > 1 ? 'Seber odznaky' : 'Seber odznak'),
++  oznameni: 'Nový odznak',
++  pas: 'Karty odznaků, listuj doleva a doprava',
++};
++
+ /**
+  * Okno s kartami nových odznaků. Vrátí se po „Seber odznak(y)“ (nebo Esc).
+  * @param {string[]} ids
+  * @param {{prohlizeni?: boolean}} [volby]  prohlížení už získaného odznaku z přehledu odznaků (Pavel 6. 10.): jiný nadpis, „Zavřít“
+  */
+ export async function oknoNovychOdznaku(ids, { prohlizeni = false } = {}) {
+-  if (!ids.length) return;
+-  const n = ids.length;
+-  const karty = ids.map((id, i) => karta(id, i + 1, n, { datum: prohlizeni ? '' : dnes() })); // u prohlížení datum získání neznáme
+-  const pas = el('div', { class: 'karty-odznaku__pas', tabindex: n > 1 ? '0' : null, 'aria-label': n > 1 ? 'Karty odznaků, listuj doleva a doprava' : null }, karty);
++  return oknoKaret(ids.map(popisOdznaku), { prohlizeni, texty: TEXTY_ODZNAKU });
++}
++
++/**
++ * Okno s kartami k otočení (odznaky; R78 i nově odemčené taháky). Vrátí se po hlavním tlačítku nebo Esc.
++ * @param {Array<object>} polozky  popisy karet (viz karta())
++ * @param {{prohlizeni?: boolean, texty?: {titulek: (n: number, prohlizeni: boolean) => string, seber: (n: number) => string, oznameni: string, pas: string}}} [volby]
++ * @returns {Promise<string>} '' / 'sebrano', nebo `akce.hodnota` tlačítka na líci (tahák: „Otevřít tahák“)
++ */
++export async function oknoKaret(polozky, { prohlizeni = false, texty = TEXTY_ODZNAKU } = {}) {
++  if (!polozky.length) return '';
++  const n = polozky.length;
++  const karty = polozky.map((p, i) => karta(p, i + 1, n, { datum: prohlizeni ? '' : dnes() })); // u prohlížení datum získání neznáme
++  const pas = el('div', { class: 'karty-odznaku__pas', tabindex: n > 1 ? '0' : null, 'aria-label': n > 1 ? texty.pas : null }, karty);
+   const oznameni = el('p', { class: 'jen-ctecka', role: 'status', 'aria-live': 'polite' });
+-  const tecky = n > 1 ? el('div', { class: 'karty-odznaku__tecky', 'aria-hidden': 'true' }, ids.map(() => el('span'))) : null;
++  const tecky = n > 1 ? el('div', { class: 'karty-odznaku__tecky', 'aria-hidden': 'true' }, polozky.map(() => el('span'))) : null;
+   const sipka = (smer, text) => (n > 1 ? el('button', { class: `karty-odznaku__sipka karty-odznaku__sipka--${smer}`, type: 'button', 'aria-label': text }) : null);
+   const vlevo = sipka('vlevo', 'Předchozí karta');
+   const vpravo = sipka('vpravo', 'Další karta');
+   const hlavni = el('button', { class: 'tlacitko tlacitko--primarni tlacitko--velke tlacitko--cela-sirka', type: 'button' });
+   const d = el('dialog', { class: 'modal modal--karty-odznaku', 'aria-labelledby': 'kartyOdznakuNadpis' },
+     el('div', { class: 'karty-odznaku' },
+-      el('p', { class: 'karty-odznaku__titulek', id: 'kartyOdznakuNadpis', text: prohlizeni ? 'Tvůj odznak' : n > 1 ? `Nové odznaky: ${n}` : 'Nový odznak!' }),
++      el('p', { class: 'karty-odznaku__titulek', id: 'kartyOdznakuNadpis', text: texty.titulek(n, prohlizeni) }),
+       el('div', { class: 'karty-odznaku__scena' }, vlevo, pas, vpravo),
+       tecky, oznameni, hlavni));
+ 
+@@ -88,7 +121,7 @@ export async function oknoNovychOdznaku(ids, { prohlizeni = false } = {}) {
+     if (vlevo) vlevo.disabled = aktualni === 0;
+     if (vpravo) vpravo.disabled = aktualni === n - 1;
+     const vse = otocene.size === n;
+-    hlavni.textContent = !otocene.has(aktualni) ? 'Otoč kartu' : vse ? (prohlizeni ? 'Zavřít' : n > 1 ? 'Seber odznaky' : 'Seber odznak') : 'Další karta';
++    hlavni.textContent = !otocene.has(aktualni) ? 'Otoč kartu' : vse ? (prohlizeni ? 'Zavřít' : texty.seber(n)) : 'Další karta';
+   };
+   const naKartu = (i, plynule = true) => {
+     aktualni = Math.max(0, Math.min(n - 1, i));
+@@ -102,14 +135,17 @@ export async function oknoNovychOdznaku(ids, { prohlizeni = false } = {}) {
+     const k = karty[i];
+     k.classList.add('je-otocena');
+     if (!bezAnimaci()) { k.classList.add('je-vybuch'); setTimeout(() => k.classList.remove('je-vybuch'), 1400); }
+-    const o = najdiOdznak(ids[i]);
+-    k.querySelector('.karta-odznaku__tlacitko').setAttribute('aria-label', `${o?.nazev}: ${o?.pochvala}`);
+-    oznameni.textContent = `Nový odznak: ${o?.nazev}. ${o?.pochvala}`;
++    const p = polozky[i];
++    k.querySelector('.karta-odznaku__tlacitko').setAttribute('aria-label', `${p.nazev}: ${p.pochvala}`);
++    oznameni.textContent = `${texty.oznameni}: ${p.nazev}. ${p.pochvala}`;
+     obnov();
+   };
+   karty.forEach((k, i) => {
+     k.querySelector('.karta-odznaku__tlacitko').addEventListener('click', () => { if (i !== aktualni) naKartu(i); else otoc(i); });
+-    napojNaklon(k);
++    const akce = k.querySelector('.karta-odznaku__akce');
++    // akce.onClick (tahák: otevře se nad kartami), jinak zavře okno s hodnotou akce; bez naklánění: tlačítko na líci by „ujíždělo“
++    if (akce) akce.addEventListener('click', () => { const a = polozky[i].akce; if (a.onClick) a.onClick(); else zavritModal(d, a.hodnota || ''); });
++    else napojNaklon(k);
+   });
+   vlevo?.addEventListener('click', () => naKartu(aktualni - 1));
+   vpravo?.addEventListener('click', () => naKartu(aktualni + 1));
+@@ -143,6 +179,7 @@ export async function oknoNovychOdznaku(ids, { prohlizeni = false } = {}) {
+   const hotovo = otevritModal(d);
+   naKartu(0, false);
+   hlavni.focus();
+-  await hotovo;
++  const volba = await hotovo;
+   d.remove();
++  return volba;
+ }
+diff --git a/web/js/prehled.js b/web/js/prehled.js
+index 8ed1b0a..c41cb0b 100644
+--- a/web/js/prehled.js
++++ b/web/js/prehled.js
+@@ -21,6 +21,8 @@ import * as KONFIG from './config.js';
+ import { spocitejOdznakyPredmetu, svgOdznaku } from './odznaky.js';
+ import { radekOdznaku, ukazNoveOdznaky } from './odznaky-ui.js';
+ import { dveSamoZaSebou } from './samo.js';
++import { stavVyzvy } from './tahaky.js';
++import { tedNyni, odemceneTahakyDitete, radekTahaku, kartaVyzvy, ukazNoveTahaky } from './tahaky-ui.js';
+ 
+ const NAZVY_FAZI = { pilot: 'Pilot', faze1: 'Fáze 1', faze2: 'Fáze 2' };
+ const PODTITULY_FAZI = { faze1: 'Základy', faze2: 'CERMAT' }; // R72: „Co vás čeká dál“
+@@ -31,7 +33,7 @@ const BARVY = {
+   cervena: { ikona: 'stop', klic: 'rodic.barva_cervena' },
+ };
+ 
+-const stav = { rodina: null, deti: [], dite: null, role: null, vybranaLekce: null, odznaky: null, data: null, prepinacPredmetu: false, vybranyTyden: {} };
++const stav = { rodina: null, deti: [], dite: null, role: null, vybranaLekce: null, odznaky: null, tahaky: new Set(), data: null, prepinacPredmetu: false, vybranyTyden: {} };
+ 
+ 
+ const $ = (id) => document.getElementById(id);
+@@ -594,12 +596,16 @@ async function vykresli({ nacist = true } = {}) {
+     const skupiny = skupinyPoTydnech(lekce);
+     const tyden = aktualniTyden(skupiny);
+     stav.odznaky = spocitejOdznakyPredmetu(vsechny); // R61–R63, R69: z uložených sezení, bez změny DB
++    const ted = tedNyni(); // R78: taháky a výzva (na localhost jde podstrčit ?datum=…)
++    stav.tahaky = odemceneTahakyDitete(stav.dite.id, vsechny, { ted });
+     const naRade = lekceNaRade(skupiny, tyden);
+     const dnesHotovo = vsechny.some((l) => l.sezeni?.stav === 'dokonceno' && jeDnes(l.sezeni.konec)); // jedna lekce denně za oba předměty
+     const casti = [prepinac, // R69: předmět úplně nahoře, záhlaví a postup pod ním patří vybranému předmětu
+       hlavickaPrehledu(tyden, skupiny, ukazatelPostupu(lekce, stav.odznaky, tyden)),
+       naRade ? kartaDnes(naRade, pokroky.get(naRade.id), { dnesHotovo }) : null,
+-      radekOdznaku(stav.odznaky.ziskane, { predmet: prepinac ? stav.predmet : 'matematika', oba: stav.odznaky.maObaPredmety })].filter(Boolean);
++      radekOdznaku(stav.odznaky.ziskane, { predmet: prepinac ? stav.predmet : 'matematika', oba: stav.odznaky.maObaPredmety }),
++      radekTahaku(stav.tahaky), // R78: „Taháky: x z N“ → tahaky.html
++      kartaVyzvy(stavVyzvy(vsechny, ted), { rodic: stav.role === 'rodic' })].filter(Boolean); // R78: měsíční výzva (od 1. 11.)
+ 
+     if (rodic && dveSamoZaSebou(vsechny)) casti.push(hlaska('info', 'uzivatel', h('samo.pripominka'))); // R64 (Pavel: ano)
+     if (dnesHotovo) {
+@@ -681,7 +687,11 @@ async function vykresli({ nacist = true } = {}) {
+     obsah.removeAttribute('aria-busy');
+     obsah.replaceChildren(...casti);
+     // R62: nově získané odznaky (dítě i rodič, na každém zařízení jednou); první načtení na zařízení tiše
+-    ukazNoveOdznaky(stav.dite.id, stav.odznaky.ziskane).catch((e) => console.warn('odznaky:', e));
++    // R78: po odznacích nově odemčené taháky (stejně: na každém zařízení jednou, první načtení tiše)
++    const diteId = stav.dite.id;
++    const tahaky = stav.tahaky;
++    ukazNoveOdznaky(diteId, stav.odznaky.ziskane).catch((e) => console.warn('odznaky:', e))
++      .then(() => ukazNoveTahaky(diteId, tahaky)).catch((e) => console.warn('taháky:', e));
+   } catch (e) {
+     console.error(e);
+     chybaStranky(obsah, e?.message || h('chyba.nacteni'));
+diff --git a/web/js/rodic.js b/web/js/rodic.js
+index 1fac0c8..b18a7b4 100644
+--- a/web/js/rodic.js
++++ b/web/js/rodic.js
+@@ -21,6 +21,7 @@ import {
+ } from './supabase.js';
+ import { spocitejOdznakyPredmetu } from './odznaky.js';
+ import { ukazNoveOdznaky } from './odznaky-ui.js';
++import { odemceneTahakyDitete, ukazNoveTahaky } from './tahaky-ui.js';
+ import { lzeSamo } from './samo.js';
+ import { ziskejDite, nastavDite } from './role.js';
+ import { napojMenu, otevritManual, manualPrecteny } from './menu.js';
+@@ -393,8 +394,10 @@ async function prejdiNaProchazeni({ auto = false } = {}) {
+ /** R62 (ODPOVED 30. 9., otázka 3): rodič uvidí nový odznak v souhrnu hned po ukončení lekce. */
+ async function ukazOdznakyRodici() {
+   try {
+-    const { ziskane } = spocitejOdznakyPredmetu(await lekceProDite(stranka.diteId));
++    const lekce = await lekceProDite(stranka.diteId);
++    const { ziskane } = spocitejOdznakyPredmetu(lekce);
+     await ukazNoveOdznaky(stranka.diteId, ziskane);
++    await ukazNoveTahaky(stranka.diteId, odemceneTahakyDitete(stranka.diteId, lekce)); // R78: po odznacích nově odemčené taháky
+   } catch (e) {
+     console.warn('odznaky v souhrnu:', e); // odznak není důležitější než souhrn — chyba se jen zaloguje
+   }

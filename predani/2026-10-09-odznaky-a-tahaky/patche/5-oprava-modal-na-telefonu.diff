@@ -1,0 +1,20 @@
+diff --git a/web/css/design-system.css b/web/css/design-system.css
+index 030ad2e..3ccac46 100644
+--- a/web/css/design-system.css
++++ b/web/css/design-system.css
+@@ -3467,3 +3467,15 @@ a.tahaky-radek:hover { border-color: var(--barva-okraj-silny); }
+ @keyframes k-razitko { 0% { transform: rotate(-7deg) scale(1.8); opacity: 0; } 100% { transform: rotate(-7deg) scale(1); opacity: 1; } }
+ @keyframes k-vyjet { 0% { transform: translateY(10px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+ @keyframes k-sebrat { to { transform: translateY(-90px) scale(0.35); opacity: 0; } }
++
++/* ODPOVED 8. 10., bod 2: okna na telefonu přes celou šířku, přilepená dole. Pozdější `.modal { width: … }`
++   (dialog 24 px) a `.modal--tahak` přebíjely mobilní pravidlo a okno bylo posunuté doleva. Karta odznaku má vlastní rozměry. */
++@media (max-width: 40rem) {
++  .modal:not(.modal--karty-odznaku) {
++    width: 100%;
++    max-width: 100%;
++    margin: auto 0 0;
++    border-radius: var(--polomer-panel) var(--polomer-panel) 0 0;
++  }
++  .modal:not(.modal--karty-odznaku) > .modal__panel { border-radius: var(--polomer-panel) var(--polomer-panel) 0 0; }
++}

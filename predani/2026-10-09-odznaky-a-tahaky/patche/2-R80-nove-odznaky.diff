@@ -1,0 +1,227 @@
+diff --git a/testy/odznaky.test.js b/testy/odznaky.test.js
+index a838aae..284adf2 100644
+--- a/testy/odznaky.test.js
++++ b/testy/odznaky.test.js
+@@ -120,8 +120,29 @@ test('R69: odznaky zvlášť pro matematiku a češtinu + společné za oba pře
+   assert.ok(![...bezCj.ziskane].some((id) => id.includes(':')), 'bez češtiny žádné cj: ani oba:');
+ 
+   assert.deepEqual(noveOdznaky(new Set(['prvni', 'cj:prvni', 'oba:prvni']), ['prvni']), ['cj:prvni', 'oba:prvni'], 'viděné id matematiky platí dál');
+-  assert.equal(ODZNAKY_CESTINY.length, 5);
++  assert.equal(ODZNAKY_CESTINY.length, 8); // R80: + řada 5, řada 10, Fáze 1
+   assert.equal(ODZNAKY_OBA.length, 3);
+   assert.match(svgOdznaku('cj:prvni'), /#3B82F6/, 'čeština modrá');
+   assert.match(svgOdznaku('oba:tyden'), /#F5C518/, 'společné zlaté');
+ });
++
++test('R80: odznaky za výzvy a sbírku taháků', async () => {
++  const { odznakyVyzevATahaku, najdiOdznak, ODZNAKY_VYZEV, ODZNAKY_SBIRKY } = await import('../web/js/odznaky.js');
++  // Fáze 1 matematiky, týdny 1–5 po 4 lekcích, všechno dokončené v listopadu (Praha)
++  const lekce = [];
++  for (let t = 1; t <= 5; t++) for (let p = 1; p <= 4; p++) {
++    lekce.push({ id: `F1-T0${t}-L${p}`, faze: 'faze1', tyden: t, dokoncene: { konec: `2026-11-${String(t * 4 + p).padStart(2, '0')}T15:00:00Z`, souhrn: null } });
++  }
++  const z = odznakyVyzevATahaku(lekce, { ted: Date.parse('2026-11-30T12:00:00Z') });
++  assert.ok(z.has('vyzva:2026-11'), '20 lekcí v listopadu ≥ 12');
++  assert.ok(!z.has('vyzva:2026-12'));
++  assert.ok(z.has('sber:5'), '5 celých týdnů = 5 taháků');
++  assert.ok(!z.has('sber:15'));
++  // viděná splněná výzva zůstane, i když v datech už není
++  assert.ok(odznakyVyzevATahaku([], { videne: ['vyzva:2026-12', 'prvni'] }).has('vyzva:2026-12'));
++  assert.ok(!odznakyVyzevATahaku([], { videne: ['prvni'] }).has('prvni'), 'videne přidává jen výzvy');
++  assert.equal(ODZNAKY_VYZEV.length, 6);
++  assert.equal(ODZNAKY_SBIRKY.length, 3);
++  assert.equal(najdiOdznak('vyzva:2027-04').popis, 'Dokonči 4 lekce v dubnu do 11. 4.');
++  assert.equal(najdiOdznak('vyzva:2026-11').popis, 'Dokonči 12 lekcí v listopadu.');
++});
+diff --git a/web/js/odznaky-karty.js b/web/js/odznaky-karty.js
+index 8c3c6a7..93502de 100644
+--- a/web/js/odznaky-karty.js
++++ b/web/js/odznaky-karty.js
+@@ -10,7 +10,8 @@ import { el, otevritModal, zavritModal } from './ui.js';
+ import { najdiOdznak, svgOdznaku } from './odznaky.js';
+ 
+ const DRUH = { zlata: 'Zlatý odznak', zelena: 'Zelený odznak', modra: 'Modrý odznak' };
+-const predmetOdznaku = (id) => (id.startsWith('cj:') ? 'Čeština' : id.startsWith('oba:') ? 'Oba předměty' : 'Matematika');
++const predmetOdznaku = (id) => (id.startsWith('cj:') ? 'Čeština' : id.startsWith('oba:') ? 'Oba předměty'
++  : id.startsWith('vyzva:') || id.startsWith('sber:') ? 'Výzvy a taháky' : 'Matematika');
+ const bezAnimaci = () => Boolean(globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches);
+ const dnes = () => new Date().toLocaleDateString('cs-CZ', { day: 'numeric', month: 'numeric', year: 'numeric' }).replace(/\s/g, ' ');
+ const JISKER = 12;
+diff --git a/web/js/odznaky-ui.js b/web/js/odznaky-ui.js
+index 68fd561..1ef3047 100644
+--- a/web/js/odznaky-ui.js
++++ b/web/js/odznaky-ui.js
+@@ -5,16 +5,16 @@
+ // =====================================================================
+ 
+ import { el, otevritModal, zavritModal } from './ui.js';
+-import { ODZNAKY, ODZNAKY_OBA, svgOdznaku, noveOdznaky, odznakyPredmetu } from './odznaky.js';
++import { ODZNAKY, ODZNAKY_OBA, ODZNAKY_VYZVY_A_TAHAKY, svgOdznaku, noveOdznaky, odznakyPredmetu } from './odznaky.js';
+ import { oknoNovychOdznaku } from './odznaky-karty.js';
+ 
+-/** R69: odznaky k zobrazení — předmět (výchozí matematika) a společné, když dítě má oba předměty. */
+-const sadaOdznaku = ({ predmet = 'matematika', oba = false } = {}) => [...odznakyPredmetu(predmet), ...(oba ? ODZNAKY_OBA : [])];
++/** R69: odznaky k zobrazení — předmět (výchozí matematika), společné, když dítě má oba předměty; R80: vždy i výzvy a taháky. */
++const sadaOdznaku = ({ predmet = 'matematika', oba = false } = {}) => [...odznakyPredmetu(predmet), ...(oba ? ODZNAKY_OBA : []), ...ODZNAKY_VYZVY_A_TAHAKY];
+ const NAZEV_PREDMETU = { matematika: 'matematika', cestina: 'čeština' };
+ 
+ const klicVidene = (diteId) => `spolu.odznaky.videno.${diteId}`;
+ 
+-function nactiVidene(diteId) {
++export function nactiVidene(diteId) {
+   try {
+     const x = JSON.parse(localStorage.getItem(klicVidene(diteId)) || 'null');
+     return Array.isArray(x) ? x : null; // null = na tomto zařízení ještě nikdy
+@@ -57,6 +57,8 @@ export async function otevritOdznaky(ziskane, volby = {}) {
+       mrizkaOdznaku(ziskane, predmet),
+       volby.oba ? el('h3', { class: 'odznaky__nadpis', text: 'Za oba předměty' }) : null,
+       volby.oba ? mrizkaOdznaku(ziskane, ODZNAKY_OBA) : null,
++      el('h3', { class: 'odznaky__nadpis', text: 'Výzvy a taháky' }),
++      mrizkaOdznaku(ziskane, ODZNAKY_VYZVY_A_TAHAKY),
+       el('div', { class: 'modal__akce' },
+         el('button', { class: 'tlacitko tlacitko--primarni', type: 'button', onClick: () => zavritModal(d) }, 'Zavřít'))));
+   document.body.append(d);
+diff --git a/web/js/odznaky.js b/web/js/odznaky.js
+index b648d96..a9f4257 100644
+--- a/web/js/odznaky.js
++++ b/web/js/odznaky.js
+@@ -4,6 +4,8 @@
+ // databáze se nemění. Obrázky odznaků jsou SVG řetězce tady v repozitáři (DOM z nich dělá odznaky-ui.js).
+ // =====================================================================
+ 
++import { DATA as DATA_TAHAKU, tydenniTahaky, odemceneTahaky, pocetVMesici, konecVyzvy } from './tahaky.js';
++
+ /**
+  * Řada (R62): mezi dvěma sousedními dokončenými lekcemi nejvýš 7 KALENDÁŘNÍCH dní v Europe/Prague
+  * (pondělí večer → další pondělí ráno i večer je v řadě; víkend ani týden pauzy ji neruší).
+@@ -125,7 +127,7 @@ export function spocitejOdznaky(lekce, { navic = null } = {}) {
+ /** Nově získané odznaky proti seznamu už ukázaných (v pořadí sady). */
+ export function noveOdznaky(ziskane, videne) {
+   const v = new Set(videne || []);
+-  return [...ODZNAKY, ...ODZNAKY_CESTINY, ...ODZNAKY_OBA].filter((o) => ziskane.has(o.id) && !v.has(o.id)).map((o) => o.id);
++  return [...ODZNAKY, ...ODZNAKY_CESTINY, ...ODZNAKY_OBA, ...ODZNAKY_VYZVY_A_TAHAKY].filter((o) => ziskane.has(o.id) && !v.has(o.id)).map((o) => o.id);
+ }
+ 
+ // ---------------------------------------------------------------------
+@@ -133,14 +135,15 @@ export function noveOdznaky(ziskane, videne) {
+ // Matematika má id beze změny (už viděné odznaky se neukážou znovu), čeština „cj:<id>“, společné „oba:<id>“.
+ // ---------------------------------------------------------------------
+ 
+-/** Odznaky češtiny: jen ty, které jdou splnit se 4 pilotními lekcemi (řada 5 a 10 ne, Fáze 1 je jen matematika). */
+-const ZAKLAD_CESTINY = ['prvni', 'spravne', 'tyden', 'rada3', 'pilot'];
++/** Odznaky češtiny (R80, 8. 10.: čeština má Fázi 1 se 16 lekcemi, proto i řada 5 a 10 a Fáze 1 hotová). */
++const ZAKLAD_CESTINY = ['prvni', 'spravne', 'tyden', 'rada3', 'rada5', 'rada10', 'pilot', 'faze1'];
++const POPIS_CESTINY = { faze1: 'Dokonči všechny lekce Fáze 1 z češtiny.' };
+ const BARVA_CESTINY = { zelena: 'modra', zlata: 'zlata' };
+ BARVY.modra = { telo: '#3B82F6', znak: '#FFFFFF', krouzek: '#FFFFFF' };
+ 
+ export const ODZNAKY_CESTINY = Object.freeze(ZAKLAD_CESTINY.map((id) => {
+   const o = ODZNAKY.find((x) => x.id === id);
+-  return { ...o, id: `cj:${id}`, zaklad: id, nazev: `${o.nazev} z češtiny`, barva: BARVA_CESTINY[o.barva] };
++  return { ...o, id: `cj:${id}`, zaklad: id, nazev: `${o.nazev} z češtiny`, barva: BARVA_CESTINY[o.barva], ...(POPIS_CESTINY[id] ? { popis: POPIS_CESTINY[id] } : {}) };
+ }));
+ 
+ export const ODZNAKY_OBA = Object.freeze([
+@@ -152,9 +155,56 @@ export const ODZNAKY_OBA = Object.freeze([
+     znak: (b) => CISLO(b, '3+3', 41, 18) + SIPKY(b) },
+ ]);
+ 
+-/** Definice odznaku podle id (matematika, cj:…, oba:…). */
++// ---------------------------------------------------------------------
++// R80 (Pavel 8. 10.): odznaky za splněné měsíční výzvy a za sbírku taháků (R78), společné pro oba předměty.
++// ---------------------------------------------------------------------
++
++const MESIC_V = { '01': 'v lednu', '02': 'v únoru', '03': 'v březnu', '04': 'v dubnu do 11. 4.', '11': 'v listopadu', '12': 'v prosinci' };
++const MESIC_ZKR = { '01': 'LED', '02': 'ÚNO', '03': 'BŘE', '04': 'DUB', '11': 'LIS', '12': 'PRO' };
++const HVEZDA = (b) => `<path d="M36 15l3.2 6.6 7.2 1-5.2 5 1.3 7.2L36 31.4l-6.5 3.4 1.3-7.2-5.2-5 7.2-1z" fill="${b.znak}"/>`;
++const KARTICKY = (b, t) => `<rect x="23" y="17" width="20" height="25" rx="3" fill="none" stroke="${b.znak}" stroke-width="2.4" opacity=".55"/>`
++  + `<rect x="28" y="21" width="21" height="26" rx="3" fill="${b.telo}" stroke="${b.znak}" stroke-width="2.6"/>${CISLO(b, t, 40, t.length > 2 ? 11 : 14)}`;
++
++export const ODZNAKY_VYZEV = Object.freeze(DATA_TAHAKU.vyzvy.map((v) => {
++  const m = v.mesic.slice(5);
++  return {
++    id: `vyzva:${v.mesic}`, mesic: v.mesic, barva: 'zlata', nazev: v.nazev,
++    pochvala: `${v.nazev} splněna. Zlatý tahák je tvůj!`,
++    popis: `Dokonči ${v.cil} ${Number(v.cil) === 1 ? 'lekci' : Number(v.cil) <= 4 ? 'lekce' : 'lekcí'} ${MESIC_V[m] || ''}`.trim().replace(/\.?$/, '.'),
++    znak: (b) => HVEZDA(b) + CISLO(b, MESIC_ZKR[m] || m, 52, 13),
++  };
++}));
++
++export const ODZNAKY_SBIRKY = Object.freeze([
++  { id: 'sber:5', nazev: 'Sběratel', pochvala: 'Pět taháků ve sbírce!', popis: 'Odemkni 5 taháků.', barva: 'zelena', pocet: 5, znak: (b) => KARTICKY(b, '5') },
++  { id: 'sber:15', nazev: 'Velký sběratel', pochvala: 'Patnáct taháků ve sbírce. Paráda!', popis: 'Odemkni 15 taháků.', barva: 'zelena', pocet: 15, znak: (b) => KARTICKY(b, '15') },
++  { id: 'sber:vse', nazev: 'Celá sbírka', pochvala: 'Máš všechny taháky. Jsi připravený(á)!', popis: 'Odemkni všechny týdenní taháky.', barva: 'zlata', pocet: Infinity, znak: (b) => KARTICKY(b, 'vše') },
++]);
++
++/** Výzvy a taháky v jednom seznamu (pořadí zobrazení). */
++export const ODZNAKY_VYZVY_A_TAHAKY = Object.freeze([...ODZNAKY_VYZEV, ...ODZNAKY_SBIRKY]);
++
++/**
++ * Získané odznaky za výzvy a taháky. Výzva = aspoň `cil` lekcí s posledním dokončením v měsíci (stejně jako R78);
++ * sbírka = počet odemčených TÝDENNÍCH taháků (bonusové se nepočítají).
++ * `videne` = už ukázané odznaky z tohoto zařízení: splněná výzva zůstane, i když dítě lekci z jejího měsíce
++ * později zopakuje a poslední dokončení se přesune do dalšího měsíce (stejně jako zlaté taháky v R78).
++ */
++export function odznakyVyzevATahaku(lekce, { navic = null, ted = Date.now(), videne = [] } = {}) {
++  const ziskane = new Set((videne || []).filter((id) => id.startsWith('vyzva:')));
++  for (const v of DATA_TAHAKU.vyzvy) {
++    if (pocetVMesici(lekce, v.mesic, { navic, konec: konecVyzvy(v) }) >= Number(v.cil)) ziskane.add(`vyzva:${v.mesic}`);
++  }
++  const tydenni = [...odemceneTahaky(lekce, { ted, navic })].filter((id) => !id.startsWith('b:')).length;
++  const celkem = tydenniTahaky().length;
++  for (const o of ODZNAKY_SBIRKY) if (celkem && tydenni >= Math.min(o.pocet, celkem)) ziskane.add(o.id);
++  return ziskane;
++}
++
++/** Definice odznaku podle id (matematika, cj:…, oba:…, vyzva:…, sber:…). */
+ export function najdiOdznak(id) {
+-  return ODZNAKY.find((x) => x.id === id) || ODZNAKY_CESTINY.find((x) => x.id === id) || ODZNAKY_OBA.find((x) => x.id === id) || null;
++  return ODZNAKY.find((x) => x.id === id) || ODZNAKY_CESTINY.find((x) => x.id === id) || ODZNAKY_OBA.find((x) => x.id === id)
++    || ODZNAKY_VYZVY_A_TAHAKY.find((x) => x.id === id) || null;
+ }
+ 
+ /** Odznaky k zobrazení pro předmět (společné zvlášť přes ODZNAKY_OBA). */
+@@ -166,9 +216,9 @@ export function odznakyPredmetu(predmet) {
+  * Odznaky po předmětech (R69): spocitejOdznaky zvlášť pro matematiku a češtinu + společné.
+  * `ziskane` obsahuje všechna id (matematika bez předpony, cj:…, oba:…); hotove a celaSpravne jsou sjednocení.
+  * @param {Array<object>} lekce  katalog s průběhem (lekceProDite), `predmet` chybí = matematika
+- * @param {{navic?: {id: string, konec: string}}} [volby]
++ * @param {{navic?: {id: string, konec: string}, ted?: number, videne?: string[]}} [volby]  videne = už ukázané odznaky (splněná výzva zůstane, R80)
+  */
+-export function spocitejOdznakyPredmetu(lekce, { navic = null } = {}) {
++export function spocitejOdznakyPredmetu(lekce, { navic = null, ted = Date.now(), videne = [] } = {}) {
+   const predmet = (l) => l.predmet || 'matematika';
+   const mat = lekce.filter((l) => predmet(l) === 'matematika');
+   const cj = lekce.filter((l) => predmet(l) === 'cestina');
+@@ -188,7 +238,8 @@ export function spocitejOdznakyPredmetu(lekce, { navic = null } = {}) {
+     if (m.rada.nejlepsi >= 3 && c.rada.nejlepsi >= 3) oba.add('oba:rada');
+   }
+   const ziskane = new Set([...m.ziskane,
+-    ...ODZNAKY_CESTINY.filter((o) => c.ziskane.has(o.zaklad)).map((o) => o.id), ...oba]);
++    ...ODZNAKY_CESTINY.filter((o) => c.ziskane.has(o.zaklad)).map((o) => o.id), ...oba,
++    ...odznakyVyzevATahaku(lekce, { navic, ted, videne })]);
+   return {
+     ziskane, matematika: m, cestina: c, oba,
+     hotove: new Set([...m.hotove, ...c.hotove]), celaSpravne: new Set([...m.celaSpravne, ...c.celaSpravne]),
+diff --git a/web/js/prehled.js b/web/js/prehled.js
+index c41cb0b..1ef86cf 100644
+--- a/web/js/prehled.js
++++ b/web/js/prehled.js
+@@ -19,7 +19,7 @@ import { jeDiagnostikaVKatalogu, pocetOdevzdanych } from './diagnostika.js';
+ import { typVKatalogu } from './simulace.js';
+ import * as KONFIG from './config.js';
+ import { spocitejOdznakyPredmetu, svgOdznaku } from './odznaky.js';
+-import { radekOdznaku, ukazNoveOdznaky } from './odznaky-ui.js';
++import { radekOdznaku, ukazNoveOdznaky, nactiVidene } from './odznaky-ui.js';
+ import { dveSamoZaSebou } from './samo.js';
+ import { stavVyzvy } from './tahaky.js';
+ import { tedNyni, odemceneTahakyDitete, radekTahaku, kartaVyzvy, ukazNoveTahaky } from './tahaky-ui.js';
+@@ -595,7 +595,7 @@ async function vykresli({ nacist = true } = {}) {
+     const rodic = stav.role === 'rodic';
+     const skupiny = skupinyPoTydnech(lekce);
+     const tyden = aktualniTyden(skupiny);
+-    stav.odznaky = spocitejOdznakyPredmetu(vsechny); // R61–R63, R69: z uložených sezení, bez změny DB
++    stav.odznaky = spocitejOdznakyPredmetu(vsechny, { videne: nactiVidene(stav.dite.id) || [] }); // R61–R63, R69: z uložených sezení, bez změny DB
+     const ted = tedNyni(); // R78: taháky a výzva (na localhost jde podstrčit ?datum=…)
+     stav.tahaky = odemceneTahakyDitete(stav.dite.id, vsechny, { ted });
+     const naRade = lekceNaRade(skupiny, tyden);

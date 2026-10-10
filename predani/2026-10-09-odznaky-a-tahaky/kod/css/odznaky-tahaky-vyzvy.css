@@ -1,0 +1,465 @@
+/* ==========================================================================
+   R78 (Pavel 8. 10.): sbírka taháků a měsíční výzva — tahaky.html (tahaky-stranka.js), přehled, lekce
+   (tahaky-ui.js). Barvy předmětů: matematika zelená, čeština --barva-cj, bonus zlatá. Bez levých proužků (R68).
+   ========================================================================== */
+
+/* --- Stránka „Moje taháky“ ---------------------------------------------------------------------- */
+.tahaky-hlavicka { display: flex; flex-direction: column; gap: var(--mezera-3); }
+.tahaky-hlavicka > p { margin: 0; }
+.tahaky-hlavicka__zpet { align-self: flex-start; margin-left: calc(-1 * var(--mezera-3)); }
+.tahaky-hlavicka__radek { align-items: center; gap: var(--mezera-3); }
+.tahaky-hlavicka h1 { font-size: clamp(1.75rem, 4.5vw, 2.25rem); letter-spacing: -0.02em; line-height: 1.15; }
+.tahaky-hlavicka__uvod { max-width: 62ch; color: var(--barva-text-2); }
+.tahaky-skupina { display: flex; flex-direction: column; gap: var(--mezera-3); }
+.tahaky-skupina__nadpis { font-size: var(--pismo-velke); }
+.tahaky-skupina__nadpis .text-tlumeny { font-size: var(--pismo-zaklad); font-weight: var(--pismo-vaha-stredni); }
+
+.tahaky-mrizka { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--mezera-3);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 13.5rem), 1fr)); }
+.tahaky-mrizka__polozka { display: flex; min-width: 0; }
+
+/* Kartička: odemčená = tlačítko v barvě předmětu, zamčená = šedá s čárkovaným okrajem a zámkem */
+.tahak-karticka {
+  --k-okraj: var(--barva-zelena); --k-plocha: var(--barva-zelena-plocha); --k-akce: var(--barva-zelena-text);
+  flex: 1 1 auto; min-width: 0; display: flex; align-items: flex-start; gap: var(--mezera-3);
+  min-height: 7.5rem; padding: var(--mezera-4); margin: 0;
+  border: 2px solid var(--k-okraj); border-radius: var(--polomer-karta); background: var(--k-plocha);
+  color: var(--barva-text); font: inherit; text-align: left;
+}
+.tahak-karticka--modra { --k-okraj: var(--barva-cj); --k-plocha: var(--barva-cj-plocha); --k-akce: var(--barva-cj-text); }
+.tahak-karticka--zlata { --k-okraj: var(--barva-zlata-obrys); --k-plocha: var(--barva-zlata-plocha); --k-akce: var(--barva-zlata-text); }
+.tahak-karticka--zamceno { --k-okraj: var(--barva-okraj-silny); --k-plocha: var(--barva-povrch-2); border-style: dashed; color: var(--barva-text-tlumeny); }
+button.tahak-karticka { cursor: pointer; transition: transform var(--prechod), box-shadow var(--prechod); }
+button.tahak-karticka:hover { transform: translateY(-2px); box-shadow: var(--stin-2); }
+button.tahak-karticka:hover .tahak-karticka__obrazek svg { transform: rotate(-4deg) scale(1.05); }
+.tahak-karticka__obrazek { flex: 0 0 3.25rem; width: 3.25rem; height: 3.25rem; line-height: 0; }
+.tahak-karticka__obrazek svg { width: 100%; height: 100%; transition: transform var(--prechod); }
+.tahak-karticka--zamceno .tahak-karticka__obrazek svg { filter: grayscale(1); opacity: 0.4; }
+.tahak-karticka__text { display: flex; flex-direction: column; gap: 2px; min-width: 0; align-self: stretch; }
+.tahak-karticka__podnazev { font-size: 0.8125rem; font-weight: var(--pismo-vaha-polotucne); color: var(--barva-text-tlumeny); }
+.tahak-karticka__nazev { font-size: 1.0625rem; line-height: 1.25; color: var(--barva-text); overflow-wrap: anywhere; }
+.tahak-karticka--zamceno .tahak-karticka__nazev { color: var(--barva-text-2); }
+.tahak-karticka__akce { margin-top: auto; padding-top: var(--mezera-2); display: inline-flex; align-items: center; gap: 0.3em;
+  font-size: var(--pismo-maly); font-weight: var(--pismo-vaha-tucne); color: var(--k-akce); }
+.tahak-karticka__akce .ikona { width: 1rem; height: 1rem; }
+.tahak-karticka__zamek { margin-top: auto; padding-top: var(--mezera-2); display: flex; gap: 0.4em; font-size: var(--pismo-maly); line-height: 1.35; }
+.tahak-karticka__zamek .ikona { flex: 0 0 auto; width: 1rem; height: 1rem; margin-top: 0.1em; }
+/* telefon: kartička nižší (sbírka má přes 30 taháků pod sebou) */
+@media (max-width: 40rem) {
+  .tahak-karticka { min-height: 0; padding: var(--mezera-3) var(--mezera-4); }
+  .tahak-karticka__obrazek { flex-basis: 2.75rem; width: 2.75rem; height: 2.75rem; }
+  .tahak-karticka__akce, .tahak-karticka__zamek { padding-top: var(--mezera-1); }
+}
+
+/* --- Přehled: řádek „Taháky: x z N“ (vzhled jako řádek odznaků) ---------------------------------- */
+a.tahaky-radek { text-decoration: none; }
+a.tahaky-radek:hover { border-color: var(--barva-okraj-silny); }
+.tahak-mini { flex: 0 0 auto; width: 36px; height: 36px; line-height: 0; }
+.tahak-mini svg { width: 100%; height: 100%; }
+.tahak-mini--zamceno svg { filter: grayscale(1); opacity: 0.35; }
+
+/* --- Měsíční výzva: karta se zlatým nádechem a ukazatelem po lekcích ------------------------------ */
+.vyzva { display: flex; flex-direction: column; gap: var(--mezera-3);
+  border-color: var(--barva-zlata-obrys); background: linear-gradient(135deg, var(--barva-zlata-plocha) 0%, var(--barva-povrch) 75%); }
+.vyzva__hlavicka { display: flex; align-items: center; gap: var(--mezera-3); }
+.vyzva__obrazek { flex: 0 0 3rem; width: 3rem; height: 3rem; line-height: 0; }
+.vyzva__obrazek svg { width: 100%; height: 100%; }
+.vyzva__text { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.vyzva__nadpis { margin: 0; font-size: 1.0625rem; line-height: 1.3; }
+.vyzva__meta { margin: 0; font-size: var(--pismo-maly); color: var(--barva-text-2); }
+.vyzva__popis { margin: 0; font-size: var(--pismo-maly); color: var(--barva-text-tlumeny); }
+.vyzva__akce { display: flex; flex-wrap: wrap; gap: var(--mezera-2); }
+.vyzva__segmenty { display: grid; grid-template-columns: repeat(var(--pocet), minmax(0, 1fr)); gap: 4px; }
+.vyzva__segmenty > span { height: 10px; border-radius: 3px; background: var(--barva-povrch-2); box-shadow: inset 0 0 0 1px var(--barva-okraj-silny); }
+/* hotová lekce: zlatá výplň s tmavým obrysem (graf má vedle i text „7 z 12 lekcí“) */
+.vyzva__segmenty > span.je-hotovo { background: var(--barva-zlata); box-shadow: inset 0 0 0 1.5px var(--barva-zlata-text); }
+.vyzva__podil { height: 10px; border-radius: 5px; background: var(--barva-povrch-2); overflow: hidden; }
+.vyzva__podil > span { display: block; height: 100%; background: var(--barva-zlata); }
+.vyzva--splneno { background: linear-gradient(135deg, var(--barva-zlata-plocha) 0%, var(--barva-zelena-plocha) 100%); }
+
+/* --- Tahák (modal a tisk): hlavička s obrázkem, očíslované bloky s pravidlem a vzorovým příkladem ---- */
+.modal--tahak { width: min(54rem, calc(100% - 1rem)); }
+.tahak { --t-plocha: var(--barva-zelena-plocha); --t-text: var(--barva-zelena-text);
+  display: flex; flex-direction: column; gap: var(--mezera-4); min-width: 0; }
+.tahak--modra { --t-plocha: var(--barva-cj-plocha); --t-text: var(--barva-cj-text); }
+.tahak--zlata { --t-plocha: var(--barva-zlata-plocha); --t-text: var(--barva-zlata-text); }
+.tahak__hlavicka { display: flex; align-items: center; gap: var(--mezera-3); padding-right: 3.25rem; }
+.tahak__obrazek { flex: 0 0 3.5rem; width: 3.5rem; height: 3.5rem; line-height: 0; }
+.tahak__obrazek svg { width: 100%; height: 100%; }
+.tahak__titulek { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.tahak__stitek { font-size: 0.8125rem; font-weight: var(--pismo-vaha-tucne); letter-spacing: 0.04em; text-transform: uppercase; color: var(--t-text); }
+.tahak__nazev { margin: 0; font-size: clamp(1.5rem, 4vw, 2rem); line-height: 1.15; letter-spacing: -0.02em; overflow-wrap: anywhere; }
+.tahak__bloky { counter-reset: tahak-blok; display: grid; gap: var(--mezera-3); grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
+.tahak__blok { min-width: 0; display: flex; flex-direction: column; gap: var(--mezera-2); padding: var(--mezera-4);
+  border: 1px solid var(--barva-okraj); border-radius: var(--polomer-l); background: var(--barva-povrch); }
+.tahak__nadpis { margin: 0; display: flex; align-items: baseline; gap: 0.5em; font-size: var(--pismo-stredni); line-height: 1.3; }
+.tahak__nadpis::before { counter-increment: tahak-blok; content: counter(tahak-blok); flex: 0 0 auto; display: inline-grid; place-items: center;
+  min-width: 1.6em; height: 1.6em; border-radius: var(--polomer-s); background: var(--t-plocha); color: var(--t-text); font-size: 0.85em; }
+.tahak__text, .tahak__priklad-text { font-size: var(--pismo-stredni); line-height: 1.5; color: var(--barva-text-2); overflow-x: auto; overflow-y: hidden; }
+.tahak__text > :first-child, .tahak__priklad-text > :first-child { margin-top: 0; }
+.tahak__text > :last-child, .tahak__priklad-text > :last-child { margin-bottom: 0; }
+.tahak__text p, .tahak__priklad-text p { margin: 0 0 0.5em; }
+.tahak__text ul, .tahak__text ol { margin: 0 0 0.5em; padding-left: 1.25em; }
+.tahak__priklad { margin-top: auto; padding: var(--mezera-2) var(--mezera-3); border-radius: var(--polomer-m); background: var(--t-plocha); }
+.tahak__priklad .tahak__priklad-text { color: var(--barva-text); }
+.tahak__priklad-popisek { display: block; font-size: 0.75rem; font-weight: var(--pismo-vaha-tucne); letter-spacing: 0.06em; text-transform: uppercase; color: var(--t-text); }
+.tahak__pata { display: flex; justify-content: space-between; gap: var(--mezera-2); }
+
+
+/* --- Tisk „Vytisknout odemčené“: taháky po dvou na list A4, na obrazovce schované ------------------- */
+.tahaky-tisk { display: none; }
+@page tahaky { size: A4 portrait; margin: 8mm; }
+@media print {
+  body:has(> .tahaky-tisk) { background: #FFFFFF; }
+  body:has(> .tahaky-tisk) > :not(.tahaky-tisk) { display: none !important; }
+  .tahaky-tisk { display: block; page: tahaky; color: #0F172A; font-size: 8.5pt; line-height: 1.3; }
+  .tahaky-tisk__list { display: flex; flex-direction: column; gap: 4mm; break-after: page; }
+  .tahaky-tisk__list:last-child { break-after: auto; }
+  .tahak--tisk { gap: 1.5mm; padding: 3.5mm 4.5mm; border: 0.75pt solid #94A3B8; border-radius: 4mm; break-inside: avoid;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .tahak--tisk .tahak__hlavicka { padding-right: 0; gap: 3mm; }
+  .tahak--tisk .tahak__obrazek { flex-basis: 9mm; width: 9mm; height: 9mm; }
+  .tahak--tisk .tahak__stitek { font-size: 7.5pt; }
+  .tahak--tisk .tahak__nazev { font-size: 13pt; }
+  .tahak--tisk .tahak__bloky { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2mm; }
+  .tahak--tisk .tahak__blok { gap: 1mm; padding: 2mm 2.5mm; border: 0.5pt solid #CBD5E1; border-radius: 2.5mm; break-inside: avoid; }
+  .tahak--tisk .tahak__nadpis { font-size: 9.5pt; }
+  .tahak--tisk .tahak__text, .tahak--tisk .tahak__priklad-text { font-size: 8pt; line-height: 1.28; overflow: visible; }
+  .tahak--tisk .tahak__priklad { padding: 1.2mm 2mm; border-radius: 1.5mm; }
+  .tahak--tisk .tahak__priklad-popisek { font-size: 6.5pt; }
+  .tahak--tisk .tahak__pata { font-size: 7pt; color: #475569; }
+}
+
+
+/* ==========================================================================
+   Redesign odznaků a karet (8. 10., návrh designérky; Pavel: „Strašně se inspiruj tímhle stylem, drž se ho.“)
+   odznaky.js (htmlOdznaku), odznaky-ui.js (dlaždice v přehledu odznaků, řádek na přehledu),
+   odznaky-karty.js (karta nového odznaku i taháku). Nahrazuje styly odznaků z R62 a karty z 6. 10.
+   Karta je tmavá v obou motivech; dlaždice se řídí tokeny motivu.
+   ========================================================================== */
+
+/* --- Odznak: rám, pruhovaný kruh, jádro a líc (odlesk + přejíždějící lesk). Tvar clip-path, tón proměnnými. --- */
+.odz {
+  --s: 96px; --odz-ram: #141A33; --odz-tvar: circle(50%);
+  position: relative; display: inline-block; flex: none; width: var(--s); height: var(--s); vertical-align: middle;
+  filter: drop-shadow(0 7px 10px rgb(20 26 51 / 0.3));
+  transition: transform 0.35s cubic-bezier(.3, 1.6, .5, 1);
+}
+.odz__ram, .odz__pruhy, .odz__jadro, .odz__lic { position: absolute; display: block; clip-path: var(--odz-tvar); }
+.odz__ram { inset: 0; background: var(--odz-ram); }
+.odz__pruhy { inset: 5%; background: repeating-conic-gradient(from 0deg, var(--odz-hi) 0 6deg, var(--odz-lo) 6deg 12deg); }
+.odz__jadro { inset: 10%; background: var(--odz-ram); }
+.odz__lic {
+  inset: 13%; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: radial-gradient(circle at 30% 22%, var(--odz-hi), var(--odz-mid) 48%, var(--odz-lo));
+  color: var(--odz-ink); font-family: var(--pismo-rodina); line-height: 1;
+}
+.odz__lic::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(155deg, rgb(255 255 255 / 0.5), rgb(255 255 255 / 0) 40%); }
+.odz__lic::after { content: ""; position: absolute; top: -20%; bottom: -20%; left: -70%; width: 40%; pointer-events: none; transform: skewX(-20deg);
+  background: linear-gradient(90deg, rgb(255 255 255 / 0), rgb(255 255 255 / 0.8), rgb(255 255 255 / 0)); }
+
+.odz--kruh { --odz-tvar: circle(50%); }
+.odz--sestiuhelnik { --odz-tvar: polygon(50% 0, 94% 25%, 94% 75%, 50% 100%, 6% 75%, 6% 25%); }
+.odz--stit { --odz-tvar: polygon(50% 0, 95% 13%, 95% 56%, 50% 100%, 5% 56%, 5% 13%); }
+
+.odz--zlata { --odz-hi: #FFF0A8; --odz-mid: #F5C21B; --odz-lo: #C98A00; --odz-ink: #141A33; }
+.odz--zelena { --odz-hi: #A5F7D4; --odz-mid: #1FC27E; --odz-lo: #0B8A55; --odz-ink: #0D2233; }
+.odz--modra { --odz-hi: #9CC0FF; --odz-mid: #2F6FEE; --odz-lo: #1C4FC4; --odz-ink: #FFFFFF; }
+
+/* zamčený: šedé tóny, bez lesku, kulatý zámek vpravo dole (pod 56 px jen šedý) */
+.odz--zamceno { --odz-hi: #F4F5F9; --odz-mid: #E1E5EE; --odz-lo: #C5CBD8; --odz-ink: #7B8398; --odz-ram: #AAB1C2; filter: none; }
+.odz--zamceno .odz__lic::after { display: none; }
+.odz__zamek {
+  position: absolute; right: 0; bottom: 0; width: 32%; height: 32%; box-sizing: border-box; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: #141A33; color: #FFFFFF; border: 2px solid var(--odz-zamek-lem, #F3F5FB);
+}
+.odz__zamek svg { width: 60%; height: 60%; }
+@media screen {
+  :root[data-motiv="tmavy"] .odz--zamceno { --odz-hi: #4A5674; --odz-mid: #36415C; --odz-lo: #283149; --odz-ink: #A9B4CB; --odz-ram: #5A6683; }
+  :root[data-motiv="tmavy"] .odz__zamek { background: #E2E8F0; color: #0F172A; }
+}
+
+/* znaky (currentColor) */
+.odz__hvezda { width: calc(var(--s) * 0.3); height: calc(var(--s) * 0.3); }
+.odz__hvezda--velka { width: calc(var(--s) * 0.46); height: calc(var(--s) * 0.46); }
+.odz__zkratka { font-weight: 800; font-size: calc(var(--s) * 0.15); letter-spacing: 0.06em; margin-top: calc(var(--s) * 0.02); }
+.odz__cislo { font-weight: 800; font-size: calc(var(--s) * 0.28); }
+.odz__cislo--maly { font-size: calc(var(--s) * 0.2); letter-spacing: -0.01em; }
+.odz__sipky { width: calc(var(--s) * 0.3); height: calc(var(--s) * 0.13); margin-top: calc(var(--s) * 0.02); }
+.odz__pohar { width: calc(var(--s) * 0.42); height: calc(var(--s) * 0.42); }
+.odz__ikona { width: calc(var(--s) * 0.4); height: calc(var(--s) * 0.4); }
+.odz__karticky {
+  position: relative; display: flex; align-items: center; justify-content: center; box-sizing: border-box;
+  width: calc(var(--s) * 0.3); height: calc(var(--s) * 0.38); margin: calc(var(--s) * 0.06) calc(var(--s) * 0.06) 0 0;
+  border: calc(var(--s) * 0.03) solid currentColor; border-radius: calc(var(--s) * 0.06);
+  font-weight: 800; font-size: calc(var(--s) * 0.17); background: var(--odz-mid);
+}
+.odz__karticky::before { content: ""; position: absolute; inset: calc(var(--s) * -0.03); z-index: -1; opacity: 0.75;
+  border: calc(var(--s) * 0.03) solid currentColor; border-radius: calc(var(--s) * 0.06); transform: translate(24%, -18%); }
+.odz__karticky--maly { width: calc(var(--s) * 0.36); font-size: calc(var(--s) * 0.12); }
+
+.odz--maly { filter: drop-shadow(0 2px 3px rgb(20 26 51 / 0.25)); }
+.odz--maly.odz--zamceno { filter: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .odz:not(.odz--maly):not(.odz--zamceno) .odz__lic::after { animation: odz-lesk 5.5s ease-in-out infinite; }
+}
+@keyframes odz-lesk { 0%, 60% { left: -70%; } 90%, 100% { left: 140%; } }
+
+/* --- Přehled odznaků (modal): dlaždice Získáno (bílá) / Zamčeno (čárkovaná), nadpisy sekcí velkými písmeny ---- */
+.modal--odznaky { width: min(62rem, calc(100% - 2rem)); background: var(--barva-pozadi); }
+.modal--odznaky .modal__panel { background: var(--barva-pozadi); gap: var(--mezera-4); }
+/* telefon: spodní panel přes celou šířku (obecné .modal má na úzkém displeji šířku 100 % - 2rem bez okraje vlevo) */
+@media (max-width: 40rem) { .modal--odznaky { width: 100%; max-width: 100%; } }
+.odznaky__nadpis { margin: var(--mezera-4) 0 0; font-size: 0.8125rem; font-weight: var(--pismo-vaha-tucne); line-height: 1.3;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--barva-text-tlumeny); }
+.odznaky { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 8.5rem), 1fr)); gap: var(--mezera-4); margin: 0; }
+.odznak {
+  display: flex; flex-direction: column; align-items: center; gap: 12px; margin: 0; padding: 22px 12px 18px; min-width: 0;
+  border-radius: 20px; text-align: center; font: inherit; color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.odznak .odz { --s: 96px; }
+.odznak--ziskany { background: var(--barva-povrch); border: 1px solid var(--barva-okraj); box-shadow: 0 2px 6px rgb(20 26 51 / 0.06); cursor: pointer; }
+.odznak--chybi { --odz-zamek-lem: var(--barva-pozadi); background: color-mix(in srgb, var(--barva-povrch) 40%, transparent); border: 1px dashed var(--barva-okraj-silny); }
+.odznak--ziskany:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgb(20 26 51 / 0.14); }
+.odznak--ziskany:hover .odz { transform: rotate(-7deg) scale(1.08); }
+.odznak--tlacitko:focus-visible { outline: 3px solid var(--barva-fokus); outline-offset: 3px; }
+.odznak:nth-child(6n+2) .odz__lic::after { animation-delay: 0.5s; }
+.odznak:nth-child(6n+3) .odz__lic::after { animation-delay: 1s; }
+.odznak:nth-child(6n+4) .odz__lic::after { animation-delay: 1.5s; }
+.odznak:nth-child(6n+5) .odz__lic::after { animation-delay: 2s; }
+.odznak:nth-child(6n) .odz__lic::after { animation-delay: 2.5s; }
+.odznak__text { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0; }
+.odznak__stav { font-size: 0.625rem; font-weight: var(--pismo-vaha-tucne); line-height: 1.2; letter-spacing: 0.14em; text-transform: uppercase; }
+.odznak--ziskany .odznak__stav { color: var(--barva-zelena-text); }
+.odznak--chybi .odznak__stav { color: var(--barva-text-tlumeny); }
+.odznak__nazev { font-size: 0.9375rem; font-weight: var(--pismo-vaha-tucne); line-height: 1.25; color: var(--barva-text); overflow-wrap: anywhere; }
+.odznak__popis { font-size: 0.78125rem; line-height: 1.45; color: var(--barva-text-tlumeny); text-wrap: pretty; }
+@media screen { :root[data-motiv="tmavy"] .odznak--ziskany:hover { box-shadow: 0 14px 28px rgb(0 0 0 / 0.4); } }
+@media (prefers-reduced-motion: reduce) { .odznak, .odz { transition: none; } }
+
+/* --- Řádek „Odznaky: x z N“ na přehledu (rozložení sdílí i řádek taháků) ------------------------------------ */
+.odznaky-radek { display: flex; flex-direction: column; gap: var(--mezera-2); width: 100%; text-align: left; font: inherit; color: inherit; cursor: pointer; }
+.odznaky-radek__hlavicka { display: flex; justify-content: space-between; align-items: baseline; gap: var(--mezera-2); }
+.odznaky-radek__pas { display: flex; gap: var(--mezera-2); overflow: hidden; }
+.odznaky-radek__pas:has(.odz) { padding-bottom: 4px; }
+.odznaky-radek__pas .odz { --s: 40px; }
+
+/* --- Karta nového odznaku a taháku: tmavá scéna, neonový titulek, 3D karta rub → líc ------------------------ */
+.modal--karty-odznaku {
+  width: min(28rem, calc(100% - 1rem)); max-height: calc(100% - 1rem); margin: auto; overflow: visible;
+  background: transparent; box-shadow: none; color: #FFFFFF; border-radius: 0;
+}
+.modal--karty-odznaku::backdrop {
+  background: radial-gradient(circle at 50% 38%, rgb(38 49 94 / 0.96) 0%, rgb(20 26 54 / 0.97) 55%, rgb(11 15 34 / 0.98) 100%);
+  backdrop-filter: blur(6px);
+}
+@media (max-width: 40rem) { .modal--karty-odznaku { width: calc(100% - 1rem); margin: auto; border-radius: 0; } }
+.karty-odznaku {
+  --k-sirka: min(17.5rem, 74vw, calc((100vh - 15rem) * 0.6667));
+  --k-sirka: min(17.5rem, 74vw, calc((100dvh - 15rem) * 0.6667));
+  display: flex; flex-direction: column; align-items: center; gap: var(--mezera-4); padding: var(--mezera-2) 0; font-family: var(--pismo-rodina);
+}
+.karty-odznaku__titulek, .karta-odznaku__neon {
+  --neon: #F5B400;
+  font-family: "Tilt Neon", var(--pismo-rodina); font-weight: 400; text-transform: uppercase; color: #F2FFFB;
+  text-shadow: 0 0 3px #FFFFFF, 0 0 9px var(--neon), 0 0 20px var(--neon), 0 0 40px var(--neon);
+}
+.karty-odznaku__titulek { margin: 0; text-align: center; font-size: clamp(1.375rem, 6.4vw, 1.875rem); line-height: 1.2; letter-spacing: 0.14em; color: #FFF7DC; }
+.karta-odznaku__neon--mata { --neon: #19E0AE; }
+.karty-odznaku__scena { position: relative; width: 100%; display: grid; grid-template-columns: auto 1fr auto; align-items: center; }
+.karty-odznaku__pas {
+  grid-column: 1 / -1; grid-row: 1; display: flex; gap: var(--mezera-5); overflow-x: auto; overflow-y: visible;
+  scroll-snap-type: x mandatory; scrollbar-width: none; padding: 48px calc(50% - var(--k-sirka) / 2); margin-block: -24px; outline-offset: 4px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.karty-odznaku__pas::-webkit-scrollbar { display: none; }
+.karty-odznaku__pas:not([tabindex]) { -webkit-mask-image: none; mask-image: none; }
+.karty-odznaku__sipka {
+  grid-row: 1; z-index: 2; width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 1px solid rgb(255 255 255 / 0.25);
+  background: rgb(15 23 42 / 0.7); color: #FFFFFF; display: grid; place-items: center; cursor: pointer; backdrop-filter: blur(4px);
+}
+.karty-odznaku__sipka:focus-visible { outline: 3px solid #19E0AE; outline-offset: 2px; }
+.karty-odznaku__sipka::before { content: ""; width: 0.6rem; height: 0.6rem; border: solid currentColor; border-width: 0 0 2.5px 2.5px; }
+.karty-odznaku__sipka--vlevo { grid-column: 1; }
+.karty-odznaku__sipka--vlevo::before { transform: translateX(2px) rotate(45deg); }
+.karty-odznaku__sipka--vpravo { grid-column: 3; }
+.karty-odznaku__sipka--vpravo::before { transform: translateX(-2px) rotate(-135deg); }
+.karty-odznaku__sipka:disabled { opacity: 0; pointer-events: none; }
+.karty-odznaku__tecky { display: flex; gap: 6px; }
+.karty-odznaku__tecky span { width: 7px; height: 7px; border-radius: 50%; background: rgb(255 255 255 / 0.3); transition: width var(--prechod), background-color var(--prechod); }
+.karty-odznaku__tecky span.je-aktualni { width: 20px; border-radius: 4px; background: #19E0AE; }
+/* hlavní tlačítko (CTA se stínem z návrhu) */
+.karty-odznaku > .tlacitko.tlacitko--primarni {
+  width: min(100%, max(var(--k-sirka), 15rem)); min-height: 3.625rem; border: 0; border-radius: 16px;
+  background: #1FC27E; color: #0D2233; font-size: 1.125rem; font-weight: 700;
+  box-shadow: 0 6px 0 #0B8A55, 0 14px 30px rgb(31 194 126 / 0.3); transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+}
+.karty-odznaku > .tlacitko.tlacitko--primarni:hover:not(:disabled) { background: #1FC27E; color: #0D2233; filter: brightness(1.08); transform: translateY(-2px); }
+.karty-odznaku > .tlacitko.tlacitko--primarni:active:not(:disabled) { transform: translateY(3px); box-shadow: 0 3px 0 #0B8A55, 0 8px 18px rgb(31 194 126 / 0.3); }
+.karty-odznaku > .tlacitko.tlacitko--primarni:focus-visible { outline: 3px solid #FFFFFF; outline-offset: 3px; }
+.modal--karty-odznaku .jen-ctecka { color: inherit; }
+
+.karta-odznaku {
+  --k-hi: #A5F7D4; --k-mid: #1FC27E; --k-lo: #0B8A55;
+  position: relative; flex: 0 0 var(--k-sirka); width: var(--k-sirka); scroll-snap-align: center; perspective: 1100px;
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+.karta-odznaku--zlata { --k-hi: #FFF0A8; --k-mid: #F5C21B; --k-lo: #C98A00; }
+.karta-odznaku--modra { --k-hi: #9CC0FF; --k-mid: #2F6FEE; --k-lo: #1C4FC4; }
+.karty-odznaku__pas .karta-odznaku:not(.je-aktualni) { opacity: 0.5; transform: scale(0.9); }
+.karta-odznaku__vznaseni { position: relative; display: block; transform-style: preserve-3d; }
+.karta-odznaku__zare { position: absolute; inset: 8px; border-radius: 26px; background: var(--k-mid); filter: blur(34px); opacity: 0.5; pointer-events: none; }
+.karta-odznaku__tlacitko {
+  position: relative; display: block; width: 100%; margin: 0; padding: 0; border: 0; border-radius: 22px;
+  background: none; color: inherit; font: inherit; text-align: left; cursor: pointer;
+}
+.karta-odznaku__tlacitko:focus-visible { outline: 3px solid #19E0AE; outline-offset: 8px; }
+.karta-odznaku__naklon {
+  display: block; border-radius: 22px; transform-style: preserve-3d;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform 0.2s ease-out;
+}
+.karta-odznaku__vnitrek { position: relative; display: block; aspect-ratio: 2 / 3; transform-style: preserve-3d; transition: transform 0.9s cubic-bezier(.3, 1.25, .5, 1); }
+.karta-odznaku.je-otocena .karta-odznaku__vnitrek { transform: rotateY(180deg); }
+.karta-odznaku__rub, .karta-odznaku__lic {
+  position: absolute; inset: 0; display: block; border-radius: 22px; overflow: hidden;
+  backface-visibility: hidden; -webkit-backface-visibility: hidden; box-shadow: 0 18px 50px rgb(0 0 0 / 0.5);
+}
+.karta-odznaku__lic { transform: rotateY(180deg); }
+/* duhový okraj: otáčející se kužel pod plochou karty (3 px) */
+.karta-odznaku__okraj { position: absolute; inset: -60%; display: block; background: conic-gradient(#F5C21B, #FF7AC3, #8F7BFF, #19E0AE, #F5C21B); }
+.karta-odznaku__plocha { position: absolute; inset: 3px; display: flex; flex-direction: column; border-radius: 19px; overflow: hidden; box-sizing: border-box; }
+.karta-odznaku__lesk { position: absolute; inset: 0; display: block; pointer-events: none; mix-blend-mode: screen;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 15%), rgb(255 255 255 / 0.26), rgb(255 255 255 / 0) 52%); }
+.karta-odznaku__lic .karta-odznaku__lesk { background: radial-gradient(circle at var(--mxf, 50%) var(--my, 15%), rgb(255 255 255 / 0.26), rgb(255 255 255 / 0) 52%); }
+/* prolétající světla */
+.karta-odznaku__svetla { position: absolute; inset: 0; display: block; overflow: hidden; pointer-events: none; }
+.karta-odznaku__svetlo { position: absolute; top: 0; display: block; width: 130px; height: 2px; border-radius: 2px; opacity: 0;
+  background: linear-gradient(90deg, rgb(255 255 255 / 0), rgb(255 255 255 / 0.95)); box-shadow: 0 0 8px rgb(255 255 255 / 0.6); }
+.karta-odznaku__svetlo--a { left: -40px; }
+.karta-odznaku__svetlo--b { left: 60px; width: 90px; }
+.karta-odznaku__svetlo--c { left: -110px; }
+.karta-odznaku__svetlo--d { left: 130px; width: 70px; }
+.karta-odznaku__svetlo--e { left: 10px; width: 160px; }
+
+/* rub */
+.karta-odznaku__rub .karta-odznaku__plocha {
+  align-items: center; justify-content: center; gap: calc(var(--k-sirka) * 0.147);
+  background: repeating-linear-gradient(135deg, rgb(255 255 255 / 0.045) 0 2px, rgb(255 255 255 / 0) 2px 16px),
+    radial-gradient(circle at 50% 45%, #2A2A52 0%, #111630 60%, #0A0E20 100%);
+}
+.karta-odznaku__roh { position: absolute; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #AAB3D0; }
+.karta-odznaku__roh--nahore { left: 18px; top: 16px; }
+.karta-odznaku__roh--dole { right: 18px; bottom: 16px; transform: rotate(180deg); }
+.karta-odznaku__koule-obal { position: relative; display: block; }
+.karta-odznaku__koule {
+  position: relative; display: flex; align-items: center; justify-content: center;
+  width: calc(var(--k-sirka) * 0.373); height: calc(var(--k-sirka) * 0.373); border-radius: 50%;
+  background: radial-gradient(circle at 32% 26%, #FFF0A8, #F5C21B 50%, #C98A00); box-shadow: 0 0 40px rgb(245 180 0 / 0.7);
+}
+.karta-odznaku__otaznik { font-size: calc(var(--k-sirka) * 0.207); font-weight: 800; line-height: 1; color: #141A33; }
+.karta-odznaku__vlna { position: absolute; inset: 0; display: block; border-radius: 50%; border: 2px solid rgb(245 194 27 / 0.7); opacity: 0; pointer-events: none; }
+.karta-odznaku__vyzva { font-size: 1.25rem; letter-spacing: 0.16em; text-align: center; padding-inline: 0.75rem; }
+
+/* líc */
+.karta-odznaku__lic .karta-odznaku__plocha { gap: 0.75rem; padding: 0.875rem; background: linear-gradient(180deg, #1B2247 0%, #0E1329 100%); text-align: left; }
+.karta-odznaku__hlavicka, .karta-odznaku__pata {
+  display: flex; justify-content: space-between; align-items: center; gap: 0.5rem;
+  font-size: 0.6875rem; font-weight: 700; line-height: 1.25; letter-spacing: 0.16em; text-transform: uppercase; color: #AAB3D0;
+}
+.karta-odznaku__okno {
+  position: relative; display: flex; align-items: center; justify-content: center; flex: 1 1 auto; min-height: 6.5rem;
+  border-radius: 14px; overflow: hidden; border: 1px solid rgb(255 255 255 / 0.12);
+  background: linear-gradient(rgb(255 255 255 / 0.05) 1px, rgb(0 0 0 / 0) 1px) 0 0 / 22px 22px,
+    linear-gradient(90deg, rgb(255 255 255 / 0.05) 1px, rgb(0 0 0 / 0) 1px) 0 0 / 22px 22px, #0A0E22;
+}
+.karta-odznaku__paprsky {
+  position: absolute; left: 50%; top: 50%; width: 380px; height: 380px; margin: -190px 0 0 -190px; border-radius: 50%; opacity: 0.26;
+  background: repeating-conic-gradient(var(--k-mid) 0 9deg, rgb(0 0 0 / 0) 9deg 18deg);
+  -webkit-mask-image: radial-gradient(circle, #000 18%, rgb(0 0 0 / 0) 68%); mask-image: radial-gradient(circle, #000 18%, rgb(0 0 0 / 0) 68%);
+}
+.karta-odznaku__jiskra { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 10px 2px var(--k-hi); opacity: 0; pointer-events: none; }
+.karta-odznaku__jiskra--1 { left: 34px; top: 40px; }
+.karta-odznaku__jiskra--2 { right: 40px; top: 56px; animation-delay: 0.7s; }
+.karta-odznaku__jiskra--3 { left: 58px; bottom: 44px; animation-delay: 1.3s; }
+.karta-odznaku__jiskra--4 { right: 30px; bottom: 70px; animation-delay: 1.9s; }
+.karta-odznaku__obrazek { position: relative; display: block; line-height: 0; }
+.karta-odznaku__obrazek .odz { --s: calc(var(--k-sirka) * 0.46); --odz-ram: #0B1024; filter: drop-shadow(0 10px 18px rgb(0 0 0 / 0.55)); }
+.karta-odznaku__obrazek > svg { width: calc(var(--k-sirka) * 0.4); height: calc(var(--k-sirka) * 0.4); filter: drop-shadow(0 10px 18px rgb(0 0 0 / 0.55)); }
+.karta-odznaku--s-akci .karta-odznaku__obrazek > svg { width: calc(var(--k-sirka) * 0.34); height: calc(var(--k-sirka) * 0.34); }
+.karta-odznaku__razitko { position: absolute; left: 10px; bottom: 8px; display: block; transform: rotate(-7deg); }
+.karta-odznaku__razitko .karta-odznaku__neon { display: block; font-size: 1.625rem; line-height: 1; letter-spacing: 0.06em; }
+.karta-odznaku__text { display: flex; flex-direction: column; gap: 6px; }
+.karta-odznaku__druh { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--k-hi); }
+.karta-odznaku__nazev { font-size: 1.375rem; font-weight: 800; line-height: 1.15; color: #FFFFFF; overflow-wrap: anywhere; }
+.karta-odznaku__pochvala { font-size: 0.875rem; line-height: 1.45; color: #C8CEE3; text-wrap: pretty; }
+.karta-odznaku__pata { margin-top: auto; }
+.karta-odznaku__tecka::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 8px; border-radius: 50%; background: var(--k-mid); vertical-align: 1px; }
+/* R78: tlačítko „Otevřít tahák“ položené na líc (mimo tlačítko karty), viditelné až po otočení */
+.karta-odznaku__misto-akce { display: block; flex: 0 0 2.75rem; }
+.karta-odznaku__akce {
+  position: absolute; z-index: 4; left: 1.1rem; right: 1.1rem; bottom: calc(3px + 0.875rem + 0.86rem + 0.75rem); min-height: 2.75rem;
+  padding: 0.35rem 0.75rem; font-size: 0.9375rem; opacity: 0; visibility: hidden; transition: opacity 300ms ease 1.1s, visibility 0s linear 1.1s;
+}
+.karta-odznaku.je-otocena .karta-odznaku__akce { opacity: 1; visibility: visible; }
+.karty-odznaku__pas .karta-odznaku:not(.je-aktualni) .karta-odznaku__akce { opacity: 0; visibility: hidden; transition: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .karty-odznaku__titulek, .karta-odznaku__neon { animation: k-blikani 5s linear infinite; }
+  .modal--karty-odznaku[open] .karta-odznaku { animation: k-prijezd 750ms cubic-bezier(.2, 1.2, .4, 1) both; }
+  .modal--karty-odznaku[open] .karta-odznaku:nth-child(2) { animation-delay: 120ms; }
+  .modal--karty-odznaku[open] .karta-odznaku:nth-child(3) { animation-delay: 240ms; }
+  .modal--karty-odznaku[open] .karta-odznaku:nth-child(n+4) { animation-delay: 360ms; }
+  .karta-odznaku.je-aktualni .karta-odznaku__vznaseni { animation: k-vznaseni 5s ease-in-out infinite; }
+  .karta-odznaku__zare { animation: k-dech 3s ease-in-out infinite; }
+  .karta-odznaku__okraj { animation: k-tocit 5s linear infinite; }
+  .karta-odznaku__svetlo { animation: k-let 3.4s linear infinite; }
+  .karta-odznaku__svetlo--b { animation-delay: 1.1s; animation-duration: 2.6s; }
+  .karta-odznaku__svetlo--c { animation-delay: 2s; animation-duration: 4.2s; }
+  .karta-odznaku__svetlo--d { animation-delay: 2.7s; animation-duration: 3s; }
+  .karta-odznaku__svetlo--e { animation-delay: 0.6s; animation-duration: 5s; }
+  .karta-odznaku__koule { animation: k-pulz 2.2s ease-in-out infinite; }
+  .karta-odznaku__vlna { animation: k-vlna 2.6s ease-out infinite; }
+  .karta-odznaku__vlna--2 { animation-delay: 1.3s; }
+  .karta-odznaku__paprsky { animation: k-tocit 20s linear infinite; }
+  .karta-odznaku__jiskra { animation: k-trpyt 2.4s ease-in-out infinite; }
+  .karta-odznaku:not(.je-otocena) .karta-odznaku__obrazek { opacity: 0; transform: scale(0.2) rotate(-40deg); }
+  .karta-odznaku:not(.je-otocena) .karta-odznaku__razitko, .karta-odznaku:not(.je-otocena) .karta-odznaku__text { opacity: 0; }
+  .karta-odznaku.je-otocena .karta-odznaku__obrazek { animation: k-pop 0.8s 0.45s cubic-bezier(.3, 1.7, .5, 1) both; }
+  .karta-odznaku.je-otocena .karta-odznaku__razitko { animation: k-razitko 0.5s 1s cubic-bezier(.3, 1.7, .5, 1) both; }
+  .karta-odznaku.je-otocena .karta-odznaku__text { animation: k-vyjet 0.5s 1.15s ease-out both; }
+  .modal--karty-odznaku.je-sebrano .karta-odznaku { animation: k-sebrat 520ms ease-in forwards; }
+  .modal--karty-odznaku.je-sebrano .karty-odznaku > :not(.karty-odznaku__scena) { transition: opacity 300ms; opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .karta-odznaku, .karta-odznaku__naklon, .karta-odznaku__vnitrek, .karta-odznaku__akce, .karty-odznaku > .tlacitko.tlacitko--primarni { transition: none; }
+  .karta-odznaku__jiskra { opacity: 0.7; }
+}
+@keyframes k-blikani { 0%, 18%, 20%, 22%, 52%, 54%, 100% { opacity: 1; } 19%, 21%, 53% { opacity: 0.55; } }
+@keyframes k-prijezd { from { transform: translateY(70px) scale(0.6) rotate(-6deg); opacity: 0; } 70% { transform: translateY(-6px) scale(1.03); opacity: 1; } }
+@keyframes k-vznaseni { 0%, 100% { transform: translateY(-5px); } 50% { transform: translateY(5px); } }
+@keyframes k-dech { 0%, 100% { opacity: 0.35; } 50% { opacity: 0.65; } }
+@keyframes k-tocit { to { transform: rotate(360deg); } }
+@keyframes k-let { 0% { transform: translate(-180px, 540px) rotate(-55deg); opacity: 0; } 12% { opacity: 0.9; } 70% { opacity: 0.9; } 100% { transform: translate(400px, -280px) rotate(-55deg); opacity: 0; } }
+@keyframes k-pulz { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
+@keyframes k-vlna { 0% { transform: scale(1); opacity: 0.8; } 100% { transform: scale(2.3); opacity: 0; } }
+@keyframes k-trpyt { 0%, 100% { transform: scale(0.2); opacity: 0; } 50% { transform: scale(1); opacity: 1; } }
+@keyframes k-pop { 0% { transform: scale(0.2) rotate(-40deg); opacity: 0; } 100% { transform: scale(1) rotate(0deg); opacity: 1; } }
+@keyframes k-razitko { 0% { transform: rotate(-7deg) scale(1.8); opacity: 0; } 100% { transform: rotate(-7deg) scale(1); opacity: 1; } }
+@keyframes k-vyjet { 0% { transform: translateY(10px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+@keyframes k-sebrat { to { transform: translateY(-90px) scale(0.35); opacity: 0; } }
+
+/* ODPOVED 8. 10., bod 2: okna na telefonu přes celou šířku, přilepená dole. Pozdější `.modal { width: … }`
+   (dialog 24 px) a `.modal--tahak` přebíjely mobilní pravidlo a okno bylo posunuté doleva. Karta odznaku má vlastní rozměry. */
+@media (max-width: 40rem) {
+  .modal:not(.modal--karty-odznaku) {
+    width: 100%;
+    max-width: 100%;
+    margin: auto 0 0;
+    border-radius: var(--polomer-panel) var(--polomer-panel) 0 0;
+  }
+  .modal:not(.modal--karty-odznaku) > .modal__panel { border-radius: var(--polomer-panel) var(--polomer-panel) 0 0; }
+}

@@ -1,0 +1,975 @@
+diff --git a/obsah/hlasky.md b/obsah/hlasky.md
+index 3faed26..7660262 100644
+--- a/obsah/hlasky.md
++++ b/obsah/hlasky.md
+@@ -556,6 +556,7 @@ Taháky jsou pro dítě (tykáme), rodič je čte stejně. Výzva na přehledu m
+ | `tahaky.zamceno_vyzva` | zamčený zlatý tahák, výzva teprve bude | Odměna za výzvu: {cil} {lekci} {mesic}. |
+ | `tahaky.zamceno_vyzva_bezi` | zamčený zlatý tahák, výzva právě běží | Splň výzvu: {x} z {cil} lekcí {mesic}. |
+ | `tahaky.zamceno_vyzva_skoncila` | zamčený zlatý tahák, výzva skončila nesplněná | Výzva skončila. Tahák se ti odemkne 1. 4. |
++| `tahaky.zamceno_bez_sezony` | zamčený zlatý tahák u rodiny bez zaplacené sezóny (ODPOVED 8. 10., bod 3; bez ceny) | Výzvy jsou součástí sezóny. |
+ | `tahaky.otevrit` | karta nového taháku, dlaždice, výzva | Otevřít tahák |
+ | `tahaky.tisk` | stránka taháků, tlačítko | Vytisknout odemčené |
+ | `tahaky.tisk_nic` | stránka taháků, když není nic odemčeno | Až odemkneš první tahák, půjde vytisknout. |
+@@ -576,3 +577,13 @@ Taháky jsou pro dítě (tykáme), rodič je čte stejně. Výzva na přehledu m
+ | `vyzva.popis` | přehled, karta výzvy, pod ukazatelem | Počítají se lekce z matematiky i z češtiny dokončené {mesic}. |
+ | `vyzva.splneno_zak` | přehled žáka, výzva splněna | Výzva splněna! Tahák „{nazev}“ je tvůj. |
+ | `vyzva.splneno_rodic` | přehled rodiče, výzva splněna | Výzva splněna! Zlatý tahák „{nazev}“ je odemčený. |
++
++## Odznaky — přehled a karta (redesign 8. 10., návrh designérky) — `prehled.html`, `lekce.html`, `rodic.html`, `tahaky.html`
++
++Názvy, pochvaly a popisy odznaků jsou v `web/js/odznaky.js`. Tady jsou jen štítky dlaždic a razítko na kartě.
++
++| klíč | kde | text |
++|---|---|---|
++| `odznaky.ziskano` | přehled odznaků, štítek získaného odznaku | Získáno |
++| `odznaky.zamceno` | přehled odznaků, štítek zamčeného odznaku | Zamčeno |
++| `odznaky.razitko` | karta nového odznaku a taháku po otočení, ozdobné razítko | Získáno! |
+diff --git a/testy/odznaky.test.js b/testy/odznaky.test.js
+index 284adf2..68aced9 100644
+--- a/testy/odznaky.test.js
++++ b/testy/odznaky.test.js
+@@ -146,3 +146,30 @@ test('R80: odznaky za výzvy a sbírku taháků', async () => {
+   assert.equal(najdiOdznak('vyzva:2027-04').popis, 'Dokonči 4 lekce v dubnu do 11. 4.');
+   assert.equal(najdiOdznak('vyzva:2026-11').popis, 'Dokonči 12 lekcí v listopadu.');
+ });
++
++test('redesign 8. 10.: htmlOdznaku — tvar podle skupiny, tón podle barvy, znak, zamčený stav', async () => {
++  const { htmlOdznaku, vzhledOdznaku, ODZNAKY, ODZNAKY_CESTINY, ODZNAKY_OBA, ODZNAKY_VYZVY_A_TAHAKY } = await import('../web/js/odznaky.js');
++  for (const o of [...ODZNAKY, ...ODZNAKY_CESTINY, ...ODZNAKY_OBA, ...ODZNAKY_VYZVY_A_TAHAKY]) {
++    const html = htmlOdznaku(o.id);
++    assert.match(html, /^<span class="odz odz--(kruh|stit|sestiuhelnik) odz--(zelena|zlata|modra)"[^]*<\/span>$/, o.id);
++    assert.match(html, /<span class="odz__lic">(?!<\/span>)/, `${o.id}: líc má znak`);
++    assert.match(html, /aria-hidden="true"/);
++  }
++  assert.deepEqual(vzhledOdznaku('rada5'), { tvar: 'kruh', ton: 'zelena' });
++  assert.deepEqual(vzhledOdznaku('cj:rada5'), { tvar: 'stit', ton: 'modra' });
++  assert.deepEqual(vzhledOdznaku('cj:faze1'), { tvar: 'stit', ton: 'zlata' });
++  assert.deepEqual(vzhledOdznaku('oba:tyden'), { tvar: 'sestiuhelnik', ton: 'zlata' });
++  assert.deepEqual(vzhledOdznaku('vyzva:2026-11'), { tvar: 'kruh', ton: 'zlata' });
++  assert.deepEqual(vzhledOdznaku('sber:5'), { tvar: 'sestiuhelnik', ton: 'zelena' });
++  assert.deepEqual(vzhledOdznaku('sber:vse'), { tvar: 'sestiuhelnik', ton: 'zlata' });
++  assert.equal(vzhledOdznaku('neni'), null);
++  assert.equal(htmlOdznaku('neni'), '');
++  assert.match(htmlOdznaku('vyzva:2027-02'), /odz__zkratka">ÚNO</);
++  assert.match(htmlOdznaku('sber:vse'), /odz__karticky odz__karticky--maly">vše</);
++  assert.match(htmlOdznaku('rada10'), /odz__cislo">10<[^]*odz__sipky/);
++  assert.match(htmlOdznaku('oba:prvni'), /odz__cislo odz__cislo--maly">1\+1</);
++  assert.match(htmlOdznaku('faze1', { zamceno: true }), /odz--zamceno[^]*odz__zamek/, 'zamčený má zámek');
++  assert.doesNotMatch(htmlOdznaku('faze1', { zamceno: true, velikost: 40 }), /odz__zamek/, 'malý zamčený jen šedý');
++  assert.match(htmlOdznaku('prvni', { velikost: 40 }), /odz--maly"[^>]*style="--s:40px"/);
++  assert.match(htmlOdznaku('prvni', { titulek: 'První "lekce"' }), /role="img" aria-label="První &quot;lekce&quot;"/);
++});
+diff --git a/web/css/design-system.css b/web/css/design-system.css
+index 28464d8..030ad2e 100644
+--- a/web/css/design-system.css
++++ b/web/css/design-system.css
+@@ -2437,38 +2437,6 @@ footer.hlavicka { border-bottom: 0; border-top: 3px solid var(--barva-akcent); }
+ .stitek--hvezda { display: inline-flex; align-items: center; gap: 0.3em; padding: 0.15em 0.6em; border-radius: var(--polomer-kruh); background: #FDE68A; color: #6B4E00; font-weight: var(--pismo-vaha-tucne); font-size: 0.8125rem; }
+ .stitek--hvezda .ikona { width: 1em; height: 1em; }
+ 
+-/* C: odznaky */
+-.odznak__obrazek { display: inline-block; line-height: 0; }
+-.odznak__obrazek svg { width: 100%; height: 100%; }
+-.odznak__obrazek--chybi svg { filter: grayscale(1); opacity: 0.35; }
+-.odznaky { display: grid; grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr)); gap: var(--mezera-4); margin: var(--mezera-4) 0; }
+-.odznak { display: flex; flex-direction: column; align-items: center; gap: var(--mezera-1); margin: 0; text-align: center; }
+-.odznak .odznak__obrazek { width: 64px; height: 64px; }
+-.odznak__nazev { font-weight: var(--pismo-vaha-tucne); font-size: 0.875rem; line-height: 1.2; }
+-.odznak__popis { color: var(--barva-text-tlumeny); font-size: 0.75rem; line-height: 1.25; }
+-.odznak--chybi .odznak__nazev { color: var(--barva-text-tlumeny); }
+-.odznaky-radek { display: flex; flex-direction: column; gap: var(--mezera-2); width: 100%; text-align: left; font: inherit; color: inherit; cursor: pointer; }
+-.odznaky-radek__hlavicka { display: flex; justify-content: space-between; align-items: baseline; gap: var(--mezera-2); }
+-.odznaky-radek__pas { display: flex; gap: var(--mezera-2); overflow: hidden; }
+-.odznaky-radek__pas .odznak__obrazek { width: 36px; height: 36px; flex: 0 0 auto; }
+-
+-/* Nový odznak: okno s lehkou animací, „Seber odznak" ho odnese */
+-.novy-odznak { display: flex; flex-direction: column; align-items: center; gap: var(--mezera-3); text-align: center; max-width: 22rem; }
+-.novy-odznak__stitek { margin: 0; font-weight: var(--pismo-vaha-tucne); color: var(--barva-zelena-text); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.875rem; }
+-.novy-odznak__obrazek { position: relative; width: 132px; height: 132px; display: grid; place-items: center; }
+-.novy-odznak__obrazek .odznak__obrazek { width: 120px; height: 120px; }
+-.novy-odznak__obrazek::before { content: ""; position: absolute; inset: -8px; border-radius: 50%;
+-  background: radial-gradient(circle, rgb(245 197 24 / 0.35) 0%, rgb(31 194 126 / 0.18) 45%, transparent 70%); }
+-.novy-odznak__nazev { margin: 0; font-size: var(--pismo-nadpis); }
+-.novy-odznak__popis { margin: 0; }
+-@media (prefers-reduced-motion: no-preference) {
+-  .modal--novy-odznak[open] .odznak__obrazek { animation: odznak-prilet 700ms cubic-bezier(.2, 1.4, .4, 1) both; }
+-  .modal--novy-odznak[open] .novy-odznak__obrazek::before { animation: odznak-zare 1.8s ease-in-out 600ms infinite; }
+-  .modal--novy-odznak.je-sebrano .odznak__obrazek { animation: odznak-sebrat 420ms ease-in forwards; }
+-}
+-@keyframes odznak-prilet { from { transform: scale(0.2) rotate(-25deg); opacity: 0; } 60% { transform: scale(1.12) rotate(6deg); opacity: 1; } to { transform: none; } }
+-@keyframes odznak-zare { 0%, 100% { transform: scale(0.92); opacity: 0.6; } 50% { transform: scale(1.08); opacity: 1; } }
+-@keyframes odznak-sebrat { to { transform: translateY(-40px) scale(0.3); opacity: 0; } }
+ 
+ /* R63: hotové lekce fáze přes celou šířku přehledu; časová osa v hlavičce (.osa-sezony) */
+ .postup-pruh { display: grid; grid-template-columns: 1fr; gap: 6px; padding: var(--mezera-3); border-radius: var(--polomer-l);
+@@ -2991,7 +2959,6 @@ body:has(.stranka-zak > #obsah) .hlavicka__vnitrek { max-width: var(--sirka-apli
+   .prepinac-predmetu__ikona { display: none; } /* úzký telefon: celý název bez lámání slova */
+   .prepinac-predmetu__nazev { font-size: 1.0625rem; }
+ }
+-.odznaky__nadpis { font-size: var(--pismo-zaklad); margin-top: var(--mezera-2); }
+ 
+ /* --- R72: týden po týdnu (šipky + výběr) a „Co vás čeká dál“ (Pavel 1. 10.) ---------------------------- */
+ .tydny-nav { display: flex; align-items: center; gap: var(--mezera-2); }
+@@ -3041,141 +3008,6 @@ body:has(.stranka-zak > #obsah) .hlavicka__vnitrek { max-width: var(--sirka-apli
+ }
+ @keyframes cil-objevit { from { background-color: transparent; } 40% { background-color: var(--barva-cj-ikona); } }
+ 
+-/* --- Nový odznak jako sběratelská karta (Pavel 6. 10., odznaky-karty.js): menší, uprostřed, otočení rubem → lícem ---
+-   Rámeček karty je „holografický“ (otáčející se přechod), rub se nabíjí, po otočení záblesk + jiskry + lesk přes líc. */
+-@property --karta-uhel { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+-.modal--karty-odznaku {
+-  width: min(26rem, calc(100% - 1rem)); max-height: calc(100% - 1rem); overflow: visible;
+-  background: transparent; box-shadow: none; color: #fff;
+-}
+-.modal--karty-odznaku::backdrop { background: radial-gradient(circle at 50% 42%, rgb(30 41 72 / 0.9), rgb(5 9 20 / 0.97) 70%); backdrop-filter: blur(6px); }
+-.karty-odznaku { display: flex; flex-direction: column; align-items: center; gap: var(--mezera-3); padding: var(--mezera-2) 0; }
+-.karty-odznaku__titulek { margin: 0; font-weight: var(--pismo-vaha-tucne); letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.9375rem;
+-  color: #FDE68A; text-shadow: 0 0 18px rgb(245 197 24 / 0.6); }
+-.karty-odznaku__scena { position: relative; width: 100%; display: grid; grid-template-columns: auto 1fr auto; align-items: center; }
+-.karty-odznaku__pas {
+-  grid-column: 1 / -1; grid-row: 1; display: flex; gap: var(--mezera-4); overflow-x: auto; overflow-y: visible;
+-  scroll-snap-type: x mandatory; scrollbar-width: none; padding: 44px calc(50% - 7.5rem); margin-block: -18px; outline-offset: 4px;
+-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent); mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+-}
+-.karty-odznaku__pas::-webkit-scrollbar { display: none; }
+-.karty-odznaku__pas:only-child, .karty-odznaku__pas:not([tabindex]) { -webkit-mask-image: none; mask-image: none; }
+-.karty-odznaku__sipka {
+-  grid-row: 1; z-index: 2; width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 1px solid rgb(255 255 255 / 0.25);
+-  background: rgb(15 23 42 / 0.7); color: #fff; display: grid; place-items: center; cursor: pointer; backdrop-filter: blur(4px);
+-}
+-.karty-odznaku__sipka::before { content: ""; width: 0.6rem; height: 0.6rem; border: solid currentColor; border-width: 0 0 2.5px 2.5px; }
+-.karty-odznaku__sipka--vlevo { grid-column: 1; }
+-.karty-odznaku__sipka--vlevo::before { transform: translateX(2px) rotate(45deg); }
+-.karty-odznaku__sipka--vpravo { grid-column: 3; }
+-.karty-odznaku__sipka--vpravo::before { transform: translateX(-2px) rotate(-135deg); }
+-.karty-odznaku__sipka:disabled { opacity: 0; pointer-events: none; }
+-.karty-odznaku__tecky { display: flex; gap: 6px; }
+-.karty-odznaku__tecky span { width: 7px; height: 7px; border-radius: 50%; background: rgb(255 255 255 / 0.3); transition: width var(--prechod), background-color var(--prechod); }
+-.karty-odznaku__tecky span.je-aktualni { width: 20px; border-radius: 4px; background: #FDE68A; }
+-.karty-odznaku > .tlacitko { max-width: 15rem; }
+-
+-.karta-odznaku {
+-  --k-barva: #1FC27E; --k-svetla: #A7F3D0; --k-tma: #064E3B;
+-  position: relative; flex: 0 0 15rem; scroll-snap-align: center; perspective: 900px;
+-  transition: opacity 300ms ease, transform 300ms ease;
+-}
+-.karta-odznaku--zlata { --k-barva: #F5C518; --k-svetla: #FDE68A; --k-tma: #78350F; }
+-.karta-odznaku--modra { --k-barva: #3B82F6; --k-svetla: #BFDBFE; --k-tma: #1E3A8A; }
+-.karty-odznaku__pas .karta-odznaku:not(.je-aktualni) { opacity: 0.55; transform: scale(0.9); }
+-.karta-odznaku__tlacitko { display: block; width: 100%; padding: 0; border: 0; background: none; color: inherit; font: inherit; cursor: pointer; border-radius: 18px; }
+-.karta-odznaku__tlacitko:focus-visible { outline: 3px solid #FDE68A; outline-offset: 4px; }
+-.karta-odznaku__naklon { display: block; transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform 160ms ease-out; transform-style: preserve-3d; }
+-.karta-odznaku__vnitrek {
+-  position: relative; display: block; aspect-ratio: 5 / 7; transform-style: preserve-3d;
+-  transition: transform 750ms cubic-bezier(.3, 1.35, .45, 1);
+-}
+-.karta-odznaku.je-otocena .karta-odznaku__vnitrek { transform: rotateY(180deg); }
+-.karta-odznaku__rub, .karta-odznaku__lic {
+-  position: absolute; inset: 0; border-radius: 18px; overflow: hidden; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+-  /* holografický rámeček: 3px přechod pod tmavou plochou karty */
+-  border: 3px solid transparent;
+-  background:
+-    linear-gradient(160deg, #1B2740, #0B1222) padding-box,
+-    conic-gradient(from var(--karta-uhel), var(--k-barva), #F472B6, #60A5FA, #34D399, var(--k-svetla), var(--k-barva)) border-box;
+-  box-shadow: 0 18px 50px rgb(0 0 0 / 0.55), 0 0 32px color-mix(in srgb, var(--k-barva) 45%, transparent);
+-}
+-.karta-odznaku__rub {
+-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--mezera-3);
+-  background:
+-    repeating-linear-gradient(45deg, rgb(255 255 255 / 0.05) 0 2px, transparent 2px 14px) padding-box,
+-    radial-gradient(circle at 50% 45%, color-mix(in srgb, var(--k-barva) 55%, #0B1222), #0B1222 72%) padding-box,
+-    conic-gradient(from var(--karta-uhel), var(--k-barva), #F472B6, #60A5FA, #34D399, var(--k-svetla), var(--k-barva)) border-box;
+-}
+-.karta-odznaku__otaznik {
+-  display: grid; place-items: center; width: 6rem; height: 6rem; border-radius: 50%; font-size: 3.4rem; font-weight: 800; color: #fff;
+-  background: radial-gradient(circle, color-mix(in srgb, var(--k-barva) 70%, #fff) 0%, var(--k-barva) 55%, var(--k-tma) 100%);
+-  box-shadow: 0 0 0 6px rgb(255 255 255 / 0.12), 0 0 40px var(--k-barva); text-shadow: 0 2px 8px rgb(0 0 0 / 0.4);
+-}
+-.karta-odznaku__vyzva { font-size: 0.8125rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(255 255 255 / 0.8); }
+-.karta-odznaku__lic {
+-  transform: rotateY(180deg); display: flex; flex-direction: column; gap: 0.35rem; padding: 0.75rem 0.85rem 0.7rem; text-align: left;
+-}
+-.karta-odznaku__hlavicka, .karta-odznaku__pata { display: flex; justify-content: space-between; gap: var(--mezera-2);
+-  font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(255 255 255 / 0.7); }
+-.karta-odznaku__okno {
+-  position: relative; flex: 1 1 auto; min-height: 0; display: grid; place-items: center; margin: 0.15rem 0 0.35rem; border-radius: 12px;
+-  border: 1px solid rgb(255 255 255 / 0.12);
+-  background:
+-    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--k-barva) 55%, transparent), transparent 62%),
+-    linear-gradient(rgb(255 255 255 / 0.06) 1px, transparent 1px) 0 0 / 18px 18px,
+-    linear-gradient(90deg, rgb(255 255 255 / 0.06) 1px, transparent 1px) 0 0 / 18px 18px,
+-    #0B1222;
+-}
+-.karta-odznaku__obrazek { display: block; width: 6.5rem; height: 6.5rem; filter: drop-shadow(0 0 18px color-mix(in srgb, var(--k-barva) 80%, transparent)); }
+-.karta-odznaku__obrazek svg { width: 100%; height: 100%; }
+-.karta-odznaku__druh { font-size: 0.6875rem; font-weight: var(--pismo-vaha-tucne); letter-spacing: 0.12em; text-transform: uppercase; color: var(--k-svetla); }
+-.karta-odznaku__nazev { font-size: 1.25rem; line-height: 1.15; color: #fff; }
+-.karta-odznaku__pochvala { font-size: 0.8125rem; line-height: 1.3; color: rgb(255 255 255 / 0.78); }
+-.karta-odznaku__pata { margin-top: auto; padding-top: 0.35rem; }
+-.karta-odznaku__tecka::before { content: ""; display: inline-block; width: 6px; height: 6px; margin-right: 6px; border-radius: 50%; background: var(--k-barva); vertical-align: 1px; }
+-/* lesk: světlý pruh, který sleduje prst (--mx, --my) a jednou přejede po otočení */
+-.karta-odznaku__lesk { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: soft-light; opacity: 0.9;
+-  background: radial-gradient(circle at var(--mx, 30%) var(--my, 20%), rgb(255 255 255 / 0.55), transparent 45%); }
+-.karta-odznaku__lesk::after { content: ""; position: absolute; inset: -40% -60%; transform: translateX(-120%) rotate(18deg);
+-  background: linear-gradient(90deg, transparent 40%, rgb(255 255 255 / 0.65) 50%, transparent 60%); }
+-.karta-odznaku__efekty { position: absolute; inset: 0; pointer-events: none; display: grid; place-items: center; z-index: 3; }
+-.karta-odznaku__vlna, .karta-odznaku__jiskra { position: absolute; opacity: 0; }
+-.karta-odznaku__vlna { width: 60%; aspect-ratio: 1; border-radius: 50%; border: 3px solid var(--k-svetla); }
+-.karta-odznaku__jiskra { width: 8px; height: 8px; border-radius: 50%; background: var(--k-svetla); box-shadow: 0 0 10px var(--k-barva); }
+-.modal--karty-odznaku .jen-ctecka { color: inherit; }
+-
+-@media (prefers-reduced-motion: no-preference) {
+-  .karta-odznaku__rub, .karta-odznaku__lic { animation: karta-holo 4s linear infinite; }
+-  .modal--karty-odznaku[open] .karta-odznaku { animation: karta-prijezd 750ms cubic-bezier(.2, 1.2, .4, 1) both; }
+-  .modal--karty-odznaku[open] .karta-odznaku:nth-child(2) { animation-delay: 120ms; }
+-  .modal--karty-odznaku[open] .karta-odznaku:nth-child(3) { animation-delay: 240ms; }
+-  .modal--karty-odznaku[open] .karta-odznaku:nth-child(n+4) { animation-delay: 360ms; }
+-  .karta-odznaku.je-aktualni:not(.je-otocena) .karta-odznaku__naklon { animation: karta-nabiji 1.6s ease-in-out 900ms infinite; }
+-  .karta-odznaku:not(.je-otocena) .karta-odznaku__otaznik { animation: karta-pulz 1.6s ease-in-out infinite; }
+-  .karta-odznaku.je-vybuch .karta-odznaku__vlna { animation: karta-vlna 900ms ease-out 380ms both; }
+-  .karta-odznaku.je-vybuch .karta-odznaku__jiskra { animation: karta-jiskra 900ms cubic-bezier(.1, .7, .3, 1) 380ms both; }
+-  .karta-odznaku.je-vybuch .karta-odznaku__lesk::after { animation: karta-lesk 1s ease-in-out 600ms both; }
+-  .karta-odznaku.je-vybuch .karta-odznaku__obrazek { animation: karta-odznak 900ms cubic-bezier(.2, 1.5, .4, 1) 420ms both; }
+-  .modal--karty-odznaku.je-sebrano .karta-odznaku { animation: karta-sebrat 520ms ease-in forwards; }
+-  .modal--karty-odznaku.je-sebrano .karty-odznaku > :not(.karty-odznaku__scena) { transition: opacity 300ms; opacity: 0; }
+-}
+-@keyframes karta-holo { to { --karta-uhel: 360deg; } }
+-@keyframes karta-prijezd { from { transform: translateY(70px) scale(0.6) rotate(-6deg); opacity: 0; } 70% { transform: translateY(-6px) scale(1.03); opacity: 1; } }
+-@keyframes karta-nabiji { 0%, 100% { transform: none; filter: none; } 30% { transform: rotate(-2deg) scale(1.02); }
+-  50% { transform: rotate(2deg) scale(1.04); filter: brightness(1.2); } 70% { transform: rotate(-1deg) scale(1.02); } }
+-@keyframes karta-pulz { 50% { transform: scale(1.08); box-shadow: 0 0 0 10px rgb(255 255 255 / 0.08), 0 0 60px var(--k-barva); } }
+-@keyframes karta-vlna { from { opacity: 0.9; transform: scale(0.3); } to { opacity: 0; transform: scale(2.6); } }
+-@keyframes karta-jiskra { from { opacity: 1; transform: rotate(var(--a)) translateY(0) scale(1); } to { opacity: 0; transform: rotate(var(--a)) translateY(calc(-1 * var(--d) - 60px)) scale(0.4); } }
+-@keyframes karta-lesk { from { transform: translateX(-120%) rotate(18deg); } to { transform: translateX(120%) rotate(18deg); } }
+-@keyframes karta-odznak { from { transform: scale(0.3) rotate(-30deg); opacity: 0; } 60% { transform: scale(1.18) rotate(8deg); opacity: 1; } to { transform: none; } }
+-@keyframes karta-sebrat { to { transform: translateY(-90px) scale(0.35); opacity: 0; } }
+-
+-/* Získaný odznak v přehledu odznaků = tlačítko, otevře znovu kartu (Pavel 6. 10.) */
+-.odznak--tlacitko { font: inherit; color: inherit; background: none; border: 0; padding: var(--mezera-2); border-radius: var(--polomer-tlacitko); cursor: pointer; }
+-.odznak--tlacitko:hover { background: var(--barva-povrch-2); }
+-.odznak--tlacitko:hover .odznak__obrazek { transform: scale(1.06); }
+-.odznak--tlacitko .odznak__obrazek { transition: transform var(--prechod); }
+ 
+ /* R75: „Pro vás“ u otázky taháku — co má rodič vědět (seznam slov, pravidlo) */
+ .otazka__pro-rodice { margin-top: var(--mezera-2); padding: var(--mezera-2) var(--mezera-3); border-radius: var(--polomer-tlacitko); background: var(--barva-povrch); border: 1px dashed var(--barva-okraj-silny); font-size: var(--pismo-zaklad); color: var(--barva-text-2); }
+@@ -3289,15 +3121,6 @@ a.tahaky-radek:hover { border-color: var(--barva-okraj-silny); }
+ .tahak__priklad-popisek { display: block; font-size: 0.75rem; font-weight: var(--pismo-vaha-tucne); letter-spacing: 0.06em; text-transform: uppercase; color: var(--t-text); }
+ .tahak__pata { display: flex; justify-content: space-between; gap: var(--mezera-2); }
+ 
+-/* --- Nový tahák jako karta k otočení (odznaky-karty.js, oknoKaret): tlačítko „Otevřít tahák“ na líci ---- */
+-.karta-odznaku__misto-akce { flex: 0 0 2.75rem; }
+-.karta-odznaku__akce {
+-  position: absolute; z-index: 4; left: 1.1rem; right: 1.1rem; bottom: 2.55rem; min-height: 2.5rem; padding: 0.35rem 0.75rem; font-size: 0.9375rem;
+-  opacity: 0; visibility: hidden; transition: opacity 300ms ease 650ms, visibility 0s linear 650ms;
+-}
+-.karta-odznaku.je-otocena .karta-odznaku__akce { opacity: 1; visibility: visible; }
+-.karty-odznaku__pas .karta-odznaku:not(.je-aktualni) .karta-odznaku__akce { opacity: 0; visibility: hidden; transition: none; }
+-@media (prefers-reduced-motion: reduce) { .karta-odznaku__akce { transition: none; } }
+ 
+ /* --- Tisk „Vytisknout odemčené“: taháky po dvou na list A4, na obrazovce schované ------------------- */
+ .tahaky-tisk { display: none; }
+@@ -3322,3 +3145,325 @@ a.tahaky-radek:hover { border-color: var(--barva-okraj-silny); }
+   .tahak--tisk .tahak__priklad-popisek { font-size: 6.5pt; }
+   .tahak--tisk .tahak__pata { font-size: 7pt; color: #475569; }
+ }
++
++
++/* ==========================================================================
++   Redesign odznaků a karet (8. 10., návrh designérky; Pavel: „Strašně se inspiruj tímhle stylem, drž se ho.“)
++   odznaky.js (htmlOdznaku), odznaky-ui.js (dlaždice v přehledu odznaků, řádek na přehledu),
++   odznaky-karty.js (karta nového odznaku i taháku). Nahrazuje styly odznaků z R62 a karty z 6. 10.
++   Karta je tmavá v obou motivech; dlaždice se řídí tokeny motivu.
++   ========================================================================== */
++
++/* --- Odznak: rám, pruhovaný kruh, jádro a líc (odlesk + přejíždějící lesk). Tvar clip-path, tón proměnnými. --- */
++.odz {
++  --s: 96px; --odz-ram: #141A33; --odz-tvar: circle(50%);
++  position: relative; display: inline-block; flex: none; width: var(--s); height: var(--s); vertical-align: middle;
++  filter: drop-shadow(0 7px 10px rgb(20 26 51 / 0.3));
++  transition: transform 0.35s cubic-bezier(.3, 1.6, .5, 1);
++}
++.odz__ram, .odz__pruhy, .odz__jadro, .odz__lic { position: absolute; display: block; clip-path: var(--odz-tvar); }
++.odz__ram { inset: 0; background: var(--odz-ram); }
++.odz__pruhy { inset: 5%; background: repeating-conic-gradient(from 0deg, var(--odz-hi) 0 6deg, var(--odz-lo) 6deg 12deg); }
++.odz__jadro { inset: 10%; background: var(--odz-ram); }
++.odz__lic {
++  inset: 13%; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center;
++  background: radial-gradient(circle at 30% 22%, var(--odz-hi), var(--odz-mid) 48%, var(--odz-lo));
++  color: var(--odz-ink); font-family: var(--pismo-rodina); line-height: 1;
++}
++.odz__lic::before { content: ""; position: absolute; inset: 0; pointer-events: none;
++  background: linear-gradient(155deg, rgb(255 255 255 / 0.5), rgb(255 255 255 / 0) 40%); }
++.odz__lic::after { content: ""; position: absolute; top: -20%; bottom: -20%; left: -70%; width: 40%; pointer-events: none; transform: skewX(-20deg);
++  background: linear-gradient(90deg, rgb(255 255 255 / 0), rgb(255 255 255 / 0.8), rgb(255 255 255 / 0)); }
++
++.odz--kruh { --odz-tvar: circle(50%); }
++.odz--sestiuhelnik { --odz-tvar: polygon(50% 0, 94% 25%, 94% 75%, 50% 100%, 6% 75%, 6% 25%); }
++.odz--stit { --odz-tvar: polygon(50% 0, 95% 13%, 95% 56%, 50% 100%, 5% 56%, 5% 13%); }
++
++.odz--zlata { --odz-hi: #FFF0A8; --odz-mid: #F5C21B; --odz-lo: #C98A00; --odz-ink: #141A33; }
++.odz--zelena { --odz-hi: #A5F7D4; --odz-mid: #1FC27E; --odz-lo: #0B8A55; --odz-ink: #0D2233; }
++.odz--modra { --odz-hi: #9CC0FF; --odz-mid: #2F6FEE; --odz-lo: #1C4FC4; --odz-ink: #FFFFFF; }
++
++/* zamčený: šedé tóny, bez lesku, kulatý zámek vpravo dole (pod 56 px jen šedý) */
++.odz--zamceno { --odz-hi: #F4F5F9; --odz-mid: #E1E5EE; --odz-lo: #C5CBD8; --odz-ink: #7B8398; --odz-ram: #AAB1C2; filter: none; }
++.odz--zamceno .odz__lic::after { display: none; }
++.odz__zamek {
++  position: absolute; right: 0; bottom: 0; width: 32%; height: 32%; box-sizing: border-box; border-radius: 50%;
++  display: flex; align-items: center; justify-content: center;
++  background: #141A33; color: #FFFFFF; border: 2px solid var(--odz-zamek-lem, #F3F5FB);
++}
++.odz__zamek svg { width: 60%; height: 60%; }
++@media screen {
++  :root[data-motiv="tmavy"] .odz--zamceno { --odz-hi: #4A5674; --odz-mid: #36415C; --odz-lo: #283149; --odz-ink: #A9B4CB; --odz-ram: #5A6683; }
++  :root[data-motiv="tmavy"] .odz__zamek { background: #E2E8F0; color: #0F172A; }
++}
++
++/* znaky (currentColor) */
++.odz__hvezda { width: calc(var(--s) * 0.3); height: calc(var(--s) * 0.3); }
++.odz__hvezda--velka { width: calc(var(--s) * 0.46); height: calc(var(--s) * 0.46); }
++.odz__zkratka { font-weight: 800; font-size: calc(var(--s) * 0.15); letter-spacing: 0.06em; margin-top: calc(var(--s) * 0.02); }
++.odz__cislo { font-weight: 800; font-size: calc(var(--s) * 0.28); }
++.odz__cislo--maly { font-size: calc(var(--s) * 0.2); letter-spacing: -0.01em; }
++.odz__sipky { width: calc(var(--s) * 0.3); height: calc(var(--s) * 0.13); margin-top: calc(var(--s) * 0.02); }
++.odz__pohar { width: calc(var(--s) * 0.42); height: calc(var(--s) * 0.42); }
++.odz__ikona { width: calc(var(--s) * 0.4); height: calc(var(--s) * 0.4); }
++.odz__karticky {
++  position: relative; display: flex; align-items: center; justify-content: center; box-sizing: border-box;
++  width: calc(var(--s) * 0.3); height: calc(var(--s) * 0.38); margin: calc(var(--s) * 0.06) calc(var(--s) * 0.06) 0 0;
++  border: calc(var(--s) * 0.03) solid currentColor; border-radius: calc(var(--s) * 0.06);
++  font-weight: 800; font-size: calc(var(--s) * 0.17); background: var(--odz-mid);
++}
++.odz__karticky::before { content: ""; position: absolute; inset: calc(var(--s) * -0.03); z-index: -1; opacity: 0.75;
++  border: calc(var(--s) * 0.03) solid currentColor; border-radius: calc(var(--s) * 0.06); transform: translate(24%, -18%); }
++.odz__karticky--maly { width: calc(var(--s) * 0.36); font-size: calc(var(--s) * 0.12); }
++
++.odz--maly { filter: drop-shadow(0 2px 3px rgb(20 26 51 / 0.25)); }
++.odz--maly.odz--zamceno { filter: none; }
++
++@media (prefers-reduced-motion: no-preference) {
++  .odz:not(.odz--maly):not(.odz--zamceno) .odz__lic::after { animation: odz-lesk 5.5s ease-in-out infinite; }
++}
++@keyframes odz-lesk { 0%, 60% { left: -70%; } 90%, 100% { left: 140%; } }
++
++/* --- Přehled odznaků (modal): dlaždice Získáno (bílá) / Zamčeno (čárkovaná), nadpisy sekcí velkými písmeny ---- */
++.modal--odznaky { width: min(62rem, calc(100% - 2rem)); background: var(--barva-pozadi); }
++.modal--odznaky .modal__panel { background: var(--barva-pozadi); gap: var(--mezera-4); }
++/* telefon: spodní panel přes celou šířku (obecné .modal má na úzkém displeji šířku 100 % - 2rem bez okraje vlevo) */
++@media (max-width: 40rem) { .modal--odznaky { width: 100%; max-width: 100%; } }
++.odznaky__nadpis { margin: var(--mezera-4) 0 0; font-size: 0.8125rem; font-weight: var(--pismo-vaha-tucne); line-height: 1.3;
++  letter-spacing: 0.14em; text-transform: uppercase; color: var(--barva-text-tlumeny); }
++.odznaky { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 8.5rem), 1fr)); gap: var(--mezera-4); margin: 0; }
++.odznak {
++  display: flex; flex-direction: column; align-items: center; gap: 12px; margin: 0; padding: 22px 12px 18px; min-width: 0;
++  border-radius: 20px; text-align: center; font: inherit; color: inherit;
++  transition: transform 0.25s ease, box-shadow 0.25s ease;
++}
++.odznak .odz { --s: 96px; }
++.odznak--ziskany { background: var(--barva-povrch); border: 1px solid var(--barva-okraj); box-shadow: 0 2px 6px rgb(20 26 51 / 0.06); cursor: pointer; }
++.odznak--chybi { --odz-zamek-lem: var(--barva-pozadi); background: color-mix(in srgb, var(--barva-povrch) 40%, transparent); border: 1px dashed var(--barva-okraj-silny); }
++.odznak--ziskany:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgb(20 26 51 / 0.14); }
++.odznak--ziskany:hover .odz { transform: rotate(-7deg) scale(1.08); }
++.odznak--tlacitko:focus-visible { outline: 3px solid var(--barva-fokus); outline-offset: 3px; }
++.odznak:nth-child(6n+2) .odz__lic::after { animation-delay: 0.5s; }
++.odznak:nth-child(6n+3) .odz__lic::after { animation-delay: 1s; }
++.odznak:nth-child(6n+4) .odz__lic::after { animation-delay: 1.5s; }
++.odznak:nth-child(6n+5) .odz__lic::after { animation-delay: 2s; }
++.odznak:nth-child(6n) .odz__lic::after { animation-delay: 2.5s; }
++.odznak__text { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0; }
++.odznak__stav { font-size: 0.625rem; font-weight: var(--pismo-vaha-tucne); line-height: 1.2; letter-spacing: 0.14em; text-transform: uppercase; }
++.odznak--ziskany .odznak__stav { color: var(--barva-zelena-text); }
++.odznak--chybi .odznak__stav { color: var(--barva-text-tlumeny); }
++.odznak__nazev { font-size: 0.9375rem; font-weight: var(--pismo-vaha-tucne); line-height: 1.25; color: var(--barva-text); overflow-wrap: anywhere; }
++.odznak__popis { font-size: 0.78125rem; line-height: 1.45; color: var(--barva-text-tlumeny); text-wrap: pretty; }
++@media screen { :root[data-motiv="tmavy"] .odznak--ziskany:hover { box-shadow: 0 14px 28px rgb(0 0 0 / 0.4); } }
++@media (prefers-reduced-motion: reduce) { .odznak, .odz { transition: none; } }
++
++/* --- Řádek „Odznaky: x z N“ na přehledu (rozložení sdílí i řádek taháků) ------------------------------------ */
++.odznaky-radek { display: flex; flex-direction: column; gap: var(--mezera-2); width: 100%; text-align: left; font: inherit; color: inherit; cursor: pointer; }
++.odznaky-radek__hlavicka { display: flex; justify-content: space-between; align-items: baseline; gap: var(--mezera-2); }
++.odznaky-radek__pas { display: flex; gap: var(--mezera-2); overflow: hidden; }
++.odznaky-radek__pas:has(.odz) { padding-bottom: 4px; }
++.odznaky-radek__pas .odz { --s: 40px; }
++
++/* --- Karta nového odznaku a taháku: tmavá scéna, neonový titulek, 3D karta rub → líc ------------------------ */
++.modal--karty-odznaku {
++  width: min(28rem, calc(100% - 1rem)); max-height: calc(100% - 1rem); margin: auto; overflow: visible;
++  background: transparent; box-shadow: none; color: #FFFFFF; border-radius: 0;
++}
++.modal--karty-odznaku::backdrop {
++  background: radial-gradient(circle at 50% 38%, rgb(38 49 94 / 0.96) 0%, rgb(20 26 54 / 0.97) 55%, rgb(11 15 34 / 0.98) 100%);
++  backdrop-filter: blur(6px);
++}
++@media (max-width: 40rem) { .modal--karty-odznaku { width: calc(100% - 1rem); margin: auto; border-radius: 0; } }
++.karty-odznaku {
++  --k-sirka: min(17.5rem, 74vw, calc((100vh - 15rem) * 0.6667));
++  --k-sirka: min(17.5rem, 74vw, calc((100dvh - 15rem) * 0.6667));
++  display: flex; flex-direction: column; align-items: center; gap: var(--mezera-4); padding: var(--mezera-2) 0; font-family: var(--pismo-rodina);
++}
++.karty-odznaku__titulek, .karta-odznaku__neon {
++  --neon: #F5B400;
++  font-family: "Tilt Neon", var(--pismo-rodina); font-weight: 400; text-transform: uppercase; color: #F2FFFB;
++  text-shadow: 0 0 3px #FFFFFF, 0 0 9px var(--neon), 0 0 20px var(--neon), 0 0 40px var(--neon);
++}
++.karty-odznaku__titulek { margin: 0; text-align: center; font-size: clamp(1.375rem, 6.4vw, 1.875rem); line-height: 1.2; letter-spacing: 0.14em; color: #FFF7DC; }
++.karta-odznaku__neon--mata { --neon: #19E0AE; }
++.karty-odznaku__scena { position: relative; width: 100%; display: grid; grid-template-columns: auto 1fr auto; align-items: center; }
++.karty-odznaku__pas {
++  grid-column: 1 / -1; grid-row: 1; display: flex; gap: var(--mezera-5); overflow-x: auto; overflow-y: visible;
++  scroll-snap-type: x mandatory; scrollbar-width: none; padding: 48px calc(50% - var(--k-sirka) / 2); margin-block: -24px; outline-offset: 4px;
++  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
++}
++.karty-odznaku__pas::-webkit-scrollbar { display: none; }
++.karty-odznaku__pas:not([tabindex]) { -webkit-mask-image: none; mask-image: none; }
++.karty-odznaku__sipka {
++  grid-row: 1; z-index: 2; width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 1px solid rgb(255 255 255 / 0.25);
++  background: rgb(15 23 42 / 0.7); color: #FFFFFF; display: grid; place-items: center; cursor: pointer; backdrop-filter: blur(4px);
++}
++.karty-odznaku__sipka:focus-visible { outline: 3px solid #19E0AE; outline-offset: 2px; }
++.karty-odznaku__sipka::before { content: ""; width: 0.6rem; height: 0.6rem; border: solid currentColor; border-width: 0 0 2.5px 2.5px; }
++.karty-odznaku__sipka--vlevo { grid-column: 1; }
++.karty-odznaku__sipka--vlevo::before { transform: translateX(2px) rotate(45deg); }
++.karty-odznaku__sipka--vpravo { grid-column: 3; }
++.karty-odznaku__sipka--vpravo::before { transform: translateX(-2px) rotate(-135deg); }
++.karty-odznaku__sipka:disabled { opacity: 0; pointer-events: none; }
++.karty-odznaku__tecky { display: flex; gap: 6px; }
++.karty-odznaku__tecky span { width: 7px; height: 7px; border-radius: 50%; background: rgb(255 255 255 / 0.3); transition: width var(--prechod), background-color var(--prechod); }
++.karty-odznaku__tecky span.je-aktualni { width: 20px; border-radius: 4px; background: #19E0AE; }
++/* hlavní tlačítko (CTA se stínem z návrhu) */
++.karty-odznaku > .tlacitko.tlacitko--primarni {
++  width: min(100%, max(var(--k-sirka), 15rem)); min-height: 3.625rem; border: 0; border-radius: 16px;
++  background: #1FC27E; color: #0D2233; font-size: 1.125rem; font-weight: 700;
++  box-shadow: 0 6px 0 #0B8A55, 0 14px 30px rgb(31 194 126 / 0.3); transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
++}
++.karty-odznaku > .tlacitko.tlacitko--primarni:hover:not(:disabled) { background: #1FC27E; color: #0D2233; filter: brightness(1.08); transform: translateY(-2px); }
++.karty-odznaku > .tlacitko.tlacitko--primarni:active:not(:disabled) { transform: translateY(3px); box-shadow: 0 3px 0 #0B8A55, 0 8px 18px rgb(31 194 126 / 0.3); }
++.karty-odznaku > .tlacitko.tlacitko--primarni:focus-visible { outline: 3px solid #FFFFFF; outline-offset: 3px; }
++.modal--karty-odznaku .jen-ctecka { color: inherit; }
++
++.karta-odznaku {
++  --k-hi: #A5F7D4; --k-mid: #1FC27E; --k-lo: #0B8A55;
++  position: relative; flex: 0 0 var(--k-sirka); width: var(--k-sirka); scroll-snap-align: center; perspective: 1100px;
++  transition: opacity 300ms ease, transform 300ms ease;
++}
++.karta-odznaku--zlata { --k-hi: #FFF0A8; --k-mid: #F5C21B; --k-lo: #C98A00; }
++.karta-odznaku--modra { --k-hi: #9CC0FF; --k-mid: #2F6FEE; --k-lo: #1C4FC4; }
++.karty-odznaku__pas .karta-odznaku:not(.je-aktualni) { opacity: 0.5; transform: scale(0.9); }
++.karta-odznaku__vznaseni { position: relative; display: block; transform-style: preserve-3d; }
++.karta-odznaku__zare { position: absolute; inset: 8px; border-radius: 26px; background: var(--k-mid); filter: blur(34px); opacity: 0.5; pointer-events: none; }
++.karta-odznaku__tlacitko {
++  position: relative; display: block; width: 100%; margin: 0; padding: 0; border: 0; border-radius: 22px;
++  background: none; color: inherit; font: inherit; text-align: left; cursor: pointer;
++}
++.karta-odznaku__tlacitko:focus-visible { outline: 3px solid #19E0AE; outline-offset: 8px; }
++.karta-odznaku__naklon {
++  display: block; border-radius: 22px; transform-style: preserve-3d;
++  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform 0.2s ease-out;
++}
++.karta-odznaku__vnitrek { position: relative; display: block; aspect-ratio: 2 / 3; transform-style: preserve-3d; transition: transform 0.9s cubic-bezier(.3, 1.25, .5, 1); }
++.karta-odznaku.je-otocena .karta-odznaku__vnitrek { transform: rotateY(180deg); }
++.karta-odznaku__rub, .karta-odznaku__lic {
++  position: absolute; inset: 0; display: block; border-radius: 22px; overflow: hidden;
++  backface-visibility: hidden; -webkit-backface-visibility: hidden; box-shadow: 0 18px 50px rgb(0 0 0 / 0.5);
++}
++.karta-odznaku__lic { transform: rotateY(180deg); }
++/* duhový okraj: otáčející se kužel pod plochou karty (3 px) */
++.karta-odznaku__okraj { position: absolute; inset: -60%; display: block; background: conic-gradient(#F5C21B, #FF7AC3, #8F7BFF, #19E0AE, #F5C21B); }
++.karta-odznaku__plocha { position: absolute; inset: 3px; display: flex; flex-direction: column; border-radius: 19px; overflow: hidden; box-sizing: border-box; }
++.karta-odznaku__lesk { position: absolute; inset: 0; display: block; pointer-events: none; mix-blend-mode: screen;
++  background: radial-gradient(circle at var(--mx, 50%) var(--my, 15%), rgb(255 255 255 / 0.26), rgb(255 255 255 / 0) 52%); }
++.karta-odznaku__lic .karta-odznaku__lesk { background: radial-gradient(circle at var(--mxf, 50%) var(--my, 15%), rgb(255 255 255 / 0.26), rgb(255 255 255 / 0) 52%); }
++/* prolétající světla */
++.karta-odznaku__svetla { position: absolute; inset: 0; display: block; overflow: hidden; pointer-events: none; }
++.karta-odznaku__svetlo { position: absolute; top: 0; display: block; width: 130px; height: 2px; border-radius: 2px; opacity: 0;
++  background: linear-gradient(90deg, rgb(255 255 255 / 0), rgb(255 255 255 / 0.95)); box-shadow: 0 0 8px rgb(255 255 255 / 0.6); }
++.karta-odznaku__svetlo--a { left: -40px; }
++.karta-odznaku__svetlo--b { left: 60px; width: 90px; }
++.karta-odznaku__svetlo--c { left: -110px; }
++.karta-odznaku__svetlo--d { left: 130px; width: 70px; }
++.karta-odznaku__svetlo--e { left: 10px; width: 160px; }
++
++/* rub */
++.karta-odznaku__rub .karta-odznaku__plocha {
++  align-items: center; justify-content: center; gap: calc(var(--k-sirka) * 0.147);
++  background: repeating-linear-gradient(135deg, rgb(255 255 255 / 0.045) 0 2px, rgb(255 255 255 / 0) 2px 16px),
++    radial-gradient(circle at 50% 45%, #2A2A52 0%, #111630 60%, #0A0E20 100%);
++}
++.karta-odznaku__roh { position: absolute; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #AAB3D0; }
++.karta-odznaku__roh--nahore { left: 18px; top: 16px; }
++.karta-odznaku__roh--dole { right: 18px; bottom: 16px; transform: rotate(180deg); }
++.karta-odznaku__koule-obal { position: relative; display: block; }
++.karta-odznaku__koule {
++  position: relative; display: flex; align-items: center; justify-content: center;
++  width: calc(var(--k-sirka) * 0.373); height: calc(var(--k-sirka) * 0.373); border-radius: 50%;
++  background: radial-gradient(circle at 32% 26%, #FFF0A8, #F5C21B 50%, #C98A00); box-shadow: 0 0 40px rgb(245 180 0 / 0.7);
++}
++.karta-odznaku__otaznik { font-size: calc(var(--k-sirka) * 0.207); font-weight: 800; line-height: 1; color: #141A33; }
++.karta-odznaku__vlna { position: absolute; inset: 0; display: block; border-radius: 50%; border: 2px solid rgb(245 194 27 / 0.7); opacity: 0; pointer-events: none; }
++.karta-odznaku__vyzva { font-size: 1.25rem; letter-spacing: 0.16em; text-align: center; padding-inline: 0.75rem; }
++
++/* líc */
++.karta-odznaku__lic .karta-odznaku__plocha { gap: 0.75rem; padding: 0.875rem; background: linear-gradient(180deg, #1B2247 0%, #0E1329 100%); text-align: left; }
++.karta-odznaku__hlavicka, .karta-odznaku__pata {
++  display: flex; justify-content: space-between; align-items: center; gap: 0.5rem;
++  font-size: 0.6875rem; font-weight: 700; line-height: 1.25; letter-spacing: 0.16em; text-transform: uppercase; color: #AAB3D0;
++}
++.karta-odznaku__okno {
++  position: relative; display: flex; align-items: center; justify-content: center; flex: 1 1 auto; min-height: 6.5rem;
++  border-radius: 14px; overflow: hidden; border: 1px solid rgb(255 255 255 / 0.12);
++  background: linear-gradient(rgb(255 255 255 / 0.05) 1px, rgb(0 0 0 / 0) 1px) 0 0 / 22px 22px,
++    linear-gradient(90deg, rgb(255 255 255 / 0.05) 1px, rgb(0 0 0 / 0) 1px) 0 0 / 22px 22px, #0A0E22;
++}
++.karta-odznaku__paprsky {
++  position: absolute; left: 50%; top: 50%; width: 380px; height: 380px; margin: -190px 0 0 -190px; border-radius: 50%; opacity: 0.26;
++  background: repeating-conic-gradient(var(--k-mid) 0 9deg, rgb(0 0 0 / 0) 9deg 18deg);
++  -webkit-mask-image: radial-gradient(circle, #000 18%, rgb(0 0 0 / 0) 68%); mask-image: radial-gradient(circle, #000 18%, rgb(0 0 0 / 0) 68%);
++}
++.karta-odznaku__jiskra { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 10px 2px var(--k-hi); opacity: 0; pointer-events: none; }
++.karta-odznaku__jiskra--1 { left: 34px; top: 40px; }
++.karta-odznaku__jiskra--2 { right: 40px; top: 56px; animation-delay: 0.7s; }
++.karta-odznaku__jiskra--3 { left: 58px; bottom: 44px; animation-delay: 1.3s; }
++.karta-odznaku__jiskra--4 { right: 30px; bottom: 70px; animation-delay: 1.9s; }
++.karta-odznaku__obrazek { position: relative; display: block; line-height: 0; }
++.karta-odznaku__obrazek .odz { --s: calc(var(--k-sirka) * 0.46); --odz-ram: #0B1024; filter: drop-shadow(0 10px 18px rgb(0 0 0 / 0.55)); }
++.karta-odznaku__obrazek > svg { width: calc(var(--k-sirka) * 0.4); height: calc(var(--k-sirka) * 0.4); filter: drop-shadow(0 10px 18px rgb(0 0 0 / 0.55)); }
++.karta-odznaku--s-akci .karta-odznaku__obrazek > svg { width: calc(var(--k-sirka) * 0.34); height: calc(var(--k-sirka) * 0.34); }
++.karta-odznaku__razitko { position: absolute; left: 10px; bottom: 8px; display: block; transform: rotate(-7deg); }
++.karta-odznaku__razitko .karta-odznaku__neon { display: block; font-size: 1.625rem; line-height: 1; letter-spacing: 0.06em; }
++.karta-odznaku__text { display: flex; flex-direction: column; gap: 6px; }
++.karta-odznaku__druh { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--k-hi); }
++.karta-odznaku__nazev { font-size: 1.375rem; font-weight: 800; line-height: 1.15; color: #FFFFFF; overflow-wrap: anywhere; }
++.karta-odznaku__pochvala { font-size: 0.875rem; line-height: 1.45; color: #C8CEE3; text-wrap: pretty; }
++.karta-odznaku__pata { margin-top: auto; }
++.karta-odznaku__tecka::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 8px; border-radius: 50%; background: var(--k-mid); vertical-align: 1px; }
++/* R78: tlačítko „Otevřít tahák“ položené na líc (mimo tlačítko karty), viditelné až po otočení */
++.karta-odznaku__misto-akce { display: block; flex: 0 0 2.75rem; }
++.karta-odznaku__akce {
++  position: absolute; z-index: 4; left: 1.1rem; right: 1.1rem; bottom: calc(3px + 0.875rem + 0.86rem + 0.75rem); min-height: 2.75rem;
++  padding: 0.35rem 0.75rem; font-size: 0.9375rem; opacity: 0; visibility: hidden; transition: opacity 300ms ease 1.1s, visibility 0s linear 1.1s;
++}
++.karta-odznaku.je-otocena .karta-odznaku__akce { opacity: 1; visibility: visible; }
++.karty-odznaku__pas .karta-odznaku:not(.je-aktualni) .karta-odznaku__akce { opacity: 0; visibility: hidden; transition: none; }
++
++@media (prefers-reduced-motion: no-preference) {
++  .karty-odznaku__titulek, .karta-odznaku__neon { animation: k-blikani 5s linear infinite; }
++  .modal--karty-odznaku[open] .karta-odznaku { animation: k-prijezd 750ms cubic-bezier(.2, 1.2, .4, 1) both; }
++  .modal--karty-odznaku[open] .karta-odznaku:nth-child(2) { animation-delay: 120ms; }
++  .modal--karty-odznaku[open] .karta-odznaku:nth-child(3) { animation-delay: 240ms; }
++  .modal--karty-odznaku[open] .karta-odznaku:nth-child(n+4) { animation-delay: 360ms; }
++  .karta-odznaku.je-aktualni .karta-odznaku__vznaseni { animation: k-vznaseni 5s ease-in-out infinite; }
++  .karta-odznaku__zare { animation: k-dech 3s ease-in-out infinite; }
++  .karta-odznaku__okraj { animation: k-tocit 5s linear infinite; }
++  .karta-odznaku__svetlo { animation: k-let 3.4s linear infinite; }
++  .karta-odznaku__svetlo--b { animation-delay: 1.1s; animation-duration: 2.6s; }
++  .karta-odznaku__svetlo--c { animation-delay: 2s; animation-duration: 4.2s; }
++  .karta-odznaku__svetlo--d { animation-delay: 2.7s; animation-duration: 3s; }
++  .karta-odznaku__svetlo--e { animation-delay: 0.6s; animation-duration: 5s; }
++  .karta-odznaku__koule { animation: k-pulz 2.2s ease-in-out infinite; }
++  .karta-odznaku__vlna { animation: k-vlna 2.6s ease-out infinite; }
++  .karta-odznaku__vlna--2 { animation-delay: 1.3s; }
++  .karta-odznaku__paprsky { animation: k-tocit 20s linear infinite; }
++  .karta-odznaku__jiskra { animation: k-trpyt 2.4s ease-in-out infinite; }
++  .karta-odznaku:not(.je-otocena) .karta-odznaku__obrazek { opacity: 0; transform: scale(0.2) rotate(-40deg); }
++  .karta-odznaku:not(.je-otocena) .karta-odznaku__razitko, .karta-odznaku:not(.je-otocena) .karta-odznaku__text { opacity: 0; }
++  .karta-odznaku.je-otocena .karta-odznaku__obrazek { animation: k-pop 0.8s 0.45s cubic-bezier(.3, 1.7, .5, 1) both; }
++  .karta-odznaku.je-otocena .karta-odznaku__razitko { animation: k-razitko 0.5s 1s cubic-bezier(.3, 1.7, .5, 1) both; }
++  .karta-odznaku.je-otocena .karta-odznaku__text { animation: k-vyjet 0.5s 1.15s ease-out both; }
++  .modal--karty-odznaku.je-sebrano .karta-odznaku { animation: k-sebrat 520ms ease-in forwards; }
++  .modal--karty-odznaku.je-sebrano .karty-odznaku > :not(.karty-odznaku__scena) { transition: opacity 300ms; opacity: 0; }
++}
++@media (prefers-reduced-motion: reduce) {
++  .karta-odznaku, .karta-odznaku__naklon, .karta-odznaku__vnitrek, .karta-odznaku__akce, .karty-odznaku > .tlacitko.tlacitko--primarni { transition: none; }
++  .karta-odznaku__jiskra { opacity: 0.7; }
++}
++@keyframes k-blikani { 0%, 18%, 20%, 22%, 52%, 54%, 100% { opacity: 1; } 19%, 21%, 53% { opacity: 0.55; } }
++@keyframes k-prijezd { from { transform: translateY(70px) scale(0.6) rotate(-6deg); opacity: 0; } 70% { transform: translateY(-6px) scale(1.03); opacity: 1; } }
++@keyframes k-vznaseni { 0%, 100% { transform: translateY(-5px); } 50% { transform: translateY(5px); } }
++@keyframes k-dech { 0%, 100% { opacity: 0.35; } 50% { opacity: 0.65; } }
++@keyframes k-tocit { to { transform: rotate(360deg); } }
++@keyframes k-let { 0% { transform: translate(-180px, 540px) rotate(-55deg); opacity: 0; } 12% { opacity: 0.9; } 70% { opacity: 0.9; } 100% { transform: translate(400px, -280px) rotate(-55deg); opacity: 0; } }
++@keyframes k-pulz { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
++@keyframes k-vlna { 0% { transform: scale(1); opacity: 0.8; } 100% { transform: scale(2.3); opacity: 0; } }
++@keyframes k-trpyt { 0%, 100% { transform: scale(0.2); opacity: 0; } 50% { transform: scale(1); opacity: 1; } }
++@keyframes k-pop { 0% { transform: scale(0.2) rotate(-40deg); opacity: 0; } 100% { transform: scale(1) rotate(0deg); opacity: 1; } }
++@keyframes k-razitko { 0% { transform: rotate(-7deg) scale(1.8); opacity: 0; } 100% { transform: rotate(-7deg) scale(1); opacity: 1; } }
++@keyframes k-vyjet { 0% { transform: translateY(10px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
++@keyframes k-sebrat { to { transform: translateY(-90px) scale(0.35); opacity: 0; } }
+diff --git a/web/js/odznaky-karty.js b/web/js/odznaky-karty.js
+index 93502de..e9e9455 100644
+--- a/web/js/odznaky-karty.js
++++ b/web/js/odznaky-karty.js
+@@ -1,75 +1,103 @@
+ // =====================================================================
+ // odznaky-karty.js — nový odznak jako sběratelská karta (Pavel 6. 10.: „jako FIFA balíčky“, menší, uprostřed).
+-// Karta přijede rubem nahoru a „nabíjí se“; klepnutí (nebo tlačítko) ji otočí: záblesk, jiskry, lesk.
++// Redesign 8. 10. podle návrhu designérky: tmavá scéna s neonovým titulkem, karta se vznáší a naklání za myší/prstem
++// (odlesk), rub s otáčejícím se duhovým okrajem, prolétajícími světly a zlatou koulí s otazníkem; po otočení líc
++// s oknem (mřížka, paprsky, jiskry), odznak „vyskočí“, razítko „Získáno!“ a text vyjede zdola.
+ // Víc nových odznaků najednou = karty vedle sebe, listuje se šipkami, prstem nebo tečkami.
+-// Lícem nahoru se karta naklání za prstem/myší (holografický lesk). prefers-reduced-motion: karty rovnou lícem, bez animací.
++// prefers-reduced-motion: karty rovnou lícem, bez animací.
+ // R78: stejné karty i pro nově odemčené taháky (oknoKaret s tlačítkem „Otevřít tahák“ na líci, tahaky-ui.js).
+ // =====================================================================
+ 
+ import { el, otevritModal, zavritModal } from './ui.js';
+-import { najdiOdznak, svgOdznaku } from './odznaky.js';
++import { najdiOdznak, htmlOdznaku } from './odznaky.js';
++import { h } from './hlasky.js';
+ 
+ const DRUH = { zlata: 'Zlatý odznak', zelena: 'Zelený odznak', modra: 'Modrý odznak' };
+ const predmetOdznaku = (id) => (id.startsWith('cj:') ? 'Čeština' : id.startsWith('oba:') ? 'Oba předměty'
+   : id.startsWith('vyzva:') || id.startsWith('sber:') ? 'Výzvy a taháky' : 'Matematika');
+ const bezAnimaci = () => Boolean(globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches);
+-const dnes = () => new Date().toLocaleDateString('cs-CZ', { day: 'numeric', month: 'numeric', year: 'numeric' }).replace(/\s/g, ' ');
+-const JISKER = 12;
++const dnes = () => new Date().toLocaleDateString('cs-CZ', { day: 'numeric', month: 'numeric', year: 'numeric' }).replace(/\s/g, ' ');
+ 
+ /** Popis odznaku pro kartu (oknoKaret). */
+ function popisOdznaku(id) {
+   const o = najdiOdznak(id);
+   const barva = o?.barva || 'zelena';
+   return {
+-    barva, predmet: predmetOdznaku(id), obrazek: svgOdznaku(id, { titulek: o?.nazev || '' }),
++    barva, predmet: predmetOdznaku(id), obrazek: htmlOdznaku(id, { titulek: o?.nazev || '' }),
+     druh: DRUH[barva] || 'Odznak', nazev: o?.nazev || '', pochvala: o?.pochvala || '',
+   };
+ }
+ 
++const span = (trida, ...deti) => el('span', { class: trida }, ...deti);
++/** Prolétající světla (v návrhu .streak a–e). */
++const svetla = (pismena) => el('span', { class: 'karta-odznaku__svetla', 'aria-hidden': 'true' },
++  pismena.map((x) => span(`karta-odznaku__svetlo karta-odznaku__svetlo--${x}`)));
++
+ /**
+- * Jedna karta. `p` = {barva, predmet, obrazek (SVG řetězec), druh, nazev, pochvala, akce?: {text, onClick?, hodnota?}}.
++ * Jedna karta. `p` = {barva, predmet, obrazek (HTML/SVG řetězec), druh, nazev, pochvala, akce?: {text, onClick?, hodnota?}}.
+  * R78: `akce` = tlačítko na líci (tahák: „Otevřít tahák“). Je mimo tlačítko karty (tlačítko v tlačítku nejde),
+- * jen položené na líc; viditelné až po otočení.
++ * jen položené na líc; viditelné až po otočení. V tlačítku karty jsou jen spany.
+  */
+ function karta(p, poradi, celkem, { datum = dnes() } = {}) {
+-  const lic = el('div', { class: 'karta-odznaku__lic' },
+-    el('div', { class: 'karta-odznaku__hlavicka' },
+-      el('span', { text: p.predmet }),
+-      el('span', { text: `${String(poradi).padStart(2, '0')}/${String(celkem).padStart(2, '0')}` })),
+-    el('div', { class: 'karta-odznaku__okno' },
+-      el('span', { class: 'karta-odznaku__obrazek', htmlBezpecne: p.obrazek })),
+-    el('span', { class: 'karta-odznaku__druh', text: p.druh }),
+-    el('strong', { class: 'karta-odznaku__nazev', text: p.nazev }),
+-    el('span', { class: 'karta-odznaku__pochvala', text: p.pochvala }),
+-    p.akce ? el('span', { class: 'karta-odznaku__misto-akce', 'aria-hidden': 'true' }) : null,
+-    el('div', { class: 'karta-odznaku__pata' },
+-      el('span', { class: 'karta-odznaku__tecka', text: 'Spolu' }),
+-      datum ? el('span', { text: datum }) : null),
+-    el('span', { class: 'karta-odznaku__lesk', 'aria-hidden': 'true' }));
+-  const rub = el('div', { class: 'karta-odznaku__rub', 'aria-hidden': 'true' },
+-    el('span', { class: 'karta-odznaku__otaznik', text: '?' }),
+-    el('span', { class: 'karta-odznaku__vyzva', text: 'Klepni a otoč' }));
+-  const efekty = el('span', { class: 'karta-odznaku__efekty', 'aria-hidden': 'true' },
+-    el('span', { class: 'karta-odznaku__vlna' }),
+-    Array.from({ length: JISKER }, (_, i) => el('span', { class: 'karta-odznaku__jiskra', style: `--a:${(360 / JISKER) * i}deg;--d:${70 + (i % 3) * 22}px` })));
++  const lic = span('karta-odznaku__lic',
++    span('karta-odznaku__okraj'),
++    span('karta-odznaku__plocha',
++      span('karta-odznaku__hlavicka',
++        el('span', { text: p.predmet }),
++        el('span', { text: `${String(poradi).padStart(2, '0')}/${String(celkem).padStart(2, '0')}` })),
++      span('karta-odznaku__okno',
++        el('span', { class: 'karta-odznaku__paprsky', 'aria-hidden': 'true' }),
++        svetla(['b', 'd']),
++        [1, 2, 3, 4].map((i) => el('span', { class: `karta-odznaku__jiskra karta-odznaku__jiskra--${i}`, 'aria-hidden': 'true' })),
++        el('span', { class: 'karta-odznaku__obrazek', htmlBezpecne: p.obrazek }),
++        el('span', { class: 'karta-odznaku__razitko', 'aria-hidden': 'true' },
++          el('span', { class: 'karta-odznaku__neon karta-odznaku__neon--mata', text: h('odznaky.razitko') }))),
++      span('karta-odznaku__text',
++        el('span', { class: 'karta-odznaku__druh', text: p.druh }),
++        el('strong', { class: 'karta-odznaku__nazev', text: p.nazev }),
++        el('span', { class: 'karta-odznaku__pochvala', text: p.pochvala })),
++      p.akce ? el('span', { class: 'karta-odznaku__misto-akce', 'aria-hidden': 'true' }) : null,
++      span('karta-odznaku__pata',
++        el('span', { class: 'karta-odznaku__tecka', text: 'Spolu' }),
++        datum ? el('span', { text: datum }) : null),
++      el('span', { class: 'karta-odznaku__lesk', 'aria-hidden': 'true' })));
++  const rub = el('span', { class: 'karta-odznaku__rub', 'aria-hidden': 'true' },
++    span('karta-odznaku__okraj'),
++    span('karta-odznaku__plocha',
++      svetla(['a', 'b', 'c', 'd', 'e']),
++      el('span', { class: 'karta-odznaku__roh karta-odznaku__roh--nahore', text: 'Spolu' }),
++      el('span', { class: 'karta-odznaku__roh karta-odznaku__roh--dole', text: 'Spolu' }),
++      span('karta-odznaku__koule-obal',
++        span('karta-odznaku__vlna'), span('karta-odznaku__vlna karta-odznaku__vlna--2'),
++        span('karta-odznaku__koule', el('span', { class: 'karta-odznaku__otaznik', text: '?' }))),
++      el('span', { class: 'karta-odznaku__vyzva karta-odznaku__neon karta-odznaku__neon--mata', text: 'Klepni a otoč' }),
++      span('karta-odznaku__lesk')));
+   const tlacitko = el('button', { class: 'karta-odznaku__tlacitko', type: 'button', 'aria-label': `Otoč kartu ${poradi} z ${celkem}` },
+-    el('span', { class: 'karta-odznaku__naklon' },
+-      el('span', { class: 'karta-odznaku__vnitrek' }, rub, lic)));
++    span('karta-odznaku__naklon',
++      span('karta-odznaku__vnitrek', rub, lic)));
+   const akce = p.akce ? el('button', { class: 'tlacitko tlacitko--primarni karta-odznaku__akce', type: 'button' }, p.akce.text) : null;
+-  return el('div', { class: ['karta-odznaku', `karta-odznaku--${p.barva}`, akce && 'karta-odznaku--s-akci'], 'data-i': String(poradi - 1) }, efekty, tlacitko, akce);
++  return el('div', { class: ['karta-odznaku', `karta-odznaku--${p.barva}`, akce && 'karta-odznaku--s-akci'], 'data-i': String(poradi - 1) },
++    el('div', { class: 'karta-odznaku__vznaseni' },
++      el('span', { class: 'karta-odznaku__zare', 'aria-hidden': 'true' }), tlacitko, akce));
+ }
+ 
+-/** Naklánění lícem otočené karty za prstem/myší (--rx, --ry, --mx, --my). */
++/**
++ * Naklánění aktuální karty za prstem/myší (3D náklon s odleskem z návrhu): --rx, --ry, --mx, --my
++ * (+ --mxf zrcadlově pro líc, který je otočený o 180°).
++ */
+ function napojNaklon(k) {
+   const cil = k.querySelector('.karta-odznaku__naklon');
+-  const reset = () => { cil.style.removeProperty('--rx'); cil.style.removeProperty('--ry'); };
++  const reset = () => { for (const v of ['--rx', '--ry', '--mx', '--mxf', '--my']) cil.style.removeProperty(v); };
+   k.addEventListener('pointermove', (e) => {
+-    if (!k.classList.contains('je-otocena') || bezAnimaci()) return;
++    if (!k.classList.contains('je-aktualni') || bezAnimaci()) return;
+     const r = cil.getBoundingClientRect();
+-    const x = (e.clientX - r.left) / r.width; const y = (e.clientY - r.top) / r.height;
+-    cil.style.setProperty('--ry', `${(x - 0.5) * 18}deg`);
+-    cil.style.setProperty('--rx', `${(0.5 - y) * 14}deg`);
++    if (!r.width || !r.height) return;
++    const omez = (v) => Math.max(-0.4, Math.min(1.4, v));
++    const x = omez((e.clientX - r.left) / r.width); const y = omez((e.clientY - r.top) / r.height);
++    cil.style.setProperty('--rx', `${((0.5 - y) * 22).toFixed(2)}deg`);
++    cil.style.setProperty('--ry', `${((x - 0.5) * 28).toFixed(2)}deg`);
+     cil.style.setProperty('--mx', `${Math.round(x * 100)}%`);
++    cil.style.setProperty('--mxf', `${Math.round((1 - x) * 100)}%`);
+     cil.style.setProperty('--my', `${Math.round(y * 100)}%`);
+   });
+   k.addEventListener('pointerleave', reset);
+@@ -134,8 +162,7 @@ export async function oknoKaret(polozky, { prohlizeni = false, texty = TEXTY_ODZ
+     if (otocene.has(i)) return;
+     otocene.add(i);
+     const k = karty[i];
+-    k.classList.add('je-otocena');
+-    if (!bezAnimaci()) { k.classList.add('je-vybuch'); setTimeout(() => k.classList.remove('je-vybuch'), 1400); }
++    k.classList.add('je-otocena'); // CSS: otočení, odznak vyskočí, razítko, text vyjede
+     const p = polozky[i];
+     k.querySelector('.karta-odznaku__tlacitko').setAttribute('aria-label', `${p.nazev}: ${p.pochvala}`);
+     oznameni.textContent = `${texty.oznameni}: ${p.nazev}. ${p.pochvala}`;
+diff --git a/web/js/odznaky-ui.js b/web/js/odznaky-ui.js
+index 1ef3047..c09373b 100644
+--- a/web/js/odznaky-ui.js
++++ b/web/js/odznaky-ui.js
+@@ -5,7 +5,8 @@
+ // =====================================================================
+ 
+ import { el, otevritModal, zavritModal } from './ui.js';
+-import { ODZNAKY, ODZNAKY_OBA, ODZNAKY_VYZVY_A_TAHAKY, svgOdznaku, noveOdznaky, odznakyPredmetu } from './odznaky.js';
++import { ODZNAKY, ODZNAKY_OBA, ODZNAKY_VYZVY_A_TAHAKY, htmlOdznaku, noveOdznaky, odznakyPredmetu } from './odznaky.js';
++import { h } from './hlasky.js';
+ import { oknoNovychOdznaku } from './odznaky-karty.js';
+ 
+ /** R69: odznaky k zobrazení — předmět (výchozí matematika), společné, když dítě má oba předměty; R80: vždy i výzvy a taháky. */
+@@ -25,21 +26,29 @@ function ulozVidene(diteId, ids) {
+   try { localStorage.setItem(klicVidene(diteId), JSON.stringify([...new Set(ids)])); } catch { /* bez úložiště se ukáže znovu */ }
+ }
+ 
+-/** Obrázek odznaku (span se SVG). `ziskan: false` = šedý. */
+-export function obrazekOdznaku(id, { ziskan = true, titulek = '' } = {}) {
+-  return el('span', { class: ['odznak__obrazek', !ziskan && 'odznak__obrazek--chybi'], htmlBezpecne: svgOdznaku(id, { titulek }) });
++/**
++ * Obrázek odznaku v novém stylu (redesign 8. 10., htmlOdznaku). `ziskan: false` = šedý se zámkem (pod 56 px jen šedý).
++ * @param {string} id
++ * @param {{ziskan?: boolean, titulek?: string, velikost?: number|null}} [volby]  velikost v px (jinak podle CSS)
++ */
++export function obrazekOdznaku(id, { ziskan = true, titulek = '', velikost = null } = {}) {
++  const t = document.createElement('template');
++  t.innerHTML = htmlOdznaku(id, { zamceno: !ziskan, titulek, velikost });
++  return t.content.firstElementChild || el('span');
+ }
+ 
+-/** Mřížka odznaků (získané barevně, nezískané šedé s popisem, co pro ně udělat). */
++/** Mřížka odznaků: dlaždice „Získáno“ (bílá, otevře kartu) a „Zamčeno“ (čárkovaná, s popisem, co pro odznak udělat). */
+ function mrizkaOdznaku(ziskane, sada = ODZNAKY) {
+   return el('div', { class: 'odznaky' }, sada.map((o) => {
+     const ma = ziskane.has(o.id);
+     const obsah = [obrazekOdznaku(o.id, { ziskan: ma }),
+-      el('span', { class: 'odznak__nazev', text: o.nazev }),
+-      el('small', { class: 'odznak__popis', text: ma ? o.pochvala : o.popis })];
++      el('span', { class: 'odznak__text' },
++        el('span', { class: 'odznak__stav', text: h(ma ? 'odznaky.ziskano' : 'odznaky.zamceno') }),
++        el('span', { class: 'odznak__nazev', text: o.nazev }),
++        el('small', { class: 'odznak__popis', text: ma ? o.pochvala : o.popis }))];
+     // Pavel 6. 10.: získaný odznak jde otevřít znovu jako karta (s otočením)
+     return ma
+-      ? el('button', { class: 'odznak odznak--tlacitko', type: 'button', 'aria-label': `${o.nazev}: zobrazit kartu`, onClick: () => oknoNovychOdznaku([o.id], { prohlizeni: true }) }, ...obsah)
++      ? el('button', { class: 'odznak odznak--ziskany odznak--tlacitko', type: 'button', 'aria-label': `${o.nazev}: zobrazit kartu`, onClick: () => oknoNovychOdznaku([o.id], { prohlizeni: true }) }, ...obsah)
+       : el('div', { class: 'odznak odznak--chybi' }, ...obsah);
+   }));
+ }
+@@ -80,7 +89,7 @@ export function radekOdznaku(ziskane, volby = {}) {
+       el('strong', { text: `Odznaky: ${ma} z ${sada.length}` }),
+       el('span', { class: 'text-tlumeny', text: 'Zobrazit' })),
+     el('span', { class: 'odznaky-radek__pas', 'aria-hidden': 'true' },
+-      ukazat.map((o) => obrazekOdznaku(o.id, { ziskan: ziskane.has(o.id) }))));
++      ukazat.map((o) => obrazekOdznaku(o.id, { ziskan: ziskane.has(o.id), velikost: 40 }))));
+ }
+ 
+ /**
+diff --git a/web/js/odznaky.js b/web/js/odznaky.js
+index a9f4257..36bb218 100644
+--- a/web/js/odznaky.js
++++ b/web/js/odznaky.js
+@@ -4,7 +4,7 @@
+ // databáze se nemění. Obrázky odznaků jsou SVG řetězce tady v repozitáři (DOM z nich dělá odznaky-ui.js).
+ // =====================================================================
+ 
+-import { DATA as DATA_TAHAKU, tydenniTahaky, odemceneTahaky, pocetVMesici, konecVyzvy } from './tahaky.js';
++import { DATA as DATA_TAHAKU, tydenniTahaky, odemceneTahaky, pocetVMesici, konecVyzvy, sezonaZamcena } from './tahaky.js';
+ 
+ /**
+  * Řada (R62): mezi dvěma sousedními dokončenými lekcemi nejvýš 7 KALENDÁŘNÍCH dní v Europe/Prague
+@@ -192,7 +192,8 @@ export const ODZNAKY_VYZVY_A_TAHAKY = Object.freeze([...ODZNAKY_VYZEV, ...ODZNAK
+  */
+ export function odznakyVyzevATahaku(lekce, { navic = null, ted = Date.now(), videne = [] } = {}) {
+   const ziskane = new Set((videne || []).filter((id) => id.startsWith('vyzva:')));
+-  for (const v of DATA_TAHAKU.vyzvy) {
++  // bez zaplacené sezóny se výzvy nepočítají (ODPOVED 8. 10., bod 3)
++  if (!sezonaZamcena(lekce)) for (const v of DATA_TAHAKU.vyzvy) {
+     if (pocetVMesici(lekce, v.mesic, { navic, konec: konecVyzvy(v) }) >= Number(v.cil)) ziskane.add(`vyzva:${v.mesic}`);
+   }
+   const tydenni = [...odemceneTahaky(lekce, { ted, navic })].filter((id) => !id.startsWith('b:')).length;
+@@ -201,6 +202,88 @@ export function odznakyVyzevATahaku(lekce, { navic = null, ted = Date.now(), vid
+   return ziskane;
+ }
+ 
++// ---------------------------------------------------------------------
++// Redesign 8. 10. (návrh designérky, Pavel: „drž se ho“): odznak z vrstev (rám, pruhovaný kruh, jádro, líc
++// s odleskem a přejíždějícím leskem), tvar podle skupiny, tón podle barvy, znak v currentColor.
++// Vykresluje se jako HTML řetězec (htmlOdznaku); styly v design-system.css, sekce „Redesign odznaků“.
++// svgOdznaku výše zůstává kvůli zpětné kompatibilitě a testům.
++// ---------------------------------------------------------------------
++
++const ZNAK_HVEZDA = (velka = false) => `<svg class="odz__hvezda${velka ? ' odz__hvezda--velka' : ''}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">`
++  + '<path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.9z"/></svg>';
++const ZNAK_SIPKY = '<svg class="odz__sipky" viewBox="0 0 30 12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'
++  + '<path d="M3 2l5 4-5 4M12.5 2l5 4-5 4M22 2l5 4-5 4"/></svg>';
++const ZNAK_CISLO = (t, maly = false) => `<span class="odz__cislo${maly ? ' odz__cislo--maly' : ''}">${t}</span>`;
++const ZNAK_POHAR = '<svg class="odz__pohar" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'
++  + '<path d="M7.5 4h9v4.5a4.5 4.5 0 0 1-9 0z"/><path d="M7.5 5.5H4.5v1.5a3 3 0 0 0 3 3M16.5 5.5h3v1.5a3 3 0 0 1-3 3M12 13v4" fill="none"/><path d="M8.5 17.5h7v2.5h-7z"/></svg>';
++/** Kalendář (tvar ze současného SVG „Celý týden“); `vnitrek` = fajfka nebo „2×“. */
++const ZNAK_KALENDAR = (vnitrek) => '<svg class="odz__ikona" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'
++  + `<rect x="3.5" y="5.5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10.5h17M8 3v4.5M16 3v4.5"/>${vnitrek}</svg>`;
++const FAJFKA_KALENDARE = '<path d="M8.4 15.6l2.6 2.6 4.8-4.8" stroke-width="2.4"/>';
++const DVAKRAT_KALENDARE = '<text x="12" y="18.6" text-anchor="middle" font-family="Sora, sans-serif" font-weight="800" font-size="7.6" fill="currentColor" stroke="none">2×</text>';
++const ZNAK_VLAJKA = '<svg class="odz__ikona" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">'
++  + '<path d="M6.5 21.5V3" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M7.5 3.8h12l-3.2 4.4 3.2 4.4h-12z"/></svg>';
++const ZNAK_ZAMEK = '<span class="odz__zamek" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">'
++  + '<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>';
++
++/** Znaky odznaků matematiky (čeština má stejné: `zaklad`). */
++const ZNAKY = {
++  prvni: () => ZNAK_CISLO('1'),
++  spravne: () => ZNAK_HVEZDA(true),
++  tyden: () => ZNAK_KALENDAR(FAJFKA_KALENDARE),
++  rada3: () => ZNAK_CISLO('3') + ZNAK_SIPKY,
++  rada5: () => ZNAK_CISLO('5') + ZNAK_SIPKY,
++  rada10: () => ZNAK_CISLO('10') + ZNAK_SIPKY,
++  pilot: () => ZNAK_VLAJKA,
++  faze1: () => ZNAK_POHAR,
++  'oba:prvni': () => ZNAK_CISLO('1+1', true),
++  'oba:tyden': () => ZNAK_KALENDAR(DVAKRAT_KALENDARE),
++  'oba:rada': () => ZNAK_CISLO('3+3', true) + ZNAK_SIPKY,
++};
++
++function znakOdznaku(o) {
++  if (o.id.startsWith('vyzva:')) return `${ZNAK_HVEZDA()}<span class="odz__zkratka">${MESIC_ZKR[o.mesic.slice(5)] || o.mesic.slice(5)}</span>`;
++  if (o.id.startsWith('sber:')) {
++    const t = o.id === 'sber:vse' ? 'vše' : o.id.slice(5);
++    return `<span class="odz__karticky${t.length > 2 ? ' odz__karticky--maly' : ''}">${t}</span>`;
++  }
++  return (ZNAKY[o.id] || ZNAKY[o.zaklad] || (() => ''))();
++}
++
++/**
++ * Tvar a tón odznaku: matematika a výzvy kruh, čeština štít, oba předměty a sbírka šestiúhelník;
++ * tón = barva odznaku (zelena, zlata, modra).
++ * @returns {{tvar: 'kruh'|'stit'|'sestiuhelnik', ton: 'zelena'|'zlata'|'modra'}|null}
++ */
++export function vzhledOdznaku(id) {
++  const o = najdiOdznak(id);
++  if (!o) return null;
++  const tvar = id.startsWith('cj:') ? 'stit' : id.startsWith('oba:') || id.startsWith('sber:') ? 'sestiuhelnik' : 'kruh';
++  return { tvar, ton: o.barva };
++}
++
++const escAtribut = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
++
++/**
++ * Odznak v novém stylu jako HTML řetězec (span, uvnitř jen spany a SVG — smí do tlačítka).
++ * @param {string} id
++ * @param {{velikost?: number|null, zamceno?: boolean, titulek?: string}} [volby]
++ *   velikost = px (jinak ji určí CSS, výchozí 96 px; pod 56 px bez lesku a bez zámku), zamceno = šedý se zámkem,
++ *   titulek = přístupný název (jinak aria-hidden)
++ */
++export function htmlOdznaku(id, { velikost = null, zamceno = false, titulek = '' } = {}) {
++  const o = najdiOdznak(id);
++  if (!o) return '';
++  const { tvar, ton } = vzhledOdznaku(id);
++  const px = Number(velikost) || 0;
++  const maly = px > 0 && px < 56;
++  const tridy = ['odz', `odz--${tvar}`, `odz--${ton}`, zamceno && 'odz--zamceno', maly && 'odz--maly'].filter(Boolean).join(' ');
++  const pristup = titulek ? `role="img" aria-label="${escAtribut(titulek)}"` : 'aria-hidden="true"';
++  return `<span class="${tridy}" ${pristup}${px ? ` style="--s:${px}px"` : ''} data-odznak="${escAtribut(id)}">`
++    + '<span class="odz__ram"></span><span class="odz__pruhy"></span><span class="odz__jadro"></span>'
++    + `<span class="odz__lic">${znakOdznaku(o)}</span>${zamceno && !maly ? ZNAK_ZAMEK : ''}</span>`;
++}
++
+ /** Definice odznaku podle id (matematika, cj:…, oba:…, vyzva:…, sber:…). */
+ export function najdiOdznak(id) {
+   return ODZNAKY.find((x) => x.id === id) || ODZNAKY_CESTINY.find((x) => x.id === id) || ODZNAKY_OBA.find((x) => x.id === id)
+diff --git a/web/lekce.html b/web/lekce.html
+index 34330cf..fea4668 100644
+--- a/web/lekce.html
++++ b/web/lekce.html
+@@ -18,7 +18,7 @@
+   window.spoluMotiv={volba:volba,nastav:nastav,pouzij:pouzij};pouzij()})();</script>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
++  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Tilt+Neon&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="css/design-system.css">
+   <script type="module" src="js/lekce.js"></script>
+ </head>
+diff --git a/web/prehled.html b/web/prehled.html
+index c7bde93..c0cacf1 100644
+--- a/web/prehled.html
++++ b/web/prehled.html
+@@ -18,7 +18,7 @@
+   window.spoluMotiv={volba:volba,nastav:nastav,pouzij:pouzij};pouzij()})();</script>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
++  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Tilt+Neon&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="css/design-system.css">
+   <script type="module" src="js/prehled.js"></script>
+ </head>
+diff --git a/web/rodic.html b/web/rodic.html
+index aa60340..1876eb5 100644
+--- a/web/rodic.html
++++ b/web/rodic.html
+@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded',pouzij);
+ window.spoluMotiv={volba:volba,nastav:nastav,pouzij:pouzij};pouzij()})();</script>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
++<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Tilt+Neon&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="css/design-system.css">
+ </head>
+ <body>
+diff --git a/web/tahaky.html b/web/tahaky.html
+index d0c4389..b981ee0 100644
+--- a/web/tahaky.html
++++ b/web/tahaky.html
+@@ -18,7 +18,7 @@
+   window.spoluMotiv={volba:volba,nastav:nastav,pouzij:pouzij};pouzij()})();</script>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
++  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Tilt+Neon&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="css/design-system.css">
+   <script type="module" src="js/tahaky-stranka.js"></script>
+ </head>

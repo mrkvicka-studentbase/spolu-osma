@@ -1,0 +1,174 @@
+diff --git a/testy/tahaky.test.js b/testy/tahaky.test.js
+index 5792313..4d40493 100644
+--- a/testy/tahaky.test.js
++++ b/testy/tahaky.test.js
+@@ -4,7 +4,7 @@ import { test } from 'node:test';
+ import assert from 'node:assert/strict';
+ import {
+   DATA, vsechnyTahaky, tydenniTahaky, odemceneTahaky, stavVyzvy, celeTydny, pocetVMesici, datumVPraze,
+-  konecVyzvy, obdobiVyzvy, noveTahaky, najdiTahak, jeBonus, ODEMCENI_BONUSU,
++  konecVyzvy, obdobiVyzvy, noveTahaky, najdiTahak, jeBonus, ODEMCENI_BONUSU, sezonaZamcena,
+ } from '../web/js/tahaky.js';
+ 
+ const blok = { nadpis: 'Pravidlo', text: 'Text.', priklad: '$1+1=2$' };
+@@ -100,10 +100,16 @@ test('stav výzvy: počet, zbývající dny včetně dneška, splnění, odměna
+   assert.equal(stavVyzvy(k, '2026-11-30T23:30:00+01:00', { data }).zbyvaDni, 1, 'poslední den');
+ });
+ 
+-test('opakování lekce: počítá se poslední dokončení; navic přepíše starší konec', () => {
++test('opakování lekce: počítá se v každém měsíci, kdy byla dokončena (ODPOVED 8. 10., bod 4)', () => {
+   const k = katalog({ P1: '2026-11-05T18:00:00+01:00' });
++  // právě dokončené opakování v prosinci: prosinec ano, listopad zůstává
+   assert.equal(pocetVMesici(k, '2026-12', { navic: { id: 'P1', konec: '2026-12-02T18:00:00+01:00' } }), 1);
+-  assert.equal(pocetVMesici(k, '2026-11', { navic: { id: 'P1', konec: '2026-12-02T18:00:00+01:00' } }), 0);
++  assert.equal(pocetVMesici(k, '2026-11', { navic: { id: 'P1', konec: '2026-12-02T18:00:00+01:00' } }), 1);
++  // z databáze: poslední dokončení v prosinci, dřívější v listopadu (dokonceniVse z lekceProDite)
++  const z = k.map((l) => (l.id === 'P1' ? { ...l, dokoncene: { konec: '2026-12-02T18:00:00+01:00' }, dokonceniVse: ['2026-12-02T18:00:00+01:00', '2026-11-05T18:00:00+01:00'] } : l));
++  assert.equal(pocetVMesici(z, '2026-11'), 1, 'listopadové dokončení se nezapomene');
++  assert.equal(pocetVMesici(z, '2026-12'), 1);
++  assert.equal(pocetVMesici(z, '2027-01'), 0);
+ });
+ 
+ test('mimo období výzev null; před 1. 11. se výzva nezobrazuje; duben končí 11. 4.', () => {
+@@ -179,3 +185,14 @@ test('obsah taháků drží formát (spec §4)', () => {
+     assert.ok(Number(v.cil) > 0 && typeof v.nazev === 'string' && v.nazev.trim(), `výzva ${v.mesic}`);
+   }
+ });
++
++test('rodina bez zaplacené sezóny: žádné zlaté taháky ani 1. 4. (ODPOVED 8. 10., bod 3)', () => {
++  const k = katalog(vse(['P1', 'P2', 'P3', 'P4'], '2026-11-03T16:00:00Z'))
++    .map((l) => (l.faze === 'faze1' ? { ...l, zamceno: 'platba' } : l));
++  assert.equal(sezonaZamcena(k), true);
++  assert.equal(sezonaZamcena(katalog()), false);
++  const o = odemceneTahaky(k, { ted: '2027-04-02T10:00:00Z', data });
++  assert.ok(o.has('t:matematika:pilot:1'), 'týdenní tahák pilotu ano');
++  assert.ok(![...o].some(jeBonus), 'bonusy ne');
++  assert.ok(odemceneTahaky(katalog(), { ted: '2027-04-02T10:00:00Z', data }).has('b:2026-11'), 'se sezónou bonusy 1. 4. ano');
++});
+diff --git a/web/js/prehled.js b/web/js/prehled.js
+index 1ef86cf..9a20ddb 100644
+--- a/web/js/prehled.js
++++ b/web/js/prehled.js
+@@ -21,7 +21,7 @@ import * as KONFIG from './config.js';
+ import { spocitejOdznakyPredmetu, svgOdznaku } from './odznaky.js';
+ import { radekOdznaku, ukazNoveOdznaky, nactiVidene } from './odznaky-ui.js';
+ import { dveSamoZaSebou } from './samo.js';
+-import { stavVyzvy } from './tahaky.js';
++import { stavVyzvy, sezonaZamcena } from './tahaky.js';
+ import { tedNyni, odemceneTahakyDitete, radekTahaku, kartaVyzvy, ukazNoveTahaky } from './tahaky-ui.js';
+ 
+ const NAZVY_FAZI = { pilot: 'Pilot', faze1: 'Fáze 1', faze2: 'Fáze 2' };
+@@ -605,7 +605,7 @@ async function vykresli({ nacist = true } = {}) {
+       naRade ? kartaDnes(naRade, pokroky.get(naRade.id), { dnesHotovo }) : null,
+       radekOdznaku(stav.odznaky.ziskane, { predmet: prepinac ? stav.predmet : 'matematika', oba: stav.odznaky.maObaPredmety }),
+       radekTahaku(stav.tahaky), // R78: „Taháky: x z N“ → tahaky.html
+-      kartaVyzvy(stavVyzvy(vsechny, ted), { rodic: stav.role === 'rodic' })].filter(Boolean); // R78: měsíční výzva (od 1. 11.)
++      sezonaZamcena(vsechny) ? null : kartaVyzvy(stavVyzvy(vsechny, ted), { rodic: stav.role === 'rodic' })].filter(Boolean); // R78: měsíční výzva (od 1. 11.)
+ 
+     if (rodic && dveSamoZaSebou(vsechny)) casti.push(hlaska('info', 'uzivatel', h('samo.pripominka'))); // R64 (Pavel: ano)
+     if (dnesHotovo) {
+diff --git a/web/js/supabase.js b/web/js/supabase.js
+index e525132..0f82b27 100644
+--- a/web/js/supabase.js
++++ b/web/js/supabase.js
+@@ -416,7 +416,9 @@ export async function lekceProDite(diteId) {
+     if (probihajici) stavLekce = 'probiha';
+     else if (dokoncene) stavLekce = 'hotovo';
+     // dokoncene: poslední dokončené sezení (i když teď běží opakování) — pro hotovou lekci a odznaky (R61, R62)
+-    return { ...l, stavLekce, sezeni: probihajici || dokoncene, dokoncene, souhrn: dokoncene?.souhrn ?? null };
++    // ODPOVED 8. 10., bod 4: konce VŠECH dokončených sezení (měsíční výzva počítá lekci v každém měsíci, kdy byla dokončena)
++    const dokonceniVse = moje.filter((s) => s.stav === 'dokonceno' && s.konec).map((s) => s.konec);
++    return { ...l, stavLekce, sezeni: probihajici || dokoncene, dokoncene, dokonceniVse, souhrn: dokoncene?.souhrn ?? null };
+   });
+ }
+ 
+diff --git a/web/js/tahaky-stranka.js b/web/js/tahaky-stranka.js
+index db4fe1a..cfa5d0b 100644
+--- a/web/js/tahaky-stranka.js
++++ b/web/js/tahaky-stranka.js
+@@ -10,7 +10,7 @@ import { h } from './hlasky.js';
+ import { mojeDeti, lekceProDite } from './supabase.js';
+ import { ziskejRoli, ziskejDite, nastavDite } from './role.js';
+ import { napojMenu } from './menu.js';
+-import { vsechnyTahaky, tydenniTahaky, jeBonus, stavVyzvy } from './tahaky.js';
++import { vsechnyTahaky, tydenniTahaky, jeBonus, stavVyzvy, sezonaZamcena } from './tahaky.js';
+ import {
+   tedNyni, pripravVzorce, odemceneTahakyDitete, mrizkaTahaku, kartaVyzvy, tiskovaVerze, ukazNoveTahaky,
+ } from './tahaky-ui.js';
+@@ -71,7 +71,7 @@ async function vykresli() {
+         vse.length ? el('p', { class: 'text-tlumeny' },
+           el('strong', { text: `${stav.dite.krestni_jmeno}: ` }), h('tahaky.pocet', { x: odemceneTahaky.length, n: vse.length }),
+           odemceneTahaky.length ? null : el('span', { id: 'tahakyTiskNic', text: `. ${h('tahaky.tisk_nic')}` })) : null),
+-      kartaVyzvy(stavVyzvy(lekce, ted), { rodic: ziskejRoli() === 'rodic' }),
++      sezonaZamcena(lekce) ? null : kartaVyzvy(stavVyzvy(lekce, ted), { rodic: ziskejRoli() === 'rodic' }),
+     ];
+     if (!vse.length) {
+       casti.push(el('div', { class: 'prazdny-stav' },
+diff --git a/web/js/tahaky-ui.js b/web/js/tahaky-ui.js
+index d92ec01..a9f002f 100644
+--- a/web/js/tahaky-ui.js
++++ b/web/js/tahaky-ui.js
+@@ -11,7 +11,7 @@ import { el, ikona, otevritModal, zavritModal } from './ui.js';
+ import { h } from './hlasky.js';
+ import { nacistKnihovny, renderMarkdown } from './obsah.js';
+ import {
+-  DATA, vsechnyTahaky, tydenniTahaky, najdiTahak, jeBonus, noveTahaky, odemceneTahaky, obdobiVyzvy, pocetVMesici, konecVyzvy,
++  DATA, vsechnyTahaky, tydenniTahaky, najdiTahak, jeBonus, noveTahaky, odemceneTahaky, obdobiVyzvy, pocetVMesici, konecVyzvy, sezonaZamcena,
+ } from './tahaky.js';
+ import { oknoKaret } from './odznaky-karty.js';
+ 
+@@ -89,6 +89,7 @@ const zbyvaDni = (n) => (n === 1 ? h('vyzva.zbyva_1') : n >= 2 && n <= 4 ? h('vy
+ /** Co udělat pro zamčený tahák (text na šedé kartičce). */
+ export function textZamku(t, { lekce = [], ted = Date.now() } = {}) {
+   if (!jeBonus(t)) return t.faze === 'pilot' ? h('tahaky.zamceno_pilot') : h('tahaky.zamceno_tyden', { tyden: t.tyden });
++  if (sezonaZamcena(lekce)) return h('tahaky.zamceno_bez_sezony');
+   const v = DATA.vyzvy.find((x) => x.mesic === t.mesic) || { mesic: t.mesic, cil: 0 };
+   const obdobi = obdobiVyzvy(t, ted);
+   if (obdobi === 'skoncila') return h('tahaky.zamceno_vyzva_skoncila');
+diff --git a/web/js/tahaky.js b/web/js/tahaky.js
+index d6533dd..30b3e2c 100644
+--- a/web/js/tahaky.js
++++ b/web/js/tahaky.js
+@@ -40,6 +40,12 @@ const posledniDenMesice = (mesic) => { const [r, m] = mesic.split('-').map(Numbe
+ const PORADI_PREDMETU = { matematika: 0, cestina: 1 };
+ const PORADI_FAZI = { pilot: 0, faze1: 1, faze2: 2 };
+ 
++/**
++ * Rodina nemá zaplacenou sezónu (některá lekce je zamčená platbou). ODPOVED 8. 10., bod 3: výzva se jí
++ * nezobrazuje (cíl by byl nesplnitelný) a zlaté taháky se jí neodemknou ani 1. 4. (jsou součástí sezóny).
++ */
++export const sezonaZamcena = (lekce) => (lekce || []).some((l) => l?.zamceno === 'platba');
++
+ /** Bonusový (zlatý) tahák za výzvu: id `b:RRRR-MM`. */
+ export const jeBonus = (t) => String(t?.id || '').startsWith('b:');
+ 
+@@ -91,12 +97,17 @@ export function konecVyzvy(v) {
+   return v.mesic === KONEC_DUBNOVE_VYZVY.slice(0, 7) ? KONEC_DUBNOVE_VYZVY : posledniDenMesice(v.mesic);
+ }
+ 
+-/** Kolik různých lekcí (oba předměty) má poslední dokončení v měsíci výzvy (do jejího konce), v Praze. */
++/**
++ * Kolik různých lekcí (oba předměty) má aspoň jedno dokončení v měsíci výzvy (do jejího konce), v Praze.
++ * ODPOVED 8. 10., bod 4: `dokonceniVse` (konce všech dokončených sezení z lekceProDite) — zopakování
++ * listopadové lekce v prosinci tak listopadovou výzvu nezruší na žádném zařízení. Bez pole jen poslední dokončení.
++ */
+ export function pocetVMesici(lekce, mesic, { navic = null, konec = posledniDenMesice(mesic) } = {}) {
++  const vMesici = (cas) => { const d = datumVPraze(cas); return d.startsWith(`${mesic}-`) && d <= konec; };
+   let n = 0;
+-  for (const cas of konceDokonceni(lekce, navic).values()) {
+-    const d = datumVPraze(cas);
+-    if (d.startsWith(`${mesic}-`) && d <= konec) n += 1;
++  for (const l of lekce) {
++    const konce = [...(Array.isArray(l.dokonceniVse) ? l.dokonceniVse : []), l.dokoncene?.konec, navic?.id === l.id ? (navic.konec || new Date().toISOString()) : null].filter(Boolean);
++    if (konce.some(vMesici)) n += 1;
+   }
+   return n;
+ }
+@@ -118,6 +129,7 @@ export function odemceneTahaky(lekce, { ted = Date.now(), navic = null, data = D
+   const odemcene = new Set();
+   const tydny = celeTydny(lekce, { navic });
+   for (const t of tydenniTahaky({ data })) if (tydny.has(klicTahaku(t))) odemcene.add(t.id);
++  if (sezonaZamcena(lekce)) return odemcene; // bez sezóny žádné zlaté taháky (ODPOVED 8. 10., bod 3)
+   const vsechnyBonusy = datumVPraze(ted) >= ODEMCENI_BONUSU;
+   for (const b of data.bonus) {
+     const v = data.vyzvy.find((x) => x.mesic === b.mesic);
