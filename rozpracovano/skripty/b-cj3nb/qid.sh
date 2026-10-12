@@ -1,0 +1,1 @@
+for w in "$@"; do echo "### $w"; bash /home/user/spolu-osma/nastroje/ujc.sh --id "$w" 2>&1 | sed -n "/Hledání konkrétního/,/Další slovní/p" | grep -v -e 'Hledání konkrétního' -e 'Další slovní' | head -12 | cut -c1-260; done

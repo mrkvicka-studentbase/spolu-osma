@@ -1,0 +1,214 @@
+import sys; sys.path.insert(0, '/tmp/b-nb05')
+from spolecne import dl, uloz
+ID = "M8-T05-L2NB"
+T = "Dělení zlomků"
+D = r"\dfrac{\frac{5}{8}}{\frac{10}{7}}"
+
+u1 = {
+  "id": f"{ID}-U1", "typ": "rozcvicka", "cas_min": 4,
+  "zadani": "Spočítej na papíře a vyber správnou odpověď. Zlomky ve výsledku jsou v základním tvaru.\n\n" +
+            r"A) Které číslo je převrácené k $6$?" + "\n\n" + r"B) $\frac{8}{11} : 4$" + "\n\n" +
+            r"C) $\frac{5}{14} : \frac{10}{21}$" + "\n\n" + f"D) ${D}$",
+  "zdroj": "vlastni",
+  "kroky": [
+    {"id": "k1", "popisek": r"Příklad A: převrácené k $6$", "vstup": {"typ": "dlazdice", "moznosti": [
+      dl("a", r"$\frac{1}{6}$", ok=True),
+      dl("b", r"$-6$", chyba="opacne-prevracene-zamena"),
+      dl("c", r"$-\frac{1}{6}$", chyba="opacne-prevracene-zamena")]}},
+    {"id": "k2", "popisek": r"Příklad B: $\frac{8}{11} : 4$", "vstup": {"typ": "dlazdice", "moznosti": [
+      dl("a", r"$\frac{11}{2}$", chyba="deleni-obracene"),
+      dl("b", r"$\frac{32}{11}$", chyba="delil-bez-prevraceni"),
+      dl("c", r"$\frac{11}{32}$", chyba="prevratil-oba"),
+      dl("d", r"$\frac{2}{11}$", ok=True)]}},
+    {"id": "k3", "popisek": r"Příklad C: $\frac{5}{14} : \frac{10}{21}$", "vstup": {"typ": "dlazdice", "moznosti": [
+      dl("a", r"$\frac{4}{3}$", chyba="prevratil-prvni"),
+      dl("b", r"$\frac{3}{4}$", ok=True),
+      dl("c", r"$\frac{25}{147}$", chyba="delil-bez-prevraceni")]}},
+    {"id": "final", "popisek": f"Příklad D: ${D}$", "vstup": {"typ": "dlazdice", "moznosti": [
+      dl("a", r"$\frac{25}{28}$", chyba="delil-bez-prevraceni"),
+      dl("b", r"$\frac{16}{7}$", chyba="slozeny-zlomek-prevratil-horni"),
+      dl("c", r"$\frac{7}{16}$", ok=True)]}},
+  ],
+  "tahak": {
+    "vysvetleni": r"Dítě jen vybírá. Převrácené číslo vznikne prohozením čitatele a jmenovatele, číslo $6$ je šest jednin. Při dělení se převrací jen číslo, kterým se dělí: to za dvojtečkou nebo pod dlouhou čarou. Čte se: u D patrový zlomek, nahoře pět osmin, dole deset sedmin. Otázky jsou po příkladech, druhá patří k B i C: čtěte tu u příkladu, kde se dítě zasekne.",
+    "reseni": "\n\n".join([
+      r"#### A) Převrácené k $6$",
+      r"$6 = \frac{6}{1} \to \frac{1}{6}$ (čitatel a jmenovatel se prohodí, znaménko zůstane)",
+      r"#### B) $\frac{8}{11} : 4$",
+      r"$= \frac{8}{11} \cdot \frac{1}{4}$ (děleno čtyřmi je krát jedna čtvrtina)",
+      r"$= \frac{8}{44} = \frac{2}{11}$ (zkrácení čtyřmi)",
+      r"#### C) $\frac{5}{14} : \frac{10}{21}$",
+      r"$= \frac{5}{14} \cdot \frac{21}{10}$ (převrátí se zlomek za dvojtečkou)",
+      r"$= \frac{1 \cdot 3}{2 \cdot 2} = \frac{3}{4}$ (pětka s desítkou a dvacet jedna se čtrnáctkou se zkrátí)",
+      r"#### D) Složený zlomek",
+      r"$= \frac{5}{8} : \frac{10}{7}$ (dlouhá čára je děleno)",
+      r"$= \frac{5}{8} \cdot \frac{7}{10} = \frac{35}{80} = \frac{7}{16}$ (krát převrácený dolní zlomek, zkrácení pěti)",
+      r"**Výsledek:** A) $\frac{1}{6}$, B) $\frac{2}{11}$, C) $\frac{3}{4}$, D) $\frac{7}{16}$"]),
+    "otazky": [
+      {"k": "A", "text": "„Co se prohodí, když hledáš převrácené číslo? Jak zapíšeš šestku jako zlomek?“"},
+      {"k": "B a C", "text": "„Neklikej, spočítej na papíře: kterým číslem tu dělíš? Co s ním uděláš, než začneš násobit?“"},
+      {"k": "D", "text": "„Co znamená dlouhá čára? Který ze dvou zlomků se převrací, ten nahoře, nebo ten dole?“"},
+    ],
+    "otocena_role": "„Vysvětli mi, proč u příkladu B nevyjde třicet dva jedenáctin.“",
+    "otocena_role_odpoved": "Třicet dva jedenáctin by vyšlo při násobení čtyřmi. Když dělím čtyřmi, beru čtvrtinu z osmi jedenáctin, a to jsou dvě jedenáctiny. Výsledek musí být menší.",
+    "typicka_chyba": r"Podívejte se na obrazovku dítěte. A $-6$, $-\frac{1}{6}$: plete převrácené a opačné číslo. Zeptejte se: „Co dá převrácené číslo krát šest?“ (Jedničku.) $\frac{32}{11}$, $\frac{25}{147}$, $\frac{25}{28}$: násobí bez převrácení. $\frac{11}{2}$, $\frac{11}{32}$, $\frac{4}{3}$, $\frac{16}{7}$: převrací jiné číslo. „Kterým číslem se dělí?“ (Tím za dvojtečkou nebo dole.)",
+  },
+  "semafor": {
+    "zelena": "Výborně — převrácené číslo, dělení i složený zlomek sedí ve všech čtyřech příkladech. Pochvalte, že převracelo jen dělitele, a jděte dál.",
+    "oranzova": r"Zítra 5 minut, na papír. Ukažte dítěti na telefonu $\frac{9}{11} : 3$, $\frac{4}{9} : \frac{8}{15}$ a $\dfrac{\frac{3}{8}}{\frac{9}{16}}$. Ať u každého řekne, co převrátí, a spočítá. Kontrola pro vás: $\frac{3}{11}$; $\frac{4}{9} \cdot \frac{15}{8} = \frac{5}{6}$; $\frac{3}{8} \cdot \frac{16}{9} = \frac{2}{3}$.",
+    "cervena": r"Dnes už nepokračujte, pochvalte snahu. Připravte: list papíru a nůžky. Zítra ať dítě list rozstřihne na dvanáct stejných proužků a deset z nich, tedy pět šestin listu, dá stranou. Zeptejte se: „Kolikrát se do deseti proužků vejde šestina listu, tedy dva proužky?“ Pak ať samo zapíše $\frac{5}{6} : \frac{1}{6} = \frac{5}{6} \cdot 6 = 5$. Potom zopakujte lekci „Dělení zlomků“. Kontrola pro vás: pětkrát.",
+  },
+  "tisk": {"zadani": "Spočítej a zakroužkuj správnou odpověď. Zlomky ve výsledku jsou v základním tvaru.\n\n" +
+    r"A) Které číslo je převrácené k $6$? — a) $\frac{1}{6}$ b) $-6$ c) $-\frac{1}{6}$" + "\n\n" +
+    r"B) $\frac{8}{11} : 4$ — a) $\frac{11}{2}$ b) $\frac{32}{11}$ c) $\frac{11}{32}$ d) $\frac{2}{11}$" + "\n\n" +
+    r"C) $\frac{5}{14} : \frac{10}{21}$ — a) $\frac{4}{3}$ b) $\frac{3}{4}$ c) $\frac{25}{147}$" + "\n\n" +
+    f"D) ${D}$" + r" — a) $\frac{25}{28}$ b) $\frac{16}{7}$ c) $\frac{7}{16}$"},
+}
+
+vyraz2 = r"\dfrac{\frac{7}{12} - \frac{1}{4}}{\frac{4}{5}}"
+radky = [r"$= \left(\frac{7}{12} - \frac{3}{12}\right) : \frac{4}{5}$", r"$= \frac{1}{3} : \frac{4}{5}$", r"$= 3 \cdot \frac{4}{5}$", r"$= \frac{12}{5}$"]
+k2m = [r"$= \frac{1}{3} \cdot \frac{4}{5}$", r"$= 3 \cdot \frac{5}{4}$", r"$= \frac{1}{3} \cdot \frac{5}{4}$"]
+u2 = {
+  "id": f"{ID}-U2", "typ": "detektiv", "cas_min": 5,
+  "zadani": f"Petr počítal příklad\n\n$${vyraz2}$$\n\na udělal **jednu** chybu. Najdi ji.\n\n" + "\n\n".join(f"{i+1}. řádek: {r}" for i, r in enumerate(radky)),
+  "zdroj": "vlastni",
+  "kroky": [
+    {"id": "k1", "popisek": "Klikni na řádek s chybou", "vstup": {"typ": "dlazdice", "moznosti": [
+      dl("r1", radky[0], chyba="oznacil-radek-pred-chybou", stitek="1. řádek"),
+      dl("r2", radky[1], chyba="oznacil-radek-pred-chybou", stitek="2. řádek"),
+      dl("r3", radky[2], ok=True, stitek="3. řádek"),
+      dl("r4", radky[3], chyba="nasel-az-dusledek", stitek="4. řádek")]}},
+    {"id": "k2", "popisek": "Jak má chybný řádek vypadat správně?", "vstup": {"typ": "dlazdice", "moznosti": [
+      dl("a", k2m[0], chyba="delil-bez-prevraceni"),
+      dl("b", k2m[1], chyba="prevratil-oba"),
+      dl("c", k2m[2], ok=True)]}},
+    {"id": "final", "popisek": "Výsledek", "vstup": {"typ": "zlomek"},
+     "spravne": {"c": 5, "j": 12},
+     "zname_chyby": [{"c": 12, "j": 5, "typ_chyby": "prevratil-prvni"}, {"c": 4, "j": 15, "typ_chyby": "delil-bez-prevraceni"}, {"c": 15, "j": 16, "typ_chyby": "scital-citatele-i-jmenovatele"}],
+     "kontrola_tvaru": "zakladni_tvar"},
+  ],
+  "tahak": {
+    "vysvetleni": "Petr je vymyšlený spolužák. Čte se: patrový zlomek, nahoře sedm dvanáctin minus jedna čtvrtina, dole čtyři pětiny; dlouhá čára znamená děleno. Chyba je jedna a řádky za ní jsou spočítané dobře, jen ze špatného čísla. Pozor: Petrova chyba není vidět na první pohled, nechte dítě projít každý řádek.",
+    "reseni": "\n\n".join([
+      "Chyba je ve 3. řádku: Petr převrátil jednu třetinu na trojku, tedy číslo, které se dělí. Převrací se ale čtyři pětiny, tím se dělí.",
+      r"$\frac{7}{12} - \frac{3}{12} = \frac{4}{12} = \frac{1}{3}$ (horní patro, čtvrtina jsou tři dvanáctiny)",
+      r"$\frac{1}{3} : \frac{4}{5}$ (dlouhá čára je děleno)",
+      r"$= \frac{1}{3} \cdot \frac{5}{4}$ (krát převrácený dolní zlomek)",
+      r"$= \frac{5}{12}$ (čitatel krát čitatel, jmenovatel krát jmenovatel)",
+      r"Dlaždice $\frac{1}{3} \cdot \frac{4}{5}$ a $3 \cdot \frac{5}{4}$ nesedí (první nepřevrací žádný zlomek, druhá oba)",
+      r"**Výsledek:** $\frac{5}{12}$"]),
+    "otazky": [
+      {"k": "Celá úloha", "text": "„Přečti mi příklad nahlas. Co je nahoře, co dole a co znamená dlouhá čára?“"},
+      {"k": "Krok 1", "text": "„Vezmi Petrovy řádky postupně. U každého řekni, co Petr udělal: odečetl, přepsal, převrátil, nebo vynásobil?“"},
+      {"k": "Krok 1 a 2", "text": "„U každého řádku se zeptej: kterým zlomkem se tu dělí? Převrátil Petr právě ten, nebo jiný?“"},
+    ],
+    "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč se jedna třetina nesmí změnit na trojku.“",
+    "otocena_role_odpoved": "Jedna třetina je číslo, které dělím. Převrací se jen to, kterým dělím, tedy čtyři pětiny. Správně je jedna třetina krát pět čtvrtin, a to je pět dvanáctin.",
+    "typicka_chyba": r"Podívejte se na obrazovku dítěte. Klikne na 4. řádek? Ten je jen důsledek. 1. a 2. řádek jsou správně. Zeptejte se: „Odkud se ve 3. řádku vzala trojka?“ (Petr převrátil třetinu.) Výsledek $\frac{12}{5}$: opíše Petra; $\frac{4}{15}$: nepřevrátí nic; $\frac{15}{16}$: nahoře odečte zvlášť čitatele a jmenovatele. „Kolik je nahoře?“ (Třetina.)",
+  },
+  "semafor": {
+    "zelena": "Výborně — chybu našlo, i když se schovala za celé číslo. Pochvalte, že hlídalo, kterým zlomkem se dělí, a jděte dál.",
+    "oranzova": r"Zítra 5 minut. Ukažte dítěti na telefonu, jak Petr počítá: $\frac{1}{5} : \frac{3}{10} = 5 \cdot \frac{3}{10} = \frac{3}{2}$. Zeptejte se: „Kde se Petr spletl? Kolik má vyjít?“ Kontrola pro vás: převrátil pětinu na pětku; správně $\frac{1}{5} \cdot \frac{10}{3} = \frac{10}{15} = \frac{2}{3}$.",
+    "cervena": r"Dnes už nepokračujte, pochvalte snahu. Připravte: list papíru a tužku. Zítra ať dítě nakreslí obdélník, rozdělí ho na 10 stejných dílů a vybarví tři pětiny, tedy 6 dílů. Zeptejte se: „Kolikrát se do vybarvené části vejde jedna desetina?“ Pak ať samo zapíše $\frac{3}{5} : \frac{1}{10} = \frac{3}{5} \cdot 10 = 6$ a řekne, který zlomek převrátilo. Potom zopakujte lekci „Dělení zlomků“. Kontrola pro vás: šestkrát; převrací se jedna desetina.",
+  },
+  "tisk": {"zadani": f"Petr počítal příklad\n\n$${vyraz2}$$\n\na udělal jednu chybu.\n\n" + "\n\n".join(f"{i+1}. řádek: {r}" for i, r in enumerate(radky)) +
+    "\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) " + k2m[0] + " b) " + k2m[1] + " c) " + k2m[2] +
+    "\n\nC) Správný výsledek (zlomek v základním tvaru): ______"},
+}
+
+u3_zad = r"Honzík s tátou vyrábí v dílně ptačí budky. Mají prkno dlouhé $\frac{10}{3}$ m a na jednu budku potřebují $\frac{3}{5}$ m prkna." + "\n\n" + \
+  "Kolik celých budek vyrobí? Kolik metrů prkna jim zbude? Kolik metrů prkna musí dokoupit, aby vyrobili ještě jednu budku? Délky zapiš zlomkem v základním tvaru."
+u3 = {
+  "id": f"{ID}-U3", "typ": "cermat", "cas_min": 7,
+  "zadani": u3_zad, "zdroj": "vlastni",
+  "kroky": [
+    {"id": "k1", "popisek": "Mezivýsledek: počet celých budek", "vstup": {"typ": "cislo", "jednotka": None},
+     "spravne": {"hodnota": 5},
+     "zname_chyby": [{"hodnota": 0.18, "typ_chyby": "deleni-obracene"}, {"hodnota": 2, "typ_chyby": "delil-bez-prevraceni"}, {"hodnota": 6, "typ_chyby": "prehledl-udaj"}]},
+    {"id": "k2", "popisek": "Mezivýsledek: prkno, které zbude", "vstup": {"typ": "zlomek"},
+     "spravne": {"c": 1, "j": 3},
+     "zname_chyby": [{"c": 5, "j": 9, "typ_chyby": "odpovida-na-jinou-otazku"}, {"c": 41, "j": 15, "typ_chyby": "cele-cislo-do-citatele-i-jmenovatele"}],
+     "kontrola_tvaru": "zakladni_tvar"},
+    {"id": "final", "popisek": "Výsledek: prkno k dokoupení", "vstup": {"typ": "zlomek"},
+     "spravne": {"c": 4, "j": 15},
+     "zname_chyby": [{"c": 3, "j": 5, "typ_chyby": "prehledl-udaj"}, {"c": 1, "j": 3, "typ_chyby": "odpovida-na-jinou-otazku"}],
+     "kontrola_tvaru": "zakladni_tvar"},
+  ],
+  "tahak": {
+    "vysvetleni": "Hlavní úloha lekce. Čte se: „deset třetin metru“, tedy tři metry a třetina. Prkno nevyjde přesně: dělení dá pět celých budek a kousek. Zbytek prkna se spočítá odečtením prkna na celé budky. Na další budku chybí rozdíl mezi jednou budkou a zbytkem.",
+    "reseni": "\n\n".join([
+      r"$\frac{10}{3} : \frac{3}{5} = \frac{10}{3} \cdot \frac{5}{3} = \frac{50}{9}$ (kolikrát se budka vejde do prkna)",
+      r"$\frac{50}{9} = 5\frac{5}{9}$ (pět celých budek a pět devítin další)",
+      r"$5 \cdot \frac{3}{5} = 3$ (prkno na pět budek)",
+      r"$\frac{10}{3} - 3 = \frac{10}{3} - \frac{9}{3} = \frac{1}{3}$ (zbude)",
+      r"$\frac{3}{5} - \frac{1}{3} = \frac{9}{15} - \frac{5}{15} = \frac{4}{15}$ (chybí na šestou budku)",
+      r"Jiná cesta: $\frac{5}{9} \cdot \frac{3}{5} = \frac{1}{3}$ (pět devítin budky je zbytek prkna)",
+      r"**Výsledek:** $5$ budek, zbude $\frac{1}{3}$ m, dokoupit $\frac{4}{15}$ m"]),
+    "otazky": [
+      {"k": "Celá úloha", "text": "„Řekni mi vlastními slovy, jak dlouhé prkno mají, kolik prkna potřebuje jedna budka a na co se úloha ptá.“"},
+      {"k": "Krok 1", "text": "„Kdyby měli šest metrů prkna a budka by potřebovala dva metry, kolik budek by bylo? Jakým počtem to zjistíš?“"},
+      {"k": "Krok 2 a výsledek", "text": "„Tady máš začátek: prkno na všechny celé budky spočítáš násobením. Kolik prkna pak zbude a kolik chybí do jedné budky?“"},
+    ],
+    "otocena_role": "„Vysvětli mi, proč se počet budek počítá dělením a proč ho nezaokrouhlíš nahoru.“",
+    "otocena_role_odpoved": "Zjišťuju, kolikrát se jedna budka vejde do celého prkna, a to je dělení. Vyjde pět a pět devítin, ale na šestou budku prkno nestačí, proto jen pět celých.",
+    "typicka_chyba": r"Podívejte se na obrazovku dítěte. Krok 1 $0{,}18$, $2$: dělí obráceně, nebo násobí. Zeptejte se: „Kolik budek by bylo, kdyby každá měla metr?“ (Tři, s kratšími víc.) $6$: zaokrouhlí, ač prkno nestačí. Krok 2 $\frac{5}{9}$: zbytek v budkách; $\frac{41}{15}$: pětkou násobí i jmenovatel. Výsledek $\frac{3}{5}$: zapomene zbytek; $\frac{1}{3}$: napíše zbytek.",
+  },
+  "semafor": {
+    "zelena": "Výborně — počet budek, zbytek i prkno k dokoupení sedí. Pochvalte, že poznalo dělení a nezaokrouhlilo nahoru, a jděte dál.",
+    "oranzova": r"Zítra 5 minut, na papír. Přečtěte dítěti: „Máme tři metry provázku, na jeden kus potřebujeme dvě pětiny metru. Kolik celých kusů ustřihneme a kolik provázku zbude?“ Zlomek $\frac{2}{5}$ ukažte na telefonu. Kontrola pro vás: $3 : \frac{2}{5} = \frac{15}{2}$, tedy $7$ kusů; zbude $3 - \frac{14}{5} = \frac{1}{5}$ metru.",
+    "cervena": r"Dnes už nepokračujte, pochvalte snahu. Připravte: 3 listy papíru a nůžky; každý list je metr prkna. Zítra ať dítě všechny listy rozstřihne na třetiny a skládá budky po dvou třetinách. Zeptejte se: „Kolik celých budek složíš a kolik třetin zbude?“ Pak ať samo zapíše $3 : \frac{2}{3} = \frac{9}{2} = 4\frac{1}{2}$. Potom zopakujte lekci „Dělení zlomků“. Kontrola pro vás: 4 budky, zbude 1 třetina.",
+  },
+  "tisk": {"zadani": u3_zad + "\n\nA) Počet celých budek: ______\n\nB) Zbude prkna: ______ m\n\nC) Dokoupit: ______ m"},
+}
+
+vyraz4 = r"\dfrac{\frac{2}{5} - \frac{1}{10}}{\frac{1}{8} + \frac{1}{4}}"
+u4 = {
+  "id": f"{ID}-U4", "typ": "semafor", "cas_min": 4,
+  "zadani": f"Vypočítej a výsledek zapiš jako zlomek v základním tvaru:\n\n$${vyraz4}$$", "zdroj": "vlastni",
+  "kroky": [
+    {"id": "final", "popisek": "Výsledek", "vstup": {"typ": "zlomek"},
+     "spravne": {"c": 4, "j": 5},
+     "zname_chyby": [{"c": 5, "j": 4, "typ_chyby": "slozeny-zlomek-prevratil-horni"}, {"c": 9, "j": 80, "typ_chyby": "delil-bez-prevraceni"}, {"c": 9, "j": 5, "typ_chyby": "scital-citatele-i-jmenovatele"}],
+     "kontrola_tvaru": "zakladni_tvar"},
+  ],
+  "tahak": {
+    "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Čte se: patrový zlomek, nahoře dvě pětiny minus jedna desetina, dole jedna osmina plus jedna čtvrtina. Nejdřív se spočítá horní i dolní patro, pak se dělí.",
+    "reseni": "\n\n".join([
+      r"$\frac{4}{10} - \frac{1}{10} = \frac{3}{10}$ (horní patro na desetinách)",
+      r"$\frac{1}{8} + \frac{2}{8} = \frac{3}{8}$ (dolní patro na osminách)",
+      r"$\frac{3}{10} : \frac{3}{8}$ (dlouhá čára je děleno)",
+      r"$= \frac{3}{10} \cdot \frac{8}{3} = \frac{8}{10} = \frac{4}{5}$ (krát převrácený dolní zlomek, trojky se zkrátí, pak zkrácení dvěma)",
+      r"**Výsledek:** $\frac{4}{5}$"]),
+    "otazky": [
+      "„Přečti mi příklad nahlas. Co je nahoře, co dole a co znamená dlouhá čára?“",
+      "„Co spočítáš jako první? Proč se nedá hned dělit?“",
+      "„Tady máš začátek: dvě pětiny jsou čtyři desetiny, čtvrtina jsou dvě osminy. Co spočítáš v obou patrech a co pak?“",
+    ],
+    "otocena_role": "„Vysvětli mi, proč se nahoře i dole musí nejdřív spočítat a teprve potom dělit.“",
+    "otocena_role_odpoved": "Dlouhá čára funguje jako závorka: celé horní patro se dělí celým dolním. Proto musím spočítat rozdíl nahoře i součet dole a až potom dělit.",
+    "typicka_chyba": r"Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $\frac{5}{4}$: převrátí horní patro. Zeptejte se: „Kterým zlomkem se dělí?“ (Dolním.) $\frac{9}{80}$: nepřevrátí nic. $\frac{9}{5}$: dole sčítá zvlášť čitatele a jmenovatele. „Kolik je osmina a čtvrtina?“ (Tři osminy.)",
+  },
+  "semafor": {
+    "zelena": "Výborně — složený zlomek s výpočtem v obou patrech zvládá samo. Pochvalte, že nejdřív spočítalo obě patra. Zítra můžete pokračovat další lekcí.",
+    "oranzova": r"Zítra 5 minut, na papír. Ukažte dítěti na telefonu $\dfrac{\frac{1}{2} + \frac{1}{6}}{\frac{5}{6} - \frac{1}{2}}$. Ať nahlas řekne horní patro, dolní patro a výsledek. Kontrola pro vás: nahoře $\frac{2}{3}$, dole $\frac{1}{3}$, výsledek $\frac{2}{3} \cdot 3 = 2$.",
+    "cervena": r"Dnes už nepokračujte, pochvalte snahu. Připravte: list papíru a tužku. Zítra ať dítě nakreslí obdélník rozdělený na 10 stejných dílů, vybarví dvě pětiny (4 díly) a jednu desetinu (1 díl) z vybarvených přeškrtne. Zeptejte se: „Kolik desetin zůstalo?“ Pak ať samo zapíše $\frac{4}{10} - \frac{1}{10} = \frac{3}{10}$ a spočítá $\frac{3}{10} : \frac{3}{5}$. Potom zopakujte lekci „Dělení zlomků“. Kontrola pro vás: tři desetiny; $\frac{3}{10} \cdot \frac{5}{3} = \frac{1}{2}$.",
+  },
+  "tisk": {"zadani": f"Vypočítej a výsledek zapiš jako zlomek v základním tvaru:\n\n$${vyraz4}$$\n\nVýsledek: ______"},
+}
+
+lekce = {
+  "id": ID, "faze": "osma", "tyden": 5, "poradi": 2, "tema": T, "kapitola": "zlomky", "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo dělí zlomkem i celým číslem, spočítá složený zlomek s výpočtem nahoře i dole a ve slovní úloze určí počet i zbytek.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami. Dítě ukáže, že dělení zlomků zvládne samo: čtyři příklady, nenápadnější chyba u Petra a slovní úloha se zbytkem o krok delší.",
+  "uvod_pravidla": [
+    {"znak": r"$\frac{3}{7}$ a $\frac{7}{3}$", "text": "převrácená čísla"},
+    {"znak": r"$: \frac{2}{9} = \cdot \frac{9}{2}$", "text": "děleno: krát převrácený"},
+    {"znak": r"$\dfrac{\frac{2}{5}}{\frac{3}{4}}$", "text": "dlouhá čára: děleno"},
+  ],
+  "pomucky": ["sešit", "propiska", "tužka"],
+  "cas_min": 20,
+  "ulohy": [u1, u2, u3, u4],
+  "kontrola": {"jistota": "stredni", "zkontroloval": "autor", "datum": "2026-10-09", "poznamka": r"""Autor 9. 10. 2026: B-varianta M8-T05-L2N (po červené). Struktura, typy úloh, vstupy, počty kroků a kódy chyb shodné s L2N; čísla a kontexty nové. Vše přepočítáno skriptem (python Fraction) a přes vyhodnotKrok: správné odpovědi true, každá známá chyba i chybná dlaždice vrací svůj kód. U1 $\frac{1}{6}$; $\frac{2}{11}$ ($\frac{11}{2}$, $\frac{32}{11}$, $\frac{11}{32}$); $\frac{3}{4}$ ($\frac{4}{3}$, $\frac{25}{147}$); $\frac{7}{16}$ ($\frac{25}{28}$, $\frac{16}{7}$). U2 horní patro $\frac{1}{3}$, Petr převrátí třetinu na trojku, správně $\frac{5}{12}$ ($\frac{12}{5}$, $\frac{4}{15}$, $\frac{15}{16}$). U3 $\frac{10}{3} : \frac{3}{5} = 5\frac{5}{9}$, $5$ budek, zbude $\frac{1}{3}$, dokoupit $\frac{4}{15}$. U4 $\frac{3}{10} : \frac{3}{8} = \frac{4}{5}$ ($\frac{5}{4}$, $\frac{9}{80}$, $\frac{9}{5}$). Sporné: U3 prkno v třetinách metru je méně obvyklé, ale skriptem hledané kombinace s počtem 4–9 a s konečnými desetinnými chybami ($0{,}18$, $2$) jinak vedly ke stejné mouce $\frac{5}{2}$ jako L2N nebo k nehezkým zbytkům."""},
+}
+if __name__ == "__main__":
+    uloz(lekce, sys.argv[1])

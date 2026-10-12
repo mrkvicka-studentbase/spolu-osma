@@ -1,0 +1,18 @@
+from fractions import Fraction as F
+def eq(a,b,m): assert a==b, f"{m}: {a}!={b}"
+def S(w,c,j): return w+F(c,j)
+eq(F(6,35)*F(7,9),F(2,15),'A'); eq(F(2*7,5*3),F(14,15),'A jen dole'); eq(F(2*1,5*9),F(2,45),'A jen nahore')
+eq(F(12,25)/F(4,5),F(3,5),'B'); eq(F(25,12)*F(4,5),F(5,3),'B prvni'); eq(F(12,25)*F(4,5),F(48,125),'B bez')
+eq(S(1,5,9)*F(3,4),S(1,1,6),'C'); eq(1+F(5,9)*F(3,4),S(1,5,12),'C po'); eq(F(1+5,9)*F(3,4),F(1,2),'C scit')
+z=36-36*F(2,9); eq(z,28,'D z'); eq(z*F(3,4),21,'D'); eq(36*F(3,4),27,'D celek'); eq(8*F(3,4),6,'D zam'); eq(z/4,7,'D jen')
+eq(F(5,8)*F(4,15),F(1,6),'or'); eq(F(6,7)/F(3,14),4,'or'); eq(S(1,1,3)*F(3,8),F(1,2),'or')
+eq(25-5-5,15,'red')
+eq(5-S(3,5,9)/S(2,2,9),F(17,5),'U2'); eq((5-S(3,5,9))/S(2,2,9),F(13,20),'Petr'); eq(5-F(9,32)*F(20,9),F(35,8),'prvni'); eq(F(5-1-1)+F(3,5),F(18,5),'odcital'); eq(S(3,5,9)/S(2,2,9),S(1,3,5),'podil'); eq(S(3,5,9),F(32,9),'p1'); eq(S(2,2,9),F(20,9),'p2')
+eq(5-S(2,1,2)/F(5,6),2,'or u2'); eq((5-S(2,1,2))/F(5,6),3,'or petr'); eq(15-6//3,13,'red'); eq((15-6)//3,3,'red2')
+V=S(9,3,5); eq(V,F(48,5),'V'); s=V*F(3,8); eq(s,F(18,5),'sold'); eq(float(s),3.6,'3.6'); r=V-s; eq(r,6,'rest'); eq(r/F(3,4),8,'n')
+eq(V/8,F(6,5),'jen'); eq(F(9+3,5)*F(3,8),F(9,10),'scit'); eq(V/3*8,F(128,5),'obr'); eq(V-V/8,F(42,5),'k2 jen')
+eq(r*F(3,4),F(9,2),'bez'); eq(F(3,4)/r,F(1,8),'obr'); eq(V/F(3,4),F(64,5),'prehl')
+eq(S(6,1,4)*F(4,5),5,'or u3'); eq(5/F(1,2),10,'or u3'); eq(3/F(1,3),9,'red u3')
+t=S(2,5,6)-F(1,2); eq(t,F(7,3),'t'); C=S(1,2,5); eq(t/C,F(5,3),'U4'); eq(C/t,F(3,5),'prvni'); eq(t*C,F(49,15),'bez'); eq((F(2+5,6)-F(1,2))/C,F(10,21),'scit')
+eq((S(1,1,4)+F(1,2))/S(2,1,3),F(3,4),'or u4'); eq(S(1,1,3)/F(2,3),2,'red u4')
+print('L4NB matematika OK')

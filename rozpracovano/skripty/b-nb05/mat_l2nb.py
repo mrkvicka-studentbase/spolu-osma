@@ -1,0 +1,16 @@
+from fractions import Fraction as F
+def eq(a,b,m): assert a==b, f"{m}: {a}!={b}"
+eq(F(8,11)/4,F(2,11),'B'); eq(F(8,11)*4,F(32,11),'B bez'); eq(4/F(8,11),F(11,2),'B obr'); eq(F(11,8)*F(1,4),F(11,32),'B oba')
+eq(F(5,14)/F(10,21),F(3,4),'C'); eq(F(5,14)*F(10,21),F(25,147),'C bez'); eq(F(14,5)*F(10,21),F(4,3),'C prvni')
+eq(F(5,8)/F(10,7),F(7,16),'D'); eq(F(8,5)*F(10,7),F(16,7),'D horni'); eq(F(5,8)*F(10,7),F(25,28),'D bez')
+eq(F(9,11)/3,F(3,11),'or'); eq(F(4,9)/F(8,15),F(5,6),'or'); eq(F(3,8)/F(9,16),F(2,3),'or')
+eq(F(5,6)/F(1,6),5,'red')
+top=F(7,12)-F(1,4); eq(top,F(1,3),'U2 top'); eq(top/F(4,5),F(5,12),'U2'); eq(3*F(4,5),F(12,5),'Petr'); eq(top*F(4,5),F(4,15),'bez')
+eq(F(7-1,12-4)/F(4,5),F(15,16),'scital'); eq(3*F(5,4),F(15,4),'k2 oba')
+eq(F(1,5)/F(3,10),F(2,3),'or u2'); eq(5*F(3,10),F(3,2),'or petr'); eq(F(3,5)/F(1,10),6,'red u2')
+M=F(10,3); P=F(3,5); q=M/P; eq(q,F(50,9),'q'); eq(int(q),5,'k'); eq(q-5,F(5,9),'fr'); left=M-5*P; eq(left,F(1,3),'left'); eq(P-left,F(4,15),'buy')
+eq(P/M,F(18,100),'0.18'); eq(M*P,2,'bez'); eq(M-F(5*3,5*5),F(41,15),'cele do obou'); eq(F(5,9)*P,F(1,3),'jina')
+eq(3/F(2,5),F(15,2),'or u3'); eq(3-7*F(2,5),F(1,5),'or u3 zb'); eq(3/F(2,3),F(9,2),'red u3')
+t=F(2,5)-F(1,10); b=F(1,8)+F(1,4); eq(t,F(3,10),'t'); eq(b,F(3,8),'b'); eq(t/b,F(4,5),'U4'); eq(b/t,F(5,4),'horni'); eq(t*b,F(9,80),'bez'); eq(t/F(1+1,8+4),F(9,5),'scit')
+eq((F(1,2)+F(1,6))/(F(5,6)-F(1,2)),2,'or u4'); eq(F(3,10)/F(3,5),F(1,2),'red u4')
+print('L2NB matematika OK')
