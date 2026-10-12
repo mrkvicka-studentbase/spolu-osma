@@ -90,6 +90,8 @@ Verze 1.0, 29. 9. 2026. Vede autor úloh, generuje Pavel. Soubory do `web/audio/
 | `t3/l12b-d4.mp3` | cj-t3-l12b / úloha 5 (diktát, věta 4) | diktát | Tomášovi sousedé fandí hokeji. | Dvakrát: poprvé celá věta přirozeně, pauza 2 s, podruhé pomalu po slovech (0,75×, 0,7 s mezi slovy). Interpunkci nevyslovovat; u velkého písmene říct „velké písmeno — …“. | čeká na Pavla |
 | `t2/l5b-u3.mp3` | cj-t2-l5b / úloha 3 (`k1` i `final`) | poslech | Tomáš uviděl kamaráda s hrdinou turnaje. | Oznamovací intonace, nic nezdůrazňovat, koncovky vyslovit zřetelně. | čeká na Pavla |
 | `t2/l6b-u3.mp3` | cj-t2-l6b / úloha 3 (`k1` i `final`) | poslech | Klára si v listí hrála s malým kachnětem. | Oznamovací intonace, nic nezdůrazňovat, koncovky vyslovit zřetelně. | čeká na Pavla |
+| `t1/l1nb-u3.mp3` | cj-t1-l1nb / úloha 3 (`k1` i `k2` i `k3` i `final`) | poslech | V sobotu tě ve dvanáctém patře navštívilo několik kamarádů z tvého týmu s velkým dortem. | Oznamovací intonace, nic nezdůrazňovat, koncovky vyslovit zřetelně. | čeká na Pavla |
+| `t1/l3nb-u2.mp3` | cj-t1-l3nb / úloha 2 (`k1` i `k2` i `final`) | poslech | Nedělní večer jsme hráli fotbal na louce nedaleko lesa. Tomáš vystřelil, ale míč letěl mimo. | Oznamovací intonace, nic nezdůrazňovat, koncovky vyslovit zřetelně. | čeká na Pavla |
 
 Témata 3–10 doplnil vedoucí 4. 10. z JSON po korektuře (`prepis`, diktát `vety[].text`). Pro ElevenLabs je hotový text i s pauzami v `cestina/Obsah/nahravky-k-nataceni.md` / `.csv` (generuje `node nastroje/seznam-nahravek.mjs`; postup pro agenta s ElevenLabs: `NAHRAVKY-NAVOD.md`). Před odevzdáním týdne musí být řádky pro všechny `poslech` a `diktat` kroky v tabulce, jinak QA týden nepustí (kontrola: každý `audio` odkaz v JSON má řádek tady a soubor na disku).
 
