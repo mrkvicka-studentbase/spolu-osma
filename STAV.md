@@ -1,6 +1,6 @@
 # Stav Spolu 8 — 5. 10. 2026
 
-> **Celý rok (9. 10. 2026 večer):** na `main` jsou zrecenzované lekce roku: matematika T01–T04 kompletní (naostro, B, naostro-B) a T05 naostro; čeština naostro T1–T3 a B učebních lekcí T1. Neschválená rozpracovaná práce (M T05 B, ČJ T1 naostro-B, T2 B, T3 B) a zadání agentů jsou na větvi `rozpracovano-2026-10-09`, postup v jejím `rozpracovano/ROZPRACOVANO.md`. Plán a pravidla: `PLAN-ROZSIRENI.md`.
+> **Celý rok (12. 10. 2026 večer):** na `main` jsou zkontrolované lekce roku: matematika T01–T04 kompletní, T05 naostro a B; čeština T1–T3 naostro a B učebních lekcí, T1 i B naostro. Neschválená rozpracovaná práce (M T05 NB, ČJ T3 NB) a zadání agentů jsou na větvi `rozpracovano-2026-10-12`, postup v jejím `rozpracovano/ROZPRACOVANO.md` (starší větev `rozpracovano-2026-10-09` je už celá zpracovaná). Plán a pravidla: `PLAN-ROZSIRENI.md`.
 >
 > **Další úkol po obsahu roku (Pavel 10. 10.):** převzít ze Spolu na přijímačky nový vzhled odznaků a karet (R81, hlavní), nové odznaky (R80) a sbírku taháků s měsíčními výzvami (R78 + R82, taháky pro 8. třídu napsat nově). Podklady: `predani/2026-10-09-odznaky-a-tahaky/README.md` (postup, kontrakt, kontrolní seznam). Pořadí: nejdřív dokončit lekce roku a kontroly, pak tohle.
 
