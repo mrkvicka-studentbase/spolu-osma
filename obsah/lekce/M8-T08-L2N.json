@@ -1,0 +1,489 @@
+{
+  "id": "M8-T08-L2N",
+  "faze": "osma",
+  "tyden": 8,
+  "poradi": 2,
+  "tema": "Měřítko mapy",
+  "kapitola": "pomer",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo převádí z mapy na skutečnost a zpět, zjistí délku na jiné mapě a výsledek uvede ve správné jednotce.",
+  "uvod_pro_rodice": "Dítě tuhle látku dělalo v lekci „Měřítko mapy“. Dnes ukáže, že ji zvládne samo: čtyři příklady místo tří, nenápadnější chyba u Petra a úloha s plánem o krok delší.",
+  "uvod_pravidla": [
+    {
+      "znak": "$1 : 80\\,000$",
+      "text": "centimetr: 800 metrů"
+    },
+    {
+      "znak": "$100\\,000\\ \\text{cm} = 1\\ \\text{km}$",
+      "text": "centimetry na kilometry"
+    },
+    {
+      "znak": "$320\\,000 : 80\\,000 = 4$",
+      "text": "ze skutečnosti na mapu"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T08-L2N-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Automapa má měřítko $1 : 500\\,000$. Kolik kilometrů je $1$ cm na mapě?\n\nB) Cesta měří ve skutečnosti $2{,}4$ km. Kolik centimetrů měří na mapě $1 : 40\\,000$?\n\nC) Hřiště je dlouhé $90$ m. Kolik centimetrů měří na plánu $1 : 2\\,000$?\n\nD) Na plánu $1 : 400$ je tělocvična dlouhá $6{,}5$ cm. Kolik metrů měří doopravdy?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $1$ cm na mapě $1 : 500\\,000$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$50$ km",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "b",
+                "text": "$5\\,000$ km",
+                "spravne": false,
+                "typ_chyby": "jednotka-ve-vysledku-spatne"
+              },
+              {
+                "id": "c",
+                "text": "$5$ km",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "$0{,}5$ km",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $2{,}4$ km na mapu",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$6$ cm",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$96\\,000$ cm",
+                "spravne": false,
+                "typ_chyby": "meritko-obracene"
+              },
+              {
+                "id": "c",
+                "text": "$0{,}6$ cm",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "d",
+                "text": "$60$ cm",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: $90$ m na plán",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$0{,}045$ cm",
+                "spravne": false,
+                "typ_chyby": "zapomnel-prevest-jednotky"
+              },
+              {
+                "id": "b",
+                "text": "$45$ cm",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "c",
+                "text": "$4{,}5$ cm",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "$0{,}45$ cm",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: $6{,}5$ cm na plánu",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$260$ m",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "b",
+                "text": "$26$ m",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$2{,}6$ m",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "d",
+                "text": "$2\\,600$ m",
+                "spravne": false,
+                "typ_chyby": "jednotka-ve-vysledku-spatne"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá, ale převody jdou oběma směry. U A a D se jde z mapy do skutečnosti (násobí se), u B a C ze skutečnosti na mapu (dělí se). Skutečná délka se před dělením převede na centimetry. Čte se: $2{,}4$ „dvě celé čtyři“, $4{,}5$ „čtyři celé pět“, $6{,}5$ „šest celých pět“. Otázky jsou po příkladech, první patří k A i D.",
+        "reseni": "#### A) $1$ cm na mapě $1 : 500\\,000$\n\n$1\\ \\text{cm} \\to 500\\,000\\ \\text{cm}$ (ve skutečnosti)\n\n$500\\,000 : 100 = 5\\,000$ (metrů)\n\n$5\\,000 : 1\\,000 = 5$ (kilometrů)\n\n#### B) $2{,}4$ km na mapu\n\n$2{,}4\\ \\text{km} = 2\\,400\\ \\text{m} = 240\\,000\\ \\text{cm}$ (nejdřív na centimetry)\n\n$240\\,000 : 40\\,000 = 6$ (na mapě je všechno čtyřicet tisíckrát kratší)\n\n#### C) $90$ m na plán\n\n$90\\ \\text{m} = 9\\,000\\ \\text{cm}$ (nejdřív na centimetry)\n\n$9\\,000 : 2\\,000 = 4{,}5$ (na plánu je všechno dvoutisíckrát kratší)\n\n#### D) $6{,}5$ cm na plánu\n\n$6{,}5 \\cdot 400 = 2\\,600$ (centimetrů ve skutečnosti)\n\n$2\\,600 : 100 = 26$ (metrů)\n\n**Výsledek:** A) $5$ km, B) $6$ cm, C) $4{,}5$ cm, D) $26$ m",
+        "otazky": [
+          {
+            "k": "A a D",
+            "text": "„Neklikej, nejdřív řekni: bude skutečná délka větší, nebo menší než na mapě? Kolik centimetrů má metr a kolik kilometr?“"
+          },
+          {
+            "k": "B",
+            "text": "„Kolik centimetrů jsou dvě celé čtyři kilometru? Bude čára na mapě delší, nebo kratší než skutečná cesta?“"
+          },
+          {
+            "k": "C",
+            "text": "„Kolik centimetrů je devadesát metrů? Kolikrát menší je všechno na plánu než ve skutečnosti?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč u příkladu B dělíš, ale u příkladu D násobíš.“",
+        "otocena_role_odpoved": "U B jdu ze skutečnosti na mapu a na mapě je všechno menší, proto dělím. U D jdu z plánu do skutečnosti, kde je všechno větší, proto násobím.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. $50$ km, $0{,}5$ km, $0{,}6$ cm, $60$ cm, $45$ cm, $0{,}45$ cm, $260$ m nebo $2{,}6$ m: převádí o nulu špatně. Zeptejte se: „Kolik centimetrů má metr?“ (Sto.) $5\\,000$ km, $2\\,600$ m: jiná jednotka. $96\\,000$ cm: násobí místo dělení. $0{,}045$ cm: nepřevede metry."
+      },
+      "semafor": {
+        "zelena": "Výborně — měřítko zvládá oběma směry. Pochvalte, že hlídalo, kdy násobit a kdy dělit, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Mapa má měřítko $1 : 200\\,000$. Kolik kilometrů je $1$ cm na mapě?“ Pak: „Kolik centimetrů na této mapě bude cesta dlouhá $10$ km?“ Kontrola pro vás: $2$ km ($200\\,000$ cm); $5$ cm (deset kilometrů jsou pět takových kusů).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko, svinovací metr a papír. Zítra ať dítě změří délku postele a nakreslí ji jako čáru v měřítku $1 : 20$ (každých 20 cm je 1 cm na papíře). Zeptejte se: „Bude čára delší, nebo kratší než postel?“ Pak ať samo zapíše např. $200 : 20 = 10$ cm. Potom zopakujte lekci „Měřítko mapy“. Kontrola pro vás: délka čáry krát dvacet je změřená délka postele."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Automapa má měřítko $1 : 500\\,000$. Kolik kilometrů je $1$ cm na mapě? — a) $50$ km b) $5\\,000$ km c) $5$ km d) $0{,}5$ km\n\nB) Cesta měří ve skutečnosti $2{,}4$ km. Kolik centimetrů měří na mapě $1 : 40\\,000$? — a) $6$ cm b) $96\\,000$ cm c) $0{,}6$ cm d) $60$ cm\n\nC) Hřiště je dlouhé $90$ m. Kolik centimetrů měří na plánu $1 : 2\\,000$? — a) $0{,}045$ cm b) $45$ cm c) $4{,}5$ cm d) $0{,}45$ cm\n\nD) Na plánu $1 : 400$ je tělocvična dlouhá $6{,}5$ cm. Kolik metrů měří doopravdy? — a) $260$ m b) $26$ m c) $2{,}6$ m d) $2\\,600$ m"
+      }
+    },
+    {
+      "id": "M8-T08-L2N-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Lucka jde ze školy do knihovny a odtud na trénink. Na plánu města v měřítku $1 : 15\\,000$ měří cesta ze školy do knihovny $3{,}4$ cm a z knihovny na trénink $4{,}6$ cm. Kolik kilometrů Lucka ujde?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $3{,}4 + 4{,}6 = 8$ cm\n\n2. řádek: $8 \\cdot 15\\,000 = 120\\,000$ cm\n\n3. řádek: $120\\,000$ cm $= 120$ m\n\n4. řádek: $120$ m $= 0{,}12$ km",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$3{,}4 + 4{,}6 = 8$ cm",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$8 \\cdot 15\\,000 = 120\\,000$ cm",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$120\\,000$ cm $= 120$ m",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$120$ m $= 0{,}12$ km",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$120\\,000$ cm $= 12\\,000$ m",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "b",
+                "text": "$120\\,000$ cm $= 1\\,200$ m",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$120\\,000$ cm $= 1\\,200$ km",
+                "spravne": false,
+                "typ_chyby": "jednotka-ve-vysledku-spatne"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "km"
+          },
+          "spravne": {
+            "hodnota": 1.2
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 0.12,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 1200,
+              "typ_chyby": "jednotka-ve-vysledku-spatne"
+            },
+            {
+              "hodnota": 0.51,
+              "typ_chyby": "prehledl-udaj"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Cesta má dva úseky: na plánu se sečtou a pak se převedou na skutečnost. Převod jde přes metry: metr má sto centimetrů, kilometr tisíc metrů. Chyba je jedna, řádek za ní je spočítaný dobře, jen se špatným číslem. Čte se: $3{,}4$ „tři celé čtyři“, $0{,}12$ „nula celá dvanáct“ (dvanáct setin), $1{,}2$ „jedna celá dva“.",
+        "reseni": "Chyba je ve 3. řádku: Petr převedl centimetry na metry dělením tisícem. Metr má ale jen sto centimetrů.\n\n$3{,}4 + 4{,}6 = 8$ (centimetrů na plánu)\n\n$8 \\cdot 15\\,000 = 120\\,000$ (centimetrů ve skutečnosti)\n\n$120\\,000 : 100 = 1\\,200$ (metrů)\n\n$1\\,200 : 1\\,000 = 1{,}2$ (kilometru)\n\nDlaždice $12\\,000$ m a $1\\,200$ km nesedí (první dělí jen deseti, druhá jsou metry, ne kilometry)\n\n**Výsledek:** $1{,}2$ km",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, kudy Lucka jde a co máš zjistit.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každého Petrova řádku řekni, v jaké jednotce to číslo je a odkud se vzalo.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku s převodem se zeptej: na jakou jednotku Petr převádí a kolik menších jednotek je v jedné větší?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč Lucka neujde jen sto dvacet metrů.“",
+        "otocena_role_odpoved": "Protože metr má sto centimetrů, ne tisíc. Sto dvacet tisíc centimetrů je tisíc dvě stě metrů, tedy jedna celá dva kilometru. Sto dvacet metrů by byl jen kousek přes ulici.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 4. řádek? Ten je jen důsledek. Zeptejte se: „Odkud je sto dvacet metrů?“ (Ze 3. řádku.) 1. a 2. řádek jsou správně. Výsledek $0{,}12$: opíše Petra; $1\\,200$: jsou to metry; $0{,}51$: jen první úsek. „Kolik úseků má cesta?“ (Dva.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že převádělo krok po kroku přes metry, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr tvrdí, že $40\\,000$ cm je $40$ m. Má pravdu?“ Pak: „Kolik kilometrů je $250\\,000$ cm?“ Ať nahlas převádí přes metry. Kontrola pro vás: nemá, je to $400$ m; $250\\,000$ cm $= 2\\,500$ m $= 2{,}5$ km.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: svinovací metr a papír. Zítra ať dítě na metru ukáže 1 m a spočítá na něm po deseti centimetrech, kolik centimetrů má. Pak ať napíše schody km → m → cm a ke každému schodu číslo. Ať samo zapíše $3\\,000$ m $= 300\\,000$ cm. Potom zopakujte lekci „Měřítko mapy“. Kontrola pro vás: metr má 100 cm; z km na m krát $1\\,000$, z m na cm krát $100$."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\nLucka jde ze školy do knihovny a odtud na trénink. Na plánu města v měřítku $1 : 15\\,000$ měří cesta ze školy do knihovny $3{,}4$ cm a z knihovny na trénink $4{,}6$ cm. Kolik kilometrů Lucka ujde?\n\na udělal jednu chybu.\n\n1. řádek: $3{,}4 + 4{,}6 = 8$ cm\n\n2. řádek: $8 \\cdot 15\\,000 = 120\\,000$ cm\n\n3. řádek: $120\\,000$ cm $= 120$ m\n\n4. řádek: $120$ m $= 0{,}12$ km\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $120\\,000$ cm $= 12\\,000$ m b) $120\\,000$ cm $= 1\\,200$ m c) $120\\,000$ cm $= 1\\,200$ km\n\nC) Kolik kilometrů Lucka ujde doopravdy? ______ km"
+      }
+    },
+    {
+      "id": "M8-T08-L2N-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Na plánu školní zahrady v měřítku $1 : 200$ má záhon tvar obdélníku $7$ cm × $2{,}5$ cm. Na každý metr čtvereční záhonu zasadí třída $3$ sazenice jahod.\n\nZapiš skutečnou délku a šířku záhonu v metrech. Kolik sazenic budou potřebovat?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Mezivýsledek: skutečná délka",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m"
+          },
+          "spravne": {
+            "hodnota": 14
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 140,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 1400,
+              "typ_chyby": "jednotka-ve-vysledku-spatne"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: skutečná šířka",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m"
+          },
+          "spravne": {
+            "hodnota": 5
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 50,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 500,
+              "typ_chyby": "jednotka-ve-vysledku-spatne"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "sazenic"
+          },
+          "spravne": {
+            "hodnota": 210
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 70,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 114,
+              "typ_chyby": "obvod-obsah-zamena"
+            },
+            {
+              "hodnota": 2100,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce. Na plánu $1 : 200$ (čte se „jedna ku dvěma stům“) je všechno dvěstěkrát menší. Nejdřív se zjistí skutečné rozměry v metrech, z nich obsah záhonu a teprve pak počet sazenic. Obsah se nepočítá z plánu. Čte se: $2{,}5$ „dvě celé pět“.",
+        "reseni": "$7 \\cdot 200 = 1\\,400$ (délka ve skutečnosti v centimetrech)\n\n$1\\,400\\ \\text{cm} = 14\\ \\text{m}$ (sto centimetrů je metr)\n\n$2{,}5 \\cdot 200 = 500$ (šířka ve skutečnosti v centimetrech)\n\n$500\\ \\text{cm} = 5\\ \\text{m}$ (na metry)\n\n$14 \\cdot 5 = 70$ (obsah záhonu v metrech čtverečních)\n\n$70 \\cdot 3 = 210$ (tři sazenice na každý metr čtvereční)\n\n**Výsledek:** délka $14$ m, šířka $5$ m, $210$ sazenic",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co je na plánu a co třída sází. Je záhon ve skutečnosti větší, nebo menší?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Kolikrát je záhon ve skutečnosti delší než na plánu? Kolik centimetrů dá dohromady jeden metr?“"
+          },
+          {
+            "k": "Výsledek",
+            "text": "„Tady máš začátek: ze skutečné délky a šířky v metrech spočítej obsah záhonu. Kolik sazenic patří na jeden metr čtvereční?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč sazenice nepočítáš z čísel na plánu, sedm krát dva a půl.“",
+        "otocena_role_odpoved": "Protože to je jen obrázek na papíře v centimetrech čtverečních. Sazenice se sázejí do skutečného záhonu, ten má čtrnáct krát pět, sedmdesát metrů čtverečních.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Mezivýsledky $140$ a $50$, výsledek $2\\,100$: převádí o nulu špatně. Zeptejte se: „Kolik centimetrů má metr?“ (Sto.) $1\\,400$ a $500$: nechá centimetry. Výsledek $70$: jen obsah, bez sazenic. $114$: počítá s obvodem. „Sází se po okraji, nebo po celé ploše?“ (Po ploše.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — rozměry, obsah i sazenice sedí. Pochvalte, že počítalo ze skutečných rozměrů, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Na plánu v měřítku $1 : 300$ má terasa rozměry $3$ cm a $2$ cm. Na každý metr čtvereční se položí $2$ dlaždice. Kolik dlaždic je potřeba?“ Kontrola pro vás: $9$ m a $6$ m; obsah $54\\ \\text{m}^2$; $108$ dlaždic.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: čtverečkovaný papír a tužku. Zítra: „Na plánu je záhon 2 čtverečky dlouhý a 1 široký. Čtvereček na plánu jsou 2 metry na zahradě.“ Ať dítě nakreslí skutečný záhon, kde 1 metr je 1 čtvereček, a do každého čtverečku 3 tečky (sazenice). Pak ať samo zapíše $4 \\cdot 2 = 8$, $8 \\cdot 3 = 24$. Potom zopakujte lekci „Měřítko mapy“. Kontrola pro vás: záhon 4 × 2 čtverečky; 8 čtverečků, 24 teček."
+      },
+      "tisk": {
+        "zadani": "Na plánu školní zahrady v měřítku $1 : 200$ má záhon tvar obdélníku $7$ cm × $2{,}5$ cm. Na každý metr čtvereční záhonu zasadí třída $3$ sazenice jahod.\n\nKolik sazenic budou potřebovat?\n\nA) Skutečná délka: ______ m\n\nB) Skutečná šířka: ______ m\n\nC) Počet sazenic: ______"
+      }
+    },
+    {
+      "id": "M8-T08-L2N-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Tomáš má plán města v měřítku $1 : 20\\,000$ a cyklomapu v měřítku $1 : 50\\,000$. Na plánu města měří cesta z domova na stadion $7$ cm.\n\nKolik centimetrů měří stejná cesta na cyklomapě?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm"
+          },
+          "spravne": {
+            "hodnota": 2.8
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 17.5,
+              "typ_chyby": "meritko-obracene"
+            },
+            {
+              "hodnota": 140000,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 1.4,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Jde se z plánu do skutečnosti a ze skutečnosti na druhou mapu. Na mapě s větším číslem za dvojtečkou je cesta kratší. Čte se: $2{,}8$ „dvě celé osm“, $17{,}5$ „sedmnáct celých pět“, $1{,}4$ „jedna celá čtyři“.",
+        "reseni": "$7 \\cdot 20\\,000 = 140\\,000$ (centimetrů ve skutečnosti)\n\n$140\\,000 : 50\\,000 = 2{,}8$ (centimetrů na cyklomapě)\n\n$140\\,000\\ \\text{cm} = 1{,}4\\ \\text{km}$ (jiná cesta: skutečná délka v kilometrech)\n\n$1{,}4 : 0{,}5 = 2{,}8$ (jiná cesta: na cyklomapě je centimetr půl kilometru)\n\n**Výsledek:** $2{,}8$ cm",
+        "otazky": [
+          "„Řekni mi vlastními slovy, jaké mapy Tomáš má a co máš zjistit.“",
+          "„Na které mapě je jeden centimetr delší kus skutečné cesty? Bude čára na cyklomapě delší, nebo kratší?“",
+          "„Tady máš začátek: nejdřív zjisti, kolik centimetrů měří cesta ve skutečnosti. Kolikrát se do toho vejde padesát tisíc?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč na cyklomapě nemůže vyjít víc než sedm centimetrů.“",
+        "otocena_role_odpoved": "Protože na cyklomapě je jeden centimetr padesát tisíc centimetrů, víc než na plánu. Stejná cesta je tam nakreslená kratší. Správně je i: cesta měří jedna celá čtyři kilometru, centimetr je půl kilometru.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $17{,}5$: násobí místo dělení. Zeptejte se: „Která mapa je podrobnější?“ (Plán města.) $140\\,000$ nebo $1{,}4$: napíše skutečnou délku. „Na co se úloha ptá?“ (Na centimetry na cyklomapě.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — z jedné mapy na druhou to zvládá samo. Pochvalte, že šlo přes skutečnou délku. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Na mapě $1 : 10\\,000$ měří cesta $6$ cm. Kolik centimetrů bude měřit na mapě $1 : 30\\,000$?“ Ať nahlas řekne skutečnou délku a pak délku na druhé mapě. Kontrola pro vás: ve skutečnosti $60\\,000$ cm ($600$ m); na druhé mapě $2$ cm.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko a papír. Zítra: „Na první mapě je 1 cm sto metrů, na druhé 1 cm dvě stě metrů.“ Ať dítě nakreslí cestu dlouhou 600 m na obě mapy jako čáru. Zeptejte se: „Kde je čára kratší? Proč?“ Pak ať samo zapíše $600 : 100 = 6$, $600 : 200 = 3$. Potom zopakujte lekci „Měřítko mapy“. Kontrola pro vás: 6 cm a 3 cm; na druhé mapě je čára kratší."
+      },
+      "tisk": {
+        "zadani": "Tomáš má plán města v měřítku $1 : 20\\,000$ a cyklomapu v měřítku $1 : 50\\,000$. Na plánu města měří cesta z domova na stadion $7$ cm.\n\nKolik centimetrů měří stejná cesta na cyklomapě?\n\nVýsledek: ______ cm"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 14. 10. 2026: všechna zadání nezávisle přepočítána (Python Fraction, /tmp/recenze-n08/over.py), každá správná odpověď, dlaždice i známá chyba ověřena přes vyhodnotKrok (0 nesedí), limity slov SABLONA §4 přepočítány, validace 0 chyb. Změny recenzenta: U1 C (určení měřítka z délek) nahrazen převodem $90$ m na plán $1 : 2\\,000$ ($4{,}5$ cm), protože osnova T08-L2 určování měřítka nemá (rozhodnutí vedoucího); U1 B změněn na $2{,}4$ km a $1 : 40\\,000$ ($6$ cm), aby se neopakovalo měřítko $1 : 20\\,000$ z učební L2 ani v lekci dvakrát; upraven tahák, tisk a cíl pro rodiče. U3 červená nově cvičí i měřítko (čtvereček na plánu = 2 m). Kódy posouzeny: U2 $1\\,200$ km jednotka-ve-vysledku-spatne sedí (metry zapsané jako km, stejně jako učební L2 U2); U4 dvě hodnoty skutečné délky ($140\\,000$ cm, $1{,}4$ km) obě odpovida-na-jinou-otazku, různé hodnoty. Věcné chyby: žádné.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-14"
+  }
+}
