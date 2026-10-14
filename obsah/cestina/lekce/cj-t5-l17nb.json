@@ -1,0 +1,834 @@
+{
+  "id": "cj-t5-l17nb",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 5,
+  "poradi": 1,
+  "tema": "Slovesný způsob a tvary bychom, byste",
+  "kapitola": "slovesa",
+  "cil_pro_rodice": "Dítě samo pozná způsob slovesa i v delších větách (oznamuje, přikazuje, nebo s by říká, co by bylo) a spisovně napíše bych, bys, bychom, byste.",
+  "uvod_pro_rodice": "Opakování po červeném semaforu: stejná lekce „Slovesný způsob a tvary bychom, byste“ (naostro) s jinými větami a slovy, aby dítě znovu ukázalo způsob slovesa a spisovné tvary s by.",
+  "uvod_pravidla": [
+    {
+      "znak": "Spí. · Spi! · Spal by.",
+      "text": "co to je"
+    },
+    {
+      "znak": "Přikazuje? · Je u slovesa by?",
+      "text": "test"
+    },
+    {
+      "znak": "on by · ona by · oni by",
+      "text": "příklad"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "způsob slovesa": "jestli sloveso něco oznamuje (Ema vaří), přikazuje (Vař!), nebo říká, co by bylo (Vařila by)",
+    "oznamovací způsob": "sloveso oznamuje, co se děje, dělo nebo bude dít (vaří, vařil, bude vařit); i v otázce (Vaříš?)",
+    "rozkazovací způsob": "sloveso přikazuje nebo vyzývá, i se záporem (Vař! Nevař! Vařme!)",
+    "podmiňovací způsob": "sloveso s malým slovem by, bych, bys, bychom, byste: co by bylo, kdyby… (vařil by); by může stát i o kus dál od slovesa",
+    "spisovně": "tak, jak se to píše v písemce; bysme se jen říká, by jsme, by jsi a by jste jsou chyba",
+    "osoba, číslo, čas": "osoba: já, ty, on (1., 2., 3.); číslo: jeden (jednotné), víc (množné); čas: přítomný (vaří), minulý (vařil), budoucí (bude vařit)",
+    "neurčitý tvar": "základní tvar slovesa na -t (vařit, psát); osobu nemá"
+  },
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "cas_min": 25,
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t5-l17nb-U1",
+      "typ": "rozcvicka",
+      "cil": "Ledoborec ze společného základu: určit čas, osobu a číslo slovesa podle tvaru, i když věta láká jinam (ty a Adam, musíme, každá z dívek).",
+      "cas_min": 4,
+      "zadani": "V každé řadě odpověz na otázku k tučnému slovu.\n\nA) V úterý **poběžíme** kolem rybníka. Jaký čas?\n\nB) Ty a Adam **šetříte** na nové kolo. Jaká osoba?\n\nC) Ještě musíme **zaplatit** vstupenky. Jakou osobu má tučné slovo?\n\nD) Každá z dívek **nasbírala** plný koš hub. Jaké číslo?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "přítomný",
+                "spravne": false,
+                "typ_chyby": "cas-budouci-za-pritomny"
+              },
+              {
+                "id": "b",
+                "text": "minulý",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "budoucí",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1. osoba",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "2. osoba",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "3. osoba",
+                "spravne": false,
+                "typ_chyby": "osoba-podle-podmetu-slova"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1. osoba",
+                "spravne": false,
+                "typ_chyby": "infinitiv-urci-osobu"
+              },
+              {
+                "id": "b",
+                "text": "2. osoba",
+                "spravne": false,
+                "typ_chyby": "infinitiv-urci-osobu"
+              },
+              {
+                "id": "c",
+                "text": "3. osoba",
+                "spravne": false,
+                "typ_chyby": "infinitiv-urci-osobu"
+              },
+              {
+                "id": "d",
+                "text": "nemá osobu",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "jednotné",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "množné",
+                "spravne": false
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje čas, osobu a číslo. Rozhoduje tvar slovesa, ne to, o kom se mluví. Pasti: v řadě B se mluví o Adamovi, ale sloveso má tvar pro vy; v C stojí vedle musíme; v D je dívek víc, ale nasbírala každá zvlášť. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) V úterý poběžíme kolem rybníka.\n\nbudoucí (v úterý; poběžíme = teprve to bude)\n\n#### B) Ty a Adam šetříte na nové kolo.\n\n2. osoba (vy šetříte; ty a Adam jste vy)\n\n#### C) Ještě musíme zaplatit vstupenky.\n\nnemá osobu (zaplatit je neurčitý tvar; osobu má musíme)\n\n#### D) Každá z dívek nasbírala plný koš hub.\n\njednotné (ona nasbírala; každá zvlášť)\n\n**Výsledek:** A) budoucí, B) 2. osoba, C) nemá osobu, D) jednotné",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Děje se to teď, už se to stalo, nebo to teprve bude? Které slovo ve větě ti to napoví?“"
+          },
+          {
+            "k": "B",
+            "text": "„Dosaď před sloveso já, ty, on, my, vy, nebo oni. Se kterým zní šetříte správně?“"
+          },
+          {
+            "k": "C a D",
+            "text": "„Jde říct on zaplatit? A u řady D: řekni před nasbírala ona, nebo ony. Co sedí?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč v řadě B není 3. osoba, když se ve větě mluví o Adamovi.“",
+        "otocena_role_odpoved": "Osobu poznám podle tvaru slovesa: šetříte jde jen s vy. Ty a Adam jste dva, to je vy, takže 2. osoba.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V řadě B vybere 3. osobu kvůli Adamovi. Zeptejte se: „Řekneš on šetříte, nebo vy šetříte?“ V řadě C osobu: „Jde říct on zaplatit?“ V A přítomný: „Běží se teď, nebo v úterý?“ V D množné: „Nasbírala to každá sama?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — čas, osoba i číslo sedí. Pochvalte, že dítě dosazovalo já, ty, on, my, vy nahlas, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti tři věty: „Ty a Lucka kreslíte pěkně.“ „Zítra poletím domů.“ „Chci odpočívat.“ U první řekne osobu, u druhé čas a u třetí, jestli má odpočívat osobu. Kontrola pro vás: kreslíte = 2. osoba (vy kreslíte); poletím = budoucí čas; odpočívat osobu nemá (nejde říct on odpočívat).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše pod sebe já, ty, on, my, vy, oni a ke každému tvar slovesa běžet (já běžím…). Pak řekněte „Ty a Klára běžíte.“ a dítě ukáže řádek, kam to patří. Potom zopakujte lekci „Slovesný způsob a tvary bychom, byste“. Kontrola pro vás: běžím, běžíš, běží, běžíme, běžíte, běží; běžíte patří k vy."
+      },
+      "tisk": {
+        "zadani": "V každé řadě zakroužkuj odpověď.\n\nA) V úterý **poběžíme** kolem rybníka. Jaký čas? a) přítomný b) minulý c) budoucí\n\nB) Ty a Adam **šetříte** na nové kolo. Jaká osoba? a) 1. osoba b) 2. osoba c) 3. osoba\n\nC) Ještě musíme **zaplatit** vstupenky. Jakou osobu má tučné slovo? a) 1. osoba b) 2. osoba c) 3. osoba d) nemá osobu\n\nD) Každá z dívek **nasbírala** plný koš hub. Jaké číslo? a) jednotné b) množné"
+      }
+    },
+    {
+      "id": "cj-t5-l17nb-U2",
+      "typ": "nova",
+      "cil": "Určit způsob slovesa v šesti větách: rozkaz se záporem, zdvořilá prosba s bys, bylo, které jen začíná na by, by u slovesa a otázka bez by.",
+      "cas_min": 5,
+      "zadani": "Urči způsob tučného slovesa.\n\nA) **Nesněz** všechny sušenky!\n\nB) **Naučila bys** nás ten tanec?\n\nC) Ráno **bylo** v lese ticho.\n\nD) **Rozdejte** karty!\n\nE) Lucka **by požádala** trenéra o radu.\n\nF) **Vzpomeneš** si zítra na úkol?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Věta A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "oznamovací",
+                "spravne": false,
+                "typ_chyby": "zpusob-rozkaz-za-oznam"
+              },
+              {
+                "id": "b",
+                "text": "rozkazovací",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "podmiňovací",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Věta B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "oznamovací",
+                "spravne": false,
+                "typ_chyby": "zpusob-podmin-za-oznam"
+              },
+              {
+                "id": "b",
+                "text": "rozkazovací",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "podmiňovací",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Věta C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "oznamovací",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "rozkazovací",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "podmiňovací",
+                "spravne": false,
+                "typ_chyby": "zpusob-byl-za-podminovaci"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k4",
+          "popisek": "Věta D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "oznamovací",
+                "spravne": false,
+                "typ_chyby": "zpusob-rozkaz-za-oznam"
+              },
+              {
+                "id": "b",
+                "text": "rozkazovací",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "podmiňovací",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k5",
+          "popisek": "Věta E",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "oznamovací",
+                "spravne": false,
+                "typ_chyby": "zpusob-podmin-za-oznam"
+              },
+              {
+                "id": "b",
+                "text": "rozkazovací",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "podmiňovací",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Věta F",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "oznamovací",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "rozkazovací",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "podmiňovací",
+                "spravne": false
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Šest vět, u každé stejné tři možnosti. Pasti: rozkaz se záporem (Nesněz), zdvořilá prosba s bys, bylo, které jen začíná na by, a otázka bez by, která pořád jen oznamuje. Rozhoduje, jestli sloveso přikazuje a jestli je u něj samostatné by, bys.",
+        "reseni": "A) Nesněz všechny sušenky! — rozkazovací (přikazuje, i se záporem)\n\nB) Naučila bys nás ten tanec? — podmiňovací (je tam bys: zdvořilá prosba)\n\nC) Ráno bylo v lese ticho. — oznamovací (oznamuje, co bylo; bylo není by)\n\nD) Rozdejte karty! — rozkazovací (přikazuje)\n\nE) Lucka by požádala trenéra o radu. — podmiňovací (je tam by)\n\nF) Vzpomeneš si zítra na úkol? — oznamovací (ptá se, nepřikazuje; by tam není)\n\n**Výsledek:** A rozkazovací, B podmiňovací, C oznamovací, D rozkazovací, E podmiňovací, F oznamovací",
+        "otazky": [
+          "„Jaké tři způsoby slovesa znáš? Řekni u každého, co sloveso dělá.“",
+          "„Vezmi jednu větu po druhé. Někdo tu jen říká, co se děje, nebo někomu něco přikazuje?“",
+          "„Hledej u každého slovesa samostatné malé slovo by nebo bys. Slovo, které na by jen začíná, se nepočítá.“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč je věta ‚Vzpomeneš si zítra na úkol?‘ oznamovací, i když je to otázka.“",
+        "otocena_role_odpoved": "Nikomu nic nepřikazuje a není v ní samostatné by. Jen se ptá, co bude. Kdyby tam bylo by, třeba Naučil bys…, byla by podmiňovací.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U B nebo E vybere oznamovací, protože jde o prosbu. Zeptejte se: „Je u slovesa samostatné by, bys?“ U C podmiňovací: „Je bylo samostatné by?“ U A nebo D oznamovací: „Přikazuje to?“ U F rozkazovací: „Přikazuje to, nebo se ptá?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — všech šest způsobů sedí. Pochvalte, že dítě hledalo samostatné by a poznalo i rozkaz se záporem, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti tři věty: „Nezlob!“ „Podržel bys mi dveře?“ „Bylo tam prázdno.“ U každé řekne, jestli oznamuje, přikazuje, nebo říká, co by bylo. Kontrola pro vás: Nezlob = přikazuje (rozkazovací); Podržel bys = co by bylo (podmiňovací, je tam bys); Bylo = oznamuje (oznamovací, není to by).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: tři lístky papíru a tužku. Zítra ať dítě napíše na lístky OZNAMUJE, PŘIKAZUJE, BY. Řekněte mu větu („Nesahej na to!“, „Bylo to snadné.“, „Uklidil bys pokoj?“) a dítě zvedne správný lístek. Potom zopakujte lekci „Slovesný způsob a tvary bychom, byste“. Kontrola pro vás: Nesahej = přikazuje; Bylo = oznamuje (není to by); Uklidil bys = BY (podmiňovací)."
+      },
+      "tisk": {
+        "zadani": "Urči způsob tučného slovesa. U každé věty zakroužkuj: a) oznamovací b) rozkazovací c) podmiňovací\n\nA) **Nesněz** všechny sušenky!\n\nB) **Naučila bys** nás ten tanec?\n\nC) Ráno **bylo** v lese ticho.\n\nD) **Rozdejte** karty!\n\nE) Lucka **by požádala** trenéra o radu.\n\nF) **Vzpomeneš** si zítra na úkol?"
+      }
+    },
+    {
+      "id": "cj-t5-l17nb-U3",
+      "typ": "nova",
+      "cil": "Poznat sluchem v delší nahrávce hovorové bysme vedle spisovného byste, určit způsob slovesa s by a vybrat spisovný tvar.",
+      "cas_min": 5,
+      "zadani": "Poslechni si nahrávku. Pak odpověz na tři otázky. Nahrávku si můžeš pustit, kolikrát chceš.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Otázka 1",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t5/l17nb-u3.mp3",
+            "prepis": "Kdyby v neděli nepršelo, udělali bysme si piknik. Sešli byste se s námi u rybníka?",
+            "max_prehrani": 0,
+            "otazka": "Které slovo z nahrávky se v písemce napíše jinak?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "Kdyby",
+                  "spravne": false
+                },
+                {
+                  "id": "b",
+                  "text": "bysme",
+                  "spravne": true
+                },
+                {
+                  "id": "c",
+                  "text": "byste",
+                  "spravne": false,
+                  "typ_chyby": "by-jsem-za-bych"
+                },
+                {
+                  "id": "d",
+                  "text": "piknik",
+                  "spravne": false
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Otázka 2",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t5/l17nb-u3.mp3",
+            "prepis": "Kdyby v neděli nepršelo, udělali bysme si piknik. Sešli byste se s námi u rybníka?",
+            "max_prehrani": 0,
+            "otazka": "Jaký způsob má sloveso „Sešli“ z nahrávky?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "oznamovací",
+                  "spravne": false,
+                  "typ_chyby": "zpusob-podmin-za-oznam"
+                },
+                {
+                  "id": "b",
+                  "text": "rozkazovací",
+                  "spravne": false
+                },
+                {
+                  "id": "c",
+                  "text": "podmiňovací",
+                  "spravne": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Otázka 3",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t5/l17nb-u3.mp3",
+            "prepis": "Kdyby v neděli nepršelo, udělali bysme si piknik. Sešli byste se s námi u rybníka?",
+            "max_prehrani": 0,
+            "otazka": "Jak se napíše v písemce slovo z otázky 1?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "bychom",
+                  "spravne": true
+                },
+                {
+                  "id": "b",
+                  "text": "by jsme",
+                  "spravne": false,
+                  "typ_chyby": "by-jsme-za-bychom"
+                },
+                {
+                  "id": "c",
+                  "text": "bysme",
+                  "spravne": false,
+                  "typ_chyby": "bysme-za-bychom"
+                },
+                {
+                  "id": "d",
+                  "text": "byste",
+                  "spravne": false
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě nahrávku jen slyší, text nevidí. Co zazní, máte sbalené pod „Co zazní v nahrávce“; nahlas to nečtěte. Jsou v ní dva tvary s by: jeden hovorový, jak se mluví mezi kamarády, a jeden spisovný. Dítě má poznat ten hovorový, určit způsob slovesa s by a vybrat, jak se napíše.",
+        "reseni": "Otázka 1: bysme (tak se jen mluví; byste je správně: vy byste)\n\nOtázka 2: podmiňovací (Sešli byste: je tam byste, co by bylo)\n\nOtázka 3: bychom (my bychom; by jsme je chyba, byste patří k vy)\n\n**Výsledek:** 1. bysme, 2. podmiňovací, 3. bychom",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Co se v nahrávce plánuje a na co se ptají? Řekni to vlastními slovy.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Pusť si nahrávku ještě jednou a hlídej slova s by. Které z nich se takhle říká jen mezi kamarády?“"
+          },
+          {
+            "k": "Krok 2 a 3",
+            "text": "„Je u slovesa Sešli samostatné by? Pak řekni celou řadu od já až po oni. Je každý tvar jedno slovo?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč je v nahrávce byste dobře a bysme ne.“",
+        "otocena_role_odpoved": "Byste patří k vy a v řadě je: vy byste. U my je v řadě bychom, bysme se jen říká. Obojí je jedno slovo.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 vybere byste: „Jak zní řada u vy?“ (Byste je správně.) V kroku 2 oznamovací: „Je u Sešli samostatné by?“ V kroku 3 by jsme: „Jedno slovo, nebo dvě?“ Bysme: „Jak to zní v řadě?“ Byste: „Kdo by dělal piknik: my, nebo vy?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — dítě hovorový tvar slyší i opraví. Pochvalte, že si řeklo řadu bych, bys, by, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti dvě věty: „Kam bysme šli?“ „Co by jste chtěli?“ Dítě řekne, jak se obě napíšou v písemce. Kontrola pro vás: Kam bychom šli? Co byste chtěli? (bychom i byste jsou jedno slovo; bysme se jen říká, by jste je chyba)",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: šest lístků papíru a tužku. Zítra ať dítě napíše na lístky bych, bys, by, bychom, byste, by. Vy říkáte já, ty, on, my, vy, oni v různém pořadí a dítě ukáže správný lístek. Potom zopakujte lekci „Slovesný způsob a tvary bychom, byste“. Kontrola pro vás: já bych, ty bys, on by, my bychom, vy byste, oni by (vždy jedno slovo)."
+      },
+      "tisk": {
+        "zadani": "Poslouchej nahrávku (pustí rodič). Můžeš si ji pustit, kolikrát chceš. Pak zakroužkuj odpovědi.\n\n1. Které slovo z nahrávky se v písemce napíše jinak? — a) Kdyby b) bysme c) byste d) piknik\n\n2. Jaký způsob má sloveso „Sešli“ z nahrávky? — a) oznamovací b) rozkazovací c) podmiňovací\n\n3. Jak se napíše v písemce slovo z otázky 1? — a) bychom b) by jsme c) bysme d) byste"
+      }
+    },
+    {
+      "id": "cj-t5-l17nb-U4",
+      "typ": "detektiv",
+      "cil": "Najít u spolužáka chybné by jsem mezi správnými tvary s by (abyste, bychom, by) a opravit ho na bych.",
+      "cas_min": 5,
+      "zadani": "Petr napsal kamarádům zprávu:\n\nAbyste se v neděli nenudili, natočili bychom spolu krátký film. Ema by sháněla kostýmy a já by jsem vzal kameru.\n\nUdělal **jednu** chybu. Najdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Kde má Petr chybu?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Abyste",
+                "spravne": false,
+                "typ_chyby": "by-jsem-za-bych"
+              },
+              {
+                "id": "b",
+                "text": "natočili bychom",
+                "spravne": false,
+                "typ_chyby": "by-jsme-za-bychom"
+              },
+              {
+                "id": "c",
+                "text": "krátký film",
+                "spravne": false,
+                "typ_chyby": "detektiv-jine-slovo"
+              },
+              {
+                "id": "d",
+                "text": "Ema by",
+                "spravne": false,
+                "typ_chyby": "detektiv-jine-slovo"
+              },
+              {
+                "id": "e",
+                "text": "by jsem",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Jak to má Petr napsat?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "bych",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "bychom",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "c",
+                "text": "by",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "d",
+                "text": "byste",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Ve zprávě jsou čtyři tvary s by a jen jeden je špatně. Dítě v kroku 1 najde chybu a v kroku 2 (Jak to má Petr napsat?) vybere opravu. Chyba je až na konci a před ní stojí podobné správné tvary. Past: kdo si myslí, že se píše aby jste nebo by jsme, označí správné slovo.",
+        "reseni": "Chyba je „by jsem“: spisovně bych, jedním slovem.\n\nAbyste (správně: vy byste, abyste)\n\nnatočili bychom (správně: my bychom)\n\nEma by (správně: ona by)\n\nby jsem → bych (já bych; by jsem je chyba)\n\n**Výsledek:** krok 1 by jsem, krok 2 bych",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Co Petr kamarádům navrhuje a kdo co udělá? Řekni to vlastními slovy.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Najdi ve zprávě všechna slova s by. Ke každému řekni, kdo to je: já, ty, ona, my, nebo vy.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Řekni celou řadu tvarů s by od já až po oni. Které Petrovo slovo s by s řadou nesedí?“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a jak si ji příště ohlídám.“",
+        "otocena_role_odpoved": "Napsal jsi by jsem, ale správně je bych, jedním slovem. Abyste, bychom i Ema by máš dobře. Příště si řekni řadu: bych, bys, by, bychom, byste, by.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 vybere „Abyste“ nebo „natočili bychom“, protože čeká jste, jsme. Zeptejte se: „Jedno slovo, nebo dvě? Řekni řadu.“ (Obojí je správně.) Vybere jiné slovo: „Kde je by?“ V kroku 2 bychom, by nebo byste: „Kdo vezme kameru?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — chyba nalezená i opravená. Pochvalte, že dítě prošlo všechna slova s by, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr napsal: Kdyby jsi měl čas, ukázal by jsem ti nový trik.“ Zeptejte se: „Co Petr napsal špatně a jak to opravíš?“ Kontrola pro vás: Kdybys měl čas, ukázal bych ti nový trik (kdybys i bych jsou jedno slovo; by jsi a by jsem jsou chyba).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše tři věty: „Já bych to zkusil.“, „Ty bys to zkusil.“, „Vy byste to zkusili.“ Pak u každého slova s by řekne, ke komu patří. Potom zopakujte lekci „Slovesný způsob a tvary bychom, byste“. Kontrola pro vás: bych patří k já, bys k ty, byste k vy; všechna jsou jedno slovo."
+      },
+      "tisk": {
+        "zadani": "Petr napsal kamarádům zprávu:\n\nAbyste se v neděli nenudili, natočili bychom spolu krátký film. Ema by sháněla kostýmy a já by jsem vzal kameru.\n\nUdělal jednu chybu.\n\nA) Kde má Petr chybu? Zakroužkuj: a) Abyste b) natočili bychom c) krátký film d) Ema by e) by jsem\n\nB) Jak to má Petr napsat? Zakroužkuj: a) bych b) bychom c) by d) byste"
+      }
+    },
+    {
+      "id": "cj-t5-l17nb-U5",
+      "typ": "kontrolni",
+      "cil": "Samostatně doplnit pět spisovných tvarů s by (byste, bys, bychom, bych) a určit způsob osmi sloves v textu, i když by stojí daleko od slovesa.",
+      "cas_min": 6,
+      "zadani": "Doplň do zprávy správná slova. Potom u každého označeného slovesa urči způsob.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Doplň slova",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Vyzdobili _ s námi v pátek třídu? Kláro, vyrobila _ pozvánky? My _ zatím vynesli odpadky. Já _ ještě umyla nádobí. Zatancovali _ si potom s námi?",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "by jste",
+                  "byste"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "by jsi",
+                  "bys"
+                ]
+              },
+              {
+                "i": 2,
+                "moznosti": [
+                  "bysme",
+                  "bychom",
+                  "by jsme"
+                ]
+              },
+              {
+                "i": 3,
+                "moznosti": [
+                  "by jsem",
+                  "bych"
+                ]
+              },
+              {
+                "i": 4,
+                "moznosti": [
+                  "byste",
+                  "by jste"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "byste",
+            "bys",
+            "bychom",
+            "bych",
+            "byste"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "by jste",
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "by-jsem-za-bych"
+            },
+            {
+              "hodnota": [
+                null,
+                "by jsi",
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "by-jsem-za-bych"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                "bysme",
+                null,
+                null
+              ],
+              "typ_chyby": "bysme-za-bychom"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                "by jsme",
+                null,
+                null
+              ],
+              "typ_chyby": "by-jsme-za-bychom"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Ema byla celé dopoledne v knihovně. Teď sedí na lavičce a zívá. Lucka by odpoledne ještě ráda hladila koně. Zrychli trochu! Já tam na tebe počkám. Slepil bys tu vázu? Obejmi babičku!",
+            "slova": [
+              1,
+              7,
+              11,
+              17,
+              19,
+              25,
+              26,
+              30
+            ],
+            "role": [
+              "oznamovací",
+              "rozkazovací",
+              "podmiňovací"
+            ]
+          },
+          "spravne": {
+            "1": "oznamovací",
+            "7": "oznamovací",
+            "11": "oznamovací",
+            "17": "podmiňovací",
+            "19": "rozkazovací",
+            "25": "oznamovací",
+            "26": "podmiňovací",
+            "30": "rozkazovací"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "1": "podmiňovací"
+              },
+              "typ_chyby": "zpusob-byl-za-podminovaci"
+            },
+            {
+              "hodnota": {
+                "19": "oznamovací",
+                "30": "oznamovací"
+              },
+              "typ_chyby": "zpusob-rozkaz-za-oznam"
+            },
+            {
+              "hodnota": {
+                "17": "oznamovací",
+                "26": "oznamovací"
+              },
+              "typ_chyby": "zpusob-podmin-za-oznam"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Krok 1: pět mezer, do každé spisovný tvar s by. Krok 2: osm sloves, u každého způsob. Pasti: byla jen začíná na by; u hladila stojí by o čtyři slova dřív; počkám je oznamovací.",
+        "reseni": "Krok 1: Vyzdobili byste s námi v pátek třídu? Kláro, vyrobila bys pozvánky? My bychom zatím vynesli odpadky. Já bych ještě umyla nádobí. Zatancovali byste si potom s námi? (vždy jedno slovo)\n\nbyla, sedí, zívá, počkám: oznamovací (oznamují; byla není by)\n\nhladila (Lucka by … hladila), Slepil (bys): podmiňovací (je u nich by)\n\nZrychli, Obejmi: rozkazovací (vyzývají)\n\n**Výsledek:** krok 1 byste, bys, bychom, bych, byste; krok 2 byla, sedí, zívá a počkám oznamovací, hladila a Slepil podmiňovací, Zrychli a Obejmi rozkazovací",
+        "otazky": [
+          "„Řekni mi vlastními slovy, jak poznáš každý ze tří způsobů slovesa.“",
+          "„U každého označeného slovesa se zeptej: přikazuje? Je někde ve stejné větě samostatné by nebo bys?“",
+          "„Řekni celou řadu tvarů s by od já až po oni. Kdo v každé větě zprávy mluví nebo něco dělá?“"
+        ],
+        "otocena_role": "„Najdi v textu sloveso, u kterého je by schované o kus dál. Dokaž mi, že je podmiňovací.“",
+        "otocena_role_odpoved": "Hladila. Na začátku věty je Lucka by a sloveso je až na konci: Lucka by hladila. Je tam samostatné by, takže podmiňovací.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: v kroku 1 dvě slova (by jste, by jsem…): „Jedno slovo, nebo dvě?“ Bysme: „Jak zní řada?“ V kroku 2 byla jako podmiňovací: „Je to samostatné by?“ Hladila, Slepil jako oznamovací: „Je ve větě by?“ Zrychli, Obejmi: „Vyzývá to?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — tvary s by i způsoby sedí. Pochvalte, že dítě hledalo by v celé větě. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Ema by si ráda zahrála. Bylo teplo. Zhasni!“ U každého slovesa řekne způsob. Pak řekne řadu já bych … oni by. Kontrola pro vás: zahrála = podmiňovací (Ema by), Bylo = oznamovací (není to by), Zhasni = rozkazovací; bych, bys, by, bychom, byste, by.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír, tužku a tři pastelky. Zítra ať dítě napíše „Tomáš byl venku. Sedni si! Klára by ještě chvíli četla.“ a slovesa podtrhne: oznamuje modře, přikazuje červeně, s by zeleně. Potom zopakujte lekci „Slovesný způsob a tvary bychom, byste“. Kontrola pro vás: byl modře (oznamuje, není to by), Sedni červeně (přikazuje), četla zeleně (Klára by četla)."
+      },
+      "tisk": {
+        "zadani": "A) Doplň slova. Nabídka: 1. by jste, byste; 2. by jsi, bys; 3. bysme, bychom, by jsme; 4. by jsem, bych; 5. byste, by jste.\n\nVyzdobili ___ s námi v pátek třídu? Kláro, vyrobila ___ pozvánky? My ___ zatím vynesli odpadky. Já ___ ještě umyla nádobí. Zatancovali ___ si potom s námi?\n\nB) Nad každé tučné sloveso napiš způsob: **o** = oznamovací, **r** = rozkazovací, **p** = podmiňovací.\n\nEma **byla** celé dopoledne v knihovně. Teď **sedí** na lavičce a **zívá**. Lucka by odpoledne ještě ráda **hladila** koně. **Zrychli** trochu! Já tam na tebe **počkám**. **Slepil** bys tu vázu? **Obejmi** babičku!"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "B-varianta naostro lekce cj-t5-l17n (opakování po červené, ZADANI-OSMA §9 bod 4), autor 14. 10. 2026. Struktura 1:1 s cj-t5-l17n: rozcvička 4 dlaždice se stejnými kódy, způsob v 6 větách (rozkaz se záporem, zdvořilá prosba s bys, bylo, otázka bez by), poslech se 2 tvary s by a 3 otázkami, detektiv s 5 možnostmi a chybou na konci (abyste místo kdybyste, stejný kód), kontrolní 5 mezer se stejnou nabídkou + 8 sloves se stejnými indexy rolí kromě posledních (by čtyři slova před slovesem). Hodnocená slova a věty nejsou z cj-t5-l17 … l20, l17n … l20n, l17b … l20b, cj-t0-diag ani cj-t0-pol (kontrolováno skriptem); opakují se jen tvary s by a tvary být. Ověřeno v ÚJČ (nastroje/ujc.sh): id=575 (bych, bys, by, bychom, byste, abyste, kdyby; bysme jen neformální mluva; by jsme, by jste chybné); běžet (bud. poběžím, poběžíme), šetřit (šetříte), zaplatit, nasbírat dok. (nasbírala), sníst (rozk. sněz), naučit (naučila), rozdat (rozk. rozdejte), požádat, vzpomenout (vzpomeneš; příčestí vzpomněl/vzpomenul se nepoužívá), pršet, udělat, sejít se (sešli), natočit, shánět, vzít (vzal), sedět (sedí), zívat (zívá), hladit (hladila), zrychlit (rozk. zrychli), počkat (počkám), slepit (slepil), obejmout (rozk. obejmi; příčestí objal/obejmul se nepoužívá). Vyřazeno po ověření: nasypat (rozk. nasyp/nasypej, nasypte/nasypejte = dubleta), stát (heslo se v příručce nenačetlo jednoznačně) → sedí. Nahrávka t5/l17nb-u3 záměrně hovorová (bysme), řádek v rozpisu TEMA-5-B.md (oddíl B-varianty naostro lekcí). Jazykový korektor 14. 10. 2026, nezávisle na autorovi: každý hodnocený tvar (dlaždice, mezery složené se vzorovou odpovědí, role, přepisy nahrávek, diktát, známé chyby) znovu přes nastroje/ujc.sh (tabulky tvarů, vid podle SSČ, id=575); indexy přepočítány (tokenizuj); vyhodnotKrok: vzor každého kroku správně, každá chybná volba a známá chyba vrací svůj kód; otázky taháku bez rodu a bez prozrazení (vzor jako naostro lekce); limity SABLONA §4. Opraveno: slovníček „neurčitý tvar“ (vařit, plavat) → (vařit, psát) (plavat v tématu 5 nepoužívat). Jazykové chyby v hodnocených místech: 0. Ověřeno beze změny: hovorové bysme jen v nahrávce a jako chybná volba (bysme-za-bychom), nikdy jako správný tvar; poběžíme (běžet, bud. poběžím) jen k určení času; rozk. sněz, rozdejte, zrychli, obejmi a příč. sešli, nepršelo, udělali, hladila, slepil jediné podoby.",
+    "zkontroloval": "korektor",
+    "datum": "2026-10-14",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?id=575",
+      "https://prirucka.ujc.cas.cz/?slovo=b%C4%9B%C5%BEet",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1et%C5%99it",
+      "https://prirucka.ujc.cas.cz/?slovo=zaplatit",
+      "https://prirucka.ujc.cas.cz/?slovo=nasb%C3%ADrat",
+      "https://prirucka.ujc.cas.cz/?slovo=sn%C3%ADst",
+      "https://prirucka.ujc.cas.cz/?slovo=nau%C4%8Dit",
+      "https://prirucka.ujc.cas.cz/?slovo=rozdat",
+      "https://prirucka.ujc.cas.cz/?slovo=po%C5%BE%C3%A1dat",
+      "https://prirucka.ujc.cas.cz/?slovo=vzpomenout",
+      "https://prirucka.ujc.cas.cz/?slovo=pr%C5%A1et",
+      "https://prirucka.ujc.cas.cz/?slovo=ud%C4%9Blat",
+      "https://prirucka.ujc.cas.cz/?slovo=piknik",
+      "https://prirucka.ujc.cas.cz/?slovo=sej%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=nato%C4%8Dit",
+      "https://prirucka.ujc.cas.cz/?slovo=sh%C3%A1n%C4%9Bt",
+      "https://prirucka.ujc.cas.cz/?slovo=vz%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=sed%C4%9Bt",
+      "https://prirucka.ujc.cas.cz/?slovo=z%C3%ADvat",
+      "https://prirucka.ujc.cas.cz/?slovo=hladit",
+      "https://prirucka.ujc.cas.cz/?slovo=zrychlit",
+      "https://prirucka.ujc.cas.cz/?slovo=po%C4%8Dkat",
+      "https://prirucka.ujc.cas.cz/?slovo=slepit",
+      "https://prirucka.ujc.cas.cz/?slovo=obejmout",
+      "https://prirucka.ujc.cas.cz/?slovo=um%C3%BDt",
+      "https://prirucka.ujc.cas.cz/?slovo=b%C3%BDt",
+      "https://prirucka.ujc.cas.cz/?slovo=Kl%C3%A1ra",
+      "https://prirucka.ujc.cas.cz/?slovo=Lucka",
+      "https://prirucka.ujc.cas.cz/?slovo=Adam"
+    ],
+    "testovaci_rodic": null
+  }
+}
