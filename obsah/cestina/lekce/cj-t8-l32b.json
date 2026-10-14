@@ -1,0 +1,718 @@
+{
+  "id": "cj-t8-l32b",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 8,
+  "poradi": 4,
+  "tema": "Kontrola tématu: větné členy",
+  "kapitola": "vetne-cleny",
+  "cil_pro_rodice": "Dítě v krátkém textu samo určí podmět, přísudek, předmět, příslovečné určení a přívlastek otázkou od slova, ke kterému člen patří, a zapíše krátký diktát.",
+  "uvod_pro_rodice": "Opakování po červeném semaforu: stejná kontrola tématu „Větné členy“ s jinými větami a jiným diktátem, aby dítě znovu určilo všechny větné členy tématu.",
+  "uvod_pravidla": [
+    {
+      "znak": "Ptám se od slova, ke kterému patří",
+      "text": "co to je"
+    },
+    {
+      "znak": "pádová otázka → předmět",
+      "text": "test"
+    },
+    {
+      "znak": "kde, kdy, jak, proč → PU",
+      "text": "příklad"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "podmět a přísudek": "kdo nebo co něco dělá nebo jaké je (podmět) a co dělá, kdo či jaký je (přísudek); jmenný přísudek se sponou má dvě slova (byla dlouhá)",
+    "předmět": "ptáme se od slovesa pádovou otázkou (poslal komu? co?)",
+    "příslovečné určení (PU)": "okolnost děje; od slovesa kde? (místa), kdy? (času), jak? (způsobu), proč? (příčiny)",
+    "přívlastek shodný": "popisuje jméno a mění s ním tvar (malý pes – bez malého psa)",
+    "přívlastek neshodný": "popisuje jméno a tvar se nemění (pes sousedky – bez psa sousedky; dívka u okna)",
+    "diktát": "dítě píše věty podle nahrávky; aplikace porovná slova, čárky a velká písmena nehodnotí"
+  },
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "cas_min": 25,
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t8-l32b-U1",
+      "typ": "rozcvicka",
+      "cil": "Zopakovat lekce 29–31: druh přísudku, předmět × příslovečné určení, druh určení, přívlastek shodný × neshodný.",
+      "cas_min": 4,
+      "zadani": "A) Tomáš byl na horách. Jaký je přísudek?\n\nB) Ema se děsí **tmy**. Jaký větný člen je tučné slovo?\n\nC) Klára tančila **ladně**. Jaký větný člen je tučné slovo?\n\nD) Taška **spolužačky** je modrá. Jaký větný člen je tučné slovo?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "slovesný",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "jmenný se sponou",
+                "spravne": false,
+                "typ_chyby": "prisudek-slovesny-za-jmenny"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "předmět",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "příslovečné určení příčiny",
+                "spravne": false,
+                "typ_chyby": "predmet-za-pu"
+              },
+              {
+                "id": "c",
+                "text": "podmět",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "příslovečné určení místa",
+                "spravne": false,
+                "typ_chyby": "pu-druh-zamena"
+              },
+              {
+                "id": "b",
+                "text": "příslovečné určení času",
+                "spravne": false,
+                "typ_chyby": "pu-druh-zamena"
+              },
+              {
+                "id": "c",
+                "text": "příslovečné určení způsobu",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "příslovečné určení příčiny",
+                "spravne": false,
+                "typ_chyby": "pu-druh-zamena"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "přívlastek shodný",
+                "spravne": false,
+                "typ_chyby": "privlastek-shoda-zamena"
+              },
+              {
+                "id": "b",
+                "text": "přívlastek neshodný",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "předmět",
+                "spravne": false
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje tři lekce tématu: řada A druh přísudku, řada B předmět a příslovečné určení, řada C druh určení, řada D přívlastek. Nabídky se v řadách liší. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) Tomáš byl na horách.\n\nslovesný (kde Tomáš byl? na horách; neříká, jaký Tomáš je)\n\n#### B) Ema se děsí tmy.\n\npředmět (děsí se koho, čeho? tmy)\n\n#### C) Klára tančila ladně.\n\npříslovečné určení způsobu (jak tančila?)\n\n#### D) Taška spolužačky je modrá.\n\npřívlastek neshodný (čí taška? spolužačky; bez tašky spolužačky, spolužačky se nemění)\n\n**Výsledek:** A slovesný, B předmět, C způsobu, D přívlastek neshodný",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Zeptej se od slova byl: kde Tomáš byl? A jaký byl? Na co věta odpovídá?“"
+          },
+          {
+            "k": "B a C",
+            "text": "„Polož k tučnému slovu od slovesa otázky kde? kdy? jak? proč? Když žádná nesedí, zkus pádovou otázku.“"
+          },
+          {
+            "k": "D",
+            "text": "„Ke kterému slovu patří spolužačky? Řekni to spojení s bez na začátku. Jak teď zní slovo spolužačky?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, jak poznáš, že ‚tmy‘ je předmět.“",
+        "otocena_role_odpoved": "Zeptám se od slovesa: děsí se koho, čeho? Tmy. To je pádová otázka, takže předmět. Na proč to neodpovídá.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V řadě A vybere „jmenný“: „Kde Tomáš byl?“ V B „příčiny“ nebo „podmět“: „Kdo se děsí? Děsí se čeho?“ V C jiný druh: „Polož otázky kde, kdy, jak, proč.“ V D „shodný“ nebo „předmět“: „Řekni bez tašky spolužačky. Změnilo se spolužačky?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — všechny tři lekce tématu drží. Pochvalte, že dítě vždy hledalo otázku, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti větu: „Adam byl u moře.“ a potom „Lucka se bojí psů.“ Dítě řekne, jaký je přísudek v první větě a jaký člen je psů. Kontrola pro vás: byl u moře = slovesný (kde byl); psů = předmět (bojí se koho?).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše větu Kolo mého bratrance stojí venku. Ke slovům bratrance a venku napíše otázku, kterou se na ně ptá, a od kterého slova se ptá. Potom zopakujte lekci „Kontrola tématu: větné členy“. Kontrola pro vás: bratrance: čí kolo? (od jména, přívlastek neshodný); venku: kde stojí? (od slovesa, určení místa)."
+      },
+      "tisk": {
+        "zadani": "A) Tomáš byl na horách. Jaký je přísudek? Zakroužkuj: a) slovesný b) jmenný se sponou\n\nB) Ema se děsí **tmy**. Zakroužkuj: a) předmět b) příslovečné určení příčiny c) podmět\n\nC) Klára tančila **ladně**. Zakroužkuj: a) příslovečné určení místa b) příslovečné určení času c) příslovečné určení způsobu d) příslovečné určení příčiny\n\nD) Taška **spolužačky** je modrá. Zakroužkuj: a) přívlastek shodný b) přívlastek neshodný c) předmět"
+      }
+    },
+    {
+      "id": "cj-t8-l32b-U2",
+      "typ": "nova",
+      "cil": "Samostatně určit podmět, přísudek (i jmenný se sponou) a předmět u všech slov dvou vět.",
+      "cas_min": 5,
+      "zadani": "U každého označeného slova vyber, jaký je to větný člen.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Lucka ukázala Tomášovi fotku. Fotka byla vtipná.",
+            "slova": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "role": [
+              "podmět",
+              "přísudek",
+              "předmět"
+            ]
+          },
+          "spravne": {
+            "0": "podmět",
+            "1": "přísudek",
+            "2": "předmět",
+            "3": "předmět",
+            "4": "podmět",
+            "5": "přísudek",
+            "6": "přísudek"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "2": "podmět",
+                "3": "podmět"
+              },
+              "typ_chyby": "podmet-za-predmet"
+            },
+            {
+              "hodnota": {
+                "6": "předmět"
+              },
+              "typ_chyby": "prisudek-jmenny-jen-spona"
+            },
+            {
+              "hodnota": {
+                "0": "přísudek",
+                "1": "podmět"
+              },
+              "typ_chyby": "podmet-prisudek-zamena"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě určí každé slovo dvou krátkých vět; nabídka má jen tři členy. Předměty jsou v první větě dva (ukázala komu? co?). U jmenného přísudku dostanou volbu přísudek obě slova (byla vtipná). Past: „Fotka“ je ve druhé větě podmět, i když v první větě byla předmětem.",
+        "reseni": "Lucka: podmět (kdo ukázal?)\n\nukázala: přísudek\n\nTomášovi: předmět (ukázala komu?)\n\nfotku: předmět (ukázala co?)\n\nFotka: podmět (co bylo vtipné?)\n\nbyla vtipná: přísudek, jmenný se sponou (jaká fotka byla?)\n\n**Výsledek:** podmět Lucka, Fotka; přísudek ukázala, byla, vtipná; předmět Tomášovi, fotku",
+        "otazky": [
+          "„Jak poznáš podmět, přísudek a předmět? Řekni to vlastními slovy.“",
+          "„Vezmi slovo Tomášovi. Zeptej se od slovesa: kdo ukázal? A ukázala komu? Na kterou otázku odpovídá?“",
+          "„Ve druhé větě se zeptej: co bylo vtipné? A jaká fotka byla? Která slova odpovídají?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč je fotka jednou předmět a jednou podmět.“",
+        "otocena_role_odpoved": "V první větě fotku ukázala Lucka: ukázala co? Fotku, to je předmět. Ve druhé větě se ptám: co bylo vtipné? Fotka, ta je podmět.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. „Tomášovi“ nebo „fotku“ jako podmět. Zeptejte se: „Kdo ukázal? A ukázala komu, co?“ „vtipná“ jako předmět: „Jaká fotka byla? Patří to k byla?“ Prohodí „Lucka“ a „ukázala“: „Které slovo říká, co se stalo?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — podmět, přísudek i předmět sedí. Pochvalte, že se dítě ptalo od slovesa, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti dvě věty: „Klára darovala Emě knihu.“ „Kniha byla tlustá.“ Dítě u každého slova řekne podmět, přísudek, nebo předmět. Kontrola pro vás: Klára podmět, darovala přísudek, Emě a knihu předměty; Kniha podmět, byla tlustá přísudek.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tři pastelky. Zítra ať dítě napíše větu Děda dal Adamovi hodinky. Jednou barvou zakroužkuje podmět, druhou přísudek, třetí předměty. Pak se zeptá: kdo dal? komu? co? Potom zopakujte lekci „Kontrola tématu: větné členy“. Kontrola pro vás: děda podmět, dal přísudek, Adamovi a hodinky předměty."
+      },
+      "tisk": {
+        "zadani": "Nad každé tučné slovo napiš zkratku: Po = podmět, Př = přísudek, Pt = předmět.\n\n**Lucka** **ukázala** **Tomášovi** **fotku**. **Fotka** **byla** **vtipná**."
+      }
+    },
+    {
+      "id": "cj-t8-l32b-U3",
+      "typ": "nova",
+      "cil": "Rozlišit přívlastek neshodný a příslovečné určení místa u spojení s předložkou podle toho, ke kterému slovu patří.",
+      "cas_min": 5,
+      "zadani": "Jaký větný člen je tučné spojení?\n\nA) Houpačka **pod jabloní** je mokrá.\n\nB) Adam sedí **pod jabloní**.\n\nC) Kniha **o dinosaurech** leží v pokoji.\n\nD) Tomáš stojí **na chodbě**.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "A) pod jabloní",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "přívlastek neshodný",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "příslovečné určení místa",
+                "spravne": false,
+                "typ_chyby": "privlastek-neshodny-za-pu"
+              },
+              {
+                "id": "c",
+                "text": "předmět",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "B) pod jabloní",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "přívlastek neshodný",
+                "spravne": false,
+                "typ_chyby": "pu-za-privlastek"
+              },
+              {
+                "id": "b",
+                "text": "příslovečné určení místa",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "předmět",
+                "spravne": false,
+                "typ_chyby": "pu-za-predmet"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "C) o dinosaurech",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "přívlastek neshodný",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "příslovečné určení místa",
+                "spravne": false,
+                "typ_chyby": "privlastek-neshodny-za-pu"
+              },
+              {
+                "id": "c",
+                "text": "předmět",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "D) na chodbě",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "přívlastek neshodný",
+                "spravne": false,
+                "typ_chyby": "pu-za-privlastek"
+              },
+              {
+                "id": "b",
+                "text": "příslovečné určení místa",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "předmět",
+                "spravne": false,
+                "typ_chyby": "pu-za-predmet"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě u čtyř spojení s předložkou vybírá ze tří možností. Rozhoduje, ke kterému slovu spojení patří: ke jménu (která houpačka? ta pod jabloní: přívlastek neshodný), nebo ke slovesu (kde sedí? pod jabloní: příslovečné určení místa). Past: věty A a B mají stejné spojení.",
+        "reseni": "A) pod jabloní: přívlastek neshodný (která houpačka? ta pod jabloní)\n\nB) pod jabloní: příslovečné určení místa (kde Adam sedí?)\n\nC) o dinosaurech: přívlastek neshodný (jaká kniha? ta o dinosaurech)\n\nD) na chodbě: příslovečné určení místa (kde Tomáš stojí?)\n\n**Výsledek:** A přívlastek neshodný, B místa, C přívlastek neshodný, D místa",
+        "otazky": [
+          "„Jak poznáš, jestli spojení patří ke jménu, nebo ke slovesu? Řekni to vlastními slovy.“",
+          "„Ve větách A a B je stejné spojení pod jabloní. Najdi v každé z nich slovo, ke kterému patří.“",
+          "„Najdi ve větě sloveso a podstatné jméno vedle tučného spojení. Ke kterému z nich se otázka hodí?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč je pod jabloní jednou přívlastek a jednou příslovečné určení.“",
+        "otocena_role_odpoved": "Ve větě A říká, která houpačka, patří ke jménu, je to přívlastek neshodný. Ve větě B říká, kde Adam sedí, patří ke slovesu, je to příslovečné určení místa.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A nebo C vybere „místa“. Zeptejte se: „Která houpačka? Jaká kniha?“ (Patří ke jménu: přívlastek.) U B nebo D vybere „přívlastek“: „Kde sedí? Kde stojí?“ (Patří ke slovesu.) Vybere „předmět“: „Ptáš se od slovesa pádovou otázkou?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — dítě rozliší přívlastek a místo i u stejného spojení. Pochvalte, že hledalo slovo, ke kterému spojení patří, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti dvě věty: „Chata u jezera je malá.“ „Stanujeme u jezera.“ U každé řekne, jaký člen je u jezera. Kontrola pro vás: v první větě přívlastek neshodný (která chata?); ve druhé určení místa (kde stanujeme?).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše dvě věty: Kočka na gauči spí. Ema sedí na gauči. Šipkou spojí na gauči se slovem, ke kterému patří, a nad šipku napíše otázku. Potom zopakujte lekci „Kontrola tématu: větné členy“. Kontrola pro vás: v první větě patří ke kočce (která kočka? přívlastek neshodný); ve druhé k sedí (kde sedí? určení místa)."
+      },
+      "tisk": {
+        "zadani": "Jaký větný člen je tučné spojení? Zakroužkuj.\n\nA) Houpačka **pod jabloní** je mokrá.\n\nB) Adam sedí **pod jabloní**.\n\nC) Kniha **o dinosaurech** leží v pokoji.\n\nD) Tomáš stojí **na chodbě**.\n\nU každé věty: a) přívlastek neshodný b) příslovečné určení místa c) předmět"
+      }
+    },
+    {
+      "id": "cj-t8-l32b-U4",
+      "typ": "detektiv",
+      "cil": "Najít u spolužáka příslovečné určení času určené jako předmět (o přestávce: pu-za-predmet) a říct správný člen.",
+      "cas_min": 5,
+      "zadani": "Petr měl určit větné členy ve větě\n\n**O přestávce jsme v jídelně snědli svačinu.**\n\nNapsal: přestávce – předmět; jídelně – příslovečné určení místa; svačinu – předmět.\n\nUdělal **jednu** chybu. Najdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na slovo, které Petr určil špatně.",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "O přestávce jsme v jídelně snědli svačinu.",
+            "cil": "slova",
+            "min": 1,
+            "max": 1
+          },
+          "spravne": [
+            1
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                4
+              ],
+              "typ_chyby": "detektiv-jine-slovo"
+            },
+            {
+              "navic": [
+                6
+              ],
+              "typ_chyby": "detektiv-jine-slovo"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Jaký je to větný člen?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "předmět",
+                "spravne": false,
+                "typ_chyby": "pu-za-predmet"
+              },
+              {
+                "id": "b",
+                "text": "příslovečné určení místa",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "c",
+                "text": "příslovečné určení času",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "příslovečné určení způsobu",
+                "spravne": false,
+                "typ_chyby": "pu-druh-zamena"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák; hledat cizí chybu je snazší než přiznat vlastní. Určil tři slova, jedno špatně. Past: „o přestávce“ začíná předložkou o jako „mluvili o něčem“ a „snědli svačinu“ je opravdu předmět (snědli co?). „O přestávce“ ale odpovídá na kdy. V kroku 2 (Jaký je to větný člen?) dítě vybere správný člen.",
+        "reseni": "Chyba je u „přestávce“: Petr ho určil jako předmět.\n\npřestávce: příslovečné určení času (kdy jsme snědli svačinu?)\n\njídelně: příslovečné určení místa je správně (kde jsme jedli?)\n\nsvačinu: předmět je správně (snědli co?)\n\n**Výsledek:** krok 1 přestávce, krok 2 příslovečné určení času",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, jak poznáš předmět a jak příslovečné určení.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každého Petrova slova polož otázku od slovesa snědli. Sedí to, co Petr napsal?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Ke každému Petrovu slovu zkus otázky kde? kdy? a pádovou otázku koho, co? Která otázka sedí ke kterému slovu?“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a jak si ji příště ohlídám.“",
+        "otocena_role_odpoved": "O přestávce není předmět. Zeptám se: kdy jsme snědli svačinu? O přestávce, to je příslovečné určení času. Předmět je jen svačinu: snědli jsme co? Příště zkusím u každého slova kdy a kde.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 klikne na „svačinu“. Zeptejte se: „Snědli kdy? kde? Nebo co?“ (Co: předmět, Petr má dobře.) Klikne na „jídelně“: „Kde jste jedli?“ V kroku 2 vybere „předmět“, „místa“ nebo „způsobu“: „Kdy jste snědli svačinu?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — dítě našlo Petrovu chybu i správný člen. Pochvalte, že zkoušelo otázky kde, kdy i pádovou otázku, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr napsal, že ve větě O svátcích pečeme cukroví je svátcích předmět.“ Zeptejte se: „Má Petr pravdu?“ Kontrola pro vás: nemá; kdy pečeme? o svátcích = určení času. Předmět je cukroví (pečeme co?).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: dva lístky papíru, na jednom kdy?, na druhém koho, co?. Zítra řekněte dítěti větu: „O víkendu navštívil Tomáš babičku.“ Dítě položí lístek ke slovu víkendu a ke slovu babičku. Potom zopakujte lekci „Kontrola tématu: větné členy“. Kontrola pro vás: o víkendu odpovídá na kdy (určení času); babičku na koho (předmět, navštívil koho?)."
+      },
+      "tisk": {
+        "zadani": "Petr měl určit větné členy ve větě\n\nO přestávce jsme v jídelně snědli svačinu.\n\nNapsal: přestávce – předmět; jídelně – příslovečné určení místa; svačinu – předmět. Udělal jednu chybu.\n\nA) Podtrhni ve větě slovo, které Petr určil špatně.\n\nB) Jaký je to větný člen? Zakroužkuj: a) předmět b) příslovečné určení místa c) příslovečné určení času d) příslovečné určení způsobu"
+      }
+    },
+    {
+      "id": "cj-t8-l32b-U5",
+      "typ": "kontrolni",
+      "cil": "Kontrola tématu: zapsat diktát (pravopis jen ze společného základu) a samostatně určit osm větných členů v nové větě.",
+      "cas_min": 6,
+      "zadani": "Nejdřív napiš tři věty, které uslyšíš. Každou si můžeš pustit dvakrát. Potom u každého označeného slova vyber, jaký je to větný člen.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Napiš věty, které uslyšíš.",
+          "vstup": {
+            "typ": "diktat",
+            "vety": [
+              {
+                "audio": "audio/cestina/t8/l32b-d1.mp3",
+                "text": "Naše máma je kadeřnice."
+              },
+              {
+                "audio": "audio/cestina/t8/l32b-d2.mp3",
+                "text": "Ten dřevěný stůl u knihovny je hladký."
+              },
+              {
+                "audio": "audio/cestina/t8/l32b-d3.mp3",
+                "text": "Potom běžela Ema domů."
+              }
+            ],
+            "max_prehrani": 2,
+            "hodnotit_interpunkci": false,
+            "hodnotit_velikost": false
+          },
+          "spravne": null,
+          "chyby_ocekavane": [
+            {
+              "veta": 1,
+              "slovo": 1,
+              "typ_chyby": "koncovka-prid-i-za-y"
+            },
+            {
+              "veta": 1,
+              "slovo": 2,
+              "typ_chyby": "u-carka-za-krouzek"
+            },
+            {
+              "veta": 1,
+              "slovo": 4,
+              "typ_chyby": "koncovka-podst-i-za-y"
+            },
+            {
+              "veta": 1,
+              "slovo": 6,
+              "typ_chyby": "koncovka-prid-i-za-y"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Tlustý kocour vaší tety v noci na půdě chytil myš.",
+            "slova": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              7,
+              8,
+              9
+            ],
+            "role": [
+              "podmět",
+              "přísudek",
+              "předmět",
+              "příslovečné určení místa",
+              "příslovečné určení času",
+              "příslovečné určení způsobu",
+              "přívlastek shodný",
+              "přívlastek neshodný"
+            ]
+          },
+          "spravne": {
+            "0": "přívlastek shodný",
+            "1": "podmět",
+            "2": "přívlastek shodný",
+            "3": "přívlastek neshodný",
+            "5": "příslovečné určení času",
+            "7": "příslovečné určení místa",
+            "8": "přísudek",
+            "9": "předmět"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "3": "přívlastek shodný"
+              },
+              "typ_chyby": "privlastek-shoda-zamena"
+            },
+            {
+              "hodnota": {
+                "7": "přívlastek neshodný"
+              },
+              "typ_chyby": "pu-za-privlastek"
+            },
+            {
+              "hodnota": {
+                "5": "předmět"
+              },
+              "typ_chyby": "pu-za-predmet"
+            },
+            {
+              "hodnota": {
+                "9": "podmět"
+              },
+              "typ_chyby": "podmet-za-predmet"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Týdenní kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Diktát čte nahrávka, každou větu si dítě pustí nejvýš dvakrát; vy nic nečtete. Semafor se počítá jen z kroku 2: osm slov, u každého jeden z osmi členů. Pasti: „vaší“ je shodný přívlastek, „tety“ neshodný, „na půdě“ patří ke slovesu.",
+        "reseni": "Krok 1 (diktát): aplikace porovná zápis slovo po slově; do semaforu se nepočítá.\n\nKrok 2:\n\nTlustý: přívlastek shodný (jaký kocour?)\n\nkocour: podmět (kdo chytil?)\n\nvaší: přívlastek shodný (které tety? vaší; mění se: vaše teta, vidím vaši tetu)\n\ntety: přívlastek neshodný (čí kocour? tety; bez kocoura tety)\n\nnoci: příslovečné určení času (kdy chytil?)\n\npůdě: příslovečné určení místa (kde chytil?)\n\nchytil: přísudek\n\nmyš: předmět (chytil koho, co?)\n\n**Výsledek:** krok 2: shodný Tlustý, vaší; podmět kocour; neshodný tety; času noci; místa půdě; přísudek chytil; předmět myš",
+        "otazky": [
+          "„Řekni mi vlastními slovy, jak se ptáš na větné členy.“",
+          "„Vezmi slovo tety. Ke kterému slovu patří? Řekni to spojení s bez na začátku. Jak teď zní slovo tety?“",
+          "„U každého slova se nejdřív zeptej, ke kterému slovu patří: ke jménu, nebo ke slovesu. Pak polož otázku od něj.“"
+        ],
+        "otocena_role": "„Vyber si dvě označená slova a dokaž mi otázkou, jaké jsou to členy.“",
+        "otocena_role_odpoved": "Třeba půdě: patří ke slovesu chytil, kde chytil? Na půdě, příslovečné určení místa. A myš: chytil koho, co? Myš, předmět.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: „tety“ jako shodný: „Řekni bez kocoura tety. Změnilo se tety?“ „půdě“ jako přívlastek: „Patří ke slovesu, nebo ke jménu?“ „noci“ jako předmět: „Kdy chytil?“ „myš“ jako podmět: „Kdo chytil?“ Diktát neopravujte. Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — větné členy dítě určí samo. Pochvalte, že se ptalo od slova, ke kterému člen patří. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti větu: „Malá dcera sousedů ráno v parku krmila kachny.“ Dítě u každého slova řekne, jaký je to člen. Kontrola pro vás: malá přívlastek shodný, dcera podmět, sousedů přívlastek neshodný, ráno čas, v parku místo, krmila přísudek, kachny předmět.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše větu Starý pes od sousedů odpoledne na zahradě hrabal díru. Od slovesa hrabal udělá šipky ke slovům, která k němu patří, a nad každou napíše otázku. Potom zopakujte lekci „Kontrola tématu: větné členy“. Kontrola pro vás: kdo hrabal? pes (podmět); kdy? odpoledne; kde? na zahradě; co? díru (předmět); starý a od sousedů patří ke psovi (přívlastky)."
+      },
+      "tisk": {
+        "zadani": "1. Diktát: poslouchej věty (pustí ti je rodič) a napiš je.\n\n2. Nad každé tučné slovo napiš zkratku: Po = podmět, Př = přísudek, Pt = předmět, Pum = příslovečné určení místa, Puč = příslovečné určení času, Puz = příslovečné určení způsobu, Pks = přívlastek shodný, Pkn = přívlastek neshodný.\n\n**Tlustý** **kocour** **vaší** **tety** v **noci** na **půdě** **chytil** **myš**."
+      },
+      "tydenni": true,
+      "semafor_tydne": {
+        "zelena": {
+          "podminka": "7 nebo 8 slov z 8 správně v kroku 2, bez otázky",
+          "min_spravne": 7,
+          "doporuceni": "Zítra začíná další téma: pokračujte další lekcí."
+        },
+        "oranzova": {
+          "podminka": "5 nebo 6 slov z 8 správně v kroku 2",
+          "min_spravne": 5,
+          "doporuceni": "Zítra 5 minut ústně podle oranžové rady u úlohy 5, potom další lekce."
+        },
+        "cervena": {
+          "podminka": "4 a méně slov z 8 správně v kroku 2",
+          "min_spravne": 0,
+          "doporuceni": "Zítra zopakujte celou lekci „Kontrola tématu: větné členy“."
+        }
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "B-varianta lekce cj-t8-l32 (opakování po červené, ZADANI-OSMA §9 bod 4), autor 14. 10. 2026. Struktura 1:1 s hlavní lekcí ověřena skriptem (typy úloh, vstup.typ v každém kroku, počty kroků, dlaždic, slov a rolí, kódy na stejných volbách, kódy a počet známých chyb, U5 týdenní, semafor_tydne 7/5/0 beze změny); indexy přepočítány přes tokenizuj; vzorová odpověď každého kroku vyšla správně a každá chybná dlaždice, známá chyba i očekávaná chyba diktátu vrací svůj kód (vyhodnotKrok). Hodnocená slova a věty nejsou z cj-t8-l29 … l32, cj-t8-l29n … l32n, cj-t0-diag ani cj-t0-pol (kontrolováno skriptem); opakují se jen uzavřené skupiny (názvy větných členů, tvary být, ten, náš, můj). Diktát 3 věty, 15 slov jako hlavní L32: jen Z5 (dřevěný, hladký: -ý po tvrdé souhlásce; stůl, domů: ů; knihovny: -y po n; běžela: bě bez předpony; Naše: párová souhláska) a jmenný přísudek (je kadeřnice, je hladký), sloveso v j. č. minulého času, bez předložek s/z, bez i/y po obojetné souhlásce, bez dublet; chyby_ocekavane holé kódy stejné jako v hlavní L32 (věta 2: dřevěný, stůl, knihovny, hladký). hodnotit_interpunkci a hodnotit_velikost false. děsit se čeho = předmět (vazba jako bát se čeho, id=620); o přestávce = PU času (kdy?), ne předmět. Odvozené tvary bez dublet (pod jabloní, o dinosaurech, na chodbě, o přestávce, v jídelně, na půdě, tmy; pod lípou kvůli lipou/lípou a o víkendu kvůli víkendu/víkendě jsem nepoužil). Nahrávky t8/l32b-d1 až d3 zatím nejsou, řádky pro AUDIO.md jsou v cestina/Obsah/TEMA-8-B.md. Platí a slovníček převzaté z hlavní lekce. Slovní limity SABLONA §4 dodrženy, otázky taháku bez rodu a bez prozrazení odpovědi; nápověda detektiva obecná (všechna tři Petrova slova). Ověřeno přes nastroje/ujc.sh (zdroj). Korektor 14. 10.: všechny hodnocené tvary a diktát znovu ověřeny v tabulkách ÚJČ (ujc.sh), vzorové odpovědi, kódy i chyby_ocekavane přes vyhodnotKrok; jazyková chyba žádná. děsit se tmy = předmět: SSČ „děsit se … bát se: děsit se války“ (vazba s holým 2. p., příčinu holý 2. p. nevyjadřuje). o přestávce = PU času (snědli o čem? nejde). U5 final: naší → vaší (naší je hodnocené ve stejné roli v hlavní L32; vaší 2. p. ž. doložen v SSČ „za vaší nepřítomnosti“).",
+    "zkontroloval": "korektor",
+    "datum": "2026-10-14",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?id=610",
+      "https://prirucka.ujc.cas.cz/?id=620",
+      "https://prirucka.ujc.cas.cz/?id=603",
+      "https://prirucka.ujc.cas.cz/?slovo=Tom%C3%A1%C5%A1",
+      "https://prirucka.ujc.cas.cz/?slovo=b%C3%BDt",
+      "https://prirucka.ujc.cas.cz/?slovo=hora",
+      "https://prirucka.ujc.cas.cz/?slovo=Ema",
+      "https://prirucka.ujc.cas.cz/?slovo=d%C4%9Bsit",
+      "https://prirucka.ujc.cas.cz/?slovo=tma",
+      "https://prirucka.ujc.cas.cz/?slovo=Kl%C3%A1ra",
+      "https://prirucka.ujc.cas.cz/?slovo=tan%C4%8Dit",
+      "https://prirucka.ujc.cas.cz/?slovo=ladn%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=ta%C5%A1ka",
+      "https://prirucka.ujc.cas.cz/?slovo=spolu%C5%BEa%C4%8Dka",
+      "https://prirucka.ujc.cas.cz/?slovo=modr%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=Lucka",
+      "https://prirucka.ujc.cas.cz/?slovo=uk%C3%A1zat",
+      "https://prirucka.ujc.cas.cz/?slovo=fotka",
+      "https://prirucka.ujc.cas.cz/?slovo=vtipn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=houpa%C4%8Dka",
+      "https://prirucka.ujc.cas.cz/?slovo=jablo%C5%88",
+      "https://prirucka.ujc.cas.cz/?slovo=mokr%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=Adam",
+      "https://prirucka.ujc.cas.cz/?slovo=sed%C4%9Bt",
+      "https://prirucka.ujc.cas.cz/?slovo=kniha",
+      "https://prirucka.ujc.cas.cz/?slovo=dinosaurus",
+      "https://prirucka.ujc.cas.cz/?slovo=le%C5%BEet",
+      "https://prirucka.ujc.cas.cz/?slovo=pokoj",
+      "https://prirucka.ujc.cas.cz/?slovo=st%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?slovo=chodba",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C5%99est%C3%A1vka",
+      "https://prirucka.ujc.cas.cz/?slovo=j%C3%ADdelna",
+      "https://prirucka.ujc.cas.cz/?slovo=sn%C3%ADst",
+      "https://prirucka.ujc.cas.cz/?slovo=sva%C4%8Dina",
+      "https://prirucka.ujc.cas.cz/?slovo=n%C3%A1%C5%A1",
+      "https://prirucka.ujc.cas.cz/?id=v%C3%A1%C5%A1",
+      "https://prirucka.ujc.cas.cz/?slovo=m%C3%A1ma",
+      "https://prirucka.ujc.cas.cz/?slovo=kade%C5%99nice",
+      "https://prirucka.ujc.cas.cz/?slovo=ten",
+      "https://prirucka.ujc.cas.cz/?slovo=d%C5%99ev%C4%9Bn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=st%C5%AFl",
+      "https://prirucka.ujc.cas.cz/?slovo=knihovna",
+      "https://prirucka.ujc.cas.cz/?slovo=hladk%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=potom",
+      "https://prirucka.ujc.cas.cz/?slovo=b%C4%9B%C5%BEet",
+      "https://prirucka.ujc.cas.cz/?slovo=dom%C5%AF",
+      "https://prirucka.ujc.cas.cz/?slovo=tlust%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=kocour",
+      "https://prirucka.ujc.cas.cz/?slovo=teta",
+      "https://prirucka.ujc.cas.cz/?slovo=noc",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C5%AFda",
+      "https://prirucka.ujc.cas.cz/?slovo=chytit",
+      "https://prirucka.ujc.cas.cz/?slovo=my%C5%A1",
+      "https://prirucka.ujc.cas.cz/?slovo=v%C3%A1%C5%A1"
+    ],
+    "testovaci_rodic": null
+  }
+}
