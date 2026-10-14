@@ -1,0 +1,470 @@
+{
+  "id": "M8-T08-L3NB",
+  "faze": "osma",
+  "tyden": 8,
+  "poradi": 3,
+  "tema": "Přímá a nepřímá úměrnost",
+  "kapitola": "pomer",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo rozhodne, jestli jde o přímou, nebo nepřímou úměrnost, i v úloze o dvou částech, a dopočítá chybějící hodnotu.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami. Dítě ukáže, že úměrnost zvládne samo: čtyři příklady, nenápadnější chyba u Petra a slovní úloha o krok delší.",
+  "uvod_pravidla": [
+    {
+      "znak": "$3 \\to 6$ kg, $60 \\to 120$ Kč",
+      "text": "přímá: oboje dvakrát víc"
+    },
+    {
+      "znak": "$3 \\to 9$ dětí, $6 \\to 2$ kusy",
+      "text": "nepřímá: třikrát míň"
+    },
+    {
+      "znak": "$1$ kg $= 20$ Kč",
+      "text": "přes jeden kus"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T08-L3NB-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Která dvojice je přímá úměrnost?\n\nB) Počet stejných aut a počet jízd každého při odvozu hromady písku: $2 \\to 12$, $3 \\to 8$, $4 \\to 6$. Jaká je to úměrnost?\n\nC) $4$ kg pomerančů stojí $168$ Kč. Kolik stojí $6$ kg?\n\nD) Krabice nálepek se rozdělí mezi $5$ dětí po $12$. Kolik dostane každé, když se rozdělí mezi $6$?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: přímá úměrnost",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "velikost porce a počet porcí z hrnce",
+                "spravne": false,
+                "typ_chyby": "neprima-jako-prima"
+              },
+              {
+                "id": "b",
+                "text": "počet dlaždičů a doba pokládání podlahy",
+                "spravne": false,
+                "typ_chyby": "neprima-jako-prima"
+              },
+              {
+                "id": "c",
+                "text": "počet stejných jízdenek a jejich cena",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: auta a jízdy",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "žádná, jízd ubývá pokaždé o jiný počet",
+                "spravne": false,
+                "typ_chyby": "umera-jako-soucet"
+              },
+              {
+                "id": "b",
+                "text": "přímá úměrnost",
+                "spravne": false,
+                "typ_chyby": "neprima-jako-prima"
+              },
+              {
+                "id": "c",
+                "text": "nepřímá úměrnost",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: $6$ kg pomerančů",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$112$ Kč",
+                "spravne": false,
+                "typ_chyby": "prima-jako-neprima"
+              },
+              {
+                "id": "b",
+                "text": "$252$ Kč",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$170$ Kč",
+                "spravne": false,
+                "typ_chyby": "umera-jako-soucet"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: $6$ dětí",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$10$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$14{,}4$",
+                "spravne": false,
+                "typ_chyby": "neprima-jako-prima"
+              },
+              {
+                "id": "c",
+                "text": "$11$",
+                "spravne": false,
+                "typ_chyby": "umera-jako-soucet"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá. U A a B se rozhoduje: přímá úměrnost je, když dvakrát víc jednoho znamená dvakrát víc druhého; nepřímá, když dvakrát víc jednoho znamená dvakrát míň druhého. U B stačí vynásobit počet aut a počet jízd. U C a D se počítá přes jeden kilogram a přes všechny nálepky. Čte se: $14{,}4$ „čtrnáct celých čtyři“. Otázky jsou po příkladech, první patří k A i B.",
+        "reseni": "#### A) Přímá úměrnost\n\nJízdenky a cena (dvakrát víc jízdenek, dvakrát víc korun)\n\nPorce a počet porcí, dlaždiči a doba (víc a míň, to je nepřímá úměrnost)\n\n#### B) Auta a jízdy\n\n$2 \\cdot 12 = 24$, $3 \\cdot 8 = 24$, $4 \\cdot 6 = 24$ (součin je pořád stejný, celá hromada písku)\n\nVíc aut, míň jízd (nepřímá úměrnost)\n\n#### C) Pomeranče\n\n$168 : 4 = 42$ (jeden kilogram)\n\n$6 \\cdot 42 = 252$ (šest kilogramů)\n\n#### D) Nálepky\n\n$5 \\cdot 12 = 60$ (nálepek v krabici)\n\n$60 : 6 = 10$ (každé ze šesti dětí)\n\n**Výsledek:** A) jízdenky a cena, B) nepřímá, C) $252$ Kč, D) $10$",
+        "otazky": [
+          {
+            "k": "A a B",
+            "text": "„Neklikej a nejdřív řekni: když jednoho přibude, toho druhého přibude, nebo ubude? Kolikrát?“"
+          },
+          {
+            "k": "C",
+            "text": "„Spočítej na papíře: kolik korun stojí jeden kilogram pomerančů? Kolik pak šest kilogramů?“"
+          },
+          {
+            "k": "D",
+            "text": "„Když se nálepky dělí mezi víc dětí, dostane každé víc, nebo míň? Kolik nálepek je v krabici?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč u příkladu D nevyjde víc než dvanáct nálepek.“",
+        "otocena_role_odpoved": "Protože víc dětí znamená míň nálepek pro každé. V krabici je šedesát nálepek, a když se dělí mezi šest dětí, má každé deset.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A porce nebo dlaždiči, u B „přímá“, u D $14{,}4$: plete přímou a nepřímou. Zeptejte se: „Když jednoho přibude, druhého přibude, nebo ubude?“ U B „žádná“, u C $170$, u D $11$: hledá stejný rozdíl. „Kolikrát víc?“ U C $112$: počítá víc → míň."
+      },
+      "semafor": {
+        "zelena": "Výborně — úměrnost pozná i spočítá. Pochvalte, že před počítáním rozhodlo, jestli přibude, nebo ubude, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Dva litry mléka stojí $50$ Kč. Kolik stojí osm litrů?“ Pak: „Koláč si rozdělí $4$ kamarádi po $3$ kouscích. Kolik kousků dostane každý, když jich bude $6$?“ Ať u každé nejdřív řekne, jestli vyjde víc, nebo míň. Kontrola pro vás: víc, $200$ Kč; míň, $2$ kousky.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 30 kostek nebo knoflíků. Zítra ať je dítě rozdělí 2 plyšákům, pak 3, 5 a 6. Zeptejte se: „Když je plyšáků víc, má každý víc, nebo míň?“ Pak ať samo zapíše $30 : 2 = 15$, $30 : 3 = 10$, $30 : 5 = 6$, $30 : 6 = 5$. Potom zopakujte lekci „Přímá a nepřímá úměrnost“. Kontrola pro vás: 15, 10, 6, 5; víc plyšáků, míň pro každého."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Která dvojice je přímá úměrnost? — a) velikost porce a počet porcí z hrnce b) počet dlaždičů a doba pokládání podlahy c) počet stejných jízdenek a jejich cena\n\nB) Počet stejných aut a počet jízd každého při odvozu hromady písku: $2 \\to 12$, $3 \\to 8$, $4 \\to 6$. Jaká je to úměrnost? — a) žádná, jízd ubývá pokaždé o jiný počet b) přímá úměrnost c) nepřímá úměrnost\n\nC) $4$ kg pomerančů stojí $168$ Kč. Kolik stojí $6$ kg? — a) $112$ Kč b) $252$ Kč c) $170$ Kč\n\nD) Krabice nálepek se rozdělí mezi $5$ dětí po $12$. Kolik dostane každé, když se rozdělí mezi $6$? — a) $10$ b) $14{,}4$ c) $11$"
+      }
+    },
+    {
+      "id": "M8-T08-L3NB-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Zásoby jídla na horské chatě vystačí $9$ horolezcům na $26$ dní. Po $8$ dnech $3$ horolezci sestoupili do údolí. Každý sní denně stejně. Na kolik dní od začátku vystačily zásoby celkem?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: zbývá: $26 - 8 = 18$ dní pro $9$ horolezců\n\n2. řádek: horolezců zůstalo: $9 - 3 = 6$\n\n3. řádek: $18 \\cdot 6 : 9 = 12$ dní\n\n4. řádek: celkem: $8 + 12 = 20$ dní",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "zbývá: $26 - 8 = 18$ dní pro $9$ horolezců",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "horolezců zůstalo: $9 - 3 = 6$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$18 \\cdot 6 : 9 = 12$ dní",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "celkem: $8 + 12 = 20$ dní",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$18 \\cdot 9 : 6 = 27$ dní",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$18 + 3 = 21$ dní",
+                "spravne": false,
+                "typ_chyby": "umera-jako-soucet"
+              },
+              {
+                "id": "c",
+                "text": "$26 \\cdot 9 : 6 = 39$ dní",
+                "spravne": false,
+                "typ_chyby": "prehledl-udaj"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "dní"
+          },
+          "spravne": {
+            "hodnota": 35
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 20,
+              "typ_chyby": "neprima-jako-prima"
+            },
+            {
+              "hodnota": 27,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 39,
+              "typ_chyby": "prehledl-udaj"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Jídla je pořád stejně, horolezců ubylo: míň lidí, víc dní, to je nepřímá úměrnost. Prvních osm dní jedlo všech devět horolezců. Chyba je jedna, řádek za ní je spočítaný dobře, jen se špatným číslem.",
+        "reseni": "Chyba je ve 3. řádku: Petr počítal přímou úměrnost (míň horolezců, míň dní). Je to nepřímá: míň horolezců, víc dní.\n\n$26 - 8 = 18$ (dní by zbytek vystačil devíti horolezcům)\n\n$9 - 3 = 6$ (horolezců zůstalo)\n\n$18 \\cdot 9 = 162$ (dní by zbytek vystačil jednomu horolezci)\n\n$162 : 6 = 27$ (dní pro šest horolezců)\n\n$8 + 27 = 35$ (dní celkem)\n\nDlaždice $18 + 3$ a $26 \\cdot 9 : 6$ nesedí (první přidá den za každého, kdo odešel, druhá zapomene na prvních osm dní)\n\n**Výsledek:** $35$ dní",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co se na chatě stalo a na co se úloha ptá.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Když lidí na chatě ubude, dojde jídlo dřív, nebo později? Sedí s tím všechny Petrovy výsledky?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: když lidí ubude, má číslo vyjít větší, nebo menší? Na kolik dní by zbytek jídla stačil jednomu?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč šesti lidem nemůže jídlo vystačit na kratší dobu než devíti.“",
+        "otocena_role_odpoved": "Protože míň lidí sní za den míň jídla, takže vydrží déle. Zbytek by jednomu stačil na sto šedesát dva dní, šesti na dvacet sedm. S prvními osmi dny je to třicet pět.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 4. řádek? Ten je jen důsledek. Zeptejte se: „Odkud je dvanáct?“ (Ze 3. řádku.) 1. a 2. řádek jsou správně. Výsledek $20$: opíše Petra; $27$: nepřičte prvních osm dní; $39$: počítá se šesti horolezci od začátku. „Kolik lidí jedlo prvních osm dní?“ (Devět.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že rozhodlo „míň lidí, víc dní“ a nezapomnělo na první dny. Jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr tvrdí: zásoby pro $6$ táborníků vystačí na $10$ dní, takže pro $3$ táborníky na $5$ dní. Má pravdu?“ Ať nahlas řekne, jestli míň táborníků znamená víc, nebo míň dní, a kolik to bude. Kontrola pro vás: nemá; míň táborníků, víc dní; jednomu na $60$ dní, třem na $20$ dní.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 24 kostek nebo bonbonů (jako jídlo) a 4 hrnky (jako lidé). Zítra: „Každý sní za den jednu kostku.“ Ať dítě krmí 4 hrnky, pak 3 a 2 a počítá, na kolik dní kostky vystačí. Zeptejte se: „Míň lidí, víc, nebo míň dní?“ Pak ať samo zapíše $24 : 4 = 6$, $24 : 3 = 8$, $24 : 2 = 12$. Potom zopakujte lekci „Přímá a nepřímá úměrnost“. Kontrola pro vás: 6, 8, 12 dní; míň lidí, víc dní."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\nZásoby jídla na horské chatě vystačí $9$ horolezcům na $26$ dní. Po $8$ dnech $3$ horolezci sestoupili do údolí. Každý sní denně stejně. Na kolik dní od začátku vystačily zásoby celkem?\n\na udělal jednu chybu.\n\n1. řádek: zbývá: $26 - 8 = 18$ dní pro $9$ horolezců\n\n2. řádek: horolezců zůstalo: $9 - 3 = 6$\n\n3. řádek: $18 \\cdot 6 : 9 = 12$ dní\n\n4. řádek: celkem: $8 + 12 = 20$ dní\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $18 \\cdot 9 : 6 = 27$ dní b) $18 + 3 = 21$ dní c) $26 \\cdot 9 : 6 = 39$ dní\n\nC) Na kolik dní vystačily zásoby doopravdy? ______ dní"
+      }
+    },
+    {
+      "id": "M8-T08-L3NB-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Dobrovolníci sázejí stromky na vykácené pasece. Kdyby sázelo $8$ dobrovolníků, trvalo by jim to $9$ dní. Kvůli předpovědi mrazů musí být hotovo o $3$ dny dřív. Všichni sázejí stejně rychle.\n\nKolik dobrovolníků musí sázet? Kolik jich musí k těm osmi přibýt?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Vyber, co platí",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "o tři dny méně, o tři lidi víc",
+                "spravne": false,
+                "typ_chyby": "umera-jako-soucet"
+              },
+              {
+                "id": "b",
+                "text": "méně dní, méně lidí: přímá úměrnost",
+                "spravne": false,
+                "typ_chyby": "neprima-jako-prima"
+              },
+              {
+                "id": "c",
+                "text": "méně dní, více lidí: nepřímá úměrnost",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: kolik dobrovolníků musí sázet",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "dobrovolníků"
+          },
+          "spravne": {
+            "hodnota": 12
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 11,
+              "typ_chyby": "umera-jako-soucet"
+            },
+            {
+              "hodnota": 24,
+              "typ_chyby": "prehledl-udaj"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 4
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 12,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 3,
+              "typ_chyby": "umera-jako-soucet"
+            },
+            {
+              "hodnota": 16,
+              "typ_chyby": "prehledl-udaj"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce. Nejdřív se zjistí, za kolik dní musí být hotovo. Na stejnou práci za méně dní je potřeba víc lidí: nepřímá úměrnost, mění se stejněkrát, ne o stejný počet. Pozor, poslední otázka chce, kolik dobrovolníků přibude, ne kolik jich bude sázet celkem.",
+        "reseni": "$9 - 3 = 6$ (za tolik dní musí být hotovo)\n\n$8 \\cdot 9 = 72$ (tolik dní by sázel jeden dobrovolník sám)\n\n$72 : 6 = 12$ (tolik dobrovolníků to zvládne za šest dní)\n\n$12 - 8 = 4$ (tolik jich musí přibýt)\n\n$12 \\cdot 6 = 72$ (zkouška: stejná práce jako osm dobrovolníků devět dní)\n\n**Výsledek:** sázet musí $12$ dobrovolníků, přibýt musí $4$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co se u sázení změnilo a na co se ptá poslední otázka.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Za kolik dní teď musí být stromky zasázené? Když je na stejnou práci méně dní, je potřeba víc lidí, nebo míň?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: jeden dobrovolník sám by sázel osmkrát devět dní. Kolik lidí to zvládne za šest dní? Kolik jich přibude?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč nestačí přidat tři dobrovolníky, když má být hotovo o tři dny dřív.“",
+        "otocena_role_odpoved": "Protože lidé a dny se nemění o stejný počet, ale stejněkrát. Jeden by sázel sedmdesát dva dní. Za šest dní to zvládne dvanáct lidí, takže jich přibudou čtyři.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 volí přímou úměrnost nebo „o tři víc“. Zeptejte se: „Když je dní méně, je potřeba lidí víc, nebo míň?“ (Víc.) Mezivýsledek $11$, výsledek $3$: přičítá tři. $24$, výsledek $16$: dělí třemi místo šesti. Výsledek $12$: celkový počet. „Kolik dobrovolníků už sází?“ (Osm.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — počet dobrovolníků i přírůstek sedí. Pochvalte, že nejdřív rozhodlo „víc, nebo míň“ a pak počítalo. Jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Pět kamarádů by skládalo dřevo do kůlny $4$ hodiny. Chtějí být hotovi o $2$ hodiny dřív. Kolik kamarádů musí skládat? Kolik jich přibude?“ Ať nejdřív řekne, jestli kamarádů bude víc, nebo míň. Kontrola pro vás: víc; $2$ hodiny; jeden by skládal $20$ hodin; skládá $10$, přibude $5$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 16 kostek nebo knoflíků (stromky) a 8 hrnků (dobrovolníci). Zítra: „Každý dobrovolník zasadí za den jeden stromek.“ Ať dítě rozdělí kostky 2 hrnkům, pak 4 a 8 a počítá dny. Zeptejte se: „Kolik dobrovolníků je potřeba na 2 dny?“ Pak ať samo zapíše $16 : 2 = 8$, $16 : 4 = 4$, $16 : 8 = 2$. Potom zopakujte lekci „Přímá a nepřímá úměrnost“. Kontrola pro vás: 8, 4, 2 dny; na 2 dny 8 dobrovolníků."
+      },
+      "tisk": {
+        "zadani": "Dobrovolníci sázejí stromky na vykácené pasece. Kdyby sázelo $8$ dobrovolníků, trvalo by jim to $9$ dní. Kvůli předpovědi mrazů musí být hotovo o $3$ dny dřív. Všichni sázejí stejně rychle.\n\nKolik dobrovolníků musí sázet? Kolik jich musí k těm osmi přibýt?\n\nA) Co platí? Zakroužkuj: a) o tři dny méně, o tři lidi víc b) méně dní, méně lidí: přímá úměrnost c) méně dní, více lidí: nepřímá úměrnost\n\nB) Kolik dobrovolníků musí sázet: ______\n\nC) Kolik dobrovolníků musí přibýt: ______"
+      }
+    },
+    {
+      "id": "M8-T08-L3NB-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Florbalový tým si objednal minibus na turnaj a cenu si hráči dělí rovným dílem. Kdyby jelo všech $10$ hráčů, zaplatil by každý $140$ Kč. Tři hráči ale onemocněli a nejeli.\n\nO kolik korun víc zaplatí každý z těch, kdo jeli?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 60
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 200,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 420,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 42,
+              "typ_chyby": "neprima-jako-prima"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Minibus stojí pořád stejně, hráčů je míň: míň hráčů, víc korun na každého. Úloha se ptá, o kolik víc, ne kolik každý zaplatí.",
+        "reseni": "$10 - 3 = 7$ (kolik hráčů jelo)\n\n$10 \\cdot 140 = 1\\,400$ (cena minibusu)\n\n$1\\,400 : 7 = 200$ (zaplatí každý)\n\n$200 - 140 = 60$ (o tolik víc)\n\n$3 \\cdot 140 = 420$ (jiná cesta: peníze za tři, kteří nejeli)\n\n$420 : 7 = 60$ (jiná cesta: rozdělí se mezi sedm)\n\n**Výsledek:** o $60$ Kč víc",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co se před turnajem změnilo a na co se úloha ptá.“",
+          "„Když jede míň hráčů, zaplatí každý víc, nebo míň? Kolik stojí celý minibus?“",
+          "„Tady máš začátek: deset krát sto čtyřicet je cena minibusu. Mezi kolik hráčů se teď dělí?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč teď každý nezaplatí míň než sto čtyřicet korun.“",
+        "otocena_role_odpoved": "Protože minibus stojí pořád stejně, ale dělí se mezi míň hráčů. Každý zaplatí dvě stě, o šedesát víc. Správně je i: tři chybějící podíly, čtyři sta dvacet korun, se rozdělí mezi sedm.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $200$: zapomene odečíst. Zeptejte se: „Na co se úloha ptá?“ (O kolik víc.) $420$: chybějící peníze nerozdělí. $42$: míň hráčů, míň korun, nebo dělí deseti. „Mezi kolik hráčů se dělí?“ (Sedm.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — nepřímou úměrnost zvládá samo. Pochvalte, že nejdřív rozhodlo „míň hráčů, víc korun“. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Na pronájem tělocvičny by se složilo $12$ dětí po $40$ Kč. Čtyři děti nakonec nepřišly. Kolik zaplatí každé z ostatních? O kolik víc?“ Kontrola pro vás: pronájem $480$ Kč; každé z osmi $60$ Kč; o $20$ Kč víc.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 18 mincí nebo knoflíků (jako cena minibusu). Zítra ať je dítě rozdělí 9 plyšákům, pak 6 a 3. Zeptejte se: „Když je plyšáků míň, platí každý víc, nebo míň?“ Pak ať samo zapíše $18 : 9 = 2$, $18 : 6 = 3$, $18 : 3 = 6$. Potom zopakujte lekci „Přímá a nepřímá úměrnost“. Kontrola pro vás: 2, 3, 6 mincí; míň plyšáků, víc pro každého."
+      },
+      "tisk": {
+        "zadani": "Florbalový tým si objednal minibus na turnaj a cenu si hráči dělí rovným dílem. Kdyby jelo všech $10$ hráčů, zaplatil by každý $140$ Kč. Tři hráči ale onemocněli a nejeli.\n\nO kolik korun víc zaplatí každý z těch, kdo jeli?\n\nVýsledek: ______ Kč"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 14. 10. 2026: všechna zadání nezávisle přepočítána (Python Fraction, /tmp/recenze-nb08/prepocet.py), každá správná odpověď, dlaždice i známá chyba ověřena přes vyhodnotKrok (0 nesedí), limity slov SABLONA §4 přepočítány, validace 0 chyb. Proti M8-T08-L3N: stejná struktura, typy vstupů, kódy chyb, jednotky kroků i počet výpočtů, jiná čísla a kontext, obtížnost stejná. Opraveno: 1 věcná chyba v „Platí:“ (1. řádek $3 \\to 6$ kg za $40 \\to 80$ Kč neodpovídal 3. řádku $1$ kg $= 20$ Kč; nově $60 \\to 120$ Kč). Úprava: U4 čísla $10$ hráčů po $180$ Kč, dva nejeli ($1\\,800 : 8 = 225$, dlouhé dělení, těžší než $3\\,600 : 6$ v L3N) změněna na $10$ hráčů po $140$ Kč, tři nejeli: $1\\,400 : 7 = 200$, o $60$ Kč víc; chyby $200$ a $420$ odpovida-na-jinou-otazku, $42$ neprima-jako-prima (vzniká oběma cestami jako $112{,}5$ v L3N), upraven tahák. Posouzeno: U3 výsledek $12$ = správný mezivýsledek kroku 2 nezmate, hláška kódu odpovida-na-jinou-otazku přesně popisuje, že dítě odpovědělo mezivýsledkem (stejně jako $6$ v L3N). U1 C $168 : 4$ ponecháno (dělení po číslicích bez přenosu).",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-14"
+  }
+}
