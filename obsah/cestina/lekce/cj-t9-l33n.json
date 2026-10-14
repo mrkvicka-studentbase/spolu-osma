@@ -1,0 +1,828 @@
+{
+  "id": "cj-t9-l33n",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 9,
+  "poradi": 1,
+  "tema": "Souvětí: věta hlavní a vedlejší",
+  "kapitola": "souveti",
+  "cil_pro_rodice": "Dítě spočítá věty i v delších souvětích podle přísudků a u každé věty řekne, jestli je hlavní, nebo vedlejší, i když vedlejší věta stojí na začátku.",
+  "uvod_pro_rodice": "Dítě tuhle látku dělalo v lekci „Souvětí: věta hlavní a vedlejší“; dnes ukáže, že ji opravdu umí. Souvětí jsou delší, mají až čtyři věty a pasti z celé lekce se míchají.",
+  "uvod_pravidla": [
+    {
+      "znak": "Věty počítej podle přísudků",
+      "text": "co to je"
+    },
+    {
+      "znak": "Vedlejší: že, když, protože, kde…",
+      "text": "test"
+    },
+    {
+      "znak": "Psal, | že přijede. (hlavní | vedl.)",
+      "text": "příklad"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "přísudek": "sloveso ve větě, které říká, co kdo dělá nebo co se děje (běží, psala); patří k němu i může jít nebo budeme hrát",
+    "věta jednoduchá": "věta s jedním přísudkem (Autobus přijel včas.)",
+    "souvětí": "dvě nebo více vět spojených dohromady; vět je tolik, kolik je přísudků",
+    "věta hlavní": "věta, která obstojí sama (Psal.)",
+    "věta vedlejší": "věta, která sama neobstojí; začíná slovem jako že, když, protože, aby, který, kde (že přijede)",
+    "podmět": "kdo nebo co ve větě něco dělá (Adam běží: Adam)"
+  },
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "cas_min": 25,
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t9-l33n-U1",
+      "typ": "rozcvicka",
+      "cil": "Ledoborec: najít přísudek v delší jednoduché větě, i když má dvě slova (musí uklidit, budeme psát) nebo podmět stojí až na konci.",
+      "cas_min": 4,
+      "zadani": "V každé řadě vyber přísudek.\n\nA) Po obědě nám učitelka rozdala testy.\n\nB) Adam musí po tréninku uklidit míče.\n\nC) Zítra budeme celý večer psát úkol.\n\nD) Za plotem celé ráno štěkal sousedův pes.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "učitelka",
+                "spravne": false,
+                "typ_chyby": "podmet-prisudek-zamena"
+              },
+              {
+                "id": "b",
+                "text": "rozdala",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "obědě",
+                "spravne": false,
+                "typ_chyby": "prisudek-neni-sloveso"
+              },
+              {
+                "id": "d",
+                "text": "testy",
+                "spravne": false,
+                "typ_chyby": "prisudek-neni-sloveso"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Adam",
+                "spravne": false,
+                "typ_chyby": "podmet-prisudek-zamena"
+              },
+              {
+                "id": "b",
+                "text": "tréninku",
+                "spravne": false,
+                "typ_chyby": "prisudek-neni-sloveso"
+              },
+              {
+                "id": "c",
+                "text": "musí uklidit",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "míče",
+                "spravne": false,
+                "typ_chyby": "prisudek-neni-sloveso"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Zítra",
+                "spravne": false,
+                "typ_chyby": "prisudek-neni-sloveso"
+              },
+              {
+                "id": "b",
+                "text": "večer",
+                "spravne": false,
+                "typ_chyby": "prisudek-neni-sloveso"
+              },
+              {
+                "id": "c",
+                "text": "úkol",
+                "spravne": false,
+                "typ_chyby": "prisudek-neni-sloveso"
+              },
+              {
+                "id": "d",
+                "text": "budeme psát",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "pes",
+                "spravne": false,
+                "typ_chyby": "podmet-prisudek-zamena"
+              },
+              {
+                "id": "b",
+                "text": "ráno",
+                "spravne": false,
+                "typ_chyby": "prisudek-neni-sloveso"
+              },
+              {
+                "id": "c",
+                "text": "štěkal",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "sousedův",
+                "spravne": false,
+                "typ_chyby": "prisudek-neni-sloveso"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje přísudek: sloveso, které ve větě říká, co kdo dělá nebo co se děje. Proti učební lekci jsou věty delší a v každé řadě jsou čtyři možnosti. Pasti: přísudek ze dvou slov (musí uklidit, budeme psát) a v řadě D stojí ten, kdo něco dělá, až na konci. Otázky jsou po řadách: čtěte tu u řady, kde se dítě zasekne.",
+        "reseni": "#### A) Po obědě nám učitelka rozdala testy.\n\nrozdala (co učitelka udělala?)\n\n#### B) Adam musí po tréninku uklidit míče.\n\nmusí uklidit (obě slova patří k sobě: co Adam musí udělat?)\n\n#### C) Zítra budeme celý večer psát úkol.\n\nbudeme psát (co budeme dělat?)\n\n#### D) Za plotem celé ráno štěkal sousedův pes.\n\nštěkal (pes je ten, kdo štěkal)\n\n**Výsledek:** A) rozdala, B) musí uklidit, C) budeme psát, D) štěkal",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Kdo v řadě A něco dělá? A co dělá? Řekni to slovem z věty.“"
+          },
+          {
+            "k": "B a C",
+            "text": "„Které slovo říká, co se má dělat nebo co se bude dělat? Stačí samo, nebo k němu patří ještě jedno?“"
+          },
+          {
+            "k": "D",
+            "text": "„Zeptej se: Co se za plotem dělo celé ráno? A kdo to dělal?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, jak najdeš přísudek, když ten, kdo něco dělá, stojí až na konci věty. Ukaž mi to na řadě D.“",
+        "otocena_role_odpoved": "Zeptám se, co se za plotem dělo: štěkal. Kdo štěkal? Pes, i když stojí až na konci. Přísudek je štěkal.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Vybere jméno (učitelka, Adam, pes). Zeptejte se: „Je to ten, kdo něco dělá, nebo to, co dělá?“ Vybere jiné slovo (obědě, testy, tréninku, míče, Zítra, večer, úkol, ráno, sousedův): „Říká to slovo, co se děje?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — přísudek dítě najde i v delší větě a ve dvou slovech. Pochvalte, že se ptalo, co kdo dělá, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti dvě věty: „Po obědě musela Klára odejít.“ „V lese zpívali ptáci.“ U každé řekne přísudek. Kontrola pro vás: musela odejít (obě slova patří k sobě); zpívali (ptáci jsou ti, kdo zpívali).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše tři věty o tom, co dělalo o víkendu, a jednu větu se slovem „musím“. V každé podtrhne slovo, které říká, co se děje. Potom zopakujte lekci „Souvětí: věta hlavní a vedlejší“. Kontrola pro vás: v každé větě je podtržené sloveso (hrál, četla); ve větě s musím obě slova (musím uklidit)."
+      },
+      "tisk": {
+        "zadani": "V každé řadě zakroužkuj přísudek.\n\nA) Po obědě nám učitelka rozdala testy. Zakroužkuj: a) učitelka b) rozdala c) obědě d) testy\n\nB) Adam musí po tréninku uklidit míče. Zakroužkuj: a) Adam b) tréninku c) musí uklidit d) míče\n\nC) Zítra budeme celý večer psát úkol. Zakroužkuj: a) Zítra b) večer c) úkol d) budeme psát\n\nD) Za plotem celé ráno štěkal sousedův pes. Zakroužkuj: a) pes b) ráno c) štěkal d) sousedův"
+      }
+    },
+    {
+      "id": "cj-t9-l33n-U2",
+      "typ": "nova",
+      "cil": "Spočítat věty v pěti řádcích podle přísudků, ne podle čárek, jmen a spojovacích slov (i se dvěma infinitivy a s větou vloženou doprostřed).",
+      "cas_min": 5,
+      "zadani": "Kolik vět je v každém řádku?\n\nA) Ema, Klára, Lucka a trenérka jely na závody.\n\nB) Adam se musí naučit plavat.\n\nC) Klára si vzala svačinu, pití a deštník, protože mělo pršet.\n\nD) Když skončila bouřka, táta zatopil a my jsme šli pro dřevo.\n\nE) Když Tomáš přišel do třídy, zjistil, že kamarád, který s ním sedí, dnes chybí.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řádek A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1 věta",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "2 věty",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "3 věty",
+                "spravne": false,
+                "typ_chyby": "souveti-pocet-podle-spojek"
+              },
+              {
+                "id": "d",
+                "text": "4 věty",
+                "spravne": false,
+                "typ_chyby": "souveti-pocet-podle-spojek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řádek B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1 věta",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "2 věty",
+                "spravne": false,
+                "typ_chyby": "souveti-infinitiv-jako-veta"
+              },
+              {
+                "id": "c",
+                "text": "3 věty",
+                "spravne": false,
+                "typ_chyby": "souveti-infinitiv-jako-veta"
+              },
+              {
+                "id": "d",
+                "text": "4 věty",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Řádek C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1 věta",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "2 věty",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "3 věty",
+                "spravne": false,
+                "typ_chyby": "souveti-pocet-podle-spojek"
+              },
+              {
+                "id": "d",
+                "text": "4 věty",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k4",
+          "popisek": "Řádek D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1 věta",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "2 věty",
+                "spravne": false,
+                "typ_chyby": "souveti-pocet-podle-spojek"
+              },
+              {
+                "id": "c",
+                "text": "3 věty",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "4 věty",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Řádek E",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1 věta",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "2 věty",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "3 věty",
+                "spravne": false,
+                "typ_chyby": "souveti-pocet-podle-spojek"
+              },
+              {
+                "id": "d",
+                "text": "4 věty",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě u každého řádku vybírá počet vět: kolik přísudků (sloves, která říkají, co se děje), tolik vět. Proti učební lekci je řádků pět a souvětí mají až čtyři věty. Pasti: čtyři jména v řádku A, tři slovesa za sebou v B (v osobě je jen musí, naučit a plavat k němu patří), čárky ve výčtu v C a věta vložená doprostřed v E.",
+        "reseni": "A) 1 věta (jediné sloveso jely; čtyři jména dělají jednu věc)\n\nB) 1 věta (jediné sloveso v osobě je musí; naučit se plavat k němu patří)\n\nC) 2 věty (vzala, mělo pršet; čárky ve výčtu věty nedělají)\n\nD) 3 věty (skončila, zatopil, šli)\n\nE) 4 věty (přišel, zjistil, sedí, chybí)\n\n**Výsledek:** A) 1, B) 1, C) 2, D) 3, E) 4",
+        "otazky": [
+          "„Jak poznáš, kolik vět je v souvětí? Řekni to vlastními slovy.“",
+          "„Vezmi jeden řádek a ukaž prstem na každé slovo, které říká, co se děje. Patří některá slovesa k sobě?“",
+          "„V řádku E: kdo co dělá? Řekni každou část zvlášť i s jejím slovesem.“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč čárky v řádku C nedělají tolik vět, kolik je částí mezi nimi.“",
+        "otocena_role_odpoved": "Čárky v řádku C oddělují věci, které si Klára vzala. Slovesa jsou jen dvě, vzala a mělo pršet, takže jsou to dvě věty.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V A vybere víc vět podle jmen, v C podle čárek: „Kolik je tam sloves, která něco dělají?“ V B vybere 2 nebo 3: „Kolik věcí Adam dělá?“ V D vybere 2, v E 3: „Řekni každou část zvlášť. Kolik jich má sloveso?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — věty dítě počítá podle sloves, ne podle čárek a jmen. Pochvalte, že u každého řádku hledalo, kdo co dělá, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti dvě věty: „Adam, Tomáš a jejich táta jeli na ryby.“ „Když přišla zima, Ema začala chodit bruslit.“ U každé řekne, kolik je v ní vět. Kontrola pro vás: první 1 věta (jediné sloveso jeli), druhá 2 věty (přišla, začala; chodit bruslit k začala patří).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše větu, ve které celá rodina dělá jednu věc, a souvětí se slovem protože. V obou podtrhne slovesa a připíše počet vět. Potom zopakujte lekci „Souvětí: věta hlavní a vedlejší“. Kontrola pro vás: první věta má jedno sloveso (1 věta); v souvětí je tolik vět, kolik podtržených sloves."
+      },
+      "tisk": {
+        "zadani": "Kolik vět je v každém řádku? Zakroužkuj.\n\nA) Ema, Klára, Lucka a trenérka jely na závody. a) 1 věta b) 2 věty c) 3 věty d) 4 věty\n\nB) Adam se musí naučit plavat. a) 1 věta b) 2 věty c) 3 věty d) 4 věty\n\nC) Klára si vzala svačinu, pití a deštník, protože mělo pršet. a) 1 věta b) 2 věty c) 3 věty d) 4 věty\n\nD) Když skončila bouřka, táta zatopil a my jsme šli pro dřevo. a) 1 věta b) 2 věty c) 3 věty d) 4 věty\n\nE) Když Tomáš přišel do třídy, zjistil, že kamarád, který s ním sedí, dnes chybí. a) 1 věta b) 2 věty c) 3 věty d) 4 věty"
+      }
+    },
+    {
+      "id": "cj-t9-l33n-U3",
+      "typ": "nova",
+      "cil": "Jen poslechem spočítat věty ve čtyřčlenném souvětí, spočítat vedlejší věty a najít sloveso věty hlavní.",
+      "cas_min": 5,
+      "zadani": "Poslechni si nahrávku. Potom odpověz na tři otázky.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Kolik vět je v nahrávce?",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t9/l33n-u3.mp3",
+            "prepis": "Když jsme ráno přišli na zastávku, zjistili jsme, že autobus, který jezdí do školy, už odjel.",
+            "max_prehrani": 0,
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "1 věta",
+                  "spravne": false
+                },
+                {
+                  "id": "b",
+                  "text": "2 věty",
+                  "spravne": false
+                },
+                {
+                  "id": "c",
+                  "text": "3 věty",
+                  "spravne": false,
+                  "typ_chyby": "souveti-pocet-podle-spojek"
+                },
+                {
+                  "id": "d",
+                  "text": "4 věty",
+                  "spravne": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Kolik vět v nahrávce je vedlejších?",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t9/l33n-u3.mp3",
+            "prepis": "Když jsme ráno přišli na zastávku, zjistili jsme, že autobus, který jezdí do školy, už odjel.",
+            "max_prehrani": 0,
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "1 věta",
+                  "spravne": false
+                },
+                {
+                  "id": "b",
+                  "text": "2 věty",
+                  "spravne": false,
+                  "typ_chyby": "veta-hlavni-za-vedlejsi"
+                },
+                {
+                  "id": "c",
+                  "text": "3 věty",
+                  "spravne": true
+                },
+                {
+                  "id": "d",
+                  "text": "4 věty",
+                  "spravne": false,
+                  "typ_chyby": "veta-hlavni-za-vedlejsi"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Které sloveso patří do věty hlavní?",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t9/l33n-u3.mp3",
+            "prepis": "Když jsme ráno přišli na zastávku, zjistili jsme, že autobus, který jezdí do školy, už odjel.",
+            "max_prehrani": 0,
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "přišli",
+                  "spravne": false,
+                  "typ_chyby": "veta-hlavni-za-vedlejsi"
+                },
+                {
+                  "id": "b",
+                  "text": "zjistili",
+                  "spravne": true
+                },
+                {
+                  "id": "c",
+                  "text": "jezdí",
+                  "spravne": false,
+                  "typ_chyby": "veta-hlavni-za-vedlejsi"
+                },
+                {
+                  "id": "d",
+                  "text": "odjel",
+                  "spravne": false,
+                  "typ_chyby": "veta-hlavni-za-vedlejsi"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě souvětí jen slyší, text nevidí; nahrávku si může pustit znovu. Co v ní zazní, máte sbalené pod „Co zazní v nahrávce“. Nečtěte to nahlas, dítě má poslouchat. Proti učební lekci je souvětí delší (čtyři věty) a otázky jsou tři: počet vět, počet vedlejších vět a sloveso věty hlavní.",
+        "reseni": "přišli, zjistili, jezdí, odjel (čtyři slovesa, čtyři věty)\n\nKdyž jsme ráno přišli na zastávku (věta vedlejší: začíná když)\n\nzjistili jsme (věta hlavní: obstojí sama)\n\nže autobus už odjel (věta vedlejší: začíná že)\n\nkterý jezdí do školy (věta vedlejší: začíná který)\n\n**Výsledek:** krok 1: 4 věty, krok 2: 3 věty, krok 3: zjistili",
+        "otazky": [
+          {
+            "k": "Krok 1",
+            "text": "„Pusť si nahrávku ještě jednou a při každém slově, které říká, co se děje, ťukni prstem do stolu. Kolikrát ťukneš?“"
+          },
+          {
+            "k": "Krok 2",
+            "text": "„Které části nahrávky začínají slovem, po kterém ještě čekáš pokračování? Spočítej je.“"
+          },
+          {
+            "k": "Krok 3",
+            "text": "„Kterou část nahrávky můžeš říct samotnou a dává smysl? Které sloveso v ní je?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč je v nahrávce jen jedna věta hlavní.“",
+        "otocena_role_odpoved": "Ostatní věty začínají slovy když, že a který a samy neobstojí. Samo obstojí jen zjistili jsme, to je věta hlavní.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 vybere 3 věty, počítá když, že, který: „Kolik slov říká, co kdo dělá?“ V kroku 2 vybere 2 nebo 4: „Která část obstojí sama?“ V kroku 3 vybere přišli, jezdí nebo odjel: „Jakým slovem ta věta začíná? Dá se říct samotná?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — dlouhé souvětí dítě rozebere i poslechem. Pochvalte, že si nahrávku pustilo znovu a počítalo slovesa, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Řekněte dítěti větu: „Když skončil film, Ema řekla, že volal děda.“ Dítě řekne, kolik vět slyší a která je hlavní. Kontrola pro vás: 3 věty (skončil, řekla, volal); hlavní je Ema řekla, ostatní začínají když a že.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra řekněte dítěti dvakrát pomalu větu „Když sněží, Adam zůstane doma, protože nemá boty.“ Dítě ji napíše, podtrhne slovesa a zakroužkuje větu, která obstojí sama. Potom zopakujte lekci „Souvětí: věta hlavní a vedlejší“. Kontrola pro vás: slovesa sněží, zůstane, nemá, tedy 3 věty; zakroužkované Adam zůstane doma."
+      },
+      "tisk": {
+        "zadani": "Poslouchej nahrávku (pustí ti ji rodič).\n\nA) Kolik vět je v nahrávce? Zakroužkuj: a) 1 věta b) 2 věty c) 3 věty d) 4 věty\n\nB) Kolik vět v nahrávce je vedlejších? Zakroužkuj: a) 1 věta b) 2 věty c) 3 věty d) 4 věty\n\nC) Které sloveso patří do věty hlavní? Zakroužkuj: a) přišli b) zjistili c) jezdí d) odjel"
+      }
+    },
+    {
+      "id": "cj-t9-l33n-U4",
+      "typ": "detektiv",
+      "cil": "Najít u Petra řádek, kde počítal věty podle spojovacích slov místo podle přísudků (chyba jen o jednu větu), a říct správný počet.",
+      "cas_min": 5,
+      "zadani": "Petr počítal věty:\n\nA) Lucka, Ema a jejich kamarádky šly na koncert. → 1 věta\n\nB) Tomáš slíbil, že přijde, když bude moct. → 2 věty\n\nC) Adam chce po prázdninách začít hrát volejbal. → 1 věta\n\nD) Když jsme vstali, venku pršelo. → 2 věty\n\nUdělal **jednu** chybu. Najdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Ve kterém řádku se Petr spletl?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Řádek A",
+                "spravne": false,
+                "typ_chyby": "souveti-pocet-podle-spojek"
+              },
+              {
+                "id": "b",
+                "text": "Řádek B",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "Řádek C",
+                "spravne": false,
+                "typ_chyby": "souveti-infinitiv-jako-veta"
+              },
+              {
+                "id": "d",
+                "text": "Řádek D",
+                "spravne": false,
+                "typ_chyby": "detektiv-jine-slovo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Kolik vět tam má být?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1 věta",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "2 věty",
+                "spravne": false,
+                "typ_chyby": "souveti-pocet-podle-spojek"
+              },
+              {
+                "id": "c",
+                "text": "3 věty",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "4 věty",
+                "spravne": false,
+                "typ_chyby": "souveti-infinitiv-jako-veta"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák; hledat cizí chybu je snazší než přiznat vlastní. Dítě projde čtyři Petrovy řádky a najde ten, kde počet vět nesedí. Proti učební lekci je chyba schovanější: Petr se spletl jen o jednu větu, protože počítal spojovací slova. V kroku 2 (Kolik vět tam má být?) dítě vybere správný počet.",
+        "reseni": "Chyba je v řádku B: Petr počítal slova že a když, ne slovesa.\n\nA) 1 věta (jediné sloveso šly: Petr má dobře)\n\nB) 3 věty (slíbil, přijde, bude moct)\n\nC) 1 věta (v osobě je jen chce, začít hrát k němu patří: Petr má dobře)\n\nD) 2 věty (vstali, pršelo: Petr má dobře)\n\n**Výsledek:** krok 1 řádek B, krok 2: 3 věty",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Podle čeho se počítají věty? Řekni to dřív, než se podíváš na Petrova čísla.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Vezmi řádek po řádku a spočítej slovesa, která říkají, co se děje. Teprve pak porovnej s Petrovým číslem.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Patří v některém řádku dvě nebo tři slovesa k sobě a dělají jen jednu věc? Spočítej tak všechny řádky.“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a jak si ji příště ohlídám.“",
+        "otocena_role_odpoved": "Chyba je v řádku B. Slovesa jsou tři: slíbil, přijde, bude moct, takže 3 věty. Petr počítal jen slova že a když. Příště počítat slovesa.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Vybere A (jména), C (chce začít hrát) nebo D: „Kolik je tam sloves? Patří některá k sobě?“ (Petr je má dobře.) V kroku 2 vybere 2: „Kolik sloves je v řádku B?“ Vybere 4: „Je bude moct jedna věc, nebo dvě?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — schovanou Petrovu chybu dítě našlo i opravilo. Pochvalte, že počítalo slovesa v každém řádku, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr říká, že v souvětí Klára slíbila, že zavolá, když dorazí domů, jsou dvě věty.“ Zeptejte se: „Má pravdu? Jak to ověříš?“ Kontrola pro vás: nemá, jsou tam 3 věty (slíbila, zavolá, dorazí).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše souvětí, které začíná „Když…“ a má ještě slovo že. Podtrhne slovesa, zakroužkuje slova když a že a porovná oba počty. Potom zopakujte lekci „Souvětí: věta hlavní a vedlejší“. Kontrola pro vás: podtržených sloves je o jedno víc než zakroužkovaných slov; vět je tolik, kolik sloves."
+      },
+      "tisk": {
+        "zadani": "Petr počítal věty:\n\nA) Lucka, Ema a jejich kamarádky šly na koncert. → 1 věta\n\nB) Tomáš slíbil, že přijde, když bude moct. → 2 věty\n\nC) Adam chce po prázdninách začít hrát volejbal. → 1 věta\n\nD) Když jsme vstali, venku pršelo. → 2 věty\n\nUdělal jednu chybu.\n\n1) Ve kterém řádku se Petr spletl? Zakroužkuj: a) Řádek A b) Řádek B c) Řádek C d) Řádek D\n\n2) Kolik vět tam má být? Zakroužkuj: a) 1 věta b) 2 věty c) 3 věty d) 4 věty"
+      }
+    },
+    {
+      "id": "cj-t9-l33n-U5",
+      "typ": "kontrolni",
+      "cil": "Samostatně spočítat věty v souvětí se třemi jmény a dvěma infinitivy a u sedmi přísudků ve třech souvětích určit, jestli patří do věty hlavní, nebo vedlejší.",
+      "cas_min": 6,
+      "zadani": "Přečti si text:\n\nKdyž jsme přijeli k chatě, Tomáš, Adam a Ema hned chtěli jít k rybníku. Klára zůstala u auta, protože čekala na tátu, který hledal klíče. Potom nám zavolala, že už jdou.\n\nNejdřív urči, kolik vět je v prvním souvětí. Potom u každého označeného slovesa vyber, jestli je ve větě hlavní, nebo vedlejší.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Kolik vět je v prvním souvětí?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "1 věta",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "2 věty",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "3 věty",
+                "spravne": false,
+                "typ_chyby": "souveti-pocet-podle-spojek"
+              },
+              {
+                "id": "d",
+                "text": "4 věty",
+                "spravne": false,
+                "typ_chyby": "souveti-pocet-podle-spojek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Když jsme přijeli k chatě, Tomáš, Adam a Ema hned chtěli jít k rybníku. Klára zůstala u auta, protože čekala na tátu, který hledal klíče. Potom nám zavolala, že už jdou.",
+            "slova": [
+              2,
+              10,
+              15,
+              19,
+              23,
+              27,
+              30
+            ],
+            "role": [
+              "věta hlavní",
+              "věta vedlejší"
+            ]
+          },
+          "spravne": {
+            "2": "věta vedlejší",
+            "10": "věta hlavní",
+            "15": "věta hlavní",
+            "19": "věta vedlejší",
+            "23": "věta vedlejší",
+            "27": "věta hlavní",
+            "30": "věta vedlejší"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "2": "věta hlavní",
+                "10": "věta vedlejší",
+                "15": "věta vedlejší",
+                "19": "věta hlavní",
+                "23": "věta hlavní",
+                "27": "věta vedlejší",
+                "30": "věta hlavní"
+              },
+              "typ_chyby": "veta-hlavni-za-vedlejsi"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Proti učební lekci jsou souvětí tři a sloves k určení sedm. Pasti: tři jména a chtěli jít (jeden přísudek) v prvním souvětí; věta s když stojí první; ve druhém souvětí jdou dvě vedlejší věty za sebou.",
+        "reseni": "#### Krok 1\n\n2 věty (přijeli, chtěli jít; tři jména dělají jednu věc)\n\n#### Krok 2\n\npřijeli: věta vedlejší (začíná když)\n\nchtěli: věta hlavní (obstojí sama)\n\nzůstala: věta hlavní (obstojí sama)\n\nčekala: věta vedlejší (začíná protože)\n\nhledal: věta vedlejší (začíná který)\n\nzavolala: věta hlavní (obstojí sama)\n\njdou: věta vedlejší (začíná že)\n\n**Výsledek:** krok 1: 2 věty; hlavní chtěli, zůstala, zavolala; vedlejší přijeli, čekala, hledal, jdou",
+        "otazky": [
+          "„Jak spočítáš věty a jak poznáš, která je vedlejší? Řekni to vlastními slovy.“",
+          "„Vezmi jedno označené sloveso a řekni jeho větu samotnou. Dává smysl, nebo čekáš pokračování?“",
+          "„Najdi v textu slova jako že, když, protože, který. Kde začínají věty, které samy neobstojí?“"
+        ],
+        "otocena_role": "„Vyber si dvě označená slovesa a dokaž mi, jestli jsou ve větě hlavní, nebo vedlejší.“",
+        "otocena_role_odpoved": "Třeba čekala: věta protože čekala na tátu začíná protože a sama neobstojí, je vedlejší. Klára zůstala u auta obstojí samo, je to věta hlavní.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: v kroku 1 vybere 3 nebo 4 věty: „Kolik je tam sloves?“ U přijeli vybere hlavní, protože je první: „Jakým slovem ta věta začíná?“ U čekala, hledal nebo jdou vybere hlavní: „Dá se ta věta říct samotná?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — počet vět i hlavní a vedlejší věty dítě určí samo. Pochvalte, že hledalo slova jako že a když. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Adam řekl, že nepřijde, protože musí hlídat sestru.“ Dítě řekne, kolik je tam vět a která je hlavní. Kontrola pro vás: 3 věty (řekl, nepřijde, musí hlídat); hlavní je Adam řekl, ostatní začínají že a protože.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě dokončí tři začátky: „Řekl jsem, že…“, „Protože pršelo, …“, „Máme psa, který…“. Pak v každém souvětí podtrhne větu, která obstojí sama. Potom zopakujte lekci „Souvětí: věta hlavní a vedlejší“. Kontrola pro vás: podtržené Řekl jsem, věta za Protože pršelo a Máme psa; věty se že, protože a který samy neobstojí."
+      },
+      "tisk": {
+        "zadani": "Přečti si text:\n\nKdyž jsme přijeli k chatě, Tomáš, Adam a Ema hned chtěli jít k rybníku. Klára zůstala u auta, protože čekala na tátu, který hledal klíče. Potom nám zavolala, že už jdou.\n\nA) Kolik vět je v prvním souvětí? Zakroužkuj: a) 1 věta b) 2 věty c) 3 věty d) 4 věty\n\nB) Nad slovesa přijeli, chtěli, zůstala, čekala, hledal, zavolala, jdou napiš H (věta hlavní), nebo V (věta vedlejší)."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Autor 14. 10. 2026: naostro dvojče učební lekce cj-t9-l33 (ZADANI-OSMA §9, PLAN-ROZSIRENI §3), rozpis cestina/Obsah/TEMA-9-NAOSTRO.md. Všechny věty, texty s čárkami, poslech i příklady nové (skriptem porovnáno se všemi větami učebních lekcí L33–L36: shodné jsou jen pokyny). Hodnotí se jen počet vět, věta hlavní × vedlejší a čárka; tvary slov se nehodnotí, přesto je každé plnovýznamové slovo z textů úloh ověřeno v tabulce hesla ÚJČ (cache nastroje/ujc.sh 14. 10.; nové dotazy rozdat, studený). Jména jen Tomáš, Klára, Adam, Ema (oslovení Tomáši, Kláro, Adame, Emo podle hesel), Lucka jen v 1. p., Honzík ani Petr mimo detektiva ne. Indexy tokenů počítány skriptem (tokenizace jako vyhodnoceni-cj.js); vzorová odpověď každého kroku vyjde správně, každá chybná dlaždice a známá chyba vrací svůj kód (/tmp/naostro-cj9/over.mjs); text složený se vzorovými čárkami ověřen (/tmp/naostro-cj9/slozit.mjs). Pravidla: id=150 (vedlejší věty uvozené spojkami a vztažnými výrazy), id=151 (několikanásobný přísudek se společným podmětem v úlohách na počet vět není). Přísudek ze dvou či tří sloves (musí uklidit, budeme psát, se musí naučit plavat, mělo pršet, chce začít hrát, bude moct, chtěli jít) se počítá jako jeden. Nahrávka t9/l33n-u3 čeká na Pavla (řádek pro AUDIO.md v rozpisu). Korektor 14. 10. 2026 (nezávislá kontrola): každé slovo z textů úloh, dlaždic, poslechu a diktátu porovnáno s tvary v cache ÚJČ (nastroje/ujc.sh; mimo cache jen pravidelná příčestí a slova pokynů), oslovení Tomáši, Kláro, Adame, Emo v tabulkách hesel; čárky podle id=150, 151, 153 (a pak bez čárky; a za vloženou vedlejší větou nikde; nebo v hodnoceném místě ne), id=155; texty složené se vzorovou odpovědí přečteny větu po větě; vzorová odpověď každého kroku správně a každá chybná dlaždice a známá chyba vrací svůj kód (vyhodnotKrok, /tmp/kor-n9/over-kor.mjs). Jazykové chyby v hodnocených místech 0. Opravy: final U3 jezdí doplněn kód veta-hlavni-za-vedlejsi; v taháku U2, U4 a oranžové U2 se musí naučit plavat, chce začít hrát, začala chodit bruslit už nejsou „jeden přísudek“, ale „jediné sloveso v osobě + k němu patří“ (počet vět beze změny).",
+    "zkontroloval": "korektor",
+    "datum": "2026-10-14",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?id=150",
+      "https://prirucka.ujc.cas.cz/?id=151",
+      "https://prirucka.ujc.cas.cz/?slovo=Tom%C3%A1%C5%A1",
+      "https://prirucka.ujc.cas.cz/?slovo=Kl%C3%A1ra",
+      "https://prirucka.ujc.cas.cz/?slovo=Adam",
+      "https://prirucka.ujc.cas.cz/?slovo=Ema",
+      "https://prirucka.ujc.cas.cz/?slovo=ob%C4%9Bd",
+      "https://prirucka.ujc.cas.cz/?slovo=rozdat",
+      "https://prirucka.ujc.cas.cz/?slovo=test",
+      "https://prirucka.ujc.cas.cz/?slovo=u%C4%8Ditelka",
+      "https://prirucka.ujc.cas.cz/?slovo=muset",
+      "https://prirucka.ujc.cas.cz/?slovo=tr%C3%A9nink",
+      "https://prirucka.ujc.cas.cz/?slovo=uklidit",
+      "https://prirucka.ujc.cas.cz/?slovo=m%C3%AD%C4%8D",
+      "https://prirucka.ujc.cas.cz/?slovo=z%C3%ADtra",
+      "https://prirucka.ujc.cas.cz/?slovo=ve%C4%8Der",
+      "https://prirucka.ujc.cas.cz/?slovo=ps%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?slovo=%C3%BAkol",
+      "https://prirucka.ujc.cas.cz/?slovo=plot",
+      "https://prirucka.ujc.cas.cz/?slovo=r%C3%A1no",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1t%C4%9Bkat",
+      "https://prirucka.ujc.cas.cz/?slovo=soused",
+      "https://prirucka.ujc.cas.cz/?slovo=pes",
+      "https://prirucka.ujc.cas.cz/?slovo=tren%C3%A9rka",
+      "https://prirucka.ujc.cas.cz/?slovo=jet",
+      "https://prirucka.ujc.cas.cz/?slovo=z%C3%A1vod",
+      "https://prirucka.ujc.cas.cz/?slovo=nau%C4%8Dit",
+      "https://prirucka.ujc.cas.cz/?slovo=plavat",
+      "https://prirucka.ujc.cas.cz/?slovo=vz%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=sva%C4%8Dina",
+      "https://prirucka.ujc.cas.cz/?slovo=pit%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=de%C5%A1tn%C3%ADk",
+      "https://prirucka.ujc.cas.cz/?slovo=m%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=pr%C5%A1et",
+      "https://prirucka.ujc.cas.cz/?slovo=skon%C4%8Dit",
+      "https://prirucka.ujc.cas.cz/?slovo=bou%C5%99ka",
+      "https://prirucka.ujc.cas.cz/?slovo=t%C3%A1ta",
+      "https://prirucka.ujc.cas.cz/?slovo=zatopit",
+      "https://prirucka.ujc.cas.cz/?slovo=j%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=d%C5%99evo",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C5%99ij%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=t%C5%99%C3%ADda",
+      "https://prirucka.ujc.cas.cz/?slovo=zjistit",
+      "https://prirucka.ujc.cas.cz/?slovo=kamar%C3%A1d",
+      "https://prirucka.ujc.cas.cz/?slovo=sed%C4%9Bt",
+      "https://prirucka.ujc.cas.cz/?slovo=chyb%C4%9Bt",
+      "https://prirucka.ujc.cas.cz/?slovo=zast%C3%A1vka",
+      "https://prirucka.ujc.cas.cz/?slovo=jezdit",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1kola",
+      "https://prirucka.ujc.cas.cz/?slovo=odjet",
+      "https://prirucka.ujc.cas.cz/?slovo=kamar%C3%A1dka",
+      "https://prirucka.ujc.cas.cz/?slovo=koncert",
+      "https://prirucka.ujc.cas.cz/?slovo=sl%C3%ADbit",
+      "https://prirucka.ujc.cas.cz/?slovo=moct",
+      "https://prirucka.ujc.cas.cz/?slovo=cht%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=pr%C3%A1zdniny",
+      "https://prirucka.ujc.cas.cz/?slovo=za%C4%8D%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=hr%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?slovo=volejbal",
+      "https://prirucka.ujc.cas.cz/?slovo=vst%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?slovo=venku",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C5%99ijet",
+      "https://prirucka.ujc.cas.cz/?slovo=chata",
+      "https://prirucka.ujc.cas.cz/?slovo=hned",
+      "https://prirucka.ujc.cas.cz/?slovo=rybn%C3%ADk",
+      "https://prirucka.ujc.cas.cz/?slovo=z%C5%AFstat",
+      "https://prirucka.ujc.cas.cz/?slovo=auto",
+      "https://prirucka.ujc.cas.cz/?slovo=%C4%8Dekat",
+      "https://prirucka.ujc.cas.cz/?slovo=hledat",
+      "https://prirucka.ujc.cas.cz/?slovo=kl%C3%AD%C4%8D",
+      "https://prirucka.ujc.cas.cz/?slovo=zavolat",
+      "https://prirucka.ujc.cas.cz/?id=153"
+    ],
+    "testovaci_rodic": null
+  }
+}
