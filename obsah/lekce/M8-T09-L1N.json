@@ -1,0 +1,485 @@
+{
+  "id": "M8-T09-L1N",
+  "faze": "osma",
+  "tyden": 9,
+  "poradi": 1,
+  "tema": "Procento jako setina",
+  "kapitola": "procenta",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo spočítá libovolný počet procent z čísla, i přes deset procent, a pozná, kdy se procenta berou jen z části nebo ze zbytku.",
+  "uvod_pro_rodice": "Dítě tuhle látku dělalo v lekci „Procento jako setina“. Dnes ukáže, že ji zvládne samo: čtyři příklady místo tří, nenápadnější chyba u Petra a slovní úloha o krok delší.",
+  "uvod_pravidla": [
+    {
+      "znak": "$1\\,\\%$ z $300 = 3$",
+      "text": "setina celku"
+    },
+    {
+      "znak": "$10\\,\\%$ z $70 = 7$",
+      "text": "desetina celku"
+    },
+    {
+      "znak": "$100\\,\\% - 30\\,\\% = 70\\,\\%$",
+      "text": "zbytek do sta procent"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T09-L1N-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Kolik je $1\\,\\%$ z $1\\,600$?\n\nB) Kolik je $10\\,\\%$ z $95$?\n\nC) Na turnaj ve stolním tenise se přihlásilo $180$ hráčů, $25\\,\\%$ z nich jsou dívky. Kolik dívek se přihlásilo?\n\nD) Honzík měl $250$ Kč. $20\\,\\%$ z nich utratil za svačiny. Kolik korun mu zbylo?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $1\\,\\%$ z $1\\,600$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$160$",
+                "spravne": false,
+                "typ_chyby": "procento-jako-desetina"
+              },
+              {
+                "id": "b",
+                "text": "$1{,}6$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "c",
+                "text": "$16$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $10\\,\\%$ z $95$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$9{,}5$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$95$",
+                "spravne": false,
+                "typ_chyby": "procento-jako-desetina"
+              },
+              {
+                "id": "c",
+                "text": "$0{,}95$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: dívky na turnaji",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$25$ dívek",
+                "spravne": false,
+                "typ_chyby": "procento-jako-cislo"
+              },
+              {
+                "id": "b",
+                "text": "$45$ dívek",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$450$ dívek",
+                "spravne": false,
+                "typ_chyby": "procento-jako-desetina"
+              },
+              {
+                "id": "d",
+                "text": "$4{,}5$ dívky",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: Honzíkovi zbylo",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$50$ Kč",
+                "spravne": false,
+                "typ_chyby": "zamenil-cast-a-zbytek"
+              },
+              {
+                "id": "b",
+                "text": "$230$ Kč",
+                "spravne": false,
+                "typ_chyby": "procento-jako-cislo"
+              },
+              {
+                "id": "c",
+                "text": "$245$ Kč",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "d",
+                "text": "$200$ Kč",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá. Příklady jsou smíchané: jedno procento, deset procent, čtvrtina a zbytek po utracení. U D se ptá na peníze, které zbyly, ne na útratu. Čte se: $9{,}5$ devět celých pět, $0{,}95$ nula celá devadesát pět. Otázky jsou po příkladech, první patří k A i B.",
+        "reseni": "#### A) $1\\,\\%$ z $1\\,600$\n\n$1\\,600 : 100 = 16$ (jedno procento je setina celku)\n\n#### B) $10\\,\\%$ z $95$\n\n$95 : 10 = 9{,}5$ (deset procent je desetina celku)\n\n#### C) Dívky na turnaji\n\n$180 : 4 = 45$ (dvacet pět procent je čtvrtina celku)\n\n#### D) Honzíkovi zbylo\n\n$250 : 10 \\cdot 2 = 50$ (dvacet procent, útrata)\n\n$250 - 50 = 200$ (zbylo; jiná cesta: zbylo osmdesát procent)\n\n**Výsledek:** A) $16$; B) $9{,}5$; C) $45$ dívek; D) $200$ Kč",
+        "otazky": [
+          {
+            "k": "A a B",
+            "text": "„Neklikej, spočítej na papíře: na kolik stejných dílů dělíš celek, když hledáš jedno procento? A když deset procent?“"
+          },
+          {
+            "k": "C",
+            "text": "„Jaká část celku je dvacet pět procent? Na kolik stejných skupin rozdělíš sto osmdesát hráčů?“"
+          },
+          {
+            "k": "D",
+            "text": "„Na co se příklad ptá: na útratu, nebo na peníze, které zbyly? Kolik procent peněz Honzíkovi zůstalo?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč Honzíkovi nezbylo dvě stě třicet korun.“",
+        "otocena_role_odpoved": "Dvacet nejsou koruny, ale procenta. Dvacet procent z dvou set padesáti je padesát korun a ty se odečtou. Zbylo dvě stě korun.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. $160$, $95$, $450$: jedno procento počítá dělením deseti; $1{,}6$, $0{,}95$, $4{,}5$, $245$: dělením tisícem. Zeptejte se: „Kolik setin má celek?“ (Sto.) $25$ dívek, $230$ Kč: bere procenta jako počet; $50$ Kč: odpoví útratou. Zeptejte se: „Jsou to procenta, nebo koruny?“ (Procenta.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — procenta z celku i zbytek sedí. Pochvalte, že u každého příkladu hledalo, na kolik dílů celek dělí, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti jednu otázku po druhé: „Kolik je jedno procento z tisíce dvou set?“, „Kolik je deset procent ze čtyřiceti pěti?“, „Kolik je dvacet pět procent ze dvou set?“ Kontrola pro vás: $12$ (děleno stem), $4{,}5$ (čtyři celé pět, děleno deseti), $50$ (čtvrtina).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 40 knoflíků nebo kostiček. Zítra: „Čtyřicet knoflíků je celek, sto procent.“ Ať dítě rozdělí knoflíky na 10 stejných hromádek a potom na 4 stejné hromádky. Zeptejte se: „Kolik knoflíků je deset procent? Kolik dvacet pět procent?“ Pak ať samo zapíše $40 : 10 = 4$ a $40 : 4 = 10$. Potom zopakujte lekci „Procento jako setina“. Kontrola pro vás: deset procent jsou 4 knoflíky, dvacet pět procent 10 knoflíků."
+      },
+      "tisk": {
+        "zadani": "A) Kolik je $1\\,\\%$ z $1\\,600$? Zakroužkuj: a) $160$ b) $1{,}6$ c) $16$\n\nB) Kolik je $10\\,\\%$ z $95$? Zakroužkuj: a) $9{,}5$ b) $95$ c) $0{,}95$\n\nC) Na turnaj ve stolním tenise se přihlásilo $180$ hráčů, $25\\,\\%$ z nich jsou dívky. Kolik dívek se přihlásilo? Zakroužkuj: a) $25$ dívek b) $45$ dívek c) $450$ dívek d) $4{,}5$ dívky\n\nD) Honzík měl $250$ Kč. $20\\,\\%$ z nich utratil za svačiny. Kolik korun mu zbylo? Zakroužkuj: a) $50$ Kč b) $230$ Kč c) $245$ Kč d) $200$ Kč"
+      }
+    },
+    {
+      "id": "M8-T09-L1N-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Na školní akademii přišlo $650$ diváků. $12\\,\\%$ z nich byli bývalí žáci školy. Kolik diváků byli bývalí žáci?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: deset procent: $10\\,\\% \\to 650 : 10 = 65$\n\n2. řádek: jedno procento: $1\\,\\% \\to 65 : 100 = 0{,}65$\n\n3. řádek: dvě procenta: $2\\,\\% \\to 0{,}65 \\cdot 2 = 1{,}3$\n\n4. řádek: dvanáct procent: $12\\,\\% \\to 65 + 1{,}3 = 66{,}3$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "deset procent: $10\\,\\% \\to 650 : 10 = 65$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "jedno procento: $1\\,\\% \\to 65 : 100 = 0{,}65$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "dvě procenta: $2\\,\\% \\to 0{,}65 \\cdot 2 = 1{,}3$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "dvanáct procent: $12\\,\\% \\to 65 + 1{,}3 = 66{,}3$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "jedno procento: $1\\,\\% \\to 650 : 10 = 65$",
+                "spravne": false,
+                "typ_chyby": "procento-jako-desetina"
+              },
+              {
+                "id": "b",
+                "text": "jedno procento: $1\\,\\% \\to 65 \\cdot 10 = 650$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-spatnym-smerem"
+              },
+              {
+                "id": "c",
+                "text": "jedno procento: $1\\,\\% \\to 65 : 10 = 6{,}5$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "diváků"
+          },
+          "spravne": {
+            "hodnota": 78
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 66.3,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 780,
+              "typ_chyby": "procento-jako-desetina"
+            },
+            {
+              "hodnota": 12,
+              "typ_chyby": "procento-jako-cislo"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Počítá přes deset procent a z nich odvozuje jedno procento, to je dobrá cesta. Jedno procento je desetina z deseti procent. Řádky za chybou jsou spočítané dobře, jen se špatným číslem. Čte se: $0{,}65$ nula celá šedesát pět, $6{,}5$ šest celých pět, $66{,}3$ šedesát šest celých tři.",
+        "reseni": "Chyba je ve 2. řádku: Petr dělil deset procent stem. Jedno procento je ale desetina z deseti procent.\n\n$650 : 10 = 65$ (deset procent, 1. řádek je správně)\n\n$65 : 10 = 6{,}5$ (jedno procento; jiná cesta: $650 : 100$; oprava $65$ dělí celek jen deseti, oprava $650$ násobí)\n\n$6{,}5 \\cdot 2 = 13$ (dvě procenta)\n\n$65 + 13 = 78$ (dvanáct procent)\n\n**Výsledek:** $78$ diváků",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, kolik diváků přišlo a kolik procent z nich hledáš.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každého řádku si řekni: z kolika procent Petr vychází a kolik procent mu má vyjít? Sedí k tomu jeho dělení nebo násobení?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Kolikrát je deset procent víc než jedno procento? Jak potom z deseti a dvou procent složíš dvanáct procent?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč bývalých žáků nemůže být šedesát šest celých tři.“",
+        "otocena_role_odpoved": "Jedno procento je desetina z deseti procent, tedy šest celých pět, ne nula celá šedesát pět. Dvě procenta jsou třináct a dvanáct procent je sedmdesát osm diváků.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. 1. řádek je správně, 3. a 4. jsou jen důsledek. $66{,}3$: dělí stem jako Petr. Zeptejte se: „Kolikrát je jedno procento menší než deset procent?“ (Desetkrát.) $780$: jedno procento počítá dělením celku deseti. $12$: napíše počet procent. Oprava $650$ násobí místo dělení."
+      },
+      "semafor": {
+        "zelena": "Výborně — nenápadnou chybu našlo i opravilo. Pochvalte, že u každého řádku kontrolovalo, z kolika procent na kolik přechází, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Petr tvrdí: deset procent ze čtyř set je čtyřicet, takže jedno procento je nula celá čtyři. Má pravdu? Kolik je jedenáct procent ze čtyř set?“ Ať odpovídá na papír a nahlas řekne obě čísla. Kontrola pro vás: nemá, jedno procento je $4$; jedenáct procent je $44$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 10 papírků a 100 drobných kousků (fazole nebo korálky). Zítra: „Sto kousků je celek.“ Ať dítě položí na každý papírek 10 kousků: jeden papírek je deset procent. Zeptejte se: „Kolik kousků je jedno procento, když jeden papírek rozdělíš ještě na deset?“ Pak ať samo zapíše $100 : 10 = 10$ a $10 : 10 = 1$. Potom zopakujte lekci „Procento jako setina“. Kontrola pro vás: deset procent 10 kousků, jedno procento 1 kousek."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\n*Na školní akademii přišlo $650$ diváků. $12\\,\\%$ z nich byli bývalí žáci školy. Kolik diváků byli bývalí žáci?*\n\na udělal jednu chybu.\n\n1. řádek: deset procent: $10\\,\\% \\to 650 : 10 = 65$\n\n2. řádek: jedno procento: $1\\,\\% \\to 65 : 100 = 0{,}65$\n\n3. řádek: dvě procenta: $2\\,\\% \\to 0{,}65 \\cdot 2 = 1{,}3$\n\n4. řádek: dvanáct procent: $12\\,\\% \\to 65 + 1{,}3 = 66{,}3$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) jedno procento: $1\\,\\% \\to 650 : 10 = 65$ b) jedno procento: $1\\,\\% \\to 65 \\cdot 10 = 650$ c) jedno procento: $1\\,\\% \\to 65 : 10 = 6{,}5$\n\nC) Spočítej správný výsledek: ______ diváků"
+      }
+    },
+    {
+      "id": "M8-T09-L1N-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Do školy chodí $1\\,200$ žáků, $45\\,\\%$ z nich jsou dívky, ostatní jsou chlapci. Do sportovních kroužků chodí $40\\,\\%$ dívek a $20\\,\\%$ chlapců.\n\nKolik žáků školy chodí do sportovních kroužků?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Mezivýsledek: dívky ve sportovních kroužcích",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "žáků"
+          },
+          "spravne": {
+            "hodnota": 216
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 480,
+              "typ_chyby": "z-celku-misto-ze-zbytku"
+            },
+            {
+              "hodnota": 540,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 2160,
+              "typ_chyby": "procento-jako-desetina"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: chlapci ve sportovních kroužcích",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "žáků"
+          },
+          "spravne": {
+            "hodnota": 132
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 240,
+              "typ_chyby": "z-celku-misto-ze-zbytku"
+            },
+            {
+              "hodnota": 660,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 108,
+              "typ_chyby": "spatny-zaklad"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "žáků"
+          },
+          "spravne": {
+            "hodnota": 348
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 720,
+              "typ_chyby": "z-celku-misto-ze-zbytku"
+            },
+            {
+              "hodnota": 852,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 324,
+              "typ_chyby": "spatny-zaklad"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Úloha má tři celky: celou školu, dívky a chlapce. Počet dívek a chlapců se počítá z celé školy, kroužky z každé skupiny zvlášť. Past je vzít čtyřicet nebo dvacet procent z celé školy. Počet chlapců se zjistí odečtením dívek, nebo jako padesát pět procent školy.",
+        "reseni": "$1\\,200 : 100 = 12$ (jedno procento školy)\n\n$12 \\cdot 45 = 540$ (dívky)\n\n$540 : 10 \\cdot 4 = 216$ (dívky v kroužcích, čtyřicet procent dívek)\n\n$1\\,200 - 540 = 660$ (chlapci; jiná cesta: padesát pět procent školy)\n\n$660 : 10 \\cdot 2 = 132$ (chlapci v kroužcích, dvacet procent chlapců)\n\n$216 + 132 = 348$ (všichni žáci v kroužcích)\n\n**Výsledek:** $348$ žáků",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, na jaké skupiny se žáci školy dělí. Na kterou skupinu se úloha nakonec ptá?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Z kterých žáků se počítá čtyřicet procent a z kterých dvacet procent? Je to pokaždé celá škola?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: chlapci jsou všichni žáci, kteří nejsou dívky. Jak zjistíš jejich počet a co spočítáš potom?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč se dvacet procent nepočítá z tisíce dvou set žáků.“",
+        "otocena_role_odpoved": "Do kroužků chodí dvacet procent jen z chlapců, ne z celé školy. Proto se nejdřív zjistí, kolik je chlapců, šest set šedesát, a dvacet procent se počítá z nich.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. $480$, $240$, výsledek $720$: počítá z celé školy. Zeptejte se: „Z kterých žáků chodí do kroužků dvacet procent?“ (Z chlapců.) $540$, $660$: zadá počet dívek nebo chlapců. $108$, výsledek $324$: chlapce počítá z dívek. $852$: odpoví žáky mimo kroužky. $2\\,160$: dělí deseti."
+      },
+      "semafor": {
+        "zelena": "Výborně — tři celky rozlišilo. Pochvalte, že procenta kroužků počítalo zvlášť z dívek a zvlášť z chlapců, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Ve skupině je $40$ dětí, $60\\,\\%$ jsou dívky. Plavat se učí $25\\,\\%$ dívek a $50\\,\\%$ chlapců. Kolik dětí se učí plavat?“ Ať řeší na papír a nahlas řekne počet dívek a chlapců. Kontrola pro vás: $24$ dívek a $16$ chlapců; plavat se učí $6$ dívek a $8$ chlapců, celkem $14$ dětí.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 20 knoflíků dvou barev, 12 jedné (dívky) a 8 druhé (chlapci). Zítra: „Do kroužku chodí padesát procent dívek a dvacet pět procent chlapců.“ Ať dítě odsune polovinu jen z dívek a čtvrtinu jen z chlapců. Zeptejte se: „Kolik dětí chodí do kroužku?“ Pak ať samo zapíše $12 : 2 = 6$, $8 : 4 = 2$ a $6 + 2 = 8$. Potom zopakujte lekci „Procento jako setina“. Kontrola pro vás: 6 dívek, 2 chlapci, celkem 8."
+      },
+      "tisk": {
+        "zadani": "Do školy chodí $1\\,200$ žáků, $45\\,\\%$ z nich jsou dívky, ostatní jsou chlapci. Do sportovních kroužků chodí $40\\,\\%$ dívek a $20\\,\\%$ chlapců.\n\nKolik žáků školy chodí do sportovních kroužků?\n\nA) Mezivýsledek: dívky ve sportovních kroužcích ______\n\nB) Mezivýsledek: chlapci ve sportovních kroužcích ______\n\nC) Výsledek: ______ žáků"
+      }
+    },
+    {
+      "id": "M8-T09-L1N-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Klára měla našetřeno $900$ Kč. Za knihu dala $20\\,\\%$ těchto peněz. Ze zbytku pak dala $40\\,\\%$ za lístek na koncert.\n\nKolik korun jí zůstalo?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 432
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 360,
+              "typ_chyby": "z-celku-misto-ze-zbytku"
+            },
+            {
+              "hodnota": 468,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            },
+            {
+              "hodnota": 840,
+              "typ_chyby": "procento-jako-cislo"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Druhá procenta se berou jen ze zbytku po koupi knihy, ne ze všech peněz.",
+        "reseni": "$900 : 10 \\cdot 2 = 180$ (kniha, dvacet procent)\n\n$900 - 180 = 720$ (zbytek)\n\n$720 : 10 \\cdot 4 = 288$ (lístek, čtyřicet procent ze zbytku)\n\n$720 - 288 = 432$ (zůstalo; jiná cesta: šedesát procent ze zbytku)\n\n**Výsledek:** $432$ Kč",
+        "otazky": [
+          "„Přečti mi úlohu nahlas. Z jakých peněz se počítá těch čtyřicet procent?“",
+          "„Kolik peněz Kláře zbylo po koupi knihy? Co je potom nový celek?“",
+          "„Tady máš začátek: deset procent z devíti set je devadesát. Jak pokračuješ?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč Klára za lístek nedala čtyřicet procent z devíti set korun.“",
+        "otocena_role_odpoved": "Lístek kupovala až ze zbytku, když už knihu měla. Ze zbylých sedmi set dvaceti korun je čtyřicet procent dvě stě osmdesát osm korun.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $360$: lístek počítá ze všech peněz. Zeptejte se: „Kolik peněz měla Klára, když kupovala lístek?“ (Sedm set dvacet korun.) $468$: odpoví útratou. $840$: odečte procenta jako koruny."
+      },
+      "semafor": {
+        "zelena": "Výborně — procenta ze zbytku zvládá samo. Pochvalte, že lístek počítalo z peněz, které po knize zbyly. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Adam měl $500$ Kč. Za hru dal $40\\,\\%$, ze zbytku $20\\,\\%$ za pizzu. Kolik mu zůstalo?“ Ať řeší na papír a nahlas řekne zbytek po hře. Kontrola pro vás: hra $200$ Kč, zbytek $300$ Kč, pizza $60$ Kč (deset procent je $30$), zůstalo $240$ Kč.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 20 desetikorun nebo lístečků „10 Kč“. Zítra: „Máš 200 korun. Padesát procent, tedy polovinu, dáš za knihu.“ Ať dítě polovinu odsune. Pak: „Ze zbytku dáš padesát procent za lístek.“ Ať odsune polovinu jen ze zbytku. Zeptejte se: „Kolik korun zůstalo?“ Pak ať samo zapíše $200 : 2 = 100$ a $100 : 2 = 50$. Potom zopakujte lekci „Procento jako setina“. Kontrola pro vás: zůstane 50 Kč, ne nula."
+      },
+      "tisk": {
+        "zadani": "Klára měla našetřeno $900$ Kč. Za knihu dala $20\\,\\%$ těchto peněz. Ze zbytku pak dala $40\\,\\%$ za lístek na koncert.\n\nKolik korun jí zůstalo?\n\nVýsledek: ______ Kč"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 14. 10. 2026: nezávisle přepočítáno (python Fraction, /tmp/recenze-n09/prepocet.py) a přes vyhodnotKrok (164 vstupů ve 4 lekcích: správné odpovědi true, každá známá chyba i chybná dlaždice vrací svůj kód). U1 16, 9,5, 45, 200; U2 12 % z 650 = 78 (Petr 66,3); U3 dívky 540, v kroužcích 216, chlapci 660, v kroužcích 132, celkem 348; U4 zbytek 720, zůstalo 432. Oranžové, červené a Platí přepočítány. Opraveno (1 kód): U3 k2 108 a final 324 (dvacet procent z dívek místo z chlapců) z zamenil-cast-a-zbytek na spatny-zaklad, popis „za základ vzal jinou veličinu“ rodiči sedí přesně. Věcné chyby: 0. Ponecháno: U1 B 95 jako procento-jako-desetina (stejně jako učební L1), U2 66,3 posun-carky-o-spatny-pocet (Petr dělí deset procent stem). Naostro: stejné téma, kapitola, týden, pořadí; čísla, kontext i věty jiné než v učební L1; o kus těžší (4 příklady, nenápadnější chyba, dvě skupiny v hlavní úloze, procenta ze zbytku v semaforu). Limity slov, rod v otázkách, zlomky a tisk bez nálezů.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-14"
+  }
+}
