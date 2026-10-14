@@ -1,0 +1,453 @@
+{
+  "id": "M8-T09-L4B",
+  "faze": "osma",
+  "tyden": 9,
+  "poradi": 4,
+  "tema": "Kontrola: procenta",
+  "kapitola": "procenta",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo spočítá část, počet procent i původní cenu a pozná, z čeho se procenta berou.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami: kontrola celého tématu, tedy část z celku, počet procent, sleva a cena před slevou.",
+  "uvod_pravidla": [
+    {
+      "znak": "$1\\,\\%$ z $600 = 6$",
+      "text": "setina celku"
+    },
+    {
+      "znak": "$80\\,\\% \\to 640$ Kč",
+      "text": "po slevě: osmdesát procent"
+    },
+    {
+      "znak": "$640 : 80 \\cdot 100 = 800$",
+      "text": "zpět přes jedno procento"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T09-L4B-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Kolik je $30\\,\\%$ z $230$?\n\nB) Na plaveckých závodech startovalo $60$ dětí, $27$ z nich plavalo prsa. Kolik procent dětí plavalo prsa?\n\nC) Šála stojí $340$ Kč. Dostane slevu $20\\,\\%$. Kolik stojí po slevě?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $30\\,\\%$ z $230$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$69$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$6{,}9$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "c",
+                "text": "$690$",
+                "spravne": false,
+                "typ_chyby": "procento-jako-desetina"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: děti plavající prsa",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$27\\,\\%$",
+                "spravne": false,
+                "typ_chyby": "procento-jako-cislo"
+              },
+              {
+                "id": "b",
+                "text": "$0{,}45\\,\\%$",
+                "spravne": false,
+                "typ_chyby": "vysledek-bez-prevodu-na-procenta"
+              },
+              {
+                "id": "c",
+                "text": "$45\\,\\%$",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "$55\\,\\%$",
+                "spravne": false,
+                "typ_chyby": "zamenil-cast-a-zbytek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: šála po slevě",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$68$ Kč",
+                "spravne": false,
+                "typ_chyby": "jen-cast-bez-celku"
+              },
+              {
+                "id": "b",
+                "text": "$272$ Kč",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$408$ Kč",
+                "spravne": false,
+                "typ_chyby": "zdrazeni-sleva-zamena"
+              },
+              {
+                "id": "d",
+                "text": "$320$ Kč",
+                "spravne": false,
+                "typ_chyby": "procento-jako-cislo"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá. Každý příklad je z jedné lekce tématu: část z celku, kolik procent tvoří část a cena po slevě. U každého je důležité, co je celek. Čte se: $6{,}9$ šest celých devět, $0{,}45$ nula celá čtyřicet pět. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $30\\,\\%$ z $230$\n\n$230 : 10 = 23$ (deset procent)\n\n$23 \\cdot 3 = 69$ (třicet procent)\n\n#### B) Prsa\n\n$27 : 60 = 0{,}45$ (část děleno celek)\n\n$0{,}45 = 45\\,\\%$ (krát sto)\n\n#### C) Šála po slevě\n\n$340 : 10 \\cdot 2 = 68$ (sleva, dvacet procent)\n\n$340 - 68 = 272$ (cena po slevě)\n\n**Výsledek:** A) $69$; B) $45\\,\\%$; C) $272$ Kč",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, spočítej na papíře: kolik je deset procent ze dvou set třiceti? Kolikrát víc je třicet procent?“"
+          },
+          {
+            "k": "B",
+            "text": "„Co je tady celek? Které číslo je část, kterou s celkem porovnáváš?“"
+          },
+          {
+            "k": "C",
+            "text": "„Kolik je dvacet procent ze tří set čtyřiceti? Co s tím u slevy uděláš?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč prsa neplavalo dvacet sedm procent dětí.“",
+        "otocena_role_odpoved": "Dvacet sedm je počet dětí, ne procenta. Dvacet sedm ze šedesáti je čtyřicet pět procent, protože dvacet sedm děleno šedesáti je nula celá čtyřicet pět.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. $690$ nebo $6{,}9$: dělí deseti nebo tisícem místo stem. Zeptejte se: „Kolik je setina celku?“ (Dvě celé tři.) $27\\,\\%$, $320$: bere čísla jako procenta. $55\\,\\%$: počítá ty, kdo plavali jinak. $0{,}45\\,\\%$: nepřevede. $68$, $408$: slevu neodečte, nebo přičte."
+      },
+      "semafor": {
+        "zelena": "Výborně — všechny tři druhy úloh rozlišuje. Pochvalte, že u každé hledalo celek, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Kolik je třicet procent ze dvou set?“, „Kolik procent je deset ze čtyřiceti?“, „Tričko za dvě stě korun má slevu deset procent. Kolik stojí?“ Kontrola pro vás: $60$ (deset procent je $20$), dvacet pět procent (čtvrtina), $180$ Kč.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 30 knoflíků nebo kostiček. Zítra: „Třicet knoflíků je celek, sto procent.“ Ať dítě rozdělí knoflíky na 10 stejných hromádek. Zeptejte se: „Kolik knoflíků je deset procent? Kolik třicet procent? Kolik zbude, když třicet procent odebereš?“ Pak ať samo zapíše $30 : 10 = 3$ a $30 - 9 = 21$. Potom zopakujte lekci „Kontrola: procenta“. Kontrola pro vás: deset procent 3 knoflíky, třicet procent 9, zbude 21."
+      },
+      "tisk": {
+        "zadani": "A) Kolik je $30\\,\\%$ z $230$? Zakroužkuj: a) $69$ b) $6{,}9$ c) $690$\n\nB) Na plaveckých závodech startovalo $60$ dětí, $27$ z nich plavalo prsa. Kolik procent dětí plavalo prsa? Zakroužkuj: a) $27\\,\\%$ b) $0{,}45\\,\\%$ c) $45\\,\\%$ d) $55\\,\\%$\n\nC) Šála stojí $340$ Kč. Dostane slevu $20\\,\\%$. Kolik stojí po slevě? Zakroužkuj: a) $68$ Kč b) $272$ Kč c) $408$ Kč d) $320$ Kč"
+      }
+    },
+    {
+      "id": "M8-T09-L4B-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Stan stojí po slevě $20\\,\\%$ celkem $560$ Kč. Kolik korun stál před slevou?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: po slevě platí: $100\\,\\% - 20\\,\\% = 80\\,\\%$\n\n2. řádek: sleva: $20\\,\\%$ z $560 = 112$\n\n3. řádek: před slevou: $560 + 112 = 672$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "po slevě platí: $100\\,\\% - 20\\,\\% = 80\\,\\%$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "sleva: $20\\,\\%$ z $560 = 112$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "před slevou: $560 + 112 = 672$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "jedno procento: $560 : 80 = 7$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "jedno procento: $560 : 20 = 28$",
+                "spravne": false,
+                "typ_chyby": "zamenil-cast-a-zbytek"
+              },
+              {
+                "id": "c",
+                "text": "jedno procento: $560 : 100 = 5{,}6$",
+                "spravne": false,
+                "typ_chyby": "spatny-zaklad"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 700
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 672,
+              "typ_chyby": "o-tretinu-z-vysledku"
+            },
+            {
+              "hodnota": 580,
+              "typ_chyby": "procento-jako-cislo"
+            },
+            {
+              "hodnota": 2800,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Sleva se počítala z původní ceny, kterou zatím nikdo nezná. Cena po slevě je jen osmdesát procent původní ceny. Správný 2. řádek proto hledá jedno procento původní ceny. Řádky za chybou jsou spočítané dobře, jen se špatným číslem. Čte se: $5{,}6$ pět celých šest.",
+        "reseni": "Chyba je ve 2. řádku: Petr počítal slevu z ceny po slevě. Sleva se ale brala z původní ceny.\n\n$100\\,\\% - 20\\,\\% = 80\\,\\%$ (cena po slevě je osmdesát procent původní ceny)\n\n$560 : 80 = 7$ (jedno procento původní ceny; oprava $5{,}6$ bere za celek cenu po slevě, oprava $28$ dělí procenty slevy)\n\n$7 \\cdot 100 = 700$ (původní cena, sto procent)\n\n**Výsledek:** $700$ Kč",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co o stanu víš. Kterou cenu hledáš?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každého Petrova řádku se zeptej: z jaké ceny se tu berou procenta? Počítala se sleva opravdu z ní?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Pět set šedesát korun je osmdesát procent původní ceny. Jak z toho zjistíš jedno procento a pak celou cenu?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč stan nestál šest set sedmdesát dva korun.“",
+        "otocena_role_odpoved": "Sleva se počítala z původní ceny, ne z ceny po slevě. Pět set šedesát je osmdesát procent, jedno procento je sedm, původní cena sedm set. Zkouška: sedm set bez dvaceti procent je pět set šedesát.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. 1. řádek je správně, 3. je důsledek. $672$: počítá jako Petr. Zeptejte se: „Z jaké ceny se sleva počítala?“ (Z původní.) Zkouška pro vás: $672$ bez pětiny je asi $538$. $580$: přičte dvacet korun. $2\\,800$: dělí dvaceti místo osmdesáti."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že poznalo, z jaké ceny se sleva počítala, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Petr tvrdí: kniha stojí po slevě $10\\,\\%$ celkem $360$ Kč, takže předtím stála $360 + 36 = 396$ Kč. Má pravdu?“ Ať řeší na papír a řekne správnou původní cenu. Kontrola pro vás: nemá; $360$ Kč je devadesát procent, jedno procento $4$ Kč, původní cena $400$ Kč.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 10 papírků a 30 knoflíků. Zítra: „Deset papírků je původní cena, každý je deset procent. Sleva dvacet procent jsou dva papírky.“ Ať dítě odloží 2 papírky a na zbylých 8 rozdělí 24 knoflíků (cena po slevě). Zeptejte se: „Kolik knoflíků patří na jeden papírek? Kolik na všech deset?“ Pak ať samo zapíše $24 : 8 = 3$ a $3 \\cdot 10 = 30$. Potom zopakujte lekci „Kontrola: procenta“. Kontrola pro vás: původní cena 30."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\n*Stan stojí po slevě $20\\,\\%$ celkem $560$ Kč. Kolik korun stál před slevou?*\n\na udělal jednu chybu.\n\n1. řádek: po slevě platí: $100\\,\\% - 20\\,\\% = 80\\,\\%$\n\n2. řádek: sleva: $20\\,\\%$ z $560 = 112$\n\n3. řádek: před slevou: $560 + 112 = 672$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) jedno procento: $560 : 80 = 7$ b) jedno procento: $560 : 20 = 28$ c) jedno procento: $560 : 100 = 5{,}6$\n\nC) Spočítej správný výsledek: ______ Kč"
+      }
+    },
+    {
+      "id": "M8-T09-L4B-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Stavebnice stála $2\\,500$ Kč. Na jaře ji obchod zdražil o $20\\,\\%$. V létě ji zlevnil o $20\\,\\%$.\n\nKolik korun stojí stavebnice v létě?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Mezivýsledek: cena po zdražení",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 3000
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 500,
+              "typ_chyby": "jen-cast-bez-celku"
+            },
+            {
+              "hodnota": 2000,
+              "typ_chyby": "zdrazeni-sleva-zamena"
+            },
+            {
+              "hodnota": 2520,
+              "typ_chyby": "procento-jako-cislo"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Vyber, co platí",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Sleva se počítá z $3\\,000$ Kč.",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "Sleva se počítá z $2\\,500$ Kč.",
+                "spravne": false,
+                "typ_chyby": "postupne-procenta-secetl"
+              },
+              {
+                "id": "c",
+                "text": "V létě stojí stavebnice zase $2\\,500$ Kč.",
+                "spravne": false,
+                "typ_chyby": "sleva-a-zdrazeni-se-vyrusi"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 2400
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 2500,
+              "typ_chyby": "sleva-a-zdrazeni-se-vyrusi"
+            },
+            {
+              "hodnota": 3600,
+              "typ_chyby": "zdrazeni-sleva-zamena"
+            },
+            {
+              "hodnota": 600,
+              "typ_chyby": "jen-cast-bez-celku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Cena se mění dvakrát po sobě. Procenta se vždy berou z ceny, která právě platí: zdražení z původní ceny, sleva ze zdražené. Zdražení a sleva o stejná procenta se proto nevyruší, i když to tak dospělým často připadá.",
+        "reseni": "$2\\,500 : 100 \\cdot 20 = 500$ (zdražení, dvacet procent z původní ceny)\n\n$2\\,500 + 500 = 3\\,000$ (cena po zdražení)\n\n$3\\,000 : 100 \\cdot 20 = 600$ (sleva, dvacet procent ze zdražené ceny)\n\n$3\\,000 - 600 = 2\\,400$ (cena v létě)\n\n**Výsledek:** $2\\,400$ Kč",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co se dělo s cenou stavebnice. Kolikrát se cena změnila?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Kolik stála stavebnice těsně předtím, než ji v létě zlevnili? Z jaké ceny se tedy sleva počítá?“"
+          },
+          {
+            "k": "Výsledek",
+            "text": "„Tady máš začátek: dvacet procent jsou dvě desetiny. Kolik je deset procent z ceny po zdražení a kolik dvacet?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč stavebnice v létě nestojí zase dva tisíce pět set korun.“",
+        "otocena_role_odpoved": "Sleva se počítá ze zdražené ceny tři tisíce, ne z dvou tisíc pěti set. Dvacet procent ze tří tisíc je šest set, víc než zdražení. Stavebnice proto stojí dva tisíce čtyři sta.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. $2\\,500$ ve výsledku: myslí, že se změny vyruší. Zeptejte se: „Kolik stála stavebnice před slevou?“ (Tři tisíce.) Zkouška pro vás: sleva $600$ je větší než zdražení. $3\\,600$: slevu přičte. $500$, $600$: jen změna. Krok 1 $2\\,000$: odečítá; $2\\,520$: přičte dvacet."
+      },
+      "semafor": {
+        "zelena": "Výborně — dvě změny ceny zvládlo. Pochvalte, že slevu počítalo ze zdražené ceny, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Kytara stála $4\\,000$ Kč. Na jaře zdražila o $10\\,\\%$, na podzim zlevnila o $10\\,\\%$. Kolik stojí na podzim?“ Ať řeší na papír a nahlas řekne obě ceny. Kontrola pro vás: na jaře $4\\,400$ Kč, sleva $440$ Kč, na podzim $3\\,960$ Kč.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 20 knoflíků nebo kostiček. Zítra ať dítě dá do řady 16 knoflíků a přidá čtvrtinu, tedy dvacet pět procent. Pak ať z nové řady odebere čtvrtinu. Zeptejte se: „Proč v řadě nezůstalo zase šestnáct knoflíků?“ Pak ať samo zapíše $16 + 4 = 20$ a $20 - 5 = 15$. Potom zopakujte lekci „Kontrola: procenta“. Kontrola pro vás: nejdřív 20, na konci 15; čtvrtina se brala z delší řady."
+      },
+      "tisk": {
+        "zadani": "Stavebnice stála $2\\,500$ Kč. Na jaře ji obchod zdražil o $20\\,\\%$. V létě ji zlevnil o $20\\,\\%$.\n\nKolik korun stojí stavebnice v létě?\n\nA) Mezivýsledek: cena po zdražení ______ Kč\n\nB) Co platí? Zakroužkuj: a) Sleva se počítá z $3\\,000$ Kč. b) Sleva se počítá z $2\\,500$ Kč. c) V létě stojí stavebnice zase $2\\,500$ Kč.\n\nC) Výsledek: ______ Kč"
+      }
+    },
+    {
+      "id": "M8-T09-L4B-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Adam sbírá kartičky do alba. Už má $93$ kartiček. To je $30\\,\\%$ celého alba.\n\nKolik kartiček má celé album?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "kartiček"
+          },
+          "spravne": {
+            "hodnota": 310
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 27.9,
+              "typ_chyby": "spatny-zaklad"
+            },
+            {
+              "hodnota": 123,
+              "typ_chyby": "procento-jako-cislo"
+            },
+            {
+              "hodnota": 3.1,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Celek je celé album, devadesát tři kartiček je jen jeho část. Album musí mít víc kartiček.",
+        "reseni": "$93 : 3 = 31$ (deset procent alba; třicet procent jsou tři desetiny)\n\n$31 \\cdot 10 = 310$ (celé album, sto procent; jiná cesta: jedno procento je $93 : 30 = 3{,}1$, krát sto)\n\n**Výsledek:** $310$ kartiček",
+        "otazky": [
+          "„Přečti mi úlohu nahlas. Co je tady celek a co je jen jeho část?“",
+          "„Kolik procent je celé album? Bude mít víc, nebo míň kartiček než devadesát tři?“",
+          "„Tady máš začátek: třicet procent jsou tři desetiny alba. Kolik kartiček je jedna desetina?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč album nemá dvacet sedm celých devět kartiček.“",
+        "otocena_role_odpoved": "To je třicet procent z devadesáti tří. Devadesát tři kartiček je ale jen část alba, celé album je větší. Deset procent je třicet jedna kartiček, celé album tři sta deset.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $27{,}9$: počítá procenta z kartiček, které Adam má. Zeptejte se: „Může mít celé album míň kartiček, než Adam už má?“ (Ne.) $123$: přičte třicet. $3{,}1$: skončí u jednoho procenta."
+      },
+      "semafor": {
+        "zelena": "Výborně — celek ze známé části spočítá samo. Pochvalte, že šlo zpět přes deset nebo jedno procento. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Ema už vyřešila $8$ úloh ze sbírky. To je $20\\,\\%$ všech úloh. Kolik úloh má sbírka?“ Ať řeší na papír a nahlas řekne, kolik je deset procent a kolik celá sbírka. Kontrola pro vás: deset procent jsou $4$ úlohy, celá sbírka $40$ úloh.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 10 papírků a 20 knoflíků. Zítra: „Deset papírků je celé album, každý je deset procent. Adam má třicet procent, to je 6 kartiček.“ Ať dítě rozdělí 6 knoflíků na 3 papírky. Zeptejte se: „Kolik kartiček je na jednom papírku? Kolik na všech deseti?“ Pak ať samo zapíše $6 : 3 = 2$ a $2 \\cdot 10 = 20$. Potom zopakujte lekci „Kontrola: procenta“. Kontrola pro vás: 2 kartičky na papírek, album má 20 kartiček."
+      },
+      "tisk": {
+        "zadani": "Adam sbírá kartičky do alba. Už má $93$ kartiček. To je $30\\,\\%$ celého alba.\n\nKolik kartiček má celé album?\n\nVýsledek: ______ kartiček"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenze 14. 10.: B-varianta M8-T09-L4, struktura, vstupy, kódy chyb, žebříček „Platí“ a obtížnost odpovídají hlavní lekci, čísla a kontext jiné (sazba $20\\,\\%$ opakovaná, povoleno). Nezávisle přepočítáno (python Fraction, všechny správné odpovědi, dlaždice, známé chyby, rovnosti v řešení, oranžové a červené) a přes vyhodnotKrok: U1 $69$, $45\\,\\%$, $272$; U2 $700$ (Petr $672$, oprava $7$); U3 $3\\,000$, $2\\,400$; U4 $310$. Ověřeno, že otázka L3 u U3 už neprozrazuje cenu po zdražení (v hlavní lekci ji prozrazovala), ani jiná otázka výsledek kroku. Věcné chyby žádné, beze změn.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-14"
+  }
+}
