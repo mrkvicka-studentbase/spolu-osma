@@ -1,0 +1,635 @@
+{
+  "id": "cj-t5-l18b",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 5,
+  "poradi": 2,
+  "tema": "Slovesný vid",
+  "kapitola": "slovesa",
+  "cil_pro_rodice": "Dítě určí vid slovesa testem budu ___ (budu dělat jde, sloveso je nedokonavé; budu udělat nejde, je dokonavé) a pozná, že udělám nebo nakreslím je čas budoucí.",
+  "uvod_pro_rodice": "Opakování po červeném semaforu: stejná lekce „Slovesný vid“ s jinými slovesy a větami, aby dítě znovu určilo vid testem budu ___ a poznalo budoucí čas dokonavých sloves.",
+  "uvod_pravidla": [
+    {
+      "znak": "dělat nedokonavé · udělat dokonavé",
+      "text": "co to je"
+    },
+    {
+      "znak": "Jde „budu ___“? → nedokonavé",
+      "text": "test"
+    },
+    {
+      "znak": "udělám = budoucí čas",
+      "text": "příklad"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "vid": "jestli sloveso mluví o ději, který trvá nebo se opakuje (dělat), nebo o ději, který se dokončí (udělat)",
+    "nedokonavé sloveso (vid nedokonavý)": "děj trvá nebo se opakuje; jde říct budu ___ (budu dělat, budu kreslit)",
+    "dokonavé sloveso (vid dokonavý)": "děj se dokončí; budu ___ nejde (budu udělat se neříká), budoucnost se řekne jedním slovem: udělám, nakreslím",
+    "neurčitý tvar": "základní tvar slovesa na -t: dělat, udělat, kreslit",
+    "čas": "přítomný (dělá), minulý (dělal), budoucí (bude dělat, udělá)",
+    "způsob slovesa": "jestli sloveso oznamuje (píše), přikazuje (piš!), nebo je s by (psal by); minulá lekce"
+  },
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "cas_min": 25,
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t5-l18b-U1",
+      "typ": "rozcvicka",
+      "cil": "Opakování lekce 17: způsob slovesa (i byla, která jen začíná na by) a spisovný tvar bychom.",
+      "cas_min": 4,
+      "zadani": "V řadách A až C urči způsob tučného slovesa. V řadě D vyber slovo do mezery.\n\nA) **Pošli** mi tu fotku!\n\nB) **Nabídl bys** Emě čaj?\n\nC) Lucka **byla** u kamarádky.\n\nD) V létě ___ spolu jezdili na kole.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "oznamovací",
+                "spravne": false,
+                "typ_chyby": "zpusob-rozkaz-za-oznam"
+              },
+              {
+                "id": "b",
+                "text": "rozkazovací",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "podmiňovací",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "oznamovací",
+                "spravne": false,
+                "typ_chyby": "zpusob-podmin-za-oznam"
+              },
+              {
+                "id": "b",
+                "text": "rozkazovací",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "podmiňovací",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "oznamovací",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "rozkazovací",
+                "spravne": false
+              },
+              {
+                "id": "c",
+                "text": "podmiňovací",
+                "spravne": false,
+                "typ_chyby": "zpusob-byl-za-podminovaci"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "bysme",
+                "spravne": false,
+                "typ_chyby": "bysme-za-bychom"
+              },
+              {
+                "id": "b",
+                "text": "bychom",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "by jsme",
+                "spravne": false,
+                "typ_chyby": "by-jsme-za-bychom"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje minulou lekci: způsob slovesa (oznamuje, přikazuje, nebo s by) a spisovný tvar bychom. Past v řadě C: byla jen začíná na by, je to minulý čas. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) Pošli mi tu fotku!\n\nrozkazovací (přikazuje)\n\n#### B) Nabídl bys Emě čaj?\n\npodmiňovací (je tam bys)\n\n#### C) Lucka byla u kamarádky.\n\noznamovací (oznamuje, co bylo; byla není by)\n\n#### D) V létě ___ spolu jezdili na kole.\n\nbychom (my bychom; bysme se jen říká, by jsme je chyba)\n\n**Výsledek:** A) rozkazovací, B) podmiňovací, C) oznamovací, D) bychom",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Někdo tu jen říká, co se děje, nebo někomu něco přikazuje?“"
+          },
+          {
+            "k": "B a C",
+            "text": "„Stojí vedle slovesa samostatné malé slovo by, bych, bys? Řekni slovo byla celé: je to by?“"
+          },
+          {
+            "k": "D",
+            "text": "„Řekni celou řadu: já bych, ty bys, on by… Jak pokračuje u my? Je to jedno slovo?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč věta ‚Lucka byla u kamarádky‘ není podmiňovací, i když byla začíná na by.“",
+        "otocena_role_odpoved": "Byla je celé jedno slovo a říká, co bylo. Podmiňovací má samostatné malé slovo by, bych, bys. Tady žádné není, takže je to oznamovací.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V řadě C vybere podmiňovací: „Je byla samostatné by, nebo jiné slovo?“ V řadě B oznamovací: „Je u slovesa malé slovo bys?“ V řadě A oznamovací: „Přikazuje to někdo?“ V řadě D bysme nebo by jsme: „Řekni řadu od já.“"
+      },
+      "semafor": {
+        "zelena": "Výborně — způsoby i bychom drží. Pochvalte, že dítě hledalo malé slovo by, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti tři věty: „Táta byl v práci.“ „Zavři okno!“ „Zavřel bys okno?“ U každé řekne způsob. Kontrola pro vás: byl = oznamovací (není to by), Zavři = rozkazovací (přikazuje), Zavřel bys = podmiňovací (je tam bys).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše tři krátké věty o prázdninách: jednu, která oznamuje, jednu, která přikazuje (s vykřičníkem), a jednu s by. Pak řekne, která je která. Potom zopakujte lekci „Slovesný vid“. Kontrola pro vás: věta s vykřičníkem přikazuje (rozkazovací), věta s by, bych, bys je podmiňovací, třetí oznamuje."
+      },
+      "tisk": {
+        "zadani": "V řadách A až C zakroužkuj způsob: a) oznamovací b) rozkazovací c) podmiňovací. V řadě D zakroužkuj slovo do mezery.\n\nA) **Pošli** mi tu fotku!\n\nB) **Nabídl bys** Emě čaj?\n\nC) Lucka **byla** u kamarádky.\n\nD) V létě ___ spolu jezdili na kole. a) bysme b) bychom c) by jsme"
+      }
+    },
+    {
+      "id": "cj-t5-l18b-U2",
+      "typ": "nova",
+      "cil": "Určit vid čtyř sloves testem budu ___ (dvojice zvonit × zazvonit, vypít × mluvit).",
+      "cas_min": 5,
+      "zadani": "Urči vid slovesa.\n\nA) vypít\n\nB) zvonit\n\nC) zazvonit\n\nD) mluvit",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Sloveso A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "dokonavý",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "nedokonavý",
+                "spravne": false,
+                "typ_chyby": "vid-zamena"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Sloveso B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "dokonavý",
+                "spravne": false,
+                "typ_chyby": "vid-zamena"
+              },
+              {
+                "id": "b",
+                "text": "nedokonavý",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Sloveso C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "dokonavý",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "nedokonavý",
+                "spravne": false,
+                "typ_chyby": "vid-zamena"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Sloveso D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "dokonavý",
+                "spravne": false,
+                "typ_chyby": "vid-zamena"
+              },
+              {
+                "id": "b",
+                "text": "nedokonavý",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě u každého slovesa vybírá ze dvou možností. Test: zkusí před sloveso říct „budu“. Jde to (budu zvonit), je nedokonavé: děj trvá nebo se opakuje. Nejde to (budu zazvonit se neříká), je dokonavé: děj se dokončí. Pozor na dvojici zvonit × zazvonit a na vypít, u kterého pití „trvá“.",
+        "reseni": "A) vypít — dokonavý (budu vypít nejde; vypiji i vypiju)\n\nB) zvonit — nedokonavý (budu zvonit)\n\nC) zazvonit — dokonavý (budu zazvonit nejde; zazvoním)\n\nD) mluvit — nedokonavý (budu mluvit)\n\n**Výsledek:** A dokonavý, B nedokonavý, C dokonavý, D nedokonavý",
+        "otazky": [
+          "„Co je vid slovesa? Řekni to vlastními slovy.“",
+          "„Zkus říct nahlas budu kreslit a potom budu nakreslit. Které zní česky? Stejně to zkus u každého slovesa z úlohy.“",
+          "„Představ si dveře: zavíráš je pomalu, nebo je zavřeš a hotovo? Které z toho jde říct s budu?“"
+        ],
+        "otocena_role": "„Vysvětli mi, jak poznáš, jestli je sloveso dokonavé, nebo nedokonavé.“",
+        "otocena_role_odpoved": "Řeknu před něj budu. Když to jde, třeba budu mluvit, je nedokonavé. Když ne, třeba budu vypít, je dokonavé a děj se dokončí.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U vypít vybere nedokonavý, protože pití trvá. Zeptejte se: „Jde říct budu vypít?“ U zvonit nebo mluvit vybere dokonavý: „Jde říct budu zvonit?“ U zazvonit nedokonavý: „Zazvoníš jednou, nebo pořád?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — vid sedí u všech čtyř sloves. Pochvalte, že dítě zkoušelo „budu“ nahlas, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti čtyři slovesa: stavět, postavit, plavat, doplavat. U každého zkusí říct „budu“ a řekne vid. Kontrola pro vás: stavět a plavat nedokonavé (budu stavět, budu plavat); postavit a doplavat dokonavé (budu postavit nejde).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: hrnek s vodou. Zítra ať dítě chvíli upíjí a řekne „budu pít“, pak hrnek dopije a řekne „dopiju“. Zeptejte se, kde šlo říct „budu“. Potom zopakujte lekci „Slovesný vid“. Kontrola pro vás: budu pít jde (nedokonavé, děj trvá); budu dopít nejde (dopít je dokonavé, dopiji i dopiju a hotovo)."
+      },
+      "tisk": {
+        "zadani": "Urči vid slovesa. U každého zakroužkuj: a) dokonavý b) nedokonavý\n\nA) vypít\n\nB) zvonit\n\nC) zazvonit\n\nD) mluvit"
+      }
+    },
+    {
+      "id": "cj-t5-l18b-U3",
+      "typ": "nova",
+      "cil": "Poslechem poznat, že dokonavé sloveso v přítomném tvaru (vyběhnu) mluví o budoucnosti, a určit jeho vid.",
+      "cas_min": 5,
+      "zadani": "Poslechni si větu. Pak odpověz na dvě otázky. Nahrávku si můžeš pustit, kolikrát chceš.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Otázka 1",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t5/l18b-u3.mp3",
+            "prepis": "Ráno vyběhnu na kopec a potom budu v lese hledat houby.",
+            "max_prehrani": 0,
+            "otazka": "V jakém čase je sloveso „vyběhnu“?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "přítomný",
+                  "spravne": false,
+                  "typ_chyby": "cas-budouci-za-pritomny"
+                },
+                {
+                  "id": "b",
+                  "text": "minulý",
+                  "spravne": false
+                },
+                {
+                  "id": "c",
+                  "text": "budoucí",
+                  "spravne": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Otázka 2",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t5/l18b-u3.mp3",
+            "prepis": "Ráno vyběhnu na kopec a potom budu v lese hledat houby.",
+            "max_prehrani": 0,
+            "otazka": "Jaký vid má sloveso „vyběhnu“?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "dokonavý",
+                  "spravne": true
+                },
+                {
+                  "id": "b",
+                  "text": "nedokonavý",
+                  "spravne": false,
+                  "typ_chyby": "vid-zamena"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě větu jen slyší, text nevidí. Co zazní, máte sbalené pod „Co zazní v nahrávce“; nahlas to nečtěte. V nahrávce jsou dvě slovesa o tom, co bude, jedno s „budu“, druhé bez. Past: „vyběhnu“ zní jako teď, ale děj teprve bude. Dokonavé sloveso v tomto tvaru mluví vždy o budoucnosti.",
+        "reseni": "Otázka 1: budoucí (ráno; vyběhnu = teprve to bude)\n\nOtázka 2: dokonavý (budu vyběhnout nejde; na kopec vyběhne a hotovo)\n\nbudu hledat: nedokonavé sloveso, budoucnost s budu\n\n**Výsledek:** 1. budoucí, 2. dokonavý",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Co se v nahrávce bude dít a kdy? Řekni to vlastními slovy.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Děje se to běhání teď, nebo až potom? Které slovo v nahrávce ti to řekne?“"
+          },
+          {
+            "k": "Krok 2",
+            "text": "„Dej to sloveso do neurčitého tvaru a zkus: budu ___. Jde to?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč je vyběhnu budoucí čas, i když v něm není slovo budu.“",
+        "otocena_role_odpoved": "Vyběhnout je dokonavé, budu vyběhnout se neříká. Budoucnost se u něj řekne jedním slovem: vyběhnu. Teď běžet nejde, děj teprve bude.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 (Otázka 1) vybere přítomný, protože chybí „budu“. Zeptejte se: „Běžíš na kopec teď, nebo až ráno?“ Vybere minulý: „Už se to stalo?“ V kroku 2 (Otázka 2) vybere nedokonavý: „Jde říct budu vyběhnout?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — dítě slyší, že vyběhnu teprve bude. Pochvalte, že zkoušelo test „budu“, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Řekněte dítěti: „Večer zalepím obálku a potom budu psát dopis.“ Dítě řekne, ve kterém čase je zalepím a jaký má vid. Kontrola pro vás: zalepím = budoucí čas (večer), vid dokonavý (budu zalepit nejde); budu psát je nedokonavé.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše dva sloupce DNES a ZÍTRA. Řekněte mu slova vařím, uvařím, stavím, postavím; každé zapíše do správného sloupce. Potom zopakujte lekci „Slovesný vid“. Kontrola pro vás: DNES vařím, stavím (přítomný čas); ZÍTRA uvařím, postavím (budoucí čas, dokonavá slovesa)."
+      },
+      "tisk": {
+        "zadani": "Poslouchej nahrávku (pustí rodič). Můžeš si ji pustit, kolikrát chceš. Pak zakroužkuj odpovědi.\n\n1. V jakém čase je sloveso „vyběhnu“? — a) přítomný b) minulý c) budoucí\n\n2. Jaký vid má sloveso „vyběhnu“? — a) dokonavý b) nedokonavý"
+      }
+    },
+    {
+      "id": "cj-t5-l18b-U4",
+      "typ": "detektiv",
+      "cil": "Najít u spolužáka budoucí čas dokonavého slovesa s budu (budu zatopit) vedle správného budu mýt a opravit ho.",
+      "cas_min": 5,
+      "zadani": "Petr napsal do deníku:\n\nOdpoledne budu mýt nádobí a večer budu zatopit v kamnech.\n\nUdělal **jednu** chybu. Najdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Kde má Petr chybu?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "budu mýt",
+                "spravne": false,
+                "typ_chyby": "vid-zamena"
+              },
+              {
+                "id": "b",
+                "text": "nádobí",
+                "spravne": false,
+                "typ_chyby": "detektiv-jine-slovo"
+              },
+              {
+                "id": "c",
+                "text": "večer",
+                "spravne": false,
+                "typ_chyby": "detektiv-jine-slovo"
+              },
+              {
+                "id": "d",
+                "text": "budu zatopit",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Jak to má Petr napsat?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "zatopit budu",
+                "spravne": false,
+                "typ_chyby": "bude-s-dokonavym"
+              },
+              {
+                "id": "b",
+                "text": "zatopím",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "zatopí",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Napsal dvě spojení s „budu“; jedno je dobře, druhé ne. Dítě v kroku 1 najde chybu a v kroku 2 (Jak to má Petr napsat?) vybere opravu. „Budu topit“ v nabídce záměrně není: byla by to druhá správná oprava.",
+        "reseni": "Chyba je „budu zatopit“: zatopit je dokonavé, s budu nejde.\n\nbudu mýt (správně; mýt je nedokonavé, budu mýt jde)\n\nbudu zatopit → zatopím (budoucnost dokonavého slovesa jedním slovem)\n\n**Výsledek:** krok 1 budu zatopit, krok 2 zatopím",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Co Petr udělá odpoledne a co večer? Řekni to vlastními slovy.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Zkus obě Petrova spojení s budu říct nahlas. Které zní česky a které ne?“"
+          },
+          {
+            "k": "Krok 2",
+            "text": "„Které Petrovo sloveso s budu je dokonavé? Jak řekneš jeho budoucnost jedním slovem, bez budu?“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a jak si ji příště ohlídám.“",
+        "otocena_role_odpoved": "Budu zatopit se neříká, zatopit je dokonavé. Napiš večer zatopím. Budu mýt máš dobře. Příště zkus test budu: když nejde, řekni to jedním slovem.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 vybere „budu mýt“: „Jde říct budu mýt?“ (Jde, je to správně.) Vybere nádobí nebo večer: „Které slovo je sloveso?“ V kroku 2 vybere zatopit budu: „Zní to jinak než budu zatopit?“ Vybere zatopí: „Kdo bude topit: Petr, nebo někdo jiný?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — chyba nalezená i opravená. Pochvalte, že dítě zkoušelo test „budu“ u obou spojení, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „V sobotu budu umýt auto.“ Zeptejte se: „Co je špatně a jak to řekneš správně?“ Kontrola pro vás: V sobotu umyju (i umyji) auto (umýt je dokonavé, s budu nejde; správně je i budu mýt).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše dvě věty o zítřku: jednu s „budu“ (budu stavět) a jednu bez něj (postavím). U obou zkusí test budu. Potom zopakujte lekci „Slovesný vid“. Kontrola pro vás: budu stavět jde (nedokonavé); postavím je budoucnost dokonavého slovesa, budu postavit nejde."
+      },
+      "tisk": {
+        "zadani": "Petr napsal do deníku:\n\nOdpoledne budu mýt nádobí a večer budu zatopit v kamnech.\n\nUdělal jednu chybu.\n\nA) Kde má Petr chybu? Zakroužkuj: a) budu mýt b) nádobí c) večer d) budu zatopit\n\nB) Jak to má Petr napsat? Zakroužkuj: a) zatopit budu b) zatopím c) zatopí"
+      }
+    },
+    {
+      "id": "cj-t5-l18b-U5",
+      "typ": "kontrolni",
+      "cil": "Samostatně určit vid a čas pěti sloves v textu (10 údajů), i budoucí čas dokonavého slovesa bez budu.",
+      "cas_min": 6,
+      "zadani": "U každého označeného slovesa vyber vid a čas.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Adam včera opravoval kolo. Dnes ho vytáhne z kůlny. Teď čistí kopačky. Zítra bude lyžovat. Ráno ztratil deštník.",
+            "slova": [
+              2,
+              6,
+              10,
+              14,
+              16
+            ],
+            "role": {
+              "vid": [
+                "dokonavý",
+                "nedokonavý"
+              ],
+              "cas": [
+                "přítomný",
+                "minulý",
+                "budoucí"
+              ]
+            }
+          },
+          "spravne": {
+            "2": {
+              "vid": "nedokonavý",
+              "cas": "minulý"
+            },
+            "6": {
+              "vid": "dokonavý",
+              "cas": "budoucí"
+            },
+            "10": {
+              "vid": "nedokonavý",
+              "cas": "přítomný"
+            },
+            "14": {
+              "vid": "nedokonavý",
+              "cas": "budoucí"
+            },
+            "16": {
+              "vid": "dokonavý",
+              "cas": "minulý"
+            }
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "6": {
+                  "cas": "přítomný"
+                }
+              },
+              "typ_chyby": "cas-budouci-za-pritomny"
+            },
+            {
+              "hodnota": {
+                "2": {
+                  "vid": "dokonavý"
+                },
+                "6": {
+                  "vid": "nedokonavý"
+                },
+                "10": {
+                  "vid": "dokonavý"
+                },
+                "14": {
+                  "vid": "dokonavý"
+                },
+                "16": {
+                  "vid": "nedokonavý"
+                }
+              },
+              "typ_chyby": "vid-zamena"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Pět sloves, u každého vid a čas, celkem 10 údajů. U „bude lyžovat“ se určuje celé spojení. Past: „vytáhne“ zní jako teď, ale je to budoucí čas.",
+        "reseni": "opravoval: nedokonavý, minulý (budu opravovat jde; včera)\n\nvytáhne: dokonavý, budoucí (budu vytáhnout nejde; vytáhne ho teprve)\n\nčistí: nedokonavý, přítomný (budu čistit jde; teď)\n\n(bude) lyžovat: nedokonavý, budoucí (budu lyžovat jde; zítra)\n\nztratil: dokonavý, minulý (budu ztratit nejde; ráno)\n\n**Výsledek:** nedokonavý opravoval, čistí, lyžovat; dokonavý vytáhne, ztratil; minulý opravoval, ztratil; přítomný čistí; budoucí vytáhne, lyžovat",
+        "otazky": [
+          "„Řekni mi vlastními slovy, jak poznáš vid a jak čas slovesa.“",
+          "„U každého slovesa řekni neurčitý tvar a zkus před něj budu. Pak se zeptej: teď, už, nebo teprve potom?“",
+          "„Vezmi slovo vytáhne. Jde říct budu vytáhnout? Dělá to Adam teď, nebo to teprve udělá?“"
+        ],
+        "otocena_role": "„Vyber si jedno označené sloveso a dokaž mi, jaký má vid a čas.“",
+        "otocena_role_odpoved": "Třeba vytáhne: budu vytáhnout nejde, takže je dokonavé. A je to budoucí čas, Adam kolo teprve vytáhne.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: vytáhne jako přítomný: „Dělá to teď, nebo to teprve udělá?“ Vid obráceně, třeba opravoval jako dokonavý: „Řekni neurčitý tvar. Jde budu opravovat? A budu ztratit?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — vid i čas dítě určí samo. Pochvalte, že zkoušelo test budu. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Klára dočte kapitolu a potom bude malovat.“ U slov dočte a malovat řekne vid a čas. Kontrola pro vás: dočte = dokonavý, budoucí (budu dočíst nejde); bude malovat = nedokonavý, budoucí (budu malovat jde).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše pod sebe: vařil, uvaří, vaří, bude vařit. U každého řekne, jestli je to včera, teď, nebo zítra, a zkusí test budu. Potom zopakujte lekci „Slovesný vid“. Kontrola pro vás: vařil včera, vaří teď, uvaří a bude vařit zítra; uvařit je dokonavé (budu uvařit nejde), vařit nedokonavé."
+      },
+      "tisk": {
+        "zadani": "Nad každé tučné sloveso napiš vid a čas. Vid: **d** = dokonavý, **n** = nedokonavý. Čas: **p** = přítomný, **m** = minulý, **b** = budoucí.\n\nAdam včera **opravoval** kolo. Dnes ho **vytáhne** z kůlny. Teď **čistí** kopačky. Zítra bude **lyžovat**. Ráno **ztratil** deštník."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "B-varianta lekce cj-t5-l18 (opakování po červené, ZADANI-OSMA §9 bod 4), autor 14. 10. 2026. Struktura 1:1 s hlavní lekcí ověřena skriptem (typy úloh, vstup.typ v každém kroku, počty kroků, dlaždic, mezer, slov a rolí, kódy na stejných volbách, kódy a počet známých chyb); indexy přepočítány přes tokenizuj; vzorová odpověď každého kroku vyšla správně a každá chybná dlaždice i známá chyba vrací svůj kód (vyhodnotKrok). Hodnocená slova a věty nejsou z cj-t5-l17 … l20, cj-t5-l17n … l20n, cj-t0-diag ani cj-t0-pol (kontrolováno skriptem); opakují se jen uzavřené skupiny (bych, bys, by, bychom, byste, bysme, by jsme, by jste, by jsem, tvary být byl/byla, budu, názvy způsobů, vidů a rodů), vždy v nové větě. Slovní limity SABLONA §4 dodrženy, otázky taháku bez rodu a bez prozrazení odpovědi i chybného slova detektiva. Ověřeno přes nastroje/ujc.sh: vid podle SSČ a tabulek (přechodník přítomný = ned., minulý = dok.): dok. vypít, zazvonit, vyběhnout, zatopit, vytáhnout, ztratit; ned. zvonit, mluvit, mýt, opravovat, čistit, lyžovat, hledat; tvary vyběhnu, zatopím, zatopí, vytáhne, ztratil, opravoval; rozk. pošli (poslat), nabídl (nabídnout), id=575 (bychom). Ve vidových úlohách není jít ani obouvidové sloveso; U4 budu topit záměrně mimo nabídku (druhá správná oprava). Nahrávka t5/l18b-u3, řádek pro AUDIO.md je v TEMA-5-B.md. Platí a slovníček převzaté (dělat × udělat se v lekci nehodnotí). Korektura 14. 10. 2026 (korektor, nezávisle): každý hodnocený tvar znovu ověřen přes nastroje/ujc.sh (tabulky tvarů, vid podle SSČ, id=575); slova v mezerách a dlaždicích složena se vzorovou odpovědí a ověřena; indexy přepočítány přes tokenizuj; vyhodnotKrok: vzor každého kroku správně, každá chybná dlaždice, mezera a role vrací svůj kód; otázky taháku bez rodu a bez prozrazení odpovědi a chybného slova detektiva; slovní limity SABLONA §4 dodrženy. Opraveno: U5 zakopl → ztratil (věta Ráno ztratil deštník.): příručka u zakopnout uvádí příčestí zakopl i zakopnul (dubleta, id=520 slovesa vzoru tisknout), ztratit má jen ztratil (dok.). Nabídl bys (U1): tabulka nabídnout uvádí jen nabídl (SSČ čin. -dl).",
+    "zkontroloval": "korektor",
+    "datum": "2026-10-14",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?id=575",
+      "https://prirucka.ujc.cas.cz/?slovo=poslat",
+      "https://prirucka.ujc.cas.cz/?slovo=fotka",
+      "https://prirucka.ujc.cas.cz/?slovo=nab%C3%ADdnout",
+      "https://prirucka.ujc.cas.cz/?slovo=%C4%8Daj",
+      "https://prirucka.ujc.cas.cz/?slovo=kamar%C3%A1dka",
+      "https://prirucka.ujc.cas.cz/?slovo=jezdit",
+      "https://prirucka.ujc.cas.cz/?slovo=kolo",
+      "https://prirucka.ujc.cas.cz/?slovo=vyp%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=zvonit",
+      "https://prirucka.ujc.cas.cz/?slovo=zazvonit",
+      "https://prirucka.ujc.cas.cz/?slovo=mluvit",
+      "https://prirucka.ujc.cas.cz/?slovo=vyb%C4%9Bhnout",
+      "https://prirucka.ujc.cas.cz/?slovo=kopec",
+      "https://prirucka.ujc.cas.cz/?slovo=les",
+      "https://prirucka.ujc.cas.cz/?slovo=hledat",
+      "https://prirucka.ujc.cas.cz/?slovo=houba",
+      "https://prirucka.ujc.cas.cz/?slovo=m%C3%BDt",
+      "https://prirucka.ujc.cas.cz/?slovo=n%C3%A1dob%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=zatopit",
+      "https://prirucka.ujc.cas.cz/?slovo=kamna",
+      "https://prirucka.ujc.cas.cz/?slovo=opravovat",
+      "https://prirucka.ujc.cas.cz/?slovo=vyt%C3%A1hnout",
+      "https://prirucka.ujc.cas.cz/?slovo=k%C5%AFlna",
+      "https://prirucka.ujc.cas.cz/?slovo=%C4%8Distit",
+      "https://prirucka.ujc.cas.cz/?slovo=kopa%C4%8Dka",
+      "https://prirucka.ujc.cas.cz/?slovo=ly%C5%BEovat",
+      "https://prirucka.ujc.cas.cz/?slovo=ztratit",
+      "https://prirucka.ujc.cas.cz/?slovo=de%C5%A1tn%C3%ADk",
+      "https://prirucka.ujc.cas.cz/?slovo=Ema",
+      "https://prirucka.ujc.cas.cz/?slovo=Adam",
+      "https://prirucka.ujc.cas.cz/?id=520"
+    ],
+    "testovaci_rodic": null
+  }
+}
