@@ -1,0 +1,437 @@
+{
+  "id": "M8-T07-L3B",
+  "faze": "osma",
+  "tyden": 7,
+  "poradi": 3,
+  "tema": "Obsah trojúhelníku a lichoběžníku",
+  "kapitola": "geometrie",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě vybere stranu a výšku, která k ní patří, a spočítá obsah trojúhelníku, rovnoběžníku a lichoběžníku.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami: obsah trojúhelníku, rovnoběžníku a lichoběžníku, kde se násobí strana a výška, která na ni kolmo dopadá.",
+  "uvod_pravidla": [
+    {
+      "znak": "$S = a \\cdot v_a$",
+      "text": "rovnoběžník: strana krát výška"
+    },
+    {
+      "znak": "$S = \\frac{a \\cdot v_a}{2}$",
+      "text": "trojúhelník: polovina rovnoběžníku"
+    },
+    {
+      "znak": "$S = \\frac{(a + c) \\cdot v}{2}$",
+      "text": "lichoběžník: polovina součtu základen"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka",
+    "pravítko"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T07-L3B-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "Vyber u každého útvaru na obrázku jeho obsah.\n\nA) Trojúhelník\n\nB) Rovnoběžník\n\nC) Lichoběžník",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 300 430\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"16\" y=\"30\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\" font-weight=\"bold\">A</text><polygon points=\"60,100 242,100 122.6,44\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"122.6\" y1=\"44\" x2=\"122.6\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M130.6,100 L130.6,92 L122.6,92\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"151\" y=\"120\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">13 cm</text><text x=\"85.3\" y=\"70\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"end\">6 cm</text><text x=\"129.6\" y=\"82\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">4 cm</text><text x=\"16\" y=\"186\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\" font-weight=\"bold\">B</text><polygon points=\"50,240 204,240 291.4,170 137.4,170\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"137.4\" y1=\"170\" x2=\"137.4\" y2=\"240\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M145.4,240 L145.4,232 L137.4,232\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"127\" y=\"260\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">11 cm</text><text x=\"87.7\" y=\"203\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"end\">8 cm</text><text x=\"144.4\" y=\"216\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">5 cm</text><text x=\"16\" y=\"320\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\" font-weight=\"bold\">C</text><polygon points=\"80,405 206,405 178,307 108,307\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"108\" y1=\"307\" x2=\"108\" y2=\"405\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M116,405 L116,397 L108,397\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"143\" y=\"424\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">9 cm</text><text x=\"143\" y=\"299\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">5 cm</text><text x=\"115\" y=\"360\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">7 cm</text></svg>",
+      "obrazek_popis": "Tři útvary pod sebou: A trojúhelník se spodní stranou 13 cm, šikmou levou stranou 6 cm a čárkovanou výškou 4 cm na spodní stranu; B rovnoběžník se spodní stranou 11 cm, šikmou stranou 8 cm a čárkovanou výškou 5 cm; C lichoběžník se základnami 9 cm a 5 cm a čárkovanou výškou 7 cm.",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: trojúhelník",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$39\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "vyska-jako-strana"
+              },
+              {
+                "id": "b",
+                "text": "$52\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "trojuhelnik-bez-deleni-dvema"
+              },
+              {
+                "id": "c",
+                "text": "$26\\ \\text{cm}^2$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: rovnoběžník",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$88\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "vyska-jako-strana"
+              },
+              {
+                "id": "b",
+                "text": "$55\\ \\text{cm}^2$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$38\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "obvod-obsah-zamena"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: lichoběžník",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$49\\ \\text{cm}^2$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$98\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "lichobeznik-jedna-zakladna"
+              },
+              {
+                "id": "c",
+                "text": "$63\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "lichobeznik-jedna-zakladna"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá, počítá si na papíře. Výška je čárkovaná čára, která dopadá na stranu kolmo (značka pravého úhlu). Šikmá strana výška není. Písmena: $a$, $c$ strany, $v$ výška, $v_a$ výška na stranu $a$ („vé a“), $S$ obsah. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) trojúhelník\n\n$\\frac{13 \\cdot 4}{2} = 26$ (spodní strana krát výška na ni, děleno dvěma; šikmá strana se nepoužije)\n\n#### B) rovnoběžník\n\n$11 \\cdot 5 = 55$ (strana krát výška; šikmá strana osm centimetrů se nepoužije)\n\n#### C) lichoběžník\n\n$\\frac{9 + 5}{2} = 7$ (polovina součtu rovnoběžných stran)\n\n$7 \\cdot 7 = 49$ (krát výška)\n\n**Výsledek:** A) $26\\ \\text{cm}^2$, B) $55\\ \\text{cm}^2$, C) $49\\ \\text{cm}^2$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, ukaž mi výšku a stranu, na kterou kolmo dopadá. Jakou část obdélníku s těmi rozměry trojúhelník zabere?“"
+          },
+          {
+            "k": "B",
+            "text": "„Neklikej, ukaž mi, která čára je výška a která šikmá strana. Kterou z nich vynásobíš spodní stranou?“"
+          },
+          {
+            "k": "C",
+            "text": "„Neklikej, nejdřív na papír: které dvě strany lichoběžníku jsou rovnoběžné? Co s nimi podle vzorce uděláš?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč u rovnoběžníku nenásobíš jedenáct krát osm.“",
+        "otocena_role_odpoved": "Osm centimetrů je šikmá strana, ne výška. Výška dopadá na spodní stranu kolmo a měří pět centimetrů. Obsah je jedenáct krát pět.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $52$: nedělí dvěma. Zeptejte se: „Kolik takových trojúhelníků dá obdélník?“ (Dva.) A $39$, B $88$: „Která čára dopadá kolmo?“ (Čárkovaná.) B $38$: „Počítáš okraj, nebo plochu?“ (Plochu.) C $98$ nebo $63$: „Kde je ve vzorci polovina součtu základen?“ (Součet se dělí dvěma.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — všechny tři obsahy sedí. Pochvalte, že u každého útvaru hledalo výšku, která dopadá kolmo, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: trojúhelník se stranou $6$ cm a výškou na ni $7$ cm, pak lichoběžník se základnami $7$ cm a $5$ cm a výškou $3$ cm. Ať řekne, co násobí a čím dělí. Kontrola pro vás: $21$ (šest krát sedm děleno dvěma); $18$ (polovina z dvanácti je šest, krát tři).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: čtverečkovaný papír, nůžky a pastelku. Zítra ať dítě nakreslí obdélník 5 čtverečků dlouhý a 4 vysoký, spočítá jeho čtverečky a rozstřihne ho úhlopříčkou na dva trojúhelníky. Zeptejte se: „Kolik čtverečků má jeden trojúhelník?“ Pak ať samo zapíše $\\frac{5 \\cdot 4}{2} = 10$. Potom zopakujte lekci „Obsah trojúhelníku a lichoběžníku“. Kontrola pro vás: obdélník má 20 čtverečků, každý trojúhelník 10."
+      },
+      "tisk": {
+        "zadani": "Vyber u každého útvaru na obrázku jeho obsah a zakroužkuj ho.\n\nA) Trojúhelník: a) $39\\ \\text{cm}^2$ b) $52\\ \\text{cm}^2$ c) $26\\ \\text{cm}^2$\n\nB) Rovnoběžník: a) $88\\ \\text{cm}^2$ b) $55\\ \\text{cm}^2$ c) $38\\ \\text{cm}^2$\n\nC) Lichoběžník: a) $49\\ \\text{cm}^2$ b) $98\\ \\text{cm}^2$ c) $63\\ \\text{cm}^2$"
+      }
+    },
+    {
+      "id": "M8-T07-L3B-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Urči obsah lichoběžníku z obrázku.*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $a + c = 19 + 13 = 32$\n\n2. řádek: $S = 32 \\cdot 4$\n\n3. řádek: $S = 128\\ \\text{cm}^2$",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 320 160\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"27,130 293,130 251,74 69,74\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"69\" y1=\"74\" x2=\"69\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M77,130 L77,122 L69,122\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"160\" y=\"150\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">a = 19 cm</text><text x=\"160\" y=\"66\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">c = 13 cm</text><text x=\"42\" y=\"106\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"end\">5 cm</text><text x=\"278\" y=\"106\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">5 cm</text><text x=\"75\" y=\"110\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">v = 4 cm</text></svg>",
+      "obrazek_popis": "Rovnoramenný lichoběžník: dolní základna a = 19 cm, horní základna c = 13 cm, obě šikmé strany 5 cm a čárkovaná výška v = 4 cm kolmo mezi základnami.",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$a + c = 19 + 13 = 32$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$S = 32 \\cdot 4$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$S = 128\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$S = \\frac{32 \\cdot 4}{2}$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$S = 19 \\cdot 4$",
+                "spravne": false,
+                "typ_chyby": "lichobeznik-jedna-zakladna"
+              },
+              {
+                "id": "c",
+                "text": "$S = \\frac{32 \\cdot 5}{2}$",
+                "spravne": false,
+                "typ_chyby": "vyska-jako-strana"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm²"
+          },
+          "spravne": {
+            "hodnota": 64
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 128,
+              "typ_chyby": "lichobeznik-jedna-zakladna"
+            },
+            {
+              "hodnota": 76,
+              "typ_chyby": "lichobeznik-jedna-zakladna"
+            },
+            {
+              "hodnota": 80,
+              "typ_chyby": "vyska-jako-strana"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Rovnoběžné strany lichoběžníku jsou $a = 19$ cm a $c = 13$ cm, výška je čárkovaná. Šikmé strany po pěti centimetrech do obsahu nepatří. Chyba je jen jedna a řádek za ní je spočítaný dobře, jen se špatným číslem.",
+        "reseni": "Chyba je ve 2. řádku: Petr vynásobil výškou celý součet základen a nevydělil dvěma. Obsah je polovina součtu základen krát výška.\n\n$a + c = 19 + 13 = 32$ (součet základen, tento řádek je správně)\n\n$S = \\frac{32 \\cdot 4}{2}$ (stejně jako šestnáct krát čtyři)\n\n$S = 64\\ \\text{cm}^2$ (obsah)\n\nDlaždice $S = 19 \\cdot 4$ a $S = \\frac{32 \\cdot 5}{2}$ nesedí (první bere jen jednu základnu, druhá šikmou stranu místo výšky)\n\n**Výsledek:** $64\\ \\text{cm}^2$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Ukaž mi na obrázku obě rovnoběžné strany, výšku a šikmé strany.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky a u každého mi řekni, co v něm počítá. Porovnej to se vzorcem pro lichoběžník z úvodu lekce.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: kde je ve výpočtu polovina součtu základen? Násobí Petr opravdu výškou?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč obsah není sto dvacet osm centimetrů čtverečních.“",
+        "otocena_role_odpoved": "Dva takové lichoběžníky složené k sobě dají rovnoběžník se stranou třicet dva a výškou čtyři, ten má sto dvacet osm. Jeden lichoběžník je jeho polovina, tedy šedesát čtyři.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 1. řádek? Ten je správně. 3. řádek je jen důsledek. $128$ jako Petr nebo $76$ (krok 2 $19 \\cdot 4$). Zeptejte se: „Kde je ve vzorci polovina součtu základen?“ (Devatenáct a třináct se sečte a vydělí dvěma.) $80$: „Která čára dopadá kolmo?“ (Čárkovaná, čtyři.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že Petrovy řádky porovnalo se vzorcem a hlídalo polovinu, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Petr tvrdí: lichoběžník se základnami devět a tři centimetry a výškou čtyři centimetry má obsah čtyřicet osm centimetrů čtverečních. Má pravdu?“ Ať řekne, jak to spočítá. Kontrola pro vás: nemá, polovina z dvanácti je šest, krát čtyři je dvacet čtyři centimetrů čtverečních.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: čtverečkovaný papír a nůžky. Zítra ať dítě vystřihne dva stejné lichoběžníky: dole 6 čtverečků, nahoře 2, výška 3 čtverečky. Jeden otočí vzhůru nohama a přiloží ke druhému. Zeptejte se: „Jaký útvar vznikl? Jak je dlouhý a jak vysoký?“ Pak ať samo zapíše $\\frac{(6 + 2) \\cdot 3}{2} = 12$. Potom zopakujte lekci „Obsah trojúhelníku a lichoběžníku“. Kontrola pro vás: rovnoběžník dlouhý 8 a vysoký 3 čtverečky; jeden lichoběžník má obsah 12."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\n*Urči obsah lichoběžníku z obrázku.*\n\na udělal jednu chybu.\n\n1. řádek: $a + c = 19 + 13 = 32$\n\n2. řádek: $S = 32 \\cdot 4$\n\n3. řádek: $S = 128\\ \\text{cm}^2$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $S = \\frac{32 \\cdot 4}{2}$ b) $S = 19 \\cdot 4$ c) $S = \\frac{32 \\cdot 5}{2}$\n\nC) Výsledek: $S =$ ______ cm²"
+      }
+    },
+    {
+      "id": "M8-T07-L3B-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Klára s dědou natírají čelní stěnu stodoly. Spodní část stěny je obdélník, horní část pod střechou je trojúhelník (obrázek). Jedna plechovka barvy vystačí na $6\\ \\text{m}^2$.\n\nKolik plechovek barvy potřebují na celou stěnu?",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 320 230\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"64,200 256,200 256,152 64,152\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"64,152 256,152 160,24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"160\" y1=\"24\" x2=\"160\" y2=\"152\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M168,152 L168,144 L160,144\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"160\" y=\"220\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">12 m</text><text x=\"58\" y=\"181\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"end\">3 m</text><text x=\"216\" y=\"86\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">10 m</text><text x=\"166\" y=\"100\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">8 m</text></svg>",
+      "obrazek_popis": "Čelní stěna stodoly: dole obdélník široký 12 m a vysoký 3 m, nad ním trojúhelník se základnou 12 m, šikmými stranami 10 m a čárkovanou výškou 8 m.",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Mezivýsledek: obsah obdélníkové části",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m²"
+          },
+          "spravne": {
+            "hodnota": 36
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 30,
+              "typ_chyby": "obvod-obsah-zamena"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: obsah trojúhelníkové části",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m²"
+          },
+          "spravne": {
+            "hodnota": 48
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 96,
+              "typ_chyby": "trojuhelnik-bez-deleni-dvema"
+            },
+            {
+              "hodnota": 60,
+              "typ_chyby": "vyska-jako-strana"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "plechovek"
+          },
+          "spravne": {
+            "hodnota": 14
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 22,
+              "typ_chyby": "trojuhelnik-bez-deleni-dvema"
+            },
+            {
+              "hodnota": 16,
+              "typ_chyby": "vyska-jako-strana"
+            },
+            {
+              "hodnota": 84,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce. Stěna se rozdělí na dvě části, jejich obsahy se spočítají zvlášť a sečtou. Výška trojúhelníku je čárkovaná, šikmé strany střechy do obsahu nepatří. Nakonec se zjistí, kolikrát se šest metrů čtverečních vejde do celé plochy.",
+        "reseni": "$12 \\cdot 3 = 36\\ \\text{m}^2$ (obdélníková část)\n\n$\\frac{12 \\cdot 8}{2} = 48\\ \\text{m}^2$ (trojúhelníková část: výška osm metrů, ne šikmá strana deset metrů)\n\n$36 + 48 = 84\\ \\text{m}^2$ (celá stěna)\n\n$84 : 6 = 14$ (počet plechovek)\n\n**Výsledek:** $14$ plechovek",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Klára s dědou natírají a na co se úloha ptá.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Ukaž mi na obrázku obě části stěny. U každé mi ukaž stranu a výšku, které použiješ.“"
+          },
+          {
+            "k": "Výsledek",
+            "text": "„Tady máš začátek: obdélník je dvanáct krát tři metry. Co spočítáš u trojúhelníku? A co pak s celou plochou?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč u trojúhelníku nepoužiješ deset metrů.“",
+        "otocena_role_odpoved": "Deset metrů je šikmá strana střechy. Do obsahu patří výška, ta dopadá na spodní stranu kolmo a měří osm metrů. A trojúhelník je polovina obdélníku, proto se dělí dvěma.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 $30$: obvod. Zeptejte se: „Natírá se okraj, nebo plocha?“ (Plocha.) V kroku 2 $96$, výsledek $22$: „Kolik takových trojúhelníků dá obdélník?“ (Dva.) V kroku 2 $60$, výsledek $16$: „Která čára dopadá kolmo?“ (Čárkovaná.) Výsledek $84$: „Kolik metrů čtverečních natře jedna plechovka?“ (Šest.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — hlavní úloha sedí. Pochvalte, že stěnu rozdělilo na dvě části a u trojúhelníku vzalo výšku, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Štít kůlny je obdélník čtyři krát tři metry a nad ním trojúhelník se základnou čtyři metry a výškou dva metry. Kolik má metrů čtverečních?“ Ať řekne obě části zvlášť. Kontrola pro vás: obdélník $12\\ \\text{m}^2$, trojúhelník $4\\ \\text{m}^2$, dohromady $16\\ \\text{m}^2$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: čtverečkovaný papír, nůžky a pastelky. Zítra ať dítě nakreslí domeček: obdélník 6 čtverečků dlouhý a 2 vysoký, nad ním střechu se základnou 6 a výškou 2 čtverečky. Ať střechu vystřihne, rozstřihne podle výšky a z obou půlek složí obdélník. Pak ať samo zapíše $12 + 6 = 18$. Potom zopakujte lekci „Obsah trojúhelníku a lichoběžníku“. Kontrola pro vás: obdélník 12 čtverečků, střecha 6, domeček 18."
+      },
+      "tisk": {
+        "zadani": "Klára s dědou natírají čelní stěnu stodoly. Spodní část stěny je obdélník, horní část pod střechou je trojúhelník (obrázek). Jedna plechovka barvy vystačí na $6\\ \\text{m}^2$.\n\nKolik plechovek barvy potřebují na celou stěnu?\n\nA) Obsah obdélníkové části: ______ m²\n\nB) Obsah trojúhelníkové části: ______ m²\n\nC) Počet plechovek: ______"
+      }
+    },
+    {
+      "id": "M8-T07-L3B-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Adam vyřezává z překližky podložku tvaru rovnoběžníku. Jeho strany a obě výšky jsou na obrázku.\n\nJaký obsah má podložka?",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 310 195\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"30,165 228,165 273.4,77 75.4,77\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"75.4\" y1=\"77\" x2=\"75.4\" y2=\"165\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M83.4,165 L83.4,157 L75.4,157\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"228\" y1=\"165\" x2=\"71.6\" y2=\"84.4\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M67.9,91.5 L75,95.1 L78.7,88\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"129\" y=\"185\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">18 cm</text><text x=\"46.7\" y=\"125\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"end\">9 cm</text><text x=\"81.4\" y=\"140\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">8 cm</text><text x=\"150\" y=\"112\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">16 cm</text></svg>",
+      "obrazek_popis": "Rovnoběžník se spodní stranou 18 cm a šikmou levou stranou 9 cm; čárkovaná výška 8 cm vede z horního levého vrcholu kolmo na spodní stranu, čárkovaná výška 16 cm vede z pravého dolního vrcholu kolmo na levou šikmou stranu.",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm²"
+          },
+          "spravne": {
+            "hodnota": 144
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 288,
+              "typ_chyby": "vyska-k-jine-strane"
+            },
+            {
+              "hodnota": 72,
+              "typ_chyby": "vyska-k-jine-strane"
+            },
+            {
+              "hodnota": 162,
+              "typ_chyby": "vyska-jako-strana"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Na obrázku jsou dvě výšky, každá dopadá kolmo na jinou stranu. Správné jsou dvě cesty a obě dají stejný výsledek.",
+        "reseni": "$18 \\cdot 8 = 144\\ \\text{cm}^2$ (spodní strana a výška osm, která na ni kolmo dopadá)\n\n$9 \\cdot 16 = 144\\ \\text{cm}^2$ (jiná cesta: šikmá strana devět a výška šestnáct, která dopadá na ni)\n\n**Výsledek:** $144\\ \\text{cm}^2$",
+        "otazky": [
+          "„Popiš mi, co je na obrázku. Které čáry jsou strany a které výšky?“",
+          "„Vyber si jednu výšku a ukaž mi, na kterou stranu kolmo dopadá. Kterou stranu s ní vynásobíš?“",
+          "„Tady máš začátek: výška osm centimetrů dopadá kolmo na spodní stranu. Kolik měří ta strana? Co s nimi uděláš?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč nenásobíš osmnáct krát šestnáct.“",
+        "otocena_role_odpoved": "Výška šestnáct dopadá kolmo na šikmou stranu devět, ne na spodní stranu osmnáct. Násobí se vždy strana a výška, která na ni dopadá. Správně je i: devět krát šestnáct.",
+        "typicka_chyba": "Během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $288$ nebo $72$: spáruje výšku s jinou stranou. Zeptejte se: „Na kterou stranu ta výška kolmo dopadá?“ (Osm na osmnáct, šestnáct na devět.) $162$: násobí dvě strany. „Je šikmá strana výška?“ (Ne.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — obsah spočítalo samo. Pochvalte, že ke straně vybralo výšku, která na ni dopadá. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: „Rovnoběžník má strany $7$ cm a $4$ cm. Výška na stranu $7$ cm měří $3$ cm. Jaký má obsah?“ Ať ukáže, co násobí. Kontrola pro vás: sedm krát tři, $21\\ \\text{cm}^2$; čtyři krát tři ani sedm krát čtyři nesedí.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: list papíru, pravítko a nůžky. Zítra ať dítě podle hran pravítka nakreslí a vystřihne šikmý rovnoběžník. Na jedné straně ať ustřihne trojúhelník podél výšky a přiloží ho k protější straně. Zeptejte se: „Jaký útvar vznikl? Jaké má rozměry?“ Pak ať samo zapíše obsah jako strana krát výška. Potom zopakujte lekci „Obsah trojúhelníku a lichoběžníku“. Kontrola pro vás: vznikne obdélník, jeho rozměry jsou strana a výška, ne šikmá strana."
+      },
+      "tisk": {
+        "zadani": "Adam vyřezává z překližky podložku tvaru rovnoběžníku. Jeho strany a obě výšky jsou na obrázku.\n\nJaký obsah má podložka?\n\nVýsledek: ______ cm²"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 14. 10.: nezávisle přepočítáno skriptem (python Fraction) a přes vyhodnotKrok; struktura, vstupy, kroky a kódy chyb jako v M8-T07-L3, čísla a kontext nové. U1 $26$, $55$, $49$ ($52$, $39$; $88$, $38$; $98$, $63$); U2 $\\frac{32 \\cdot 4}{2} = 64$, ramena $5$ z rozměrů $3$ a $4$ ($128$, $76$, $80$); U4 $18 \\cdot 8 = 9 \\cdot 16 = 144$ ($288$, $72$, $162$), pata výšky $16$ leží na šikmé straně. Úprava obtížnosti: U3 měla proti hlavní lekci výrazně větší aritmetiku ($24 \\cdot 5 : 2$, $132 : 12$) → zmenšeno na stěnu $12 \\times 3$ m se štítem výšky $8$ m a šikmými stranami $10$ m (rozměry $6$, $8$, $10$ sedí), plechovka na $6\\ \\text{m}^2$: $36 + 48 = 84$, $84 : 6 = 14$ plechovek; chyby krok 1 $30$ (obvod), krok 2 $96$ a $60$, výsledek $22$, $16$, $84$; nové SVG, popis, řešení, otázka 3, otočená role, typická chyba a tisk. Věcné chyby: 0. U1 C polovina součtu základen $7$ = výška $7$ ponecháno, nic nezpochybní.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-14"
+  }
+}

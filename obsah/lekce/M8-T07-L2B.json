@@ -1,0 +1,438 @@
+{
+  "id": "M8-T07-L2B",
+  "faze": "osma",
+  "tyden": 7,
+  "poradi": 2,
+  "tema": "Trojúhelník a souměrnost",
+  "kapitola": "geometrie",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě rozhodne, jestli z daných stran jde trojúhelník sestrojit, a rozliší osovou a středovou souměrnost.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami: kdy ze tří stran vznikne trojúhelník a dva druhy souměrnosti, překlopení přes osu a otočení kolem středu.",
+  "uvod_pravidla": [
+    {
+      "znak": "$6 + 7 > 9$",
+      "text": "součet dvou stran větší"
+    },
+    {
+      "znak": "osa $o$",
+      "text": "osová: překlopení přes přímku"
+    },
+    {
+      "znak": "střed $S$",
+      "text": "středová: otočení o půlkruh"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka",
+    "pravítko"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T07-L2B-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "Vyber u každého příkladu správnou odpověď.\n\nA) Ze kterých tří délek se dá sestrojit trojúhelník?\n\nB) Kolik os souměrnosti má rovnostranný trojúhelník?\n\nC) Který útvar na obrázku je středově souměrný?",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 330 140\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"20,110 90,110 90,60 55,25 20,60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"55\" y=\"132\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\" font-weight=\"bold\">1</text><polygon points=\"165,20 198,52 165,112 132,52\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"165\" y=\"132\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\" font-weight=\"bold\">2</text><polygon points=\"250,25 314,25 314,43 274,91 314,91 314,109 250,109 250,91 290,43 250,43\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"282\" y=\"132\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\" font-weight=\"bold\">3</text></svg>",
+      "obrazek_popis": "Tři útvary vedle sebe: 1 domeček (čtverec se stříškou), 2 drak (čtyřúhelník jako papírový drak, nahoře kratší a dole delší), 3 útvar tvaru písmene Z.",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: tři délky",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$3$, $6$ a $9$ cm",
+                "spravne": false,
+                "typ_chyby": "trojuhelnikova-nerovnost-porusena"
+              },
+              {
+                "id": "b",
+                "text": "$4$, $7$ a $10$ cm",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$2$, $5$ a $8$ cm",
+                "spravne": false,
+                "typ_chyby": "trojuhelnikova-nerovnost-porusena"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: osy trojúhelníku",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$3$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$6$",
+                "spravne": false,
+                "typ_chyby": "pocet-os-spatne"
+              },
+              {
+                "id": "c",
+                "text": "$1$",
+                "spravne": false,
+                "typ_chyby": "pocet-os-spatne"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: středově souměrný útvar",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "útvar 1",
+                "spravne": false,
+                "typ_chyby": "osova-stredova-zamena"
+              },
+              {
+                "id": "b",
+                "text": "útvar 2",
+                "spravne": false,
+                "typ_chyby": "osova-stredova-zamena"
+              },
+              {
+                "id": "c",
+                "text": "útvar 3",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá, počítá si na papíře. U A se sečtou dvě kratší délky a porovnají se s nejdelší. Osa souměrnosti je čára, podle které jde útvar přeložit tak, že se obě půlky kryjí. Středově souměrný útvar vypadá stejně i po otočení vzhůru nohama. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) tři délky\n\n$3 + 6 = 9$, to není víc než $9$ (nejde, strany by ležely naplocho)\n\n$4 + 7 = 11$, to je víc než $10$ (jde)\n\n$2 + 5 = 7$, to je méně než $8$ (nejde)\n\n#### B) osy rovnostranného trojúhelníku\n\n$3$ osy (každá vede vrcholem a středem protější strany)\n\n#### C) středově souměrný útvar\n\nútvar 3 (písmeno Z vypadá po otočení o půl otáčky stejně; domeček a drak mají jen osu)\n\n**Výsledek:** A) $4$, $7$ a $10$ cm, B) $3$, C) útvar 3",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, nejdřív na papír: u každé trojice sečti dvě kratší délky a porovnej je s nejdelší. Kde vyjde víc?“"
+          },
+          {
+            "k": "B",
+            "text": "„Nakresli si trojúhelník se stejně dlouhými stranami. Podle kterých čar ho přeložíš, aby se obě půlky kryly?“"
+          },
+          {
+            "k": "C",
+            "text": "„Představ si, že každý útvar otočíš kolem jeho středu vzhůru nohama. Který bude vypadat úplně stejně?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč z délek tři, šest a devět centimetrů trojúhelník nesložíš.“",
+        "otocena_role_odpoved": "Tři a šest je dohromady přesně devět. Kratší strany by ležely naplocho na té nejdelší a ve špičce by se nesetkaly. Dohromady musí být delší než třetí strana.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A jiná trojice: kratší strany nepřesáhnou nejdelší. Zeptejte se: „Setkají se ve špičce?“ (Ne, leží naplocho.) U B $1$ nebo $6$: „Ukaž prstem všechny osy. Kolik čar to je?“ (Tři.) U C útvar 1 nebo 2: „Vypadá vzhůru nohama stejně?“ (Ne, má jen osu.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — všechny tři odpovědi sedí. Pochvalte, že délky porovnávalo na papíře a u souměrnosti zkoušelo přeložení i otočení, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Složíš trojúhelník z délek dva, šest a osm centimetrů? A z délek pět, šest a osm?“ Pak: „Kolik os souměrnosti má čtverec?“ Ať vždy řekne proč. Kontrola pro vás: ze dvou, šesti a osmi ne (dva a šest je přesně osm), z pěti, šesti a osmi ano; čtverec má čtyři osy.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír, tužku a nůžky. Zítra ať dítě nakreslí tlustými tahy písmena T a Z a vystřihne je. Ať je zkouší přeložit, aby se půlky kryly, a otočit vzhůru nohama. Zeptejte se: „Které písmeno jde přeložit? Které vypadá vzhůru nohama stejně?“ Pak ať samo zapíše: T má $1$ osu. Potom zopakujte lekci „Trojúhelník a souměrnost“. Kontrola pro vás: T se kryje po přeložení svisle napůl, Z vypadá vzhůru nohama stejně."
+      },
+      "tisk": {
+        "zadani": "Vyber u každého příkladu správnou odpověď a zakroužkuj ji.\n\nA) Ze kterých tří délek se dá sestrojit trojúhelník? a) $3$, $6$ a $9$ cm b) $4$, $7$ a $10$ cm c) $2$, $5$ a $8$ cm\n\nB) Kolik os souměrnosti má rovnostranný trojúhelník? a) $3$ b) $6$ c) $1$\n\nC) Který útvar na obrázku je středově souměrný? a) útvar 1 b) útvar 2 c) útvar 3"
+      }
+    },
+    {
+      "id": "M8-T07-L2B-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Trojúhelník má dvě strany dlouhé $11$ cm a $15$ cm. Třetí strana měří celý počet centimetrů. Jaký největší obvod může trojúhelník mít?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $11 + 15 = 26$\n\n2. řádek: $c = 26$ cm\n\n3. řádek: $o = 11 + 15 + 26 = 52$ cm",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$11 + 15 = 26$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$c = 26$ cm",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$o = 11 + 15 + 26 = 52$ cm",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$c = 25$ cm",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$c = 5$ cm",
+                "spravne": false,
+                "typ_chyby": "odpovida-na-jinou-otazku"
+              },
+              {
+                "id": "c",
+                "text": "$c = 4$ cm",
+                "spravne": false,
+                "typ_chyby": "trojuhelnikova-nerovnost-porusena"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm"
+          },
+          "spravne": {
+            "hodnota": 51
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 52,
+              "typ_chyby": "trojuhelnikova-nerovnost-porusena"
+            },
+            {
+              "hodnota": 25,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 31,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Obvod je součet všech tří stran a největší bude s co nejdelší třetí stranou. Past: dvě strany musí být dohromady delší než třetí, ne stejně dlouhé. Chyba je jen jedna a řádek za ní je spočítaný dobře, jen se špatným číslem.",
+        "reseni": "Chyba je ve 2. řádku: strana dlouhá přesně $26$ cm nejde, strany $11$ cm a $15$ cm by na ní ležely naplocho.\n\n$11 + 15 = 26$ (dvě zadané strany dohromady, tento řádek je správně)\n\n$c = 25$ cm (třetí strana musí být kratší než dvacet šest, největší celé číslo je dvacet pět)\n\n$o = 11 + 15 + 25 = 51$ cm (obvod)\n\nDlaždice $c = 5$ cm a $c = 4$ cm nesedí (pět je nejkratší možná strana, čtyři nejde vůbec: jedenáct a čtyři je jen patnáct)\n\n**Výsledek:** $51$ cm",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co má Petr zjistit. Délku jedné strany, nebo obvod?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky jeden po druhém. U každého mi řekni, co v něm Petr počítá.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každé délky třetí strany se zeptej: setkají se zbylé dvě strany ve špičce, nebo leží naplocho?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč třetí strana nemůže měřit dvacet šest centimetrů.“",
+        "otocena_role_odpoved": "Jedenáct a patnáct je dohromady přesně dvacet šest. Strany by ležely naplocho na té třetí a trojúhelník by nevznikl. Třetí strana musí být kratší, nejvýš dvacet pět centimetrů.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 1. řádek? Ten je správně. 3. řádek je důsledek. $52$ jako Petr. Zeptejte se: „Setkají se strany jedenáct a patnáct nad dvaceti šesti?“ (Ne.) Krok 2 $5$ nebo $4$, výsledek $25$ nebo $31$: „Hledáš nejdelší, nebo nejkratší stranu? Stranu, nebo obvod?“ (Nejdelší; obvod.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že u třetí strany ověřilo, jestli se zbylé dvě setkají, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr tvrdí: dvě strany trojúhelníku měří šest a devět centimetrů, takže třetí může měřit patnáct. Má pravdu? Jak dlouhá může být nejvýš, když je to celé číslo?“ Kontrola pro vás: nemá, šest a devět je přesně patnáct; nejvýš čtrnáct centimetrů.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko, nůžky a list papíru. Zítra ať dítě nastříhá proužky dlouhé $4$, $5$ a $9$ cm a zkusí z nich na stole složit trojúhelník. Zeptejte se: „Proč se kratší proužky nesetkají?“ Pak ať nejdelší proužek o centimetr zkrátí a zkusí to znovu. Ať samo zapíše $4 + 5 = 9$. Potom zopakujte lekci „Trojúhelník a souměrnost“. Kontrola pro vás: s devíti centimetry to nejde (leží naplocho), s osmi trojúhelník vznikne."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\n*Trojúhelník má dvě strany dlouhé $11$ cm a $15$ cm. Třetí strana měří celý počet centimetrů. Jaký největší obvod může trojúhelník mít?*\n\na udělal jednu chybu.\n\n1. řádek: $11 + 15 = 26$\n\n2. řádek: $c = 26$ cm\n\n3. řádek: $o = 11 + 15 + 26 = 52$ cm\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $c = 25$ cm b) $c = 5$ cm c) $c = 4$ cm\n\nC) Výsledek: ______ cm"
+      }
+    },
+    {
+      "id": "M8-T07-L2B-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Tomáš navrhuje nášivku na dres. Nakreslil lichoběžník $ABCD$ s pravým úhlem u vrcholu $A$ a překlopil ho přes osu $o$, na které leží strana $AD$. Vznikl útvar $B'BCC'$. Délky jsou popsané jen u lichoběžníku.\n\nJaký obvod má celý útvar $B'BCC'$?",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 330 150\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"35,125 295,125 235,45 95,45\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"165\" y1=\"12\" x2=\"165\" y2=\"142\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><text x=\"171\" y=\"22\" font-size=\"14\" fill=\"currentColor\" text-anchor=\"start\" font-style=\"italic\">o</text><path d=\"M173,125 L173,117 L165,117\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"230\" y=\"143\" font-size=\"14\" fill=\"currentColor\" text-anchor=\"middle\">13 cm</text><text x=\"200\" y=\"37\" font-size=\"14\" fill=\"currentColor\" text-anchor=\"middle\">7 cm</text><text x=\"273\" y=\"89\" font-size=\"14\" fill=\"currentColor\" text-anchor=\"start\">10 cm</text><text x=\"171\" y=\"89\" font-size=\"14\" fill=\"currentColor\" text-anchor=\"start\">8 cm</text><text x=\"159\" y=\"143\" font-size=\"14\" fill=\"currentColor\" text-anchor=\"end\">A</text><text x=\"301\" y=\"143\" font-size=\"14\" fill=\"currentColor\" text-anchor=\"start\">B</text><text x=\"241\" y=\"41\" font-size=\"14\" fill=\"currentColor\" text-anchor=\"start\">C</text><text x=\"159\" y=\"41\" font-size=\"14\" fill=\"currentColor\" text-anchor=\"end\">D</text><text x=\"29\" y=\"143\" font-size=\"14\" fill=\"currentColor\" text-anchor=\"end\">B′</text><text x=\"89\" y=\"41\" font-size=\"14\" fill=\"currentColor\" text-anchor=\"end\">C′</text></svg>",
+      "obrazek_popis": "Svislá čárkovaná osa o, vpravo od ní lichoběžník ABCD: dolní strana AB 13 cm, horní strana DC 7 cm, šikmá strana BC 10 cm, strana AD 8 cm leží na ose a u A je pravý úhel; vlevo od osy je jeho obraz s vrcholy B′ a C′ bez popsaných délek.",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Vyber, co platí",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "obvod útvaru je dvakrát obvod lichoběžníku",
+                "spravne": false,
+                "typ_chyby": "obvod-slozeneho-chybi-strany"
+              },
+              {
+                "id": "b",
+                "text": "obraz vznikne otočením kolem bodu",
+                "spravne": false,
+                "typ_chyby": "osova-stredova-zamena"
+              },
+              {
+                "id": "c",
+                "text": "obraz má stejné délky stran i úhly",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: strana $CC'$",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm"
+          },
+          "spravne": {
+            "hodnota": 14
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 7,
+              "typ_chyby": "obvod-slozeneho-chybi-strany"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm"
+          },
+          "spravne": {
+            "hodnota": 60
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 68,
+              "typ_chyby": "obvod-slozeneho-chybi-strany"
+            },
+            {
+              "hodnota": 76,
+              "typ_chyby": "obvod-slozeneho-chybi-strany"
+            },
+            {
+              "hodnota": 38,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce. Překlopení přes osu funguje jako obtisk na přeloženém papíře: obraz má stejné délky i úhly, jen je zrcadlově obrácený. Past: strana AD leží na ose, je uvnitř útvaru a do obvodu nepatří. Obvod je jen okraj. Čte se: $C'$ „cé s čárkou“, obraz bodu C.",
+        "reseni": "$|B'A| = |AB| = 13$ cm, $|C'D| = |DC| = 7$ cm, $|B'C'| = |BC| = 10$ cm (obraz má stejné délky)\n\n$|B'B| = 13 + 13 = 26$ cm (dolní strana útvaru)\n\n$|CC'| = 7 + 7 = 14$ cm (horní strana útvaru)\n\n$o = 26 + 10 + 14 + 10 = 60$ cm (obvod: jen okraj, strana na ose je uvnitř)\n\n**Výsledek:** $60$ cm",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Projeď prstem celý okraj útvaru a pojmenuj úseky, přes které jdeš. Které délky znáš z obrázku?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Co se při překlopení přes osu stane s délkami stran? Ukaž mi úsek, který je obrazem strany sedm centimetrů.“"
+          },
+          {
+            "k": "Výsledek",
+            "text": "„Tady máš začátek: dolní strana útvaru je třináct a třináct centimetrů. Které další úseky leží na okraji? Patří tam osa?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč stranu osm centimetrů, která leží na ose, do obvodu nepočítáš.“",
+        "otocena_role_odpoved": "Obvod je délka okraje útvaru. Strana na ose je uprostřed, uvnitř útvaru. Když ho obcházím po okraji, vůbec na ni nenarazím.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. $68$ nebo $76$ (krok 1 „dvakrát obvod“): počítá stranu na ose. Zeptejte se: „Šlápneš na ni, když obejdeš okraj?“ (Ne.) Krok 2 $7$: „Jak dlouhý je úsek vlevo od osy?“ (Sedm.) $38$: „Obvod celku, nebo půlky?“ (Půlky.) „Otočením“: „Překlápí se, nebo otáčí?“ (Překlápí.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — hlavní úloha sedí. Pochvalte, že obcházelo jen okraj a stranu na ose vynechalo, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Obdélník má strany šest a dva centimetry. Překlopíš ho přes osu, na které leží delší strana. Jaký obvod má celý nový útvar?“ Ať útvar nakreslí a řekne, které úseky sčítá. Kontrola pro vás: $6 + 4 + 6 + 4 = 20$ cm, strana na ose se nepočítá.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: list papíru, nůžky a pravítko. Zítra ať dítě papír přeloží napůl a z přeloženého vystřihne půlku stromečku, která začíná u přehybu. Po rozložení ať změří úseky okraje a sečte je. Zeptejte se: „Patří přehyb do okraje?“ Pak ať samo zapíše obvod jako součet úseků. Potom zopakujte lekci „Trojúhelník a souměrnost“. Kontrola pro vás: přehyb je uprostřed stromečku, do obvodu nepatří."
+      },
+      "tisk": {
+        "zadani": "Tomáš navrhuje nášivku na dres. Nakreslil lichoběžník $ABCD$ s pravým úhlem u vrcholu $A$ a překlopil ho přes osu $o$, na které leží strana $AD$. Vznikl útvar $B'BCC'$. Délky jsou popsané jen u lichoběžníku.\n\nJaký obvod má celý útvar $B'BCC'$?\n\nA) Vyber, co platí. Zakroužkuj: a) obvod útvaru je dvakrát obvod lichoběžníku b) obraz vznikne otočením kolem bodu c) obraz má stejné délky stran i úhly\n\nB) Strana $CC'$: ______ cm\n\nC) Obvod útvaru: ______ cm"
+      }
+    },
+    {
+      "id": "M8-T07-L2B-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Lucka má dvě brčka dlouhá $8$ cm a $12$ cm. Třetí brčko zastřihne tak, aby z nich složila trojúhelník. Jeho délka v centimetrech má být celé číslo.\n\nKolik různých délek může třetí brčko mít?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 15
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 17,
+              "typ_chyby": "trojuhelnikova-nerovnost-porusena"
+            },
+            {
+              "hodnota": 16,
+              "typ_chyby": "trojuhelnikova-nerovnost-porusena"
+            },
+            {
+              "hodnota": 19,
+              "typ_chyby": "trojuhelnikova-nerovnost-porusena"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Třetí brčko nesmí být moc dlouhé ani moc krátké: dvě kratší strany musí být vždy dohromady delší než ta nejdelší. Úloha se ptá na počet možných délek.",
+        "reseni": "$8 + 12 = 20$ (třetí brčko musí být kratší než dvacet centimetrů)\n\n$12 - 8 = 4$ (a delší než čtyři centimetry, jinak by s osmičkou nepřesáhlo dvanáctku)\n\n$5$, $6$, $7$, $8$, $9$, $10$, $11$, $12$, $13$, $14$, $15$, $16$, $17$, $18$, $19$ (možné celé délky v centimetrech)\n\n**Výsledek:** $15$ různých délek",
+        "otazky": [
+          "„Přečti mi úlohu nahlas. Ptá se na délku brčka, nebo na počet možných délek?“",
+          "„Jak dlouhé může být třetí brčko nejvýš? A jak krátké nejméně, aby s osmičkou přesáhlo dvanáctku?“",
+          "„Tady máš začátek: osm a dvanáct je dohromady dvacet, takže třetí brčko musí být kratší. Kolik musí mít nejméně?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč třetí brčko nemůže měřit čtyři centimetry.“",
+        "otocena_role_odpoved": "Čtyři a osm je dohromady jen dvanáct, přesně jako dlouhé brčko. Kratší brčka by na něm ležela naplocho a nesetkala by se. Musí mít aspoň pět centimetrů.",
+        "typicka_chyba": "Během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $17$ nebo $16$: počítá i délky čtyři nebo dvacet. Zeptejte se: „Složíš trojúhelník z brček čtyři, osm a dvanáct?“ (Ne, leží naplocho.) $19$: zapomene na dolní hranici. „Složíš ho s brčkem jeden centimetr?“ (Ne.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — všechny možné délky našlo samo. Pochvalte, že hlídalo nejkratší i nejdelší možnou délku. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Dvě strany trojúhelníku měří dva a šest centimetrů. Třetí je celé číslo. Napiš všechny možné délky.“ Ať řekne nejkratší a nejdelší a proč. Kontrola pro vás: pět, šest a sedm centimetrů (víc než čtyři, méně než osm), tedy tři délky.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: tři proužky papíru, nůžky a pravítko. Zítra ať dítě zastřihne dva proužky na $3$ cm a $5$ cm a třetí na $9$ cm, který pak po centimetru zkracuje. Pokaždé zkusí složit trojúhelník. Zeptejte se: „Od které délky to jde?“ Pak ať samo zapíše $3 + 5 = 8$. Potom zopakujte lekci „Trojúhelník a souměrnost“. Kontrola pro vás: s devíti a osmi centimetry to nejde, se sedmi už ano."
+      },
+      "tisk": {
+        "zadani": "Lucka má dvě brčka dlouhá $8$ cm a $12$ cm. Třetí brčko zastřihne tak, aby z nich složila trojúhelník. Jeho délka v centimetrech má být celé číslo.\n\nKolik různých délek může třetí brčko mít?\n\nVýsledek: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 14. 10.: nezávisle přepočítáno skriptem (python Fraction) a přes vyhodnotKrok; struktura, vstupy, kroky a kódy chyb jako v M8-T07-L2, čísla a kontext nové. U1 jen $4$, $7$, $10$; rovnostranný trojúhelník $3$ osy; středově souměrné jen písmeno Z (ověřeno ze souřadnic, domeček a drak jen osově); U2 $c = 25$, obvod $51$ ($52$, $25$, $31$); U3 $BC = 10$ z rozměrů $6$ a $8$ (kóta zadaná, nic se nedopočítává), $CC' = 14$ ($7$), obvod $60$ ($68$, $76$, $38$); U4 délky $5$ až $19$, tedy $15$ ($17$, $16$, $19$); oranžové a červené kontroly sedí. SVG v měřítku, popisky ve viewBoxu. Věcné chyby: 0. Texty: U1 typická chyba k B měla otázku bez jasné odpovědi („Kolika vrcholy vede osa?“) → „Ukaž prstem všechny osy. Kolik čar to je?“ (Tři.). Distraktor $6$ os ponechán: je to skutečná chyba (osy vedené vrcholem a středem strany počítá zvlášť); silnější varianta by vyžadovala obdélník nebo čtverec, které už mají hlavní lekce L2 a L4.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-14"
+  }
+}
