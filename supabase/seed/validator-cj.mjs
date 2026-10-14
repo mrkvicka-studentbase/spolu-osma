@@ -319,6 +319,11 @@ function kontrolaKroku(k, kde, chyba, var_, slovnik) {
       v.mezery.forEach((mz, i) => { if (mz.i !== i) chyba(`${kde}: mezery[${i}].i má být ${i}`); });
       if (!Array.isArray(sp) || sp.length !== v.mezery.length) { chyba(`${kde}: spravne musí mít ${v.mezery.length} položek`); break; }
       sp.forEach((x, i) => { if (!v.mezery[i].moznosti.includes(x)) chyba(`${kde}: mezera ${i}: „${x}“ není v možnostech`); });
+      // Text se vzorovou odpovědí: tři stejná písmena za sebou znamenají písmeno navíc v textu („o_díl“ + „dd“ = „odddíl“).
+      let n = 0;
+      const slozeno = v.text.replace(/_/g, () => sp[n++] ?? '_');
+      const trojice = slozeno.match(/\S*(\p{L})\1\1\S*/iu);
+      if (trojice) chyba(`${kde}: text se vzorovou odpovědí dává „${trojice[0]}“ (tři stejná písmena za sebou)`);
       zn.forEach((z, i) => {
         if (z.hodnota?.length !== v.mezery.length) chyba(`${kde}.zname_chyby[${i}]: hodnota má jinou délku než mezery`);
       });
