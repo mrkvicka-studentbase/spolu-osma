@@ -211,7 +211,7 @@ describe('schéma a validátor', async () => {
   });
 
   test('validátor: písmeno navíc v textu doplňovačky (o_díl + dd = odddíl) = chyba', async () => {
-    const data = JSON.parse(await readFile(path.join(ADRESAR_CJ, 'cj-t10-l37.json'), 'utf8'));
+    const data = JSON.parse(await readFile(path.join(KOREN, 'obsah', 'cestina', 'lekce', 'cj-t10-l37.json'), 'utf8'));
     const krok = data.ulohy.flatMap((u) => u.kroky).find((k) => k.vstup.typ === 'doplnit_pismeno' && k.vstup.text.includes('o_íl'));
     krok.vstup.text = krok.vstup.text.replace('o_íl', 'o_díl');
     const { chyby } = zkontrolujLekci(data, 'cj-t10-l37.json', { schema, slovnik: slovnikCj, audioMd });
