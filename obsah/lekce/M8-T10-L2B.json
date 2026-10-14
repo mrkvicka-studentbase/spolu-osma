@@ -1,0 +1,442 @@
+{
+  "id": "M8-T10-L2B",
+  "faze": "osma",
+  "tyden": 10,
+  "poradi": 2,
+  "tema": "Objem a litry",
+  "kapitola": "geometrie",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě spočítá objem kvádru a krychle a převede ho na litry.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami: objem je kolik se vejde do krabice, nádrže nebo vany, a jak se objem převede na litry.",
+  "uvod_pravidla": [
+    {
+      "znak": "$5 \\cdot 2 \\cdot 2 = 20$",
+      "text": "objem: počet krychliček"
+    },
+    {
+      "znak": "$1\\ \\text{dm}^3 = 1$ l",
+      "text": "krychlový decimetr je litr"
+    },
+    {
+      "znak": "$1\\ \\text{m}^3 = 1\\,000$ l",
+      "text": "kubík je tisíc litrů"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka",
+    "pravítko"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T10-L2B-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Krychle má hranu $20$ cm. Jaký má objem?\n\nB) Kolik litrů je $3\\,500\\ \\text{cm}^3$?\n\nC) Kolik litrů je $5{,}5\\ \\text{m}^3$?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: objem krychle",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$8\\,000\\ \\text{cm}^3$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$60\\ \\text{cm}^3$",
+                "spravne": false,
+                "typ_chyby": "objem-soucet-rozmeru"
+              },
+              {
+                "id": "c",
+                "text": "$2\\,400\\ \\text{cm}^3$",
+                "spravne": false,
+                "typ_chyby": "povrch-objem-zamena"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $3\\,500\\ \\text{cm}^3$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$3\\,500$ l",
+                "spravne": false,
+                "typ_chyby": "litr-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$35$ l",
+                "spravne": false,
+                "typ_chyby": "objem-po-desitkach-nebo-stovkach"
+              },
+              {
+                "id": "c",
+                "text": "$3{,}5$ l",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: $5{,}5\\ \\text{m}^3$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$550$ l",
+                "spravne": false,
+                "typ_chyby": "objem-po-desitkach-nebo-stovkach"
+              },
+              {
+                "id": "b",
+                "text": "$5\\,500$ l",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$5{,}5$ l",
+                "spravne": false,
+                "typ_chyby": "litr-zamena"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá, u A si počítá na papíře. Objem říká, kolik krychliček se do tělesa vejde. Litr je krychle deset krát deset krát deset centimetrů. Čte se: $\\text{cm}^3$ „centimetr krychlový“, $\\text{m}^3$ „metr krychlový“ (kubík), $3{,}5$ „tři celé pět“ (tři a půl), $5{,}5$ „pět celých pět“ (pět a půl). Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) Objem krychle s hranou $20$ cm\n\n$20 \\cdot 20 = 400$ (jedna vrstva krychliček)\n\n$400 \\cdot 20 = 8\\,000\\ \\text{cm}^3$ (dvacet vrstev, délka krát šířka krát výška)\n\n#### B) $3\\,500\\ \\text{cm}^3$ na litry\n\n$1$ l $= 1\\ \\text{dm}^3 = 1\\,000\\ \\text{cm}^3$ (litr je tisíc centimetrů krychlových)\n\n$3\\,500 : 1\\,000 = 3{,}5$ l (tři a půl litru)\n\n#### C) $5{,}5\\ \\text{m}^3$ na litry\n\n$1\\ \\text{m}^3 = 1\\,000$ l (kubík je tisíc litrů)\n\n$5{,}5 \\cdot 1\\,000 = 5\\,500$ l (pět a půl kubíku)\n\n**Výsledek:** A) $8\\,000\\ \\text{cm}^3$; B) $3{,}5$ l; C) $5\\,500$ l",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, spočítej na papíře: kolik krychliček po centimetru se vejde do jedné vrstvy? A kolik je vrstev?“"
+          },
+          {
+            "k": "B",
+            "text": "„Neklikej, vzpomeň si na litrovou láhev. Kolik centimetrů krychlových má jeden litr?“"
+          },
+          {
+            "k": "C",
+            "text": "„Neklikej, kolik litrů se vejde do jednoho kubíku? Kolik jich je v pěti a půl kubících?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč tři a půl tisíce centimetrů krychlových nejsou tři a půl tisíce litrů.“",
+        "otocena_role_odpoved": "Centimetr krychlový je malinká kostička. Litr je kostka deset krát deset krát deset centimetrů, vejde se do něj tisíc kostiček. Tři a půl tisíce kostiček jsou proto jen tři a půl litru.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. A $60$ (sčítá hrany) nebo $2\\,400$ (povrch): „Kolik krychliček je v jedné vrstvě a kolik je vrstev?“ (Čtyři sta, dvacet.) B $3\\,500$ l nebo $35$ l: „Kolik centimetrů krychlových má litr?“ (Tisíc.) C $5{,}5$ l nebo $550$ l: „Kolik litrů je kubík?“ (Tisíc.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — objem i litry sedí. Pochvalte, že dítě hlídalo, kolik centimetrů krychlových má litr, a jděte dál.",
+        "oranzova": "Zítra 5 minut, ústně. Přečtěte dítěti: „Kolik litrů je pět tisíc centimetrů krychlových? Kolik litrů jsou čtyři kubíky? Kolik centimetrů krychlových má krychle s hranou deset centimetrů?“ Kontrola pro vás: $5$ l; $4\\,000$ l; $1\\,000\\ \\text{cm}^3$, tedy jeden litr.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 16 kostek stavebnice (lego) nebo kostek cukru. Zítra ať dítě postaví kvádr: dvě vrstvy, v každé čtyři kostky krát dvě kostky. Zeptejte se: „Kolik kostek je v jedné vrstvě a kolik ve dvou?“ Pak ať samo zapíše $4 \\cdot 2 \\cdot 2 = 16$. Potom zopakujte lekci „Objem a litry“. Kontrola pro vás: vrstva má $8$ kostek, celkem $16$."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Krychle má hranu $20$ cm. Jaký má objem? — a) $8\\,000\\ \\text{cm}^3$ b) $60\\ \\text{cm}^3$ c) $2\\,400\\ \\text{cm}^3$\n\nB) Kolik litrů je $3\\,500\\ \\text{cm}^3$? — a) $3\\,500$ l b) $35$ l c) $3{,}5$ l\n\nC) Kolik litrů je $5{,}5\\ \\text{m}^3$? — a) $550$ l b) $5\\,500$ l c) $5{,}5$ l"
+      }
+    },
+    {
+      "id": "M8-T10-L2B-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Zásobník na zalévání na balkoně má tvar kvádru. Dno je dlouhé $80$ cm a široké $2$ dm. Voda v něm sahá do výšky $70$ cm. Kolik litrů vody je v zásobníku?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $80\\ \\text{cm} = 8\\ \\text{dm}$\n\n2. řádek: dno: $8 \\cdot 2 = 16\\ \\text{dm}^2$\n\n3. řádek: objem: $16 \\cdot 70 = 1\\,120\\ \\text{dm}^3$\n\n4. řádek: $1\\,120\\ \\text{dm}^3 = 1\\,120$ l",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$80\\ \\text{cm} = 8\\ \\text{dm}$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "dno: $8 \\cdot 2 = 16\\ \\text{dm}^2$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "objem: $16 \\cdot 70 = 1\\,120\\ \\text{dm}^3$",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$1\\,120\\ \\text{dm}^3 = 1\\,120$ l",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "objem: $8 + 2 + 7 = 17\\ \\text{dm}^3$",
+                "spravne": false,
+                "typ_chyby": "objem-soucet-rozmeru"
+              },
+              {
+                "id": "b",
+                "text": "objem: $16 \\cdot 7 = 112\\ \\text{dm}^3$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "objem: $16 \\cdot 700 = 11\\,200\\ \\text{dm}^3$",
+                "spravne": false,
+                "typ_chyby": "prevod-spatnym-smerem"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "l"
+          },
+          "spravne": {
+            "hodnota": 112
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 1120,
+              "typ_chyby": "zapomnel-prevest-jednotky"
+            },
+            {
+              "hodnota": 112000,
+              "typ_chyby": "litr-zamena"
+            },
+            {
+              "hodnota": 11200,
+              "typ_chyby": "prevod-spatnym-smerem"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Délky jsou v zadání ve dvou jednotkách, v centimetrech a decimetrech. Násobit spolu se smí jen délky ve stejné jednotce. Decimetr krychlový je přesně litr, proto Petr počítá v decimetrech. Chyba je jedna, řádky za ní jsou spočítané dobře, jen se špatným číslem.",
+        "reseni": "Chyba je ve 3. řádku: Petr násobí decimetry s centimetry, výšku vody nepřevedl.\n\n$80\\ \\text{cm} = 8\\ \\text{dm}$ (deset centimetrů je decimetr)\n\n$8 \\cdot 2 = 16\\ \\text{dm}^2$ (dno)\n\n$70\\ \\text{cm} = 7\\ \\text{dm}$ (výška vody v decimetrech)\n\n$16 \\cdot 7 = 112\\ \\text{dm}^3$ (objem vody)\n\n$112\\ \\text{dm}^3 = 112$ l (decimetr krychlový je litr)\n\nDlaždice $8 + 2 + 7$ sčítá rozměry a $16 \\cdot 700$ převádí obráceně (proto nesedí)\n\n**Výsledek:** $112$ l",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co víš o zásobníku. V jakých jednotkách jsou jednotlivé délky?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky. U každého čísla řekni, jestli jsou to centimetry, nebo decimetry.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: jsou všechna násobená čísla ve stejné jednotce? Jak by to číslo vypadalo v decimetrech?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč v zásobníku není tisíc sto dvacet litrů.“",
+        "otocena_role_odpoved": "Petr násobil decimetry s centimetry. Sedmdesát centimetrů je sedm decimetrů, takže objem je šestnáct krát sedm, sto dvanáct decimetrů krychlových, a to je sto dvanáct litrů.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 4. řádek? Ten jen přepisuje. Zeptejte se: „Odkud je tisíc sto dvacet?“ (Ze 3. řádku.) 1. a 2. řádek jsou správně. Výsledek $1\\,120$: opíše Petra; $11\\,200$: převádí obráceně; $112\\,000$: počítá v centimetrech krychlových a nepřevede. „V jaké jednotce je sedmdesát?“ (V centimetrech.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že dítě hlídalo jednotky u každého čísla, a jděte dál.",
+        "oranzova": "Zítra 5 minut, ústně. Přečtěte dítěti: „Krabice má dno čtyři decimetry krát pět decimetrů a výšku třicet centimetrů. Petr tvrdí, že se do ní vejde šest set litrů. Má pravdu?“ Ať nahlas řekne, co převede a jak. Kontrola pro vás: nemá; třicet centimetrů jsou tři decimetry, $4 \\cdot 5 \\cdot 3 = 60$ litrů.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko a sešit. Zítra ať dítě ukáže na pravítku deset centimetrů a řekne, že je to jeden decimetr. Pak ať změří délku sešitu a řekne ji v centimetrech i v decimetrech. Zeptejte se: „Kolik decimetrů je sedmdesát centimetrů?“ Pak ať samo zapíše $70\\ \\text{cm} = 7\\ \\text{dm}$. Potom zopakujte lekci „Objem a litry“. Kontrola pro vás: deset centimetrů je decimetr, sedmdesát centimetrů je sedm decimetrů."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\n*Zásobník na zalévání na balkoně má tvar kvádru. Dno je dlouhé $80$ cm a široké $2$ dm. Voda v něm sahá do výšky $70$ cm. Kolik litrů vody je v zásobníku?*\n\na udělal jednu chybu.\n\n1. řádek: $80\\ \\text{cm} = 8\\ \\text{dm}$\n\n2. řádek: dno: $8 \\cdot 2 = 16\\ \\text{dm}^2$\n\n3. řádek: objem: $16 \\cdot 70 = 1\\,120\\ \\text{dm}^3$\n\n4. řádek: $1\\,120\\ \\text{dm}^3 = 1\\,120$ l\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) objem: $8 + 2 + 7 = 17\\ \\text{dm}^3$ b) objem: $16 \\cdot 7 = 112\\ \\text{dm}^3$ c) objem: $16 \\cdot 700 = 11\\,200\\ \\text{dm}^3$\n\nC) Kolik litrů vody je opravdu v zásobníku? ______ l"
+      }
+    },
+    {
+      "id": "M8-T10-L2B-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Betonová nádrž na vodu v zahradnictví má tvar kvádru. Je dlouhá $6$ m, široká $5$ m a hluboká $1{,}3$ m. Napouští se jen do výšky $1{,}1$ m. Čerpadlo ze studny do ní načerpá $3\\,000$ litrů vody za hodinu.\n\nVypočítej, kolik $\\text{m}^3$ vody bude v nádrži, kolik je to litrů a za kolik hodin se nádrž napustí.",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 340 170\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"90,140 260,140 320,95 320,44 260,89 90,89\" fill=\"currentColor\" fill-opacity=\"0.15\" stroke=\"none\"/><line x1=\"90\" y1=\"140\" x2=\"150\" y2=\"95\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><line x1=\"150\" y1=\"95\" x2=\"320\" y2=\"95\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><line x1=\"150\" y1=\"95\" x2=\"150\" y2=\"35\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><polygon points=\"90,140 260,140 260,80 90,80\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"90,80 260,80 320,35 150,35\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"260,140 320,95 320,35 260,80\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"90\" y1=\"89\" x2=\"260\" y2=\"89\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"260\" y1=\"89\" x2=\"320\" y2=\"44\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"70\" y1=\"80\" x2=\"70\" y2=\"140\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"64\" y1=\"80\" x2=\"76\" y2=\"80\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"64\" y1=\"140\" x2=\"76\" y2=\"140\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"62\" y=\"115\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">1,3 m</text><line x1=\"244\" y1=\"89\" x2=\"244\" y2=\"140\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"239\" y1=\"89\" x2=\"249\" y2=\"89\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"239\" y1=\"140\" x2=\"249\" y2=\"140\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"236\" y=\"122\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">1,1 m</text><text x=\"175\" y=\"160\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">6 m</text><text x=\"298\" y=\"130\" text-anchor=\"start\" font-size=\"14\" fill=\"currentColor\">5 m</text></svg>",
+      "obrazek_popis": "Nádrž tvaru kvádru: délka 6 m, šířka 5 m, hloubka 1,3 m; voda sahá do výšky 1,1 m.",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Voda v $\\text{m}^3$",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m³"
+          },
+          "spravne": {
+            "hodnota": 33
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 39,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 12.1,
+              "typ_chyby": "objem-soucet-rozmeru"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Voda v litrech",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "l"
+          },
+          "spravne": {
+            "hodnota": 33000
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 3300,
+              "typ_chyby": "objem-po-desitkach-nebo-stovkach"
+            },
+            {
+              "hodnota": 33,
+              "typ_chyby": "litr-zamena"
+            },
+            {
+              "hodnota": 39000,
+              "typ_chyby": "prehledl-udaj"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek: počet hodin",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "h"
+          },
+          "spravne": {
+            "hodnota": 11
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 13,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 1.1,
+              "typ_chyby": "objem-po-desitkach-nebo-stovkach"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Nádrž je hluboká $1{,}3$ m, ale voda sahá jen do $1{,}1$ m: počítá se s výškou vody. Kubík je tisíc litrů. Čerpadlo dodá tři tisíce litrů za hodinu, takže doba vyjde rovnou v hodinách. Čte se: $1{,}1$ m „jedna celá jedna metru“ (metr deset), $1{,}3$ m „jedna celá tři metru“ (metr třicet).",
+        "reseni": "$6 \\cdot 5 = 30\\ \\text{m}^2$ (dno nádrže)\n\n$30 \\cdot 1{,}1 = 33\\ \\text{m}^3$ (voda, počítá se výška vody)\n\n$33 \\cdot 1\\,000 = 33\\,000$ l (kubík je tisíc litrů)\n\n$33\\,000 : 3\\,000 = 11$ h (každou hodinu přiteče tři tisíce litrů)\n\n**Výsledek:** $33\\ \\text{m}^3$, $33\\,000$ l, $11$ h",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co víš o nádrži a o vodě. Na co se úloha ptá?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Jak vysoko bude v nádrži voda? Které tři délky vynásobíš, aby vyšel objem vody?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: jeden kubík je tisíc litrů. Kolik litrů přiteče za jednu hodinu? Kolikrát se to vejde do vody v nádrži?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč nepočítáš s hloubkou nádrže jedna celá tři metru.“",
+        "otocena_role_odpoved": "Nádrž se nenapouští až po okraj, voda sahá jen do výšky metr deset. Objem vody se proto počítá s výškou vody, ne s hloubkou nádrže.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. $39$, $39\\,000$ a $13$: počítá s hloubkou nádrže. Zeptejte se: „Do jaké výšky sahá voda?“ (Metr deset.) $12{,}1$: sčítá rozměry. „Které tři délky násobíš?“ (Šest, pět a metr deset.) Krok 2 $3\\,300$ nebo $33$ (pak $1{,}1$ h): „Kolik litrů je kubík?“ (Tisíc.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — objem, litry i doba sedí. Pochvalte, že dítě počítalo s výškou vody a hlídalo jednotky, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: „Nádrž má dno $4$ m krát $2$ m, voda sahá do výšky $1$ m. Za hodinu přiteče $1\\,000$ litrů. Za kolik hodin je napuštěná?“ Ať nahlas řekne objem, litry a hodiny. Kontrola pro vás: $8\\ \\text{m}^3$, $8\\,000$ l, $8$ hodin.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: čtverečkovaný papír a tužku. Zítra ať dítě nakreslí čtverec deset krát deset čtverečků jako jednu vrstvu kostek a řekne, kolik kostek je ve vrstvě a kolik v deseti vrstvách. Zeptejte se: „Když je každá kostka decimetr krychlový, tedy litr, kolik litrů má celá krychle?“ Pak ať samo zapíše $10 \\cdot 10 \\cdot 10 = 1\\,000$ l. Potom zopakujte lekci „Objem a litry“. Kontrola pro vás: vrstva $100$, celkem $1\\,000$ kostek; kubík je tisíc litrů."
+      },
+      "tisk": {
+        "zadani": "Betonová nádrž na vodu v zahradnictví má tvar kvádru. Je dlouhá $6$ m, široká $5$ m a hluboká $1{,}3$ m. Napouští se jen do výšky $1{,}1$ m. Čerpadlo ze studny do ní načerpá $3\\,000$ litrů vody za hodinu.\n\nVypočítej, kolik $\\text{m}^3$ vody bude v nádrži, kolik je to litrů a za kolik hodin se nádrž napustí.\n\nA) Voda: ______ $\\text{m}^3$\n\nB) Voda: ______ l\n\nC) Nádrž se napustí za ______ h"
+      }
+    },
+    {
+      "id": "M8-T10-L2B-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Plastová vana na vodu u skleníku má tvar kvádru. Je dlouhá $1{,}4$ m, široká $1$ m a vysoká $50$ cm.\n\nKolik litrů vody se do vany vejde?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "l"
+          },
+          "spravne": {
+            "hodnota": 700
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 70,
+              "typ_chyby": "zapomnel-prevest-jednotky"
+            },
+            {
+              "hodnota": 7000,
+              "typ_chyby": "objem-po-desitkach-nebo-stovkach"
+            },
+            {
+              "hodnota": 0.7,
+              "typ_chyby": "litr-zamena"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Rozměry jsou v metrech i centimetrech. Nejkratší cesta: všechno na decimetry, protože decimetr krychlový je litr. Správně je i cesta přes metry: $0{,}7\\ \\text{m}^3$ (nula celá sedm kubíku) a krát tisíc.",
+        "reseni": "$1{,}4\\ \\text{m} = 14\\ \\text{dm}$, $1\\ \\text{m} = 10\\ \\text{dm}$, $50\\ \\text{cm} = 5\\ \\text{dm}$ (všechno na decimetry)\n\n$14 \\cdot 10 \\cdot 5 = 700\\ \\text{dm}^3$ (objem vany)\n\n$700\\ \\text{dm}^3 = 700$ l (decimetr krychlový je litr)\n\n**Výsledek:** $700$ l",
+        "otazky": [
+          "„Přečti mi úlohu nahlas. V jakých jednotkách jsou rozměry vany?“",
+          "„Jakou jednotku délky potřebuješ, aby objem vyšel rovnou v litrech? Jak na ni převedeš všechny tři rozměry?“",
+          "„Tady máš začátek: jedna celá čtyři metru je čtrnáct decimetrů. Kolik decimetrů jsou ostatní rozměry?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč nestačí vynásobit jedna celá čtyři krát jedna krát padesát.“",
+        "otocena_role_odpoved": "Ta čísla jsou v různých jednotkách, v metrech a centimetrech. Převedu je na stejnou jednotku, nejlépe na decimetry, protože decimetr krychlový je litr. Správně je i: všechno v metrech, nula celá sedm kubíku, to je sedm set litrů.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte: $70$: nepřevede centimetry. Zeptejte se: „V jakých jednotkách jsou rozměry?“ (Metry a centimetry.) $0{,}7$: kubíky nepřevede na litry. „Kolik litrů je kubík?“ (Tisíc.) $7\\,000$: převádí po stovkách. „Kolik centimetrů krychlových má litr?“ (Tisíc.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — objem v litrech zvládá samo. Pochvalte, že dítě nejdřív sjednotilo jednotky. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: „Krabice je dlouhá $1$ m, široká $30$ cm a vysoká $20$ cm. Kolik litrů se do ní vejde?“ Ať nahlas řekne rozměry v decimetrech a objem. Kontrola pro vás: $10$, $3$ a $2$ dm; $10 \\cdot 3 \\cdot 2 = 60$ l.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko nebo svinovací metr. Zítra ať dítě změří délku stolu v centimetrech a řekne ji i v decimetrech a v metrech. Zeptejte se: „Kolik decimetrů je jeden metr? A kolik decimetrů je padesát centimetrů?“ Pak ať samo zapíše $1\\ \\text{m} = 10\\ \\text{dm}$ a $50\\ \\text{cm} = 5\\ \\text{dm}$. Potom zopakujte lekci „Objem a litry“. Kontrola pro vás: metr je deset decimetrů, padesát centimetrů je pět decimetrů."
+      },
+      "tisk": {
+        "zadani": "Plastová vana na vodu u skleníku má tvar kvádru. Je dlouhá $1{,}4$ m, široká $1$ m a vysoká $50$ cm.\n\nKolik litrů vody se do vany vejde?\n\nVýsledek: ______ l"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenze B-varianty: vše přepočítáno skriptem (Python Fraction: správné odpovědi, mezivýsledky, každá známá chyba a dlaždice, Platí, oranžová a červená) a přes vyhodnotKrok (správně s tečkou i čárkou, každá známá chyba vrací svůj kód; struktura, vstupy a kódy shodné s hlavní lekcí). Věcné chyby: žádné. Opraveno (obtížnost): U1 A krychle s hranou 9 cm ($9 \\cdot 9 \\cdot 9 = 729$) byla početně těžší než $4 \\cdot 4 \\cdot 4$ v hlavní lekci; nově hrana 20 cm: $8\\,000\\ \\text{cm}^3$ (součet hran 60, povrch 2 400), stejně snadné jako hlavní lekce a neopakuje hrany 3 až 5 z L1 a L2. Sporné body autora: U1 C správná dlaždice nejdelší jako v hlavní lekci, ponecháno. Beze změny: U1 3,5 l (3 500, 35), 5 500 l (550, 5,5); U2 112 l (1 120, 112 000, 11 200); U3 33 m³ (39, 12,1), 33 000 l (3 300, 33, 39 000), 11 h (13, 1,1); U4 700 l (70, 7 000, 0,7). Obrázek U3 sedí se zadáním (kóty 1,3 m a 1,1 m ve stejném měřítku).",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-14"
+  }
+}
