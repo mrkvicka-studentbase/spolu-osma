@@ -41,7 +41,7 @@
           "popisek": "Příklad A: klikni v pořadí, v jakém počítáš",
           "vstup": {
             "typ": "poradi",
-            "vyraz": "20 \\op{o1}{:} (-5) \\op{o2}{\\cdot} (-3) \\op{o3}{-} 4 \\op{o4}{\\cdot} (-6) \\op{o5}{+} 2",
+            "vyraz": "20 \\op{o1}{:} (-5) \\op{o2}{\\cdot} (-3) \\op{o3}{-} \\\\[1.2em] 4 \\op{o4}{\\cdot} (-6) \\op{o5}{+} 2",
             "operace": [
               {
                 "id": "o1",
@@ -552,7 +552,7 @@
   ],
   "kontrola": {
     "jistota": "jista",
-    "poznamka": "Recenzent 14. 10. 2026: vše přepočítáno nezávisle (python Fraction) a přes vyhodnotKrok: správné odpovědi (i s čárkou a typografickým mínusem), mezivýsledky v řešení, tahák, oranžová i červená sedí; každá dlaždice a známá chyba vrací svůj kód, vzniká popsaným omylem a liší se od správné odpovědi; každá chybná dlaždice i hodnota je v taháku zmíněná. B-varianta proti M8-T06-L3N: stejné tema/kapitola/tyden/poradi, struktura, vstupy, kódy a obtížnost, jiná čísla, kontext a věty; texty v limitech slov, bez rodu, otázky v režimu samo nic neprozrazují; žádná záporná správná odpověď ve vstupu zlomek. Opraveno (texty, věcné chyby žádné): typická chyba U2 výslovně uvádí, že $-26$ vznikne Petrovou chybou i odečtením jako v opravě $= -7 + (-24) + 5$; U4, že $-32$ vznikne ztraceným minusem u podílu i odečtením osmi (obojí stavbou výrazu jako v L3N, kódy ponechány); „minus“ → „mínus“ při čtení operace v oranžové U2 a U4.",
+    "poznamka": "Recenzent 14. 10. 2026: vše přepočítáno nezávisle (python Fraction) a přes vyhodnotKrok: správné odpovědi (i s čárkou a typografickým mínusem), mezivýsledky v řešení, tahák, oranžová i červená sedí; každá dlaždice a známá chyba vrací svůj kód, vzniká popsaným omylem a liší se od správné odpovědi; každá chybná dlaždice i hodnota je v taháku zmíněná. B-varianta proti M8-T06-L3N: stejné tema/kapitola/tyden/poradi, struktura, vstupy, kódy a obtížnost, jiná čísla, kontext a věty; texty v limitech slov, bez rodu, otázky v režimu samo nic neprozrazují; žádná záporná správná odpověď ve vstupu zlomek. Opraveno (texty, věcné chyby žádné): typická chyba U2 výslovně uvádí, že $-26$ vznikne Petrovou chybou i odečtením jako v opravě $= -7 + (-24) + 5$; U4, že $-32$ vznikne ztraceným minusem u podílu i odečtením osmi (obojí stavbou výrazu jako v L3N, kódy ponechány); „minus“ → „mínus“ při čtení operace v oranžové U2 a U4. QA 2026-10-14: U1 krok 1 (poradi) — výraz s pěti operacemi se ani na 60 % nevešel na 360 px (vodorovný scroll u žáka i v režimu samo); ve vstup.vyraz zalomen za odčítáním (KaTeX \\\\[1.2em], mezera kvůli štítkům pořadí) na dva řádky, operace, pořadí i vyhodnocení beze změny.",
     "zkontroloval": "recenzent",
     "datum": "2026-10-14"
   }

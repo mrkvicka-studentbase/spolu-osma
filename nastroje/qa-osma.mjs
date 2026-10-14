@@ -473,13 +473,18 @@ async function diagnostika(d, pridej) {
   const page = await ctx.newPage();
   const konzole = sledujKonzoli(page);
   const predmet = d.predmet || 'matematika';
-  // přehled žáka: karta úvodního testu → test
-  await page.goto(`${WEB}/prehled.html?predmet=${predmet}`);
-  await page.waitForSelector('.karta-lekce--diagnostika', { timeout: 20000 }).catch(() => pridej('přehled: chybí karta úvodního testu'));
-  const karta = await page.locator('.karta-lekce--diagnostika').innerText().catch(() => '');
-  if (!/Úvodní test \(\d+ min\)/.test(karta)) pridej(`přehled: karta testu „${karta.slice(0, 80)}“`);
-  await page.locator('.karta-lekce--diagnostika button').click();
-  await page.waitForURL(/lekce\.html/, { timeout: 10000 });
+  // pololetní test (…-POL / …-pol): karta je v přehledu až od 11. týdne kalendáře → rovnou lekce.html
+  const pol = /-(POL|pol)$/.test(d.id);
+  if (pol) await page.goto(`${WEB}/lekce.html?lekce=${d.id}&dite=${DITE}&rezim=app`);
+  else {
+    // přehled žáka: karta úvodního testu → test
+    await page.goto(`${WEB}/prehled.html?predmet=${predmet}`);
+    await page.waitForSelector('.karta-lekce--diagnostika', { timeout: 20000 }).catch(() => pridej('přehled: chybí karta úvodního testu'));
+    const karta = await page.locator('.karta-lekce--diagnostika').innerText().catch(() => '');
+    if (!/Úvodní test \(\d+ min\)/.test(karta)) pridej(`přehled: karta testu „${karta.slice(0, 80)}“`);
+    await page.locator('.karta-lekce--diagnostika button').click();
+    await page.waitForURL(/lekce\.html/, { timeout: 10000 });
+  }
   // lokální obsah: diagnostika ze souboru (lekce.html bez lokalne si ji fake DB načte sama)
   await projdiPripravit(page);
   let prestavka = false;
@@ -517,7 +522,7 @@ async function diagnostika(d, pridej) {
   await page.goto(`${WEB}/rodic.html?lekce=${d.id}&dite=${DITE}&sezeni=${s?.id}`);
   await page.waitForSelector('.diag-vysledek--osma', { timeout: 20000 }).catch(() => pridej('rodič: chybí výsledek úvodního testu'));
   const vysl = await page.locator('#obsah').innerText().catch(() => '');
-  for (const nadpis of ['Výsledek úvodního testu', 'Kde začít', 'Co zatím nejde', 'Co jde']) if (!vysl.includes(nadpis)) pridej(`rodič výsledek: chybí „${nadpis}“`);
+  for (const nadpis of [pol ? 'Výsledek pololetního testu' : 'Výsledek úvodního testu', 'Kde začít', 'Co zatím nejde', 'Co jde']) if (!vysl.includes(nadpis)) pridej(`rodič výsledek: chybí „${nadpis}“`);
   if (!/Začněte: Téma 1 ·/.test(vysl)) pridej(`rodič výsledek: „Kde začít“ nemíří na téma 1: ${vysl.slice(vysl.indexOf('Kde začít'), vysl.indexOf('Kde začít') + 120)}`);
   await kontrolaObrazovky(page, pridej, 'rodič výsledek testu');
   if (SNIMKY) await page.screenshot({ path: join(SNIMKY, `${d.id}-rodic-vysledek.png`), fullPage: true });
@@ -535,7 +540,7 @@ async function diagnostika(d, pridej) {
   const prvniSilne = p.sekce.findIndex((x) => x.stitek === 'Jde to');
   if (!silna.length) pridej('přehled po testu: žádné téma se štítkem „Jde to“');
   if (prvniSilne >= 0 && p.sekce.slice(prvniSilne).some((x) => x.stitek !== 'Jde to')) pridej('přehled po testu: silná témata nejsou na konci');
-  if (!/Podle úvodního testu/.test(p.podnadpis)) pridej(`přehled po testu: podnadpis „${p.podnadpis}“`);
+  if (!(pol ? /Podle pololetního testu/ : /Podle úvodního testu/).test(p.podnadpis)) pridej(`přehled po testu: podnadpis „${p.podnadpis}“`);
   await kontrolaObrazovky(page, pridej, 'přehled po testu');
   if (SNIMKY) await page.screenshot({ path: join(SNIMKY, `prehled-375-po-testu-${predmet}.png`), fullPage: true });
   for (const c of konzole()) pridej(`test konzole: ${c.slice(0, 200)}`);
@@ -607,6 +612,9 @@ if (!argv.includes('--bez-prehledu')) {
   process.stdout.write('přehled, úvodní stránka, registrace…');
   try { await prehled(zaznam('přehled')); } catch (e) { zaznam('přehled')(`průchod spadl: ${e.message.split('\n')[0]}`); }
   console.log(' hotovo');
+}
+// testy (úvodní, pololetní) i s --bez-prehledu, když jsou výslovně v --lekce
+if (!argv.includes('--bez-prehledu') || vyber) {
   for (const d of DIAGNOSTIKY) {
     process.stdout.write(`${d.id}: test → výsledek → doporučení…`);
     try { await diagnostika(d, zaznam(d.id)); } catch (e) { zaznam(d.id)(`průchod spadl: ${e.message.split('\n')[0]}`); }
@@ -641,7 +649,7 @@ await prohlizec.close();
 server.close();
 
 const vystup = [
-  `Zdroj lekcí: ${SYNTETICKE ? 'testy/data/osma (syntetické)' : 'obsah/'} · ${LEKCE.length} lekcí, ${DIAGNOSTIKY.length} úvodních testů`,
+  `Zdroj lekcí: ${SYNTETICKE ? 'testy/data/osma (syntetické)' : 'obsah/'} · ${LEKCE.length} lekcí, ${DIAGNOSTIKY.length} testů (úvodní/pololetní)`,
   '',
   '| lekce | žák 360 | rodič 375 | tisk | Dnes samo (+ rodič souhrn) |',
   '|---|---|---|---|---|',
