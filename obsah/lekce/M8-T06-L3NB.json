@@ -1,0 +1,559 @@
+{
+  "id": "M8-T06-L3NB",
+  "faze": "osma",
+  "tyden": 6,
+  "poradi": 3,
+  "tema": "Krát a děleno se zápornými",
+  "kapitola": "cela-cisla",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo určí znaménko součinu a podílu i u čtyř činitelů, hlídá pořadí operací a počítá se zápornými zlomky včetně dělení.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami. Dítě ukáže, že krát a děleno se zápornými zvládne samo: čtyři příklady, nenápadnější chyba u Petra a zlomkový příklad i s dělením.",
+  "uvod_pravidla": [
+    {
+      "znak": "$(-6) \\cdot (-2) = 12$",
+      "text": "minus krát minus: plus"
+    },
+    {
+      "znak": "$(-18) : 3 = -6$",
+      "text": "různá znaménka: minus"
+    },
+    {
+      "znak": "$(-1) \\cdot (-2) \\cdot (-5)$",
+      "text": "lichý počet minusů: minus"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T06-L3NB-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U příkladu A klikej na početní operace v tom pořadí, v jakém je počítáš. Výsledek u A počítat nemusíš. U B, C a D vyber správnou odpověď.\n\nA) $20 : (-5) \\cdot (-3) - 4 \\cdot (-6) + 2$\n\nB) Který součin vyjde kladný?\n\nC) $\\left(-\\frac{4}{5}\\right) \\cdot \\left(-\\frac{5}{12}\\right)$\n\nD) $(-90) : (-6) : (-3)$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: klikni v pořadí, v jakém počítáš",
+          "vstup": {
+            "typ": "poradi",
+            "vyraz": "20 \\op{o1}{:} (-5) \\op{o2}{\\cdot} (-3) \\op{o3}{-} 4 \\op{o4}{\\cdot} (-6) \\op{o5}{+} 2",
+            "operace": [
+              {
+                "id": "o1",
+                "popis": "dělení"
+              },
+              {
+                "id": "o2",
+                "popis": "násobení minus třemi"
+              },
+              {
+                "id": "o3",
+                "popis": "odčítání"
+              },
+              {
+                "id": "o4",
+                "popis": "násobení minus šesti"
+              },
+              {
+                "id": "o5",
+                "popis": "sčítání"
+              }
+            ]
+          },
+          "spravne": {
+            "poradi": [
+              [
+                "o1",
+                "o2",
+                "o4",
+                "o3",
+                "o5"
+              ],
+              [
+                "o1",
+                "o4",
+                "o2",
+                "o3",
+                "o5"
+              ],
+              [
+                "o4",
+                "o1",
+                "o2",
+                "o3",
+                "o5"
+              ]
+            ]
+          },
+          "zname_chyby": [
+            {
+              "poradi": [
+                "o1",
+                "o2",
+                "o3",
+                "o4",
+                "o5"
+              ],
+              "typ_chyby": "scital-pred-nasobenim"
+            },
+            {
+              "poradi": [
+                "o2",
+                "o1",
+                "o4",
+                "o3",
+                "o5"
+              ],
+              "typ_chyby": "neslo-zleva"
+            },
+            {
+              "poradi": [
+                "o1",
+                "o2",
+                "o4",
+                "o5",
+                "o3"
+              ],
+              "typ_chyby": "neslo-zleva"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: který součin je kladný?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$(-3) \\cdot 2 \\cdot (-1) \\cdot (-4)$",
+                "spravne": false,
+                "typ_chyby": "znamenko-soucinu-vice-cinitelu"
+              },
+              {
+                "id": "b",
+                "text": "$3 \\cdot (-2) \\cdot 1 \\cdot 4$",
+                "spravne": false,
+                "typ_chyby": "plus-krat-minus"
+              },
+              {
+                "id": "c",
+                "text": "$(-3) \\cdot (-2) \\cdot (-1) \\cdot (-4)$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: $\\left(-\\frac{4}{5}\\right) \\cdot \\left(-\\frac{5}{12}\\right)$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$\\frac{1}{3}$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$-\\frac{1}{3}$",
+                "spravne": false,
+                "typ_chyby": "minus-krat-minus"
+              },
+              {
+                "id": "c",
+                "text": "$20$",
+                "spravne": false,
+                "typ_chyby": "spolecny-jmenovatel-pri-nasobeni"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: $(-90) : (-6) : (-3)$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$-45$",
+                "spravne": false,
+                "typ_chyby": "neslo-zleva"
+              },
+              {
+                "id": "b",
+                "text": "$5$",
+                "spravne": false,
+                "typ_chyby": "znamenko-soucinu-vice-cinitelu"
+              },
+              {
+                "id": "c",
+                "text": "$-5$",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Naostro: o příklad víc, u A pět operací, u B čtyři činitele. U A dítě kliká na znaménka operací; minus u záporného čísla v závorce není operace. Znaménko součinu i podílu určí počet záporných čísel. Čte se: „mínus čtyři pětiny krát mínus pět dvanáctin“. Otázky jsou po příkladech, druhá patří k B i D: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $20 : (-5) \\cdot (-3) - 4 \\cdot (-6) + 2$\n\nPrvní: $20 : (-5)$ (krát a děleno mají přednost, jdou zleva)\n\nDruhé: $(-4) \\cdot (-3)$ (násobení hned za dělením; součin čtyři krát mínus šest smí přijít i dřív)\n\nTřetí: $4 \\cdot (-6)$ (druhý součin)\n\nČtvrté: $12 - (-24)$ (odčítání, zleva)\n\nPáté: $36 + 2$ (sčítání na konci, vyjde třicet osm)\n\n#### B) Který součin je kladný?\n\n$(-3) \\cdot (-2) \\cdot (-1) \\cdot (-4) = 24$ (čtyři záporná čísla, sudý počet: plus)\n\n$(-3) \\cdot 2 \\cdot (-1) \\cdot (-4) = -24$ a $3 \\cdot (-2) \\cdot 1 \\cdot 4 = -24$ (tři, nebo jedno záporné číslo, lichý počet: minus)\n\n#### C) $\\left(-\\frac{4}{5}\\right) \\cdot \\left(-\\frac{5}{12}\\right)$\n\n$\\frac{4 \\cdot 5}{5 \\cdot 12} = \\frac{20}{60} = \\frac{1}{3}$ (dvě záporná čísla: plus; čitatel krát čitatel, jmenovatel krát jmenovatel, zkrátit)\n\n#### D) $(-90) : (-6) : (-3)$\n\n$(-90) : (-6) = 15$ (dvě záporná: plus; zleva)\n\n$15 : (-3) = -5$ (různá znaménka: minus)\n\n**Výsledek:** A) dělení, násobení minus třemi, násobení minus šesti, odčítání, sčítání; B) $(-3) \\cdot (-2) \\cdot (-1) \\cdot (-4)$; C) $\\frac{1}{3}$; D) $-5$",
+        "otazky": [
+          {
+            "k": "A, když nesedí",
+            "text": "„Které operace mají v příkladu přednost, krát a děleno, nebo plus a mínus? Odkud začneš, když stojí dvě takové vedle sebe?“"
+          },
+          {
+            "k": "B a D",
+            "text": "„Neklikej, u každého příkladu spočítej jen záporná čísla. Co znamená sudý a co lichý počet? U D jdi zleva.“"
+          },
+          {
+            "k": "C",
+            "text": "„Nejdřív jen znaménko: kolik záporných zlomků násobíš? Pak co se dá zkrátit, než začneš násobit?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, jak poznáš znaménko součinu čtyř záporných čísel, ještě než je vynásobíš.“",
+        "otocena_role_odpoved": "Spočítám záporná čísla. Každá dvojice minusů dá plus a čtyři minusy jsou dvě dvojice, takže žádný minus nezbude a výsledek je kladný.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. A jiné pořadí. Zeptejte se: „Co se počítá dřív a odkud začneš?“ (Krát a děleno, zleva.) D $-45$: nejde zleva. Chybné B, C $-\\frac{1}{3}$, D $5$: „Kolik záporných čísel tam je?“ (Sudý počet plus, lichý minus.) C $20$: „Potřebuješ při násobení společného jmenovatele?“ (Ne.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — pořadí i znaménka sedí, i u čtyř činitelů. Pochvalte, že počítalo záporná čísla, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Jaké znaménko má mínus dva krát mínus dva krát mínus jedna krát mínus pět? Kolik je mínus třicet šest děleno mínus třemi děleno mínus dvěma?“ Ať řekne, kolik záporných čísel násobí nebo dělí. Kontrola pro vás: čtyři záporná, plus, vyjde dvacet; tři záporná, vyjde mínus šest.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 4 papírky, na každém minus. Zítra ať dítě za každé záporné číslo v součinu položí papírek a dvojice odloží stranou. Ať takto zkusí $(-5) \\cdot (-1) \\cdot (-3)$ a pak $(-5) \\cdot (-1) \\cdot (-3) \\cdot (-2)$ a řekne znaménka. Pak ať samo zapíše oba výsledky, $-15$ a $30$. Potom zopakujte lekci „Krát a děleno se zápornými“. Kontrola pro vás: u tří papírků jeden zbude, minus; u čtyř nezbude žádný, plus."
+      },
+      "tisk": {
+        "zadani": "A) Očísluj operace v pořadí, v jakém je počítáš: $20 : (-5) \\cdot (-3) - 4 \\cdot (-6) + 2$\n\nB) Který součin vyjde kladný? Zakroužkuj: a) $(-3) \\cdot 2 \\cdot (-1) \\cdot (-4)$ b) $3 \\cdot (-2) \\cdot 1 \\cdot 4$ c) $(-3) \\cdot (-2) \\cdot (-1) \\cdot (-4)$\n\nC) $\\left(-\\frac{4}{5}\\right) \\cdot \\left(-\\frac{5}{12}\\right)$ Zakroužkuj: a) $\\frac{1}{3}$ b) $-\\frac{1}{3}$ c) $20$\n\nD) $(-90) : (-6) : (-3)$ Zakroužkuj: a) $-45$ b) $5$ c) $-5$"
+      }
+    },
+    {
+      "id": "M8-T06-L3NB-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr počítal příklad\n\n$$(-28) : 4 - (-3) \\cdot (-2) \\cdot (-4) + 5$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $= -7 - (-3) \\cdot (-2) \\cdot (-4) + 5$\n\n2. řádek: $= -7 - 24 + 5$\n\n3. řádek: $= -31 + 5$\n\n4. řádek: $= -26$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$= -7 - (-3) \\cdot (-2) \\cdot (-4) + 5$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$= -7 - 24 + 5$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$= -31 + 5$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$= -26$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$= -7 - (-24) + 5$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$= 7 - (-24) + 5$",
+                "spravne": false,
+                "typ_chyby": "plus-krat-minus"
+              },
+              {
+                "id": "c",
+                "text": "$= -7 + (-24) + 5$",
+                "spravne": false,
+                "typ_chyby": "odcitani-zaporneho"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 22
+          },
+          "zname_chyby": [
+            {
+              "hodnota": -26,
+              "typ_chyby": "znamenko-soucinu-vice-cinitelu"
+            },
+            {
+              "hodnota": 36,
+              "typ_chyby": "plus-krat-minus"
+            },
+            {
+              "hodnota": -27,
+              "typ_chyby": "scital-pred-nasobenim"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Naostro je chyba nenápadnější: řádek s ní vypadá obyčejně a chyba se schovává ve znaménku součinu tří čísel. Nejdřív se násobí a dělí, pak odčítá a sčítá. Čte se: „mínus dvacet osm děleno čtyřmi, mínus, závorka, mínus tři, krát mínus dva krát mínus čtyři, plus pět“. Řádky za chybou jsou spočítané dobře, jen se špatným číslem.",
+        "reseni": "Chyba je ve 2. řádku: Petr vynásobil tři záporná čísla a výsledek nechal kladný.\n\n$(-28) : 4 = -7$ (různá znaménka: minus)\n\n$(-3) \\cdot (-2) = 6$ (dvě záporná: plus)\n\n$6 \\cdot (-4) = -24$ (tři záporná čísla, lichý počet: minus)\n\n$-7 - (-24) + 5 = -7 + 24 + 5 = 22$ (odečíst záporné znamená přičíst)\n\nDlaždice $= -7 + (-24) + 5$ nesedí (součin je správně, ale odečíst záporné znamená přičíst; vyjde stejně jako u Petra), $= 7 - (-24) + 5$ nesedí (mínus dvacet osm děleno čtyřmi je záporné)\n\n**Výsledek:** $22$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Přečti mi Petrův příklad nahlas. Které operace se v něm počítají dřív než plus a mínus?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky. U každého řekni, co Petr spočítal a jaké znaménko mu vyšlo.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého součinu a podílu spočítej záporná čísla. Kolik jich je a jaké znaménko má vyjít? Sedí to u Petra?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč mínus tři krát mínus dva krát mínus čtyři není dvacet čtyři.“",
+        "otocena_role_odpoved": "Mínus tři krát mínus dva je plus šest, ale pak se ještě násobí mínus čtyřmi, to dá mínus dvacet čtyři. Tři záporná čísla jsou lichý počet, výsledek je záporný.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. 1. řádek je správně, 3. a 4. navazují. Zeptejte se: „Kolik záporných čísel je v součinu?“ (Tři, minus.) $-26$: Petrova chyba, nebo odečte jako oprava $= -7 + (-24) + 5$: „Co dají dva minusy?“ (Plus.) $36$, oprava $7$: „Jaké znaménko má podíl?“ (Minus.) $-27$: „Co má přednost?“ (Krát, děleno.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — nenápadnou chybu našlo i opravilo. Pochvalte, že u součinu tří čísel počítalo minusy, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu Petrův výpočet $9 - (-1) \\cdot (-2) \\cdot (-5)$ $= 9 - 10 = -1$. Zeptejte se: „Má Petr pravdu? Kde se spletl?“ Ať opravu řekne nahlas. Kontrola pro vás: nemá; tři záporná čísla dají mínus deset, devět mínus mínus deset je devatenáct.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: jednu minci. Zítra: hlava je plus, orel minus. Mince začne hlavou nahoru a za každé záporné číslo v součinu se otočí. Ať dítě takto zkusí $(-3) \\cdot (-2) \\cdot (-4)$ a řekne znaménko. Pak ať samo zapíše $(-3) \\cdot (-2) \\cdot (-4) = -24$. Potom zopakujte lekci „Krát a děleno se zápornými“. Kontrola pro vás: po třech otočeních orel, minus."
+      },
+      "tisk": {
+        "zadani": "Petr počítal příklad\n\n$$(-28) : 4 - (-3) \\cdot (-2) \\cdot (-4) + 5$$\n\na udělal jednu chybu.\n\n1. řádek: $= -7 - (-3) \\cdot (-2) \\cdot (-4) + 5$\n\n2. řádek: $= -7 - 24 + 5$\n\n3. řádek: $= -31 + 5$\n\n4. řádek: $= -26$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $= -7 - (-24) + 5$ b) $= 7 - (-24) + 5$ c) $= -7 + (-24) + 5$\n\nC) Správný výsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T06-L3NB-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Vypočítej příklad. Součin, kterým začíná, zapiš; podíl, kterým končí, vyber z nabídky. Výsledek napiš jako zlomek v základním tvaru:\n\n$$\\left(-\\frac{4}{7}\\right) \\cdot \\left(-\\frac{7}{8}\\right) - \\left(-\\frac{5}{9}\\right) : \\frac{8}{9}$$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Co potřebuješ zjistit nejdřív?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "rozdíl $\\left(-\\frac{7}{8}\\right) - \\left(-\\frac{5}{9}\\right)$",
+                "spravne": false,
+                "typ_chyby": "scital-pred-nasobenim"
+              },
+              {
+                "id": "b",
+                "text": "součin na začátku a podíl na konci",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "společného jmenovatele všech čtyř zlomků",
+                "spravne": false,
+                "typ_chyby": "spolecny-jmenovatel-pri-nasobeni"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: součin",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 1,
+            "j": 2
+          },
+          "zname_chyby": [
+            {
+              "c": -1,
+              "j": 2,
+              "typ_chyby": "minus-krat-minus"
+            }
+          ]
+        },
+        {
+          "id": "k3",
+          "popisek": "Mezivýsledek: podíl",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$-\\frac{8}{5}$",
+                "spravne": false,
+                "typ_chyby": "prevratil-prvni"
+              },
+              {
+                "id": "b",
+                "text": "$-\\frac{5}{8}$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$-\\frac{40}{81}$",
+                "spravne": false,
+                "typ_chyby": "delil-bez-prevraceni"
+              },
+              {
+                "id": "d",
+                "text": "$\\frac{5}{8}$",
+                "spravne": false,
+                "typ_chyby": "plus-krat-minus"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "zlomek"
+          },
+          "spravne": {
+            "c": 9,
+            "j": 8
+          },
+          "zname_chyby": [
+            {
+              "c": -1,
+              "j": 8,
+              "typ_chyby": "odcitani-zaporneho"
+            },
+            {
+              "c": 1,
+              "j": 8,
+              "typ_chyby": "minus-krat-minus"
+            }
+          ],
+          "kontrola_tvaru": "zakladni_tvar"
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha, naostro i s dělením. Nejdřív součin a podíl, pak odčítání. Znaménko určí počet záporných čísel. Dělit zlomkem znamená násobit převráceným zlomkem, společný jmenovatel je potřeba až při odčítání. Podíl dítě vybírá z nabídky. Čte se: „mínus čtyři sedminy krát mínus sedm osmin, mínus, závorka, mínus pět devítin, děleno osmi devítinami“.",
+        "reseni": "$\\left(-\\frac{4}{7}\\right) \\cdot \\left(-\\frac{7}{8}\\right) = \\frac{4 \\cdot 7}{7 \\cdot 8} = \\frac{28}{56} = \\frac{1}{2}$ (dvě záporná čísla: plus; zkrátit dvaceti osmi)\n\n$\\left(-\\frac{5}{9}\\right) : \\frac{8}{9} = \\left(-\\frac{5}{9}\\right) \\cdot \\frac{9}{8} = -\\frac{45}{72} = -\\frac{5}{8}$ (dělit zlomkem znamená násobit převráceným; různá znaménka: minus)\n\n$\\frac{1}{2} - \\left(-\\frac{5}{8}\\right) = \\frac{1}{2} + \\frac{5}{8}$ (odečíst záporné znamená přičíst)\n\n$\\frac{4}{8} + \\frac{5}{8} = \\frac{9}{8}$ (společný jmenovatel osm)\n\n**Výsledek:** $\\frac{9}{8}$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Přečti mi příklad nahlas. Které operace v něm vidíš a které z nich mají přednost?“"
+          },
+          {
+            "k": "Krok 1 až 3",
+            "text": "„Kolik záporných čísel je v součinu a kolik v podílu? Čím se násobí, když se dělí zlomkem?“"
+          },
+          {
+            "k": "Výsledek",
+            "text": "„Tady máš začátek: při odčítání záporného zlomku se dva minusy změní na plus. Na jakého jmenovatele pak oba zlomky převedeš?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč mínus pět devítin děleno osmi devítinami vyjde záporné číslo.“",
+        "otocena_role_odpoved": "Dělí se záporné číslo kladným a různá znaménka dají minus. Dělit osmi devítinami je jako násobit devíti osminami, vyjde mínus pět osmin.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Součin $-\\frac{1}{2}$, výsledek $\\frac{1}{8}$: „Kolik záporných čísel násobíš?“ (Dvě, plus.) Podíl $\\frac{5}{8}$: „Co dá záporné děleno kladným?“ (Minus.) $-\\frac{40}{81}$, $-\\frac{8}{5}$: „Který zlomek se převrací?“ (Ten za dvojtečkou.) Výsledek $-\\frac{1}{8}$: „Co dají dva minusy?“ (Plus.) Krok 1 rozdíl či jmenovatel: „Co má přednost?“ (Krát a děleno.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — znaménka součinu i podílu sedí a odčítání záporného zlomku taky. Pochvalte, že nejdřív násobilo a dělilo, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu příklad $\\left(-\\frac{2}{5}\\right) \\cdot \\left(-\\frac{5}{6}\\right)$ $- \\left(-\\frac{1}{6}\\right) : \\frac{1}{2}$. Ať řeší na papír a nahlas řekne součin, podíl a výsledek. Kontrola pro vás: součin jedna třetina; podíl mínus jedna třetina; výsledek dvě třetiny.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: list papíru a pastelku. Zítra ať dítě papír přeloží na třetiny a pak ještě jednou na třetiny, rozloží ho a vybarví jeden díl. Zeptejte se: „Jaká část listu je teď barevná?“ Pak ať samo zapíše $\\frac{1}{3} \\cdot \\frac{1}{3} = \\frac{1}{9}$ a $\\left(-\\frac{1}{3}\\right) \\cdot \\left(-\\frac{1}{3}\\right) = \\frac{1}{9}$. Potom zopakujte lekci „Krát a děleno se zápornými“. Kontrola pro vás: vybarvená je devítina, oba součiny jsou jedna devítina."
+      },
+      "tisk": {
+        "zadani": "Vypočítej příklad. Součin, kterým začíná, zapiš; podíl, kterým končí, vyber z nabídky. Výsledek napiš jako zlomek v základním tvaru:\n\n$$\\left(-\\frac{4}{7}\\right) \\cdot \\left(-\\frac{7}{8}\\right) - \\left(-\\frac{5}{9}\\right) : \\frac{8}{9}$$\n\nA) Co potřebuješ zjistit nejdřív? Zakroužkuj: a) rozdíl $\\left(-\\frac{7}{8}\\right) - \\left(-\\frac{5}{9}\\right)$ b) součin na začátku a podíl na konci c) společného jmenovatele všech čtyř zlomků\n\nB) Součin: ______\n\nC) Podíl. Zakroužkuj: a) $-\\frac{8}{5}$ b) $-\\frac{5}{8}$ c) $-\\frac{40}{81}$ d) $\\frac{5}{8}$\n\nD) Výsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T06-L3NB-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Vypočítej:\n\n$$(-2) \\cdot (-3) \\cdot (-4) - 20 : (-5) \\cdot 2$$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": -16
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 32,
+              "typ_chyby": "znamenko-soucinu-vice-cinitelu"
+            },
+            {
+              "hodnota": -22,
+              "typ_chyby": "neslo-zleva"
+            },
+            {
+              "hodnota": -32,
+              "typ_chyby": "odcitani-zaporneho"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Naostro je na začátku součin tří záporných čísel. Čte se: „mínus dva krát mínus tři krát mínus čtyři, mínus dvacet děleno mínus pěti krát dvě“.",
+        "reseni": "$(-2) \\cdot (-3) \\cdot (-4) = -24$ (tři záporná čísla, lichý počet: minus)\n\n$20 : (-5) = -4$ (různá znaménka: minus)\n\n$(-4) \\cdot 2 = -8$ (dělení a násobení zleva)\n\n$-24 - (-8) = -24 + 8 = -16$ (odečíst záporné znamená přičíst)\n\n**Výsledek:** $-16$",
+        "otazky": [
+          "„Přečti mi příklad nahlas. Co spočítáš dřív než odčítání a v jakém pořadí?“",
+          "„Než začneš násobit, spočítej v prvním součinu záporná čísla. Jaké znaménko z toho vyjde? A jaké u dělení?“",
+          "„Tady máš začátek: dvacet děleno mínus pěti je mínus čtyři. Co spočítáš potom a co nakonec?“"
+        ],
+        "otocena_role": "„Vysvětli mi, jak poznáš znaménko součinu mínus dva krát mínus tři krát mínus čtyři ještě před násobením.“",
+        "otocena_role_odpoved": "Spočítám záporná čísla. Jsou tři, to je lichý počet, takže součin je záporný. Dvě záporná by daly plus, třetí to zase otočí na minus.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $32$: „Kolik záporných čísel je v prvním součinu?“ (Tři, minus.) $-22$: „Děleno a krát vedle sebe, odkud začneš?“ (Zleva.) $-32$: „Jaké znaménko má podíl?“ (Minus.) Nebo odečte osm: „Co dají dva minusy?“ (Plus.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — pořadí i znaménka zvládá samo, i u tří záporných čísel. Pochvalte, že hlídalo znaménko u každého kroku. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu příklad $(-1) \\cdot (-3) \\cdot (-2)$ $- 18 : (-6) \\cdot 4$. Ať počítá na papír a u každého mezivýsledku nahlas řekne i znaménko. Kontrola pro vás: mínus šest; mínus tři; mínus dvanáct; mínus šest mínus mínus dvanáct je šest.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 10 papírků, každý je dluh jedné koruny. Zítra ať dítě rozdělí dluh 10 korun mezi 5 kamarádů. Zeptejte se: „Kolik dluží každý?“ Pak: „Kolik dluží tři z nich dohromady?“ Pak ať samo zapíše $(-10) : 5 = -2$ a $(-2) \\cdot 3 = -6$. Potom zopakujte lekci „Krát a děleno se zápornými“. Kontrola pro vás: každý dluží dvě koruny, mínus dvě; tři dohromady šest, mínus šest."
+      },
+      "tisk": {
+        "zadani": "Vypočítej:\n\n$$(-2) \\cdot (-3) \\cdot (-4) - 20 : (-5) \\cdot 2$$\n\nVýsledek: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 14. 10. 2026: vše přepočítáno nezávisle (python Fraction) a přes vyhodnotKrok: správné odpovědi (i s čárkou a typografickým mínusem), mezivýsledky v řešení, tahák, oranžová i červená sedí; každá dlaždice a známá chyba vrací svůj kód, vzniká popsaným omylem a liší se od správné odpovědi; každá chybná dlaždice i hodnota je v taháku zmíněná. B-varianta proti M8-T06-L3N: stejné tema/kapitola/tyden/poradi, struktura, vstupy, kódy a obtížnost, jiná čísla, kontext a věty; texty v limitech slov, bez rodu, otázky v režimu samo nic neprozrazují; žádná záporná správná odpověď ve vstupu zlomek. Opraveno (texty, věcné chyby žádné): typická chyba U2 výslovně uvádí, že $-26$ vznikne Petrovou chybou i odečtením jako v opravě $= -7 + (-24) + 5$; U4, že $-32$ vznikne ztraceným minusem u podílu i odečtením osmi (obojí stavbou výrazu jako v L3N, kódy ponechány); „minus“ → „mínus“ při čtení operace v oranžové U2 a U4.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-14"
+  }
+}

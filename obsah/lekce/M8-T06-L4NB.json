@@ -1,0 +1,487 @@
+{
+  "id": "M8-T06-L4NB",
+  "faze": "osma",
+  "tyden": 6,
+  "poradi": 4,
+  "tema": "Kontrola: záporná čísla",
+  "kapitola": "cela-cisla",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo porovnává, sčítá, odčítá, násobí i dělí záporná celá a desetinná čísla ve výrazu i ve slovní úloze o krok delší.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami. Dítě ukáže, že celé téma záporných čísel zvládne samo: čtyři příklady ze všech lekcí, nenápadnější chyba u Petra a průměr s krokem navíc.",
+  "uvod_pravidla": [
+    {
+      "znak": "$-0{,}1 > -3$",
+      "text": "blíž nule je větší"
+    },
+    {
+      "znak": "$3 - (-5) = 8$",
+      "text": "odečíst záporné: přičíst"
+    },
+    {
+      "znak": "$(-21) : (-7) = 3$",
+      "text": "dvě záporná: plus"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T06-L4NB-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "Spočítej na papíře a vyber správnou odpověď.\n\nA) Vyber zápis, který platí pro čísla $-0{,}3$ a $-0{,}8$.\n\nB) $-3{,}5 + 7 - (-2{,}5)$\n\nC) $(-0{,}6) \\cdot (-5) \\cdot (-4)$\n\nD) $\\lvert -2 \\rvert \\cdot \\lvert 4 - 17 \\rvert$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $-0{,}3$ a $-0{,}8$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$-0{,}3 < -0{,}8$",
+                "spravne": false,
+                "typ_chyby": "porovnani-zapornych"
+              },
+              {
+                "id": "b",
+                "text": "$-0{,}8 < -0{,}3$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$-0{,}8 > -0{,}3$",
+                "spravne": false,
+                "typ_chyby": "porovnani-zapornych"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $-3{,}5 + 7 - (-2{,}5)$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$6$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$1$",
+                "spravne": false,
+                "typ_chyby": "odcitani-zaporneho"
+              },
+              {
+                "id": "c",
+                "text": "$-8$",
+                "spravne": false,
+                "typ_chyby": "ruzna-znamenka-secetl"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: $(-0{,}6) \\cdot (-5) \\cdot (-4)$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$12$",
+                "spravne": false,
+                "typ_chyby": "znamenko-soucinu-vice-cinitelu"
+              },
+              {
+                "id": "b",
+                "text": "$-120$",
+                "spravne": false,
+                "typ_chyby": "carka-pri-nasobeni"
+              },
+              {
+                "id": "c",
+                "text": "$-12$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: $\\lvert -2 \\rvert \\cdot \\lvert 4 - 17 \\rvert$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$42$",
+                "spravne": false,
+                "typ_chyby": "ruzna-znamenka-secetl"
+              },
+              {
+                "id": "b",
+                "text": "$26$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$-26$",
+                "spravne": false,
+                "typ_chyby": "absolutni-hodnota-zaporna"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrola celého tématu, naostro o příklad víc a s desetinnými čísly. Dítě jen vybírá: A porovnání na ose, B plus a mínus, C znaménko součinu, D absolutní hodnota. Čte se: $-0{,}3$ „mínus nula celá tři“, $-0{,}8$ „mínus nula celá osm“, $-0{,}6$ „mínus nula celá šest“, $-3{,}5$ „mínus tři celé pět“. Otázky jsou po příkladech, první patří k A i D: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $-0{,}3$ a $-0{,}8$\n\n$-0{,}8 < -0{,}3$ (mínus nula celá osm leží na ose víc vlevo, dál od nuly)\n\n#### B) $-3{,}5 + 7 - (-2{,}5)$\n\n$-3{,}5 + 7 = 3{,}5$ (o sedm nahoru, přes nulu)\n\n$3{,}5 - (-2{,}5) = 3{,}5 + 2{,}5 = 6$ (odečíst záporné znamená přičíst)\n\n#### C) $(-0{,}6) \\cdot (-5) \\cdot (-4)$\n\n$(-0{,}6) \\cdot (-5) = 3$ (dvě záporná: plus)\n\n$3 \\cdot (-4) = -12$ (tři záporná čísla, lichý počet: minus)\n\n#### D) $\\lvert -2 \\rvert \\cdot \\lvert 4 - 17 \\rvert$\n\n$\\lvert -2 \\rvert = 2$ (vzdálenost od nuly)\n\n$4 - 17 = -13$, $\\lvert -13 \\rvert = 13$ (nejdřív to, co je mezi čarami)\n\n$2 \\cdot 13 = 26$\n\n**Výsledek:** A) $-0{,}8 < -0{,}3$, B) $6$, C) $-12$, D) $26$",
+        "otazky": [
+          {
+            "k": "A a D",
+            "text": "„Neklikej, představ si osu s nulou. Které číslo leží víc vlevo? U D co spočítáš mezi čarami nejdřív? Může vzdálenost vyjít záporná?“"
+          },
+          {
+            "k": "B",
+            "text": "„Počítej zleva, jedno číslo po druhém. Kterým směrem po ose jdeš, když přičítáš? Co dají dva minusy vedle sebe?“"
+          },
+          {
+            "k": "C",
+            "text": "„Nejdřív jen znaménko: kolik záporných čísel násobíš? Kolik je nula celá šest krát pět?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč je mínus nula celá osm menší než mínus nula celá tři.“",
+        "otocena_role_odpoved": "Mínus nula celá osm leží na ose víc vlevo, dál od nuly. U záporných čísel je menší to, které je dál od nuly. Je to jako větší mráz.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. A $-0{,}8$ větší: „Které leží víc vlevo?“ (Mínus nula celá osm.) B $1$: „Co dají dva minusy?“ (Plus.) B $-8$, D $42$: sčítá místo odčítání. C $12$: „Kolik záporných čísel násobíš?“ (Tři.) $-120$: „Kolik je nula celá šest krát pět?“ (Tři.) D $-26$: záporná vzdálenost."
+      },
+      "semafor": {
+        "zelena": "Výborně — porovnání, sčítání, znaménko součinu i absolutní hodnota sedí. Pochvalte, že u každého příkladu hlídalo znaménko, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Které číslo je větší, mínus nula celá čtyři, nebo mínus nula celá šest? Kolik je mínus dvě celé pět plus pět? Jaké znaménko má mínus jedna krát mínus čtyři krát mínus dva?“ Kontrola pro vás: mínus nula celá čtyři; dvě celé pět; minus, vyjde mínus osm.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír, tužku a pravítko. Zítra ať dítě nakreslí osu od mínus jedné do jedné, desetinu po centimetru. Ať na ni zakreslí mínus nula celá osm a mínus nula celá tři a řekne, které leží víc vlevo. Pak ať samo zapíše $-0{,}8 < -0{,}3$. Potom zopakujte lekci „Kontrola: záporná čísla“. Kontrola pro vás: víc vlevo je mínus nula celá osm, to je menší číslo."
+      },
+      "tisk": {
+        "zadani": "Spočítej na papíře a zakroužkuj správnou odpověď.\n\nA) Který zápis platí pro čísla $-0{,}3$ a $-0{,}8$? Zakroužkuj: a) $-0{,}3 < -0{,}8$ b) $-0{,}8 < -0{,}3$ c) $-0{,}8 > -0{,}3$\n\nB) $-3{,}5 + 7 - (-2{,}5)$ Zakroužkuj: a) $6$ b) $1$ c) $-8$\n\nC) $(-0{,}6) \\cdot (-5) \\cdot (-4)$ Zakroužkuj: a) $12$ b) $-120$ c) $-12$\n\nD) $\\lvert -2 \\rvert \\cdot \\lvert 4 - 17 \\rvert$ Zakroužkuj: a) $42$ b) $26$ c) $-26$"
+      }
+    },
+    {
+      "id": "M8-T06-L4NB-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr počítal příklad\n\n$$3 - 5{,}5 \\cdot (-2) + (-24) : (-6)$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $= 3 - (-11) + (-24) : (-6)$\n\n2. řádek: $= 14 + (-24) : (-6)$\n\n3. řádek: $= 14 - 4$\n\n4. řádek: $= 10$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$= 3 - (-11) + (-24) : (-6)$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$= 14 + (-24) : (-6)$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$= 14 - 4$",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$= 10$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$= 14 + (-4)$",
+                "spravne": false,
+                "typ_chyby": "minus-krat-minus"
+              },
+              {
+                "id": "b",
+                "text": "$= 14 + 4$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$= -10 : (-6)$",
+                "spravne": false,
+                "typ_chyby": "scital-pred-nasobenim"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 18
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 10,
+              "typ_chyby": "minus-krat-minus"
+            },
+            {
+              "hodnota": -4,
+              "typ_chyby": "odcitani-zaporneho"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Naostro je chyba nenápadnější: řádek s ní vypadá obyčejně a znaménko se hlídá na víc místech. Nejdřív krát a děleno, pak plus a mínus. Čte se: „tři mínus pět celých pět krát mínus dva, plus, závorka, mínus dvacet čtyři, děleno mínus šesti“. Řádky za chybou jsou spočítané dobře, jen se špatným číslem.",
+        "reseni": "Chyba je ve 3. řádku: Petr dělil dvě záporná čísla a výsledek nechal záporný.\n\n$5{,}5 \\cdot (-2) = -11$ (různá znaménka: minus)\n\n$3 - (-11) = 3 + 11 = 14$ (odečíst záporné znamená přičíst)\n\n$(-24) : (-6) = 4$ (dvě záporná: plus)\n\n$14 + 4 = 18$\n\nDlaždice $= 14 + (-4)$ nesedí (Petrova chyba, jen jinak zapsaná), $= -10 : (-6)$ nesedí (dělení má přednost před sčítáním)\n\n**Výsledek:** $18$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi, v jakém pořadí se v Petrově příkladu počítá. Co přijde na řadu jako první?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky. U každého řekni, co Petr spočítal a jaké znaménko z toho mělo vyjít.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého součinu a podílu spočítej záporná čísla. Kolik jich je? Sedí znaménko, které Petr napsal?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč čtrnáct plus mínus dvacet čtyři děleno mínus šesti není deset.“",
+        "otocena_role_odpoved": "Mínus dvacet čtyři děleno mínus šesti jsou dvě záporná čísla, to dá plus čtyři. Ke čtrnácti se čtyři přičtou, takže výsledek je osmnáct, ne deset.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 1. nebo 2. řádek? Ty jsou správně. Na 4.? Ten jen navazuje. Zeptejte se: „Jaké znaménko dá podíl dvou záporných čísel?“ (Plus.) $10$, oprava $= 14 + (-4)$: Petrova chyba. $-4$: „Co dají dva minusy?“ (Plus.) Oprava $= -10 : (-6)$: „Co má přednost?“ (Dělení.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — nenápadnou chybu našlo i opravilo. Pochvalte, že u každého podílu hlídalo znaménko, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu Petrův výpočet $2 - 2{,}5 \\cdot (-2) + (-12) : (-4)$ $= 7 - 3 = 4$. Zeptejte se: „Má Petr pravdu? Kde se spletl?“ Ať opravu řekne nahlas. Kontrola pro vás: nemá; mínus dvanáct děleno mínus čtyřmi je plus tři, správně sedm plus tři, tedy deset.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 10 papírků jako dluhy po koruně. Zítra ať dítě položí dluh 10 korun a zjistí, kolik dluhů po 2 korunách se do něj vejde. Zeptejte se: „Kolik hromádek je?“ Pak ať samo zapíše $(-10) : (-2) = 5$. Potom zopakujte lekci „Kontrola: záporná čísla“. Kontrola pro vás: pět hromádek, plus pět; dvě záporná čísla dají plus."
+      },
+      "tisk": {
+        "zadani": "Petr počítal příklad\n\n$$3 - 5{,}5 \\cdot (-2) + (-24) : (-6)$$\n\na udělal jednu chybu.\n\n1. řádek: $= 3 - (-11) + (-24) : (-6)$\n\n2. řádek: $= 14 + (-24) : (-6)$\n\n3. řádek: $= 14 - 4$\n\n4. řádek: $= 10$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $= 14 + (-4)$ b) $= 14 + 4$ c) $= -10 : (-6)$\n\nC) Správný výsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T06-L4NB-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Lucka s Adamem na kroužku fyziky každé poledne porovnávali školní hodiny s přesným časem. Zapisovali, o kolik sekund hodiny šly napřed (kladné číslo) nebo pozadu (záporné číslo): pondělí $-14{,}5$, úterý $5$, středa $-10{,}5$, čtvrtek $4$.\n\nJaký je součet a průměr těchto čísel? O kolik sekund byla nejvyšší hodnota větší než průměr?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Co potřebuješ zjistit nejdřív?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "součet všech čtyř čísel se znaménky",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "součet čísel bez ohledu na znaménka",
+                "spravne": false,
+                "typ_chyby": "ruzna-znamenka-secetl"
+              },
+              {
+                "id": "c",
+                "text": "průměr jen nejvyšší a nejnižší hodnoty",
+                "spravne": false,
+                "typ_chyby": "prumer-bez-deleni-poctem"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: součet",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "s"
+          },
+          "spravne": {
+            "hodnota": -16
+          },
+          "zname_chyby": [
+            {
+              "hodnota": -34,
+              "typ_chyby": "ruzna-znamenka-secetl"
+            },
+            {
+              "hodnota": 16,
+              "typ_chyby": "mensi-minus-vetsi"
+            }
+          ]
+        },
+        {
+          "id": "k3",
+          "popisek": "Mezivýsledek: průměr",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "s"
+          },
+          "spravne": {
+            "hodnota": -4
+          },
+          "zname_chyby": [
+            {
+              "hodnota": -16,
+              "typ_chyby": "prumer-bez-deleni-poctem"
+            },
+            {
+              "hodnota": -8.5,
+              "typ_chyby": "ruzna-znamenka-secetl"
+            },
+            {
+              "hodnota": 4,
+              "typ_chyby": "mensi-minus-vetsi"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek: o kolik větší než průměr",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "s"
+          },
+          "spravne": {
+            "hodnota": 9
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 1,
+              "typ_chyby": "odcitani-zaporneho"
+            },
+            {
+              "hodnota": 21,
+              "typ_chyby": "prumer-bez-deleni-poctem"
+            },
+            {
+              "hodnota": 19.5,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha kontroly, naostro o krok delší. Průměr je součet děleno počtem dní. Záporné číslo znamená, že hodiny šly pozadu. Nakonec se nejvyšší hodnota porovná s průměrem, který je záporný. Čte se: $-14{,}5$ „mínus čtrnáct celých pět“, $-10{,}5$ „mínus deset celých pět“; chybné výsledky $-8{,}5$ „mínus osm celých pět“, $19{,}5$ „devatenáct celých pět“.",
+        "reseni": "$-14{,}5 + (-10{,}5) = -25$ (dvě hodnoty, kdy hodiny šly pozadu)\n\n$5 + 4 = 9$ (dvě hodnoty, kdy šly napřed)\n\n$-25 + 9 = -16$ (součet všech čtyř čísel)\n\n$-16 : 4 = -4$ (průměr: součet děleno počtem dní)\n\n$5 - (-4) = 5 + 4 = 9$ (nejvyšší hodnota je úterní pětka; odečíst záporné znamená přičíst)\n\n**Výsledek:** součet $-16$ s, průměr $-4$ s, o $9$ s",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Lucka s Adamem zapisovali. Co znamená záporné číslo v jejich zápisu?“"
+          },
+          {
+            "k": "Krok 1 až 3",
+            "text": "„Která čísla jsou záporná a která kladná? Zkus zvlášť sečíst záporná a zvlášť kladná. Čím pak dělíš?“"
+          },
+          {
+            "k": "Výsledek",
+            "text": "„Tady máš začátek: rozdíl je nejvyšší hodnota mínus průměr. Jaké znaménko má průměr a co udělají dva minusy vedle sebe?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč je průměr záporný, i když dva dny šly hodiny napřed.“",
+        "otocena_role_odpoved": "Ve dny, kdy šly pozadu, chybělo víc sekund, než ve dny napřed přebývalo. Záporná čísla dají mínus dvacet pět, kladná jen devět. Součet je mínus šestnáct, průměr mínus čtyři.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Krok 1 bez znamének, součet $-34$, průměr $-8{,}5$. Zeptejte se: „Co udělají kladná čísla se zápornými?“ (Zmenší je.) $16$, $4$: „Víc pozadu, nebo napřed?“ (Pozadu.) Krok 1 průměr dvou hodnot, $-16$, $21$: „Čím dělíš?“ (Čtyřmi.) Výsledek $1$: „Co dají dva minusy?“ (Plus.) $19{,}5$: odečte nejnižší."
+      },
+      "semafor": {
+        "zelena": "Výborně — součet, průměr i rozdíl se zápornými čísly sedí. Pochvalte, že hlídalo znaménka a dělilo počtem dní, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Ema zapsala čtyři čísla: mínus devět, dva, mínus tři a šest. Jaký je součet, jaký průměr a o kolik je největší číslo větší než průměr?“ Ať si čísla zapíše a řeší na papír. Kontrola pro vás: součet mínus čtyři, průměr mínus jedna, o sedm.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 10 mincí a 10 papírků. Zítra ať dítě dá na stůl 8 papírků jako sekundy pozadu a 2 mince jako sekundy napřed. Mince a papírek se vždy navzájem zruší a jdou stranou. Zeptejte se: „Co zbylo?“ Pak ať zbytek rozdělí na dvě stejné hromádky a samo zapíše $-8 + 2 = -6$ a $-6 : 2 = -3$. Potom zopakujte lekci „Kontrola: záporná čísla“. Kontrola pro vás: zbude 6 papírků, mínus šest; na hromádku tři, mínus tři."
+      },
+      "tisk": {
+        "zadani": "Lucka s Adamem na kroužku fyziky každé poledne porovnávali školní hodiny s přesným časem. Zapisovali, o kolik sekund hodiny šly napřed (kladné číslo) nebo pozadu (záporné číslo): pondělí $-14{,}5$, úterý $5$, středa $-10{,}5$, čtvrtek $4$.\n\nJaký je součet a průměr těchto čísel? O kolik sekund byla nejvyšší hodnota větší než průměr?\n\nA) Co potřebuješ zjistit nejdřív? Zakroužkuj: a) součet všech čtyř čísel se znaménky b) součet čísel bez ohledu na znaménka c) průměr jen nejvyšší a nejnižší hodnoty\n\nB) Součet: ______ s\n\nC) Průměr: ______ s\n\nD) O kolik sekund byla nejvyšší hodnota větší než průměr: ______ s"
+      }
+    },
+    {
+      "id": "M8-T06-L4NB-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Vypočítej:\n\n$$(-0{,}5) \\cdot (-6) \\cdot (-8) - 3{,}5 \\cdot (-4)$$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": -10
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 38,
+              "typ_chyby": "znamenko-soucinu-vice-cinitelu"
+            },
+            {
+              "hodnota": -38,
+              "typ_chyby": "odcitani-zaporneho"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Naostro má první součin tři záporná čísla. Čte se: „mínus nula celá pět krát mínus šest krát mínus osm, mínus tři celé pět krát mínus čtyři“.",
+        "reseni": "$(-0{,}5) \\cdot (-6) = 3$ (dvě záporná: plus)\n\n$3 \\cdot (-8) = -24$ (tři záporná čísla, lichý počet: minus)\n\n$3{,}5 \\cdot (-4) = -14$ (různá znaménka: minus)\n\n$-24 - (-14) = -24 + 14 = -10$ (odečíst záporné znamená přičíst)\n\n**Výsledek:** $-10$",
+        "otazky": [
+          "„Přečti mi příklad nahlas. Kolik v něm je součinů a co s nimi uděláš na konci?“",
+          "„V každém součinu spočítej záporná čísla. Jaké znaménko má první součin a jaké druhý?“",
+          "„Tady máš začátek: nula celá pět krát šest jsou tři. Jaké znaménko dostane první součin a co spočítáš potom?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč výsledek vyšel záporný, i když na konci k mínus dvaceti čtyřem něco přičítáš.“",
+        "otocena_role_odpoved": "Druhý součin je mínus čtrnáct a odečíst záporné číslo znamená přičíst. Mínus dvacet čtyři plus čtrnáct je ale pořád pod nulou, mínus deset, protože dvacet čtyři je víc než čtrnáct.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $38$: „Kolik záporných čísel je v prvním součinu?“ (Tři, minus.) $-38$: odečte čtrnáct, nebo ztratí minus u druhého součinu. „Jaké znaménko má druhý součin a co dají dva minusy?“ (Minus; plus.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — znaménka i desetinná čísla zvládá samo, i u tří záporných činitelů. Pochvalte, že v každém součinu počítalo minusy. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu příklad $(-2{,}5) \\cdot (-2) \\cdot (-1) - 1{,}5 \\cdot (-4)$. Ať počítá na papír a nahlas řekne oba součiny i se znaménkem a pak výsledek. Kontrola pro vás: první součin mínus pět, druhý mínus šest, výsledek mínus pět plus šest, tedy jedna.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: jednu minci. Zítra: hlava je plus, orel minus. Mince začne hlavou nahoru a za každé záporné číslo v součinu se otočí. Ať dítě takto zkusí $(-0{,}5) \\cdot (-6) \\cdot (-8)$ a řekne znaménko. Pak ať samo zapíše $(-0{,}5) \\cdot (-6) \\cdot (-8) = -24$. Potom zopakujte lekci „Kontrola: záporná čísla“. Kontrola pro vás: po třech otočeních orel, minus; výsledek mínus dvacet čtyři."
+      },
+      "tisk": {
+        "zadani": "Vypočítej:\n\n$$(-0{,}5) \\cdot (-6) \\cdot (-8) - 3{,}5 \\cdot (-4)$$\n\nVýsledek: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 14. 10. 2026: vše přepočítáno nezávisle (python Fraction) a přes vyhodnotKrok: správné odpovědi (i s čárkou a typografickým mínusem), mezivýsledky v řešení, tahák, oranžová i červená sedí; každá dlaždice a známá chyba vrací svůj kód, vzniká popsaným omylem a liší se od správné odpovědi; každá chybná dlaždice i hodnota je v taháku zmíněná. B-varianta proti M8-T06-L4N: stejné tema/kapitola/tyden/poradi, struktura, vstupy, kódy a obtížnost, jiná čísla, kontext a věty; texty v limitech slov, bez rodu, otázky v režimu samo nic neprozrazují; žádná záporná správná odpověď ve vstupu zlomek. Opraveno: U1 C byl skoro kopií L4N ($(-0{,}6) \\cdot (-5) \\cdot (-3)$ proti $(-0{,}4) \\cdot (-5) \\cdot (-3)$), změněno na $(-0{,}6) \\cdot (-5) \\cdot (-4) = -12$ (dlaždice $12$ znaménko, $-120$ čárka; řešení, tisk, typická chyba upraveny, typická chyba má odpověď i u C $12$); „minus“ → „mínus“ při čtení operace (U2 vysvětlení, U3 otázka 3). Věcné chyby žádné. U4 $-38$ (znaménko druhého součinu i odečtení záporného) stavbou výrazu jako v L4N, typická chyba zmiňuje obojí, ponecháno.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-14"
+  }
+}

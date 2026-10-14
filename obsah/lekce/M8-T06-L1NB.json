@@ -1,0 +1,488 @@
+{
+  "id": "M8-T06-L1NB",
+  "faze": "osma",
+  "tyden": 6,
+  "poradi": 1,
+  "tema": "Záporná čísla na ose",
+  "kapitola": "cela-cisla",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo seřadí záporná desetinná čísla, spočítá absolutní hodnotu, najde opačné číslo a na ose s nepopsanou nulou určí body a jejich vzdálenost.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami. Dítě ukáže, že záporná čísla na ose zvládne samo: čtyři příklady, nenápadnější chyba u Petra a osa, na které není popsaná nula.",
+  "uvod_pravidla": [
+    {
+      "znak": "$-8 < -3$",
+      "text": "vlevo je menší"
+    },
+    {
+      "znak": "$\\lvert -16 \\rvert = 16$",
+      "text": "vzdálenost od nuly"
+    },
+    {
+      "znak": "$-0{,}6$ a $0{,}6$",
+      "text": "opačná čísla"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T06-L1NB-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "Rozhodni nebo spočítej na papíře a vyber správnou odpověď.\n\nA) Ve kterém zápisu jsou čísla $2{,}5$; $-7$; $0{,}5$; $-3{,}5$ seřazená od nejmenšího?\n\nB) $\\lvert -15 \\rvert - \\lvert 3 - 5 \\rvert$\n\nC) Které číslo je opačné k číslu $-\\frac{3}{7}$?\n\nD) Jak daleko od sebe leží na číselné ose čísla $-6$ a $5$?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: seřazení od nejmenšího",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$0{,}5 < 2{,}5 < -3{,}5 < -7$",
+                "spravne": false,
+                "typ_chyby": "porovnani-zapornych"
+              },
+              {
+                "id": "b",
+                "text": "$-3{,}5 < -7 < 0{,}5 < 2{,}5$",
+                "spravne": false,
+                "typ_chyby": "porovnani-zapornych"
+              },
+              {
+                "id": "c",
+                "text": "$-7 < -3{,}5 < 0{,}5 < 2{,}5$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $\\lvert -15 \\rvert - \\lvert 3 - 5 \\rvert$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$13$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$17$",
+                "spravne": false,
+                "typ_chyby": "absolutni-hodnota-zaporna"
+              },
+              {
+                "id": "c",
+                "text": "$-17$",
+                "spravne": false,
+                "typ_chyby": "absolutni-hodnota-zaporna"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: opačné číslo k $-\\frac{3}{7}$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$-\\frac{7}{3}$",
+                "spravne": false,
+                "typ_chyby": "opacne-prevracene-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$\\frac{7}{3}$",
+                "spravne": false,
+                "typ_chyby": "opacne-prevracene-zamena"
+              },
+              {
+                "id": "c",
+                "text": "$\\frac{3}{7}$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: vzdálenost $-6$ a $5$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$-11$",
+                "spravne": false,
+                "typ_chyby": "absolutni-hodnota-zaporna"
+              },
+              {
+                "id": "b",
+                "text": "$11$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$1$",
+                "spravne": false,
+                "typ_chyby": "odcitani-zaporneho"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Naostro: o příklad víc než v lekci, každý na jinou část. Dítě jen vybírá. Čte se: $\\lvert -15 \\rvert$ „absolutní hodnota z mínus patnácti“, $-\\frac{3}{7}$ „mínus tři sedminy“, $-3{,}5$ „mínus tři celé pět“, $2{,}5$ „dvě celé pět“, $0{,}5$ „nula celá pět“. Otázky jsou po příkladech, druhá patří k B i D: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) Seřazení od nejmenšího\n\n$-7 < -3{,}5 < 0{,}5 < 2{,}5$ (na ose zleva doprava; mínus sedm leží dál vlevo než mínus tři celé pět)\n\n#### B) $\\lvert -15 \\rvert - \\lvert 3 - 5 \\rvert$\n\n$\\lvert -15 \\rvert = 15$ (vzdálenost od nuly)\n\n$3 - 5 = -2$, $\\lvert -2 \\rvert = 2$ (nejdřív to, co je mezi čarami)\n\n$15 - 2 = 13$\n\n#### C) Opačné číslo k $-\\frac{3}{7}$\n\n$\\frac{3}{7}$ (stejně daleko od nuly, na druhé straně)\n\n$-\\frac{3}{7} + \\frac{3}{7} = 0$ (zkouška: opačná čísla dají po sečtení nulu; mínus sedm třetin je převrácené číslo)\n\n#### D) Vzdálenost $-6$ a $5$\n\n$5 - (-6) = 5 + 6 = 11$ (od mínus šesti k nule šest dílků, od nuly k pěti pět)\n\n**Výsledek:** A) $-7 < -3{,}5 < 0{,}5 < 2{,}5$, B) $13$, C) $\\frac{3}{7}$, D) $11$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, nakresli si osu, vyznač nulu a zakresli na ni všechna čtyři čísla. Které je nejvíc vlevo a které hned po něm?“"
+          },
+          {
+            "k": "B a D",
+            "text": "„Absolutní hodnota i vzdálenost se počítají v dílcích na ose. Může takový počet vyjít záporný? U B co spočítáš mezi svislými čarami jako první?“"
+          },
+          {
+            "k": "C",
+            "text": "„Je opačné číslo na stejné straně od nuly, nebo na opačné? A je od nuly stejně daleko, nebo jinak?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč v seřazení stojí mínus sedm před mínus třemi celými pěti, když sedm je víc.“",
+        "otocena_role_odpoved": "Protože mínus sedm leží na ose víc vlevo, dál pod nulou. Čím víc vlevo, tím menší číslo. Kdo dluží sedm korun, má méně než ten, kdo dluží tři a půl.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. A jiné pořadí: řadí podle číslic. Zeptejte se: „Které číslo leží nejvíc vlevo?“ (Mínus sedm.) B $17$, $-17$, D $-11$: „Může vzdálenost vyjít záporná?“ (Ne.) D $1$: „Vede cesta přes nulu?“ (Ano.) C $\\frac{7}{3}$, $-\\frac{7}{3}$: převrácené. „Kolik dá opačné číslo s původním po sečtení?“ (Nulu.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — seřazení, absolutní hodnota, opačné číslo i vzdálenost sedí. Pochvalte, že si čísla zakreslovalo na osu, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Seřaď od nejmenšího mínus čtyři, dvě a mínus dvě celé pět. Kolik je absolutní hodnota z mínus dvanácti? Jak daleko od sebe jsou mínus tři a pět?“ Kontrola pro vás: mínus čtyři, mínus dvě celé pět, dvě; dvanáct; osm.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír, tužku a pravítko. Zítra ať dítě nakreslí osu od mínus osmi do osmi, po centimetru. Ať na ni zakreslí mínus sedm, mínus tři celé pět a dvě celé pět a řekne, které leží nejvíc vlevo. Pak ať samo zapíše $-7 < -3{,}5 < 2{,}5$. Potom zopakujte lekci „Záporná čísla na ose“. Kontrola pro vás: nejvíc vlevo je mínus sedm, to je nejmenší číslo."
+      },
+      "tisk": {
+        "zadani": "Rozhodni nebo spočítej na papíře a zakroužkuj správnou odpověď.\n\nA) Ve kterém zápisu jsou čísla $2{,}5$; $-7$; $0{,}5$; $-3{,}5$ seřazená od nejmenšího? Zakroužkuj: a) $0{,}5 < 2{,}5 < -3{,}5 < -7$ b) $-3{,}5 < -7 < 0{,}5 < 2{,}5$ c) $-7 < -3{,}5 < 0{,}5 < 2{,}5$\n\nB) $\\lvert -15 \\rvert - \\lvert 3 - 5 \\rvert$ Zakroužkuj: a) $13$ b) $17$ c) $-17$\n\nC) Které číslo je opačné k číslu $-\\frac{3}{7}$? Zakroužkuj: a) $-\\frac{7}{3}$ b) $\\frac{7}{3}$ c) $\\frac{3}{7}$\n\nD) Jak daleko od sebe leží na číselné ose čísla $-6$ a $5$? Zakroužkuj: a) $-11$ b) $11$ c) $1$"
+      }
+    },
+    {
+      "id": "M8-T06-L1NB-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr počítal příklad\n\n$$\\lvert -14 \\rvert - \\lvert 3{,}5 - 9 \\rvert$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $= 14 - \\lvert 3{,}5 - 9 \\rvert$\n\n2. řádek: $= 14 - \\lvert -5{,}5 \\rvert$\n\n3. řádek: $= 14 + 5{,}5$\n\n4. řádek: $= 19{,}5$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$= 14 - \\lvert 3{,}5 - 9 \\rvert$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$= 14 - \\lvert -5{,}5 \\rvert$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$= 14 + 5{,}5$",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$= 19{,}5$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$= 14 - 5{,}5$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$= 14 - 12{,}5$",
+                "spravne": false,
+                "typ_chyby": "ruzna-znamenka-secetl"
+              },
+              {
+                "id": "c",
+                "text": "$= 14 - (-5{,}5)$",
+                "spravne": false,
+                "typ_chyby": "absolutni-hodnota-zaporna"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 8.5
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 19.5,
+              "typ_chyby": "absolutni-hodnota-zaporna"
+            },
+            {
+              "hodnota": 1.5,
+              "typ_chyby": "ruzna-znamenka-secetl"
+            },
+            {
+              "hodnota": -19.5,
+              "typ_chyby": "absolutni-hodnota-zaporna"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Naostro je chyba nenápadnější: řádek s ní vypadá jako známé „dva minusy dají plus“. Svislé čáry jsou absolutní hodnota, ta nikdy nevyjde záporná. Čte se: „absolutní hodnota ze tří celých pěti mínus devíti“; $5{,}5$ „pět celých pět“, $8{,}5$ „osm celých pět“, $19{,}5$ „devatenáct celých pět“. Řádky za chybou jsou spočítané dobře, jen se špatným číslem.",
+        "reseni": "Chyba je ve 3. řádku: Petr nechal absolutní hodnotu zápornou a dva minusy pak změnil na plus.\n\n$\\lvert -14 \\rvert = 14$ (vzdálenost od nuly)\n\n$3{,}5 - 9 = -5{,}5$ (nejdřív to, co je mezi čarami)\n\n$\\lvert -5{,}5 \\rvert = 5{,}5$ (vzdálenost od nuly je kladná)\n\n$14 - 5{,}5 = 8{,}5$ (minus před svislými čarami zůstává)\n\nDlaždice $= 14 - (-5{,}5)$ nesedí (Petrova chyba, jen jinak zapsaná), $= 14 - 12{,}5$ nesedí (tři celé pět mínus devět není mínus dvanáct celých pět)\n\n**Výsledek:** $8{,}5$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Petr počítá. Co se stane s číslem, které je mezi svislými čarami?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky jeden po druhém. U každého řekni, co se v něm změnilo proti řádku nad ním.“"
+          },
+          {
+            "k": "Krok 1 a výsledek",
+            "text": "„U každého řádku se zeptej: zmizely tu svislé čáry? Je číslo, které z nich vyšlo, kladné?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč čtrnáct mínus absolutní hodnota z mínus pěti celých pěti není devatenáct celých pět.“",
+        "otocena_role_odpoved": "Absolutní hodnota z mínus pěti celých pěti je pět celých pět, kladné číslo. Minus před svislými čarami tedy zůstane a čtrnáct mínus pět celých pět je osm celých pět.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 1. nebo 2. řádek? Ty jsou správně. Na 4.? Ten jen navazuje. Zeptejte se: „Může absolutní hodnota vyjít záporná?“ (Nikdy.) $19{,}5$: Petrova chyba; $-19{,}5$: i čtrnáctka záporná. $1{,}5$: „Kolik je tři celé pět mínus devět?“ (Mínus pět celých pět.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — nenápadnou chybu našlo i opravilo. Pochvalte, že u svislých čar hlídalo kladné číslo, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu Petrův výpočet $\\lvert -7 \\rvert - \\lvert 2 - 6{,}5 \\rvert$ $= 7 + 4{,}5 = 11{,}5$. Zeptejte se: „Má Petr pravdu? Kde se spletl?“ Ať opravu řekne nahlas. Kontrola pro vás: nemá; absolutní hodnota je čtyři celé pět, kladná, správně sedm mínus čtyři celé pět, tedy dvě celé pět.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír, tužku a pravítko. Zítra ať dítě nakreslí osu od mínus šesti do šesti, po centimetru. Ať prstem odpočítá centimetry od nuly k mínus pěti celým pěti. Zeptejte se: „Může vzdálenost vyjít záporná?“ Pak ať samo zapíše $\\lvert -5{,}5 \\rvert = 5{,}5$ a $14 - 5{,}5 = 8{,}5$. Potom zopakujte lekci „Záporná čísla na ose“. Kontrola pro vás: pět a půl centimetru, záporná být nemůže."
+      },
+      "tisk": {
+        "zadani": "Petr počítal příklad\n\n$$\\lvert -14 \\rvert - \\lvert 3{,}5 - 9 \\rvert$$\n\na udělal jednu chybu.\n\n1. řádek: $= 14 - \\lvert 3{,}5 - 9 \\rvert$\n\n2. řádek: $= 14 - \\lvert -5{,}5 \\rvert$\n\n3. řádek: $= 14 + 5{,}5$\n\n4. řádek: $= 19{,}5$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $= 14 - 5{,}5$ b) $= 14 - 12{,}5$ c) $= 14 - (-5{,}5)$\n\nC) Správný výsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T06-L1NB-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Na číselné ose leží body $M$ a $N$. Dílky jsou všechny stejně velké, u nuly žádné číslo není.\n\nUrči, jaká čísla patří bodům $M$ a $N$ a jak daleko jsou od sebe. Bod $R$ (na obrázku chybí) je od nuly stejně daleko jako bod $M$, ale leží na opačné straně nuly. Jak daleko je bod $R$ od bodu $N$?",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 364 80\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"4\" y1=\"40\" x2=\"350\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"360,40 348,34 348,46\" fill=\"currentColor\"/><line x1=\"10\" y1=\"35\" x2=\"10\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"28\" y1=\"35\" x2=\"28\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"46\" y1=\"35\" x2=\"46\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"64\" y1=\"35\" x2=\"64\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"82\" y1=\"31\" x2=\"82\" y2=\"49\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"100\" y1=\"35\" x2=\"100\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"118\" y1=\"35\" x2=\"118\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"136\" y1=\"35\" x2=\"136\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"154\" y1=\"35\" x2=\"154\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"172\" y1=\"35\" x2=\"172\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"190\" y1=\"31\" x2=\"190\" y2=\"49\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"208\" y1=\"35\" x2=\"208\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"226\" y1=\"35\" x2=\"226\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"244\" y1=\"35\" x2=\"244\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"262\" y1=\"35\" x2=\"262\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"280\" y1=\"35\" x2=\"280\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"298\" y1=\"35\" x2=\"298\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"316\" y1=\"35\" x2=\"316\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"334\" y1=\"35\" x2=\"334\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"82\" y=\"68\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">−5</text><text x=\"190\" y=\"68\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">−2</text><circle cx=\"28\" cy=\"40\" r=\"5\" fill=\"currentColor\"/><text x=\"28\" y=\"22\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"currentColor\">M</text><circle cx=\"316\" cy=\"40\" r=\"5\" fill=\"currentColor\"/><text x=\"316\" y=\"22\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"currentColor\">N</text></svg>",
+      "obrazek_popis": "Číselná osa se stejně velkými dílky, popsaná jsou jen čísla −5 a −2, nula popsaná není; bod M leží vlevo od −5, bod N daleko vpravo od −2.",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Číslo bodu $M$",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": -6.5
+          },
+          "zname_chyby": [
+            {
+              "hodnota": -8,
+              "typ_chyby": "stupnice-grafu-spatne"
+            },
+            {
+              "hodnota": -3.5,
+              "typ_chyby": "posun-spatnym-smerem"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Číslo bodu $N$",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 1.5
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 5,
+              "typ_chyby": "stupnice-grafu-spatne"
+            },
+            {
+              "hodnota": -5.5,
+              "typ_chyby": "posun-spatnym-smerem"
+            }
+          ]
+        },
+        {
+          "id": "k3",
+          "popisek": "Vzdálenost bodů $M$ a $N$",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 8
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 13,
+              "typ_chyby": "stupnice-grafu-spatne"
+            },
+            {
+              "hodnota": 5,
+              "typ_chyby": "odcitani-zaporneho"
+            },
+            {
+              "hodnota": -8,
+              "typ_chyby": "absolutni-hodnota-zaporna"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek: vzdálenost bodů $N$ a $R$",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 5
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 8,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 3,
+              "typ_chyby": "stupnice-grafu-spatne"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha, naostro o krok delší. Nula na ose popsaná není, dítě ji musí najít samo. Mezi mínus pěti a mínus dvěma je šest dílků, jeden dílek je tedy polovina. Bod $R$ je opačné číslo k bodu $M$. Čte se: $-6{,}5$ „mínus šest celých pět“, $1{,}5$ „jedna celá pět“, $6{,}5$ „šest celých pět“.",
+        "reseni": "$3 : 6 = 0{,}5$ (od mínus pěti k mínus dvěma jsou tři jednotky na šest dílků)\n\n$-5 - 3 \\cdot 0{,}5 = -6{,}5$ (bod M je tři dílky vlevo od mínus pěti)\n\n$-2 + 7 \\cdot 0{,}5 = 1{,}5$ (bod N je sedm dílků vpravo od mínus dvou; nula je čtyři dílky vpravo od mínus dvou)\n\n$1{,}5 - (-6{,}5) = 1{,}5 + 6{,}5 = 8$ (vzdálenost M a N přes nulu; jiná cesta: šestnáct dílků po polovině)\n\n$R = 6{,}5$ (opačné číslo k bodu M)\n\n$6{,}5 - 1{,}5 = 5$ (vzdálenost N a R, oba body jsou vpravo od nuly)\n\n**Výsledek:** $M = -6{,}5$, $N = 1{,}5$, vzdálenost $M$ a $N$ je $8$, vzdálenost $N$ a $R$ je $5$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Kolik dílků je mezi dvěma popsanými čísly a kolik jednotek mezi nimi je? Jak velký je potom jeden dílek?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Od kterého popsaného čísla bod odpočítáš? O kolik dílků a kterým směrem? Kde na ose leží nula?“"
+          },
+          {
+            "k": "Krok 3 a výsledek",
+            "text": "„Tady máš začátek: jeden dílek je tu jedna polovina. Kolik dílků je mezi body? A kde leží opačné číslo k bodu M?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, jak poznáš, kde na ose leží nula, když u ní nic nenapsali.“",
+        "otocena_role_odpoved": "Mínus dvě je o dvě jednotky vlevo od nuly. Jeden dílek je polovina, takže nula je čtyři dílky vpravo od mínus dvou.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. $-8$, $5$, $13$, $3$: dílek bere jako jedničku. Zeptejte se: „Kolik je jeden dílek?“ (Polovina.) M $-3{,}5$, N $-5{,}5$: „Kterým směrem bod leží?“ (M vlevo, N vpravo.) Krok 3 $5$, $-8$: „Vede cesta přes nulu?“ (Ano.) Výsledek $8$: „Od kterého bodu měříš?“ (Od R.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — dílek, oba body i obě vzdálenosti sedí. Pochvalte, že si samo našlo nulu i velikost dílku, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Na osu se stejnými dílky napiš k jedné čárce mínus pět, o tři dílky vpravo jedna. Kolik je jeden dílek? Vyznač mínus devět a sedm. Jak daleko jsou od sebe?“ Kontrola pro vás: dílek dva; mínus devět dva dílky vlevo od mínus pěti; sedm tři dílky vpravo od jedné; vzdálenost šestnáct.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír, tužku a pravítko. Zítra ať dítě podél pravítka nakreslí osu, k jedné čárce napíše mínus dvě a každý centimetr bere jako polovinu. Ať najde nulu, vyznačí mínus tři celé pět a dvě celé pět a spočítá centimetry mezi nimi. Pak ať samo zapíše $2{,}5 - (-3{,}5) = 6$. Potom zopakujte lekci „Záporná čísla na ose“. Kontrola pro vás: nula je čtyři centimetry vpravo od mínus dvou, mezi body je dvanáct centimetrů."
+      },
+      "tisk": {
+        "zadani": "Na číselné ose leží body $M$ a $N$. Dílky jsou všechny stejně velké, u nuly žádné číslo není.\n\nUrči, jaká čísla patří bodům $M$ a $N$ a jak daleko jsou od sebe. Bod $R$ (na obrázku chybí) je od nuly stejně daleko jako bod $M$, ale leží na opačné straně nuly. Jak daleko je bod $R$ od bodu $N$?\n\nA) Číslo bodu $M$: ______\n\nB) Číslo bodu $N$: ______\n\nC) Vzdálenost bodů $M$ a $N$: ______\n\nD) Vzdálenost bodů $N$ a $R$: ______"
+      }
+    },
+    {
+      "id": "M8-T06-L1NB-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Na číselné ose leží čísla $K = -15$ a $L = 4$. Bod $S$ je přesně v polovině cesty mezi nimi.\n\nJaké číslo patří bodu $S$?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": -5.5
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 9.5,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 13.5,
+              "typ_chyby": "posun-spatnym-smerem"
+            },
+            {
+              "hodnota": -9.5,
+              "typ_chyby": "ruzna-znamenka-secetl"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Naostro střed nevyjde celé číslo. Čte se: $-5{,}5$ „mínus pět celých pět“, $9{,}5$ „devět celých pět“, $13{,}5$ „třináct celých pět“.",
+        "reseni": "$4 - (-15) = 19$ (vzdálenost bodů K a L)\n\n$19 : 2 = 9{,}5$ (polovina vzdálenosti)\n\n$-15 + 9{,}5 = -5{,}5$ (od mínus patnácti doprava)\n\n$4 - 9{,}5 = -5{,}5$ (zkouška: od čtyř doleva; jiná cesta: mínus patnáct plus čtyři je mínus jedenáct, děleno dvěma)\n\n**Výsledek:** $-5{,}5$",
+        "otazky": [
+          "„Nakresli si osu a vyznač na ní K a L. Bude bod S spíš vlevo, nebo vpravo od nuly?“",
+          "„Jak daleko od sebe jsou body K a L? Jakou část té vzdálenosti ujdeš od K k bodu S?“",
+          "„Tady máš začátek: od mínus patnácti ke čtyřem je devatenáct. Kolik je polovina a kterým směrem ji odpočítáš od K?“"
+        ],
+        "otocena_role": "„Vysvětli mi, jak bez kreslení ověříš, že bod S je od K i od L stejně daleko.“",
+        "otocena_role_odpoved": "Od mínus patnácti k mínus pěti celým pěti je devět celých pět a od mínus pěti celých pěti ke čtyřem taky devět celých pět. Správně je i: mínus patnáct plus čtyři je mínus jedenáct, děleno dvěma.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $9{,}5$: polovina vzdálenosti. Zeptejte se: „Leží tvoje číslo mezi K a L?“ (Ne.) $13{,}5$: „Kterým směrem od L leží K?“ (Doleva.) $-9{,}5$: „Kolik je mínus patnáct plus čtyři?“ (Mínus jedenáct.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — střed mezi záporným a kladným číslem zvládá samo i s desetinným výsledkem. Pochvalte, že ověřilo vzdálenost na obě strany. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Které číslo leží přesně uprostřed mezi mínus deseti a třemi?“ Ať si nakreslí osu a nahlas řekne, jak daleko jsou čísla od sebe, kolik je polovina a co leží uprostřed. Kontrola pro vás: vzdálenost třináct, polovina šest celých pět, uprostřed mínus tři celé pět.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko, papír a dvě mince. Zítra ať dítě nakreslí osu od mínus deseti do deseti, jednotka je centimetr. Jednu minci položí na mínus pět, druhou na dvě. Pak je posouvá k sobě, obě vždy o půl centimetru, až se potkají. Ať řekne, u kterého čísla. Pak ať samo zapíše $-5 + 3{,}5 = -1{,}5$. Potom zopakujte lekci „Záporná čísla na ose“. Kontrola pro vás: mince se potkají u mínus jedné celé pěti."
+      },
+      "tisk": {
+        "zadani": "Na číselné ose leží čísla $K = -15$ a $L = 4$. Bod $S$ je přesně v polovině cesty mezi nimi.\n\nJaké číslo patří bodu $S$?\n\nVýsledek: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 14. 10. 2026: vše přepočítáno nezávisle (python Fraction, osa U3 podle souřadnic SVG) a přes vyhodnotKrok: správné odpovědi (i s čárkou a typografickým mínusem), mezivýsledky v řešení, tahák, oranžová i červená sedí; každá dlaždice a známá chyba vrací svůj kód, vzniká popsaným omylem a liší se od správné odpovědi; každá chybná dlaždice i hodnota je v taháku zmíněná. B-varianta proti M8-T06-L1N: stejné tema/kapitola/tyden/poradi, struktura, vstupy, kódy a obtížnost, jiná čísla, kontext a věty; texty v limitech slov, bez rodu, otázky v režimu samo nic neprozrazují; žádná záporná správná odpověď ve vstupu zlomek. Opraveno (texty, věcné chyby žádné): „minus“ → „mínus“ při čtení operace (U2 vysvětlení, řešení, otočená role, odpověď, typická chyba, oranžová; SABLONA §18). Sporné místo autora: U3 krok 3 chyba $5$ (odcitani-zaporneho, $6{,}5 - 1{,}5$) = správný výsledek posledního kroku. Plyne ze stavby úlohy ($R = -M$, proto $R - N = \\lvert M \\rvert - N$ pro jakákoli čísla), jinými čísly to odstranit nejde, v L1N je totéž ($2{,}5$); dítě to nezmate, v posledním kroku je stejný výpočet správně. Ponecháno.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-14"
+  }
+}
