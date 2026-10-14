@@ -1,0 +1,439 @@
+{
+  "id": "M8-T08-L4B",
+  "faze": "osma",
+  "tyden": 8,
+  "poradi": 4,
+  "tema": "Kontrola: poměr a úměrnost",
+  "kapitola": "pomer",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo dělí v poměru, počítá s měřítkem a s úměrností.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami: kontrola celého tématu, tedy dělení v poměru, měřítko mapy a úměrnost.",
+  "uvod_pravidla": [
+    {
+      "znak": "$5 : 6$",
+      "text": "jedenáct dílů dohromady"
+    },
+    {
+      "znak": "$1 : 35\\,000$",
+      "text": "centimetr: 350 metrů"
+    },
+    {
+      "znak": "$2 \\to 4$ stroje, $8 \\to 4$ hodiny",
+      "text": "víc strojů, míň hodin"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T08-L4B-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Rozděl $40$ v poměru $7 : 3$. Jak velká je větší část?\n\nB) Na mapě v měřítku $1 : 90\\,000$ je cesta dlouhá $7$ cm. Kolik kilometrů měří ve skutečnosti?\n\nC) Čtyři stejné kopírovací stroje vytisknou pozvánky za $18$ minut. Za kolik minut je vytisknou šest takových strojů?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $40$ v poměru $7 : 3$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$28$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$20$",
+                "spravne": false,
+                "typ_chyby": "deleni-v-pomeru-bez-souctu-dilu"
+              },
+              {
+                "id": "c",
+                "text": "$12$",
+                "spravne": false,
+                "typ_chyby": "deleni-v-pomeru-prohodil"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $7$ cm na mapě $1 : 90\\,000$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$63$ km",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "b",
+                "text": "$6\\,300$ km",
+                "spravne": false,
+                "typ_chyby": "jednotka-ve-vysledku-spatne"
+              },
+              {
+                "id": "c",
+                "text": "$6{,}3$ km",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: šest strojů",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$27$ min",
+                "spravne": false,
+                "typ_chyby": "neprima-jako-prima"
+              },
+              {
+                "id": "b",
+                "text": "$12$ min",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$16$ min",
+                "spravne": false,
+                "typ_chyby": "umera-jako-soucet"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá. Každý příklad je z jedné lekce tématu: A dělení v poměru, B měřítko mapy, C úměrnost. Čte se: $7 : 3$ „sedm ku třem“, $1 : 90\\,000$ „jedna ku devadesáti tisícům“, $6{,}3$ „šest celá tři“. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $40$ v poměru $7 : 3$\n\n$7 + 3 = 10$ (dílů dohromady)\n\n$40 : 10 = 4$ (jeden díl)\n\n$7 \\cdot 4 = 28$ (větší část, menší je dvanáct)\n\n#### B) $7$ cm na mapě $1 : 90\\,000$\n\n$7 \\cdot 90\\,000 = 630\\,000$ (centimetrů ve skutečnosti)\n\n$630\\,000\\ \\text{cm} = 6\\,300\\ \\text{m} = 6{,}3\\ \\text{km}$ (převod na kilometry)\n\n#### C) Kopírovací stroje\n\n$4 \\cdot 18 = 72$ (minut by tiskl jeden stroj)\n\n$72 : 6 = 12$ (šest strojů)\n\n**Výsledek:** A) $28$, B) $6{,}3$ km, C) $12$ min",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, zkus to na papíře: na kolik stejných dílů se čtyřicet dělí? Kolik dílů patří větší části?“"
+          },
+          {
+            "k": "B",
+            "text": "„Kolik centimetrů ve skutečnosti je jeden centimetr na mapě? Kolik centimetrů má kilometr?“"
+          },
+          {
+            "k": "C",
+            "text": "„Víc strojů na stejné pozvánky: bude to trvat déle, nebo kratší dobu? Kolik minut by tiskl jeden?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč šest strojů netiskne dvacet sedm minut.“",
+        "otocena_role_odpoved": "Protože víc strojů vytiskne stejné pozvánky rychleji, ne pomaleji. Jeden by tiskl sedmdesát dva minut, šest strojů šestinu z toho, dvanáct minut.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A $20$ nebo $12$: „Kolik dílů je dohromady a kolik má větší část?“ (Deset a sedm.) U B $63$ nebo $6\\,300$ km: „Kolik centimetrů má kilometr?“ (Sto tisíc.) U C $27$: víc → víc; $16$: ubere dvě minuty. „Víc strojů, déle, nebo kratší dobu?“ (Kratší.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — všechny tři části tématu sedí. Pochvalte, že u každé rozhodlo, jak začít, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Rozděl $63$ v poměru $4 : 3$.“ Pak: „Kolik metrů je $6$ cm na plánu $1 : 2\\,000$?“ A nakonec: „Dva kamarádi umyjí auto za $30$ minut. Za kolik minut ho umyjí tři?“ Kontrola pro vás: $36$ a $27$; $120$ m; $20$ minut (jeden by myl $60$ minut).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 15 kostek nebo bonbonů a dva hrnky. Zítra ať dítě rozdělí kostky v poměru $2 : 3$: do prvního hrnku 2, do druhého 3, a tak dál, dokud nedojdou. Pak ať samo zapíše $2 + 3 = 5$, $15 : 5 = 3$, $3 \\cdot 3 = 9$. Potom zopakujte lekci „Kontrola: poměr a úměrnost“. Kontrola pro vás: 3 kola; v hrncích 6 a 9 kostek."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Rozděl $40$ v poměru $7 : 3$. Jak velká je větší část? — a) $28$ b) $20$ c) $12$\n\nB) Na mapě v měřítku $1 : 90\\,000$ je cesta dlouhá $7$ cm. Kolik kilometrů měří ve skutečnosti? — a) $63$ km b) $6\\,300$ km c) $6{,}3$ km\n\nC) Čtyři stejné kopírovací stroje vytisknou pozvánky za $18$ minut. Za kolik minut je vytisknou šest takových strojů? — a) $27$ min b) $12$ min c) $16$ min"
+      }
+    },
+    {
+      "id": "M8-T08-L4B-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Ema měří na mapě okolí v měřítku $1 : 60\\,000$ cestu od chaty na hrad: $5$ cm. Kolik kilometrů ujde tam a zpět?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $1$ cm na mapě $= 60\\,000$ cm\n\n2. řádek: $60\\,000$ cm $= 600$ m\n\n3. řádek: $5$ cm na mapě: $600 : 5 = 120$ m\n\n4. řádek: tam a zpět: $2 \\cdot 120 = 240$ m $= 0{,}24$ km",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$1$ cm na mapě $= 60\\,000$ cm",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$60\\,000$ cm $= 600$ m",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$5$ cm na mapě: $600 : 5 = 120$ m",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "tam a zpět: $2 \\cdot 120 = 240$ m $= 0{,}24$ km",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$5$ cm na mapě: $600 + 5 = 605$ m",
+                "spravne": false,
+                "typ_chyby": "umera-jako-soucet"
+              },
+              {
+                "id": "b",
+                "text": "$5$ cm na mapě: $5 \\cdot 60\\,000 = 300\\,000$ m",
+                "spravne": false,
+                "typ_chyby": "jednotka-ve-vysledku-spatne"
+              },
+              {
+                "id": "c",
+                "text": "$5$ cm na mapě: $5 \\cdot 600 = 3\\,000$ m",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "km"
+          },
+          "spravne": {
+            "hodnota": 6
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 0.24,
+              "typ_chyby": "meritko-obracene"
+            },
+            {
+              "hodnota": 3,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 6000,
+              "typ_chyby": "jednotka-ve-vysledku-spatne"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Na mapě $1 : 60\\,000$ (čte se „jedna ku šedesáti tisícům“) je každý centimetr $600$ m ve skutečnosti. Skutečná cesta je vždy delší než čára na mapě. Chyba je jedna, řádky za ní jsou spočítané dobře, jen se špatným číslem. Čte se: $0{,}24$ „nula celá dvacet čtyři“.",
+        "reseni": "Chyba je ve 3. řádku: Petr dělil místo násobení. Pět centimetrů na mapě je ve skutečnosti pětkrát víc než jeden, ne pětina.\n\n$1$ cm na mapě $= 60\\,000$ cm (měřítko)\n\n$60\\,000$ cm $= 600$ m (sto centimetrů je metr)\n\n$5 \\cdot 600 = 3\\,000$ (metrů, cesta tam)\n\n$2 \\cdot 3\\,000 = 6\\,000$ (metrů tam a zpět)\n\n$6\\,000$ m $= 6$ km (tisíc metrů je kilometr)\n\nDlaždice $600 + 5$ a $5 \\cdot 60\\,000 = 300\\,000$ m nesedí (první přičítá, druhá jsou centimetry, ne metry)\n\n**Výsledek:** $6$ km",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co Ema měří a na co se úloha ptá.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Je skutečná cesta delší, nebo kratší než čára na mapě? Sedí to u každého Petrova řádku?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: když je jeden centimetr na mapě šest set metrů, vyjde pro víc centimetrů víc, nebo míň metrů?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč pět centimetrů na mapě nemůže být sto dvacet metrů.“",
+        "otocena_role_odpoved": "Protože už jeden centimetr je šest set metrů. Pět centimetrů musí být víc, pětkrát šest set, tedy tři tisíce metrů. Tam a zpět je to šest kilometrů.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 4. řádek? Ten je jen důsledek. Zeptejte se: „Odkud je sto dvacet?“ (Ze 3. řádku.) 1. a 2. řádek jsou správně. Výsledek $0{,}24$: opíše Petra; $3$: jen cesta tam; zeptejte se: „Kolikrát Ema cestu ujde?“ (Dvakrát.) $6\\,000$: jsou to metry, ne kilometry."
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že hlídalo, jestli má skutečná cesta vyjít delší, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr tvrdí: na mapě $1 : 70\\,000$ je $1$ cm sedm set metrů, takže $2$ cm je $350$ m. Má pravdu?“ Ať nahlas řekne, kde se Petr spletl a kolik to je. Kontrola pro vás: nemá, dělil místo násobení; $2$ cm je $1\\,400$ m.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko, papír a 5 kostek nebo mincí. Zítra: „Na naší mapě je 1 cm padesát kroků.“ Ať dítě nakreslí čáru 4 cm a ke každému centimetru položí jednu kostku za padesát kroků. Zeptejte se: „Kolik kroků je celá čára? Víc, nebo míň než padesát?“ Pak ať samo zapíše $4 \\cdot 50 = 200$. Potom zopakujte lekci „Kontrola: poměr a úměrnost“. Kontrola pro vás: 200 kroků, víc než padesát."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\nEma měří na mapě okolí v měřítku $1 : 60\\,000$ cestu od chaty na hrad: $5$ cm. Kolik kilometrů ujde tam a zpět?\n\na udělal jednu chybu.\n\n1. řádek: $1$ cm na mapě $= 60\\,000$ cm\n\n2. řádek: $60\\,000$ cm $= 600$ m\n\n3. řádek: $5$ cm na mapě: $600 : 5 = 120$ m\n\n4. řádek: tam a zpět: $2 \\cdot 120 = 240$ m $= 0{,}24$ km\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $600 + 5 = 605$ m b) $5 \\cdot 60\\,000 = 300\\,000$ m c) $5 \\cdot 600 = 3\\,000$ m\n\nC) Kolik kilometrů Ema ujde tam a zpět? ______ km"
+      }
+    },
+    {
+      "id": "M8-T08-L4B-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Honzík a Adam jedou na kolech k vodopádu. Na mapě v měřítku $1 : 300\\,000$ měří jejich cesta $10$ cm. Za hodinu ujedou $12$ km.\n\nKolik kilometrů měří cesta ve skutečnosti a jak dlouho ji pojedou? Dobu jízdy zapiš v hodinách a nakonec v minutách.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Mezivýsledek: cesta ve skutečnosti",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "km"
+          },
+          "spravne": {
+            "hodnota": 30
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 3000,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 300,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 30000,
+              "typ_chyby": "jednotka-ve-vysledku-spatne"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: doba jízdy v hodinách",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "h"
+          },
+          "spravne": {
+            "hodnota": 2.5
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 360,
+              "typ_chyby": "vzorec-v-s-t-zamena"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "min"
+          },
+          "spravne": {
+            "hodnota": 150
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 170,
+              "typ_chyby": "cas-desetinne-jako-minuty"
+            },
+            {
+              "hodnota": 21600,
+              "typ_chyby": "vzorec-v-s-t-zamena"
+            },
+            {
+              "hodnota": 2.5,
+              "typ_chyby": "jednotka-ve-vysledku-spatne"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Úloha spojuje měřítko a úměrnost. Nejdřív se z mapy zjistí skutečná délka cesty v kilometrech. Pak čas: dvanáct kilometrů za hodinu, delší cesta, delší jízda (přímá úměrnost). Pozor na převod: $2{,}5$ h jsou dvě a půl hodiny, tedy $150$ minut, ne $170$. Čte se: $1 : 300\\,000$ „jedna ku třem stům tisícům“.",
+        "reseni": "$10 \\cdot 300\\,000 = 3\\,000\\,000$ (centimetrů ve skutečnosti)\n\n$3\\,000\\,000\\ \\text{cm} = 30\\,000\\ \\text{m} = 30\\ \\text{km}$ (sto centimetrů je metr, tisíc metrů kilometr)\n\n$30 : 12 = 2{,}5$ (hodin jízdy, dvanáct kilometrů za hodinu)\n\n$2{,}5 \\cdot 60 = 150$ (minut)\n\n$30 : 6 = 5$ (jiná cesta: za půl hodiny ujedou šest kilometrů, pět půlhodin je sto padesát minut)\n\n**Výsledek:** cesta $30$ km, jízda $2{,}5$ h, tedy $150$ minut",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co kluci plánují a co všechno máš zjistit.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Kolik centimetrů ve skutečnosti je jeden centimetr na mapě? Kolik centimetrů má kilometr?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: za hodinu ujedou dvanáct kilometrů, za dvě hodiny dvacet čtyři. Jak dlouho jim potrvá celá cesta? Kolik minut má hodina?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč dva celá pět hodiny nejsou dvě hodiny a padesát minut.“",
+        "otocena_role_odpoved": "Protože nula celá pět je polovina hodiny, to je třicet minut. Dva celá pět hodiny jsou dvě a půl hodiny, tedy sto padesát minut.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 $3\\,000$ nebo $300$: převádí špatně; $30\\,000$: nechá metry. Zeptejte se: „Kolik centimetrů má kilometr?“ (Sto tisíc.) V kroku 2 $360$, výsledek $21\\,600$: násobí místo dělení. „Kolik kilometrů ujedou za hodinu?“ (Dvanáct.) $170$: bere $2{,}5$ jako dvě hodiny padesát; $2{,}5$: nepřevede na minuty."
+      },
+      "semafor": {
+        "zelena": "Výborně — z mapy až k minutám to zvládlo. Pochvalte, že hlídalo jednotky, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Na mapě $1 : 75\\,000$ měří cesta $4$ cm. Kolik kilometrů to je? Za hodinu ujdeš $6$ km. Kolik minut půjdeš?“ Kontrola pro vás: $3$ km; půl hodiny, tedy $30$ minut (jeden kilometr za $10$ minut).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: pravítko a papír. Zítra ať dítě nakreslí „mapu“ cesty na hřiště, kde 1 cm je 50 m. Ať změří čáru a samo zapíše např. $6$ cm $\\to 300$ m. Pak: „Za minutu ujdeš 50 m. Kolik minut půjdeš?“ Ať samo zapíše $300 : 50 = 6$. Potom zopakujte lekci „Kontrola: poměr a úměrnost“. Kontrola pro vás: kolik centimetrů má čára, tolik minut."
+      },
+      "tisk": {
+        "zadani": "Honzík a Adam jedou na kolech k vodopádu. Na mapě v měřítku $1 : 300\\,000$ měří jejich cesta $10$ cm. Za hodinu ujedou $12$ km.\n\nKolik kilometrů měří cesta ve skutečnosti a jak dlouho ji pojedou?\n\nA) Cesta ve skutečnosti: ______ km\n\nB) Doba jízdy: ______ h\n\nC) Doba jízdy: ______ min"
+      }
+    },
+    {
+      "id": "M8-T08-L4B-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Zásoba granulí v kočičí kavárně vystačí pro $10$ koček na $27$ dní. Kavárna přijala dalších $5$ koček a každá sní denně stejně.\n\nNa kolik dní teď granule vystačí?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "dní"
+          },
+          "spravne": {
+            "hodnota": 18
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 40.5,
+              "typ_chyby": "neprima-jako-prima"
+            },
+            {
+              "hodnota": 22,
+              "typ_chyby": "umera-jako-soucet"
+            },
+            {
+              "hodnota": 9,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Granulí je pořád stejně, koček je víc: víc koček, míň dní. Je to nepřímá úměrnost jako u kopírovacích strojů.",
+        "reseni": "$10 + 5 = 15$ (koček teď)\n\n$10 \\cdot 27 = 270$ (na tolik dní by granule vystačily jedné kočce)\n\n$270 : 15 = 18$ (dní pro patnáct koček)\n\n**Výsledek:** $18$ dní",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co se v kavárně změnilo a na co se úloha ptá.“",
+          "„Když je koček víc, vystačí granule na víc, nebo na míň dní? Kolik koček je teď?“",
+          "„Tady máš začátek: jedné kočce by granule vystačily na deset krát dvacet sedm dní. Kolik je to dní a co uděláš dál?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč granule teď nevystačí na čtyřicet a půl dne.“",
+        "otocena_role_odpoved": "Protože koček je víc a každá sní svou dávku. Stejné granule se rozdělí mezi víc koček, takže dojdou dřív, za osmnáct dní, ne později.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $40{,}5$: počítá víc → víc. Zeptejte se: „Víc koček, dojdou granule dřív, nebo později?“ (Dřív.) $22$: ubere den za kočku; $9$: napíše, o kolik dní míň. „Na kolik dní by granule stačily jedné kočce?“ ($270$.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — nepřímou úměrnost zvládá samo. Pochvalte, že nejdřív rozhodlo „víc koček, míň dní“. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Krmení pro $8$ morčat vystačí na $9$ dní. Na kolik dní vystačí pro $6$ morčat?“ Ať nejdřív řekne, jestli víc, nebo míň dní, pak dopočítá. Kontrola pro vás: víc; jednomu morčeti na $72$ dní, šesti na $12$ dní.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 12 bonbonů nebo kostek (jako granule) a 4 hrnky (jako kočky). Zítra: „Každá kočka sní za den jeden bonbon.“ Ať dítě krmí 2 kočky, pak 3 a 4 kočky a počítá, na kolik dní bonbony vystačí. Pak ať samo zapíše $12 : 2 = 6$, $12 : 3 = 4$, $12 : 4 = 3$. Potom zopakujte lekci „Kontrola: poměr a úměrnost“. Kontrola pro vás: 6, 4, 3 dny; víc koček, míň dní."
+      },
+      "tisk": {
+        "zadani": "Zásoba granulí v kočičí kavárně vystačí pro $10$ koček na $27$ dní. Kavárna přijala dalších $5$ koček a každá sní denně stejně.\n\nNa kolik dní teď granule vystačí?\n\nVýsledek: ______ dní"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 14. 10.: nezávisle přepočítáno skriptem (python Fraction) a přes vyhodnotKrok; struktura, vstupy, kroky a kódy chyb jako v M8-T08-L4, čísla a kontext nové. U1 $40$ v poměru $7 : 3$ je $28$ ($20$ napůl, $12$ menší část), $7 \\cdot 90\\,000$ cm $= 6{,}3$ km ($63$, $6\\,300$), $4 \\cdot 18 : 6 = 12$ min ($27$, $16$); U2 $5 \\cdot 600 = 3\\,000$ m, tam a zpět $6$ km (Petr $0{,}24$, $3$, $6\\,000$); U3 $10 \\cdot 300\\,000$ cm $= 30$ km, $30 : 12 = 2{,}5$ h, $150$ min ($3\\,000$, $300$, $30\\,000$; $360$; $170$, $21\\,600$, $2{,}5$); U4 $270 : 15 = 18$ dní ($40{,}5$, $22$, $9$); oranžové a červené kontroly sedí. Věcné chyby: 0. Úpravy obtížnosti (sporná místa autora): U1 A a C měly desetinné distraktory $38{,}5$ a $31{,}5$ mezi celými (dlaždice šla vyloučit podle vzhledu) → A $40$ v poměru $7 : 3$, C $18$ minut; U2 desetinný výsledek $1{,}8$ km → mapa $1 : 60\\,000$, $5$ cm, výsledek $6$ km; U3 desetinná délka $7{,}5$ km → kola, mapa $1 : 300\\,000$, $10$ cm, $30$ km, $12$ km za hodinu (doba $2{,}5$ h jako $1{,}5$ h v hlavní lekci); měřítka $1 : 30\\,000$ a $1 : 200\\,000$ z první úpravy se kryla s M8-T08-L4N, proto nakonec $1 : 60\\,000$ a $1 : 300\\,000$. „Platí“ $1 : 12\\,000$ (centimetr $120$ m) se krylo s Petrovým chybným řádkem a výsledkem U1 C → $1 : 35\\,000$, $350$ m. Upraveny zadání, dlaždice, známé chyby, popisek kroku 2 U3 (doba jízdy), vysvětlení, řešení, otázky, otočené role, typické chyby a tisk; desetinná chyba $40{,}5$ v U4 je jen známá chyba, ne dlaždice, ponechána.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-14"
+  }
+}
