@@ -1,0 +1,752 @@
+{
+  "id": "cj-t7-l27b",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 7,
+  "poradi": 3,
+  "tema": "Děti, lidé, rodiče, koně",
+  "kapitola": "shoda",
+  "cil_pro_rodice": "Dítě doplní správnou koncovku slovesa u podmětů děti (ty děti → y) a lidé, rodiče, koně (ti → i), i v textu, kde vystupují děti i dospělí.",
+  "uvod_pro_rodice": "Opakování po červeném semaforu: stejná lekce „Děti, lidé, rodiče, koně“ s jinými větami a slovy, aby dítě znovu doplnilo koncovku slovesa u podmětů děti (ty děti → y) a lidé, rodiče, koně (ti → i).",
+  "uvod_pravidla": [
+    {
+      "znak": "děti → ty děti → y",
+      "text": "co to je"
+    },
+    {
+      "znak": "lidé, rodiče, koně → ti → i",
+      "text": "test"
+    },
+    {
+      "znak": "Děti si hrály, rodiče stáli.",
+      "text": "příklad"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "podmět": "kdo nebo co ve větě něco dělá; zeptáte se od slovesa: kdo, co? (lekce 25)",
+    "shoda": "koncovka slovesa v minulém čase se řídí podmětem (lekce 25)",
+    "děti": "o jednom se řekne to dítě, ve více kusech ale ty děti, proto y (děti si hrály)",
+    "lidé, rodiče, koně": "vždy ti lidé, ti rodiče, ti koně, proto i (rodiče stáli). V běžné řeči se říká „ty rodiče“, ve škole platí „ti“",
+    "několikanásobný podmět": "víc podmětů u jednoho slovesa; stačí jeden „ti“ a píše se i (lekce 26)",
+    "nevyjádřený podmět": "podmět ve větě chybí, je ve větě předtím (lekce 25)"
+  },
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "cas_min": 25,
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t7-l27b-U1",
+      "typ": "rozcvicka",
+      "cil": "Zopakovat lekci 26: koncovka za několikanásobným podmětem (ti má přednost, jen ta → a, jinak y).",
+      "cas_min": 4,
+      "zadani": "V každé řadě doplň i, y, nebo a.\n\nA) Sousedka a její syn nám zaklepal_ na dveře.\n\nB) Batohy a pouzdra se namočil_ v dešti.\n\nC) Lvíčata a slůňata okouzlil_ návštěvníky.\n\nD) Babička, teta a sestřenice nám nabídl_ koláč.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Sousedka a její syn nám zaklepal_ na dveře.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "i"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "y"
+              ],
+              "typ_chyby": "shoda-nekolikanasobny-y"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Batohy a pouzdra se namočil_ v dešti.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "y"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "i"
+              ],
+              "typ_chyby": "shoda-i-za-y"
+            }
+          ]
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Lvíčata a slůňata okouzlil_ návštěvníky.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "a"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "y"
+              ],
+              "typ_chyby": "shoda-y-za-a"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Babička, teta a sestřenice nám nabídl_ koláč.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "y"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "i"
+              ],
+              "typ_chyby": "shoda-i-za-y"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje minulou lekci: víc podmětů u jednoho slovesa. Stačí jeden „ti“ a píše se i; jen „ta“ ve více kusech → a; jinak y. Past: batohy a pouzdra → y (batohy nejsou „ta“). Otázky jsou po řadách: čtěte tu u řady, kde se dítě zasekne.",
+        "reseni": "#### A) Sousedka a její syn nám zaklepal_ na dveře.\n\nzaklepali (syn je „ti“ → i)\n\n#### B) Batohy a pouzdra se namočil_ v dešti.\n\nnamočily (ty batohy, ta pouzdra: ne všechno „ta“ → y)\n\n#### C) Lvíčata a slůňata okouzlil_ návštěvníky.\n\nokouzlila (ta lvíčata, ta slůňata → a)\n\n#### D) Babička, teta a sestřenice nám nabídl_ koláč.\n\nnabídly (babička, teta a sestřenice, žádný „ti“ → y)\n\n**Výsledek:** A) i, B) y, C) a, D) y",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Řekni oba podměty ve více kusech. Je mezi nimi ti?“"
+          },
+          {
+            "k": "B a C",
+            "text": "„Jsou oba podměty ta? Řekni nahlas: ta batohy, nebo ty batohy?“"
+          },
+          {
+            "k": "D",
+            "text": "„Kolik je tam podmětů? Komu z nich řekneš ti?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč v řadě B není a, když pouzdra jsou ta.“",
+        "otocena_role_odpoved": "Pouzdra jsou ta, ale batohy jsou ty. Aby bylo a, musí být ta všechny podměty. Jinak se píše y.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V A dá y: „Je mezi nimi někdo, komu řekneš ti?“ V B dá i nebo a: „Ti batohy, ty batohy, nebo ta batohy?“ V C dá y: „Ta lvíčata, nebo ty lvíčata?“ V D dá i: „Komu tam řekneš ti?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — pravidlo pro víc podmětů drží. Pochvalte, že dítě zkoušelo každý podmět zvlášť, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti tři dvojice: Klára a Adam, hrnce a pánve, kuřata a jehňata. U každé řekne písmeno do „… byl_ venku“. Kontrola pro vás: Klára a Adam byli (Adam je ti), hrnce a pánve byly, kuřata a jehňata byla (jen ta).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše dvě dvojice: sousedka a syn, batohy a pouzdra. Každé slovo řekne ve více kusech s ti, ty, nebo ta a ke dvojici připíše „byl_ doma“ se správným písmenem. Potom zopakujte lekci „Děti, lidé, rodiče, koně“. Kontrola pro vás: sousedka a syn byli (syn je ti); batohy a pouzdra byly (batohy nejsou ta)."
+      },
+      "tisk": {
+        "zadani": "V každé řadě doplň i, y, nebo a.\n\nA) Sousedka a její syn nám zaklepal_ na dveře.\n\nB) Batohy a pouzdra se namočil_ v dešti.\n\nC) Lvíčata a slůňata okouzlil_ návštěvníky.\n\nD) Babička, teta a sestřenice nám nabídl_ koláč."
+      }
+    },
+    {
+      "id": "cj-t7-l27b-U2",
+      "typ": "nova",
+      "cil": "Doplnit koncovku u podmětů, u kterých test mate: děti (ty děti → y), rodiče, lidé, koně (ti → i).",
+      "cas_min": 5,
+      "zadani": "Doplň i, y, nebo a.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Děti z kroužku naučil_ papouška pár slov. Rodiče jim slíbil_ výlet. Koně ve stáji se při bouřce vyděsil_. Lidé na náměstí poslouchal_ koncert. Děti z první třídy si zapamatoval_ básničku. Ráno zaspal_ rodiče.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 2,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 3,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 4,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 5,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "y",
+            "i",
+            "i",
+            "i",
+            "y",
+            "i"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "i",
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "shoda-deti-i"
+            },
+            {
+              "hodnota": [
+                null,
+                "y",
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "shoda-rodice-lide-y"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                "y",
+                null,
+                null
+              ],
+              "typ_chyby": "shoda-rodice-lide-y"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                null,
+                "i",
+                null
+              ],
+              "typ_chyby": "shoda-deti-i"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě doplňuje písmeno u slov, u kterých test ti, ty, ta mate. Děti: o jednom to dítě, ale ve více kusech ty děti → y. Rodiče, lidé, koně: vždy ti → i; v běžné řeči se sice říká ty rodiče, ve škole ale platí ti rodiče. Past: v poslední větě stojí rodiče až za slovesem.",
+        "reseni": "Děti naučily (ty děti → y)\n\nRodiče slíbili (ti rodiče → i)\n\nKoně se vyděsili (ti koně → i)\n\nLidé poslouchali (ti lidé → i)\n\nDěti si zapamatovaly (ty děti → y)\n\nzaspali rodiče (kdo zaspal? rodiče; ti rodiče → i)\n\n**Výsledek:** y, i, i, i, y, i",
+        "otazky": [
+          "„Řekni mi vlastními slovy, podle čeho doplníš písmeno na konec slovesa.“",
+          "„Řekni nahlas: ti děti, nebo ty děti? A ti lidé, nebo ty lidé? Jak to řekneš ve škole?“",
+          "„Řekni řadu: ten kluk – ti kluci, to dítě – … děti. Které slovo dáš před děti?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč se píše děti naučily, ale rodiče slíbili.“",
+        "otocena_role_odpoved": "Řeknu ty děti, takže y. Ale ti rodiče, takže i. Rodiče, lidé a koně mají vždy i.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U dětí dá i: „Ti děti, nebo ty děti?“ U rodičů nebo lidí dá y: „Ti rodiče, nebo ty rodiče? Jak to řekneš ve škole?“ U koní dá y: „Ti koně, nebo ty koně?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — děti, rodiče i lidé sedí. Pochvalte, že dítě zkoušelo ti, ty nahlas, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti čtyři slova: koně, děti, rodiče, lidé. U každého řekne ti, nebo ty a písmeno do „… byl_ na zahradě“. Kontrola pro vás: ti koně byli, ty děti byly, ti rodiče byli, ti lidé byli.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: dva lístky papíru, tužku a čtyři knoflíky. Zítra ať dítě napíše na lístky ti a ty. Řekněte mu: lidé, děti, koně, rodiče. Ke každému slovu položí knoflík na správný lístek a řekne „… byl_ venku“ se správným písmenem. Potom zopakujte lekci „Děti, lidé, rodiče, koně“. Kontrola pro vás: ty děti byly; ti lidé, ti koně, ti rodiče byli."
+      },
+      "tisk": {
+        "zadani": "Doplň i, y, nebo a.\n\nDěti z kroužku naučil_ papouška pár slov. Rodiče jim slíbil_ výlet. Koně ve stáji se při bouřce vyděsil_. Lidé na náměstí poslouchal_ koncert. Děti z první třídy si zapamatoval_ básničku. Ráno zaspal_ rodiče."
+      }
+    },
+    {
+      "id": "cj-t7-l27b-U3",
+      "typ": "nova",
+      "cil": "Zachytit v poslechu, kdo co dělá (rodiče × děti), a písmeno určit testem ty děti, ne sluchem.",
+      "cas_min": 5,
+      "zadani": "Poslechni si nahrávku. Pak odpověz na dvě otázky.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Kdo závodil v běhu?",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t7/l27b-u3.mp3",
+            "prepis": "Rodiče seděli na lavičkách u hřiště. Děti zatím závodily v běhu a ve skoku. Nakonec si všichni dali zmrzlinu.",
+            "max_prehrani": 0,
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "rodiče",
+                  "spravne": false
+                },
+                {
+                  "id": "b",
+                  "text": "děti",
+                  "spravne": true
+                },
+                {
+                  "id": "c",
+                  "text": "rodiče i děti",
+                  "spravne": false
+                },
+                {
+                  "id": "d",
+                  "text": "hřiště",
+                  "spravne": false
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Jaké písmeno patří do „závodil_“?",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t7/l27b-u3.mp3",
+            "prepis": "Rodiče seděli na lavičkách u hřiště. Děti zatím závodily v běhu a ve skoku. Nakonec si všichni dali zmrzlinu.",
+            "max_prehrani": 0,
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "i",
+                  "spravne": false,
+                  "typ_chyby": "shoda-deti-i"
+                },
+                {
+                  "id": "b",
+                  "text": "y",
+                  "spravne": true
+                },
+                {
+                  "id": "c",
+                  "text": "a",
+                  "spravne": false
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě text jen slyší; nahrávku si může pustit znovu. Co v ní zazní, máte sbalené pod „Co zazní v nahrávce“, nečtěte to nahlas. Vystupují v ní rodiče i děti. Dítě musí zachytit, kdo závodil, a písmeno určit testem: závodili a závodily zní stejně.",
+        "reseni": "Krok 1: děti (rodiče seděli na lavičkách, závodily děti)\n\nKrok 2: y (ty děti → závodily)\n\n**Výsledek:** krok 1 děti, krok 2 y",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co se v nahrávce stalo. Kdo tam všechno je?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Pusť si nahrávku znovu. Kdo seděl a kdo závodil? Řekni to zvlášť.“"
+          },
+          {
+            "k": "Krok 2",
+            "text": "„Řekni před slovo z kroku 1 ti, ty, nebo ta. Jak to zní ve škole?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč písmeno ve slově závodil_ nepoznáš sluchem.“",
+        "otocena_role_odpoved": "Závodili a závodily zní stejně. Musím vědět, kdo závodil: děti, ty děti, takže y.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 vybere rodiče, rodiče i děti nebo hřiště: „Kdo seděl a kdo závodil? Pusť si to znovu.“ V kroku 2 vybere i: „Ti děti, nebo ty děti?“ Vybere a: „Řekneš ta děti, nebo ty děti?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — dítě poslouchalo, kdo co dělá, a písmeno určilo testem. Pochvalte to a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Děti krmily kachny. Rodiče se opalovali na dece.“ Zeptejte se: „Kdo krmil kachny? Kdo se opaloval? Jaké písmeno je na konci obou sloves?“ Kontrola pro vás: děti krmily (ty děti → y), rodiče se opalovali (ti rodiče → i).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše dva sloupce: ti a ty. Řekněte mu slova lidé, děti, koně, sestry a dítě je zapíše do správného sloupce. Potom zopakujte lekci „Děti, lidé, rodiče, koně“. Kontrola pro vás: ti lidé, ti koně; ty děti, ty sestry (ve sloupci ty se píše y: děti krmily)."
+      },
+      "tisk": {
+        "zadani": "Poslouchej nahrávku (pustí ti ji rodič).\n\nA) Kdo závodil v běhu? Zakroužkuj: a) rodiče b) děti c) rodiče i děti d) hřiště\n\nB) Jaké písmeno patří do závodil_? Zakroužkuj: a) i b) y c) a"
+      }
+    },
+    {
+      "id": "cj-t7-l27b-U4",
+      "typ": "detektiv",
+      "cil": "Najít u spolužáka koncovku y u podmětu lidé a říct, co se před lidé řekne (past: natočily u dětí je správně).",
+      "cas_min": 5,
+      "zadani": "Petr doplnil koncovky sloves:\n\nDěti z naší školy natočily film. Lidé z města ho chválily celý týden.\n\nUdělal **jednu** chybu. Najdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na slovo, které Petr napsal špatně.",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Děti z naší školy natočily film. Lidé z města ho chválily celý týden.",
+            "cil": "slova",
+            "min": 1,
+            "max": 1
+          },
+          "spravne": [
+            10
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                0,
+                4,
+                6
+              ],
+              "typ_chyby": "detektiv-jine-slovo"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Co řekneš před podmět toho slova?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "ti",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "ty",
+                "spravne": false,
+                "typ_chyby": "shoda-rodice-lide-y"
+              },
+              {
+                "id": "c",
+                "text": "ta",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr má dvě slovesa, jedno špatně. Past: natočily je správně (ty děti → y); dítě, které u dětí čeká i, klikne na ně. Chyba je chválily: ti lidé → chválili. V kroku 2 dítě vybere, co řekne před podmět chybného slovesa.",
+        "reseni": "Chyba je chválily: správně chválili.\n\nnatočily (kdo natočil? děti; ty děti → y: Petr to má dobře)\n\nchválili (kdo chválil? lidé; ti lidé → i)\n\n**Výsledek:** krok 1 chválily, krok 2 ti",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, podle čeho se řídí koncovka slovesa.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každého slovesa najdi podmět a řekni před něj ti, nebo ty.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U obou sloves řekni podmět nahlas s ti, nebo ty. Jak to řekneš ve škole?“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Vysvětli mi, proč mám dobře natočily, ale špatně chválily.“",
+        "otocena_role_odpoved": "Natočily je dobře, protože ty děti, takže y. Chválily je špatně: ti lidé, takže i, chválili.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na natočily: „Ti děti, nebo ty děti?“ (Petr to má dobře.) Klikne na Děti nebo Lidé: „Které slovo Petr doplnil?“ V kroku 2 vybere ty: „Jak se řekne ve škole: ti lidé, nebo ty lidé?“ Vybere ta: „Řekneš ta lidé?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — dítě se nenechalo zmást dětmi ani lidmi. Pochvalte, že zkoušelo ti, ty nahlas, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr napsal: Rodiče na besídce plakaly dojetím.“ Zeptejte se: „Má Petr pravdu? Proč?“ Kontrola pro vás: nemá; ti rodiče → plakali.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše dvě věty o včerejšku v minulém čase: jednu o dětech ze sousedství a jednu o lidech z ulice. Ke každé připíše ti, nebo ty. Potom zopakujte lekci „Děti, lidé, rodiče, koně“. Kontrola pro vás: věta o dětech má y (děti malovaly), věta o lidech i (lidé sekali trávu)."
+      },
+      "tisk": {
+        "zadani": "Petr doplnil koncovky sloves:\n\nDěti z naší školy natočily film. Lidé z města ho chválily celý týden.\n\nUdělal jednu chybu.\n\nA) Podtrhni slovo, které Petr napsal špatně.\n\nB) Co řekneš před podmět toho slova? Zakroužkuj: a) ti b) ty c) ta"
+      }
+    },
+    {
+      "id": "cj-t7-l27b-U5",
+      "typ": "kontrolni",
+      "cil": "Samostatně doplnit osm koncovek z celých lekcí 25–27: děti, rodiče, lidé, koně, několikanásobný a schovaný podmět, střední rod.",
+      "cas_min": 6,
+      "zadani": "Doplň do textu i, y, nebo a.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "V úterý se vypravil_ děti ze šesté třídy na kolech k rybníku. Rodiče jim ráno zkontroloval_ brzdy. Holky a kluci cestou šetřil_ síly. Lidé na hrázi se nás zeptal_ na cestu. Na louce u rybníka zařehtal_ koně. U vody děti rozdělal_ oheň. Potom se cákal_ v mělké vodě. Polena v ohništi praskal_.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 2,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 3,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 4,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 5,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 6,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 7,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "y",
+            "i",
+            "i",
+            "i",
+            "i",
+            "y",
+            "y",
+            "a"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "i",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "shoda-deti-i"
+            },
+            {
+              "hodnota": [
+                null,
+                "y",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "shoda-rodice-lide-y"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                "y",
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "shoda-nekolikanasobny-y"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                "y"
+              ],
+              "typ_chyby": "shoda-y-za-a"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Pasti: děti za slovesem (vypravily se děti), rodiče a brzdy (brzdy podmět nejsou), holky a kluci (stačí jeden ti), koně, schovaný podmět (Potom se cákaly: děti) a polena (ta polena → a).",
+        "reseni": "vypravily (kdo se vypravil? děti; ty děti → y)\n\nzkontrolovali (ti rodiče → i; brzdy: zkontrolovali co?)\n\nšetřili (kluci jsou „ti“ → i)\n\nzeptali (ti lidé → i)\n\nzařehtali (ti koně → i)\n\nrozdělaly (ty děti → y)\n\ncákaly (kdo se cákal? děti z věty předtím → y)\n\npraskala (ta polena → a)\n\n**Výsledek:** y, i, i, i, i, y, y, a",
+        "otazky": [
+          "„Řekni mi vlastními slovy, jak doplníš písmeno na konec slovesa.“",
+          "„U každého slovesa najdi podmět a řekni před něj ti, ty, nebo ta. Jak to řekneš ve škole?“",
+          "„Kdo se cákal v mělké vodě? Najdi to ve větě předtím. Ti, nebo ty?“"
+        ],
+        "otocena_role": "„Vyber si dvě slovesa, u kterých se dá splést, a dokaž mi, proč tam patří tvoje písmeno.“",
+        "otocena_role_odpoved": "Třeba zkontrolovali: kdo zkontroloval? rodiče, ti rodiče, takže i, brzdy to nejsou. A vypravily: kdo se vypravil? děti, ty děti, takže y.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: vypravili nebo rozdělali u dětí: „Ti děti, nebo ty děti?“ zkontrolovaly: „Kdo zkontroloval? Ti, nebo ty rodiče?“ šetřily: „Je mezi nimi ti?“ praskaly: „Ta polena, nebo ty polena?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — celé téma drží. Pochvalte, že dítě u každého slovesa hledalo podmět. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Na zahradě skotačil_ děti. Rodiče je pozoroval_ z okna.“ U obou sloves řekne podmět a písmeno. Kontrola pro vás: děti skotačily (ty děti → y); rodiče pozorovali (ti rodiče → i; je podmět není).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše pod sebe: koně, děti, lidé, polena, Ema a Adam. Ke každému připíše ti, ty, nebo ta a větu „… byl_ venku“ se správným písmenem. Potom zopakujte lekci „Děti, lidé, rodiče, koně“. Kontrola pro vás: koně byli, děti byly, lidé byli, polena byla, Ema a Adam byli."
+      },
+      "tisk": {
+        "zadani": "Doplň i, y, nebo a.\n\nV úterý se vypravil_ děti ze šesté třídy na kolech k rybníku. Rodiče jim ráno zkontroloval_ brzdy. Holky a kluci cestou šetřil_ síly. Lidé na hrázi se nás zeptal_ na cestu. Na louce u rybníka zařehtal_ koně. U vody děti rozdělal_ oheň. Potom se cákal_ v mělké vodě. Polena v ohništi praskal_."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "B-varianta lekce cj-t7-l27 (opakování po červené, ZADANI-OSMA §9 bod 4), autor 14. 10. 2026. Struktura 1:1 s hlavní lekcí ověřena skriptem (typy úloh, vstup.typ v každém kroku, počty kroků, dlaždic, mezer a možností v mezerách, pozice správné dlaždice a kódy na stejných volbách, kódy a pozice známých chyb, poslech max_prehrani 0); indexy přepočítány přes tokenizuj; vzorová odpověď každého kroku vyšla správně a každá chybná dlaždice i známá chyba vrací svůj kód (vyhodnotKrok). Hodnocená slova a věty nejsou z cj-t7-l25 … l28, cj-t7-l25n … l28n, cj-t0-diag ani cj-t0-pol (kontrolováno skriptem, i kmeny sloves); opakují se jen jména (uzavřená skupina), vždy v nové větě. Žádný sporný jev OSNOVA §16 v hodnoceném místě (přísudek před několikanásobným podmětem, podmět s předložkou s, my/vy, oslovení). Každé slovo s mezerou složeno se vzorovou odpovědí a zkontrolováno. Ověřeno přes nastroje/ujc.sh (výklady id=600 (děti → y; rodiče, koně, lidé → i), 601, 602 a hesla v zdroj: příčestí činné sloves, rod a 1. p. mn. podmětů). Vyřazeno: objet (pololetní test hodnotí objela, jev T10) → vypravily. Text nahrávky (hřiště, rodič, lavička, závodit, běh, skok, zmrzlina) ověřen. „Platí“ převzato z hlavní lekce, žádný jeho tvar lekce nehodnotí. Slovní limity SABLONA §4 dodrženy, otázky taháku bez rodu a bez prozrazení odpovědi i chybného slova detektiva. Nahrávka t7/l27b-u3.mp3 zatím nemá řádek v AUDIO.md (řádek v TEMA-7-B.md, oddíl Nahrávky). Korektura 14. 10. 2026 (korektor, nezávisle): každé slovo s mezerou složeno se vzorovou odpovědí a znovu ověřeno v ÚJČ, indexy přepočítány, vyhodnocení (vzorová odpověď, každá dlaždice a známá chyba) ověřeno skriptem, slovní limity a otázky taháku (bez rodu, bez prozrazení) zkontrolovány. Jazyková chyba 1 (vazba, ne hodnocený tvar): U2 Koně … se vyděsil_ bouřky (2. pád; SSČ má vyděsit se čím: „nevyděste se tou zprávou“) → Koně ve stáji se při bouřce vyděsil_. Stylisticky: přepis nahrávky U3 „Na hřišti seděli rodiče na lavičkách.“ (dvě místa za sebou) → „Rodiče seděli na lavičkách u hřiště.“ (sedět, lavička, hřiště ověřeno; rozpis TEMA-7-B.md upraven, nahrávka ještě není natočená).",
+    "zkontroloval": "korektor",
+    "datum": "2026-10-14",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?id=600",
+      "https://prirucka.ujc.cas.cz/?id=601",
+      "https://prirucka.ujc.cas.cz/?id=602",
+      "https://prirucka.ujc.cas.cz/?slovo=d%C3%ADt%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=rodi%C4%8D",
+      "https://prirucka.ujc.cas.cz/?slovo=%C4%8Dlov%C4%9Bk",
+      "https://prirucka.ujc.cas.cz/?slovo=k%C5%AF%C5%88",
+      "https://prirucka.ujc.cas.cz/?slovo=sousedka",
+      "https://prirucka.ujc.cas.cz/?slovo=syn",
+      "https://prirucka.ujc.cas.cz/?slovo=batoh",
+      "https://prirucka.ujc.cas.cz/?slovo=pouzdro",
+      "https://prirucka.ujc.cas.cz/?slovo=lv%C3%AD%C4%8De",
+      "https://prirucka.ujc.cas.cz/?slovo=sl%C5%AFn%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=babi%C4%8Dka",
+      "https://prirucka.ujc.cas.cz/?slovo=teta",
+      "https://prirucka.ujc.cas.cz/?slovo=sest%C5%99enice",
+      "https://prirucka.ujc.cas.cz/?slovo=kluk",
+      "https://prirucka.ujc.cas.cz/?slovo=holka",
+      "https://prirucka.ujc.cas.cz/?slovo=poleno",
+      "https://prirucka.ujc.cas.cz/?slovo=zaklepat",
+      "https://prirucka.ujc.cas.cz/?slovo=namo%C4%8Dit",
+      "https://prirucka.ujc.cas.cz/?slovo=okouzlit",
+      "https://prirucka.ujc.cas.cz/?slovo=nab%C3%ADdnout",
+      "https://prirucka.ujc.cas.cz/?slovo=nau%C4%8Dit",
+      "https://prirucka.ujc.cas.cz/?slovo=sl%C3%ADbit",
+      "https://prirucka.ujc.cas.cz/?slovo=vyd%C4%9Bsit",
+      "https://prirucka.ujc.cas.cz/?slovo=poslouchat",
+      "https://prirucka.ujc.cas.cz/?slovo=zapamatovat",
+      "https://prirucka.ujc.cas.cz/?slovo=zaspat",
+      "https://prirucka.ujc.cas.cz/?slovo=z%C3%A1vodit",
+      "https://prirucka.ujc.cas.cz/?slovo=nato%C4%8Dit",
+      "https://prirucka.ujc.cas.cz/?slovo=chv%C3%A1lit",
+      "https://prirucka.ujc.cas.cz/?slovo=vypravit",
+      "https://prirucka.ujc.cas.cz/?slovo=zkontrolovat",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1et%C5%99it",
+      "https://prirucka.ujc.cas.cz/?slovo=zeptat",
+      "https://prirucka.ujc.cas.cz/?slovo=za%C5%99ehtat",
+      "https://prirucka.ujc.cas.cz/?slovo=rozd%C4%9Blat",
+      "https://prirucka.ujc.cas.cz/?slovo=c%C3%A1kat",
+      "https://prirucka.ujc.cas.cz/?slovo=praskat",
+      "https://prirucka.ujc.cas.cz/?slovo=sed%C4%9Bt",
+      "https://prirucka.ujc.cas.cz/?slovo=lavi%C4%8Dka",
+      "https://prirucka.ujc.cas.cz/?slovo=h%C5%99i%C5%A1t%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=bou%C5%99ka"
+    ],
+    "testovaci_rodic": null
+  }
+}
