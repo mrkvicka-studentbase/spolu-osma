@@ -122,3 +122,180 @@ Ověřeno 14. 10. 2026 přes `nastroje/ujc.sh`: hesla a výklady už uložené v
 - **Nahrávky** `t4/l14b-u3`, `t4/l15b-u3`, `t4/l16b-d1` až `d3` zatím nejsou; v 15b je záměrně hovorové *čtyřma* (při kontrole nahrávky ohlídat, že nezazní *čtyřmi*).
 - **Validátor:** u L14b, L15b a L16b jen „nahrávka nemá řádek v AUDIO.md“ (7×) a varování, že soubor zatím není; L13b bez chyb a varování.
 - **Korektura 14. 10. 2026 (korektor):** jazykové chyby 0; všechna hodnocená slova, nahrávky a diktát znovu ověřeny v příručce ÚJČ (odpovědi z cache: id=650, 670, 671, `jenž_1`, `jež_1`, `on`, `ona`, `ten`, `tvůj_1`, `můj_2`, hesla zájmen, číslovek a jmen v tabulce výše; *třemy, čtyřmy* jen jako chybné nabídky). Vzorové odpovědi a kódy známých chyb ověřeny přes `vyhodnotKrok`.
+
+---
+
+## B-varianty naostro lekcí (l13nb–l16nb)
+
+Autor: metodik a autor úloh ČJ Spolu 8, 14. 10. 2026. Ke každé naostro lekci tématu 4 je B-varianta, kterou aplikace nabídne po **červené**. Je to stejná lekce se stejnou obtížností jako naostro (víc položek, slova v jiných tvarech, schované chyby), jen s jinými větami a slovy. JSON: `obsah/cestina/lekce/cj-t4-l13nb.json` až `cj-t4-l16nb.json`. Podkladem jsou `cj-t4-l13n` až `cj-t4-l16n` po korektuře (rozpis `TEMA-4-NAOSTRO.md`). Tabulky níže jsou vygenerované z JSON (indexy, správné odpovědi a kódy souhlasí). Texty taháku, semaforu a tisku jsou jen v JSON.
+
+**Společné:** hlavička (`tema`, `kapitola` `zajmena-cislovky`, `tyden` 4, `poradi` 1–4, `cas_min` 25, `faze` `osma`) je stejná jako u naostro lekce. `uvod_pro_rodice` jednou větou říká, že jde o opakování po červené. Úlohy odpovídají naostro lekci 1:1:
+- stejné typy úloh, `vstup.typ`, počty kroků, dlaždic, mezer, slov a rolí;
+- správná dlaždice na stejném místě a stejné kódy na stejných volbách;
+- v doplňovačkách stejné nabídky a **stejný vzor odpovědí**;
+- stejné kódy a stejný počet známých chyb;
+- poslech ve stejné úloze (L14nb a L15nb U3, 3 otázky, `max_prehrani` 0);
+- L16nb U5 je týdenní, má diktát 4 věty / 24 slov / 5 hlídaných slov a stejné `semafor_tydne`.
+
+Hodnocená slova a věty nejsou z `cj-t4-l13` … `l16`, `l13n` … `l16n` ani `l13b` … `l16b` (kontroloval to skript `/tmp/b-cj4nb/kontrola.mjs`). Opakují se jen uzavřené skupiny, vždy v nové větě: zájmena, *jenž/jež, který, což*, tvary *dva, oba, tři, čtyři*, *mi, mně, mě, mnou* a jména *Ema, Klára* v testu *ji/jí* (jiná dívčí jména nemají heslo v příručce).
+
+**„Platí“ podle rozhodnutí vedoucího:** neobsahuje tvar, který hodnotí krok lekce.
+- L14nb a L16nb: testy `m_` / `j_`. Jméno v testu je jiné než jméno v hodnocených dlaždicích: L14nb má v „Platí“ *Kláru/Kláře* a poslech hodnotí *Emu/Emě*, L16nb má v „Platí“ *Emu/Emě* a detektiv hodnotí *Kláru/Kláře*.
+- L13nb: obecný příklad *ten stan, jenž… · ta lampa, jež…* (*stan, lampa* v lekci nejsou).
+- L15nb: beze změny proti naostro lekci (bez tvarů).
+
+**Slovníček:** převzatý z naostro lekce. Upravené jsou jen příklady, které byly odpovědí B-varianty:
+- L15nb: *osm, osmý, osmkrát* → *pět, pátý, pětkrát*;
+- L16nb: *ten, který, žádný, u něho, Kláru/Kláře* → *tento, onen, jenž, což, nikdo, nic, od něho, Emu/Emě*.
+
+**„Dnes samo“:** otázky taháku neříkají odpověď žádného kroku. Ve všech čtyřech detektivech je otázka „Celá úloha“ obecná („Co máš u Petra najít a opravit? Řekni to vlastními slovy.“) a nejmenuje jev.
+
+**Jména:** Tomáš, Lucka, Klára, Adam, Ema; Petr jen jako detektiv; Honzík nikde. Lucka nikde není v hodnoceném tvaru.
+
+**Pravopis:** každá mezera byla složena se vzorovou odpovědí a celý text přečten kvůli pravopisu (přehled níže v tabulkách, sloupec „Správně“).
+
+### LEKCE 13nb — Druhy zájmen a vztažné jenž, B-varianta naostro (`cj-t4-l13nb`)
+
+B-varianta `cj-t4-l13n`. `tema` „Druhy zájmen a vztažné jenž“ · `kapitola` `zajmena-cislovky` · `tyden` 4, `poradi` 1 · `cas_min` 25.
+
+**Platí:** `Co slovo dělá? → druh zájmena` (test) · `ptá se: tázací · vede větu: vztažné` (test) · `ten stan, jenž… · ta lampa, jež…` (příklad)
+
+| # | Typ | Co hodnotí | Vstup | Správně | Známé chyby | Jiné než naostro lekce |
+|---|---|---|---|---|---|---|
+| 1 | rozcvička (4) | Ledoborec ze společného základu: v delších dvojicích vět říct, za koho nebo za co stojí krátké slovo (zájmeno), i když nabídka má čtyři možnosti a víc jmen stejného rodu. | `k1` `dlazdice` „Řada A“: Ema · Lucka a Ema · Klára · plavání<br>`k2` `dlazdice` „Řada B“: Adam · Tomáš · deštník · lavice<br>`k3` `dlazdice` „Řada C“: Klára · Tomáš · dopis · Tomáš a Klára<br>`final` `dlazdice` „Řada D“: Tomáš · křeček · narozeniny · Tomáš a křeček | `k1` Lucka a Ema<br>`k2` deštník<br>`k3` Klára<br>`final` křeček | `k1` Ema → obecná; Klára → obecná; plavání → obecná<br>`k2` Adam → obecná; Tomáš → obecná; lavice → obecná<br>`k3` Tomáš → obecná; dopis → obecná; Tomáš a Klára → obecná<br>`final` Tomáš → obecná; narozeniny → obecná; Tomáš a křeček → obecná | nimi, ho, jí, něm; odpovědi Lucka a Ema, deštník, Klára, křeček místo jim, ji, mu, ní (Adam a Tomáš, mikina, Tomáš, kamarádka) |
+| 2 | nová (5) | Určit druh osmi zájmen v pěti krátkých větách podle toho, co slovo dělá, i v jiném tvaru (nám, nikým, těm) a u její, které říká čí. | `final` `oznac_role` (7 role), „Koho vezmeme na turnaj ve florbale? Ty bys pozval kluky z vedlejší třídy, kteří hrají za školu. Trenér nám ale říkal, že s nikým cizím nehrají. Napíšu tedy Kláře a těm holkám z její třídy. Snad nějaká přijde.“ `slova`: Koho(0), Ty(6), kteří(13), nám(18), nikým(23), těm(30), její(33), nějaká(36) | `final` Koho tázací, Ty osobní, kteří vztažné, nám osobní, nikým záporné, těm ukazovací, její přivlastňovací, nějaká neurčité | `final` nikým → neurčité → `zajmeno-druh-zamena`; kteří → tázací → `zajmeno-druh-zamena`; její → osobní → `zajmeno-druh-zamena`; těm → osobní → `zajmeno-druh-zamena`; ostatní → obecná | jiné věty (florbal); Koho, Ty, kteří, nám, nikým, těm, její, nějaká místo Jaký, Já, tu, která, Nikdo, ji, někoho, jeho |
+| 3 | nová (5) | Rozlišit který tázací a vztažné i ve větě s otazníkem a vybrat jenž, nebo jež podle rodu jména, i když je jméno v jiném pádě nebo je rodu středního. | `k1` `dlazdice` „Věta A“: tázací · vztažné<br>`k2` `dlazdice` „Věta B“: tázací · vztažné<br>`k3` `dlazdice` „Věta C“: jenž · jež<br>`k4` `dlazdice` „Věta D“: jenž · jež<br>`k5` `dlazdice` „Věta E“: jenž · jež<br>`final` `dlazdice` „Věta F“: jenž · jež | `k1` tázací<br>`k2` vztažné<br>`k3` jenž<br>`k4` jež<br>`k5` jež<br>`final` jenž | `k1` vztažné → `zajmeno-druh-zamena`<br>`k2` tázací → `zajmeno-druh-zamena`<br>`k3` jež → `jenz-rod-zamena`<br>`k4` jenž → `jenz-rod-zamena`<br>`k5` jenž → `jenz-rod-zamena`<br>`final` jež → `jenz-rod-zamena` | jiné věty (vlak, kniha, plakát, mapa, zrcadlo, dědeček) místo cesta, film, míč, zpráva, kolo, trenér |
+| 4 | detektiv (5) | Najít u spolužáka jenž u jména rodu středního, které končí jako jména rodu mužského (akvárium, jenž), a vybrat jež. | `k1` `klik_ve_textu` max 1, tokeny: Na(0) školním(1) výletě(2) jsme(3) viděli(4) akvárium(5) jenž(6) má(7) uvnitř(8) tunel(9) ze(10) skla(11)<br>`final` `dlazdice` „Co tam má být správně?“: který · jenž · jež · což | `k1` jenž(6)<br>`final` jež | `k1` navíc akvárium, má, tunel → `detektiv-jine-slovo`; ostatní → obecná<br>`final` který → `detektiv-oprava-jine-chyby`; jenž → `jenz-rod-zamena`; což → `detektiv-oprava-jine-chyby` | jiná věta (akvárium, jenž) místo muzeum, jenž; nabídka což místo kdo |
+| 5 | kontrolní (6) | Samostatně určit druh devíti zájmen v pěti větách (každý druh aspoň jednou), i dvou vztažných (jenž, kterému) a zájmen v jiném tvaru (tom, nějakého, tvého). | `final` `oznac_role` (7 role), „V tom batohu, jenž leží na tribuně, je asi svačina nějakého hráče z tvého týmu. Jaké jméno je na batohu? Žádné. Ema tvrdí, že vy jste ho tam zapomněli. Trenér, kterému batoh ukážeme, to určitě pozná.“ `slova`: tom(1), jenž(3), nějakého(10), tvého(13), Jaké(15), Žádné(20), vy(24), ho(26), kterému(30) | `final` tom ukazovací, jenž vztažné, nějakého neurčité, tvého přivlastňovací, Jaké tázací, Žádné záporné, vy osobní, ho osobní, kterému vztažné | `final` jenž → tázací → `zajmeno-druh-zamena`; Žádné → neurčité → `zajmeno-druh-zamena`; nějakého → záporné → `zajmeno-druh-zamena`; tom → osobní → `zajmeno-druh-zamena`; ostatní → obecná | jiné věty (batoh na tribuně); tom, jenž, nějakého, tvého, Jaké, Žádné, vy, ho, kterému místo Ten, jenž, někomu, našeho, Kdo, ho, Nikdo, on, který |
+
+### LEKCE 14nb — Tvary zájmen: mě/mně, ji/jí, něho, B-varianta naostro (`cj-t4-l14nb`) · poslech U3
+
+B-varianta `cj-t4-l14n`. `tema` „Tvary zájmen: mě/mně, ji/jí, něho“ · `kapitola` `zajmena-cislovky` · `tyden` 4, `poradi` 2 · `cas_min` 25.
+
+**Platí:** `m_: řekni tě, nebo tobě` (test) · `j_: řekni Kláru, nebo Kláře` (test) · `po předložce: s ním, k ní` (příklad)
+
+| # | Typ | Co hodnotí | Vstup | Správně | Známé chyby | Jiné než naostro lekce |
+|---|---|---|---|---|---|---|
+| 1 | rozcvička (4) | Zopakovat z lekce 13 druh zájmena i v jiném tvaru (které, kým) se čtyřmi nabídkami a jež u jména rodu ženského. | `k1` `dlazdice` „Řada A“: neurčité · záporné · ukazovací · tázací<br>`k2` `dlazdice` „Řada B“: tázací · vztažné · osobní · ukazovací<br>`k3` `dlazdice` „Řada C“: tázací · vztažné · ukazovací · neurčité<br>`final` `dlazdice` „Řada D“: jenž · jež | `k1` záporné<br>`k2` vztažné<br>`k3` tázací<br>`final` jež | `k1` neurčité → `zajmeno-druh-zamena`; ukazovací → `zajmeno-druh-zamena`; tázací → `zajmeno-druh-zamena`<br>`k2` tázací → `zajmeno-druh-zamena`; osobní → `zajmeno-druh-zamena`; ukazovací → `zajmeno-druh-zamena`<br>`k3` vztažné → `zajmeno-druh-zamena`; ukazovací → `zajmeno-druh-zamena`; neurčité → `zajmeno-druh-zamena`<br>`final` jenž → `jenz-rod-zamena` | žádnou, které, kým, sklenice místo Žádný, kterého, Jaký, taška |
+| 2 | nová (5) | Doplnit osm mezer mě, nebo mně podle testu tě/tobě, i po předložkách (kromě, u, proti, o) a u sloves, kde test není hned slyšet (závidět, zajímat). | `final` `doplnit_pismeno` 8 × ě/ně: Klára m_ pověděla, co si vzít na výlet. Kromě m_ přišli na trénink všichni. U m_ doma je dnes klid. Kamarádi m_ ten výlet záviděli. Matematika m_ letos moc zajímá. Proti m_ hrál nejlepší hráč turnaje. Bratr m_ ráno polil studenou vodou. Ve třídě o m_ každý ví, že rád kreslím. | `final` ně, ě, ě, ně, ě, ně, ě, ně | `final` mezera 0 ě → `me-mne-zamena`; mezera 1 ně → `me-mne-zamena`; mezera 3 ě → `me-mne-zamena`; mezera 4 ně → `me-mne-zamena`; ostatní → obecná | jiných 8 vět (pověděla, kromě, u, záviděli, zajímá, proti, polil, o) |
+| 3 | nová (5) | Slyšet v delší nahrávce délku tří krátkých slov jí, ji, jí a dvě z nich ověřit dosazením jména (Emu, Emě). | `k1` `poslech` `audio/cestina/t4/l14nb-u3.mp3`, otázka „Emu v nahrávce třikrát zastoupí krátké slovo. Jak zní za sebou?“, dlaždice: jí, ji, jí · ji, jí, ji · ji, ji, ji · jí, jí, ji<br>`k2` `poslech` `audio/cestina/t4/l14nb-u3.mp3`, otázka „Které jméno se dá dát místo druhého z těch slov?“, dlaždice: Emě · Emu · Emou<br>`final` `poslech` `audio/cestina/t4/l14nb-u3.mp3`, otázka „Které jméno se dá dát místo třetího z těch slov?“, dlaždice: Emu · Emou · Emě · Emy | `k1` jí, ji, jí<br>`k2` Emu<br>`final` Emě | `k1` ji, jí, ji → `zajmeno-ji-delka`; ji, ji, ji → obecná; jí, jí, ji → obecná<br>`k2` Emě → `zajmeno-ji-delka`; Emou → obecná<br>`final` Emu → `zajmeno-ji-delka`; Emou → obecná; Emy → obecná | jiná nahrávka (Tomáš, Ema, bazén); test Emu/Emě místo Kláru/Kláře |
+| 4 | detektiv (5) | Najít u spolužáka mně ve 4. pádě (doprovodí mně) ve větě, kde je předtím správné o mně, a opravit ho testem tě/tobě. | `k1` `klik_ve_textu` max 1, tokeny: Klára(0) mi(1) řekla(2) že(3) o(4) mně(5) mluvila(6) s(7) trenérem(8) a(9) že(10) mně(11) po(12) tréninku(13) doprovodí(14) na(15) autobus(16)<br>`final` `dlazdice` „Jak to slovo napíšeš správně?“: mnou · mně · mě · mi | `k1` mně(11)<br>`final` mě | `k1` navíc mně, mi → `detektiv-jine-slovo`; ostatní → obecná<br>`final` mnou → `detektiv-oprava-jine-chyby`; mně → `me-mne-zamena`; mi → `detektiv-oprava-jine-chyby` | jiná věta (o mně … doprovodí mně) místo ke mně … vezme mně |
+| 5 | kontrolní (6) | Samostatně doplnit jedenáct tvarů zájmen v delším textu: mě/mně, ji/jí, po předložce něho, němu a jeho tam, kde říká čí. | `final` `doplnit_pismeno` 11 × ě/ně: Klára m_ v sobotu přivezla z tábora náramek. Adam j_ na nádraží hned objal. Ema j_ dala kytičku. Večer slavil Tomáš narozeniny, tak jsme pro _ upekli dort. Na zahradě visela _ nová houpací síť. Tomáš m_ v ní nabídl místo. Díky _ jsme měli krásný večer. V pondělí j_ učitelka poslala k tabuli, ať vypráví o táboře. Potom j_ přinesla diplom za výtvarnou soutěž. Klára chce, aby m_ rodiče příští léto vzali na tábor s ní. Prý m_ tam čeká spousta legrace. | `final` ně, i, í, něho, jeho, ně, němu, i, í, ě, ě | `final` mezera 0 ě → `me-mne-zamena`; mezera 1 í → `zajmeno-ji-delka`; mezera 3 jeho → `zajmeno-jeho-po-predlozce`; mezera 9 ně → `me-mne-zamena`; ostatní → obecná | jiný text (tábor, narozeniny, houpací síť); pro něho, díky němu místo u něho, kvůli němu |
+
+Přepis nahrávky (jen pro rodiče, sbalený): **„Tomáš zahlédl u bazénu Emu. Zamával jí, vyfotil ji na skokanském můstku a fotku jí hned odeslal.“**
+
+### LEKCE 15nb — Číslovky: druhy a tvary dva, oba, tři, čtyři, B-varianta naostro (`cj-t4-l15nb`) · poslech U3
+
+B-varianta `cj-t4-l15n`. `tema` „Číslovky: druhy a tvary dva, oba, tři, čtyři“ · `kapitola` `zajmena-cislovky` · `tyden` 4, `poradi` 3 · `cas_min` 25.
+
+**Platí:** `kolik? kolikátý? kolikery? -krát?` (test) · `pádová otázka určí tvar čísla` (pravidlo) · `píše se jako v knize, ne jak mluvíme` (pravidlo)
+
+| # | Typ | Co hodnotí | Vstup | Správně | Známé chyby | Jiné než naostro lekce |
+|---|---|---|---|---|---|---|
+| 1 | rozcvička (4) | Zopakovat z lekce 14 mě/mně, ji/jí a tvary on po předložce: v každé řadě dvě mezery. | `k1` `doplnit_pismeno` 2 × ě/ně: Napiš m_, jestli na m_ počkáš.<br>`k2` `doplnit_pismeno` 2 × i/í: Klára zmokla, tak j_ táta půjčil bundu a odvezl j_ autem domů.<br>`k3` `doplnit_pismeno` 2 × němu/jemu: Tomáš si přinesl kytaru. Všichni se k _ posadili a poslouchali _ písničky.<br>`final` `doplnit_pismeno` 2 × ě/ně: Klára m_ nabídla bonbon a já j_ sušenku. | `k1` ně, ě<br>`k2` í, i<br>`k3` němu, jeho<br>`final` ně, í | `k1` mezera 0 ě → `me-mne-zamena`; mezera 1 ně → `me-mne-zamena`; ostatní → obecná<br>`k2` mezera 0 i → `zajmeno-ji-delka`; mezera 1 í → `zajmeno-ji-delka`; ostatní → obecná<br>`k3` mezera 0 jemu → `zajmeno-jeho-po-predlozce`; ostatní → obecná<br>`final` mezera 0 ě → `me-mne-zamena`; mezera 1 i → `zajmeno-ji-delka`; ostatní → obecná | jiné 4 řady (napiš, zmokla, kytara, nabídla); test Kláru/Kláře |
+| 2 | nová (5) | Určit druh sedmi číslovek v textu otázkou (kolik? kolikátý? kolikery? kolikrát?), i u tvarů sedmá, druhém a šestery. | `final` `oznac_role` (4 role), „Na lyžařský kurz odjelo dvacet dětí. Ema za týden spadla desetkrát, ale v závodě dojela sedmá. Tomáš si vzal šestery rukavice, ale už ve druhém kole závodu byly všechny mokré. Na horách jsme byli osm dní a každý den jsme vlekem jeli devětkrát.“ `slova`: dvacet(4), desetkrát(10), sedmá(15), šestery(19), druhém(24), osm(34), devětkrát(42) | `final` dvacet základní, desetkrát násobná, sedmá řadová, šestery druhová, druhém řadová, osm základní, devětkrát násobná | `final` šestery → základní → `cislovka-druh-zamena`; druhém → základní → `cislovka-druh-zamena`; sedmá → základní → `cislovka-druh-zamena`; devětkrát → základní → `cislovka-druh-zamena`; ostatní → obecná | jiný text (lyžařský kurz); dvacet, desetkrát, sedmá, šestery, druhém, osm, devětkrát místo dvanáct, šestkrát, čtvrté, troje, první, tři, dvacetkrát |
+| 3 | nová (5) | Poznat v delší nahrávce dva tvary z běžné mluvy (třema, obouma) vedle správného dvěma a vybrat spisovné tvary třemi a oběma podle pádové otázky. | `k1` `poslech` `audio/cestina/t4/l15nb-u3.mp3`, otázka „Jedno ze slov v nabídce má v písemce jiný tvar, než jaký zazněl. Které?“, dlaždice: dvěma · třema · spolužáky · děvčaty<br>`k2` `poslech` `audio/cestina/t4/l15nb-u3.mp3`, otázka „Jak se to slovo napíše správně?“, dlaždice: třemi · třema · tří · třem<br>`final` `poslech` `audio/cestina/t4/l15nb-u3.mp3`, otázka „V nahrávce je ještě jedno slovo, které se v písemce napíše jinak. Jak správně?“, dlaždice: oběma · obouma · obou · oběmi | `k1` třema<br>`k2` třemi<br>`final` oběma | `k1` dvěma → obecná; spolužáky → obecná; děvčaty → obecná<br>`k2` třema → `cislovka-hovorovy-tvar`; tří → `cislovka-pad-zamena`; třem → `cislovka-pad-zamena`<br>`final` obouma → `cislovka-hovorovy-tvar`; obou → `cislovka-pad-zamena`; oběmi → obecná | jiná nahrávka, hovorové třema a obouma místo čtyřma a dvouma |
+| 4 | detektiv (5) | Najít u spolužáka tvar čísla pro jinou pádovou otázku (z oběma kol) ve větě se dvěma správnými tvary (dvěma, čtyřem) a vybrat obou. | `k1` `klik_ve_textu` max 1, tokeny: Ve(0) školní(1) soutěži(2) jsme(3) zahráli(4) dvěma(5) porotcům(6) a(7) čtyřem(8) učitelům(9) a(10) nakonec(11) jsme(12) si(13) odnesli(14) diplomy(15) z(16) oběma(17) kol(18)<br>`final` `dlazdice` „Jak to slovo napíšeš správně?“: obouma · obou · oběmi · oba | `k1` oběma(17)<br>`final` obou | `k1` navíc dvěma, čtyřem → `detektiv-jine-slovo`; ostatní → obecná<br>`final` obouma → `cislovka-hovorovy-tvar`; oběmi → `detektiv-oprava-jine-chyby`; oba → `detektiv-oprava-jine-chyby` | jiná věta, z oběma kol (oprava obou) místo bez dvěma hráčů |
+| 5 | kontrolní (6) | Samostatně doplnit deset tvarů čísel dva, oba, tři, čtyři podle pádové otázky (s kým? komu? kolem čeho? o kom? v čem?); věty bez částí těla. | `final` `doplnit_pismeno` 10 × třemi/třema/třem: Do zoo jsme vyrazili se _ třídami z naší školy. U pokladny jsme lístky ukázali _ prodavačkám. Nejdřív jsme prošli kolem _ výběhů se zebrami. Pak jsme viděli slonici se _ mláďaty. O _ mláďatech nám ošetřovatel vyprávěl, že se narodila v zimě. Potom jsme šli ke _ klecím s papoušky. Ve _ z nich byli úplně modří papoušci. Ošetřovatel dovolil _ dětem nakrmit kozy. Zpátky jsme jeli vlakem se _ přestupy. Na nádraží jsem se rozloučil s _ vedoucími. | `final` třemi, oběma, dvou, dvěma, obou, čtyřem, dvou, třem, čtyřmi, oběma | `final` mezera 0 třema → `cislovka-hovorovy-tvar`; mezera 2 dvěma → `cislovka-pad-zamena`; mezera 7 třemi → `cislovka-pad-zamena`; mezera 8 čtyřma → `cislovka-hovorovy-tvar`; ostatní → obecná | jiný text (zoo), stejné nabídky a stejný vzor odpovědí |
+
+Přepis nahrávky (jen pro rodiče, sbalený): **„V pátek jsme se dvěma spolužáky a se třema děvčaty stavěli sněhuláky před obouma vchody do tělocvičny.“**
+
+### LEKCE 16nb — Kontrola tématu: zájmena a číslovky, B-varianta naostro (`cj-t4-l16nb`) · diktát U5
+
+B-varianta `cj-t4-l16n`. `tema` „Kontrola tématu: zájmena a číslovky“ · `kapitola` `zajmena-cislovky` · `tyden` 4, `poradi` 4 · `cas_min` 25.
+
+**Platí:** `m_: tě, nebo tobě?` (test) · `j_: Emu, nebo Emě?` (test) · `čísla: s kým? komu? bez koho?` (test)
+
+| # | Typ | Co hodnotí | Vstup | Správně | Známé chyby | Jiné než naostro lekce |
+|---|---|---|---|---|---|---|
+| 1 | rozcvička (4) | Zopakovat po jedné věci z lekcí 13–15 se čtyřmi nabídkami: druh zájmena v jiném tvaru (žádnému), druh číslovky (osmkrát), ji/jí a tvar čtyřem (komu?). | `k1` `dlazdice` „Řada A“: neurčité · záporné · osobní · tázací<br>`k2` `dlazdice` „Řada B“: základní · řadová · druhová · násobná<br>`k3` `dlazdice` „Řada C“: ji · jí<br>`final` `dlazdice` „Řada D“: čtyřmi · čtyřem · čtyřma | `k1` záporné<br>`k2` násobná<br>`k3` ji<br>`final` čtyřem | `k1` neurčité → `zajmeno-druh-zamena`; osobní → `zajmeno-druh-zamena`; tázací → `zajmeno-druh-zamena`<br>`k2` základní → `cislovka-druh-zamena`; řadová → `cislovka-druh-zamena`; druhová → `cislovka-druh-zamena`<br>`k3` jí → `zajmeno-ji-delka`<br>`final` čtyřmi → `cislovka-pad-zamena`; čtyřma → `cislovka-hovorovy-tvar` | žádnému, osmkrát, hlava ji bolí, zamávala čtyřem místo nikoho, čtyřikrát, něco ji trápí, poslal čtyřem |
+| 2 | nová (5) | Určit druh čtyř číslovek a sedmi zájmen v textu (každý druh jednou), i v jiném tvaru (třemi, desátá) a u její, které říká čí; nabídka po skupinách: krok 1 číslovky, krok 2 zájmena. | `k1` `oznac_role` (4 role), „Na běžky jsme jeli třemi auty. Ema doběhla desátá a její bratr Adam cestou dvanáctkrát upadl. Co se mu stalo? Žádný lékař tam nebyl, ale nějaký divák pomohl. Na tom svahu, který vedl lesem, bylo náledí. Adam měl v autě oboje lyže, běžecké i sjezdové.“ `slova`: třemi(4), desátá(8), dvanáctkrát(14), oboje(40)<br>`final` `oznac_role` (7 role), „Na běžky jsme jeli třemi auty. Ema doběhla desátá a její bratr Adam cestou dvanáctkrát upadl. Co se mu stalo? Žádný lékař tam nebyl, ale nějaký divák pomohl. Na tom svahu, který vedl lesem, bylo náledí. Adam měl v autě oboje lyže, běžecké i sjezdové.“ `slova`: její(10), Co(16), mu(18), Žádný(20), nějaký(25), tom(29), který(31) | `k1` třemi základní, desátá řadová, dvanáctkrát násobná, oboje druhová<br>`final` její přivlastňovací, Co tázací, mu osobní, Žádný záporné, nějaký neurčité, tom ukazovací, který vztažné | `k1` desátá → základní → `cislovka-druh-zamena`; oboje → základní → `cislovka-druh-zamena`; dvanáctkrát → základní → `cislovka-druh-zamena`; ostatní → obecná<br>`final` její → osobní → `zajmeno-druh-zamena`; Žádný → neurčité → `zajmeno-druh-zamena`; který → tázací → `zajmeno-druh-zamena`; nějaký → záporné → `zajmeno-druh-zamena`; ostatní → obecná | jiný text (běžky); třemi, desátá, dvanáctkrát, oboje; její, Co, mu, Žádný, nějaký, tom, který |
+| 3 | nová (5) | Doplnit jedenáct tvarů z lekcí 13–15: mě/mně, ji/jí, jenž/jež, něho/jeho (i jeho po předložce, když říká čí) a tvary čísel dva a čtyři podle pádové otázky. | `final` `doplnit_pismeno` 11 × ě/ně: Učitelka m_ v pondělí slíbila hlavní roli v divadle. Klára bude hrát také, učitelka j_ požádala, ať zahraje královnu. Zkoušet budeme se _ staršími spolužáky. Tělocvična, _ slouží jako jeviště, je velká. Pozvánky rozneseme _ třídám prvního stupně. Adam bydlí blízko školy, kulisy proto stavíme u _ na dvoře. Kostýmy šijeme podle _ nákresů. Táta m_ koupil zlatou korunu. Zkoušky m_ moc baví. Po premiéře j_ dáme kytici. Představení pak zopakujeme ve _ školách. | `final` ně, i, dvěma, jež, čtyřem, něho, jeho, ně, ě, í, dvou | `final` mezera 0 ě → `me-mne-zamena`; mezera 1 í → `zajmeno-ji-delka`; mezera 3 jenž → `jenz-rod-zamena`; mezera 5 jeho → `zajmeno-jeho-po-predlozce`; ostatní → obecná | jiný text (divadlo), stejné nabídky a vzor odpovědí |
+| 4 | detektiv (5) | Najít u spolužáka ji ve 3. pádě (nabídla ji čaj) na konci dlouhé věty, kde je předtím správné jí, a opravit ho dosazením jména. | `k1` `klik_ve_textu` max 1, tokeny: Klára(0) zapomněla(1) doma(2) svačinu(3) tak(4) jí(5) Ema(6) přinesla(7) rohlík(8) a(9) nabídla(10) ji(11) čaj(12) z(13) termosky(14)<br>`final` `dlazdice` „Co místo toho slova dosadíš?“: Kláru · Kláře · Klárou · Kláry | `k1` ji(11)<br>`final` Kláře | `k1` navíc jí, svačinu → `detektiv-jine-slovo`; ostatní → obecná<br>`final` Kláru → `zajmeno-ji-delka`; Klárou → `detektiv-oprava-jine-chyby`; Kláry → `detektiv-oprava-jine-chyby` | jiná věta (nabídla ji čaj); test Kláru/Kláře místo Emu/Emě |
+| 5 | kontrolní **týdenní** (6) | Kontrola tématu: diktát čtyř vět s pěti hlídanými slovy (mně, mě, ji, jí, dvěma) a samostatně dvanáct mezer z celého tématu (mě/mně, ji/jí, něho/jeho, jenž/jež, tvary dva, tři, čtyři). | `k1` `diktat` 4 věty, `max_prehrani` 2, `hodnotit_interpunkci` false, `hodnotit_velikost` false<br>`final` `doplnit_pismeno` 12 × ě/ně: V úterý m_ Ema psala, že pojede na plavecké závody. Trénovala se _ kamarádkami z oddílu. Bazén, _ stojí za školou, byl v sobotu plný diváků. Ema plavala skvěle a všichni j_ fandili. V cíli j_ trenérka objala. Tomáš přišel pozdě, tak jsme pro _ šli ke vchodu. Adam m_ pak vyprávěl, jak to vypadalo na startu. Ema nakonec vyhrála ve _ disciplínách. Na fotce stojí se _ rozhodčími. Fotku nám poslal _ táta. Večer m_ Ema vyfotila s medailí. Medaile, _ teď visí u Emy v pokoji, je zlatá. | `k1` Lucka mně přečetla dlouhý vtip. / Klára mě doprovodila na nádraží. / Tomáš ji hledal před koncertem a dal jí vstupenku. / Půjčil jsem knihu dvěma spolužačkám.<br>`final` ně, třemi, jenž, í, i, něho, ně, dvou, čtyřmi, jeho, ě, jež | `k1` mně → `me-mne-zamena`; mě → `me-mne-zamena`; ji → `zajmeno-ji-delka`; jí → `zajmeno-ji-delka`; dvěma → `cislovka-hovorovy-tvar`<br>`final` mezera 0 ě → `me-mne-zamena`; mezera 3 i → `zajmeno-ji-delka`; mezera 1 třema → `cislovka-hovorovy-tvar`; mezera 5 jeho → `zajmeno-jeho-po-predlozce`; ostatní → obecná | jiný diktát (mně, mě, ji, jí, dvěma) a text (plavecké závody), stejné kódy a prahy |
+
+`semafor_tydne` (z `final`, 12 mezer, beze změny proti L16n): zelená 11–12, oranžová 8–10, červená 0–7.
+
+
+### Nahrávky B-variant naostro lekcí (pro AUDIO.md)
+
+Šest nahrávek: 2 poslechy a 4 věty diktátu. Hlas a nastavení jsou stejné jako u `t4/l14n-u3.mp3`, `t4/l15n-u3.mp3` a `t4/l16n-d1` až `d4` (`NAHRAVKY-NAVOD.md`). `AUDIO.md` jsem nepsal. Dokud se řádky nesloučí, `seed:validace` hlásí u L14nb, L15nb a L16nb jen „nahrávka nemá řádek v AUDIO.md“ (10×) a varování, že soubor zatím není.
+
+| ID souboru | Lekce / krok | Typ | Přesné znění | Poznámka | Stav |
+|---|---|---|---|---|---|
+| `t4/l14nb-u3.mp3` | 14nb / úloha 3 (`k1` i `k2` i `final`) | poslech | Tomáš zahlédl u bazénu Emu. Zamával jí, vyfotil ji na skokanském můstku a fotku jí hned odeslal. | Oznamovací intonace, nic nezdůrazňovat. Délka musí být zřetelně slyšet: „jí“ dlouze (dvakrát), „ji“ krátce. Číst „zahlédl“, ne „zahlédnul“. Cca 7 s. | čeká na Pavla |
+| `t4/l15nb-u3.mp3` | 15nb / úloha 3 (`k1` i `k2` i `final`) | poslech | V pátek jsme se dvěma spolužáky a se třema děvčaty stavěli sněhuláky před obouma vchody do tělocvičny. | **Záměrně hovorové „třema“ a „obouma“**: vyslovit přesně tak a neopravovat. „dvěma“ spisovně [dvjema]. Nic nezdůrazňovat. Cca 7 s. | čeká na Pavla |
+| `t4/l16nb-d1.mp3` | 16nb / úloha 5 (diktát, věta 1) | diktát | Lucka mně přečetla dlouhý vtip. | Dvakrát: poprvé celá věta přirozeně, pauza 2 s, podruhé pomalu po slovech (0,75×, 0,7 s mezi slovy). Interpunkci nevyslovovat; u velkého písmene říct „velké písmeno — …“. | čeká na Pavla |
+| `t4/l16nb-d2.mp3` | 16nb / úloha 5 (diktát, věta 2) | diktát | Klára mě doprovodila na nádraží. | Dvakrát: poprvé celá věta přirozeně, pauza 2 s, podruhé pomalu po slovech (0,75×, 0,7 s mezi slovy). Interpunkci nevyslovovat; u velkého písmene říct „velké písmeno — …“. | čeká na Pavla |
+| `t4/l16nb-d3.mp3` | 16nb / úloha 5 (diktát, věta 3) | diktát | Tomáš ji hledal před koncertem a dal jí vstupenku. | Dvakrát: poprvé celá věta přirozeně, pauza 2 s, podruhé pomalu po slovech (0,75×, 0,7 s mezi slovy). Interpunkci nevyslovovat; u velkého písmene říct „velké písmeno — …“. „ji“ krátce, „jí“ dlouze. | čeká na Pavla |
+| `t4/l16nb-d4.mp3` | 16nb / úloha 5 (diktát, věta 4) | diktát | Půjčil jsem knihu dvěma spolužačkám. | Dvakrát: poprvé celá věta přirozeně, pauza 2 s, podruhé pomalu po slovech (0,75×, 0,7 s mezi slovy). Interpunkci nevyslovovat; u velkého písmene říct „velké písmeno — …“. | čeká na Pavla |
+
+**Diktát L16nb slovo po slově** (OSNOVA §2.2):
+- Věta 1: Lucka (jméno) · **mně** (T4) · přečetla · dlouhý (*hý*, Z5) · vtip (*ti*, Z5).
+- Věta 2: Klára (jméno) · **mě** (T4) · doprovodila (*di*, Z5) · na · nádraží (*ží*, Z5).
+- Věta 3: Tomáš (jméno) · **ji** (T4, délka je slyšet) · hledal · před · koncertem · a · dal · **jí** (T4) · vstupenku.
+- Věta 4: Půjčil (*ů*, *či*, Z5) · jsem · knihu (*ni*, Z5) · **dvěma** (T4; *vě* bez předpony je Z5) · spolužačkám.
+
+Celkem 24 slov, stejně jako v L16n. Slovesa jsou jen v j. č. minulého času. Nejsou tam *s/z/se/ze* ani *i/í/y/ý* po obojetné souhlásce v kořeni, příponě nebo koncovce. Honzík tam není.
+
+Hlídaná slova v `chyby_ocekavane` (holé kódy, stejně jako v L16n):
+
+| věta, slovo | slovo | kód |
+|---|---|---|
+| 0, 1 | mně | `me-mne-zamena` |
+| 1, 1 | mě | `me-mne-zamena` |
+| 2, 1 | ji | `zajmeno-ji-delka` |
+| 2, 7 | jí | `zajmeno-ji-delka` |
+| 3, 3 | dvěma | `cislovka-hovorovy-tvar` |
+
+### Ověření ÚJČ (B-varianty naostro lekcí)
+
+Ověřeno 14. 10. 2026 přes `bash nastroje/ujc.sh`. Většina hesel byla v cache po naostro a učebních lekcích. Nové dotazy: *jejich, co (id=co_1), chválit, zajímat, kromě, díky, proti, akvárium, medaile, zahlédnout, klec, dvacet*. ÚJČ odpovídal pomalu, dotazy byly řazené ve frontě a nic nezůstalo neověřené.
+
+| tvar / jev | lekce | údaj v příručce | výsledek |
+|---|---|---|---|
+| kdo (Koho, kým), co, jaký (Jaké), který (Kterým) | 13nb, 14nb, 16nb | SSČ zájm. táz. (co: id=co_1); hodnoceno jako tázací jen v otázce s otazníkem | OK |
+| který (kteří, kterou, které, kterému, který) | 13nb, 14nb, 16nb | vztažné za čárkou u jména; 13nb B je vztažné i ve větě s otazníkem (jako v L13n) | OK |
+| ty, my (nám), vy, on (ho, mu) | 13nb, 16nb | zájm. os. | OK |
+| nikdo (nikým), žádný (žádnou, žádnému, Žádné, Žádný) | 13nb, 14nb, 16nb | SSČ zájm. záp. | OK |
+| nějaký (nějaká, nějakého, nějaký) | 13nb, 16nb | SSČ zájm. neurč. | OK |
+| ten (těm, tom) | 13nb, 16nb | tabulka id=ten, zájm. ukaz. | OK |
+| její, jejich, tvůj (tvého) | 13nb, 16nb | SSČ heslo jeho: „její j. ž., jejich mn.“ zájm. přivl.; tvůj | OK |
+| jenž × jež (jen 1. p. j. č.) | 13nb, 14nb, 16nb | id=jenž, jenž_1, jež, jež_1; rod: plakát, bazén, batoh m. neživ.; dědeček m. živ.; mapa, sklenice, tělocvična, medaile ž.; zrcadlo, akvárium s. (tabulka akvárium: rod s.) | OK |
+| já: mně (3., 6. p.) × mě (2., 4. p.) | 14nb–16nb | id=650, já_1; mne a mi nejsou ve výběru (mi jen jako chybná nabídka v detektivu, kde je chybná) | OK |
+| vazby | 14nb–16nb | kromě + 2. p., proti + 3. p., díky + 3. p. (SSČ); zajímat koho (SSČ: „ten člověk mě nezajímá“); chválit koho; bolet koho; závidět, povědět, nabídnout, slíbit, vyprávět, psát, dát komu (zavolat a zaplatit mají obě vazby, viz Korektura); polít, obejmout, vyfotit, požádat, poslat, vzít, čekat, doprovodit, hledat koho | OK |
+| ona: jí (3., 7. p.) × ji (4. p.); on: něho, němu po předložce, jeho/jemu bez předložky | 14nb–16nb | id=ona, id=on (něj se nehodnotí, v nabídce není) | OK |
+| test jménem: Ema (Emu, Emě, Emou, Emy), Klára (Kláru, Kláře, Klárou, Kláry) | 14nb–16nb | tabulky hesel | OK |
+| druhy číslovek: dvacet, osm, tři (třemi) zákl.; sedmý (sedmá), druhý (ve druhém kole), desátý (desátá) řad.; desetkrát, devětkrát, dvanáctkrát, osmkrát nás.; šesterý (šestery), oboje druh. | 15nb, 16nb | SSČ v heslech dvacet, osm, sedm, druhý, deset, devět, dvanáct, šest; heslo oboje: „význam souborový, příp. druhový, u pomnožných základní“ (rukavice, lyže nejsou pomnožné) | OK |
+| dva, oba, tři, čtyři | 15nb, 16nb | id=670 (dvou, obou × dvěma, oběma; nikoli dvouma, obouma, dvěmi), id=671 (třem, čtyřem; třemi, čtyřmi; -ma jen u částí těla, věty U5 jsou bez nich) | OK |
+| nahrávky a diktát: zahlédnout (zahlédl), zamávat, vyfotit, odeslat; děvče (děvčaty), vchod; přečíst, doprovodit, hledat, koncert, dát, vstupenka, půjčit, kniha, spolužačka | 14nb–16nb | hesla (zahlédnout: příčestí zahlédl, nahrávka čte zahlédl) | OK |
+
+### Nejistoty (B-varianty naostro lekcí)
+
+- **Opakované uzavřené skupiny** (dovoleno, vždy v nové větě). Dlaždice ji/jí v poslechu L14nb mají stejnou správnou řadu *jí, ji, jí* jako L14n. Detektiv L14nb nabízí *mnou · mně · mě · mi* (pořadí obrácené proti L14n). Dlaždice *Kláru · Kláře · Klárou · Kláry* v L16nb jsou stejné jako v učební L16 a *Emu/Emě* v L14nb stejné jako v L14b/L16n. Jiná dívčí jména s heslem v příručce nejsou.
+- **Druhové číslovky:** *dvoje, troje, čtvery* už téma použilo. Proto je v L15nb *šestery* (SSČ šesterý, čísl. druh.) a v L16nb *oboje*. ÚJČ u *oboje* uvádí „význam souborový, příp. druhový“, stejně jako u *troje* v L16n; škola ho počítá jako druhovou. *šestery* je méně běžné slovo, ale otázka kolikery? sedí stejně.
+- **„Platí“ L13nb** *ten stan, jenž… · ta lampa, jež…* je obecný příklad pravidla, ponechaný podle rozhodnutí vedoucího. Žádná věta lekce tímto příkladem není.
+- **Diktát L16nb *dvěma*:** kód `cislovka-hovorovy-tvar` jako v L16n, kvůli jednotnosti.
+- **Nahrávky** `t4/l14nb-u3`, `t4/l15nb-u3` a `t4/l16nb-d1` až `d4` zatím nejsou. V 15nb jsou záměrně hovorové tvary *třema* a *obouma*: při kontrole nahrávky ohlídat, že nezazní *třemi* ani *oběma*.
+- **Validátor:** u L14nb, L15nb a L16nb hlásí jen „nahrávka nemá řádek v AUDIO.md“ (10×) a varování, že soubor zatím není. L13nb je bez chyb i varování.
+
+### Korektura ÚJČ (korektor, 14. 10. 2026)
+
+Každý hodnocený tvar (dlaždice, mezera složená se vzorovou odpovědí včetně nabídky, role, klik, přepis nahrávky, diktát slovo po slově) ověřen znovu přes `nastroje/ujc.sh` (cache, nové dotazy jen *zaplatit, vtip, vstupenka, zamávat, porotce*). Vzorová odpověď každého kroku a kód každé chybné dlaždice a známé chyby ověřeny přes `vyhodnotKrok` / `vzorovaOdpoved` (`/tmp/b-cj4nb/kontrola.mjs`: vše OK). Překryv hodnocených slov ověřen i proti `cj-t0-diag` a `cj-t0-pol` (`/tmp/kor-nb4/prekryv.mjs`): jen uzavřené skupiny a jména.
+
+**Jazykové chyby v hodnocených tvarech: 2 (obě L16nb), opraveny:**
+- **L16nb U5 final, mezera 0** „V úterý m_ Ema zavolala, že…“: SSČ u *zavolat* „zatelefonovat: zavolej mě, mi večer“ → *mě* i *mně* správně (dubleta v hodnoceném místě) → „V úterý m_ Ema **psala**, že…“ (SSČ *napsat*: „napište mi, co je nového“; jen 3. p.).
+- **L16nb diktát, věta 3** „…a zaplatil jí vstupenku“: SSČ „zaplatit řemeslníka, řemeslníkovi“ (obě vazby) → „Tomáš ji hledal před koncertem a **dal** jí vstupenku.“ (24 slov, index *jí* 7 beze změny, *dal* je Z5; řádek nahrávky `t4/l16nb-d3` upraven, Pavel ji ještě nenahrál).
+
+**Ověřeno podle doplňku k dávce:**
+- *šestery* (L15nb): SSČ v hesle *šest* „šesterý čísl. druh.“; *rukavice* nejsou pomnožné (*ta rukavice*) → „šestery rukavice“ = šest párů, jednoznačně druhová.
+- *oboje* (L16nb): heslo *oboje* „význam souborový, příp. druhový, a u pomnožných jmen význam číslovky základní“; *lyže* nejsou pomnožné a „oboje lyže, běžecké i sjezdové“ jsou dva druhy → jednoznačně druhová.
+- *třema, obouma* (nahrávka L15nb): jako správné se nehodnotí nikde (k1 se ptá, které slovo se píše jinak; v k2 a final mají kód `cislovka-hovorovy-tvar`). id=670 výslovně uvádí *dvouma, *obouma* jako užívané nespisovné tvary, id=671 připouští *-ma* jen u částí těla (*děvčata, vchody* nejsou).
+- Vztažné *který* jen s jasným odkazem na podstatné jméno (L13nb U3 B *knihu, kterou*; U2 *kluky, kteří*; U5 *Trenér, kterému*; L14nb U1 *Holka, které*; L16nb U2 *svahu, který*); *čí* nikde.
+
+**Opravy textů (mimo hodnocení aplikace):**
+- „Dnes samo“: L13nb U2 otázka 2 příklad „nám → my“ prozrazoval druh hodnoceného slova → „mnou → já“; L15nb U4 otázka ke kroku 2 „i s předložkou před ním“ ukazovala na jediné číslo s předložkou (*z oběma*) → „i se slovem před ním“.
+- Semafor s dubletou nebo dvojím čtením: L14nb U4 oranžová *zavolal* → *napsal*; L14nb U3 červená „Volám ___ každý večer“ → „Věřím ___ ve všem“; L14nb U5 červená „Píšu j_.“ (*píšu ji* = text) → „Píšu j_ dopis.“; L15nb U1 oranžová „Zavolej jí“ → „Odpověz jí“; L16nb U3 červená „Zavolej m_“ → „Věř m_“; L16nb U5 červená „Zavolej j_“ → „Napiš j_ dopis“; L16nb U2 červená izolovaná *co, který* (bez věty tázací i vztažné) → *nějaký*; L13nb U2 oranžová „dej jí to“ (dvě zájmena, „tučné slovo“ se nahlas nevidí) → „pomoz jí“, „co v něm dělá zájmeno“.
+- Řešení: L15nb U1 „(nabídnu Kláře)“ → „(nabídnout Kláře)“; L16nb U3 „(v kolika?)“ → „(v čem?)“.
+
+`kontrola`: `jistota` „jista“, `zkontroloval` „korektor“, `datum` 2026-10-14, `zdroj` doplněn (*zavolat, zaplatit, psát, napsat, vtip, dát, porotce, zamávat, odeslat*, id=670, id=671).
