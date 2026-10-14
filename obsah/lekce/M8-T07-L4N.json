@@ -1,0 +1,460 @@
+{
+  "id": "M8-T07-L4N",
+  "faze": "osma",
+  "tyden": 7,
+  "poradi": 4,
+  "tema": "Kontrola: úhly a útvary",
+  "kapitola": "geometrie",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo dopočítá úhly v rovnoběžníku i ve stupních a minutách, pozná osy souměrnosti a spočítá obsah útvaru, který vznikl překlopením nebo rozdělením.",
+  "uvod_pro_rodice": "Dítě tohle téma uzavíralo v lekci „Kontrola: úhly a útvary“. Dnes ukáže, že celé téma zvládne samo: čtyři příklady ze všech lekcí, nenápadnější chyba u Petra a úloha, která spojuje úhly, souměrnost i obsah.",
+  "uvod_pravidla": [
+    {
+      "znak": "$100° + 80° = 180°$",
+      "text": "úhly u jedné strany"
+    },
+    {
+      "znak": "obdélník: 2 osy",
+      "text": "přeložením se půlky kryjí"
+    },
+    {
+      "znak": "$S = \\frac{6 \\cdot 4}{2}$",
+      "text": "strana a její výška"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka",
+    "pravítko"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T07-L4N-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Rovnoběžník $ABCD$ má při vrcholu $A$ úhel $57°$. Jak velký je úhel při $D$?\n\nB) Pravoúhlý trojúhelník má jeden ostrý úhel $34°30'$. Jak velký je druhý ostrý úhel?\n\nC) Kolik os souměrnosti má rovnoramenný lichoběžník?\n\nD) Trojúhelník má strany $16$ cm a $12$ cm, výška na kratší měří $7$ cm. Jaký má obsah?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: úhel při $D$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$57°$",
+                "spravne": false,
+                "typ_chyby": "rovnobeznik-uhly-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$123°$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$33°$",
+                "spravne": false,
+                "typ_chyby": "doplnil-uhel-do-90"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: druhý ostrý úhel",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$145°30'$",
+                "spravne": false,
+                "typ_chyby": "prehledl-pravy-uhel"
+              },
+              {
+                "id": "b",
+                "text": "$55°70'$",
+                "spravne": false,
+                "typ_chyby": "stupne-minuty-po-stovkach"
+              },
+              {
+                "id": "c",
+                "text": "$55°30'$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: osy lichoběžníku",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$1$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$2$",
+                "spravne": false,
+                "typ_chyby": "pocet-os-spatne"
+              },
+              {
+                "id": "c",
+                "text": "$0$",
+                "spravne": false,
+                "typ_chyby": "pocet-os-spatne"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: obsah trojúhelníku",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$56\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "vyska-k-jine-strane"
+              },
+              {
+                "id": "b",
+                "text": "$42\\ \\text{cm}^2$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$84\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "trojuhelnik-bez-deleni-dvema"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá, počítá si na papíře. Příklady jsou ze všech lekcí tématu: dva úhly, souměrnost a obsah. Vrcholy A a D leží u stejné strany rovnoběžníku. Rovnoramenný lichoběžník má stejně dlouhé šikmé strany. Čte se: $34°30'$ „třicet čtyři stupňů třicet minut“. Otázky jsou po příkladech, první patří k A i B.",
+        "reseni": "#### A) úhel při vrcholu $D$\n\n$180° - 57° = 123°$ (úhly u jedné strany rovnoběžníku dají sto osmdesát stupňů)\n\n#### B) druhý ostrý úhel\n\n$180° - 90° - 34°30' = 55°30'$ (pravý úhel má devadesát stupňů; $90° = 89°60'$)\n\n#### C) osy lichoběžníku\n\n$1$ osa (svislá čára středem obou základen)\n\n#### D) obsah trojúhelníku\n\n$\\frac{12 \\cdot 7}{2} = 42$ (kratší strana a výška na ni, děleno dvěma; strana šestnáct se nepoužije)\n\n**Výsledek:** A) $123°$, B) $55°30'$, C) $1$, D) $42\\ \\text{cm}^2$",
+        "otazky": [
+          {
+            "k": "A a B",
+            "text": "„Neklikej, nejdřív na papír: kolik stupňů dají úhly u jedné strany rovnoběžníku? Kolik stupňů z trojúhelníku zabere pravý úhel?“"
+          },
+          {
+            "k": "C",
+            "text": "„Nakresli si lichoběžník se stejně dlouhými šikmými stranami. Podle kolika čar ho přeložíš tak, aby se půlky kryly?“"
+          },
+          {
+            "k": "D",
+            "text": "„Neklikej, nejdřív na papír: na kterou stranu výška dopadá? Které číslo v zadání do obsahu nepatří?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč rovnoramenný lichoběžník nemá dvě osy jako obdélník.“",
+        "otocena_role_odpoved": "Když lichoběžník přeložím vodorovně napůl, horní základna je kratší než dolní a půlky se nekryjí. Kryjí se jen při přeložení svisle středem základen.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. A $57°$, $33°$: „Je úhel u D ostrý, nebo tupý?“ (Tupý.) B $145°30'$: „Kolik má pravý úhel?“ (Devadesát.) $55°70'$: „Kolik minut má stupeň?“ (Šedesát.) C $2$, $0$: „Kdy se půlky kryjí?“ (Svisle.) D $56$, $84$: „Kam výška dopadá? Kolik trojúhelníků dá obdélník?“ (Na dvanáct; dva.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — všechny čtyři sedí. Pochvalte, že u každého příkladu poznalo, které pravidlo použít, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Rovnoběžník má úhel čtyřicet stupňů. Kolik má úhel vedle něj u stejné strany?“ Pak: „Kolik os souměrnosti má rovnostranný trojúhelník?“ Pak: „Trojúhelník má stranu osm a výšku na ni tři centimetry. Jaký má obsah?“ Kontrola pro vás: sto čtyřicet stupňů; tři osy; dvanáct centimetrů čtverečních.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: list papíru a nůžky. Zítra ať dítě papír přeloží napůl, u přehybu nakreslí půlku lichoběžníku (spodní a horní základnu kolmo od přehybu, šikmou stranu) a přes obě vrstvy ji vystřihne. Po rozložení ať zkouší přeložit lichoběžník svisle, vodorovně i šikmo. Zeptejte se: „Kdy se půlky kryjí?“ Pak ať samo zapíše: lichoběžník má $1$ osu. Potom zopakujte lekci „Trojúhelník a souměrnost“. Kontrola pro vás: jen podle původního přehybu."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Rovnoběžník $ABCD$ má při vrcholu $A$ úhel $57°$. Jak velký je úhel při $D$? a) $57°$ b) $123°$ c) $33°$\n\nB) Pravoúhlý trojúhelník má jeden ostrý úhel $34°30'$. Jak velký je druhý ostrý úhel? a) $145°30'$ b) $55°70'$ c) $55°30'$\n\nC) Kolik os souměrnosti má rovnoramenný lichoběžník? a) $1$ b) $2$ c) $0$\n\nD) Trojúhelník má strany $16$ cm a $12$ cm, výška na kratší měří $7$ cm. Jaký má obsah? a) $56\\ \\text{cm}^2$ b) $42\\ \\text{cm}^2$ c) $84\\ \\text{cm}^2$"
+      }
+    },
+    {
+      "id": "M8-T07-L4N-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Pravoúhlý trojúhelník $ABC$ překlopíme přes osu $o$, na které leží strana $AC$. Vznikne trojúhelník $ABB'$. Vypočítej jeho obsah.*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $|CB'| = |CB| = 9$ cm\n\n2. řádek: $|BB'| = 9 + 9 = 18$ cm\n\n3. řádek: $S = \\frac{18 \\cdot 15}{2}$\n\n4. řádek: $S = 135\\ \\text{cm}^2$",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 330 195\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"165\" y1=\"14\" x2=\"165\" y2=\"186\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><text x=\"171\" y=\"24\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\" font-style=\"italic\">o</text><polygon points=\"165,33 264,165 66,165\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"165\" y1=\"33\" x2=\"165\" y2=\"165\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M173,165 L173,157 L165,157\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"171\" y=\"145\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">12 cm</text><text x=\"222.5\" y=\"184\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">9 cm</text><text x=\"222.5\" y=\"93\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">15 cm</text><text x=\"158\" y=\"35\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"end\">A</text><text x=\"270\" y=\"170\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">B</text><text x=\"60\" y=\"170\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"end\">B′</text><text x=\"159\" y=\"184\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"end\">C</text></svg>",
+      "obrazek_popis": "Svislá čárkovaná osa o, na ní strana AC 12 cm; vpravo od osy pravoúhlý trojúhelník ABC s pravým úhlem u C, stranou CB 9 cm a šikmou stranou AB 15 cm; vlevo od osy jeho obraz s vrcholem B′ bez popsaných délek, spolu tvoří trojúhelník ABB′.",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$|CB'| = |CB| = 9$ cm",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$|BB'| = 9 + 9 = 18$ cm",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$S = \\frac{18 \\cdot 15}{2}$",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$S = 135\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$S = \\frac{9 \\cdot 12}{2}$",
+                "spravne": false,
+                "typ_chyby": "odpovida-na-jinou-otazku"
+              },
+              {
+                "id": "b",
+                "text": "$S = \\frac{18 \\cdot 12}{2}$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$S = 18 \\cdot 12$",
+                "spravne": false,
+                "typ_chyby": "trojuhelnik-bez-deleni-dvema"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm²"
+          },
+          "spravne": {
+            "hodnota": 108
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 135,
+              "typ_chyby": "vyska-jako-strana"
+            },
+            {
+              "hodnota": 216,
+              "typ_chyby": "trojuhelnik-bez-deleni-dvema"
+            },
+            {
+              "hodnota": 54,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Úloha spojuje souměrnost a obsah: obraz má stejné délky jako původní trojúhelník a strana na ose zůstane na místě. Chyba je jedna a řádek za ní je spočítaný dobře, jen se špatným číslem. Čte se: $B'$ „bé s čárkou“, obraz bodu B; $|BB'|$ je délka úsečky.",
+        "reseni": "Chyba je ve 3. řádku: $15$ cm má šikmá strana $AB$. Výškou na základnu $BB'$ je strana $AC$ na ose, kolmá k základně, měří $12$ cm.\n\n$|CB'| = |CB| = 9$ cm (obraz má stejné délky, tento řádek je správně)\n\n$|BB'| = 9 + 9 = 18$ cm (základna, tento řádek je správně)\n\n$S = \\frac{18 \\cdot 12}{2}$ (základna krát výška na ni, děleno dvěma)\n\n$S = 108\\ \\text{cm}^2$ (obsah)\n\n$2 \\cdot \\frac{9 \\cdot 12}{2} = 108$ (zkouška: dva stejné pravoúhlé trojúhelníky)\n\nDlaždice $\\frac{9 \\cdot 12}{2}$ a $18 \\cdot 12$ nesedí (první je jen původní trojúhelník, druhá nedělí dvěma)\n\n**Výsledek:** $108\\ \\text{cm}^2$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Ukaž mi na obrázku původní trojúhelník, jeho obraz a celý nový trojúhelník ABB′.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky a u každého čísla mi ukaž, kde je na obrázku.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: je to číslo strana na okraji, nebo výška? Dopadá kolmo na základnu?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč výška nového trojúhelníku není patnáct centimetrů.“",
+        "otocena_role_odpoved": "Patnáct centimetrů má šikmá strana AB. Výška musí dopadat na základnu BB′ kolmo, a to je strana AC na ose. Měří dvanáct centimetrů.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 1. nebo 2. řádek? Ty jsou správně, 4. je důsledek. $135$ jako Petr: „Dopadá patnáctka kolmo na základnu?“ (Ne, je šikmá.) $216$: „Kolik takových trojúhelníků dá obdélník?“ (Dva.) $54$: „Je to celý nový trojúhelník?“ (Ne, jen původní.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že poznalo šikmou stranu a výšku našlo na ose, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Přečtěte dítěti: „Pravoúhlý trojúhelník má u pravého úhlu strany šest a osm centimetrů. Překlopíš ho přes osu, na které leží strana osm. Jaký obsah má nový velký trojúhelník?“ Ať si to nakreslí. Kontrola pro vás: základna dvanáct, výška osm, $48\\ \\text{cm}^2$ (dvakrát dvacet čtyři).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: čtverečkovaný papír a nůžky. Zítra ať dítě papír přeloží podél čáry mřížky, u přehybu nakreslí trojúhelník s pravým úhlem (3 čtverečky podél přehybu, 4 do strany), vystřihne ho přes obě vrstvy a rozloží. Zeptejte se: „Kde je výška nového trojúhelníku? Jak dlouhá je základna?“ Pak ať samo zapíše $\\frac{8 \\cdot 3}{2} = 12$. Potom zopakujte lekci „Obsah trojúhelníku a lichoběžníku“. Kontrola pro vás: výška leží na přehybu, 3 čtverečky; základna 8; obsah 12."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\n*Pravoúhlý trojúhelník $ABC$ překlopíme přes osu $o$, na které leží strana $AC$. Vznikne trojúhelník $ABB'$. Vypočítej jeho obsah.*\n\na udělal jednu chybu.\n\n1. řádek: $|CB'| = |CB| = 9$ cm\n\n2. řádek: $|BB'| = 9 + 9 = 18$ cm\n\n3. řádek: $S = \\frac{18 \\cdot 15}{2}$\n\n4. řádek: $S = 135\\ \\text{cm}^2$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $S = \\frac{9 \\cdot 12}{2}$ b) $S = \\frac{18 \\cdot 12}{2}$ c) $S = 18 \\cdot 12$\n\nC) Výsledek: $S =$ ______ cm²"
+      }
+    },
+    {
+      "id": "M8-T07-L4N-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Žáci malují na školní dvůr hřiště tvaru rovnoběžníku $ABCD$ (obrázek). Úhlopříčka $AC$ ho dělí na dva trojúhelníky, trojúhelník $ACD$ natřou modře. Jedna plechovka modré barvy vystačí na $6\\ \\text{m}^2$.\n\nJak velký je úhel rovnoběžníku při vrcholu $D$, jaký obsah má modrý trojúhelník a kolik plechovek modré barvy potřebují?",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 350 160\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"20,135 327.5,35 87.5,35\" fill=\"currentColor\" fill-opacity=\"0.15\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"20,135 260,135 327.5,35 87.5,35\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"20\" y1=\"135\" x2=\"327.5\" y2=\"35\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"160\" y1=\"35\" x2=\"160\" y2=\"135\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M168,135 L168,127 L160,127\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><path d=\"M272.3,116.8 A22,22 0 0 0 238,135\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"240.3\" y=\"103.2\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">124°</text><path d=\"M75.1,53.2 A22,22 0 0 0 109.5,35\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"106.2\" y=\"75.6\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">?</text><text x=\"140\" y=\"155\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">12 m</text><text x=\"166\" y=\"122\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">5 m</text><text x=\"14\" y=\"150\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"end\">A</text><text x=\"266\" y=\"150\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">B</text><text x=\"333.5\" y=\"31\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">C</text><text x=\"81.5\" y=\"29\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"end\">D</text></svg>",
+      "obrazek_popis": "Rovnoběžník ABCD skloněný doprava s úhlopříčkou AC; trojúhelník ACD nahoře vlevo je vybarvený. Dolní strana AB měří 12 m, čárkovaná výška mezi stranami DC a AB měří 5 m, u vrcholu B je úhel 124°, úhel rovnoběžníku u vrcholu D je označený otazníkem.",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Úhel rovnoběžníku při vrcholu $D$",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "°"
+          },
+          "spravne": {
+            "hodnota": 124
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 56,
+              "typ_chyby": "rovnobeznik-uhly-zamena"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Obsah modrého trojúhelníku",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m²"
+          },
+          "spravne": {
+            "hodnota": 30
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 60,
+              "typ_chyby": "trojuhelnik-bez-deleni-dvema"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek: počet plechovek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "plechovek"
+          },
+          "spravne": {
+            "hodnota": 5
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 10,
+              "typ_chyby": "trojuhelnik-bez-deleni-dvema"
+            },
+            {
+              "hodnota": 30,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce spojuje celé téma. Úhly naproti sobě jsou v rovnoběžníku stejně velké. Rovnoběžník je středově souměrný, úhlopříčka ho dělí na dva stejné trojúhelníky. Modrý trojúhelník má stranu CD stejně dlouhou jako AB a výška na ni je výška rovnoběžníku. Úhel do obsahu ani do počtu plechovek nevstupuje.",
+        "reseni": "úhel při $D$: $124°$ (úhly naproti sobě jsou v rovnoběžníku stejně velké)\n\n$|CD| = |AB| = 12$ m (protější strany jsou stejně dlouhé)\n\n$\\frac{12 \\cdot 5}{2} = 30\\ \\text{m}^2$ (modrý trojúhelník: strana CD a výška pět metrů, děleno dvěma)\n\n$12 \\cdot 5 = 60$, $60 : 2 = 30$ (jiná cesta: polovina rovnoběžníku)\n\n$30 : 6 = 5$ (počet plechovek)\n\n**Výsledek:** úhel $124°$, obsah $30\\ \\text{m}^2$, $5$ plechovek",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, na které tři věci se úloha ptá. Ukaž mi na obrázku modrý trojúhelník.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Ukaž mi úhly u vrcholů B a D. Leží vedle sebe, nebo naproti? Je úhel u D ostrý, nebo tupý?“"
+          },
+          {
+            "k": "Krok 2 a 3",
+            "text": "„Tady máš začátek: strana CD je stejně dlouhá jako AB. Jaká výška k ní patří? A co pak s plechovkami?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč modrý trojúhelník nemá šedesát metrů čtverečních.“",
+        "otocena_role_odpoved": "Šedesát má celý rovnoběžník. Úhlopříčka ho dělí na dva stejné trojúhelníky a modrý je jen jeden z nich, tedy polovina: třicet metrů čtverečních.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Krok 1 $56°$: „Leží úhly u B a D vedle sebe, nebo naproti?“ (Naproti, jsou stejné.) Krok 2 $60$, výsledek $10$: „Je modrý celý rovnoběžník?“ (Ne, polovina.) Výsledek $30$: „Na kolik metrů čtverečních vystačí plechovka?“ (Šest.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — hlavní úloha sedí. Pochvalte, že poznalo protější úhly a modrý trojúhelník jako polovinu rovnoběžníku, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: „Rovnoběžník má stranu $10$ m, výšku na ni $4$ m a u vrcholu $A$ úhel $70°$. Úhlopříčka $AC$ ho dělí na dva trojúhelníky. Jak velký je úhel u $C$ a jaký obsah má jeden trojúhelník?“ Kontrola pro vás: $70°$ (naproti, stejný); deset krát čtyři je čtyřicet, polovina dvacet metrů čtverečních.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: list papíru, pravítko, nůžky a pastelku. Zítra ať dítě podél pravítka nakreslí rovnoběžník, obtáhne jednu úhlopříčku a podle ní ho rozstřihne. Ať jeden díl otočí a položí na druhý. Zeptejte se: „Kryjí se? Jaká část rovnoběžníku je jeden trojúhelník?“ Pak ať samo zapíše obsah trojúhelníku jako polovinu obsahu rovnoběžníku. Potom zopakujte lekci „Obsah trojúhelníku a lichoběžníku“. Kontrola pro vás: kryjí se přesně, každý je polovina."
+      },
+      "tisk": {
+        "zadani": "Žáci malují na školní dvůr hřiště tvaru rovnoběžníku $ABCD$ (obrázek). Úhlopříčka $AC$ ho dělí na dva trojúhelníky, trojúhelník $ACD$ natřou modře. Jedna plechovka modré barvy vystačí na $6\\ \\text{m}^2$.\n\nJak velký je úhel rovnoběžníku při vrcholu $D$, jaký obsah má modrý trojúhelník a kolik plechovek modré barvy potřebují?\n\nA) Úhel při vrcholu $D$: ______ °\n\nB) Obsah modrého trojúhelníku: ______ m²\n\nC) Počet plechovek: ______"
+      }
+    },
+    {
+      "id": "M8-T07-L4N-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Honzík vyřezává z překližky trojúhelníkovou ceduli $ABC$. Dvě strany a jedna výška jsou na obrázku.\n\nJaký obsah má cedule?",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 210 232\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"40,205 160,205 85,25\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"85\" y1=\"25\" x2=\"85\" y2=\"205\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M93,205 L93,197 L85,197\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"100\" y=\"224\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">8 cm</text><text x=\"131\" y=\"112\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">13 cm</text><text x=\"90\" y=\"172\" font-size=\"14\" fill=\"currentColor\" text-anchor=\"start\">12 cm</text><text x=\"34\" y=\"212\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"end\">A</text><text x=\"166\" y=\"212\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"start\">B</text><text x=\"85\" y=\"18\" font-size=\"15\" fill=\"currentColor\" text-anchor=\"middle\">C</text></svg>",
+      "obrazek_popis": "Trojúhelník ABC: vodorovná dolní strana AB 8 cm, šikmá pravá strana BC 13 cm a čárkovaná výška 12 cm z horního vrcholu C kolmo na stranu AB; pata výšky leží na straně AB blíž k vrcholu A.",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm²"
+          },
+          "spravne": {
+            "hodnota": 48
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 96,
+              "typ_chyby": "trojuhelnik-bez-deleni-dvema"
+            },
+            {
+              "hodnota": 52,
+              "typ_chyby": "vyska-jako-strana"
+            },
+            {
+              "hodnota": 78,
+              "typ_chyby": "vyska-k-jine-strane"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha celého tématu: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Barva této úlohy ukáže, jestli téma sedí. Past: šikmá strana BC je hned vedle výšky a je delší. Výška je čárkovaná a dopadá kolmo na stranu AB.",
+        "reseni": "$8 \\cdot 12 = 96$ (strana AB krát výška, která na ni kolmo dopadá)\n\n$96 : 2 = 48$ (trojúhelník je polovina; strana BC se nepoužije)\n\n**Výsledek:** $48\\ \\text{cm}^2$",
+        "otazky": [
+          "„Řekni mi vlastními slovy, co na obrázku vidíš. Které čáry jsou strany a která je výška?“",
+          "„Sleduj prstem výšku až k jejímu konci. Na kterou stranu kolmo dopadá? Se kterou stranou ji tedy vynásobíš?“",
+          "„Tady máš začátek: výška dvanáct dopadá kolmo na stranu osm. Jak z těch dvou čísel spočítáš obsah trojúhelníku?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč nepoužiješ stranu třináct centimetrů, i když je hned vedle výšky.“",
+        "otocena_role_odpoved": "Třináct má šikmá strana BC, ta na stranu AB kolmo nedopadá. Výška je čárkovaná dvanáctka a patří ke straně osm. Obsah je osm krát dvanáct děleno dvěma.",
+        "typicka_chyba": "Během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $96$: nedělí dvěma. Zeptejte se: „Kolik takových trojúhelníků dá obdélník?“ (Dva.) $52$: bere šikmou stranu jako výšku. „Která čára dopadá kolmo?“ (Čárkovaná dvanáctka.) $78$: „Na kterou stranu výška dopadá?“ (Na AB, osm.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — obsah spočítalo samo. Pochvalte, že výšku spárovalo se stranou, na kterou kolmo dopadá. Zítra můžete pokračovat dalším tématem.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: „Trojúhelník má strany $AB = 6$ cm a $BC = 5$ cm. Výška z vrcholu $C$ na stranu $AB$ měří $4$ cm. Jaký má obsah?“ Ať řekne, co násobí. Kontrola pro vás: šest krát čtyři děleno dvěma, $12\\ \\text{cm}^2$; pětka se nepoužije.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: čtverečkovaný papír a pastelku. Zítra ať dítě po čáře mřížky nakreslí úsečku AB dlouhou 6 čtverečků a bod C tři čtverečky nad místem dva čtverečky od A. Ať trojúhelník spojí a z C obtáhne svisle dolů výšku. Zeptejte se: „Kam výška dopadá? Ke které straně patří?“ Pak ať samo zapíše $\\frac{6 \\cdot 3}{2} = 9$. Potom zopakujte lekci „Obsah trojúhelníku a lichoběžníku“. Kontrola pro vás: patří k AB; obsah 9 čtverečků."
+      },
+      "tisk": {
+        "zadani": "Honzík vyřezává z překližky trojúhelníkovou ceduli $ABC$. Dvě strany a jedna výška jsou na obrázku.\n\nJaký obsah má cedule?\n\nVýsledek: ______ cm²"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 14. 10. 2026: nezávisle přepočítáno (python Fraction) a přes vyhodnotKrok. U1 123, 55°30′, 1 osa, 42 (57, 33; 145°30′, 55°70′; 2, 0; 56, 84); U2 9-12-15, základna 18, výška 12 → 108 (Petr 135; 216, 54); U3 úhel u D 124 (protější k B), modrý trojúhelník 30, 5 plechovek (56; 60; 10, 30); SVG přeměřena (úhel u B 124°, AB 12 m, výška 5 m; trojúhelník 9-12-15). Věcná změna podle rozhodnutí vedoucího: U4 měl výšku mimo tupoúhlý trojúhelník (v učebních lekcích T07 nebyla) → přestavěno na trojúhelník s patou výšky na straně: AB 8 cm, BC 13 cm, výška 12 cm (pata 5 cm od B, 3 cm od A), obsah 48; nové SVG (měřítko 15), popis, řešení, otázky, otočená role, typická chyba a semafor; přidána třetí známá chyba 78 (výška se stranou 13), chyby 96, 52, 78 různé. Posouzeno a ponecháno: U1 B 145°30′ s kódem prehledl-pravy-uhel (počítá jako bez pravého úhlu, sedí na popis); U3 k1 jen jedna známá chyba 56 (jiná pravděpodobná hodnota u protějšího úhlu nevzniká).",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-14"
+  }
+}
