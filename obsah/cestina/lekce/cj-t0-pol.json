@@ -1,0 +1,1365 @@
+{
+  "id": "cj-t0-pol",
+  "predmet": "cestina",
+  "typ": "diagnostika",
+  "faze": "osma",
+  "tyden": 0,
+  "poradi": 2,
+  "tema": "Pololetní test",
+  "kapitola": "diagnostika",
+  "cil_pro_rodice": "Po půl roce znovu zjistit, která z deseti témat češtiny dítěti jdou a která ne, a podle toho přeskládat lekce na zbytek roku.",
+  "uvod_pro_rodice": "Dítě řeší samo a bez nápověd asi 25 minut 23 krátkých úloh ze všech deseti témat, vy test jen spustíte a nenapovídáte, a aplikace podle výsledku přeskládá zbytek roku tak, aby nejdřív přišla témata, která dítěti zatím nejdou.",
+  "cas_min": 25,
+  "ulohy": [
+    {
+      "id": "cj-t0-pol-U1",
+      "typ": "diagnostika",
+      "kapitola": "slovni-druhy",
+      "tema": 1,
+      "cil": "P1: ohebné × neohebné slovní druhy; past: příslovce, které jde stupňovat (ochotně – ochotněji).",
+      "cas_min": 1,
+      "zadani": "Klikni na všechna neohebná slova, tedy ta, která nemění tvar.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Adam občas ochotně pomáhal na zahradě, protože ho to bavilo.",
+            "cil": "slova",
+            "min": 1,
+            "max": 10
+          },
+          "spravne": [
+            1,
+            2,
+            4,
+            6
+          ],
+          "zname_chyby": [
+            {
+              "chybi": [
+                2
+              ],
+              "typ_chyby": "ohebnost-stupnovani"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Podtrhni všechna neohebná slova (nemění tvar).\n\nAdam občas ochotně pomáhal na zahradě, protože ho to bavilo."
+      }
+    },
+    {
+      "id": "cj-t0-pol-U2",
+      "typ": "diagnostika",
+      "kapitola": "slovni-druhy",
+      "tema": 1,
+      "cil": "P2: slovní druh podle věty — blízko jako příslovce (samo) a jako předložka (s 2. pádem).",
+      "cas_min": 1,
+      "zadani": "Ve větách je dvakrát slovo „blízko“. U obou vyber, jaký je to slovní druh.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Klára bydlí blízko a do školy chodí pěšky. Blízko školy je velký park.",
+            "slova": [
+              2,
+              8
+            ],
+            "role": [
+              "předložka",
+              "příslovce",
+              "spojka",
+              "podstatné jméno"
+            ]
+          },
+          "spravne": {
+            "2": "příslovce",
+            "8": "předložka"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "8": "příslovce"
+              },
+              "typ_chyby": "predlozka-za-prislovce"
+            },
+            {
+              "hodnota": {
+                "2": "předložka"
+              },
+              "typ_chyby": "prislovce-za-predlozku"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Nad obě tučná slova napiš, jaký je to slovní druh: předložka, příslovce, spojka, nebo podstatné jméno.\n\nKlára bydlí **blízko** a do školy chodí pěšky. **Blízko** školy je velký park."
+      }
+    },
+    {
+      "id": "cj-t0-pol-U3",
+      "typ": "diagnostika",
+      "kapitola": "podstatna-jmena",
+      "tema": 2,
+      "cil": "P3: vzor mužského životného jména na -a (předseda).",
+      "cas_min": 1,
+      "zadani": "Ke kterému vzoru patří slovo „basketbalista“?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "předseda",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "pán",
+                "spravne": false,
+                "typ_chyby": "vzor-pan-za-predseda"
+              },
+              {
+                "id": "c",
+                "text": "žena",
+                "spravne": false,
+                "typ_chyby": "vzor-zena-za-predseda"
+              }
+            ]
+          }
+        }
+      ],
+      "tisk": {
+        "zadani": "Ke kterému vzoru patří slovo „basketbalista“?\n\nZakroužkuj: a) předseda b) pán c) žena"
+      }
+    },
+    {
+      "id": "cj-t0-pol-U4",
+      "typ": "diagnostika",
+      "kapitola": "podstatna-jmena",
+      "tema": 2,
+      "cil": "P4: i/y v koncovce podle vzoru (1. p. mn. pán, 2. p. j. žena, 4. p. mn. žena).",
+      "cas_min": 1,
+      "zadani": "Doplň i, nebo y.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Los_ se brodili potokem a kocour u bříz_ číhal na pěnkav_.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 2,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "i",
+            "y",
+            "y"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "y",
+                null,
+                null
+              ],
+              "typ_chyby": "koncovka-podst-y-za-i"
+            },
+            {
+              "hodnota": [
+                null,
+                "i",
+                null
+              ],
+              "typ_chyby": "koncovka-podst-i-za-y"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                "i"
+              ],
+              "typ_chyby": "koncovka-podst-i-za-y"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Doplň i, nebo y.\n\nLos_ se brodili potokem a kocour u bříz_ číhal na pěnkav_."
+      }
+    },
+    {
+      "id": "cj-t0-pol-U5",
+      "typ": "diagnostika",
+      "kapitola": "pridavna-jmena",
+      "tema": 3,
+      "cil": "P5: -ý/-í tvrdého přídavného jména (1. p. mn. m. živ.) a -ovi přivlastňovacího (1. p. mn. m. živ.).",
+      "cas_min": 1,
+      "zadani": "Doplň chybějící písmena. V první mezeře vybírej ý, nebo í, ve druhé i, nebo y.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Zmokl_ rybáři se ohřívali u ohně, ale farmářov_ psi zůstali venku.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "ý",
+                  "í"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "í",
+            "i"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "ý",
+                null
+              ],
+              "typ_chyby": "koncovka-prid-y-za-i"
+            },
+            {
+              "hodnota": [
+                null,
+                "y"
+              ],
+              "typ_chyby": "privlastnovaci-y-za-i"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Doplň chybějící písmena. V první mezeře vybírej ý, nebo í, ve druhé i, nebo y.\n\nZmokl_ rybáři se ohřívali u ohně, ale farmářov_ psi zůstali venku."
+      }
+    },
+    {
+      "id": "cj-t0-pol-U6",
+      "typ": "diagnostika",
+      "kapitola": "pridavna-jmena",
+      "tema": 3,
+      "cil": "P6: stupňování se změnou kmene (měkký – měkčí, -k- → -č-).",
+      "cas_min": 1,
+      "zadani": "Vyber 2. stupeň přídavného jména „měkký“.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "měkčí",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "měkkejší",
+                "spravne": false,
+                "typ_chyby": "stupnovani-nepravidelne-pravidelne"
+              },
+              {
+                "id": "c",
+                "text": "nejměkčí",
+                "spravne": false,
+                "typ_chyby": "stupnovani-zamena"
+              }
+            ]
+          }
+        }
+      ],
+      "tisk": {
+        "zadani": "Vyber 2. stupeň přídavného jména „měkký“.\n\nZakroužkuj: a) měkčí b) měkkejší c) nejměkčí"
+      }
+    },
+    {
+      "id": "cj-t0-pol-U7",
+      "typ": "diagnostika",
+      "kapitola": "zajmena-cislovky",
+      "tema": 4,
+      "cil": "P7: mně (6. p.) × mě (4. p.); mne v nabídce není.",
+      "cas_min": 1,
+      "zadani": "Doplň ě, nebo ně.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Babička o m_ mluví ráda a často m_ chválí.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "ě",
+                  "ně"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "ě",
+                  "ně"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "ně",
+            "ě"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "ě",
+                null
+              ],
+              "typ_chyby": "me-mne-zamena"
+            },
+            {
+              "hodnota": [
+                null,
+                "ně"
+              ],
+              "typ_chyby": "me-mne-zamena"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Doplň ě, nebo ně.\n\nBabička o m_ mluví ráda a často m_ chválí."
+      }
+    },
+    {
+      "id": "cj-t0-pol-U8",
+      "typ": "diagnostika",
+      "kapitola": "zajmena-cislovky",
+      "tema": 4,
+      "cil": "P8: spisovný 3. p. číslovky oba (oběma).",
+      "cas_min": 1,
+      "zadani": "Které slovo patří do věty?\n\nTomáš poslal pohlednici ___ tetám.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "oběma",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "obouma",
+                "spravne": false,
+                "typ_chyby": "cislovka-hovorovy-tvar"
+              },
+              {
+                "id": "c",
+                "text": "obou",
+                "spravne": false,
+                "typ_chyby": "cislovka-pad-zamena"
+              }
+            ]
+          }
+        }
+      ],
+      "tisk": {
+        "zadani": "Které slovo patří do věty?\n\nTomáš poslal pohlednici ___ tetám.\n\nZakroužkuj: a) oběma b) obouma c) obou"
+      }
+    },
+    {
+      "id": "cj-t0-pol-U9",
+      "typ": "diagnostika",
+      "kapitola": "slovesa",
+      "tema": 5,
+      "cil": "P9: slovesný vid (přicházet a naslouchat ned. i s předponou, zaklepat dok.).",
+      "cas_min": 1,
+      "zadani": "U každého označeného slovesa urči vid: dokonavý, nebo nedokonavý.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Ema pomalu přicházela k domu, pak zaklepala na dveře a chvíli naslouchala.",
+            "slova": [
+              2,
+              6,
+              11
+            ],
+            "role": [
+              "dokonavý",
+              "nedokonavý"
+            ]
+          },
+          "spravne": {
+            "2": "nedokonavý",
+            "6": "dokonavý",
+            "11": "nedokonavý"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "2": "dokonavý"
+              },
+              "typ_chyby": "vid-zamena"
+            },
+            {
+              "hodnota": {
+                "6": "nedokonavý"
+              },
+              "typ_chyby": "vid-zamena"
+            },
+            {
+              "hodnota": {
+                "11": "dokonavý"
+              },
+              "typ_chyby": "vid-zamena"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Nad každé tučné sloveso napiš D (dokonavý vid), nebo N (nedokonavý vid).\n\nEma pomalu **přicházela** k domu, pak **zaklepala** na dveře a chvíli **naslouchala**."
+      }
+    },
+    {
+      "id": "cj-t0-pol-U10",
+      "typ": "diagnostika",
+      "kapitola": "slovesa",
+      "tema": 5,
+      "cil": "P10: rod trpný (byl ozdoben) × tvar být bez příčestí trpného a × podmiňovací by.",
+      "cas_min": 1,
+      "zadani": "Ve které větě je sloveso v rodě trpném?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Stromek byl ozdoben už v sobotu.",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "Lucka ozdobila stromek skleněnými koulemi.",
+                "spravne": false,
+                "typ_chyby": "rod-trpny-neuzna"
+              },
+              {
+                "id": "c",
+                "text": "Ema byla celé odpoledne venku.",
+                "spravne": false,
+                "typ_chyby": "rod-trpny-za-byt"
+              },
+              {
+                "id": "d",
+                "text": "Táta by ozdobil i okno.",
+                "spravne": false,
+                "typ_chyby": "rod-trpny-neuzna"
+              }
+            ]
+          }
+        }
+      ],
+      "tisk": {
+        "zadani": "Ve které větě je sloveso v rodě trpném?\n\nZakroužkuj: a) Stromek byl ozdoben už v sobotu. b) Lucka ozdobila stromek skleněnými koulemi. c) Ema byla celé odpoledne venku. d) Táta by ozdobil i okno."
+      }
+    },
+    {
+      "id": "cj-t0-pol-U11",
+      "typ": "diagnostika",
+      "kapitola": "slovesa",
+      "tema": 5,
+      "cil": "P11: spisovný tvar bychom.",
+      "cas_min": 1,
+      "zadani": "Které slovo patří do věty?\n\nVečer ___ si mohli zahrát deskovou hru.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "bychom",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "bysme",
+                "spravne": false,
+                "typ_chyby": "bysme-za-bychom"
+              },
+              {
+                "id": "c",
+                "text": "by jsme",
+                "spravne": false,
+                "typ_chyby": "by-jsme-za-bychom"
+              }
+            ]
+          }
+        }
+      ],
+      "tisk": {
+        "zadani": "Které slovo patří do věty?\n\nVečer ___ si mohli zahrát deskovou hru.\n\nZakroužkuj: a) bychom b) bysme c) by jsme"
+      }
+    },
+    {
+      "id": "cj-t0-pol-U12",
+      "typ": "diagnostika",
+      "kapitola": "vyjmenovana-slova",
+      "tema": 6,
+      "cil": "P12: vyjmenovaná slova po S (syčet) a M (myš), nevyjmenované po V (vítat).",
+      "cas_min": 1,
+      "zadani": "Doplň i, nebo y.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Husa na dvoře s_čela, babička nás v_tala u vrat a pod schody se schovala m_š.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 2,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "y",
+            "i",
+            "y"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "i",
+                null,
+                null
+              ],
+              "typ_chyby": "vs-s-i-za-y"
+            },
+            {
+              "hodnota": [
+                null,
+                "y",
+                null
+              ],
+              "typ_chyby": "vs-v-y-za-i"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                "i"
+              ],
+              "typ_chyby": "vs-m-i-za-y"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Doplň i, nebo y.\n\nHusa na dvoře s_čela, babička nás v_tala u vrat a pod schody se schovala m_š."
+      }
+    },
+    {
+      "id": "cj-t0-pol-U13",
+      "typ": "diagnostika",
+      "kapitola": "vyjmenovana-slova",
+      "tema": 6,
+      "cil": "P13: dvojice podle významu pobýt (pobyl) × přibít (přibil).",
+      "cas_min": 1,
+      "zadani": "Doplň i, nebo y.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Děda u nás pob_l celý týden a v kuchyni nám přib_l poličku.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "y",
+            "i"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "i",
+                null
+              ],
+              "typ_chyby": "vs-b-i-za-y"
+            },
+            {
+              "hodnota": [
+                null,
+                "y"
+              ],
+              "typ_chyby": "vs-dvojice-vyznam"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Doplň i, nebo y.\n\nDěda u nás pob_l celý týden a v kuchyni nám přib_l poličku."
+      }
+    },
+    {
+      "id": "cj-t0-pol-U14",
+      "typ": "diagnostika",
+      "kapitola": "shoda",
+      "tema": 7,
+      "cil": "P14: shoda přísudku s jedním podmětem (m. neživ. za přísudkem, m. živ., s. v mn. č.).",
+      "cas_min": 1,
+      "zadani": "Doplň i, y, nebo a.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Na zastávce visel_ nové jízdní řády, žáci si je prohlížel_ a kola se opíral_ o plot.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 2,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "y",
+            "i",
+            "a"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "i",
+                null,
+                null
+              ],
+              "typ_chyby": "shoda-i-za-y"
+            },
+            {
+              "hodnota": [
+                null,
+                "y",
+                null
+              ],
+              "typ_chyby": "shoda-y-za-i"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                "y"
+              ],
+              "typ_chyby": "shoda-y-za-a"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Doplň i, y, nebo a.\n\nNa zastávce visel_ nové jízdní řády, žáci si je prohlížel_ a kola se opíral_ o plot."
+      }
+    },
+    {
+      "id": "cj-t0-pol-U15",
+      "typ": "diagnostika",
+      "kapitola": "shoda",
+      "tema": 7,
+      "cil": "P15: několikanásobný podmět před přísudkem (s m. živ. → i; ž. + m. neživ. → y).",
+      "cas_min": 1,
+      "zadani": "Doplň i, y, nebo a.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Ema a Adam se vrátil_ z tábora, ale tašky a batohy se válel_ v autě až do večera.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "i",
+                  "y",
+                  "a"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "i",
+            "y"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "y",
+                null
+              ],
+              "typ_chyby": "shoda-nekolikanasobny-y"
+            },
+            {
+              "hodnota": [
+                null,
+                "i"
+              ],
+              "typ_chyby": "shoda-i-za-y"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Doplň i, y, nebo a.\n\nEma a Adam se vrátil_ z tábora, ale tašky a batohy se válel_ v autě až do večera."
+      }
+    },
+    {
+      "id": "cj-t0-pol-U16",
+      "typ": "diagnostika",
+      "kapitola": "vetne-cleny",
+      "tema": 8,
+      "cil": "P16: základní a rozvíjející větné členy; PU času s předložkou (v únoru).",
+      "cas_min": 1,
+      "zadani": "U každého označeného slova vyber, jaký je to větný člen.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Odvážný horolezec v únoru zdolal strmou stěnu.",
+            "slova": [
+              1,
+              3,
+              4,
+              5,
+              6
+            ],
+            "role": [
+              "podmět",
+              "přísudek",
+              "předmět",
+              "příslovečné určení",
+              "přívlastek"
+            ]
+          },
+          "spravne": {
+            "1": "podmět",
+            "3": "příslovečné určení",
+            "4": "přísudek",
+            "5": "přívlastek",
+            "6": "předmět"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "6": "podmět"
+              },
+              "typ_chyby": "podmet-za-predmet"
+            },
+            {
+              "hodnota": {
+                "3": "předmět"
+              },
+              "typ_chyby": "pu-za-predmet"
+            },
+            {
+              "hodnota": {
+                "6": "příslovečné určení"
+              },
+              "typ_chyby": "predmet-za-pu"
+            },
+            {
+              "hodnota": {
+                "3": "přívlastek"
+              },
+              "typ_chyby": "pu-za-privlastek"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Nad každé tučné slovo napiš, jaký je to větný člen: podmět, přísudek, předmět, příslovečné určení, nebo přívlastek.\n\nOdvážný **horolezec** v **únoru** **zdolal** **strmou** **stěnu**."
+      }
+    },
+    {
+      "id": "cj-t0-pol-U17",
+      "typ": "diagnostika",
+      "kapitola": "vetne-cleny",
+      "tema": 8,
+      "cil": "P17: přívlastek neshodný × příslovečné určení místa.",
+      "cas_min": 1,
+      "zadani": "Jaký větný člen je „u kašny“ v této větě?\n\nStánek u kašny je zavřený.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "přívlastek neshodný",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "přívlastek shodný",
+                "spravne": false,
+                "typ_chyby": "privlastek-shoda-zamena"
+              },
+              {
+                "id": "c",
+                "text": "příslovečné určení místa",
+                "spravne": false,
+                "typ_chyby": "privlastek-neshodny-za-pu"
+              }
+            ]
+          }
+        }
+      ],
+      "tisk": {
+        "zadani": "Jaký větný člen je „u kašny“ v této větě?\n\nStánek u kašny je zavřený.\n\nZakroužkuj: a) přívlastek neshodný b) přívlastek shodný c) příslovečné určení místa"
+      }
+    },
+    {
+      "id": "cj-t0-pol-U18",
+      "typ": "diagnostika",
+      "kapitola": "souveti",
+      "tema": 9,
+      "cil": "P18: čárka před protože, před kterého a za vloženou vedlejší větou.",
+      "cas_min": 1,
+      "zadani": "Klikni na místa, kam patří čárka.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Ema nemohla usnout protože pes kterého hlídala pro sousedy pořád štěkal.",
+            "cil": "mezery",
+            "min": 1,
+            "max": 6
+          },
+          "spravne": [
+            2,
+            4,
+            8
+          ],
+          "zname_chyby": [
+            {
+              "chybi": [
+                8
+              ],
+              "typ_chyby": "carka-vlozena-chybi-druha"
+            },
+            {
+              "chybi": [
+                2
+              ],
+              "typ_chyby": "carka-chybi-pred-spojkou"
+            },
+            {
+              "chybi": [
+                4
+              ],
+              "typ_chyby": "carka-chybi-ktery"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Doplň do souvětí čárky.\n\nEma nemohla usnout protože pes kterého hlídala pro sousedy pořád štěkal."
+      }
+    },
+    {
+      "id": "cj-t0-pol-U19",
+      "typ": "diagnostika",
+      "kapitola": "souveti",
+      "tema": 9,
+      "cil": "P19: počet vět v souvětí podle přísudků (setmělo, chtěl jet, odjel); past: infinitiv ve složeném přísudku.",
+      "cas_min": 1,
+      "zadani": "Kolik vět má toto souvětí?\n\nKdyž se setmělo, Tomáš chtěl jet domů, ale autobus už odjel.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "2 věty",
+                "spravne": false,
+                "typ_chyby": "souveti-pocet-podle-spojek"
+              },
+              {
+                "id": "b",
+                "text": "3 věty",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "4 věty",
+                "spravne": false,
+                "typ_chyby": "souveti-infinitiv-jako-veta"
+              }
+            ]
+          }
+        }
+      ],
+      "tisk": {
+        "zadani": "Kolik vět má toto souvětí?\n\nKdyž se setmělo, Tomáš chtěl jet domů, ale autobus už odjel.\n\nZakroužkuj: a) 2 věty b) 3 věty c) 4 věty"
+      }
+    },
+    {
+      "id": "cj-t0-pol-U20",
+      "typ": "diagnostika",
+      "kapitola": "souveti",
+      "tema": 9,
+      "cil": "P20: čárka ve výčtu a před ale ve větě jednoduché, ne před slučovacím a.",
+      "cas_min": 1,
+      "zadani": "Klikni na místa, kam patří čárka.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Klára má ráda matematiku zeměpis a dějepis ale ne tělocvik.",
+            "cil": "mezery",
+            "min": 1,
+            "max": 6
+          },
+          "spravne": [
+            3,
+            6
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                4
+              ],
+              "typ_chyby": "carka-navic-a"
+            },
+            {
+              "chybi": [
+                3
+              ],
+              "typ_chyby": "carka-vycet-chybi"
+            },
+            {
+              "chybi": [
+                6
+              ],
+              "typ_chyby": "carka-chybi-pred-ale"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Doplň do věty čárky.\n\nKlára má ráda matematiku zeměpis a dějepis ale ne tělocvik."
+      }
+    },
+    {
+      "id": "cj-t0-pol-U21",
+      "typ": "diagnostika",
+      "kapitola": "pravopis",
+      "tema": 10,
+      "cil": "P21: bje, vje na švu předpony a kořene (objet, vjet), mně podle příbuzného slova (tajemný).",
+      "cas_min": 1,
+      "zadani": "Doplň chybějící písmena. U každé mezery vybírej ze dvou možností, které se ti nabídnou.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Lucka na kole ob_la rybník, v_la do dvora a tajem_ se usmála.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "ě",
+                  "je"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "ě",
+                  "je"
+                ]
+              },
+              {
+                "i": 2,
+                "moznosti": [
+                  "ě",
+                  "ně"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "je",
+            "je",
+            "ně"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "ě",
+                null,
+                null
+              ],
+              "typ_chyby": "skupina-e-za-je"
+            },
+            {
+              "hodnota": [
+                null,
+                "ě",
+                null
+              ],
+              "typ_chyby": "skupina-e-za-je"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                "ě"
+              ],
+              "typ_chyby": "skupina-me-za-mne"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Doplň ě, je, nebo ně.\n\nLucka na kole ob_la rybník, v_la do dvora a tajem_ se usmála."
+      }
+    },
+    {
+      "id": "cj-t0-pol-U22",
+      "typ": "diagnostika",
+      "kapitola": "pravopis",
+      "tema": 10,
+      "cil": "P22: předpona s- (dohromady: spojit) × z- (stát se: zmodrat), předložka s + 7. pád.",
+      "cas_min": 1,
+      "zadani": "Doplň s, nebo z.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Ema _pojila dva provázky uzlem, rty jí zimou _modraly a pak šla _ kamarádkou domů.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "s",
+                  "z"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "s",
+                  "z"
+                ]
+              },
+              {
+                "i": 2,
+                "moznosti": [
+                  "s",
+                  "z"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "s",
+            "z",
+            "s"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "z",
+                null,
+                null
+              ],
+              "typ_chyby": "s-z-predpona-zamena"
+            },
+            {
+              "hodnota": [
+                null,
+                "s",
+                null
+              ],
+              "typ_chyby": "s-z-predpona-zamena"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                "z"
+              ],
+              "typ_chyby": "s-z-predlozka-zamena"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Doplň s, nebo z.\n\nEma _pojila dva provázky uzlem, rty jí zimou _modraly a pak šla _ kamarádkou domů."
+      }
+    },
+    {
+      "id": "cj-t0-pol-U23",
+      "typ": "diagnostika",
+      "kapitola": "pravopis",
+      "tema": 10,
+      "cil": "P23: zdvojené souhlásky na švu (ochrana – ochranný, od-daný).",
+      "cas_min": 1,
+      "zadani": "Doplň chybějící písmena. U každé mezery vybírej ze dvou možností, které se ti nabídnou.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Útočník si nasadil ochra_ou helmu a o_aní fanoušci mu tleskali.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "n",
+                  "nn"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "d",
+                  "dd"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "nn",
+            "dd"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "n",
+                null
+              ],
+              "typ_chyby": "zdvojene-chybi"
+            },
+            {
+              "hodnota": [
+                null,
+                "d"
+              ],
+              "typ_chyby": "zdvojene-chybi"
+            }
+          ]
+        }
+      ],
+      "tisk": {
+        "zadani": "Doplň n, nebo nn, a d, nebo dd.\n\nÚtočník si nasadil ochra_ou helmu a o_aní fanoušci mu tleskali."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "stredni",
+    "poznamka": "Pololetní test podle ZADANI-OSMA §9 bod 6, formát a rozložení jako úvodní test (OSNOVA §15: 23 položek, T1–T10: 2-2-2-2-3-2-2-2-3-3; P1–P23 odpovídají D1–D23 typem vstupu, počtem mezer/slov a kódy chyb). Korektura 14. 10. 2026: 2 jazykové chyby opraveny (P14 „zastavil_ autobusy“ šlo číst i s nevyjádřeným podmětem „oni zastavili autobusy“ → visely jízdní řády; P4 „sýkor_“ po r měřilo jen tvrdou souhlásku → pěnkav_); kvůli novosti (stejný kořen a jev hodnocený v lekcích) vyměněny hodnocené tvary v P3–P6, P9, P10, P12, P13, P16, P17, P22, P23 a skoro shodné věty P8, P11; uvod_pro_rodice zkrácen na 1 větu. Ponecháno: objela (bje má jen 4 slova, všechna v cj-t10-l39/l40 nebo v diag; v L39 jen rozklad ob|jet), vjela (jiné slovo než vjezd). Dublety se nehodnotí: losi/losové a objet/obejet (v mezeře jen i/y, ě/je), mě/mne – mne v nabídce není. blízko: SSČ i SSJČ přísl. i předl. s 2. p., kontext jednoznačný. Větné členy (P16, P17) příručka nevykládá — termíny podle TERMINOLOGIE a školské praxe jako v úvodním testu. Vzorová odpověď i všech 56 známých chyb ověřeny přes web/js/vyhodnoceni.js. Rozpis: cestina/Obsah/POLOLETNI-TEST.md §8. ZBÝVÁ (novost): lekce jiných autorů vytvořené po korektuře (14. 10. 18:54–19:19) převzaly hodnocená slova testu se stejným jevem: basketbalista (cj-t2-l5nb, vzor předseda), syčela + „husa syčela“ (cj-t6-l22n), pobyl/přibil (cj-t6-l24n), visely (cj-t7-l26n); křížově jiný jev: blízko (cj-t6-l21n), přicházela (cj-t7-l27n), ozdob- a zmodraly (cj-t7-l28n). Rozhodne vedoucí: buď se změní ty lekce, nebo test po jejich dokončení (zásoby VS po S a slov na -ista jsou v lekcích už skoro vyčerpané).",
+    "zkontroloval": "korektor",
+    "datum": "2026-10-14",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?slovo=ob%C4%8Das",
+      "https://prirucka.ujc.cas.cz/?slovo=ochotn%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=na",
+      "https://prirucka.ujc.cas.cz/?slovo=proto%C5%BEe",
+      "https://prirucka.ujc.cas.cz/?slovo=bl%C3%ADzko",
+      "https://prirucka.ujc.cas.cz/?slovo=basketbalista",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C5%99edseda",
+      "https://prirucka.ujc.cas.cz/?slovo=b%C5%99%C3%ADza",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C4%9Bnkava",
+      "https://prirucka.ujc.cas.cz/?slovo=zmokl%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=farm%C3%A1%C5%99",
+      "https://prirucka.ujc.cas.cz/?slovo=m%C4%9Bkk%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=oba",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C5%99ich%C3%A1zet",
+      "https://prirucka.ujc.cas.cz/?slovo=zaklepat",
+      "https://prirucka.ujc.cas.cz/?slovo=naslouchat",
+      "https://prirucka.ujc.cas.cz/?slovo=ozdobit",
+      "https://prirucka.ujc.cas.cz/?slovo=sy%C4%8Det",
+      "https://prirucka.ujc.cas.cz/?slovo=v%C3%ADtat",
+      "https://prirucka.ujc.cas.cz/?slovo=my%C5%A1",
+      "https://prirucka.ujc.cas.cz/?slovo=pob%C3%BDt",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C5%99ib%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=viset",
+      "https://prirucka.ujc.cas.cz/?slovo=objet",
+      "https://prirucka.ujc.cas.cz/?slovo=vjet",
+      "https://prirucka.ujc.cas.cz/?slovo=tajemn%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=zmodrat",
+      "https://prirucka.ujc.cas.cz/?slovo=oddan%C3%BD",
+      "https://prirucka.ujc.cas.cz/?id=los_1",
+      "https://prirucka.ujc.cas.cz/?id=100",
+      "https://prirucka.ujc.cas.cz/?id=110",
+      "https://prirucka.ujc.cas.cz/?id=111",
+      "https://prirucka.ujc.cas.cz/?id=125",
+      "https://prirucka.ujc.cas.cz/?id=126",
+      "https://prirucka.ujc.cas.cz/?id=150",
+      "https://prirucka.ujc.cas.cz/?id=151",
+      "https://prirucka.ujc.cas.cz/?id=153",
+      "https://prirucka.ujc.cas.cz/?id=400",
+      "https://prirucka.ujc.cas.cz/?id=410",
+      "https://prirucka.ujc.cas.cz/?id=575",
+      "https://prirucka.ujc.cas.cz/?id=600",
+      "https://prirucka.ujc.cas.cz/?id=601",
+      "https://prirucka.ujc.cas.cz/?id=650",
+      "https://prirucka.ujc.cas.cz/?id=670"
+    ],
+    "testovaci_rodic": null
+  }
+}
