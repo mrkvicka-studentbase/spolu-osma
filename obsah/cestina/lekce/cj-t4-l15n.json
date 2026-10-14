@@ -1,0 +1,820 @@
+{
+  "id": "cj-t4-l15n",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 4,
+  "poradi": 3,
+  "tema": "Číslovky: druhy a tvary dva, oba, tři, čtyři",
+  "kapitola": "zajmena-cislovky",
+  "cil_pro_rodice": "Dítě samo určí druh číslovky i v textu a v jiném tvaru (čtvrté, ty první, troje) a napíše spisovný tvar čísel dva, oba, tři, čtyři podle pádové otázky, i když v řeči zazní tvar z běžné mluvy.",
+  "uvod_pro_rodice": "Dítě tuhle látku dělalo v lekci „Číslovky: druhy a tvary dva, oba, tři, čtyři“; dnes ukáže, že ji opravdu umí. Číslovek k určení je víc, v nahrávce jsou dva tvary z běžné řeči a doplňovaných mezer je deset.",
+  "uvod_pravidla": [
+    {
+      "znak": "kolik? kolikátý? kolikery? -krát?",
+      "text": "test"
+    },
+    {
+      "znak": "pádová otázka určí tvar čísla",
+      "text": "pravidlo"
+    },
+    {
+      "znak": "píše se jako v knize, ne jak mluvíme",
+      "text": "pravidlo"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "číslovka": "slovo, které vyjadřuje počet nebo pořadí (osm, osmý, dvoje, osmkrát)",
+    "druhy číslovek": "základní odpovídá na kolik? (osm), řadová na kolikátý? (osmý), druhová na kolikery? (dvoje brusle = dva páry), násobná na kolikrát? (osmkrát)",
+    "pád": "tvar slova podle otázky: bez koho, čeho? a o kom, o čem? (dvou, obou); komu, čemu? (dvěma, oběma, třem, čtyřem); s kým, s čím? (dvěma, oběma, třemi, čtyřmi)",
+    "spisovný tvar": "tvar, který se píše ve škole a v písemce (se dvěma, se třemi)",
+    "tvar z běžné mluvy": "tvar, který se často říká, ale v písemce se nepíše (se dvouma, se třema; na -ma jde napsat jen u částí těla: třema nohama)",
+    "naostro": "lekce bez nové látky, ve které dítě ukáže, že to, co se učilo, opravdu umí"
+  },
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "cas_min": 25,
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t4-l15n-U1",
+      "typ": "rozcvicka",
+      "cil": "Zopakovat z lekce 14 mě/mně, ji/jí a tvary on po předložce: v každé řadě dvě mezery.",
+      "cas_min": 4,
+      "zadani": "Doplň v každé řadě obě mezery: ě, nebo ně; i, nebo í; v řadě C celé slovo.\n\nA) Řekni m_, kdy pro m_ přijdeš.\n\nB) Ema zakopla, tak j_ Adam podal ruku a zvedl j_ ze země.\n\nC) Adam má nové kolo. Všichni se k _ hrnou a chválí _ kolo.\n\nD) Ema m_ půjčila tužku a já j_ pravítko.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Řekni m_, kdy pro m_ přijdeš.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "ě",
+                  "ně"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "ě",
+                  "ně"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "ně",
+            "ě"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "ě",
+                null
+              ],
+              "typ_chyby": "me-mne-zamena"
+            },
+            {
+              "hodnota": [
+                null,
+                "ně"
+              ],
+              "typ_chyby": "me-mne-zamena"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Ema zakopla, tak j_ Adam podal ruku a zvedl j_ ze země.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "í"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "i",
+                  "í"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "í",
+            "i"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "i",
+                null
+              ],
+              "typ_chyby": "zajmeno-ji-delka"
+            },
+            {
+              "hodnota": [
+                null,
+                "í"
+              ],
+              "typ_chyby": "zajmeno-ji-delka"
+            }
+          ]
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Adam má nové kolo. Všichni se k _ hrnou a chválí _ kolo.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "němu",
+                  "jemu"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "něho",
+                  "jeho"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "němu",
+            "jeho"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "jemu",
+                null
+              ],
+              "typ_chyby": "zajmeno-jeho-po-predlozce"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Ema m_ půjčila tužku a já j_ pravítko.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "ě",
+                  "ně"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "i",
+                  "í"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "ně",
+            "í"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "ě",
+                null
+              ],
+              "typ_chyby": "me-mne-zamena"
+            },
+            {
+              "hodnota": [
+                null,
+                "i"
+              ],
+              "typ_chyby": "zajmeno-ji-delka"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje minulou lekci: mě/mně rozhodne test tě/tobě, ji/jí test Emu/Emě, po předložce se píše něho, němu. Proti učební lekci jsou v každé řadě dvě mezery a v C i jeho, které říká čí. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) Řekni m_, kdy pro m_ přijdeš.\n\nmně (řekni tobě), mě (pro tebe)\n\n#### B) Ema zakopla, tak j_ Adam podal ruku a zvedl j_ ze země.\n\njí (podal Emě), ji (zvedl Emu)\n\n#### C) Všichni se k _ hrnou a chválí _ kolo.\n\nk němu (po předložce tvar s n), jeho kolo (čí kolo? Adamovo)\n\n#### D) Ema m_ půjčila tužku a já j_ pravítko.\n\nmně (půjčila tobě), jí (půjčím Emě)\n\n**Výsledek:** A ně, ě; B í, i; C němu, jeho; D ně, í",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Řekni obě mezery s tě, tebe, nebo tobě, i s krátkým slovem před nimi. Co zní česky?“"
+          },
+          {
+            "k": "B a D",
+            "text": "„Dosaď za každé j_ jméno Emu, nebo Emě a řekni to nahlas. Co zní česky?“"
+          },
+          {
+            "k": "C",
+            "text": "„Řekni obě nabídky nahlas i se slovem před mezerou. Co zní česky?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč se v řadě A píše jednou mně a jednou mě.“",
+        "otocena_role_odpoved": "Protože se řekne řekni tobě, ale pro tebe. Kde sedí tobě, píše se mně; kde sedí tě nebo tebe, píše se mě.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Zamění mě/mně v A nebo D: „Řekni to s tě, nebo s tobě?“ Zamění ji/jí v B nebo D: „Dosaď Emu, nebo Emě.“ V C napíše k jemu: „Řekni to nahlas. Zní to česky?“ Napíše něho kolo: „Čí kolo?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — testy z minulé lekce drží i ve dvojicích. Pochvalte, že dítě dosazovalo nahlas, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Zavolej na mě.“ „Pomoz jí.“ „Jdu k němu.“ Dítě řekne test u mě (tě, nebo tobě?), u jí (Emu, nebo Emě?) a u němu (je tam předložka?). Kontrola pro vás: na tebe → mě; pomoz Emě → jí; po k tvar s n.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra napište dítěti: Ukaž m_ to. Počkej na m_. Vidím j_. Věřím j_. Jdu k ___ (němu, jemu). Dítě u každé věty řekne test nahlas a doplní. Potom zopakujte lekci „Číslovky: druhy a tvary dva, oba, tři, čtyři“. Kontrola pro vás: mně (ukaž tobě), mě (na tebe), ji (vidím Emu), jí (věřím Emě), k němu."
+      },
+      "tisk": {
+        "zadani": "Doplň v každé řadě obě mezery: ě, nebo ně; i, nebo í; v řadě C na čáru celé slovo.\n\nA) Řekni m_, kdy pro m_ přijdeš.\n\nB) Ema zakopla, tak j_ Adam podal ruku a zvedl j_ ze země.\n\nC) Adam má nové kolo. Všichni se k ___ (němu, jemu) hrnou a chválí ___ (něho, jeho) kolo.\n\nD) Ema m_ půjčila tužku a já j_ pravítko."
+      }
+    },
+    {
+      "id": "cj-t4-l15n-U2",
+      "typ": "nova",
+      "cil": "Určit druh sedmi číslovek v textu otázkou (kolik? kolikátý? kolikery? kolikrát?), i u tvarů čtvrté, první a troje.",
+      "cas_min": 5,
+      "zadani": "U každé označené číslovky vyber druh. Zeptej se na ni.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Na turnaj přijelo dvanáct týmů. Naše družstvo hrálo šestkrát a skončilo čtvrté. Adam si vzal troje kopačky, protože ty první se mu hned roztrhly. Ve finále dal tři góly a za celý turnaj střílel na bránu dvacetkrát.",
+            "slova": [
+              3,
+              8,
+              11,
+              15,
+              19,
+              27,
+              36
+            ],
+            "role": [
+              "základní",
+              "řadová",
+              "druhová",
+              "násobná"
+            ]
+          },
+          "spravne": {
+            "3": "základní",
+            "8": "násobná",
+            "11": "řadová",
+            "15": "druhová",
+            "19": "řadová",
+            "27": "základní",
+            "36": "násobná"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "15": "základní"
+              },
+              "typ_chyby": "cislovka-druh-zamena"
+            },
+            {
+              "hodnota": {
+                "19": "základní"
+              },
+              "typ_chyby": "cislovka-druh-zamena"
+            },
+            {
+              "hodnota": {
+                "11": "základní"
+              },
+              "typ_chyby": "cislovka-druh-zamena"
+            },
+            {
+              "hodnota": {
+                "36": "základní"
+              },
+              "typ_chyby": "cislovka-druh-zamena"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě u sedmi číslovek v textu vybírá druh otázkou. Proti učební lekci jsou číslovky ve větách a některé v jiném tvaru (čtvrté od čtvrtý). Pasti: troje kopačky jsou tři páry, ptáme se kolikery; první je pořadí, ne počet; čísla s -krát odpovídají na kolikrát.",
+        "reseni": "dvanáct: základní (kolik týmů?)\n\nšestkrát: násobná (kolikrát hrálo?)\n\nčtvrté: řadová (kolikáté skončilo?)\n\ntroje: druhová (kolikery kopačky? tři páry)\n\nprvní: řadová (kolikáté kopačky? ty první)\n\ntři: základní (kolik gólů?)\n\ndvacetkrát: násobná (kolikrát střílel?)\n\n**Výsledek:** základní, násobná, řadová, druhová, řadová, základní, násobná",
+        "otazky": [
+          "„Řekni mi vlastními slovy, jak poznáš druh číslovky.“",
+          "„Zeptej se na každé označené slovo: kolik? kolikátý? kolikery? kolikrát? Která otázka sedí?“",
+          "„U slov v jiném tvaru řekni nejdřív, ke kterému jménu patří. Jak se na ně s tím jménem zeptáš?“"
+        ],
+        "otocena_role": "„Vysvětli mi, jak poznáš řadovou číslovku od základní.“",
+        "otocena_role_odpoved": "Na základní se ptám kolik?, třeba dvanáct týmů. Na řadovou kolikátý?, třeba čtvrté místo nebo ty první kopačky. Řadová říká pořadí, ne počet.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. „troje“ jako základní: „Kolikery kopačky? Jsou to kusy, nebo páry?“ „první“ nebo „čtvrté“ jako základní: „Kolikáté skončilo? Které kopačky?“ „šestkrát“ nebo „dvacetkrát“ jako základní: „Ptáš se kolik, nebo kolikrát?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — sedm číslovek v textu, sedm správných druhů. Pochvalte, že se dítě ptalo nahlas, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Lucka byla v závodě devátá, běžela čtyřikrát a měla s sebou dvoje ponožky.“ Dítě řekne druh u slov devátá, čtyřikrát, dvoje. Kontrola pro vás: devátá řadová (kolikátá?), čtyřikrát násobná (kolikrát?), dvoje druhová (kolikery?).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra napište dítěti čtyři otázky do sloupce: kolik? kolikátý? kolikery? kolikrát? Dítě ke každé napíše jednu číslovku a krátkou větu o sportu. Potom zopakujte lekci „Číslovky: druhy a tvary dva, oba, tři, čtyři“. Kontrola pro vás: například šest týmů, šesté místo, troje kopačky, šestkrát; každá odpovídá na svou otázku."
+      },
+      "tisk": {
+        "zadani": "Nad každou tučnou číslovku napiš druh: základní, řadová, druhová, nebo násobná.\n\nNa turnaj přijelo **dvanáct** týmů. Naše družstvo hrálo **šestkrát** a skončilo **čtvrté**. Adam si vzal **troje** kopačky, protože ty **první** se mu hned roztrhly. Ve finále dal **tři** góly a za celý turnaj střílel na bránu **dvacetkrát**."
+      }
+    },
+    {
+      "id": "cj-t4-l15n-U3",
+      "typ": "nova",
+      "cil": "Poznat v delší nahrávce dva tvary z běžné mluvy (čtyřma, dvouma) vedle správného oběma a vybrat spisovné tvary čtyřmi a dvěma podle pádové otázky.",
+      "cas_min": 5,
+      "zadani": "Poslechni si nahrávku. Pak odpověz na tři otázky.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Otázka 1",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t4/l15n-u3.mp3",
+            "prepis": "V sobotu jsme s oběma bratranci a se čtyřma kamarády hráli fotbal proti dvouma týmům z vedlejší vesnice.",
+            "max_prehrani": 0,
+            "otazka": "Jedno ze slov v nabídce má v písemce jiný tvar, než jaký zazněl. Které?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "oběma",
+                  "spravne": false
+                },
+                {
+                  "id": "b",
+                  "text": "čtyřma",
+                  "spravne": true
+                },
+                {
+                  "id": "c",
+                  "text": "bratranci",
+                  "spravne": false
+                },
+                {
+                  "id": "d",
+                  "text": "kamarády",
+                  "spravne": false
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Otázka 2",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t4/l15n-u3.mp3",
+            "prepis": "V sobotu jsme s oběma bratranci a se čtyřma kamarády hráli fotbal proti dvouma týmům z vedlejší vesnice.",
+            "max_prehrani": 0,
+            "otazka": "Jak se to slovo napíše správně?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "čtyřmi",
+                  "spravne": true
+                },
+                {
+                  "id": "b",
+                  "text": "čtyřma",
+                  "spravne": false,
+                  "typ_chyby": "cislovka-hovorovy-tvar"
+                },
+                {
+                  "id": "c",
+                  "text": "čtyř",
+                  "spravne": false,
+                  "typ_chyby": "cislovka-pad-zamena"
+                },
+                {
+                  "id": "d",
+                  "text": "čtyřem",
+                  "spravne": false,
+                  "typ_chyby": "cislovka-pad-zamena"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Otázka 3",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t4/l15n-u3.mp3",
+            "prepis": "V sobotu jsme s oběma bratranci a se čtyřma kamarády hráli fotbal proti dvouma týmům z vedlejší vesnice.",
+            "max_prehrani": 0,
+            "otazka": "V nahrávce je ještě jedno slovo, které se v písemce napíše jinak. Jak správně?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "dvěma",
+                  "spravne": true
+                },
+                {
+                  "id": "b",
+                  "text": "dvouma",
+                  "spravne": false,
+                  "typ_chyby": "cislovka-hovorovy-tvar"
+                },
+                {
+                  "id": "c",
+                  "text": "dvou",
+                  "spravne": false,
+                  "typ_chyby": "cislovka-pad-zamena"
+                },
+                {
+                  "id": "d",
+                  "text": "dvěmi",
+                  "spravne": false
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě větu jen slyší; nahrávku si může pustit znovu. Co v ní zazní, máte sbalené pod „Co zazní v nahrávce“, nečtěte to nahlas. Proti učební lekci jsou v nahrávce záměrně dva tvary z běžné mluvy a vedle nich správný tvar, který zní podobně. Dítě je najde a vybere, jak se píšou.",
+        "reseni": "Krok 1: čtyřma (tak se říká, v písemce se píše jinak); oběma je správně (s oběma bratranci), bratranci a kamarády také\n\nKrok 2: čtyřmi (se čtyřmi kamarády, s kým?; -ma jen u částí těla); čtyř a čtyřem patří k jiné otázce (bez čtyř, ke čtyřem)\n\nKrok 3: dvěma (proti dvěma týmům, proti komu?); dvouma se jen říká, dvou patří k bez koho?, dvěmi se nepíše nikdy\n\n**Výsledek:** krok 1 čtyřma, krok 2 čtyřmi, krok 3 dvěma",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, čím se může lišit to, jak mluvíme, a to, jak píšeme v písemce.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Pusť si nahrávku znovu. U každého slova z nabídky se zeptej: napíše se tak i v knize?“"
+          },
+          {
+            "k": "Krok 2 a 3",
+            "text": "„Až víš, o které slovo jde, zeptej se na ně otázkou z věty i s předložkou. Který tvar k ní patří v písemce?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, kdy se smí napsat tvar na -ma, třeba čtyřma.“",
+        "otocena_role_odpoved": "Jen u částí těla, třeba pes se čtyřma nohama. U lidí a věcí se píše čtyřmi, třemi. Dvěma a oběma jsou správně vždycky.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 vybere „oběma“: „Píše se s oběma tak i v knize? Které slovo z nabídky v knize nenajdeš?“ V kroku 2 nebo 3 vybere tvar na -ma: „Jak se to píše v písemce?“ Vybere čtyř, čtyřem, dvou nebo dvěmi: „Jakou otázkou se ptáš?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — oba tvary z běžné řeči dítě poznalo i opravilo. Pochvalte, že si nahrávku pustilo znovu, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Řekněte dítěti: „Lucka šla do kina se třema kamarádkami a seděla mezi dvouma spolužáky.“ Dítě řekne, která slova se v písemce napíšou jinak a jak. Kontrola pro vás: se třemi kamarádkami, mezi dvěma spolužáky.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra napište dítěti tři otázky: s kým? proti komu? bez koho? Ke každé dítě napíše číslo dva se slovem kamarádi ve správném tvaru. Potom zopakujte lekci „Číslovky: druhy a tvary dva, oba, tři, čtyři“. Kontrola pro vás: se dvěma kamarády; proti dvěma kamarádům; bez dvou kamarádů."
+      },
+      "tisk": {
+        "zadani": "Poslouchej nahrávku (pustí ti ji rodič). Odpověz na tři otázky.\n\n1) Jedno ze slov v nabídce má v písemce jiný tvar, než jaký zazněl. Které? Zakroužkuj: a) oběma b) čtyřma c) bratranci d) kamarády\n\n2) Jak se to slovo napíše správně? Zakroužkuj: a) čtyřmi b) čtyřma c) čtyř d) čtyřem\n\n3) V nahrávce je ještě jedno slovo, které se v písemce napíše jinak. Jak správně? Zakroužkuj: a) dvěma b) dvouma c) dvou d) dvěmi"
+      }
+    },
+    {
+      "id": "cj-t4-l15n-U4",
+      "typ": "detektiv",
+      "cil": "Najít u spolužáka tvar čísla pro jinou pádovou otázku (bez dvěma hráčů) ve větě se dvěma správnými tvary (oběma, třem) a vybrat dvou.",
+      "cas_min": 5,
+      "zadani": "Petr napsal větu:\n\n**Po zápase jsme poděkovali oběma trenérům a třem rozhodčím a domů jsme odjeli bez dvěma hráčů.**\n\nV **jednom** slově má chybu. Najdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na slovo, ve kterém má Petr chybu.",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Po zápase jsme poděkovali oběma trenérům a třem rozhodčím a domů jsme odjeli bez dvěma hráčů.",
+            "cil": "slova",
+            "min": 1,
+            "max": 1
+          },
+          "spravne": [
+            14
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                4,
+                7
+              ],
+              "typ_chyby": "detektiv-jine-slovo"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Jak to slovo napíšeš správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "dvouma",
+                "spravne": false,
+                "typ_chyby": "cislovka-hovorovy-tvar"
+              },
+              {
+                "id": "b",
+                "text": "dvou",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "dvěmi",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "d",
+                "text": "dva",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Ve větě jsou tři tvary čísel a jen jeden je špatně. Proti učební lekci to není tvar z běžné mluvy, ale tvar pro jinou pádovou otázku, takže se dítě musí zeptat u každého čísla. V kroku 2 (Jak to slovo napíšeš správně?) vybere tvar.",
+        "reseni": "Chyba je „dvěma“.\n\nbez dvou hráčů (bez koho? → dvou, jako bez obou)\n\noběma trenérům (komu?) a třem rozhodčím (komu?) jsou správně\n\ndvouma (tak se jen mluví), dvěmi (nepíše se nikdy), dva (odpovídá na kdo, co?)\n\n**Výsledek:** krok 1 dvěma, krok 2 dvou",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, podle čeho vybíráš tvar čísel dva, oba, tři.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Přečti Petrovu větu nahlas. U každého čísla se zeptej pádovou otázkou i se slovem před ním. Sedí k ní tvar?“"
+          },
+          {
+            "k": "Krok 2",
+            "text": "„Řekni k chybnému slovu pádovou otázku i s předložkou před ním. Který tvar k ní patří v písemce?“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a jak si ji příště ohlídám.“",
+        "otocena_role_odpoved": "Napsal jsi bez dvěma hráčů, ale na bez koho? patří dvou, jako bez obou. Dvěma je pro komu? a s kým?, třeba oběma trenérům.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na „oběma“ nebo „třem“: „Komu poděkovali? Sedí ten tvar?“ (Obě slova jsou správně.) V kroku 2 vybere „dvouma“: „Jak se to píše v písemce?“ Vybere „dvěmi“ nebo „dva“: „Řekni bez obou hráčů. Jak to bude s dva?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — schovanou chybu v tvaru čísla dítě našlo a opravilo. Pochvalte, že se ptalo u každého čísla, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr napsal: Mluvili jsme o oběma výletech a o dvou kamarádech.“ Zeptejte se: „Má Petr pravdu? Jak to ověříš?“ Kontrola pro vás: nemá, na o čem? patří obou: o obou výletech; o dvou kamarádech je dobře.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra napište dítěti tři začátky: poděkovat ___ trenérům, odjet bez ___ hráčů, hrát se ___ kamarády. Dítě do každého doplní číslo dva ve správném tvaru a řekne pádovou otázku. Potom zopakujte lekci „Číslovky: druhy a tvary dva, oba, tři, čtyři“. Kontrola pro vás: dvěma trenérům (komu?), bez dvou hráčů (bez koho?), se dvěma kamarády (s kým?)."
+      },
+      "tisk": {
+        "zadani": "Petr napsal větu:\n\nPo zápase jsme poděkovali oběma trenérům a třem rozhodčím a domů jsme odjeli bez dvěma hráčů.\n\nV jednom slově má chybu.\n\nA) Podtrhni slovo, ve kterém má Petr chybu.\n\nB) Jak to slovo napíšeš správně? Zakroužkuj: a) dvouma b) dvou c) dvěmi d) dva"
+      }
+    },
+    {
+      "id": "cj-t4-l15n-U5",
+      "typ": "kontrolni",
+      "cil": "Samostatně doplnit deset tvarů čísel dva, oba, tři, čtyři podle pádové otázky (s kým? komu? do čeho? o čem? u čeho?); věty bez částí těla.",
+      "cas_min": 6,
+      "zadani": "Doplň do každé mezery správný tvar čísla.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Na hrad jsme vyrazili se _ učitelkami. V autobuse jsem seděl mezi _ dvojčaty. Na hradě nás rozdělili do _ skupin. Hrad se _ věžemi byl obrovský. O _ věžích nám průvodkyně vyprávěla celou hodinu. Pak jsme šli ke _ rybníkům za hradem. U _ z nich jsme viděli labutě. Učitelka rozdala sušenky _ spolužačkám, které měly hlad. Rodiče na nás čekali na parkovišti se _ auty. Domů jsem jel s _ sestrami.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "třemi",
+                  "třema",
+                  "třem"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "oběma",
+                  "obou"
+                ]
+              },
+              {
+                "i": 2,
+                "moznosti": [
+                  "dvěma",
+                  "dvou",
+                  "dvouma"
+                ]
+              },
+              {
+                "i": 3,
+                "moznosti": [
+                  "dvěma",
+                  "dvou",
+                  "dvouma"
+                ]
+              },
+              {
+                "i": 4,
+                "moznosti": [
+                  "oběma",
+                  "obou"
+                ]
+              },
+              {
+                "i": 5,
+                "moznosti": [
+                  "čtyřmi",
+                  "čtyřma",
+                  "čtyřem"
+                ]
+              },
+              {
+                "i": 6,
+                "moznosti": [
+                  "dvěma",
+                  "dvou",
+                  "dvouma"
+                ]
+              },
+              {
+                "i": 7,
+                "moznosti": [
+                  "třemi",
+                  "třema",
+                  "třem"
+                ]
+              },
+              {
+                "i": 8,
+                "moznosti": [
+                  "čtyřmi",
+                  "čtyřma",
+                  "čtyřem"
+                ]
+              },
+              {
+                "i": 9,
+                "moznosti": [
+                  "oběma",
+                  "obou"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "třemi",
+            "oběma",
+            "dvou",
+            "dvěma",
+            "obou",
+            "čtyřem",
+            "dvou",
+            "třem",
+            "čtyřmi",
+            "oběma"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "třema",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "cislovka-hovorovy-tvar"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                "dvěma",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "cislovka-pad-zamena"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                "třemi",
+                null,
+                null
+              ],
+              "typ_chyby": "cislovka-pad-zamena"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                "čtyřma",
+                null
+              ],
+              "typ_chyby": "cislovka-hovorovy-tvar"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Deset mezer, u každé dítě vybírá tvar čísla podle pádové otázky. Proti učební lekci jsou tu i tvary pro komu? (třem, čtyřem) a pro o čem? (obou). Tvary na -ma se u lidí a věcí jen říkají.",
+        "reseni": "se třemi učitelkami (s kým?)\n\nmezi oběma dvojčaty (mezi kým?)\n\ndo dvou skupin (do čeho?)\n\nse dvěma věžemi (s čím?)\n\no obou věžích (o čem?)\n\nke čtyřem rybníkům (ke komu, k čemu?)\n\nu dvou z nich (u čeho?)\n\nrozdala třem spolužačkám (komu?)\n\nse čtyřmi auty (s čím?)\n\ns oběma sestrami (s kým?)\n\n**Výsledek:** třemi, oběma, dvou, dvěma, obou, čtyřem, dvou, třem, čtyřmi, oběma",
+        "otazky": [
+          "„Řekni mi vlastními slovy, jak vybíráš správný tvar čísla.“",
+          "„U každé mezery se zeptej pádovou otázkou i s předložkou, která stojí před mezerou. Který tvar k ní patří?“",
+          "„Když váháš mezi dvěma tvary, řekni nahlas celé spojení s každým z nich. Který patří do písemky?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč se píše jednou třem a jindy třemi.“",
+        "otocena_role_odpoved": "Třem je na otázku komu?, třeba dát něco třem holkám. Třemi je na s kým?, s čím?, třeba se třemi kamarády.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: zvolí třema nebo čtyřma: „Jak se to píše v písemce?“ Zamění dvěma a dvou, oběma a obou, třem a třemi nebo čtyřem a čtyřmi: „Jakou otázkou se ptáš? Řekni ji i s předložkou.“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — deset tvarů čísel bez chyby. Pochvalte, že se dítě ptalo pádovou otázkou. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Řekněte dítěti tři spojení s číslem v závorce: „dát dárek (tři) kamarádkám“, „přijet (čtyři) auty“, „mluvit o (oba) výletech“. Dítě je řekne správným tvarem. Kontrola pro vás: třem kamarádkám, čtyřmi auty, o obou výletech.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše čtyři krátké věty o výletu: s kým jelo (dva), komu něco dalo (tři), o čem mluvilo (oba výlety), čím rodiče přijeli (čtyři auta). Potom zopakujte lekci „Číslovky: druhy a tvary dva, oba, tři, čtyři“. Kontrola pro vás: se dvěma, třem, o obou výletech, čtyřmi auty."
+      },
+      "tisk": {
+        "zadani": "Doplň správný tvar čísla z nabídky v závorce.\n\nNa hrad jsme vyrazili se ___ (třemi, třema, třem) učitelkami. V autobuse jsem seděl mezi ___ (oběma, obou) dvojčaty. Na hradě nás rozdělili do ___ (dvěma, dvou, dvouma) skupin. Hrad se ___ (dvěma, dvou, dvouma) věžemi byl obrovský. O ___ (oběma, obou) věžích nám průvodkyně vyprávěla celou hodinu. Pak jsme šli ke ___ (čtyřmi, čtyřma, čtyřem) rybníkům za hradem. U ___ (dvěma, dvou, dvouma) z nich jsme viděli labutě. Učitelka rozdala sušenky ___ (třemi, třema, třem) spolužačkám, které měly hlad. Rodiče na nás čekali na parkovišti se ___ (čtyřmi, čtyřma, čtyřem) auty. Domů jsem jel s ___ (oběma, obou) sestrami."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Autor 14. 10. 2026: naostro dvojče cj-t4-l15, rozpis cestina/Obsah/TEMA-4-NAOSTRO.md; všechny věty a hodnocená místa nová. Druhy podle SSČ: dvanáct, tři čísl. zákl.; čtvrtý, první čísl. řad.; šestkrát, dvacetkrát čísl. nás. přísl.; troje u jména, které není pomnožné (kopačky = páry), význam souborový/druhový — ve škole druhová (heslo troje: u pomnožných jmen by šlo o význam základní, proto pomnožná jména nepoužita). Tvary z tabulek: dva, oba (2. a 6. p. dvou, obou; 3. a 7. p. dvěma, oběma; id=670 nikoli dvouma, dvěmi), tři (3. p. třem, 7. p. třemi), čtyři (3. p. čtyřem, 7. p. čtyřmi; id=671 -ma jen u částí těla). Nehodnotí se 2. p. tří/třech, čtyř/čtyřech (v textu nejsou) ani části těla. U3 poslech záměrně s hovorovými tvary čtyřma, dvouma. Vzorové odpovědi a známé chyby ověřeny skriptem. Korektor 14. 10. 2026: každý hodnocený tvar, dlaždice, mezera, role, přepis nahrávky a diktát ověřen znovu přes nastroje/ujc.sh (tabulky já_1, on, ona, jenž, jež, dva, oba, tři, čtyři, id=670, id=671, Ema, Klára; druhy zájmen a číslovek v SSČ); jazykové chyby v hodnocených tvarech 0, dublety 0. Opraveno: U5 „Na výlet jsme jeli se _ …“ (začátek nahrávky učební L15 U3) → „Na hrad jsme vyrazili se _ učitelkami.“; U3 otázka „Celá úloha“ zužovala krok 1 na tvary čísel → obecná (mluvíme × píšeme); typická chyba U3 „Řekni s oběma a se čtyřmi“ prozrazovala krok 2 → bez tvaru čtyřmi. Poslech hodnotí rozpoznání hovorových čtyřma, dvouma (krok 1 = slovo, které se píše jinak; kroky 2 a 3 spisovně, -ma s kódem cislovka-hovorovy-tvar), nikdy je nehodnotí jako správné. Indexy přepočítány tokenizerem aplikace; vyhodnotKrok: vzorová odpověď každého kroku správně, každá známá chyba a chybná dlaždice vrací svůj kód; slovní limity SABLONA §4 bez překročení.",
+    "zkontroloval": "korektor",
+    "datum": "2026-10-14",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?id=670",
+      "https://prirucka.ujc.cas.cz/?id=671",
+      "https://prirucka.ujc.cas.cz/?id=650",
+      "https://prirucka.ujc.cas.cz/?id=on",
+      "https://prirucka.ujc.cas.cz/?id=ona",
+      "https://prirucka.ujc.cas.cz/?slovo=dva",
+      "https://prirucka.ujc.cas.cz/?slovo=oba",
+      "https://prirucka.ujc.cas.cz/?slovo=t%C5%99i",
+      "https://prirucka.ujc.cas.cz/?slovo=%C4%8Dty%C5%99i",
+      "https://prirucka.ujc.cas.cz/?slovo=dvan%C3%A1ct",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1estkr%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?slovo=%C4%8Dtvrt%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=troje",
+      "https://prirucka.ujc.cas.cz/?slovo=prvn%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=dvacetkr%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?slovo=kopa%C4%8Dka",
+      "https://prirucka.ujc.cas.cz/?slovo=bratranec",
+      "https://prirucka.ujc.cas.cz/?slovo=kamar%C3%A1d",
+      "https://prirucka.ujc.cas.cz/?slovo=t%C3%BDm",
+      "https://prirucka.ujc.cas.cz/?slovo=tren%C3%A9r",
+      "https://prirucka.ujc.cas.cz/?slovo=rozhod%C4%8D%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=hr%C3%A1%C4%8D",
+      "https://prirucka.ujc.cas.cz/?slovo=u%C4%8Ditelka",
+      "https://prirucka.ujc.cas.cz/?slovo=dvoj%C4%8De",
+      "https://prirucka.ujc.cas.cz/?slovo=skupina",
+      "https://prirucka.ujc.cas.cz/?slovo=v%C4%9B%C5%BE",
+      "https://prirucka.ujc.cas.cz/?slovo=rybn%C3%ADk",
+      "https://prirucka.ujc.cas.cz/?slovo=spolu%C5%BEa%C4%8Dka",
+      "https://prirucka.ujc.cas.cz/?slovo=auto",
+      "https://prirucka.ujc.cas.cz/?slovo=sestra",
+      "https://prirucka.ujc.cas.cz/?slovo=Ema",
+      "https://prirucka.ujc.cas.cz/?slovo=Adam",
+      "https://prirucka.ujc.cas.cz/?id=j%C3%A1_1",
+      "https://prirucka.ujc.cas.cz/?slovo=dvakr%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?slovo=%C4%8Dty%C5%99ikr%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?slovo=osm%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=vyrazit"
+    ],
+    "testovaci_rodic": null
+  }
+}
