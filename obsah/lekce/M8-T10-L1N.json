@@ -1,0 +1,498 @@
+{
+  "id": "M8-T10-L1N",
+  "faze": "osma",
+  "tyden": 10,
+  "poradi": 1,
+  "tema": "Povrch kvádru a krychle",
+  "kapitola": "geometrie",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo spočítá povrch kvádru i krychle, i když jedna stěna chybí, a převede ho na metry čtvereční.",
+  "uvod_pro_rodice": "Dítě tuhle látku dělalo v lekci „Povrch kvádru a krychle“. Dnes ukáže, že ji zvládne samo: čtyři příklady místo tří, nenápadnější chyba u Petra a kryt tvaru kvádru místo krychle.",
+  "uvod_pravidla": [
+    {
+      "znak": "$2 \\cdot (2 + 5 + 10) = 34$",
+      "text": "tři dvojice stěn"
+    },
+    {
+      "znak": "bez víka: $34 - 10 = 24$",
+      "text": "chybějící stěna se odečte"
+    },
+    {
+      "znak": "$1\\text{ m}^2 = 10\\,000\\text{ cm}^2$",
+      "text": "metr čtvereční"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka",
+    "pravítko"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T10-L1N-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Krychle má hranu $8$ cm. Jaký má povrch?\n\nB) Kvádr má rozměry $7$ cm, $4$ cm a $3$ cm. Jaký má povrch?\n\nC) Krabice bez víka má dno $6$ cm krát $5$ cm a výšku $4$ cm. Jaký má povrch?\n\nD) Kolik $\\text{m}^2$ je $4\\,500\\ \\text{cm}^2$?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: povrch krychle",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$512\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "povrch-objem-zamena"
+              },
+              {
+                "id": "b",
+                "text": "$256\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "povrch-bez-podstav"
+              },
+              {
+                "id": "c",
+                "text": "$192\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "povrch-jen-tri-steny"
+              },
+              {
+                "id": "d",
+                "text": "$384\\ \\text{cm}^2$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: povrch kvádru",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$122\\ \\text{cm}^2$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$61\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "povrch-jen-tri-steny"
+              },
+              {
+                "id": "c",
+                "text": "$84\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "povrch-objem-zamena"
+              },
+              {
+                "id": "d",
+                "text": "$66\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "povrch-bez-podstav"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: krabice bez víka",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$148\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "prehledl-udaj"
+              },
+              {
+                "id": "b",
+                "text": "$120\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "povrch-objem-zamena"
+              },
+              {
+                "id": "c",
+                "text": "$118\\ \\text{cm}^2$",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "$88\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "povrch-bez-podstav"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: $4\\,500\\ \\text{cm}^2$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$45\\ \\text{m}^2$",
+                "spravne": false,
+                "typ_chyby": "obsah-po-desitkach"
+              },
+              {
+                "id": "b",
+                "text": "$0{,}45\\ \\text{m}^2$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$4{,}5\\ \\text{m}^2$",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá, ale každý příklad si počítá na papíře. U C krabice nemá víko. U D se převádí: metr čtvereční je deset tisíc centimetrů čtverečních. Čte se: $0{,}45$ „nula celá čtyřicet pět“, $4{,}5$ „čtyři celé pět“. Otázky jsou po příkladech, první patří k A i B: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) Krychle s hranou $8$ cm\n\n$8 \\cdot 8 = 64\\ \\text{cm}^2$ (jedna stěna)\n\n$6 \\cdot 64 = 384\\ \\text{cm}^2$ (šest stejných stěn)\n\n#### B) Kvádr $7$ cm, $4$ cm a $3$ cm\n\n$7 \\cdot 4 = 28$, $7 \\cdot 3 = 21$, $4 \\cdot 3 = 12$ (tři různé stěny)\n\n$2 \\cdot (28 + 21 + 12) = 2 \\cdot 61 = 122\\ \\text{cm}^2$ (každá stěna dvakrát)\n\n#### C) Krabice bez víka\n\n$6 \\cdot 5 = 30$ (dno, víko chybí)\n\n$2 \\cdot 6 \\cdot 4 = 48$ (přední a zadní stěna)\n\n$2 \\cdot 5 \\cdot 4 = 40$ (boční stěny)\n\n$30 + 48 + 40 = 118\\ \\text{cm}^2$ (pět stěn)\n\n#### D) $4\\,500\\ \\text{cm}^2$ na metry čtvereční\n\n$4\\,500 : 10\\,000 = 0{,}45\\ \\text{m}^2$ (metr čtvereční je deset tisíc centimetrů čtverečních)\n\n**Výsledek:** A) $384\\ \\text{cm}^2$; B) $122\\ \\text{cm}^2$; C) $118\\ \\text{cm}^2$; D) $0{,}45\\ \\text{m}^2$",
+        "otazky": [
+          {
+            "k": "A a B",
+            "text": "„Neklikej, spočítej na papíře: kolik různě velkých stěn má těleso? Kolikrát je každá z nich na celém tělese?“"
+          },
+          {
+            "k": "C",
+            "text": "„Neklikej, představ si krabici bez víka. Které stěny má? Které z nich jsou stejně velké?“"
+          },
+          {
+            "k": "D",
+            "text": "„Neklikej, kolik centimetrů čtverečních má jeden metr čtvereční? Je tvoje číslo víc, nebo méně než jeden metr čtvereční?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč je čtyři a půl tisíce centimetrů čtverečních méně než jeden metr čtvereční.“",
+        "otocena_role_odpoved": "Metr čtvereční je čtverec sto krát sto centimetrů, má deset tisíc centimetrů čtverečních. Čtyři a půl tisíce je méně než polovina z toho, proto vyjde nula celá čtyřicet pět.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. A $192$, $256$, B $61$, $66$, C $88$, $148$: chybí nebo přebývá stěna. „Kolik stěn má těleso?“ (Šest, bez víka pět.) A $512$, B $84$, C $120$: objem. „Obaluješ, nebo plníš?“ (Obaluji.) D $45$, $4{,}5$: „Kolik centimetrů čtverečních má metr čtvereční?“ (Deset tisíc.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — povrch i převod sedí. Pochvalte, že dítě u každého tělesa nejdřív zjistilo, které stěny má, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: „Kvádr má rozměry $6$ cm, $2$ cm a $1$ cm. Jaký má povrch? Jaký povrch by měl bez víka, když dno je $6$ cm krát $2$ cm?“ Kontrola pro vás: stěny $12$, $6$ a $2$, povrch $40\\ \\text{cm}^2$; bez víka $28\\ \\text{cm}^2$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: krabici od džusu nebo mléka a fix. Zítra ať dítě napíše na stěny čísla $1$ až $6$ a ukáže, které dvě stěny naproti sobě jsou stejné. Zeptejte se: „Kolik je takových dvojic?“ Pak ať samo zapíše povrch jako dvakrát součet tří různých stěn. Potom zopakujte lekci „Povrch kvádru a krychle“. Kontrola pro vás: šest stěn, tři dvojice."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Krychle má hranu $8$ cm. Jaký má povrch? — a) $512\\ \\text{cm}^2$ b) $256\\ \\text{cm}^2$ c) $192\\ \\text{cm}^2$ d) $384\\ \\text{cm}^2$\n\nB) Kvádr má rozměry $7$ cm, $4$ cm a $3$ cm. Jaký má povrch? — a) $122\\ \\text{cm}^2$ b) $61\\ \\text{cm}^2$ c) $84\\ \\text{cm}^2$ d) $66\\ \\text{cm}^2$\n\nC) Krabice bez víka má dno $6$ cm krát $5$ cm a výšku $4$ cm. Jaký má povrch? — a) $148\\ \\text{cm}^2$ b) $120\\ \\text{cm}^2$ c) $118\\ \\text{cm}^2$ d) $88\\ \\text{cm}^2$\n\nD) Kolik $\\text{m}^2$ je $4\\,500\\ \\text{cm}^2$? — a) $45\\ \\text{m}^2$ b) $0{,}45\\ \\text{m}^2$ c) $4{,}5\\ \\text{m}^2$"
+      }
+    },
+    {
+      "id": "M8-T10-L1N-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Adam lepí ze skla akvárium tvaru kvádru bez víka. Dno má rozměry $50$ cm a $20$ cm, akvárium je vysoké $30$ cm. Kolik $\\text{m}^2$ skla potřebuje?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: přední a zadní stěna: $2 \\cdot 50 \\cdot 30 = 3\\,000$\n\n2. řádek: boční stěny: $2 \\cdot 20 \\cdot 30 = 1\\,200$\n\n3. řádek: bez víka: $3\\,000 + 1\\,200 = 4\\,200\\ \\text{cm}^2$\n\n4. řádek: $4\\,200\\ \\text{cm}^2 = 0{,}42\\ \\text{m}^2$",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 300 190\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"50\" y1=\"160\" x2=\"95\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><line x1=\"95\" y1=\"130\" x2=\"245\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><line x1=\"95\" y1=\"130\" x2=\"95\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><polygon points=\"50,160 200,160 200,70 50,70\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"50,70 200,70 245,40 95,40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"200,160 245,130 245,40 200,70\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"125\" y=\"180\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">50 cm</text><text x=\"44\" y=\"120\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">30 cm</text><text x=\"230\" y=\"158\" text-anchor=\"start\" font-size=\"14\" fill=\"currentColor\">20 cm</text><text x=\"170\" y=\"28\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">bez víka</text></svg>",
+      "obrazek_popis": "Akvárium tvaru kvádru bez víka: přední hrana 50 cm, hloubka 20 cm, výška 30 cm.",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "přední a zadní stěna: $2 \\cdot 50 \\cdot 30 = 3\\,000$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "boční stěny: $2 \\cdot 20 \\cdot 30 = 1\\,200$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "bez víka: $3\\,000 + 1\\,200 = 4\\,200\\ \\text{cm}^2$",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$4\\,200\\ \\text{cm}^2 = 0{,}42\\ \\text{m}^2$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "celkem: $3\\,000 + 1\\,200 + 2 \\cdot 1\\,000 = 6\\,200$",
+                "spravne": false,
+                "typ_chyby": "prehledl-udaj"
+              },
+              {
+                "id": "b",
+                "text": "celkem: $3\\,000 + 1\\,200 + 1\\,000 = 5\\,200$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "celkem: $50 \\cdot 20 \\cdot 30 = 30\\,000$",
+                "spravne": false,
+                "typ_chyby": "povrch-objem-zamena"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m²"
+          },
+          "spravne": {
+            "hodnota": 0.52
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 0.42,
+              "typ_chyby": "povrch-bez-podstav"
+            },
+            {
+              "hodnota": 0.62,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 52,
+              "typ_chyby": "obsah-po-desitkach"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Akvárium nemá víko, ale dno mít musí, jinak by voda vytekla. Chyba je jedna a řádek za ní je spočítaný dobře, jen se špatným číslem. Metr čtvereční je deset tisíc centimetrů čtverečních. Čte se: $0{,}42$ „nula celá čtyřicet dva“, $0{,}52$ „nula celá padesát dva“.",
+        "reseni": "Chyba je ve 3. řádku: Petr sečetl jen čtyři boční stěny a dno vynechal.\n\n$2 \\cdot 50 \\cdot 30 = 3\\,000\\ \\text{cm}^2$ (přední a zadní stěna)\n\n$2 \\cdot 20 \\cdot 30 = 1\\,200\\ \\text{cm}^2$ (dvě boční stěny)\n\n$50 \\cdot 20 = 1\\,000\\ \\text{cm}^2$ (dno, víko chybí)\n\n$3\\,000 + 1\\,200 + 1\\,000 = 5\\,200\\ \\text{cm}^2$ (pět stěn)\n\n$5\\,200 : 10\\,000 = 0{,}52\\ \\text{m}^2$ (metr čtvereční je deset tisíc centimetrů čtverečních)\n\nDlaždice s $6\\,200$ přidává i víko a $50 \\cdot 20 \\cdot 30$ je objem (proto nesedí)\n\n**Výsledek:** $0{,}52\\ \\text{m}^2$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, jak akvárium vypadá. Které stěny má a která mu chybí?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Ukaž mi prstem jeden Petrův řádek po druhém. Které stěny akvária v něm Petr sčítá?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: které stěny akvária tu Petr počítá? Porovnej to s obrázkem: chybí, nebo přebývá některá stěna?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč na akvárium nestačí nula celá čtyřicet dva metru čtverečního skla.“",
+        "otocena_role_odpoved": "Akvárium nemá víko, ale dno mít musí. Petr dno zapomněl. Dno má tisíc centimetrů čtverečních, takže skla je pět tisíc dvě stě centimetrů čtverečních, nula celá padesát dva metru čtverečního.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 4. řádek? Ten jen převádí. „Odkud je čtyři tisíce dvě stě?“ (Ze 3. řádku.) 1. a 2. řádek jsou správně. Výsledek $0{,}42$ (Petrův) nebo $0{,}62$ (s víkem): „Které stěny akvárium má?“ (Dno a boky.) $52$: „Kolik centimetrů čtverečních je metr čtvereční?“ (Deset tisíc.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že dítě hlídalo, které stěny akvárium opravdu má, a jděte dál.",
+        "oranzova": "Zítra 5 minut, ústně. Přečtěte dítěti: „Petr tvrdí, že krabice bez víka s dnem deset krát deset centimetrů a výškou pět centimetrů má povrch dvě stě centimetrů čtverečních. Má pravdu?“ Ať nahlas řekne, které stěny počítá. Kontrola pro vás: nemá; čtyři boční stěny po $50$ jsou $200$, chybí dno $100$, povrch $300\\ \\text{cm}^2$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: krabičku bez víka (od sýra nebo čaje) a hrst rýže. Zítra ať dítě nasype rýži do krabičky. Zeptejte se: „Proč rýže nevypadne?“ Pak ať ukáže prstem dno a boční stěny a nahlas je počítá. Pak ať samo zapíše $4 + 1 = 5$ stěn. Potom zopakujte lekci „Povrch kvádru a krychle“. Kontrola pro vás: dno a čtyři boční stěny, víko chybí."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\n*Adam lepí ze skla akvárium tvaru kvádru bez víka. Dno má rozměry $50$ cm a $20$ cm, akvárium je vysoké $30$ cm. Kolik $\\text{m}^2$ skla potřebuje?*\n\na udělal jednu chybu.\n\n1. řádek: přední a zadní stěna: $2 \\cdot 50 \\cdot 30 = 3\\,000$\n\n2. řádek: boční stěny: $2 \\cdot 20 \\cdot 30 = 1\\,200$\n\n3. řádek: bez víka: $3\\,000 + 1\\,200 = 4\\,200\\ \\text{cm}^2$\n\n4. řádek: $4\\,200\\ \\text{cm}^2 = 0{,}42\\ \\text{m}^2$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) celkem: $3\\,000 + 1\\,200 + 2 \\cdot 1\\,000 = 6\\,200$ b) celkem: $3\\,000 + 1\\,200 + 1\\,000 = 5\\,200$ c) celkem: $50 \\cdot 20 \\cdot 30 = 30\\,000$\n\nC) Kolik $\\text{m}^2$ skla Adam opravdu potřebuje? ______ $\\text{m}^2$"
+      }
+    },
+    {
+      "id": "M8-T10-L1N-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Adam chce přikrýt model železnice krytem z plexiskla tvaru kvádru. Kryt bude bez dna, přiklopí se na desku. Bude dlouhý $100$ cm, široký $50$ cm a vysoký $40$ cm. Metr čtvereční plexiskla stojí $500$ Kč.\n\nVypočítej, kolik plexiskla je potřeba (v $\\text{cm}^2$ a v $\\text{m}^2$) a kolik korun bude stát.",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 290 205\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"30\" y1=\"181\" x2=\"280\" y2=\"181\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"60\" y1=\"180\" x2=\"110\" y2=\"145\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><line x1=\"110\" y1=\"145\" x2=\"250\" y2=\"145\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><line x1=\"110\" y1=\"145\" x2=\"110\" y2=\"89\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><polygon points=\"60,180 200,180 200,124 60,124\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"60,124 200,124 250,89 110,89\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"200,180 250,145 250,89 200,124\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"130\" y=\"198\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">100 cm</text><text x=\"54\" y=\"157\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">40 cm</text><text x=\"232\" y=\"175\" text-anchor=\"start\" font-size=\"14\" fill=\"currentColor\">50 cm</text></svg>",
+      "obrazek_popis": "Kryt tvaru kvádru bez dna leží na desce: délka 100 cm, šířka (hloubka) 50 cm, výška 40 cm.",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Plexisklo v $\\text{cm}^2$",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm²"
+          },
+          "spravne": {
+            "hodnota": 17000
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 22000,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 12000,
+              "typ_chyby": "povrch-bez-podstav"
+            },
+            {
+              "hodnota": 11000,
+              "typ_chyby": "povrch-jen-tri-steny"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Plexisklo v $\\text{m}^2$",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m²"
+          },
+          "spravne": {
+            "hodnota": 1.7
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 170,
+              "typ_chyby": "obsah-po-desitkach"
+            },
+            {
+              "hodnota": 17,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            },
+            {
+              "hodnota": 2.2,
+              "typ_chyby": "prehledl-udaj"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek: cena v korunách",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 850
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 1100,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 600,
+              "typ_chyby": "povrch-bez-podstav"
+            },
+            {
+              "hodnota": 85000,
+              "typ_chyby": "obsah-po-desitkach"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce, o kus delší: kvádr se třemi dvojicemi různých stěn. Kryt nemá dno, víko nahoře ale má: plexisklo je na pět stěn. Cena je za metr čtvereční, metr čtvereční je deset tisíc centimetrů čtverečních. Čte se: $1{,}7$ „jedna celá sedm“, $2{,}2$ „dvě celé dvě“.",
+        "reseni": "$100 \\cdot 50 = 5\\,000\\ \\text{cm}^2$ (víko nahoře, dno chybí)\n\n$2 \\cdot 100 \\cdot 40 = 8\\,000\\ \\text{cm}^2$ (přední a zadní stěna)\n\n$2 \\cdot 50 \\cdot 40 = 4\\,000\\ \\text{cm}^2$ (dvě boční stěny)\n\n$5\\,000 + 8\\,000 + 4\\,000 = 17\\,000\\ \\text{cm}^2$ (pět stěn)\n\n$17\\,000 : 10\\,000 = 1{,}7\\ \\text{m}^2$ (metr čtvereční je deset tisíc centimetrů čtverečních)\n\n$1{,}7 \\cdot 500 = 850$ Kč (každý metr čtvereční pět set korun)\n\n**Výsledek:** $17\\,000\\ \\text{cm}^2$, $1{,}7\\ \\text{m}^2$, $850$ Kč",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, jak kryt vypadá. Které stěny má a která mu chybí?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Které stěny krytu jsou stejně velké? Jak velká je každá z nich?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: metr čtvereční je čtverec sto krát sto centimetrů. Kolik centimetrů čtverečních má? Kolik stojí jeden metr čtvereční plexiskla?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč do krytu nepočítáš všech šest stěn kvádru.“",
+        "otocena_role_odpoved": "Kryt se přiklopí na desku, dno nemá. Plexisklo je jen na víko a čtyři boční stěny. Správně je i: celý povrch kvádru a od něj odečíst dno.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Krok 1 $22\\,000$ (pak $2{,}2$ a $1\\,100$): i dno; $12\\,000$ (výsledek $600$): bez víka; $11\\,000$: tři stěny. „Které stěny kryt má?“ (Víko a čtyři boční.) Krok 2 $170$ nebo $17$ (pak $85\\,000$): „Kolik centimetrů čtverečních je metr čtvereční?“ (Deset tisíc.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — stěny i převod sedí. Pochvalte, že dítě vynechalo dno a hlídalo jednotky, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: „Kolik metrů čtverečních je $25\\,000\\ \\text{cm}^2$? Kvádr $2$ m krát $1$ m krát $1$ m stojí na zemi. Kolik metrů čtverečních má bez dna?“ Kontrola pro vás: $2{,}5\\ \\text{m}^2$ (dva a půl); vršek $2$, přední a zadní po $2$, boční po $1$, dohromady $8\\ \\text{m}^2$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír, pravítko a tužku. Zítra ať dítě nakreslí čtverec deset krát deset centimetrů (decimetr čtvereční) a řekne, kolik čtverečků po centimetru se do něj vejde: řady krát sloupce. Zeptejte se: „Kolik decimetrových čtverců vyplní metr čtvereční?“ Pak ať samo zapíše $100 \\cdot 100 = 10\\,000$. Potom zopakujte lekci „Povrch kvádru a krychle“. Kontrola pro vás: $100$ čtverečků, v metru čtverečním $100$ decimetrů čtverečních, tedy $10\\,000$ centimetrů čtverečních."
+      },
+      "tisk": {
+        "zadani": "Adam chce přikrýt model železnice krytem z plexiskla tvaru kvádru. Kryt bude bez dna, přiklopí se na desku. Bude dlouhý $100$ cm, široký $50$ cm a vysoký $40$ cm. Metr čtvereční plexiskla stojí $500$ Kč.\n\nVypočítej, kolik plexiskla je potřeba (v $\\text{cm}^2$ a v $\\text{m}^2$) a kolik korun bude stát.\n\nA) Plexisklo: ______ $\\text{cm}^2$\n\nB) Plexisklo: ______ $\\text{m}^2$\n\nC) Cena: ______ Kč"
+      }
+    },
+    {
+      "id": "M8-T10-L1N-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Lucka slepí z tvrdého papíru dárkovou krabičku tvaru kvádru i s víkem. Krabička bude dlouhá $2$ dm, široká $12$ cm a vysoká $5$ cm.\n\nKolik $\\text{cm}^2$ papíru Lucka spotřebuje, když přehyby a spoje nepočítá?",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 290 180\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"60\" y1=\"150\" x2=\"114\" y2=\"110\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><line x1=\"114\" y1=\"110\" x2=\"264\" y2=\"110\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><line x1=\"114\" y1=\"110\" x2=\"114\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><polygon points=\"60,150 210,150 210,115 60,115\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"60,115 210,115 264,75 114,75\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"210,150 264,110 264,75 210,115\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"135\" y=\"170\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">2 dm</text><text x=\"54\" y=\"138\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">5 cm</text><text x=\"245\" y=\"142\" text-anchor=\"start\" font-size=\"14\" fill=\"currentColor\">12 cm</text></svg>",
+      "obrazek_popis": "Krabička tvaru kvádru: délka 2 dm, šířka (hloubka) 12 cm, výška 5 cm.",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm²"
+          },
+          "spravne": {
+            "hodnota": 800
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 400,
+              "typ_chyby": "povrch-jen-tri-steny"
+            },
+            {
+              "hodnota": 1200,
+              "typ_chyby": "povrch-objem-zamena"
+            },
+            {
+              "hodnota": 188,
+              "typ_chyby": "zapomnel-prevest-jednotky"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Délka je v decimetrech, ostatní rozměry v centimetrech: nejdřív se převede. Krabička má víko, papír je na všech šest stěn.",
+        "reseni": "$2\\ \\text{dm} = 20$ cm (délka v centimetrech)\n\n$20 \\cdot 12 = 240$ (dno, stejně velké je víko)\n\n$20 \\cdot 5 = 100$ (přední stěna, stejně velká je zadní)\n\n$12 \\cdot 5 = 60$ (boční stěna, stejně velká je druhá)\n\n$2 \\cdot (240 + 100 + 60) = 2 \\cdot 400 = 800$ (každá stěna dvakrát)\n\n**Výsledek:** $800\\ \\text{cm}^2$",
+        "otazky": [
+          "„Přečti mi úlohu nahlas. V jakých jednotkách jsou rozměry krabičky?“",
+          "„Kolik různě velkých stěn má krabička? Kolikrát je na ní každá z nich?“",
+          "„Tady máš začátek: dva decimetry jsou dvacet centimetrů. Jak velké je dno a které další stěny potřebuješ?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč dva decimetry nejdřív převádíš na centimetry.“",
+        "otocena_role_odpoved": "Násobit spolu můžu jen délky ve stejné jednotce. Dva decimetry jsou dvacet centimetrů, teprve pak počítám stěny v centimetrech čtverečních.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte: $188$: nepřevede decimetry. Zeptejte se: „Kolik centimetrů jsou dva decimetry?“ (Dvacet.) $400$: jen tři stěny. „Kolik stěn má krabička?“ (Šest.) $1\\,200$: objem. „Obaluješ, nebo plníš?“ (Obaluji.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — povrch kvádru zvládá samo i s převodem. Pochvalte, že dítě nejdřív sjednotilo jednotky. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: „Kvádr je dlouhý $1$ dm, široký $4$ cm a vysoký $2$ cm. Jaký má povrch v $\\text{cm}^2$?“ Ať nahlas řekne délku v centimetrech, tři různé stěny a povrch. Kontrola pro vás: $10$ cm; stěny $40$, $20$ a $8$; povrch $136\\ \\text{cm}^2$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: krabičku od čaje, pravítko, papír a tužku. Zítra ať dítě změří délku krabičky v centimetrech a řekne ji i v decimetrech. Pak ať obkreslí každou stěnu na papír a stejné obrázky spojí čarou. Zeptejte se: „Kolik je dvojic stejných stěn?“ Pak ať samo zapíše povrch jako dvakrát součet tří různých stěn. Potom zopakujte lekci „Povrch kvádru a krychle“. Kontrola pro vás: deset centimetrů je decimetr; šest obrázků, tři dvojice."
+      },
+      "tisk": {
+        "zadani": "Lucka slepí z tvrdého papíru dárkovou krabičku tvaru kvádru i s víkem. Krabička bude dlouhá $2$ dm, široká $12$ cm a vysoká $5$ cm.\n\nKolik $\\text{cm}^2$ papíru Lucka spotřebuje, když přehyby a spoje nepočítá?\n\nVýsledek: ______ $\\text{cm}^2$"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 14. 10.: všechna čísla nezávisle přepočítána skriptem (Fraction: správné odpovědi, mezivýsledky v řešení, dlaždice, známé chyby, oranžová a červená) a ověřena přes vyhodnotKrok (tečka i čárka, každá známá chyba vrací svůj kód). Matematika bez chyby; naostro je těžší než M8-T10-L1 (4 příklady, Petr vynechá dno místo víka navíc, kvádr bez dna s převodem na metry čtvereční a cenou), čísla, kontext ani věty z učební lekce nepřebírá. Opraveno: Platí 3 znak se smíšeným zápisem jednotek („cm²“ mimo matematiku) na $1\\text{ m}^2 = 10\\,000\\text{ cm}^2$ (36 znaků); U2 L3 „má Petr v součtu všechny stěny“ mířila na jediný řádek se součtem (chybný řádek), nově kontrola každého řádku proti obrázku. Ponecháno: U3 má 6 řádků řešení, z toho 5 výpočtů (tři stěny, součet, cena) a jeden převod na metry čtvereční, rozhodnutí vedoucího 14. 10. (převod se ponechává); čísla jdou zpaměti. U2 final $52$ obsah-po-desitkach (dělí stem) a U4 $188$ zapomnel-prevest-jednotky sedí s popisem kódů.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-14"
+  }
+}

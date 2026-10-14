@@ -1,0 +1,478 @@
+{
+  "id": "M8-T10-L3N",
+  "faze": "osma",
+  "tyden": 10,
+  "poradi": 3,
+  "tema": "Objem a povrch hranolu",
+  "kapitola": "geometrie",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo spočítá objem a povrch hranolu s trojúhelníkem nebo lichoběžníkem v podstavě, i když hranol leží.",
+  "uvod_pro_rodice": "Dítě tuhle látku dělalo v lekci „Objem a povrch hranolu“. Dnes ukáže, že ji zvládne samo: čtyři příklady místo tří, nenápadnější chyba u Petra a bazén se šikmým dnem.",
+  "uvod_pravidla": [
+    {
+      "znak": "$V = 9 \\cdot 5 = 45$",
+      "text": "objem: podstava krát výška"
+    },
+    {
+      "znak": "$S = 2 \\cdot 9 + 60 = 78$",
+      "text": "povrch: podstavy a plášť"
+    },
+    {
+      "znak": "$S_{pl} = 12 \\cdot 5 = 60$",
+      "text": "plášť: obvod krát výška"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka",
+    "pravítko"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T10-L3N-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "Vyber správnou odpověď.\n\nA) Hranol vysoký $10$ cm, podstava: trojúhelník, strana $6$ cm, výška k ní $5$ cm. Objem?\n\nB) Z jakých stěn je povrch hranolu s lichoběžníkovou podstavou?\n\nC) Podstava: lichoběžník, základny $7$ cm a $3$ cm, výška $4$ cm. Obsah?\n\nD) Hranol vysoký $9$ cm, podstava: trojúhelník se stranami $4$, $5$ a $6$ cm. Obsah pláště?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: objem hranolu",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$300\\ \\text{cm}^3$",
+                "spravne": false,
+                "typ_chyby": "trojuhelnik-bez-deleni-dvema"
+              },
+              {
+                "id": "b",
+                "text": "$150\\ \\text{cm}^3$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$21\\ \\text{cm}^3$",
+                "spravne": false,
+                "typ_chyby": "objem-soucet-rozmeru"
+              },
+              {
+                "id": "d",
+                "text": "$75\\ \\text{cm}^3$",
+                "spravne": false,
+                "typ_chyby": "trojuhelnik-deleni-dvema-dvakrat"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: z jakých stěn?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$1$ lichoběžník a $4$ obdélníky",
+                "spravne": false,
+                "typ_chyby": "povrch-bez-podstav"
+              },
+              {
+                "id": "b",
+                "text": "$2$ lichoběžníky a $2$ obdélníky",
+                "spravne": false,
+                "typ_chyby": "plast-jen-cast-sten"
+              },
+              {
+                "id": "c",
+                "text": "$2$ lichoběžníky a $4$ obdélníky",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: obsah podstavy",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$20\\ \\text{cm}^2$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$40\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "lichobeznik-jedna-zakladna"
+              },
+              {
+                "id": "c",
+                "text": "$28\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "lichobeznik-jedna-zakladna"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: obsah pláště",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$54\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "plast-jen-cast-sten"
+              },
+              {
+                "id": "b",
+                "text": "$135\\ \\text{cm}^2$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$99\\ \\text{cm}^2$",
+                "spravne": false,
+                "typ_chyby": "plast-jen-cast-sten"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá, počítá si na papíře. Podstavy hranolu jsou dvě stejné stěny naproti sobě, boční stěny jsou obdélníky a dohromady tvoří plášť. U A a C se počítá obsah podstavy, u D obvod podstavy. Otázky jsou po příkladech, první patří k A i C: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) Objem trojbokého hranolu\n\n$6 \\cdot 5 : 2 = 15\\ \\text{cm}^2$ (podstava, trojúhelník)\n\n$15 \\cdot 10 = 150\\ \\text{cm}^3$ (podstava krát výška hranolu)\n\n#### B) Stěny hranolu s lichoběžníkovou podstavou\n\n$2$ lichoběžníky a $4$ obdélníky (dvě podstavy, ke každé ze čtyř stran lichoběžníku jeden obdélník)\n\n#### C) Obsah lichoběžníku\n\n$(7 + 3) : 2 = 5$ (polovina součtu základen)\n\n$5 \\cdot 4 = 20\\ \\text{cm}^2$ (krát výška)\n\n#### D) Plášť trojbokého hranolu\n\n$4 + 5 + 6 = 15$ cm (obvod podstavy)\n\n$15 \\cdot 9 = 135\\ \\text{cm}^2$ (obvod krát výška hranolu)\n\n**Výsledek:** A) $150\\ \\text{cm}^3$; B) $2$ lichoběžníky a $4$ obdélníky; C) $20\\ \\text{cm}^2$; D) $135\\ \\text{cm}^2$",
+        "otazky": [
+          {
+            "k": "A a C",
+            "text": "„Neklikej, spočítej na papíře: jaký tvar má podstava a jak se počítá jeho obsah? Co s obsahem uděláš potom u příkladu A?“"
+          },
+          {
+            "k": "B",
+            "text": "„Neklikej, představ si krabici tvaru tohoto hranolu. Kolik má podstav? Kolik stran má lichoběžník kolem dokola?“"
+          },
+          {
+            "k": "D",
+            "text": "„Neklikej, z jakých obdélníků je plášť? Jak jsou dlouhé a jak vysoké?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč má hranol s lichoběžníkovou podstavou v plášti čtyři obdélníky.“",
+        "otocena_role_odpoved": "Lichoběžník má čtyři strany. Ke každé straně podstavy patří jedna boční stěna, obdélník vysoký jako hranol. Proto jsou v plášti čtyři obdélníky a k nim dva lichoběžníky jako podstavy.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. A $300$, $75$ nebo $21$: „Jak se počítá obsah trojúhelníku?“ (Šest krát pět děleno dvěma.) C $40$ nebo $28$: „Kolik je polovina součtu základen?“ (Pět.) B špatně, D $54$ nebo $99$: „Kolik stran má podstava?“ (U B čtyři, u D tři.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — podstava, plášť i objem sedí. Pochvalte, že dítě u každého hranolu nejdřív našlo podstavu, a jděte dál.",
+        "oranzova": "Zítra 5 minut, ústně. Přečtěte dítěti: „Podstava hranolu je trojúhelník se stranami pět, šest a sedm centimetrů. Hranol je vysoký deset centimetrů. Jaký obsah má plášť? Kolik má hranol stěn?“ Kontrola pro vás: obvod $18$ cm, plášť $180\\ \\text{cm}^2$; pět stěn.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír, pravítko, nůžky a lepicí pásku. Zítra ať dítě vystřihne pruh $20$ cm krát $4$ cm, přeloží ho na čtyři díly po $5$ cm a konce slepí páskou, vznikne hranol bez podstav. Zeptejte se: „Kolik obdélníků má plášť a jaký tvar mají otvory?“ Pak ať samo zapíše plášť $20 \\cdot 4 = 80$. Potom zopakujte lekci „Objem a povrch hranolu“. Kontrola pro vás: čtyři obdélníky, otvory jsou čtverce, plášť $80\\ \\text{cm}^2$."
+      },
+      "tisk": {
+        "zadani": "Zakroužkuj správnou odpověď.\n\nA) Hranol vysoký $10$ cm, podstava: trojúhelník, strana $6$ cm, výška k ní $5$ cm. Objem? — a) $300\\ \\text{cm}^3$ b) $150\\ \\text{cm}^3$ c) $21\\ \\text{cm}^3$ d) $75\\ \\text{cm}^3$\n\nB) Z jakých stěn je povrch hranolu s lichoběžníkovou podstavou? — a) $1$ lichoběžník a $4$ obdélníky b) $2$ lichoběžníky a $2$ obdélníky c) $2$ lichoběžníky a $4$ obdélníky\n\nC) Podstava: lichoběžník, základny $7$ cm a $3$ cm, výška $4$ cm. Obsah? — a) $20\\ \\text{cm}^2$ b) $40\\ \\text{cm}^2$ c) $28\\ \\text{cm}^2$\n\nD) Hranol vysoký $9$ cm, podstava: trojúhelník se stranami $4$, $5$ a $6$ cm. Obsah pláště? — a) $54\\ \\text{cm}^2$ b) $135\\ \\text{cm}^2$ c) $99\\ \\text{cm}^2$"
+      }
+    },
+    {
+      "id": "M8-T10-L3N-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Střecha domečku ze stavebnice má tvar ležícího trojbokého hranolu dlouhého $10$ cm. Podstava je rovnoramenný trojúhelník se základnou $8$ cm, rameny $5$ cm a výškou k základně $3$ cm. Kolik $\\text{cm}^2$ papíru je potřeba na polepení celé střechy?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: dvě podstavy: $2 \\cdot (8 \\cdot 3 : 2) = 24$\n\n2. řádek: obvod podstavy: $8 + 5 = 13$\n\n3. řádek: plášť: $13 \\cdot 10 = 130$\n\n4. řádek: povrch: $24 + 130 = 154$",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 345 205\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"30\" y1=\"180\" x2=\"160\" y2=\"140\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><line x1=\"160\" y1=\"140\" x2=\"320\" y2=\"140\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><line x1=\"160\" y1=\"140\" x2=\"240\" y2=\"80\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><line x1=\"190\" y1=\"180\" x2=\"320\" y2=\"140\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"110\" y1=\"120\" x2=\"240\" y2=\"80\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"320\" y1=\"140\" x2=\"240\" y2=\"80\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"30,180 190,180 110,120\" fill=\"currentColor\" fill-opacity=\"0.15\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"110\" y1=\"120\" x2=\"110\" y2=\"180\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M110,172 h8 v8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"110\" y=\"198\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">8 cm</text><text x=\"62\" y=\"148\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">5 cm</text><text x=\"115\" y=\"165\" text-anchor=\"start\" font-size=\"13\" fill=\"currentColor\">3 cm</text><text x=\"262\" y=\"175\" text-anchor=\"start\" font-size=\"14\" fill=\"currentColor\">10 cm</text></svg>",
+      "obrazek_popis": "Ležící trojboký hranol; vpředu rovnoramenný trojúhelník se základnou 8 cm, jedním popsaným ramenem 5 cm a čárkovanou výškou 3 cm, délka hranolu 10 cm.",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "dvě podstavy: $2 \\cdot (8 \\cdot 3 : 2) = 24$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "obvod podstavy: $8 + 5 = 13$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "plášť: $13 \\cdot 10 = 130$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "povrch: $24 + 130 = 154$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "obvod podstavy: $8 + 5 + 5 + 3 = 21$",
+                "spravne": false,
+                "typ_chyby": "obvod-slozeneho-chybi-strany"
+              },
+              {
+                "id": "b",
+                "text": "obvod podstavy: $8 \\cdot 3 : 2 = 12$",
+                "spravne": false,
+                "typ_chyby": "obvod-obsah-zamena"
+              },
+              {
+                "id": "c",
+                "text": "obvod podstavy: $8 + 5 + 5 = 18$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm²"
+          },
+          "spravne": {
+            "hodnota": 204
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 154,
+              "typ_chyby": "plast-jen-cast-sten"
+            },
+            {
+              "hodnota": 180,
+              "typ_chyby": "povrch-bez-podstav"
+            },
+            {
+              "hodnota": 228,
+              "typ_chyby": "trojuhelnik-bez-deleni-dvema"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Povrch střechy jsou dvě trojúhelníkové podstavy a plášť ze tří obdélníků. Plášť je obvod podstavy krát délka hranolu. Rovnoramenný trojúhelník má dvě stejná ramena, na obrázku je popsané jen jedno. Chyba je jedna a řádky za ní jsou spočítané dobře, jen se špatným číslem.",
+        "reseni": "Chyba je ve 2. řádku: obvod trojúhelníku má tři strany, Petr započítal jen jedno rameno.\n\n$8 \\cdot 3 : 2 = 12\\ \\text{cm}^2$ (jedna podstava)\n\n$2 \\cdot 12 = 24\\ \\text{cm}^2$ (dvě podstavy)\n\n$8 + 5 + 5 = 18$ cm (obvod podstavy, obě ramena)\n\n$18 \\cdot 10 = 180\\ \\text{cm}^2$ (plášť)\n\n$24 + 180 = 204\\ \\text{cm}^2$ (povrch)\n\nDlaždice s $21$ přičítá i výšku trojúhelníku a $8 \\cdot 3 : 2$ je obsah, ne obvod (proto nesedí)\n\n**Výsledek:** $204\\ \\text{cm}^2$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, z jakých stěn se skládá povrch střechy.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky jeden po druhém. U každého řekni, kterou část střechy v něm Petr počítá.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: má Petr všechny strany nebo stěny, které k té části patří? Porovnej to s obrázkem.“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč obvod podstavy není třináct centimetrů.“",
+        "otocena_role_odpoved": "Trojúhelník má tři strany: základnu a dvě ramena. Rovnoramenný má obě ramena po pěti centimetrech, takže obvod je osmnáct a plášť sto osmdesát.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 3. nebo 4. řádek? Ty jen násobí a sčítají. Zeptejte se: „Odkud je sto třicet?“ (Ze 2. řádku.) 1. řádek je správně. Výsledek $154$: opíše Petra; $180$: jen plášť; $228$: trojúhelník nedělí dvěma. „Které stěny patří do povrchu?“ (Dvě podstavy a tři obdélníky.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že dítě u obvodu hlídalo obě ramena trojúhelníku, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: „Petr tvrdí: hranol je vysoký $6$ cm, podstava je rovnoramenný trojúhelník se základnou $4$ cm a rameny $3$ cm, plášť má $42\\ \\text{cm}^2$.“ Zeptejte se: „Kde se Petr spletl?“ Kontrola pro vás: vzal jen jedno rameno; obvod $4 + 3 + 3 = 10$ cm, plášť $60\\ \\text{cm}^2$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír, pravítko a tužku. Zítra ať dítě nakreslí úsečku $8$ cm, nad jejím středem ve výšce $3$ cm udělá bod a spojí ho s konci úsečky. Zeptejte se: „Kolik čar tvoří okraj trojúhelníku a jak jsou dlouhé?“ Ať je změří pravítkem. Pak ať samo zapíše $8 + 5 + 5 = 18$. Potom zopakujte lekci „Objem a povrch hranolu“. Kontrola pro vás: tři čáry, $8$, $5$ a $5$ cm, obvod $18$ cm."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\n*Střecha domečku ze stavebnice má tvar ležícího trojbokého hranolu dlouhého $10$ cm. Podstava je rovnoramenný trojúhelník se základnou $8$ cm, rameny $5$ cm a výškou k základně $3$ cm. Kolik $\\text{cm}^2$ papíru je potřeba na polepení celé střechy?*\n\na udělal jednu chybu.\n\n1. řádek: dvě podstavy: $2 \\cdot (8 \\cdot 3 : 2) = 24$\n\n2. řádek: obvod podstavy: $8 + 5 = 13$\n\n3. řádek: plášť: $13 \\cdot 10 = 130$\n\n4. řádek: povrch: $24 + 130 = 154$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) obvod podstavy: $8 + 5 + 5 + 3 = 21$ b) obvod podstavy: $8 \\cdot 3 : 2 = 12$ c) obvod podstavy: $8 + 5 + 5 = 18$\n\nC) Kolik $\\text{cm}^2$ papíru je opravdu potřeba? ______ $\\text{cm}^2$"
+      }
+    },
+    {
+      "id": "M8-T10-L3N-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Bazén má tvar ležícího hranolu. Podstavou je boční stěna, lichoběžník na obrázku. Jeho základny jsou hloubky na obou koncích, $1$ m a $2$ m, výškou je délka bazénu $10$ m. Výškou hranolu je šířka bazénu $4$ m. Čerpadlo dodá $6\\,000$ litrů za hodinu.\n\nVypočítej obsah podstavy, kolik litrů vody se do bazénu vejde a za kolik hodin ho čerpadlo napustí.",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 340 175\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"40,40 300,40 300,140 40,90\" fill=\"currentColor\" fill-opacity=\"0.15\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M40,48 h8 v-8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><path d=\"M300,48 h-8 v-8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"170\" y=\"30\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">výška lichoběžníku 10 m</text><text x=\"32\" y=\"70\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">1 m</text><text x=\"308\" y=\"95\" text-anchor=\"start\" font-size=\"14\" fill=\"currentColor\">2 m</text><text x=\"170\" y=\"165\" text-anchor=\"middle\" font-size=\"13\" fill=\"currentColor\">šířka bazénu = výška hranolu 4 m</text></svg>",
+      "obrazek_popis": "Boční stěna bazénu: lichoběžník se svislými základnami 1 m vlevo a 2 m vpravo, nahoře vodorovná výška lichoběžníku 10 m, dole šikmé dno; šířka bazénu (výška hranolu) je 4 m.",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Mezivýsledek: obsah podstavy",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "m²"
+          },
+          "spravne": {
+            "hodnota": 15
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 30,
+              "typ_chyby": "lichobeznik-jedna-zakladna"
+            },
+            {
+              "hodnota": 20,
+              "typ_chyby": "lichobeznik-jedna-zakladna"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: voda v litrech",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "l"
+          },
+          "spravne": {
+            "hodnota": 60000
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 120000,
+              "typ_chyby": "lichobeznik-jedna-zakladna"
+            },
+            {
+              "hodnota": 6000,
+              "typ_chyby": "objem-po-desitkach-nebo-stovkach"
+            },
+            {
+              "hodnota": 60,
+              "typ_chyby": "litr-zamena"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek: počet hodin",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "h"
+          },
+          "spravne": {
+            "hodnota": 10
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 20,
+              "typ_chyby": "lichobeznik-jedna-zakladna"
+            },
+            {
+              "hodnota": 1,
+              "typ_chyby": "objem-po-desitkach-nebo-stovkach"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce, o krok delší. Bazén leží na boku: podstava je boční stěna tvaru lichoběžníku. Základny jsou hloubky na obou koncích, jeden a dva metry. Výška lichoběžníku je délka bazénu, deset metrů. Šířka bazénu je výška hranolu. Kubík je tisíc litrů. Čte se: $1{,}5$ „jedna celá pět“, metr a půl.",
+        "reseni": "$(1 + 2) : 2 = 1{,}5$ m (polovina součtu základen)\n\n$1{,}5 \\cdot 10 = 15\\ \\text{m}^2$ (obsah podstavy, krát výška lichoběžníku)\n\n$15 \\cdot 4 = 60\\ \\text{m}^3$ (objem, krát šířka bazénu)\n\n$60 \\cdot 1\\,000 = 60\\,000$ l (kubík je tisíc litrů)\n\n$60\\,000 : 6\\,000 = 10$ h (každou hodinu šest tisíc litrů)\n\n**Výsledek:** $15\\ \\text{m}^2$, $60\\,000$ l, $10$ h",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, jak bazén vypadá. Ukaž mi na obrázku jeho podstavu.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Ukaž mi na obrázku obě základny a výšku lichoběžníku. Co z toho potřebuješ k obsahu podstavy?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: polovina součtu základen je jedna plus dva, děleno dvěma. Co spočítáš dál? Jak dostaneš litry a hodiny?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč je u tohoto lichoběžníku výškou délka bazénu.“",
+        "otocena_role_odpoved": "Rovnoběžné strany jsou svislé hloubky na obou koncích. Výška je kolmá vzdálenost mezi nimi, a to je vodorovná délka bazénu, deset metrů.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Krok 1 $30$ (pak $120\\,000$ l a $20$ h): nedělí dvěma; $20$: jen hlubší konec. Zeptejte se: „Kolik je polovina součtu hloubek?“ (Metr a půl.) Krok 2 $6\\,000$ (pak $1$ h) nebo $60$: „Kolik litrů je kubík?“ (Tisíc.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — lichoběžník, litry i čas sedí. Pochvalte, že dítě našlo podstavu i u bazénu na boku, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: „Bazén je dlouhý $8$ m a široký $3$ m. Na mělkém konci je hluboký $1$ m, na hlubokém $2$ m. Kolik kubíků vody se vejde?“ Kontrola pro vás: polovina součtu hloubek $1{,}5$ m (metr a půl), podstava $12\\ \\text{m}^2$, objem $36\\ \\text{m}^3$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír, pravítko a nůžky. Zítra ať dítě dvakrát nakreslí a vystřihne lichoběžník se svislými stranami $2$ cm a $4$ cm, které jsou od sebe $6$ cm. Jeden otočí a přiloží k druhému, vznikne obdélník. Zeptejte se: „Jak velký je obdélník?“ Pak ať samo zapíše $(2 + 4) \\cdot 6 : 2 = 18$. Potom zopakujte lekci „Objem a povrch hranolu“. Kontrola pro vás: obdélník $6$ krát $6$ cm, obsah $36$, jeden lichoběžník $18$."
+      },
+      "tisk": {
+        "zadani": "Bazén má tvar ležícího hranolu. Podstavou je boční stěna, lichoběžník na obrázku. Jeho základny jsou hloubky na obou koncích, $1$ m a $2$ m, výškou je délka bazénu $10$ m. Výškou hranolu je šířka bazénu $4$ m. Čerpadlo dodá $6\\,000$ litrů za hodinu.\n\nVypočítej obsah podstavy, kolik litrů vody se do bazénu vejde a za kolik hodin ho čerpadlo napustí.\n\nA) Obsah podstavy: ______ $\\text{m}^2$\n\nB) Voda v bazénu: ______ l\n\nC) Čerpadlo bazén napustí za ______ h"
+      }
+    },
+    {
+      "id": "M8-T10-L3N-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Dřevěné těžítko na psací stůl má tvar hranolu. Jeho podstava je rovnoramenný lichoběžník se základnami $10$ cm a $4$ cm, rameny $5$ cm a výškou $4$ cm. Hranol je vysoký $6$ cm.\n\nKolik $\\text{cm}^2$ měří povrch těžítka?",
+      "zdroj": "vlastni",
+      "obrazek": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"40\" y1=\"170\" x2=\"140\" y2=\"95\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><line x1=\"140\" y1=\"95\" x2=\"300\" y2=\"95\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><line x1=\"140\" y1=\"95\" x2=\"188\" y2=\"31\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><line x1=\"200\" y1=\"170\" x2=\"300\" y2=\"95\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"152\" y1=\"106\" x2=\"252\" y2=\"31\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"88\" y1=\"106\" x2=\"188\" y2=\"31\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"188\" y1=\"31\" x2=\"252\" y2=\"31\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"300\" y1=\"95\" x2=\"252\" y2=\"31\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"40,170 200,170 152,106 88,106\" fill=\"currentColor\" fill-opacity=\"0.15\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"120\" y1=\"106\" x2=\"120\" y2=\"170\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M120,162 h8 v8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"120\" y=\"190\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">10 cm</text><text x=\"110\" y=\"99\" text-anchor=\"middle\" font-size=\"14\" fill=\"currentColor\">4 cm</text><text x=\"58\" y=\"140\" text-anchor=\"end\" font-size=\"14\" fill=\"currentColor\">5 cm</text><text x=\"124\" y=\"146\" text-anchor=\"start\" font-size=\"13\" fill=\"currentColor\">4 cm</text><text x=\"258\" y=\"148\" text-anchor=\"start\" font-size=\"14\" fill=\"currentColor\">6 cm</text></svg>",
+      "obrazek_popis": "Hranol; vpředu rovnoramenný lichoběžník se spodní základnou 10 cm, horní 4 cm, ramenem 5 cm a čárkovanou výškou 4 cm, hranol je vysoký (dlouhý) 6 cm.",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "cm²"
+          },
+          "spravne": {
+            "hodnota": 200
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 144,
+              "typ_chyby": "povrch-bez-podstav"
+            },
+            {
+              "hodnota": 256,
+              "typ_chyby": "lichobeznik-jedna-zakladna"
+            },
+            {
+              "hodnota": 168,
+              "typ_chyby": "povrch-objem-zamena"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Povrch jsou dvě podstavy a plášť; plášť je obvod podstavy krát výška hranolu. Výška lichoběžníku patří jen k podstavě. Správně je i: jedna podstava $28$, dvě $56$; plášť jako čtyři obdélníky zvlášť.",
+        "reseni": "$(10 + 4) \\cdot 4 = 56\\ \\text{cm}^2$ (obě podstavy: dva stejné lichoběžníky přiložené k sobě dají rovnoběžník)\n\n$10 + 4 + 5 + 5 = 24$ cm (obvod podstavy)\n\n$24 \\cdot 6 = 144\\ \\text{cm}^2$ (plášť)\n\n$56 + 144 = 200\\ \\text{cm}^2$ (povrch)\n\n**Výsledek:** $200\\ \\text{cm}^2$",
+        "otazky": [
+          "„Přečti mi úlohu nahlas. Které stěny těžítka jsou podstavy a které tvoří plášť?“",
+          "„Co potřebuješ k obsahu lichoběžníku a co k plášti? Kolik stran má podstava?“",
+          "„Tady máš začátek: polovina součtu základen je deset plus čtyři, děleno dvěma. Jak spočítáš podstavy a plášť?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč výšku lichoběžníku nepřičítáš do obvodu podstavy.“",
+        "otocena_role_odpoved": "Výška je čára uvnitř lichoběžníku, ne jeho strana. Obvod je jen to, co obejdu po okraji: dvě základny a dvě ramena.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte: $144$: jen plášť. Zeptejte se: „Kde jsou podstavy?“ (V součtu chybí.) $256$: lichoběžník nedělí dvěma. „Kolik je polovina součtu základen?“ (Sedm.) $168$: objem. „Obaluješ, nebo plníš?“ (Obaluji.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — povrch hranolu zvládá samo. Pochvalte, že dítě spočítalo podstavy i celý plášť. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, na papír. Ukažte dítěti na telefonu: „Hranol je vysoký $5$ cm. Podstava je lichoběžník se základnami $8$ cm a $2$ cm, rameny po $5$ cm a výškou $4$ cm. Jaký má povrch?“ Kontrola pro vás: podstava $20$, dvě $40$; obvod $20$ cm, plášť $100$; povrch $140\\ \\text{cm}^2$.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: krabičku od čaje a lepicí papírky. Zítra ať dítě nalepí na dvě stěny naproti sobě papírek s písmenem P (podstavy) a na ostatní stěny papírek s písmenem B (boční). Zeptejte se: „Kolik je P a kolik B? Které patří do povrchu?“ Pak ať samo zapíše: povrch jsou $2$ podstavy a plášť. Potom zopakujte lekci „Objem a povrch hranolu“. Kontrola pro vás: dvě P, čtyři B, do povrchu patří všechny."
+      },
+      "tisk": {
+        "zadani": "Dřevěné těžítko na psací stůl má tvar hranolu. Jeho podstava je rovnoramenný lichoběžník se základnami $10$ cm a $4$ cm, rameny $5$ cm a výškou $4$ cm. Hranol je vysoký $6$ cm.\n\nKolik $\\text{cm}^2$ měří povrch těžítka?\n\nVýsledek: ______ $\\text{cm}^2$"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 14. 10.: všechna čísla nezávisle přepočítána skriptem (Fraction, trojúhelník $8$, $5$, $5$ s výškou $3$ a lichoběžník $10$, $4$, ramena $5$, výška $4$ geometricky ověřeny) a přes vyhodnotKrok (tečka i čárka, každá známá chyba vrací svůj kód). Matematika bez chyby; naostro je těžší než M8-T10-L3, čísla, kontext ani věty nepřebírá. Opraveno (nejednoznačnost, rozhodnutí vedoucího 14. 10.): U3 zadání teď výslovně říká, že základny lichoběžníku jsou hloubky $1$ m a $2$ m, výška lichoběžníku je délka bazénu $10$ m a výška hranolu šířka $4$ m; obrázek má popisky „výška lichoběžníku 10 m“ a „šířka bazénu = výška hranolu 4 m“, popis obrázku, tisk a L2 taháku upraveny. U4 (semafor) měla 6 výpočtů: řešení zkráceno na 4 řádky, obě podstavy jedním výpočtem $(10 + 4) \\cdot 4 = 56$ (dva lichoběžníky dají rovnoběžník, stejně jako v červené U3); cesta přes jednu podstavu $28$ je ve vysvětlení jako rovnocenná (všechny kroky zpaměti). U2 L3 „Kolik stran má trojúhelník?“ ukazovala na chybný řádek s obvodem, nahrazeno „Porovnej to s obrázkem.“ Kódy: U2 k2 $21$ obvod-slozeneho-chybi-strany (započítaná vnitřní čára, výška) odpovídá popisu kódu.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-14"
+  }
+}
