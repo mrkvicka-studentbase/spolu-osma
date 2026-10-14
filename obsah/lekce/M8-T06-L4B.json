@@ -1,0 +1,450 @@
+{
+  "id": "M8-T06-L4B",
+  "faze": "osma",
+  "tyden": 6,
+  "poradi": 4,
+  "tema": "Kontrola: záporná čísla",
+  "kapitola": "cela-cisla",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo počítá se zápornými celými i desetinnými čísly ve výrazu i ve slovní úloze.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami: opakuje se celé téma, porovnání, sčítání, odčítání i násobení se zápornými čísly.",
+  "uvod_pravidla": [
+    {
+      "znak": "$-1 > -4$",
+      "text": "blíž nule je větší"
+    },
+    {
+      "znak": "$2 - (-5) = 7$",
+      "text": "odečíst záporné: přičíst"
+    },
+    {
+      "znak": "$(-15) : (-5) = 3$",
+      "text": "dvě záporná: plus"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T06-L4B-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Které číslo je větší, $-5$, nebo $-0{,}5$? Vyber správný zápis.\n\nB) $5 - 6{,}5$\n\nC) Který součin vyjde kladný?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $-5$ a $-0{,}5$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$-0{,}5 < -5$",
+                "spravne": false,
+                "typ_chyby": "porovnani-zapornych"
+              },
+              {
+                "id": "b",
+                "text": "$-5 > -0{,}5$",
+                "spravne": false,
+                "typ_chyby": "porovnani-zapornych"
+              },
+              {
+                "id": "c",
+                "text": "$-5 < -0{,}5$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: $5 - 6{,}5$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$1{,}5$",
+                "spravne": false,
+                "typ_chyby": "mensi-minus-vetsi"
+              },
+              {
+                "id": "b",
+                "text": "$-1{,}5$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$-11{,}5$",
+                "spravne": false,
+                "typ_chyby": "ruzna-znamenka-secetl"
+              },
+              {
+                "id": "d",
+                "text": "$11{,}5$",
+                "spravne": false,
+                "typ_chyby": "posun-spatnym-smerem"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad C: který součin je kladný?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$(-3) \\cdot 4 \\cdot (-5)$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$(-3) \\cdot (-4) \\cdot (-5)$",
+                "spravne": false,
+                "typ_chyby": "znamenko-soucinu-vice-cinitelu"
+              },
+              {
+                "id": "c",
+                "text": "$3 \\cdot (-4) \\cdot 5$",
+                "spravne": false,
+                "typ_chyby": "plus-krat-minus"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrola celého tématu, dítě jen vybírá. A je porovnání na ose, B odčítání přes nulu, C znaménko součinu podle počtu záporných čísel. Čte se: $-0{,}5$ „mínus nula celá pět“, $6{,}5$ „šest celých pět“, $1{,}5$ „jedna celá pět“, $11{,}5$ „jedenáct celých pět“. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) $-5$ a $-0{,}5$\n\n$-5 < -0{,}5$ (mínus pět leží na ose víc vlevo, dál od nuly)\n\n#### B) $5 - 6{,}5$\n\n$5 - 5 = 0$ (k nule se ubere pět)\n\n$0 - 1{,}5 = -1{,}5$ (zbývá ubrat jedna celá pět, pod nulu)\n\n#### C) Který součin je kladný?\n\n$(-3) \\cdot 4 \\cdot (-5) = 60$ (dvě záporná čísla: plus)\n\n$(-3) \\cdot (-4) \\cdot (-5) = -60$ a $3 \\cdot (-4) \\cdot 5 = -60$ (lichý počet záporných čísel: minus)\n\n**Výsledek:** A) $-5 < -0{,}5$, B) $-1{,}5$, C) $(-3) \\cdot 4 \\cdot (-5)$",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Neklikej, nakresli si osu s nulou. Které z obou čísel leží dál vlevo? A které je tedy menší?“"
+          },
+          {
+            "k": "B",
+            "text": "„Na teploměru je pět stupňů a ochladí se o šest a půl. Kolik ubereš k nule a kolik ještě pod nulu?“"
+          },
+          {
+            "k": "C",
+            "text": "„Neklikej, u každého součinu spočítej záporná čísla. Kdy vyjde plus?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč pět minus šest celých pět vyjde záporné číslo.“",
+        "otocena_role_odpoved": "Protože odečítám víc, než mám. Z pěti se dostanu na nulu a ještě jedna celá pět musím ubrat pod nulu, takže vyjde mínus jedna celá pět.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A zápis, kde je $-5$ větší. Zeptejte se: „Kde je větší zima?“ (Při mínus pěti.) B $1{,}5$: zapomene minus; $11{,}5$, $-11{,}5$: „Kam dojdeš od pěti o šest a půl dolů?“ (Pod nulu.) C: „Kolik záporných čísel násobíš?“ (Sudý počet dá plus.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — porovnání, odčítání i znaménko součinu sedí. Pochvalte, že si pomohlo osou nebo počtem záporných čísel, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Které číslo je větší, mínus sedm, nebo mínus jedna a půl? Kolik je jedna minus čtyři a půl? Jaké znaménko má mínus jedna krát mínus pět krát mínus dva?“ Kontrola pro vás: mínus jedna a půl; mínus tři a půl; minus (tři záporná čísla, vyjde mínus deset).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír, tužku a pravítko. Zítra ať dítě nakreslí svislý teploměr od mínus deseti do deseti, stupeň po centimetru. Ať ukáže pět stupňů a pak sjede o šest a půl centimetru dolů. Zeptejte se: „U kterého čísla teď jsi?“ Pak ať samo zapíše $5 - 6{,}5 = -1{,}5$. Potom zopakujte lekci „Kontrola: záporná čísla“. Kontrola pro vás: mínus jedna a půl, pod nulou."
+      },
+      "tisk": {
+        "zadani": "U každého příkladu zakroužkuj správnou odpověď.\n\nA) Které číslo je větší, $-5$, nebo $-0{,}5$? Zakroužkuj: a) $-0{,}5 < -5$ b) $-5 > -0{,}5$ c) $-5 < -0{,}5$\n\nB) $5 - 6{,}5$ Zakroužkuj: a) $1{,}5$ b) $-1{,}5$ c) $-11{,}5$ d) $11{,}5$\n\nC) Který součin vyjde kladný? Zakroužkuj: a) $(-3) \\cdot 4 \\cdot (-5)$ b) $(-3) \\cdot (-4) \\cdot (-5)$ c) $3 \\cdot (-4) \\cdot 5$"
+      }
+    },
+    {
+      "id": "M8-T06-L4B-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr počítal příklad\n\n$$4{,}5 \\cdot (-2) - (-3) \\cdot 8$$\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: $= -9 - (-3) \\cdot 8$\n\n2. řádek: $= -9 - (-24)$\n\n3. řádek: $= -9 - 24$\n\n4. řádek: $= -33$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "$= -9 - (-3) \\cdot 8$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "$= -9 - (-24)$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "$= -9 - 24$",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "$= -33$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$= -9 + (-24)$",
+                "spravne": false,
+                "typ_chyby": "odcitani-zaporneho"
+              },
+              {
+                "id": "b",
+                "text": "$= 9 + 24$",
+                "spravne": false,
+                "typ_chyby": "pravidlo-znamenek-pri-scitani"
+              },
+              {
+                "id": "c",
+                "text": "$= -9 + 24$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 15
+          },
+          "zname_chyby": [
+            {
+              "hodnota": -33,
+              "typ_chyby": "odcitani-zaporneho"
+            },
+            {
+              "hodnota": 33,
+              "typ_chyby": "plus-krat-minus"
+            },
+            {
+              "hodnota": -48,
+              "typ_chyby": "scital-pred-nasobenim"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Nejdřív se násobí, pak odčítá. Čte se: $4{,}5$ „čtyři celé pět“ a „mínus, závorka, mínus tři, krát osm“. Odečíst záporné číslo je totéž jako ho přičíst. Chyba je jedna a řádky za ní jsou spočítané dobře, jen se špatným číslem.",
+        "reseni": "Chyba je ve 3. řádku: Petr odečetl dvacet čtyři, ale odečítá se záporné číslo, a to se přičítá.\n\n$4{,}5 \\cdot (-2) = -9$ (různá znaménka: minus; čtyři a půl krát dvě je devět)\n\n$(-3) \\cdot 8 = -24$ (různá znaménka: minus)\n\n$-9 - (-24) = -9 + 24 = 15$ (odečíst záporné znamená přičíst)\n\nDlaždice $= -9 + (-24)$ nesedí (Petrova chyba, jen jinak zapsaná), $= 9 + 24$ nesedí (minus u devítky zůstává)\n\n**Výsledek:** $15$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Přečti mi Petrův příklad nahlas. Co se v něm počítá jako první a proč?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovy řádky jeden po druhém. U každého mi řekni, jestli Petr násobí, nebo odčítá, a jaké znaménko z toho má vyjít.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého řádku se zeptej: odečítá se tu záporné číslo? Změnil Petr odečtení na přičtení?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč mínus devět minus mínus dvacet čtyři není mínus třicet tři.“",
+        "otocena_role_odpoved": "Protože odečíst záporné číslo je totéž jako ho přičíst. Mínus devět plus dvacet čtyři je patnáct. Petr šel po ose dolů, ale měl jít nahoru.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na 4. řádek? Je důsledek, 1. a 2. jsou správně. Zeptejte se: „Co dají dva minusy vedle sebe?“ (Plus.) $-33$, oprava $= -9 + (-24)$: Petrova chyba. $33$, oprava $= 9 + 24$: „Kolik záporných čísel má první součin?“ (Jedno.) $-48$: „Co má přednost?“ (Krát.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybu našlo i opravilo. Pochvalte, že hlídalo dva minusy vedle sebe, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu Petrův výpočet $0{,}5 \\cdot (-4) - (-3) \\cdot 2 = -2 - 6 = -8$. Zeptejte se: „Má Petr pravdu? Kde se spletl?“ Ať opravu řekne nahlas. Kontrola pro vás: nemá; mínus tři krát dvě je mínus šest a odečíst mínus šest znamená přičíst šest; mínus dva plus šest jsou čtyři.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 10 papírků jako dluhy po koruně. Zítra ať dítě položí 9 dluhů. Pak mu kamarád 6 dluhů odpustí a dítě je odebere. Zeptejte se: „Máš teď víc, nebo míň než předtím?“ Pak ať samo zapíše $-9 - (-6) = -3$. Potom zopakujte lekci „Kontrola: záporná čísla“. Kontrola pro vás: zbudou 3 dluhy, mínus tři; odebrat dluh znamená mít víc."
+      },
+      "tisk": {
+        "zadani": "Petr počítal příklad\n\n$$4{,}5 \\cdot (-2) - (-3) \\cdot 8$$\n\na udělal jednu chybu.\n\n1. řádek: $= -9 - (-3) \\cdot 8$\n\n2. řádek: $= -9 - (-24)$\n\n3. řádek: $= -9 - 24$\n\n4. řádek: $= -33$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) $= -9 + (-24)$ b) $= 9 + 24$ c) $= -9 + 24$\n\nC) Správný výsledek: ______"
+      }
+    },
+    {
+      "id": "M8-T06-L4B-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Ema zapisovala na meteorologickém kroužku teplotu v sedm hodin ráno: úterý $-5{,}5\\ °\\text{C}$, středa $-6\\ °\\text{C}$, čtvrtek $1\\ °\\text{C}$, pátek $2{,}5\\ °\\text{C}$.\n\nJaký je součet těchto čtyř teplot a jaká byla průměrná teplota v sedm ráno za tyto čtyři dny?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Co potřebuješ zjistit nejdřív?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "součet teplot bez znamének",
+                "spravne": false,
+                "typ_chyby": "ruzna-znamenka-secetl"
+              },
+              {
+                "id": "b",
+                "text": "rozdíl nejvyšší a nejnižší teploty",
+                "spravne": false,
+                "typ_chyby": "odpovida-na-jinou-otazku"
+              },
+              {
+                "id": "c",
+                "text": "součet všech čtyř teplot",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: součet teplot",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "°C"
+          },
+          "spravne": {
+            "hodnota": -8
+          },
+          "zname_chyby": [
+            {
+              "hodnota": -15,
+              "typ_chyby": "ruzna-znamenka-secetl"
+            },
+            {
+              "hodnota": 15,
+              "typ_chyby": "ruzna-znamenka-secetl"
+            },
+            {
+              "hodnota": 8,
+              "typ_chyby": "mensi-minus-vetsi"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek: průměrná teplota",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "°C"
+          },
+          "spravne": {
+            "hodnota": -2
+          },
+          "zname_chyby": [
+            {
+              "hodnota": -8,
+              "typ_chyby": "prumer-bez-deleni-poctem"
+            },
+            {
+              "hodnota": -3.75,
+              "typ_chyby": "ruzna-znamenka-secetl"
+            },
+            {
+              "hodnota": 2,
+              "typ_chyby": "mensi-minus-vetsi"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Hlavní úloha lekce. Průměrná teplota je součet všech teplot vydělený počtem dní. Past jsou znaménka: dvě teploty jsou pod nulou, takže kladné teploty mráz jen zmenší. Čte se: $-5{,}5$ „mínus pět celých pět“, $2{,}5$ „dvě celé pět“; chybný průměr $-3{,}75$ „mínus tři celé sedmdesát pět“.",
+        "reseni": "$-5{,}5 + (-6) = -11{,}5$ (dvě teploty pod nulou)\n\n$1 + 2{,}5 = 3{,}5$ (dvě teploty nad nulou)\n\n$-11{,}5 + 3{,}5 = -8$ (součet všech čtyř teplot)\n\n$-8 : 4 = -2$ (průměr: součet děleno počtem dní)\n\n**Výsledek:** součet $-8\\ °\\text{C}$, průměr $-2\\ °\\text{C}$",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co je průměrná teplota. Jak se průměr počítá?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Které teploty jsou pod nulou a které nad nulou? Zkus zvlášť sečíst ty pod nulou a zvlášť ty nad nulou.“"
+          },
+          {
+            "k": "Výsledek",
+            "text": "„Tady máš začátek: teploty pod nulou dají dohromady mínus jedenáct celých pět. Co s tím udělají teploty nad nulou? A čím pak dělíš?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč průměrná teplota vyšla pod nulou, i když dvě rána byla teplota nad nulou.“",
+        "otocena_role_odpoved": "Protože mrazivá rána byla víc pod nulou, než teplá rána nad nulou. Mráz dá dohromady mínus jedenáct a půl, teplo jen tři a půl. Součet je mínus osm a průměr mínus dva.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Součet $-15$ nebo $15$, průměr $-3{,}75$, krok 1 bez znamének. Zeptejte se: „Co udělá teplo s mrazem?“ (Zmenší.) Součet $8$, průměr $2$: „Bylo víc mrazu, nebo tepla?“ (Mrazu.) Průměr $-8$, krok 1 rozdíl: „Jak se počítá průměr?“ (Součet děleno počtem.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — součet i průměr se zápornými teplotami sedí. Pochvalte, že hlídalo znaménka a nezapomnělo dělit počtem dní, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Klára naměřila čtyři rána po sobě mínus šest, mínus dva, jedna a tři stupně. Jaký je součet a jaká průměrná teplota?“ Ať si teploty zapíše a řeší na papír. Kontrola pro vás: součet mínus čtyři stupně, průměr mínus jeden stupeň.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 3 mince a 9 papírků. Zítra ať dítě dá na stůl 9 papírků jako mráz a 3 mince jako teplo. Každá mince zruší jeden papírek, obojí jde pryč. Zeptejte se: „Co zbylo?“ Pak ať zbytek rozdělí na tři stejné hromádky a samo zapíše $-9 + 3 = -6$ a $-6 : 3 = -2$. Potom zopakujte lekci „Kontrola: záporná čísla“. Kontrola pro vás: zbude 6 papírků, mínus šest; na hromádku dva, mínus dva."
+      },
+      "tisk": {
+        "zadani": "Ema zapisovala na meteorologickém kroužku teplotu v sedm hodin ráno: úterý $-5{,}5\\ °\\text{C}$, středa $-6\\ °\\text{C}$, čtvrtek $1\\ °\\text{C}$, pátek $2{,}5\\ °\\text{C}$.\n\nJaký je součet těchto čtyř teplot a jaká byla průměrná teplota v sedm ráno za tyto čtyři dny?\n\nA) Co potřebuješ zjistit nejdřív? Zakroužkuj: a) součet teplot bez znamének b) rozdíl nejvyšší a nejnižší teploty c) součet všech čtyř teplot\n\nB) Součet teplot: ______ °C\n\nC) Průměrná teplota: ______ °C"
+      }
+    },
+    {
+      "id": "M8-T06-L4B-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Vypočítej:\n\n$$(-2{,}5) \\cdot (-2) - 5 \\cdot (-0{,}9)$$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": null
+          },
+          "spravne": {
+            "hodnota": 9.5
+          },
+          "zname_chyby": [
+            {
+              "hodnota": -0.5,
+              "typ_chyby": "minus-krat-minus"
+            },
+            {
+              "hodnota": 0.5,
+              "typ_chyby": "odcitani-zaporneho"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Nejdřív oba součiny se znaménkem, pak odčítání. Čte se: „mínus dvě celé pět krát mínus dva, mínus pět krát mínus nula celá devět“; výsledek $9{,}5$ je „devět celých pět“.",
+        "reseni": "$(-2{,}5) \\cdot (-2) = 5$ (dvě záporná čísla: plus; dvakrát dvě a půl)\n\n$5 \\cdot (-0{,}9) = -4{,}5$ (různá znaménka: minus)\n\n$5 - (-4{,}5) = 5 + 4{,}5 = 9{,}5$ (odečíst záporné znamená přičíst)\n\n**Výsledek:** $9{,}5$",
+        "otazky": [
+          "„Přečti mi příklad nahlas. Co spočítáš jako první a proč?“",
+          "„U každého součinu mi nejdřív řekni jen znaménko. Kolik záporných čísel v něm násobíš?“",
+          "„Tady máš začátek: dvě celé pět krát dva je pět. Jaké znaménko má první součin a co uděláš s druhým součinem?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč na konci sčítáš, i když je v příkladu mínus.“",
+        "otocena_role_odpoved": "Protože druhý součin vyjde záporný, mínus čtyři celé pět. Odečíst záporné číslo je totéž jako ho přičíst, takže pět plus čtyři celé pět je devět celých pět.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $-0{,}5$. Zeptejte se: „Jaké znaménko dají dvě záporná čísla?“ (Plus.) $0{,}5$: odečte místo přičtení, nebo ztratí minus u druhého součinu; „Jaké znaménko má druhý součin?“ (Minus, a minus minus dá plus.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — znaménka i desetinná čísla zvládá samo. Pochvalte, že u každého součinu hlídalo znaménko. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Ukažte dítěti na telefonu příklad $(-1{,}5) \\cdot (-2) - 2 \\cdot (-0{,}5)$. Ať řeší na papír a nahlas řekne oba součiny se znaménkem a výsledek. Kontrola pro vás: první součin tři, druhý mínus jedna, výsledek tři plus jedna, tedy čtyři.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 10 papírků jako dluhy po koruně. Zítra ať dítě položí 8 dluhů. Pak mu kamarád 3 dluhy odpustí a dítě je odebere. Zeptejte se: „Pomohlo ti to, nebo uškodilo?“ Pak ať samo zapíše $-8 - (-3) = -5$ a řekne, proč odečíst dluh znamená přidat. Potom zopakujte lekci „Kontrola: záporná čísla“. Kontrola pro vás: zbude pět dluhů, mínus pět; pomohlo to."
+      },
+      "tisk": {
+        "zadani": "Vypočítej:\n\n$$(-2{,}5) \\cdot (-2) - 5 \\cdot (-0{,}9)$$\n\nVýsledek: ______"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 14. 10.: nezávisle přepočítáno skriptem (python Fraction) a přes vyhodnotKrok (i desetinná čárka a typografické mínus); struktura, vstupy, kroky a kódy chyb jako v M8-T06-L4. Věcné chyby: 0. Opraveno: U4 přebíral čísla hlavní lekce ($-0{,}5$ a $-1{,}5$); nově $(-2{,}5) \\cdot (-2) - 5 \\cdot (-0{,}9) = 5 + 4{,}5 = 9{,}5$ (chyby $-0{,}5$ minus-krat-minus, $0{,}5$ odcitani-zaporneho), upraveny čtení, řešení, otázka 3, otočená role a typická chyba. Posouzeno a ponecháno: U3 součet záporných teplot $-11{,}5$ (hlavní $-7{,}5$) při stejném počtu výpočtů (dva dílčí součty, součet, dělení čtyřmi); U2 sdílí s hlavní lekcí jen činitel $-3$.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-14"
+  }
+}
