@@ -1,0 +1,485 @@
+{
+  "id": "M8-T09-L2NB",
+  "faze": "osma",
+  "tyden": 9,
+  "poradi": 2,
+  "tema": "Kolik procent, celek",
+  "kapitola": "procenta",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo pozná celek i tam, kde ho musí nejdřív sečíst nebo kde zadání mluví o zbytku, a spočítá počet procent i velikost celku.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami. Dítě ukáže, že počet procent i celek zvládne samo: čtyři příklady, nenápadnější chyba u Petra a celek, který se musí nejdřív sečíst.",
+  "uvod_pravidla": [
+    {
+      "znak": "$\\frac{6}{30} = 0{,}2 = 20\\,\\%$",
+      "text": "část děleno celek"
+    },
+    {
+      "znak": "$20\\,\\% \\to 13$, $10\\,\\% \\to 6{,}5$",
+      "text": "zpět přes deset procent"
+    },
+    {
+      "znak": "$6{,}5 \\cdot 10 = 65$",
+      "text": "celek: sto procent"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T09-L2NB-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Kolik procent je $14$ z $56$?\n\nB) $60\\,\\%$ čísla je $42$. Jaké je to číslo?\n\nC) Adam koupil sešity za $180$ Kč a pouzdro za $320$ Kč. Hledáme, kolik procent nákupu stálo pouzdro. Co je tu celek?\n\nD) V diktátu Ema doplňovala $25$ slov, u $3$ se spletla. Kolik procent slov doplnila správně?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: $14$ z $56$",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$400\\,\\%$",
+                "spravne": false,
+                "typ_chyby": "deleni-obracene"
+              },
+              {
+                "id": "b",
+                "text": "$25\\,\\%$",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$0{,}25\\,\\%$",
+                "spravne": false,
+                "typ_chyby": "vysledek-bez-prevodu-na-procenta"
+              },
+              {
+                "id": "d",
+                "text": "$14\\,\\%$",
+                "spravne": false,
+                "typ_chyby": "procento-jako-cislo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: hledané číslo",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$25{,}2$",
+                "spravne": false,
+                "typ_chyby": "spatny-zaklad"
+              },
+              {
+                "id": "b",
+                "text": "$102$",
+                "spravne": false,
+                "typ_chyby": "procento-jako-cislo"
+              },
+              {
+                "id": "c",
+                "text": "$0{,}7$",
+                "spravne": false,
+                "typ_chyby": "odpovida-na-jinou-otazku"
+              },
+              {
+                "id": "d",
+                "text": "$70$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: co je celek?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$320$ Kč za pouzdro",
+                "spravne": false,
+                "typ_chyby": "spatny-zaklad"
+              },
+              {
+                "id": "b",
+                "text": "$180$ Kč za sešity",
+                "spravne": false,
+                "typ_chyby": "spatny-zaklad"
+              },
+              {
+                "id": "c",
+                "text": "$500$ Kč za celý nákup",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: správně doplněná slova",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$88\\,\\%$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "$0{,}88\\,\\%$",
+                "spravne": false,
+                "typ_chyby": "vysledek-bez-prevodu-na-procenta"
+              },
+              {
+                "id": "c",
+                "text": "$12\\,\\%$",
+                "spravne": false,
+                "typ_chyby": "zamenil-cast-a-zbytek"
+              },
+              {
+                "id": "d",
+                "text": "$22\\,\\%$",
+                "spravne": false,
+                "typ_chyby": "procento-jako-cislo"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá. U A a D vydělí část celkem a podíl převede na procenta. U B jde zpět: ze šedesáti procent na deset a pak na sto. U C celek v zadání není, musí ho sečíst. Čte se: $25{,}2$ dvacet pět celých dva, $0{,}7$ nula celá sedm. Otázky jsou po příkladech, první patří k A i D.",
+        "reseni": "#### A) $14$ z $56$\n\n$14 : 56 = 0{,}25 = 25\\,\\%$ (část děleno celek; jiná cesta: čtrnáct je čtvrtina z padesáti šesti)\n\n#### B) $60\\,\\% \\to 42$\n\n$42 : 6 = 7$ (deset procent)\n\n$7 \\cdot 10 = 70$ (hledané číslo, sto procent)\n\n#### C) Celek\n\n$180 + 320 = 500$ (celý nákup, procenta se berou z něj)\n\n#### D) Správně doplněná slova\n\n$25 - 3 = 22$ (správně doplněná slova)\n\n$22 : 25 = 0{,}88 = 88\\,\\%$ (jiná cesta: jedno slovo jsou čtyři procenta)\n\n**Výsledek:** A) $25\\,\\%$; B) $70$; C) $500$ Kč za celý nákup; D) $88\\,\\%$",
+        "otazky": [
+          {
+            "k": "A a D",
+            "text": "„Neklikej, nejdřív počítej v sešitu: které číslo je tu celek a které jeho část? Co uděláš s jejich podílem, aby byla procenta?“"
+          },
+          {
+            "k": "B",
+            "text": "„Šedesát procent je šest desetin celku. Kolik je jedna desetina a kolik pak celé hledané číslo?“"
+          },
+          {
+            "k": "C",
+            "text": "„Ze které částky se procenta počítají, když jde o celý nákup? Najdeš ji v zadání, nebo ji musíš teprve zjistit?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč Ema nedoplnila správně dvanáct procent slov.“",
+        "otocena_role_odpoved": "Dvanáct procent jsou slova, ve kterých se spletla. Správně měla dvacet dva slov z dvaceti pěti a každé slovo jsou čtyři procenta, tedy osmdesát osm procent.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. $0{,}25\\,\\%$, $0{,}88\\,\\%$: nepřevede na procenta. $14\\,\\%$, $102$, $22\\,\\%$: bere čísla jako procenta. $400\\,\\%$: dělí obráceně. $25{,}2$, $0{,}7$: procenta ze čtyřiceti dvou, nebo jen jedno procento. $12\\,\\%$: chybná slova. U C sešity, pouzdro: jen část. Zeptejte se: „Co je tady sto procent?“ (U C celý nákup.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — celek pozná i tam, kde ho musí sečíst. Pochvalte, že si u příkladů nejdřív ujasnilo, co je sto procent, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Kolik procent je osm ze třiceti dvou?“ a „Sedmdesát procent nějakého čísla je dvacet osm. Jaké je celé číslo?“ Ať u každé otázky řekne, co je celek. Kontrola pro vás: dvacet pět procent (osm je čtvrtina ze třiceti dvou); celé číslo je $40$ (deset procent jsou čtyři).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 15 knoflíků jedné barvy a 10 druhé. Zítra: „Všech dvacet pět knoflíků je celek, sto procent.“ Ať dítě knoflíky smíchá a rozdělí na 5 stejných hromádek. Zeptejte se: „Kolik procent je jedna hromádka? Kolik procent tvoří těch deset?“ Pak ať samo zapíše $15 + 10 = 25$ a $10 : 25 = 0{,}4 = 40\\,\\%$. Potom zopakujte lekci „Kolik procent, celek“. Kontrola pro vás: celek 25, hromádka dvacet procent, deset knoflíků čtyřicet procent."
+      },
+      "tisk": {
+        "zadani": "A) Kolik procent je $14$ z $56$? Zakroužkuj: a) $400\\,\\%$ b) $25\\,\\%$ c) $0{,}25\\,\\%$ d) $14\\,\\%$\n\nB) $60\\,\\%$ čísla je $42$. Jaké je to číslo? Zakroužkuj: a) $25{,}2$ b) $102$ c) $0{,}7$ d) $70$\n\nC) Adam koupil sešity za $180$ Kč a pouzdro za $320$ Kč. Hledáme, kolik procent nákupu stálo pouzdro. Co je tu celek? Zakroužkuj: a) $320$ Kč za pouzdro b) $180$ Kč za sešity c) $500$ Kč za celý nákup\n\nD) V diktátu Ema doplňovala $25$ slov, u $3$ se spletla. Kolik procent slov doplnila správně? Zakroužkuj: a) $88\\,\\%$ b) $0{,}88\\,\\%$ c) $12\\,\\%$ d) $22\\,\\%$"
+      }
+    },
+    {
+      "id": "M8-T09-L2NB-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Honzíkova rodina jede autem na dovolenou. Zatím ujeli $480$ km a zbývá jim ještě $40\\,\\%$ cesty. Kolik km měří celá cesta?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: ujeto: $100\\,\\% - 40\\,\\% = 60\\,\\%$\n\n2. řádek: jedno procento cesty: $1\\,\\% \\to 480 : 40 = 12$\n\n3. řádek: celá cesta: $100\\,\\% \\to 12 \\cdot 100 = 1\\,200$",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "ujeto: $100\\,\\% - 40\\,\\% = 60\\,\\%$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "jedno procento cesty: $1\\,\\% \\to 480 : 40 = 12$",
+                "spravne": true
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "celá cesta: $100\\,\\% \\to 12 \\cdot 100 = 1\\,200$",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "jedno procento cesty: $1\\,\\% \\to 480 : 6 = 80$",
+                "spravne": false,
+                "typ_chyby": "procento-jako-desetina"
+              },
+              {
+                "id": "b",
+                "text": "jedno procento cesty: $1\\,\\% \\to 480 : 100 = 4{,}8$",
+                "spravne": false,
+                "typ_chyby": "spatny-zaklad"
+              },
+              {
+                "id": "c",
+                "text": "jedno procento cesty: $1\\,\\% \\to 480 : 60 = 8$",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "km"
+          },
+          "spravne": {
+            "hodnota": 800
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 1200,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            },
+            {
+              "hodnota": 320,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 288,
+              "typ_chyby": "spatny-zaklad"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Zadání říká, kolik procent cesty ještě zbývá. Ujetá část je zbytek do sta procent a jedno procento cesty se počítá z ní. Řádky za chybou jsou spočítané dobře, jen se špatným číslem. Čte se: $4{,}8$ čtyři celé osm.",
+        "reseni": "Chyba je ve 2. řádku: Petr dělil procenty, která ještě zbývají. Ujeto je ale šedesát procent cesty.\n\n$100\\,\\% - 40\\,\\% = 60\\,\\%$ (ujeto, 1. řádek je správně)\n\n$480 : 60 = 8$ (jedno procento cesty; oprava $4{,}8$ bere ujeté kilometry za celek, oprava $80$ je deset procent)\n\n$8 \\cdot 100 = 800$ (celá cesta, sto procent; zkouška: zbývá $320$ km, to je čtyřicet procent)\n\n**Výsledek:** $800$ km",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co o cestě víš. Co v úloze hledáš?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každého Petrova řádku se zeptej: ke kterým procentům patří tohle číslo kilometrů? Sedí to se zadáním?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Kolik procent cesty už mají za sebou? Jak z nich a ze čtyř set osmdesáti kilometrů zjistíš jedno procento?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč celá cesta nemá tisíc dvě stě kilometrů.“",
+        "otocena_role_odpoved": "Čtyři sta osmdesát kilometrů je ujeto, a to je šedesát procent, ne čtyřicet. Jedno procento je osm, celá cesta osm set. Zkouška: zbývá tři sta dvacet, to je čtyřicet procent.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. 1. řádek je správně, 3. je jen důsledek. $1\\,200$: dělí čtyřiceti jako Petr. Zeptejte se: „Kolik procent cesty už mají za sebou?“ (Šedesát.) $320$: odpoví tím, co zbývá. $288$: počítá procenta z ujetých kilometrů. Oprava $4{,}8$ bere ujeté za celek, $80$ je deset procent."
+      },
+      "semafor": {
+        "zelena": "Výborně — poznalo, že Petr dělil procenty, která ještě zbývají. Pochvalte, že u řádků hlídalo, kolik procent cesty je už ujeto, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Petr tvrdí: Lucka uplavala $300$ m a zbývá jí $25\\,\\%$ trati, takže jedno procento trati je $300 : 25$. Má pravdu? Jak dlouhá je trať?“ Ať řeší na papír. Kontrola pro vás: nemá; uplavala sedmdesát pět procent, dvacet pět procent je $100$ m, trať má $400$ m.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 10 papírků a 60 knoflíků. Zítra: „Deset papírků je celá cesta, každý je deset procent. Zbývá ujet čtyři papírky.“ Ať dítě odloží 4 papírky a na zbylých 6 rozdělí 36 knoflíků (ujetá část). Zeptejte se: „Kolik knoflíků patří na jeden papírek? Kolik na všech deset?“ Pak ať samo zapíše $36 : 6 = 6$ a $6 \\cdot 10 = 60$. Potom zopakujte lekci „Kolik procent, celek“. Kontrola pro vás: 6 na papírek, celá cesta 60."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\n*Honzíkova rodina jede autem na dovolenou. Zatím ujeli $480$ km a zbývá jim ještě $40\\,\\%$ cesty. Kolik km měří celá cesta?*\n\na udělal jednu chybu.\n\n1. řádek: ujeto: $100\\,\\% - 40\\,\\% = 60\\,\\%$\n\n2. řádek: jedno procento cesty: $1\\,\\% \\to 480 : 40 = 12$\n\n3. řádek: celá cesta: $100\\,\\% \\to 12 \\cdot 100 = 1\\,200$\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) jedno procento cesty: $1\\,\\% \\to 480 : 6 = 80$ b) jedno procento cesty: $1\\,\\% \\to 480 : 100 = 4{,}8$ c) jedno procento cesty: $1\\,\\% \\to 480 : 60 = 8$\n\nC) Spočítej správný výsledek: ______ km"
+      }
+    },
+    {
+      "id": "M8-T09-L2NB-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Ema, Honzík a Klára prodávali na školním jarmarku perníčky. Ema utržila $90$ Kč, Honzík $110$ Kč a Klára $100$ Kč. Všechny tržby dohromady jsou $15\\,\\%$ ceny nového reproduktoru pro školní klub.\n\nKolik korun na reproduktor ještě chybí?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Vyber, co platí",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$15\\,\\%$ se počítá z $300$ Kč.",
+                "spravne": false,
+                "typ_chyby": "spatny-zaklad"
+              },
+              {
+                "id": "b",
+                "text": "$300$ Kč je $15\\,\\%$ ceny reproduktoru.",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "Chybí ještě $15\\,\\%$ ceny reproduktoru.",
+                "spravne": false,
+                "typ_chyby": "zamenil-cast-a-zbytek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: cena reproduktoru",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 2000
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 45,
+              "typ_chyby": "spatny-zaklad"
+            },
+            {
+              "hodnota": 20,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 315,
+              "typ_chyby": "procento-jako-cislo"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 1700
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 255,
+              "typ_chyby": "spatny-zaklad"
+            },
+            {
+              "hodnota": 2000,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            },
+            {
+              "hodnota": 85,
+              "typ_chyby": "procento-jako-cislo"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Celek je cena reproduktoru, kterou zatím nikdo nezná. Tržby všech tří dětí se nejdřív sečtou a dohromady jsou jen část ceny. Past je počítat procenta z jejich peněz. Cesta vede zpět přes jedno, nebo přes pět procent.",
+        "reseni": "$90 + 110 + 100 = 300$ (tržby všech tří)\n\n$300 : 15 = 20$ (jedno procento ceny; jiná cesta: pět procent je $300 : 3 = 100$)\n\n$20 \\cdot 100 = 2\\,000$ (cena reproduktoru, sto procent)\n\n$2\\,000 - 300 = 1\\,700$ (chybí; jiná cesta: chybí osmdesát pět procent, $20 \\cdot 85 = 1\\,700$)\n\n**Výsledek:** $1\\,700$ Kč",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, kdo kolik utržil a co chtějí koupit. Na kterou částku se úloha ptá?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Kolik procent je celá cena reproduktoru? Kolik peněz mají všichni tři dohromady?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Tady máš začátek: patnáct procent je třikrát pět procent. Jak zjistíš pět procent ceny a potom celou cenu?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč reproduktor nestojí čtyřicet pět korun.“",
+        "otocena_role_odpoved": "Čtyřicet pět je patnáct procent z tržeb dětí. Ty ale nejsou celek, jsou jen část ceny. Reproduktor musí stát víc, než děti utržily: dva tisíce korun.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Krok 1 „z $300$ Kč“, krok 2 $45$, výsledek $255$: celek nebere jako cenu reproduktoru. Zeptejte se: „Může reproduktor stát míň, než děti mají?“ (Ne.) Krok 1 „Chybí ještě“: plete část a zbytek. $20$: jedno procento. $315$, $85$: procenta jako koruny. Výsledek $2\\,000$: odpoví cenou."
+      },
+      "semafor": {
+        "zelena": "Výborně — cenu reproduktoru dopočítalo zpět. Pochvalte, že tržby nejdřív sečetlo a pak šlo přes jedno nebo pět procent, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Adam dal $70$ Kč a Lucka $50$ Kč. Dohromady mají $40\\,\\%$ ceny míče. Kolik míč stojí a kolik jim chybí?“ Ať řeší na papír a nahlas řekne cenu i to, co chybí. Kontrola pro vás: mají $120$ Kč, deset procent je $30$ Kč, míč stojí $300$ Kč, chybí $180$ Kč.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 10 papírků a 40 knoflíků. Zítra: „Deset papírků je cena reproduktoru, každý je deset procent.“ Ať dítě dá 5 knoflíků za Emu a 3 za Honzíka na jednu hromádku a rozdělí ji na 2 papírky (dvacet procent). Zeptejte se: „Kolik patří na jeden papírek? Kolik stojí celý reproduktor?“ Pak ať samo zapíše $5 + 3 = 8$, $8 : 2 = 4$ a $4 \\cdot 10 = 40$. Potom zopakujte lekci „Kolik procent, celek“. Kontrola pro vás: reproduktor 40, chybí 32."
+      },
+      "tisk": {
+        "zadani": "Ema, Honzík a Klára prodávali na školním jarmarku perníčky. Ema utržila $90$ Kč, Honzík $110$ Kč a Klára $100$ Kč. Všechny tržby dohromady jsou $15\\,\\%$ ceny nového reproduktoru pro školní klub.\n\nKolik korun na reproduktor ještě chybí?\n\nA) Co platí? Zakroužkuj: a) $15\\,\\%$ se počítá z $300$ Kč. b) $300$ Kč je $15\\,\\%$ ceny reproduktoru. c) Chybí ještě $15\\,\\%$ ceny reproduktoru.\n\nB) Mezivýsledek: cena reproduktoru ______ Kč\n\nC) Výsledek: ______ Kč"
+      }
+    },
+    {
+      "id": "M8-T09-L2NB-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Ve skautském oddíle jsou dvě družiny: Vlci mají $27$ členů a Sovy $23$ členů. Na podzimní výpravu jelo z obou družin $37$ členů.\n\nKolik procent členů oddílu na výpravu nejelo?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "%"
+          },
+          "spravne": {
+            "hodnota": 26
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 74,
+              "typ_chyby": "zamenil-cast-a-zbytek"
+            },
+            {
+              "hodnota": 13,
+              "typ_chyby": "procento-jako-cislo"
+            },
+            {
+              "hodnota": 0.26,
+              "typ_chyby": "vysledek-bez-prevodu-na-procenta"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Celek jsou členové obou družin dohromady. Úloha se ptá na ty, kdo nejeli. Čte se: $0{,}26$ nula celá dvacet šest.",
+        "reseni": "$27 + 23 = 50$ (členové obou družin, celek)\n\n$50 - 37 = 13$ (nejeli)\n\n$13 : 50 = 0{,}26 = 26\\,\\%$ (jiná cesta: jeden člen jsou dvě procenta)\n\n**Výsledek:** $26\\,\\%$",
+        "otazky": [
+          "„Přečti mi úlohu nahlas. Na které členy se úloha ptá: na ty, kdo jeli, nebo na ty, kdo nejeli?“",
+          "„Co je v této úloze celek? Kolik členů do něj patří?“",
+          "„Tady máš začátek: počet členů, kteří nejeli, vyděl celkem. Co pak s podílem uděláš, aby vyšla procenta?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč výsledek není sedmdesát čtyři procent.“",
+        "otocena_role_odpoved": "Sedmdesát čtyři procent členů na výpravu jelo. Úloha se ptá na ty, kdo nejeli: třináct z padesáti, to je dvacet šest procent.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $74$: počítá ty, kdo jeli. Zeptejte se: „Na které členy se úloha ptá?“ (Na ty, kdo nejeli.) $13$: napíše počet členů jako procenta. $0{,}26$: nepřevede podíl na procenta."
+      },
+      "semafor": {
+        "zelena": "Výborně — celek sečetlo a procenta spočítalo samo. Pochvalte, že nejdřív zjistilo, kolik členů mají obě družiny. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Na závod přijelo $9$ běžců z jedné školy a $11$ z druhé. Do finále postoupilo $5$ běžců. Kolik procent běžců nepostoupilo?“ Ať řeší na papír a nahlas řekne celek. Kontrola pro vás: celek $20$ běžců, nepostoupilo $15$, to je $75\\,\\%$ (jeden běžec je pět procent).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 3 knoflíky jedné barvy a 2 druhé. Zítra: „Všech pět knoflíků jsou obě družiny dohromady, sto procent.“ Ať dítě odsune 2 knoflíky (nejeli). Zeptejte se: „Kolik procent je jeden knoflík? Kolik procent tvoří odsunuté?“ Pak ať samo zapíše $3 + 2 = 5$ a $2 : 5 = 0{,}4 = 40\\,\\%$. Potom zopakujte lekci „Kolik procent, celek“. Kontrola pro vás: jeden knoflík dvacet procent, odsunuté čtyřicet procent."
+      },
+      "tisk": {
+        "zadani": "Ve skautském oddíle jsou dvě družiny: Vlci mají $27$ členů a Sovy $23$ členů. Na podzimní výpravu jelo z obou družin $37$ členů.\n\nKolik procent členů oddílu na výpravu nejelo?\n\nVýsledek: ______ %"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 14. 10. 2026: nezávisle přepočítáno (python Fraction, /tmp/recenze-nb09/prepocet.py, 102 kontrol včetně oranžových, červených a Platí) a přes vyhodnotKrok (200 vstupů ve 4 lekcích: správné odpovědi true, každá známá chyba i chybná dlaždice vrací svůj kód). B-varianta porovnána s hlavní lekcí krok po kroku: stejné typy úloh, kroky, vstupy, kódy chyb, počet otázek a obtížnost výpočtů; čísla, kontext a věty jiné (shody jen u procent a v jiné roli). U1 25 %, 70, 500 Kč, 88 %; U2 ujeto 60 %, jedno procento 8, cesta 800 km (Petr 1 200); U3 tržby 300 = 15 %, cena 2 000, chybí 1 700; U4 13 z 50 = 26 %. Věcné chyby: 0. Opraveno (1): oranžová U1 „šest z dvaceti čtyř“ opakovala příklad z Platí hlavní L2N, nově „osm ze třiceti dvou“ (také čtvrtina). Ponecháno (jako L2N): U3 2 000 je správný mezivýsledek kroku 2 i známá chyba výsledku (odpovida-na-jinou-otazku, dítě odpoví cenou), kód sedí; U1 C dvě dlaždice se stejným kódem spatny-zaklad; Petrovo 1 200 v U2 je v L2N cena dárku (jiná role).",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-14"
+  }
+}

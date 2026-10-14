@@ -1,0 +1,489 @@
+{
+  "id": "M8-T09-L3NB",
+  "faze": "osma",
+  "tyden": 9,
+  "poradi": 3,
+  "tema": "Sleva, zdražení, úrok",
+  "kapitola": "procenta",
+  "varianta": "z8",
+  "cil_pro_rodice": "Dítě samo spočítá cenu po zdražení nebo slevě, úrok za rok i za několik měsíců a porovná dvě nabídky i s měsíčním poplatkem.",
+  "uvod_pro_rodice": "Minule to nevyšlo, dnes stejná látka s jinými úlohami. Dítě ukáže, že slevu, zdražení i úrok zvládne samo: čtyři příklady, nenápadnější chyba u Petra a účty s měsíčním poplatkem.",
+  "uvod_pravidla": [
+    {
+      "znak": "$100\\,\\% + 6\\,\\% = 106\\,\\%$",
+      "text": "zdražení: víc než celek"
+    },
+    {
+      "znak": "$100\\,\\% - 12\\,\\% = 88\\,\\%$",
+      "text": "sleva: méně než celek"
+    },
+    {
+      "znak": "$9$ měsíců $= \\frac{3}{4}$ roku",
+      "text": "část ročního úroku"
+    }
+  ],
+  "pomucky": [
+    "sešit",
+    "propiska",
+    "tužka"
+  ],
+  "cas_min": 20,
+  "ulohy": [
+    {
+      "id": "M8-T09-L3NB-U1",
+      "typ": "rozcvicka",
+      "cas_min": 4,
+      "zadani": "U každého příkladu vyber správnou odpověď.\n\nA) Předplatné za $460$ Kč zdražilo o $5\\,\\%$. Kolik stojí teď?\n\nB) Spacák za $550$ Kč má slevu $40\\,\\%$. Kolik stojí po slevě?\n\nC) Klára uložila $5\\,500$ Kč na rok, úrok je $2\\,\\%$ ročně. Kolik bude mít po roce?\n\nD) Honzík uložil $3\\,200$ Kč na $6$ měsíců s úrokem $5\\,\\%$ ročně. Kolik dostal úroku?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Příklad A: předplatné po zdražení",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$23$ Kč",
+                "spravne": false,
+                "typ_chyby": "jen-cast-bez-celku"
+              },
+              {
+                "id": "b",
+                "text": "$483$ Kč",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$437$ Kč",
+                "spravne": false,
+                "typ_chyby": "zdrazeni-sleva-zamena"
+              },
+              {
+                "id": "d",
+                "text": "$465$ Kč",
+                "spravne": false,
+                "typ_chyby": "procento-jako-cislo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Příklad B: spacák po slevě",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$220$ Kč",
+                "spravne": false,
+                "typ_chyby": "jen-cast-bez-celku"
+              },
+              {
+                "id": "b",
+                "text": "$770$ Kč",
+                "spravne": false,
+                "typ_chyby": "zdrazeni-sleva-zamena"
+              },
+              {
+                "id": "c",
+                "text": "$510$ Kč",
+                "spravne": false,
+                "typ_chyby": "procento-jako-cislo"
+              },
+              {
+                "id": "d",
+                "text": "$330$ Kč",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Příklad C: peníze po roce",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$5\\,511$ Kč",
+                "spravne": false,
+                "typ_chyby": "posun-carky-o-spatny-pocet"
+              },
+              {
+                "id": "b",
+                "text": "$5\\,610$ Kč",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "$110$ Kč",
+                "spravne": false,
+                "typ_chyby": "jen-cast-bez-celku"
+              },
+              {
+                "id": "d",
+                "text": "$5\\,390$ Kč",
+                "spravne": false,
+                "typ_chyby": "zdrazeni-sleva-zamena"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Příklad D: Honzíkův úrok",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "$160$ Kč",
+                "spravne": false,
+                "typ_chyby": "urok-cely-rok-misto-casti"
+              },
+              {
+                "id": "b",
+                "text": "$3\\,280$ Kč",
+                "spravne": false,
+                "typ_chyby": "odpovida-na-jinou-otazku"
+              },
+              {
+                "id": "c",
+                "text": "$80$ Kč",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "$800$ Kč",
+                "spravne": false,
+                "typ_chyby": "procento-jako-desetina"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě jen vybírá. Nejdřív spočítá procenta z ceny nebo vkladu. Zdražení a úrok se pak přičtou, sleva se odečte. U D jde jen o úrok, a to za půl roku. Otázky jsou po příkladech, první patří k A i B.",
+        "reseni": "#### A) Předplatné po zdražení\n\n$460 : 100 \\cdot 5 = 23$ (pět procent ceny)\n\n$460 + 23 = 483$ (zdražení se přičítá)\n\n#### B) Spacák po slevě\n\n$550 : 10 \\cdot 4 = 220$ (sleva, čtyřicet procent)\n\n$550 - 220 = 330$ (sleva se odečítá)\n\n#### C) Peníze po roce\n\n$5\\,500 : 100 \\cdot 2 = 110$ (úrok za rok)\n\n$5\\,500 + 110 = 5\\,610$ (úrok se přičte k vkladu)\n\n#### D) Honzíkův úrok\n\n$3\\,200 : 100 \\cdot 5 = 160$ (úrok za celý rok)\n\n$160 : 2 = 80$ (šest měsíců je polovina roku)\n\n**Výsledek:** A) $483$ Kč; B) $330$ Kč; C) $5\\,610$ Kč; D) $80$ Kč",
+        "otazky": [
+          {
+            "k": "A a B",
+            "text": "„Neklikej, nejdřív počítej v sešitu: kolik korun dělají ta procenta? Bude nová cena větší, nebo menší než stará?“"
+          },
+          {
+            "k": "C",
+            "text": "„Kolik je jedno procento z pěti tisíc pěti set? Co se s úrokem na konci roku stane?“"
+          },
+          {
+            "k": "D",
+            "text": "„Jak dlouho byly Honzíkovy peníze v bance? Jaká část roku to je?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč Honzík nedostal celých sto šedesát korun úroku.“",
+        "otocena_role_odpoved": "Sto šedesát korun je úrok za celý rok. Honzík měl peníze v bance jen šest měsíců, polovinu roku, takže dostal polovinu, osmdesát korun.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. $23$, $220$, $110$: jen procenta. Zeptejte se: „Co s tou částí uděláš?“ (Zdražení a úrok přičte, slevu odečte.) $437$, $770$, $5\\,390$: plete zdražení a slevu. $465$, $510$: procenta jako koruny. $5\\,511$: dělí tisícem. D: $160$ celý rok, $800$ dělí deseti, $3\\,280$ přičte vklad."
+      },
+      "semafor": {
+        "zelena": "Výborně — pozná, kdy procenta přičíst a kdy odečíst. Pochvalte, že u úroku hlídalo i dobu uložení, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Mikina za $700$ Kč zdraží o $3\\,\\%$. Kolik stojí?“ a „Z $2\\,400$ Kč je úrok $5\\,\\%$ ročně. Kolik je úrok za tři měsíce?“ Ať řeší na papír. Kontrola pro vás: mikina $721$ Kč (jedno procento je $7$ Kč); úrok za rok $120$ Kč, za tři měsíce čtvrtina, $30$ Kč.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 10 papírků a 20 knoflíků. Zítra: „Spacák stojí 20 korun, každý papírek je deset procent.“ Ať dítě rozdělí knoflíky na papírky a 3 papírky odloží (sleva třicet procent). Zeptejte se: „Kolik stojí spacák po slevě? A po zdražení o třicet procent?“ Pak ať samo zapíše $20 - 6 = 14$ a $20 + 6 = 26$. Potom zopakujte lekci „Sleva, zdražení, úrok“. Kontrola pro vás: papírek 2 Kč, po slevě 14 Kč, po zdražení 26 Kč."
+      },
+      "tisk": {
+        "zadani": "A) Předplatné za $460$ Kč zdražilo o $5\\,\\%$. Kolik stojí teď? Zakroužkuj: a) $23$ Kč b) $483$ Kč c) $437$ Kč d) $465$ Kč\n\nB) Spacák za $550$ Kč má slevu $40\\,\\%$. Kolik stojí po slevě? Zakroužkuj: a) $220$ Kč b) $770$ Kč c) $510$ Kč d) $330$ Kč\n\nC) Klára uložila $5\\,500$ Kč na rok, úrok je $2\\,\\%$ ročně. Kolik bude mít po roce? Zakroužkuj: a) $5\\,511$ Kč b) $5\\,610$ Kč c) $110$ Kč d) $5\\,390$ Kč\n\nD) Honzík uložil $3\\,200$ Kč na $6$ měsíců s úrokem $5\\,\\%$ ročně. Kolik dostal úroku? Zakroužkuj: a) $160$ Kč b) $3\\,280$ Kč c) $80$ Kč d) $800$ Kč"
+      }
+    },
+    {
+      "id": "M8-T09-L3NB-U2",
+      "typ": "detektiv",
+      "cas_min": 5,
+      "zadani": "Petr řešil úlohu\n\n*Lyžařské brýle stály $1\\,300$ Kč. Na konci sezóny je zlevnili o $45\\,\\%$. Kolik korun stojí brýle po slevě?*\n\na udělal **jednu** chybu. Najdi ji.\n\n1. řádek: jedno procento: $1\\,300 : 100 = 13$\n\n2. řádek: po slevě se platí: $100\\,\\% - 45\\,\\% = 55\\,\\%$\n\n3. řádek: cena po slevě: $55\\,\\% \\to 13 \\cdot 45 = 585$\n\n4. řádek: zkouška: $585$ Kč je míň než $1\\,300$ Kč",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na řádek s chybou",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "r1",
+                "stitek": "1. řádek",
+                "text": "jedno procento: $1\\,300 : 100 = 13$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r2",
+                "stitek": "2. řádek",
+                "text": "po slevě se platí: $100\\,\\% - 45\\,\\% = 55\\,\\%$",
+                "spravne": false,
+                "typ_chyby": "oznacil-radek-pred-chybou"
+              },
+              {
+                "id": "r3",
+                "stitek": "3. řádek",
+                "text": "cena po slevě: $55\\,\\% \\to 13 \\cdot 45 = 585$",
+                "spravne": true
+              },
+              {
+                "id": "r4",
+                "stitek": "4. řádek",
+                "text": "zkouška: $585$ Kč je míň než $1\\,300$ Kč",
+                "spravne": false,
+                "typ_chyby": "nasel-az-dusledek"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Jak má chybný řádek vypadat správně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "cena po slevě: $55\\,\\% \\to 13 \\cdot 55 = 715$",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "cena po slevě: $1\\,300 + 585 = 1\\,885$",
+                "spravne": false,
+                "typ_chyby": "zdrazeni-sleva-zamena"
+              },
+              {
+                "id": "c",
+                "text": "cena po slevě: $1\\,300 - 45 = 1\\,255$",
+                "spravne": false,
+                "typ_chyby": "procento-jako-cislo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 715
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 585,
+              "typ_chyby": "jen-cast-bez-celku"
+            },
+            {
+              "hodnota": 1885,
+              "typ_chyby": "zdrazeni-sleva-zamena"
+            },
+            {
+              "hodnota": 1255,
+              "typ_chyby": "procento-jako-cislo"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Jeho cesta je dobrá: jedno procento, pak procenta, která se po slevě zaplatí. Zaplatí se zbytek ceny, ne sleva. Řádek za chybou je spočítaný dobře, jen se špatným číslem.",
+        "reseni": "Chyba je ve 3. řádku: Petr napsal padesát pět procent, ale násobil čtyřiceti pěti. Spočítal tak jen slevu.\n\n$1\\,300 : 100 = 13$ (jedno procento, 1. řádek je správně)\n\n$100\\,\\% - 45\\,\\% = 55\\,\\%$ (po slevě se platí, 2. řádek je správně)\n\n$13 \\cdot 55 = 715$ (cena po slevě; jiná cesta: sleva $585$ Kč, $1\\,300 - 585 = 715$)\n\n**Výsledek:** $715$ Kč",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co se stalo s cenou brýlí. Kterou cenu hledáš?“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každého řádku si řekni: je to číslo sleva, nebo cena? Sedí to s tím, co Petr na začátek řádku napsal?“"
+          },
+          {
+            "k": "Krok 2 a výsledek",
+            "text": "„Kolik procent původní ceny se po slevě platí? Kolik korun to je, když jedno procento je třináct?“"
+          }
+        ],
+        "otocena_role": "„Představ si, že jsem Petr. Vysvětli mi, proč brýle po slevě nestojí pět set osmdesát pět korun.“",
+        "otocena_role_odpoved": "Pět set osmdesát pět korun je sleva, čtyřicet pět procent. Po slevě se platí padesát pět procent, tedy třináct krát padesát pět, sedm set patnáct korun.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. 1. a 2. řádek jsou správně, zkouška ve 4. je jen důsledek. $585$: spočítá slevu jako Petr. Zeptejte se: „Je pět set osmdesát pět sleva, nebo cena?“ (Sleva.) $1\\,885$: slevu přičte. $1\\,255$: odečte čtyřicet pět korun."
+      },
+      "semafor": {
+        "zelena": "Výborně — slevu a cenu po slevě rozliší i u Petra. Pochvalte, že u každého řádku hlídalo, co číslo znamená, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Petr tvrdí: helma za $600$ Kč zlevněná o $25\\,\\%$ stojí $6 \\cdot 25 = 150$ Kč. Má pravdu? Kolik helma stojí?“ Ať řeší na papír. Kontrola pro vás: nemá, $150$ Kč je sleva; helma stojí $450$ Kč ($6 \\cdot 75$, nebo $600 - 150$).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 10 desetikorun nebo lístečků „10 Kč“. Zítra: „Brýle stojí 100 korun a mají slevu čtyřicet procent.“ Ať dítě rozloží peníze na 10 stejných hromádek a 4 hromádky dá stranou. Zeptejte se: „Které peníze jsou sleva a které zaplatíš?“ Pak ať samo zapíše $10 \\cdot 4 = 40$ a $10 \\cdot 6 = 60$. Potom zopakujte lekci „Sleva, zdražení, úrok“. Kontrola pro vás: sleva 40 Kč, zaplatí 60 Kč."
+      },
+      "tisk": {
+        "zadani": "Petr řešil úlohu\n\n*Lyžařské brýle stály $1\\,300$ Kč. Na konci sezóny je zlevnili o $45\\,\\%$. Kolik korun stojí brýle po slevě?*\n\na udělal jednu chybu.\n\n1. řádek: jedno procento: $1\\,300 : 100 = 13$\n\n2. řádek: po slevě se platí: $100\\,\\% - 45\\,\\% = 55\\,\\%$\n\n3. řádek: cena po slevě: $55\\,\\% \\to 13 \\cdot 45 = 585$\n\n4. řádek: zkouška: $585$ Kč je míň než $1\\,300$ Kč\n\nA) Zakroužkuj řádek s chybou.\n\nB) Jak má chybný řádek vypadat správně? Zakroužkuj: a) cena po slevě: $55\\,\\% \\to 13 \\cdot 55 = 715$ b) cena po slevě: $1\\,300 + 585 = 1\\,885$ c) cena po slevě: $1\\,300 - 45 = 1\\,255$\n\nC) Spočítej správný výsledek: ______ Kč"
+      }
+    },
+    {
+      "id": "M8-T09-L3NB-U3",
+      "typ": "cermat",
+      "cas_min": 7,
+      "zadani": "Adam chce uložit $28\\,000$ Kč na jeden rok. Účet A má úrok $3\\,\\%$ ročně a žádné poplatky. Účet B má úrok $3{,}5\\,\\%$ ročně, ale banka z něj každý měsíc strhne $40$ Kč za vedení.\n\nO kolik korun víc získá Adam za rok na výhodnějším účtu?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Mezivýsledek: úrok na účtu A",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 840
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 8400,
+              "typ_chyby": "procento-jako-desetina"
+            },
+            {
+              "hodnota": 84,
+              "typ_chyby": "posun-carky-o-spatny-pocet"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Mezivýsledek: úrok na účtu B",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 980
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 9800,
+              "typ_chyby": "procento-jako-desetina"
+            },
+            {
+              "hodnota": 500,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 340
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 140,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 100,
+              "typ_chyby": "prehledl-udaj"
+            },
+            {
+              "hodnota": 500,
+              "typ_chyby": "odpovida-na-jinou-otazku"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Úloha porovnává dva účty. Účet B má vyšší úrok, ale poplatek strhává každý měsíc, za rok tedy dvanáctkrát. Past je poplatek přehlédnout, nebo ho odečíst jen jednou. Odpověď je rozdíl toho, co Adam získá na jednom a na druhém účtu. Čte se: $3{,}5\\,\\%$ tři celé pět procenta.",
+        "reseni": "$28\\,000 : 100 = 280$ (jedno procento vkladu)\n\n$280 \\cdot 3 = 840$ (úrok na účtu A)\n\n$280 \\cdot 3{,}5 = 980$ (úrok na účtu B)\n\n$40 \\cdot 12 = 480$ (poplatky účtu B za rok)\n\n$980 - 480 = 500$ (Adam získá na účtu B po poplatcích)\n\n$840 - 500 = 340$ (účet A je výhodnější o tolik korun)\n\n**Výsledek:** $340$ Kč (výhodnější je účet A)",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co nabízí každý účet. Kolikrát za rok si banka u účtu B vezme poplatek?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Kolik je jedno procento z dvaceti osmi tisíc? Jak z něj dostaneš úrok na každém účtu?“"
+          },
+          {
+            "k": "Výsledek",
+            "text": "„Kolik Adamovi na účtu B zůstane z úroku po všech poplatcích? Co pak porovnáš s účtem A?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč Adam nezíská víc na účtu B, když má vyšší úrok.“",
+        "otocena_role_odpoved": "Účet B dá devět set osmdesát korun, ale banka si každý měsíc vezme čtyřicet, za rok čtyři sta osmdesát. Zůstane pět set. Účet A dá osm set čtyřicet bez poplatků, je o tři sta čtyřicet korun lepší.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Výsledek $140$: přehlédne poplatek; $100$: odečte ho jen jednou. Zeptejte se: „Kolikrát za rok si banka vezme čtyřicet korun?“ (Dvanáctkrát.) $500$: odpoví účtem B, v kroku 2 odečte poplatky už tam. $8\\,400$, $9\\,800$: dělí deseti (nebo počítá s $35$ místo $3{,}5$); $84$: dělí tisícem."
+      },
+      "semafor": {
+        "zelena": "Výborně — měsíční poplatek nepřehlédlo. Pochvalte, že ho sečetlo za celý rok a teprve pak účty porovnalo, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Z $30\\,000$ Kč dá účet C úrok $2\\,\\%$ ročně a banka si každý měsíc vezme $10$ Kč. Účet D dá úrok $1\\,\\%$ ročně bez poplatků. Který je za rok výhodnější a o kolik?“ Ať řeší na papír. Kontrola pro vás: C dá $600 - 120 = 480$ Kč, D dá $300$ Kč; C je výhodnější o $180$ Kč.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: 16 knoflíků, papíry A a B. Zítra: „Účet A dá 7 korun úroku, účet B 9, ale třikrát za rok si banka vezme korunu.“ Ať dítě položí na A 7 knoflíků, na B 9 a z B odebere 3. Zeptejte se: „Kde zůstalo víc a o kolik?“ Pak ať samo zapíše $9 - 3 = 6$ a $7 - 6 = 1$. Potom zopakujte lekci „Sleva, zdražení, úrok“. Kontrola pro vás: B 6, A o 1 lepší."
+      },
+      "tisk": {
+        "zadani": "Adam chce uložit $28\\,000$ Kč na jeden rok. Účet A má úrok $3\\,\\%$ ročně a žádné poplatky. Účet B má úrok $3{,}5\\,\\%$ ročně, ale banka z něj každý měsíc strhne $40$ Kč za vedení.\n\nO kolik korun víc získá Adam za rok na výhodnějším účtu?\n\nA) Mezivýsledek: úrok na účtu A ______ Kč\n\nB) Mezivýsledek: úrok na účtu B ______ Kč\n\nC) Výsledek: ______ Kč"
+      }
+    },
+    {
+      "id": "M8-T09-L3NB-U4",
+      "typ": "semafor",
+      "cas_min": 4,
+      "zadani": "Lucka měla na spořicím účtu $4\\,500$ Kč s úrokem $4\\,\\%$ ročně. Po $7$ měsících účet zrušila a vybrala vklad i s úrokem.\n\nKolik korun vybrala?",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Výsledek",
+          "vstup": {
+            "typ": "cislo",
+            "jednotka": "Kč"
+          },
+          "spravne": {
+            "hodnota": 4605
+          },
+          "zname_chyby": [
+            {
+              "hodnota": 4680,
+              "typ_chyby": "urok-cely-rok-misto-casti"
+            },
+            {
+              "hodnota": 105,
+              "typ_chyby": "jen-cast-bez-celku"
+            },
+            {
+              "hodnota": 5550,
+              "typ_chyby": "procento-jako-desetina"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Úrok čtyři procenta je za celý rok, peníze byly na účtu jen sedm měsíců. Lucka vybrala vklad i úrok.",
+        "reseni": "$4\\,500 : 100 \\cdot 4 = 180$ (úrok za celý rok)\n\n$180 : 12 = 15$ (úrok za jeden měsíc)\n\n$15 \\cdot 7 = 105$ (úrok za sedm měsíců)\n\n$4\\,500 + 105 = 4\\,605$ (vybraná částka)\n\n**Výsledek:** $4\\,605$ Kč",
+        "otazky": [
+          "„Přečti mi úlohu nahlas. Jak dlouho byly peníze na účtu a za jakou dobu je úrok čtyři procenta?“",
+          "„Jaká část ročního úroku patří k sedmi měsícům? Co Lucka nakonec vybrala, jen úrok?“",
+          "„Tady máš začátek: jedno procento ze čtyř tisíc pěti set je čtyřicet pět. Jak pokračuješ?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč Lucka nevybrala čtyři tisíce šest set osmdesát korun.“",
+        "otocena_role_odpoved": "To by byl úrok za celý rok. Peníze byly na účtu jen sedm měsíců. Úrok za měsíc je patnáct korun, za sedm měsíců sto pět, Lucka vybrala čtyři tisíce šest set pět.",
+        "typicka_chyba": "Kontrolní úloha: během úlohy nic neříkejte, ptejte se až po odevzdání. Podívejte se na obrazovku dítěte. $4\\,680$: přičte úrok za celý rok. Zeptejte se: „Kolik měsíců byly peníze na účtu?“ (Sedm.) $105$: zadá jen úrok bez vkladu. $5\\,550$: jedno procento bere jako desetinu."
+      },
+      "semafor": {
+        "zelena": "Výborně — úrok za několik měsíců spočítá samo. Pochvalte, že šlo přes úrok za jeden měsíc a nezapomnělo na vklad. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Přečtěte dítěti: „Honzík uložil $1\\,600$ Kč s úrokem $5\\,\\%$ ročně a po $6$ měsících všechno vybral. Kolik korun vybral?“ Ať řeší na papír a nahlas řekne úrok za rok i za šest měsíců. Kontrola pro vás: za rok $80$ Kč, za šest měsíců polovina, $40$ Kč; vybral $1\\,640$ Kč.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír s 12 políčky (měsíce) a 48 knoflíků. Zítra: „Za celý rok dá banka 48 korun úroku z vkladu 2 000 korun.“ Ať dítě rozdělí knoflíky rovnoměrně do políček. Zeptejte se: „Kolik korun úroku je za 7 měsíců? Kolik peněz pak vybereš?“ Pak ať samo zapíše $48 : 12 = 4$, $4 \\cdot 7 = 28$ a $2\\,000 + 28 = 2\\,028$. Potom zopakujte lekci „Sleva, zdražení, úrok“. Kontrola pro vás: za měsíc 4, za 7 měsíců 28, vybere 2 028."
+      },
+      "tisk": {
+        "zadani": "Lucka měla na spořicím účtu $4\\,500$ Kč s úrokem $4\\,\\%$ ročně. Po $7$ měsících účet zrušila a vybrala vklad i s úrokem.\n\nKolik korun vybrala?\n\nVýsledek: ______ Kč"
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Recenzent 14. 10. 2026: nezávisle přepočítáno (python Fraction, /tmp/recenze-nb09/prepocet.py, 102 kontrol včetně oranžových, červených a Platí) a přes vyhodnotKrok (200 vstupů ve 4 lekcích: správné odpovědi true, každá známá chyba i chybná dlaždice vrací svůj kód). B-varianta porovnána s hlavní lekcí krok po kroku: stejné typy úloh, kroky, vstupy, kódy chyb, počet otázek a obtížnost výpočtů; čísla, kontext a věty jiné (shody jen u procent a v jiné roli). U1 483, 330, 5 610, 80 Kč; U2 13 · 55 = 715 (Petr 13 · 45 = 585); U3 A 840, B 980 − 12 · 40 = 500, A výhodnější o 340; U4 180 : 12 = 15, 15 · 7 = 105, vybrala 4 605. Věcné chyby: 0. Opravy: žádné. Ověřeno: U3 k2 9 800 vznikne dělením deseti i čtením 3,5 jako 35 a typická chyba zmiňuje obě cesty; U3 výsledek 140 a 100 oba prehledl-udaj (poplatek vynechaný, nebo jen jednou) jako v L3N; U2 dva řádky před chybou oznacil-radek-pred-chybou. Platí ani otázky výsledek kroku neobsahují.",
+    "zkontroloval": "recenzent",
+    "datum": "2026-10-14"
+  }
+}
