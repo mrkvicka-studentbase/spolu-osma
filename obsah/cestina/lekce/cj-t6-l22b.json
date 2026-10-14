@@ -1,0 +1,795 @@
+{
+  "id": "cj-t6-l22b",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 6,
+  "poradi": 2,
+  "tema": "Vyjmenovaná slova po P, S, V, Z",
+  "kapitola": "vyjmenovana-slova",
+  "cil_pro_rodice": "Dítě doplní i/y po p, s, v, z ve vyjmenovaných slovech a ve slovech z jejich rodiny (výška ← vysoký, pytlík ← pytel) a odliší je od slov s i (zima, síla, vítr).",
+  "uvod_pro_rodice": "Dnes dítě po červeném semaforu opakuje stejnou lekci s jinými slovy: po p, s, v, z se y píše jen ve vyjmenovaných slovech a ve slovech z jejich rodiny, ostatní slova mají i.",
+  "uvod_pravidla": [
+    {
+      "znak": "Po P, S, V, Z stejné pravidlo",
+      "text": "co to je"
+    },
+    {
+      "znak": "Najdi příbuzné: pytlík ← pytel",
+      "text": "test"
+    },
+    {
+      "znak": "brzy, sysel × síla, vítr",
+      "text": "příklad"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "vyjmenovaná slova": "krátké řady slov, ve kterých se po b, l, m, p, s, v, z píše y; dítě je zná ze školy zpaměti. Y se píše i ve slovech z jejich rodiny, jinde i",
+    "řada po p": "pýcha, pytel, pysk, netopýr, slepýš, pyl, kopyto, klopýtat, třpytit se, zpytovat, pykat, pýr, pýřit se",
+    "řada po s": "syn, sytý, sýr, syrový, sychravý, usychat, sýkora, sýček, sysel, syčet, sypat",
+    "řada po v": "vy, vysoký, výt, výskat, zvykat, žvýkat, vydra, výr, vyžle, povyk, výheň (předpona vy- přijde v další lekci)",
+    "řada po z": "brzy, jazyk, nazývat se",
+    "příbuzné slovo": "slovo ze stejné rodiny: má stejný základ a podobný význam (lyže – lyžař – lyžovat, bydlet – bydliště – obyvatel); píše se v něm y stejně jako ve vyjmenovaném slově",
+    "řada po b": "být, bydlit, obyvatel, byt, příbytek, nábytek, dobytek, obyčej, bystrý, bylina, kobyla, býk (z minulé lekce, rozcvička)",
+    "řada po l": "slyšet, mlýn, blýskat se, polykat, plynout, plýtvat, vzlykat, lysý, lýtko, lýko, lyže, pelyněk, plyš (z minulé lekce)",
+    "řada po m": "my, mýt, myslit, mýlit se, hmyz, myš, hlemýžď, mýtit, zamykat, smýkat, dmýchat, chmýří, nachomýtnout se (z minulé lekce)"
+  },
+  "cas_min": 25,
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t6-l22b-U1",
+      "typ": "rozcvicka",
+      "cil": "Zopakovat z minulé lekce řady po b, l, m, slova z rodiny (bystrost ← bystrý, mýlka ← mýlit se) a slova mimo řady (liška, obilí).",
+      "cas_min": 4,
+      "zadani": "Doplň i, nebo y. V řadě C vybíráš í, nebo ý.\n\nA) b_strost\n\nB) l_ška\n\nC) m_lka\n\nD) ob_lí",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "b_strost",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "y"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "i"
+              ],
+              "typ_chyby": "vs-b-i-za-y"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "l_ška",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "i"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "y"
+              ],
+              "typ_chyby": "vs-l-y-za-i"
+            }
+          ]
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "m_lka",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "í",
+                  "ý"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "ý"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "í"
+              ],
+              "typ_chyby": "vs-pribuzne-neuzna"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "ob_lí",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "i"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "y"
+              ],
+              "typ_chyby": "vs-b-y-za-i"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje minulou lekci. Bystrost patří do rodiny slova bystrý, mýlka do rodiny slova mýlit se. Liška a obilí v řadách nejsou a do žádné rodiny z řad nepatří; obilí jen začíná podobně jako obyčej. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) b_strost\n\nbystrost (y: z rodiny slova bystrý)\n\n#### B) l_ška\n\nliška (i: v řadě po l není)\n\n#### C) m_lka\n\nmýlka (ý: z rodiny slova mýlit se)\n\n#### D) ob_lí\n\nobilí (i: v řadě po b není, s obyčejem nesouvisí)\n\n**Výsledek:** A) y, B) i, C) ý, D) i",
+        "otazky": [
+          {
+            "k": "A",
+            "text": "„Od kterého slova je to utvořené? Je to slovo v řadě po b?“"
+          },
+          {
+            "k": "B a D",
+            "text": "„Řekni řadu po l (po b). Je v ní to slovo, nebo slovo s podobným významem?“"
+          },
+          {
+            "k": "C",
+            "text": "„Co to slovo znamená? Projdi řadu po m: znamená některé slovo z ní něco podobného?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč se obilí píše s i, když obyčej je v řadě po b.“",
+        "otocena_role_odpoved": "Protože obilí s obyčejem nesouvisí, jen podobně začíná. Obilí v řadě po b není a není z rodiny žádného slova z řady, proto i.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Napíše bistrost: „Od kterého slova je to? Řekni řadu po b.“ Napíše lyška nebo obylí: „Je to slovo v řadě, nebo z rodiny slova z řady?“ (Není, proto i.) Napíše mílka: „Co to slovo znamená? Které slovo z řady po m to připomíná?“ (mýlit se.)"
+      },
+      "semafor": {
+        "zelena": "Výborně — minulá lekce drží. Pochvalte, že dítě u každého slova hledalo řadu nebo rodinu, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Napište dítěti na papír: pl_nout, b_k, m_lý. Doplní i, nebo y a řekne proč. Kontrola pro vás: plynout (v řadě po l), býk (v řadě po b), milý (v řadě po m není).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše zpaměti řady po b, l a m. Pak řeknete slova obilí, bystrost, liška, mýlka a dítě ke každému řekne, jestli patří do rodiny slova z řady. Potom zopakujte lekci „Vyjmenovaná slova po P, S, V, Z“. Kontrola pro vás: bystrost (bystrý) a mýlka (mýlit se) do rodiny patří, píšou se s y; obilí a liška ne, píšou se s i."
+      },
+      "tisk": {
+        "zadani": "Doplň i, nebo y. V řadě C vybíráš í, nebo ý.\n\nA) b_strost\n\nB) l_ška\n\nC) m_lka\n\nD) ob_lí"
+      }
+    },
+    {
+      "id": "cj-t6-l22b-U2",
+      "typ": "nova",
+      "cil": "Doplnit i/y po p, s, v, z: vyjmenovaná slova a jejich rodina (kopyto, pýcha, vyšší, jazykový) a slova mimo řady (pírko, síť, víno, pitná).",
+      "cas_min": 5,
+      "zadani": "Doplň i, nebo y. U dlouhých hlásek vybíráš í, nebo ý.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Kůň si poranil kop_to. Na zemi leží p_rko. P_cha předchází pád. Rybáři natáhli přes řeku s_ť. Adam je v_šší než Tomáš. Na stole leží hroznové v_no. Lucka chodí na jaz_kový kroužek. Na výletě nám došla p_tná voda.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "í",
+                  "ý"
+                ]
+              },
+              {
+                "i": 2,
+                "moznosti": [
+                  "í",
+                  "ý"
+                ]
+              },
+              {
+                "i": 3,
+                "moznosti": [
+                  "í",
+                  "ý"
+                ]
+              },
+              {
+                "i": 4,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 5,
+                "moznosti": [
+                  "í",
+                  "ý"
+                ]
+              },
+              {
+                "i": 6,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 7,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "y",
+            "í",
+            "ý",
+            "í",
+            "y",
+            "í",
+            "y",
+            "i"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "i",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "vs-p-i-za-y"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                "ý",
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "vs-s-y-za-i"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                "ý",
+                null,
+                null
+              ],
+              "typ_chyby": "vs-v-y-za-i"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                "i",
+                null
+              ],
+              "typ_chyby": "vs-z-i-za-y"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Stejný postup jako po b, l, m, jen s řadami po p, s, v, z. Polovina slov je v řadách nebo v jejich rodině, polovina ne. Past: pírko, síť, víno a pitná zní podobně jako slova z řad (pýcha, sýr, výr, pytel), ale v řadách nejsou ani do žádné rodiny z řad nepatří.",
+        "reseni": "kopyto (y: v řadě po p)\n\npírko (í: v řadě není)\n\nPýcha (ý: v řadě po p)\n\nsíť (í: v řadě není)\n\nvyšší (y: z rodiny slova vysoký)\n\nvíno (í: v řadě není)\n\njazykový (y: z rodiny slova jazyk)\n\npitná (i: od pít, to v řadě není)\n\n**Výsledek:** y, í, ý, í, y, í, y, i",
+        "otazky": [
+          "„Kdy se po p, s, v, z píše y? Řekni to vlastními slovy.“",
+          "„Vezmi slovo, u kterého váháš. Řekni řadu po té souhlásce. Je v ní to slovo, nebo slovo s podobným významem?“",
+          "„Řekni nahlas řady po p a po v. U každého slova z textu poslouchej, jestli v nich je ono, nebo jeho rodina.“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč se pýcha píše s ý, ale pírko s í.“",
+        "otocena_role_odpoved": "Pýcha je v řadě po p, proto ý. Pírko v řadě není a není z rodiny žádného slova z řady, proto í.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Napíše pýrko, sýť, výno nebo pytná. Zeptejte se: „Je to slovo v řadě? Řekni ji nahlas.“ Napíše kopito, Pícha, višší nebo jazikový: „Řekni řadu po p (po v, po z). Které slovo z ní to je nebo připomíná?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — po p, s, v, z sedí stejné pravidlo. Pochvalte, že dítě řeklo řadu a podle ní rozhodlo, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Napište dítěti na papír: p_sk, s_la, v_dra. Doplní i, nebo y a řekne proč. Kontrola pro vás: pysk (v řadě po p), síla (v řadě není), vydra (v řadě po v).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše zpaměti řady po p, s, v a z. Pak řeknete slova pírko, pýcha, víno, jazyk a dítě ke každému řekne, jestli je v řadě. Potom zopakujte lekci „Vyjmenovaná slova po P, S, V, Z“. Kontrola pro vás: pýcha a jazyk v řadách jsou; pírko a víno ne, píšou se s í."
+      },
+      "tisk": {
+        "zadani": "Doplň i, nebo y.\n\nKůň si poranil kop_to. Na zemi leží p_rko. P_cha předchází pád. Rybáři natáhli přes řeku s_ť. Adam je v_šší než Tomáš. Na stole leží hroznové v_no. Lucka chodí na jaz_kový kroužek. Na výletě nám došla p_tná voda."
+      }
+    },
+    {
+      "id": "cj-t6-l22b-U3",
+      "typ": "nova",
+      "cil": "Poznat, jestli slovo patří do rodiny vyjmenovaného slova (sýrař, povýšit), nebo jen podobně zní (sirotek, nazítří).",
+      "cas_min": 5,
+      "zadani": "Patří slovo do rodiny některého vyjmenovaného slova? Odpověz ano, nebo ne.\n\nA) s_rař\n\nB) s_rotek\n\nC) pov_šit\n\nD) naz_tří",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "A) s_rař",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "ano",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "ne",
+                "spravne": false,
+                "typ_chyby": "vs-pribuzne-neuzna"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "B) s_rotek",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "ano",
+                "spravne": false,
+                "typ_chyby": "vs-s-y-za-i"
+              },
+              {
+                "id": "b",
+                "text": "ne",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "C) pov_šit",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "ano",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "ne",
+                "spravne": false,
+                "typ_chyby": "vs-pribuzne-neuzna"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "D) naz_tří",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "ano",
+                "spravne": false,
+                "typ_chyby": "vs-z-y-za-i"
+              },
+              {
+                "id": "b",
+                "text": "ne",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě u každého slova rozhoduje, jestli patří do rodiny některého vyjmenovaného slova; podle toho se pak píše y, nebo i. Test: co slovo znamená a které slovo z řady znamená něco podobného. Sýrař patří k sýr, povýšit k vysoký. Sirotek se sýrem ani se syrovým nesouvisí. Nazítří jen začíná jako nazývat se, ale je od zítra.",
+        "reseni": "A) sýrař – ano (z rodiny slova sýr, píše se ý)\n\nB) sirotek – ne (se sýrem ani se syrovým nesouvisí, píše se i)\n\nC) povýšit – ano (z rodiny slova vysoký, píše se ý)\n\nD) nazítří – ne (znamená druhý den, je od zítra; s nazývat se nesouvisí, píše se í)\n\n**Výsledek:** ano, ne, ano, ne",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Jak poznáš, že dvě slova patří do jedné rodiny? Řekni to vlastními slovy.“"
+          },
+          {
+            "k": "A a B",
+            "text": "„Co to slovo znamená? Projdi řadu po s: znamená některé slovo z ní něco podobného?“"
+          },
+          {
+            "k": "C a D",
+            "text": "„Co to slovo znamená? Projdi řady po v a po z: znamená některé slovo z nich něco podobného?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč povýšit patří k vysoký, i když vypadá jinak.“",
+        "otocena_role_odpoved": "Povýšit znamená dát někomu vyšší místo nebo hodnost. Má stejný základ a podobný význam jako vysoký, takže je ze stejné rodiny a píše se s ý.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U sýrař nebo povýšit odpoví ne. Zeptejte se: „Co to slovo znamená? Které slovo z řady znamená něco podobného?“ (sýr, vysoký.) U sirotek odpoví ano: „Souvisí sirotek se sýrem?“ U nazítří odpoví ano: „Co znamená nazítří a co nazývat se?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — rodiny slov dítě pozná podle významu. Pochvalte, že hledalo slovo s podobným významem, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Napište dítěti na papír: p_tlák, s_lný, jaz_ček. U každého řekne, jestli patří do rodiny slova z řady a ke kterému. Kontrola pro vás: pytlák – ano (pytel), silný – ne (od síla, píše se i), jazýček – ano (jazyk).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše slova sýr, vysoký a pýcha a ke každému aspoň jedno slovo z rodiny. Potom zopakujte lekci „Vyjmenovaná slova po P, S, V, Z“. Kontrola pro vás: třeba sýrař, výška, pyšný – všechna s y nebo ý, protože patří do rodiny slova z řady."
+      },
+      "tisk": {
+        "zadani": "Patří slovo do rodiny některého vyjmenovaného slova? Zakroužkuj ano, nebo ne.\n\nA) s_rař: ano, ne\n\nB) s_rotek: ano, ne\n\nC) pov_šit: ano, ne\n\nD) naz_tří: ano, ne"
+      }
+    },
+    {
+      "id": "cj-t6-l22b-U4",
+      "typ": "detektiv",
+      "cil": "Najít u spolužáka vyjmenované slovo napsané s i (sitý) a říct, ke kterému slovu z řady patří.",
+      "cas_min": 5,
+      "zadani": "Petr měl doplnit i, nebo y. Napsal:\n\nTomáš si dal k večeři tři rohlíky a byl sitý.\n\nUdělal **jednu** chybu. Najdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na slovo, které Petr napsal špatně.",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Tomáš si dal k večeři tři rohlíky a byl sitý.",
+            "cil": "slova",
+            "min": 1,
+            "max": 1
+          },
+          "spravne": [
+            9
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                1,
+                6,
+                8
+              ],
+              "typ_chyby": "detektiv-jine-slovo"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Ke kterému vyjmenovanému slovu patří?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "sít",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "b",
+                "text": "syn",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "c",
+                "text": "sytý",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "sychravý",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr napsal správně všechno kromě jednoho slova. Si a rohlík v řadách nejsou, proto i a í; byl je tvar slova být. Chybné slovo je přímo z řady po s (najedený, už nemám hlad). Past: připomíná sít (sít obilí), ale s ním nesouvisí. V kroku 2 dítě vybírá slovo z řady.",
+        "reseni": "Chyba je sitý, správně sytý.\n\nsi (i: zájmeno, v řadě není)\n\nrohlíky (í: rohlík v řadě není)\n\nbyl (y: tvar slova být)\n\nsytý (y: v řadě po s, najedený)\n\n**Výsledek:** krok 1 sitý, krok 2 sytý",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Co máš v Petrově větě najít? Řekni to vlastními slovy.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každého slova s p, s, v nebo z se zeptej: je v řadě, nebo z rodiny slova z řady?“"
+          },
+          {
+            "k": "Krok 2",
+            "text": "„Řekni jinými slovy, co chybné slovo znamená. Které slovo z nabídky to je?“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a proč to není od sít.“",
+        "otocena_role_odpoved": "Sytý znamená najedený, je v řadě po s, proto y. Se setím obilí to nemá nic společného. Si, rohlíky a byl máš dobře.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na si, rohlíky nebo byl. Zeptejte se: „Je to slovo v řadě, nebo z rodiny slova z řady?“ (Petr to má dobře.) V kroku 2 vybere sít: „Co znamená sít? A co chybné slovo?“ Vybere syn nebo sychravý: „Je to totéž slovo?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — Petrovu chybu dítě našlo i vysvětlilo. Pochvalte, že u každého slova hledalo řadu, a jděte dál.",
+        "oranzova": "Zítra 5 minut. Napište dítěti na papír: sitý kocour, koňské kopyto, malý síček. Dítě řekne, která slova jsou napsaná špatně a proč. Kontrola pro vás: špatně jsou sitý (správně sytý, v řadě po s) a síček (správně sýček, v řadě po s); kopyto je dobře.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše slovo sytý a k němu tři slova z rodiny: nasytit, sytost, nenasytný. Ve všech podtrhne y. Potom zopakujte lekci „Vyjmenovaná slova po P, S, V, Z“. Kontrola pro vás: všude je y, protože všechna patří ke slovu sytý z řady po s."
+      },
+      "tisk": {
+        "zadani": "Petr měl doplnit i, nebo y. Napsal:\n\nTomáš si dal k večeři tři rohlíky a byl sitý.\n\nUdělal jednu chybu.\n\nA) Podtrhni slovo, které Petr napsal špatně.\n\nB) Ke kterému vyjmenovanému slovu patří? Zakroužkuj: a) sít b) syn c) sytý d) sychravý"
+      }
+    },
+    {
+      "id": "cj-t6-l22b-U5",
+      "typ": "kontrolni",
+      "cil": "Samostatně doplnit i/y po p, s, v, z v souvislém textu: vyjmenovaná slova, slova z jejich rodiny a slova mimo řady.",
+      "cas_min": 6,
+      "zadani": "Doplň i, nebo y. U dlouhých hlásek vybíráš í, nebo ý.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Celou noc sněžilo a sníh zas_pal cestu k chatě. Táta zapálil sv_čku. Tomáš se p_šní novými lyžemi. Chata nemá signál, a tak si Adam musí odv_kat od mobilu. Není to ničí v_na. K obědu jsme se najedli dos_ta. Sousedce z vedlejší chaty musíme v_kat. Večer Adam hrál na p_šťalu a z lesa se oz_valo houkání. Děda zatím p_lníkem opravoval sáně.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "í",
+                  "ý"
+                ]
+              },
+              {
+                "i": 2,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 3,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 4,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 5,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 6,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              },
+              {
+                "i": 7,
+                "moznosti": [
+                  "í",
+                  "ý"
+                ]
+              },
+              {
+                "i": 8,
+                "moznosti": [
+                  "í",
+                  "ý"
+                ]
+              },
+              {
+                "i": 9,
+                "moznosti": [
+                  "i",
+                  "y"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "y",
+            "í",
+            "y",
+            "y",
+            "i",
+            "y",
+            "y",
+            "í",
+            "ý",
+            "i"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                "í",
+                null
+              ],
+              "typ_chyby": "vs-z-i-za-y"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                "i",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "vs-pribuzne-neuzna"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                null,
+                "y",
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "vs-v-y-za-i"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                "i",
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "vs-s-i-za-y"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Deset písmen, šest y a čtyři i. Pasti: svíčka, vina, píšťala a pilník v řadách nejsou. Zasypal patří k sypat, pyšní se k pýcha, odvykat ke zvykat, dosyta k sytý, ozývalo se k nazývat se.",
+        "reseni": "zasypal (y: z rodiny slova sypat)\n\nsvíčku (í: svíčka v řadě není)\n\npyšní (y: z rodiny slova pýcha, kdo se pyšní, je pyšný)\n\nodvykat (y: z rodiny slova zvykat)\n\nvina (i: v řadě není)\n\ndosyta (y: z rodiny slova sytý)\n\nvykat (y: z rodiny slova vy, říkat někomu vy)\n\npíšťalu (í: píšťala v řadě není)\n\nozývalo (ý: z rodiny slova nazývat se)\n\npilníkem (i: pilník v řadě není, je od pila)\n\n**Výsledek:** y, í, y, y, i, y, y, í, ý, i",
+        "otazky": [
+          "„Řekni mi vlastními slovy, kdy se po p, s, v, z píše y.“",
+          "„Vezmi slovo, u kterého váháš. Je v řadě? Je z rodiny slova z řady?“",
+          "„Řekni nahlas řady po p, s, v a z. Která slova z textu nebo jejich rodiny v nich slyšíš?“"
+        ],
+        "otocena_role": "„Vyber si v textu jedno slovo z rodiny vyjmenovaného slova a jedno slovo s i. Dokaž mi, proč tak.“",
+        "otocena_role_odpoved": "Třeba dosyta: najíst se tak, že jsem sytý, a sytý je v řadě po s, proto y. Vina v řadě po v není a není z rodiny žádného slova z řady, proto i.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: napíše odvikat nebo dosita. Zeptejte se: „Od kterého slova je to?“ (zvykat, sytý.) Napíše vyna, svýčku nebo pýšťalu: „Je to slovo v řadě?“ Napíše ozívalo: „Řekni řadu po z.“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — y po p, s, v, z sedí i v textu. Pochvalte, že dítě hledalo řadu i rodinu. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut. Napište dítěti na papír: zv_kat, s_la, jaz_k. Doplní i, nebo y a řekne proč. Kontrola pro vás: zvykat (v řadě po v), síla (v řadě není), jazyk (v řadě po z).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše zpaměti řady po p, s, v a z. Pak napíše slova dosyta a odvykat a ke každému slovo z řady, ke kterému patří. Potom zopakujte lekci „Vyjmenovaná slova po P, S, V, Z“. Kontrola pro vás: dosyta patří k sytý, odvykat ke zvykat; řady jsou v taháku pod „Co ta slova znamenají“."
+      },
+      "tisk": {
+        "zadani": "Doplň i, nebo y.\n\nCelou noc sněžilo a sníh zas_pal cestu k chatě. Táta zapálil sv_čku. Tomáš se p_šní novými lyžemi. Chata nemá signál, a tak si Adam musí odv_kat od mobilu. Není to ničí v_na. K obědu jsme se najedli dos_ta. Sousedce z vedlejší chaty musíme v_kat. Večer Adam hrál na p_šťalu a z lesa se oz_valo houkání. Děda zatím p_lníkem opravoval sáně."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "Korektura 14. 10. 2026 (korektor): každý hodnocený tvar znovu ověřen v ÚJČ (hesla v zdroj, řady a rodiny id=100). Oprava podle rozhodnutí vedoucího (méně průhledná příbuzná slova): U5 mezera 2 (od 0) přepych (← pýcha, v id=100, ale pro dítě po červené těžší než hlavní lekce) → nová věta „Tomáš se p_šní novými lyžemi.“ (pyšnit se ← pýcha, průhledné; správně y, nabídka i/y beze změny; usychat a synovec nepoužity, jsou hodnocené v cj-t6-l22n). Tahák (vysvětlení, řešení) upraven. ozývat se ponecháno (povoleno vedoucím). Jazykové chyby: 0. Vzorové odpovědi a všechny známé chyby ověřeny skriptem; validátor bez chyb.",
+    "zkontroloval": "korektor",
+    "datum": "2026-10-14",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?id=101",
+      "https://prirucka.ujc.cas.cz/?id=100",
+      "https://prirucka.ujc.cas.cz/?slovo=bystrost",
+      "https://prirucka.ujc.cas.cz/?slovo=li%C5%A1ka",
+      "https://prirucka.ujc.cas.cz/?slovo=m%C3%BDlka",
+      "https://prirucka.ujc.cas.cz/?slovo=obil%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=kopyto",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C3%ADrko",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C3%BDcha",
+      "https://prirucka.ujc.cas.cz/?slovo=s%C3%AD%C5%A5",
+      "https://prirucka.ujc.cas.cz/?slovo=vy%C5%A1%C5%A1%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=v%C3%ADno",
+      "https://prirucka.ujc.cas.cz/?slovo=jazykov%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=pitn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=s%C3%BDra%C5%99",
+      "https://prirucka.ujc.cas.cz/?slovo=sirotek",
+      "https://prirucka.ujc.cas.cz/?slovo=pov%C3%BD%C5%A1it",
+      "https://prirucka.ujc.cas.cz/?slovo=naz%C3%ADt%C5%99%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=rohl%C3%ADk",
+      "https://prirucka.ujc.cas.cz/?slovo=s%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=syn",
+      "https://prirucka.ujc.cas.cz/?slovo=syt%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=sychrav%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=zasypat",
+      "https://prirucka.ujc.cas.cz/?slovo=sv%C3%AD%C4%8Dka",
+      "https://prirucka.ujc.cas.cz/?slovo=odvykat",
+      "https://prirucka.ujc.cas.cz/?slovo=vina",
+      "https://prirucka.ujc.cas.cz/?slovo=dosyta",
+      "https://prirucka.ujc.cas.cz/?slovo=vykat",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C3%AD%C5%A1%C5%A5ala",
+      "https://prirucka.ujc.cas.cz/?slovo=oz%C3%BDvat",
+      "https://prirucka.ujc.cas.cz/?slovo=piln%C3%ADk",
+      "https://prirucka.ujc.cas.cz/?slovo=py%C5%A1nit%20se"
+    ],
+    "testovaci_rodic": null
+  }
+}
