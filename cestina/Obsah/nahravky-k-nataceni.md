@@ -1,4 +1,4 @@
-# Nahrávky k natočení (126)
+# Nahrávky k natočení (132)
 
 Vygenerováno 2026-10-14 nástrojem nastroje/seznam-nahravek.mjs. Postup: cestina/Obsah/NAHRAVKY-NAVOD.md.
 Do ElevenLabs vlož PŘESNĚ text z bloku (bez zpětných apostrofů). Soubor ulož jako `složka/název`.
@@ -971,7 +971,15 @@ Lekce: cj-t10-l38 úloha 3 · Věta: Lyžaři vyšli z chaty a sjeli do údolí.
 Lyžaři vyšli z chaty a sjeli do údolí. Listí na podzim zežloutlo.
 ```
 
-## 122. t10/l39-u3.mp3 — poslech
+## 122. t10/l38n-u3.mp3 — poslech
+
+Lekce: cj-t10-l38n úloha 3 · Věta: Před školou se shromáždili lidé z celé vesnice. Když ředitel začal mluvit, všichni ztichli. Jen Tomáš se shýbl pro míč, který mu upadl.
+
+```text
+Před školou se shromáždili lidé z celé vesnice. Když ředitel začal mluvit, všichni ztichli. Jen Tomáš se shýbl pro míč, který mu upadl.
+```
+
+## 123. t10/l39-u3.mp3 — poslech
 
 Lekce: cj-t10-l39 úloha 3 · Věta: Tomáš zapomněl doma klíče.
 
@@ -979,7 +987,15 @@ Lekce: cj-t10-l39 úloha 3 · Věta: Tomáš zapomněl doma klíče.
 Tomáš zapomněl doma klíče.
 ```
 
-## 123. t10/l40-d1.mp3 — diktát
+## 124. t10/l39n-u3.mp3 — poslech
+
+Lekce: cj-t10-l39n úloha 3 · Věta: Klára jemně pohladila koťátko. Zřejmě mělo hlad, a tak mu nalila mléko.
+
+```text
+Klára jemně pohladila koťátko. Zřejmě mělo hlad, a tak mu nalila mléko.
+```
+
+## 125. t10/l40-d1.mp3 — diktát
 
 Lekce: cj-t10-l40 úloha 5, věta 1 · Věta: Táta objednal večeři.
 
@@ -987,7 +1003,15 @@ Lekce: cj-t10-l40 úloha 5, věta 1 · Věta: Táta objednal večeři.
 Táta objednal večeři. <break time="2s" /> Táta <break time="0.7s" /> objednal <break time="0.7s" /> večeři.
 ```
 
-## 124. t10/l40-d2.mp3 — diktát
+## 126. t10/l40n-d1.mp3 — diktát
+
+Lekce: cj-t10-l40n úloha 5, věta 1 · Věta: Ema se s Klárou zúčastnila závodu.
+
+```text
+Ema se s Klárou zúčastnila závodu. <break time="2s" /> Ema <break time="0.7s" /> se <break time="0.7s" /> s <break time="0.7s" /> velké písmeno — Klárou <break time="0.7s" /> zúčastnila <break time="0.7s" /> závodu.
+```
+
+## 127. t10/l40-d2.mp3 — diktát
 
 Lekce: cj-t10-l40 úloha 5, věta 2 · Věta: Lucka zapomněla na trénink.
 
@@ -995,7 +1019,15 @@ Lekce: cj-t10-l40 úloha 5, věta 2 · Věta: Lucka zapomněla na trénink.
 Lucka zapomněla na trénink. <break time="2s" /> Lucka <break time="0.7s" /> zapomněla <break time="0.7s" /> na <break time="0.7s" /> trénink.
 ```
 
-## 125. t10/l40-d3.mp3 — diktát
+## 128. t10/l40n-d2.mp3 — diktát
+
+Lekce: cj-t10-l40n úloha 5, věta 2 · Věta: Pohostinný soused mně podal čaj.
+
+```text
+Pohostinný soused mně podal čaj. <break time="2s" /> Pohostinný <break time="0.7s" /> soused <break time="0.7s" /> mně <break time="0.7s" /> podal <break time="0.7s" /> čaj.
+```
+
+## 129. t10/l40-d3.mp3 — diktát
 
 Lekce: cj-t10-l40 úloha 5, věta 3 · Věta: Ten oddíl má cenný pohár.
 
@@ -1003,10 +1035,26 @@ Lekce: cj-t10-l40 úloha 5, věta 3 · Věta: Ten oddíl má cenný pohár.
 Ten oddíl má cenný pohár. <break time="2s" /> Ten <break time="0.7s" /> oddíl <break time="0.7s" /> má <break time="0.7s" /> cenný <break time="0.7s" /> pohár.
 ```
 
-## 126. t10/l40-d4.mp3 — diktát
+## 130. t10/l40n-d3.mp3 — diktát
+
+Lekce: cj-t10-l40n úloha 5, věta 3 · Věta: Táta zrušil objednávku dortu.
+
+```text
+Táta zrušil objednávku dortu. <break time="2s" /> Táta <break time="0.7s" /> zrušil <break time="0.7s" /> objednávku <break time="0.7s" /> dortu.
+```
+
+## 131. t10/l40-d4.mp3 — diktát
 
 Lekce: cj-t10-l40 úloha 5, věta 4 · Věta: Klára shodila hrnek na zem.
 
 ```text
 Klára shodila hrnek na zem. <break time="2s" /> Klára <break time="0.7s" /> shodila <break time="0.7s" /> hrnek <break time="0.7s" /> na <break time="0.7s" /> zem.
+```
+
+## 132. t10/l40n-d4.mp3 — diktát
+
+Lekce: cj-t10-l40n úloha 5, věta 4 · Věta: Lucka jemně sklonila hlavu.
+
+```text
+Lucka jemně sklonila hlavu. <break time="2s" /> Lucka <break time="0.7s" /> jemně <break time="0.7s" /> sklonila <break time="0.7s" /> hlavu.
 ```
