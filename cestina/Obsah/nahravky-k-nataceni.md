@@ -1,4 +1,4 @@
-# Nahrávky k natočení (79)
+# Nahrávky k natočení (85)
 
 Vygenerováno 2026-10-14 nástrojem nastroje/seznam-nahravek.mjs. Postup: cestina/Obsah/NAHRAVKY-NAVOD.md.
 Do ElevenLabs vlož PŘESNĚ text z bloku (bez zpětných apostrofů). Soubor ulož jako `složka/název`.
@@ -371,7 +371,15 @@ Lekce: cj-t5-l17 úloha 3 · Věta: Večer bysme mohli jít do kina.
 Večer bysme mohli jít do kina.
 ```
 
-## 47. t5/l18-u3.mp3 — poslech
+## 47. t5/l17n-u3.mp3 — poslech
+
+Lekce: cj-t5-l17n úloha 3 · Věta: Kdyby bylo hezky, mohli bysme jít na koupaliště. Šli byste s námi?
+
+```text
+Kdyby bylo hezky, mohli bysme jít na koupaliště. Šli byste s námi?
+```
+
+## 48. t5/l18-u3.mp3 — poslech
 
 Lekce: cj-t5-l18 úloha 3 · Věta: Zítra napíšu test a potom budu číst knihu.
 
@@ -379,7 +387,15 @@ Lekce: cj-t5-l18 úloha 3 · Věta: Zítra napíšu test a potom budu číst kni
 Zítra napíšu test a potom budu číst knihu.
 ```
 
-## 48. t5/l20-d1.mp3 — diktát
+## 49. t5/l18n-u3.mp3 — poslech
+
+Lekce: cj-t5-l18n úloha 3 · Věta: Po škole doběhnu domů, najdu si koš a potom budu na zahradě sbírat kaštany.
+
+```text
+Po škole doběhnu domů, najdu si koš a potom budu na zahradě sbírat kaštany.
+```
+
+## 50. t5/l20-d1.mp3 — diktát
 
 Lekce: cj-t5-l20 úloha 5, věta 1 · Věta: Tomáš by šel ven.
 
@@ -387,7 +403,15 @@ Lekce: cj-t5-l20 úloha 5, věta 1 · Věta: Tomáš by šel ven.
 Tomáš by šel ven. <break time="2s" /> Tomáš <break time="0.7s" /> by <break time="0.7s" /> šel <break time="0.7s" /> ven.
 ```
 
-## 49. t5/l20-d2.mp3 — diktát
+## 51. t5/l20n-d1.mp3 — diktát
+
+Lekce: cj-t5-l20n úloha 5, věta 1 · Věta: Já bych ti pomohl.
+
+```text
+Já bych ti pomohl. <break time="2s" /> Já <break time="0.7s" /> bych <break time="0.7s" /> ti <break time="0.7s" /> pomohl.
+```
+
+## 52. t5/l20-d2.mp3 — diktát
 
 Lekce: cj-t5-l20 úloha 5, věta 2 · Věta: Večer budu číst knihu.
 
@@ -395,7 +419,15 @@ Lekce: cj-t5-l20 úloha 5, věta 2 · Věta: Večer budu číst knihu.
 Večer budu číst knihu. <break time="2s" /> Večer <break time="0.7s" /> budu <break time="0.7s" /> číst <break time="0.7s" /> knihu.
 ```
 
-## 50. t5/l20-d3.mp3 — diktát
+## 53. t5/l20n-d2.mp3 — diktát
+
+Lekce: cj-t5-l20n úloha 5, věta 2 · Věta: Přines deku, budu tady spát.
+
+```text
+Přines deku, budu tady spát. <break time="2s" /> Přines <break time="0.7s" /> deku <break time="0.7s" /> budu <break time="0.7s" /> tady <break time="0.7s" /> spát.
+```
+
+## 54. t5/l20-d3.mp3 — diktát
 
 Lekce: cj-t5-l20 úloha 5, věta 3 · Věta: Dům byl postaven loni.
 
@@ -403,7 +435,15 @@ Lekce: cj-t5-l20 úloha 5, věta 3 · Věta: Dům byl postaven loni.
 Dům byl postaven loni. <break time="2s" /> Dům <break time="0.7s" /> byl <break time="0.7s" /> postaven <break time="0.7s" /> loni.
 ```
 
-## 51. t5/l20-d4.mp3 — diktát
+## 55. t5/l20n-d3.mp3 — diktát
+
+Lekce: cj-t5-l20n úloha 5, věta 3 · Věta: Ema by ráda jela k moři.
+
+```text
+Ema by ráda jela k moři. <break time="2s" /> Ema <break time="0.7s" /> by <break time="0.7s" /> ráda <break time="0.7s" /> jela <break time="0.7s" /> k <break time="0.7s" /> moři.
+```
+
+## 56. t5/l20-d4.mp3 — diktát
 
 Lekce: cj-t5-l20 úloha 5, věta 4 · Věta: Zavři okno!
 
@@ -411,7 +451,15 @@ Lekce: cj-t5-l20 úloha 5, věta 4 · Věta: Zavři okno!
 Zavři okno! <break time="2s" /> Zavři <break time="0.7s" /> okno.
 ```
 
-## 52. t6/l21-u3.mp3 — poslech
+## 57. t5/l20n-d4.mp3 — diktát
+
+Lekce: cj-t5-l20n úloha 5, věta 4 · Věta: Úkol bude dokončen v pátek.
+
+```text
+Úkol bude dokončen v pátek. <break time="2s" /> Úkol <break time="0.7s" /> bude <break time="0.7s" /> dokončen <break time="0.7s" /> v <break time="0.7s" /> pátek.
+```
+
+## 58. t6/l21-u3.mp3 — poslech
 
 Lekce: cj-t6-l21 úloha 3 · Věta: První věta: Hodiny na věži začaly bít poledne. Druhá věta: Chtěl bych být brankářem. Třetí věta: Každou sobotu pomáhám tátovi mýt auto.
 
@@ -419,7 +467,7 @@ Lekce: cj-t6-l21 úloha 3 · Věta: První věta: Hodiny na věži začaly bít 
 První věta: Hodiny na věži začaly bít poledne. Druhá věta: Chtěl bych být brankářem. Třetí věta: Každou sobotu pomáhám tátovi mýt auto.
 ```
 
-## 53. t6/l23-u3.mp3 — poslech
+## 59. t6/l23-u3.mp3 — poslech
 
 Lekce: cj-t6-l23 úloha 3 · Věta: První věta: V lese houká výr. Druhá věta: Ve vodě se točil vír. Třetí věta: Pes celou noc vyl.
 
@@ -427,7 +475,7 @@ Lekce: cj-t6-l23 úloha 3 · Věta: První věta: V lese houká výr. Druhá vě
 První věta: V lese houká výr. Druhá věta: Ve vodě se točil vír. Třetí věta: Pes celou noc vyl.
 ```
 
-## 54. t6/l24-d1.mp3 — diktát
+## 60. t6/l24-d1.mp3 — diktát
 
 Lekce: cj-t6-l24 úloha 5, věta 1 · Věta: Obyvatelé vesnice bydlí u mlýna.
 
@@ -435,7 +483,7 @@ Lekce: cj-t6-l24 úloha 5, věta 1 · Věta: Obyvatelé vesnice bydlí u mlýna.
 Obyvatelé vesnice bydlí u mlýna. <break time="2s" /> Obyvatelé <break time="0.7s" /> vesnice <break time="0.7s" /> bydlí <break time="0.7s" /> u <break time="0.7s" /> mlýna.
 ```
 
-## 55. t6/l24-d2.mp3 — diktát
+## 61. t6/l24-d2.mp3 — diktát
 
 Lekce: cj-t6-l24 úloha 5, věta 2 · Věta: Brzy ráno slyšíme sýkoru.
 
@@ -443,7 +491,7 @@ Lekce: cj-t6-l24 úloha 5, věta 2 · Věta: Brzy ráno slyšíme sýkoru.
 Brzy ráno slyšíme sýkoru. <break time="2s" /> Brzy <break time="0.7s" /> ráno <break time="0.7s" /> slyšíme <break time="0.7s" /> sýkoru.
 ```
 
-## 56. t6/l24-d3.mp3 — diktát
+## 62. t6/l24-d3.mp3 — diktát
 
 Lekce: cj-t6-l24 úloha 5, věta 3 · Věta: Vlk v lese vyl.
 
@@ -451,7 +499,7 @@ Lekce: cj-t6-l24 úloha 5, věta 3 · Věta: Vlk v lese vyl.
 Vlk v lese vyl. <break time="2s" /> Vlk <break time="0.7s" /> v <break time="0.7s" /> lese <break time="0.7s" /> vyl.
 ```
 
-## 57. t6/l24-d4.mp3 — diktát
+## 63. t6/l24-d4.mp3 — diktát
 
 Lekce: cj-t6-l24 úloha 5, věta 4 · Věta: Tomáš si umyl ruce.
 
@@ -459,7 +507,7 @@ Lekce: cj-t6-l24 úloha 5, věta 4 · Věta: Tomáš si umyl ruce.
 Tomáš si umyl ruce. <break time="2s" /> Tomáš <break time="0.7s" /> si <break time="0.7s" /> umyl <break time="0.7s" /> ruce.
 ```
 
-## 58. t7/l25-u3.mp3 — poslech
+## 64. t7/l25-u3.mp3 — poslech
 
 Lekce: cj-t7-l25 úloha 3 · Věta: Holky z naší třídy trénovaly po škole volejbal. Potom šly na zmrzlinu.
 
@@ -467,7 +515,7 @@ Lekce: cj-t7-l25 úloha 3 · Věta: Holky z naší třídy trénovaly po škole 
 Holky z naší třídy trénovaly po škole volejbal. Potom šly na zmrzlinu.
 ```
 
-## 59. t7/l27-u3.mp3 — poslech
+## 65. t7/l27-u3.mp3 — poslech
 
 Lekce: cj-t7-l27 úloha 3 · Věta: Po koncertě čekali rodiče před školou. Děti vyběhly ven a mávaly na ně. Potom všichni šli k autu.
 
@@ -475,7 +523,7 @@ Lekce: cj-t7-l27 úloha 3 · Věta: Po koncertě čekali rodiče před školou. 
 Po koncertě čekali rodiče před školou. Děti vyběhly ven a mávaly na ně. Potom všichni šli k autu.
 ```
 
-## 60. t7/l28-d1.mp3 — diktát
+## 66. t7/l28-d1.mp3 — diktát
 
 Lekce: cj-t7-l28 úloha 5, věta 1 · Věta: Kluci hráli na hřišti fotbal.
 
@@ -483,7 +531,7 @@ Lekce: cj-t7-l28 úloha 5, věta 1 · Věta: Kluci hráli na hřišti fotbal.
 Kluci hráli na hřišti fotbal. <break time="2s" /> Kluci <break time="0.7s" /> hráli <break time="0.7s" /> na <break time="0.7s" /> hřišti <break time="0.7s" /> fotbal.
 ```
 
-## 61. t7/l28-d2.mp3 — diktát
+## 67. t7/l28-d2.mp3 — diktát
 
 Lekce: cj-t7-l28 úloha 5, věta 2 · Věta: Děti seděly u okna.
 
@@ -491,7 +539,7 @@ Lekce: cj-t7-l28 úloha 5, věta 2 · Věta: Děti seděly u okna.
 Děti seděly u okna. <break time="2s" /> Děti <break time="0.7s" /> seděly <break time="0.7s" /> u <break time="0.7s" /> okna.
 ```
 
-## 62. t7/l28-d3.mp3 — diktát
+## 68. t7/l28-d3.mp3 — diktát
 
 Lekce: cj-t7-l28 úloha 5, věta 3 · Věta: Rodiče čekali venku.
 
@@ -499,7 +547,7 @@ Lekce: cj-t7-l28 úloha 5, věta 3 · Věta: Rodiče čekali venku.
 Rodiče čekali venku. <break time="2s" /> Rodiče <break time="0.7s" /> čekali <break time="0.7s" /> venku.
 ```
 
-## 63. t7/l28-d4.mp3 — diktát
+## 69. t7/l28-d4.mp3 — diktát
 
 Lekce: cj-t7-l28 úloha 5, věta 4 · Věta: Auta stála před domem.
 
@@ -507,7 +555,7 @@ Lekce: cj-t7-l28 úloha 5, věta 4 · Věta: Auta stála před domem.
 Auta stála před domem. <break time="2s" /> Auta <break time="0.7s" /> stála <break time="0.7s" /> před <break time="0.7s" /> domem.
 ```
 
-## 64. t8/l30-u3.mp3 — poslech
+## 70. t8/l30-u3.mp3 — poslech
 
 Lekce: cj-t8-l30 úloha 3 · Věta: Kvůli dešti jsme v sobotu zůstali doma.
 
@@ -515,7 +563,7 @@ Lekce: cj-t8-l30 úloha 3 · Věta: Kvůli dešti jsme v sobotu zůstali doma.
 Kvůli dešti jsme v sobotu zůstali doma.
 ```
 
-## 65. t8/l31-u3.mp3 — poslech
+## 71. t8/l31-u3.mp3 — poslech
 
 Lekce: cj-t8-l31 úloha 3 · Věta: Kluk s modrou čepicí čekal u vchodu.
 
@@ -523,7 +571,7 @@ Lekce: cj-t8-l31 úloha 3 · Věta: Kluk s modrou čepicí čekal u vchodu.
 Kluk s modrou čepicí čekal u vchodu.
 ```
 
-## 66. t8/l32-d1.mp3 — diktát
+## 72. t8/l32-d1.mp3 — diktát
 
 Lekce: cj-t8-l32 úloha 5, věta 1 · Věta: Náš soused je kuchař.
 
@@ -531,7 +579,7 @@ Lekce: cj-t8-l32 úloha 5, věta 1 · Věta: Náš soused je kuchař.
 Náš soused je kuchař. <break time="2s" /> Náš <break time="0.7s" /> soused <break time="0.7s" /> je <break time="0.7s" /> kuchař.
 ```
 
-## 67. t8/l32-d2.mp3 — diktát
+## 73. t8/l32-d2.mp3 — diktát
 
 Lekce: cj-t8-l32 úloha 5, věta 2 · Věta: Ten starý dům u řeky je prázdný.
 
@@ -539,7 +587,7 @@ Lekce: cj-t8-l32 úloha 5, věta 2 · Věta: Ten starý dům u řeky je prázdn�
 Ten starý dům u řeky je prázdný. <break time="2s" /> Ten <break time="0.7s" /> starý <break time="0.7s" /> dům <break time="0.7s" /> u <break time="0.7s" /> řeky <break time="0.7s" /> je <break time="0.7s" /> prázdný.
 ```
 
-## 68. t8/l32-d3.mp3 — diktát
+## 74. t8/l32-d3.mp3 — diktát
 
 Lekce: cj-t8-l32 úloha 5, věta 3 · Věta: Večer čekal Adam venku.
 
@@ -547,7 +595,7 @@ Lekce: cj-t8-l32 úloha 5, věta 3 · Věta: Večer čekal Adam venku.
 Večer čekal Adam venku. <break time="2s" /> Večer <break time="0.7s" /> čekal <break time="0.7s" /> velké písmeno — Adam <break time="0.7s" /> venku.
 ```
 
-## 69. t9/l33-u3.mp3 — poslech
+## 75. t9/l33-u3.mp3 — poslech
 
 Lekce: cj-t9-l33 úloha 3 · Věta: Když jsme přišli domů, máma vařila večeři a táta četl noviny.
 
@@ -555,7 +603,7 @@ Lekce: cj-t9-l33 úloha 3 · Věta: Když jsme přišli domů, máma vařila ve�
 Když jsme přišli domů, máma vařila večeři a táta četl noviny.
 ```
 
-## 70. t9/l34-u2.mp3 — poslech
+## 76. t9/l34-u2.mp3 — poslech
 
 Lekce: cj-t9-l34 úloha 2 · Věta: Lucka čte knihu a Tomáš, který přišel pozdě, píše úkol.
 
@@ -563,7 +611,7 @@ Lekce: cj-t9-l34 úloha 2 · Věta: Lucka čte knihu a Tomáš, který přišel 
 Lucka čte knihu a Tomáš, který přišel pozdě, píše úkol.
 ```
 
-## 71. t9/l36-d1.mp3 — diktát
+## 77. t9/l36-d1.mp3 — diktát
 
 Lekce: cj-t9-l36 úloha 5, věta 1 · Věta: Doufám, že Tomáš přijde domů.
 
@@ -571,7 +619,7 @@ Lekce: cj-t9-l36 úloha 5, věta 1 · Věta: Doufám, že Tomáš přijde domů.
 Doufám, že Tomáš přijde domů. <break time="2s" /> Doufám <break time="0.7s" /> že <break time="0.7s" /> velké písmeno — Tomáš <break time="0.7s" /> přijde <break time="0.7s" /> domů.
 ```
 
-## 72. t9/l36-d2.mp3 — diktát
+## 78. t9/l36-d2.mp3 — diktát
 
 Lekce: cj-t9-l36 úloha 5, věta 2 · Věta: Kluk, který sedí vedle, hraje hokej.
 
@@ -579,7 +627,7 @@ Lekce: cj-t9-l36 úloha 5, věta 2 · Věta: Kluk, který sedí vedle, hraje hok
 Kluk, který sedí vedle, hraje hokej. <break time="2s" /> Kluk <break time="0.7s" /> který <break time="0.7s" /> sedí <break time="0.7s" /> vedle <break time="0.7s" /> hraje <break time="0.7s" /> hokej.
 ```
 
-## 73. t9/l36-d3.mp3 — diktát
+## 79. t9/l36-d3.mp3 — diktát
 
 Lekce: cj-t9-l36 úloha 5, věta 3 · Věta: Do batohu dej svetr, bundu a boty.
 
@@ -587,7 +635,7 @@ Lekce: cj-t9-l36 úloha 5, věta 3 · Věta: Do batohu dej svetr, bundu a boty.
 Do batohu dej svetr, bundu a boty. <break time="2s" /> Do <break time="0.7s" /> batohu <break time="0.7s" /> dej <break time="0.7s" /> svetr <break time="0.7s" /> bundu <break time="0.7s" /> a <break time="0.7s" /> boty.
 ```
 
-## 74. t10/l38-u3.mp3 — poslech
+## 80. t10/l38-u3.mp3 — poslech
 
 Lekce: cj-t10-l38 úloha 3 · Věta: Lyžaři vyšli z chaty a sjeli do údolí. Listí na podzim zežloutlo.
 
@@ -595,7 +643,7 @@ Lekce: cj-t10-l38 úloha 3 · Věta: Lyžaři vyšli z chaty a sjeli do údolí.
 Lyžaři vyšli z chaty a sjeli do údolí. Listí na podzim zežloutlo.
 ```
 
-## 75. t10/l39-u3.mp3 — poslech
+## 81. t10/l39-u3.mp3 — poslech
 
 Lekce: cj-t10-l39 úloha 3 · Věta: Tomáš zapomněl doma klíče.
 
@@ -603,7 +651,7 @@ Lekce: cj-t10-l39 úloha 3 · Věta: Tomáš zapomněl doma klíče.
 Tomáš zapomněl doma klíče.
 ```
 
-## 76. t10/l40-d1.mp3 — diktát
+## 82. t10/l40-d1.mp3 — diktát
 
 Lekce: cj-t10-l40 úloha 5, věta 1 · Věta: Táta objednal večeři.
 
@@ -611,7 +659,7 @@ Lekce: cj-t10-l40 úloha 5, věta 1 · Věta: Táta objednal večeři.
 Táta objednal večeři. <break time="2s" /> Táta <break time="0.7s" /> objednal <break time="0.7s" /> večeři.
 ```
 
-## 77. t10/l40-d2.mp3 — diktát
+## 83. t10/l40-d2.mp3 — diktát
 
 Lekce: cj-t10-l40 úloha 5, věta 2 · Věta: Lucka zapomněla na trénink.
 
@@ -619,7 +667,7 @@ Lekce: cj-t10-l40 úloha 5, věta 2 · Věta: Lucka zapomněla na trénink.
 Lucka zapomněla na trénink. <break time="2s" /> Lucka <break time="0.7s" /> zapomněla <break time="0.7s" /> na <break time="0.7s" /> trénink.
 ```
 
-## 78. t10/l40-d3.mp3 — diktát
+## 84. t10/l40-d3.mp3 — diktát
 
 Lekce: cj-t10-l40 úloha 5, věta 3 · Věta: Ten oddíl má cenný pohár.
 
@@ -627,7 +675,7 @@ Lekce: cj-t10-l40 úloha 5, věta 3 · Věta: Ten oddíl má cenný pohár.
 Ten oddíl má cenný pohár. <break time="2s" /> Ten <break time="0.7s" /> oddíl <break time="0.7s" /> má <break time="0.7s" /> cenný <break time="0.7s" /> pohár.
 ```
 
-## 79. t10/l40-d4.mp3 — diktát
+## 85. t10/l40-d4.mp3 — diktát
 
 Lekce: cj-t10-l40 úloha 5, věta 4 · Věta: Klára shodila hrnek na zem.
 
