@@ -917,13 +917,20 @@ table { border-collapse: collapse; }
 }
 .dlazdice:hover:not(:disabled) { border-color: var(--barva-silna); box-shadow: var(--stin-2); }
 .dlazdice--radek { justify-content: flex-start; text-align: left; font-family: inherit; } /* detektiv: řádky výpočtu */
+/* Znak ✔ / ↻ visí na pravém horním rohu dlaždice, mimo její obsah (QA 14. 10., M8-T06-L3N U1 k2: uvnitř
+   zakrýval konec dlouhého součinu). Spodní hrana znaku (28 − 10 = 18 px pod horním okrajem) = rámeček 2 px
+   + padding 16 px, tj. končí přesně nad obsahem — nezakryje ho při žádné šířce ani délce výrazu a nemění
+   místo pro vzorec (rozlozDlazdice() nic nepřepočítává). Ven přečnívá 10 px: méně než mezera mřížky (12 px)
+   i vnitřní okraj karty kroku → nepřekryje sousední dlaždici a nezpůsobí vodorovný scroll. */
 .dlazdice__znak {
   position: absolute;
-  top: var(--mezera-2); right: var(--mezera-2);
+  top: -0.625rem; right: -0.625rem;
+  z-index: 1;
   display: none;
   width: 1.75rem; height: 1.75rem;
   border-radius: var(--polomer-kruh);
   place-items: center;
+  box-shadow: 0 0 0 2px var(--barva-povrch); /* oddělí znak od rámečku dlaždice (světlý i tmavý motiv) */
 }
 .dlazdice__znak .ikona { width: 1.1rem; height: 1.1rem; stroke-width: 2.6; }
 
