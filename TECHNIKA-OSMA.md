@@ -130,6 +130,44 @@ Repo je kopie aplikace Spolu (matematika na přijímačky + čeština základy).
   - Po dokončení se pořadí témat bere z něj (`vysledekPol`). Hotové lekce zůstávají, přeskládá se jen zbytek.
 - **Testy:** `testy/plan-roku.test.js`.
 
+### Odznaky, taháky a měsíční výzvy (R78, R80, R81, R82; převzato ze Spolu 9 15. 10. 2026)
+Podklady: `predani/2026-10-09-odznaky-a-tahaky/README.md`. Všechno se počítá při načtení stránky z dokončených sezení, DB se nemění.
+- **Moduly:**
+  - `odznaky.js`: definice a výpočet (`spocitejOdznaky`), vzhled `htmlOdznaku` / `vzhledOdznaku` (R81). `svgOdznaku` zůstává jen pro hvězdu v rohu karty lekce.
+  - `odznaky-ui.js`: řádek na přehledu, okno odznaků se sekcemi, nové odznaky.
+  - `odznaky-karty.js`: karta nového odznaku i taháku (`oknoKaret`).
+  - `tahaky.js`: čistá logika taháků a výzev.
+  - `tahaky-ui.js`: řádek „Taháky: x z N“, karta výzvy, tahák v okně, tisk, karty nových taháků.
+  - `tahaky-stranka.js` + `tahaky.html`: stránka „Moje taháky“ (odkaz v menu).
+  - Obsah taháků: `tahaky-matematika.js`, `tahaky-cestina.js`, `tahaky-bonus.js`.
+  - Styly: konec `design-system.css` (tokeny, R78 + R82, R81 redesign, okna na telefonu přes celou šířku).
+  - Písmo Tilt Neon (neonový titulek karty) je v odkazu Google Fonts na přehledu, lekci, u rodiče a na tahácích.
+- **Odznaky (22):** patří dítěti, oba předměty dohromady.
+  - Za lekce (10): texty Spolu 8 beze změny, R80 přidal Řadu 20 a 30.
+  - Za oba předměty (`oba:prvni`, `oba:rada`; jen dítě s oběma předměty).
+  - Měsíční výzvy (`vyzva:RRRR-MM`, 7).
+  - Sbírka taháků (`sber:5`, `sber:15`, `sber:vse`).
+  - **Tvar a tón:** za lekce a výzvy kruh, oba předměty a sbírka šestiúhelník; zelená vytrvalost, zlatá milník. `cj:` štít je připravený, kdyby se sada dělila po předmětech.
+  - **Co se nepočítá:** B-varianty se do „Celé téma“, „Celý předmět“ ani do výzev nepočítají. Téma 0 (úvodní a pololetní test) nedá „Celé téma“.
+  - **Jednou viděný odznak se nikdy neodebírá:** `spocitejOdznaky(…, { videne })`.
+- **Taháky:**
+  - Jeden na téma a předmět, id `t:<predmet>:osma:<tema>` (20).
+  - Odemkne se dokončením učebních lekcí L1–L4 tématu. Naostro, B a testy se nepočítají.
+  - Zlaté taháky `b:RRRR-MM` (7) za splněnou výzvu. Všem se sezónou se odemknou `ODEMCENI_BONUSU` = 2027-06-01.
+- **Výzvy:**
+  - `VYZVY` v `tahaky-bonus.js`: listopad 2026 – květen 2027, cíl = různé lekce dokončené v měsíci (Praha).
+  - Počítají se učební i naostro lekce obou předmětů, i zopakovaná lekce (`lekceProDite` vrací `dokonceniVse`, všechny konce dokončených sezení; dotaz beze změny).
+  - Zkrácená dubnová výzva Spolu 9 tu neplatí.
+  - **Účet bez sezóny** (`sezonaZamcena`: některá lekce má `zamceno` `'platba'` nebo `'uzavreno'`): výzvu nevidí a zlaté taháky nedostane. Spolu 8 platbu zatím nemá, takže v praxi jde o uzavřený účet.
+- **localStorage** (co už se na tomto zařízení ukázalo; první načtení na zařízení je tiché):
+  - `spolu.odznaky.videno.<diteId>`: klíč z R62 zůstal kvůli kompatibilitě;
+  - `spolu8.tahaky.videno.<diteId>`.
+- **Datum na lokálu:** `tahaky.html?datum=2026-11-20` nebo `prehled.html?datum=…` podstrčí datum výzvy. Platí jen na localhost.
+- **Jak doplnit obsah taháků:** jen tři obsahové soubory, kód se nemění. Postup, pravidla formátu a seznam id s lekcemi jsou v `predani/2026-10-09-odznaky-a-tahaky/TAHAKY-OSMA.md`.
+  - Kontrola: `npm test` (`testy/tahaky.test.js` hlídá formát, párové `$`, unikátní id, výzvu ke každému bonusu, tahák ke každému tématu a příklady, které nejsou z lekcí).
+  - Test „3–6 bloků“ je teď *todo*. Po doplnění obsahu ho vedoucí zpřísní.
+- **Testy:** `testy/odznaky.test.js` (R80, R81), `testy/tahaky.test.js`.
+
 ## 2. Jak spustit lokálně
 ```
 npm test                                   # unit testy (node --test)
