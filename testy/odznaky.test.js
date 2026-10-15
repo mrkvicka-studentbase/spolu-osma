@@ -100,3 +100,23 @@ test('nové odznaky proti už ukázaným; SVG existuje pro všech 8', () => {
   for (const o of ODZNAKY) assert.match(svgOdznaku(o.id), /^<svg viewBox="0 0 72 72"[^]*<\/svg>$/);
   assert.match(svgOdznaku('prvni', { titulek: 'První "lekce"' }), /aria-label="První &quot;lekce&quot;"/);
 });
+
+test('R81: htmlOdznaku — tvar podle skupiny, tón podle barvy, znak, zamčený a malý stav', async () => {
+  const { htmlOdznaku, vzhledOdznaku } = await import('../web/js/odznaky.js');
+  for (const o of ODZNAKY) {
+    const html = htmlOdznaku(o.id);
+    assert.match(html, /^<span class="odz odz--(kruh|stit|sestiuhelnik) odz--(zelena|zlata|modra)"[^]*<\/span>$/, o.id);
+    assert.match(html, /<span class="odz__lic">(?!<\/span>)/, `${o.id}: líc má znak`);
+    assert.match(html, /aria-hidden="true"/);
+  }
+  assert.deepEqual(vzhledOdznaku('rada5'), { tvar: 'kruh', ton: 'zelena' });
+  assert.deepEqual(vzhledOdznaku('predmet'), { tvar: 'kruh', ton: 'zlata' });
+  assert.equal(vzhledOdznaku('neni'), null);
+  assert.equal(htmlOdznaku('neni'), '');
+  assert.match(htmlOdznaku('rada10'), /odz__cislo">10<[^]*odz__sipky/);
+  assert.match(htmlOdznaku('test'), /odz__ikona/, 'úvodní test: vlajka');
+  assert.match(htmlOdznaku('predmet', { zamceno: true }), /odz--zamceno[^]*odz__zamek/, 'zamčený má zámek');
+  assert.doesNotMatch(htmlOdznaku('predmet', { zamceno: true, velikost: 40 }), /odz__zamek/, 'malý zamčený jen šedý');
+  assert.match(htmlOdznaku('prvni', { velikost: 40 }), /odz--maly"[^>]*style="--s:40px"/);
+  assert.match(htmlOdznaku('prvni', { titulek: 'První "lekce"' }), /role="img" aria-label="První &quot;lekce&quot;"/);
+});

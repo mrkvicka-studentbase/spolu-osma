@@ -663,6 +663,17 @@ Skupina `cj`. Žákovi tykáme bez rodu, rodiči vykáme.
 | `osma.test_konec_zak` | žák, konec úvodního testu | Hotovo. Díky! Podle testu jsme ti seřadili lekce. Najdeš je na přehledu. |
 | `samo.kontrolni_ceka` | lekce žáka „Dnes samo“, kontrolní úloha před prvním odevzdáním | Tuhle úlohu zkus nejdřív bez nápovědy. Když napoprvé nevyjde, nápovědy se odemknou. |
 
+## Odznaky — okno a karta (R81, převzato ze Spolu 9) — `prehled.html`, `lekce.html`, `rodic.html`, `tahaky.html`
+
+Názvy, pochvaly a popisy odznaků jsou v `web/js/odznaky.js` (texty Spolu 8 beze změny). Tady jsou jen štítky dlaždic, nadpisy sekcí okna a razítko na kartě.
+
+| klíč | kde | text |
+|---|---|---|
+| `odznaky.ziskano` | okno odznaků, štítek získaného odznaku | Získáno |
+| `odznaky.zamceno` | okno odznaků, štítek zamčeného odznaku | Zamčeno |
+| `odznaky.razitko` | karta nového odznaku a taháku po otočení, ozdobné razítko | Získáno! |
+| `odznaky.sekce_lekce` | okno odznaků, nadpis sekce odznaků za lekce | Za lekce |
+
 ## Názvy témat (Spolu 8)
 Název tématu na přehledu: „Téma 3 · Zlomky I“. Klíče `tema_mat.t1` … `tema_mat.t10` (matematika) a `tema_cj.t1` … `tema_cj.t10` (čeština) doplní metodici z osnov (`obsah/OSNOVA-MATEMATIKA.md`, `cestina/Obsah/OSNOVA.md`), pak `node nastroje/generuj-hlasky.mjs`. Dokud řádek chybí, aplikace název složí z kapitol lekcí tématu (`web/js/temata.js`).
 
