@@ -5,7 +5,7 @@
 // URL: rodic.html?lekce=<id>&dite=<id>&rezim=app|papir   (dite, rezim volitelné)
 //      rodic.html?lekce=<id>&dite=<id>&sezeni=<id>       (R19: souhrn dokončené lekce jen pro čtení;
 //                                                         je-li sezení ještě `probiha`, normální režim)
-// Moduly: rodic-karta.js (tahák, stav žáka, papír), rodic-souhrn.js (semafor, souhrn, SOS),
+// Moduly: rodic-karta.js (tahák, stav žáka, papír), rodic-souhrn.js (semafor, souhrn),
 //         rodic-blok.js (blok na čas: „Blok na čas běží" → procházení „Po bloku", R46).
 // Render přes malé funkce vracející DOM (R2); žádná real-time synchronizace — polling 30 s.
 // =====================================================================
@@ -34,7 +34,8 @@ import {
   vytvorBlokBezi, potvrdPrechod, nactiFaziBloku, ulozFaziBloku, uplynuloMin, vytvorCoZadalo,
 } from './rodic-blok.js';
 import { spustSimulaciRodic } from './rodic-simulace.js';
-import { vytvorSemaforSekci, vytvorSouhrn, sestavSouhrn, pripravSouhrnData } from './rodic-souhrn.js';
+import { vytvorSemaforSekci, vytvorSouhrn, sestavSouhrn } from './rodic-souhrn.js';
+import { nastavKontakt } from './kontakt.js';
 import { jeDiagnostika } from './diagnostika.js';
 import { spustDiagnostikuRodic } from './rodic-diagnostika.js';
 
@@ -47,8 +48,6 @@ const stranka = {
   rezim: 'app',
   jenCteni: false,             // R19: souhrn dokončené lekce
   diteId: null,
-  diteJmeno: '',
-  jmenoRodice: '',
   ulohaIndex: 0,
   odpovedi: [],                // řádky z DB + neuložené z fronty (pro pokus a spravnostUlohy)
   poUlohach: {},               // ulohaId → krokId → poslední odpověď (stavSezeni)
@@ -65,7 +64,6 @@ const stranka = {
   odpocetInterval: null,
   pollInterval: null,
   souhrnZobrazen: false,
-  sosAktivni: false,
   uzelStavZaka: null,
   blok: null,                  // R46 blok na čas: {faze: 'bezi' | 'po', uzel} (null = běžná lekce)
 };
@@ -281,7 +279,6 @@ async function poVolbeSemaforu(uloha) {
 
 async function zobrazSouhrn() {
   stranka.souhrnZobrazen = true;
-  await pripravSouhrnData(stranka);
   vykresliUlohu();
   window.scrollTo({ top: 0 });
 }
@@ -482,8 +479,7 @@ async function start() {
 
     const dite = await zajistiDite();
     stranka.diteId = dite.id;
-    stranka.diteJmeno = dite.krestni_jmeno;
-    stranka.jmenoRodice = stav.rodina?.jmeno_rodice || '';
+    nastavKontakt({ jmenoDitete: dite.krestni_jmeno, jmenoRodice: stav.rodina?.jmeno_rodice }); // menu „Kontakt“
 
     await nacistKnihovny();
     // Diagnostika (týden 0, R37): bez taháku a semaforu — vlastní obrazovky (rodic-diagnostika.js)
@@ -539,7 +535,6 @@ async function start() {
     const posledniUloha = stranka.lekce.ulohy[stranka.lekce.ulohy.length - 1];
     if (stranka.jenCteni || stranka.barvy[posledniUloha.id]) {
       stranka.souhrnZobrazen = true;
-      await pripravSouhrnData(stranka);
     } else {
       const prvniNehotova = stranka.lekce.ulohy.findIndex((u) => !stranka.barvy[u.id]);
       stranka.ulohaIndex = prvniNehotova >= 0 ? prvniNehotova : 0;

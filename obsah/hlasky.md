@@ -3,7 +3,7 @@
 Zdroj pravdy pro `web/js/hlasky.js` (export objektu `{ klic: text }`). Frontend texty nepřepisuje, jen je bere odsud.
 
 **Konvence**
-- Klíč: `<skupina>.<nazev>`, česky bez diakritiky, `snake_case` za tečkou (`zak.zkus_znovu`). Skupiny: `zak`, `rodic`, `oba`, `zamceno`, `ucet`, `chyba`, `prazdny`, `obnoveni`, `sos`, `dotaznik`, `dite`.
+- Klíč: `<skupina>.<nazev>`, česky bez diakritiky, `snake_case` za tečkou (`zak.zkus_znovu`). Skupiny: `zak`, `rodic`, `oba`, `zamceno`, `ucet`, `chyba`, `prazdny`, `obnoveni`, `kontakt`, `dotaznik`, `dite`.
 - Proměnné ve složených závorkách: `{datum}`, `{n}`, `{tema}` … Frontend je nahradí (a escapuje). Text sám je prostý text, bez Markdownu a HTML.
 - `\n` v textu = nový řádek (jen u e-mailu).
 - Žákovi tykáme, rodiči vykáme. Žádná procenta, body, známky. Chyba žáka se nikdy nebarví červeně a neříká se „špatně“.
@@ -103,8 +103,6 @@ Zdroj pravdy pro `web/js/hlasky.js` (export objektu `{ klic: text }`). Frontend 
 | `rodic.zmenit_volbu` | pod výsledkem semaforu | Volbu můžete změnit. |
 | `rodic.konec` | souhrn po 4. úloze | Lekce je hotová. Pochvalte dítě za práci, ne za výsledek. Doporučení na zítra najdete níže. |
 | `rodic.konec_tlacitko` | tlačítko | Ukončit lekci |
-| `rodic.sos_nabidka` | 2. červená v řadě u stejné kapitoly | Tohle téma dnes znovu nešlo. Nechcete ho probrat s lektorem? Online konzultace 30 minut, 150 Kč. |
-| `rodic.sos_nadpis` | nad nabídkou SOS v souhrnu | Druhá červená v řadě u tématu {kapitola_nazev} |
 | `rodic.vsechny_otazky` | tlačítko „Další otázka“ po odkrytí všech otázek | To jsou všechny otázky |
 | `rodic.papir_nadpis` | režim papír, nadpis pole | Výsledek dítěte (papír) |
 | `rodic.vyraz_zjednodus` | papír, `vyraz`: hodnota sedí, víc členů (R43: nesedí) | Hodnota sedí, ale výraz není dokončený: dá se ještě zjednodušit. Počítá se jako nesprávně. |
@@ -195,16 +193,20 @@ Zdroj pravdy pro `web/js/hlasky.js` (export objektu `{ klic: text }`). Frontend 
 | `obnoveni.znovu` | tlačítko | Začít znovu |
 | `obnoveni.zak` | žák otevře rozpracovanou lekci | Vítej zpátky! Pokračuješ úlohou {n}. |
 
-## SOS
+## Kontakt (jen rodič; místo placené SOS konzultace, Pavel 15. 10. 2026)
+E-mail: `KONTAKT_EMAIL` v `web/js/config.js` (starý klíč `SOS_EMAIL` funguje dál). Bez ceny a bez slibů.
+
 | klíč | kdy | text |
 |---|---|---|
-| `sos.nadpis` | karta SOS u kapitoly | Potřebujete pomoc? |
-| `sos.text` | karta SOS | Když se téma opakovaně nedaří, probereme ho spolu. Online konzultace s lektorem StudentBase: 30 minut, 150 Kč, platí se zvlášť. Napište nám a ozveme se s termínem. |
-| `sos.tlacitko` | tlačítko (otevře mailto) | Napsat e-mail |
-| `sos.mailto_predmet` | předmět e-mailu (agenti/07 bod 8) | SOS: {kapitola_nazev} — {jmeno_ditete} |
-| `sos.mailto_telo` | tělo e-mailu | Dobrý den,\n\npotřebujeme pomoc s tématem {kapitola_nazev}.\n\nDítě: {jmeno_ditete}\nLekce: {lekce_tema} ({lekce_id})\nCo nešlo: \n\nKdy se nám hodí konzultace (dny a časy): \n\nDěkuji,\n{jmeno_rodice} |
+| `kontakt.menu` | položka menu (jen rodič), otevře e-mail | Kontakt |
+| `kontakt.prehled_text` | přehled rodiče, řádek pod „Jak vést lekci“ | Máte dotaz nebo byste chtěli s dítětem probrat téma s lektorem? |
+| `kontakt.prehled_odkaz` | odkaz za textem (otevře e-mail) | Napište nám. |
+| `kontakt.tlacitko` | tlačítko pod manuálem rodiče (otevře e-mail) | Napsat nám |
+| `kontakt.mailto_predmet` | předmět e-mailu | Spolu 8: dotaz |
+| `kontakt.mailto_telo` | tělo e-mailu (jen když známe jméno dítěte) | Dobrý den,\n\n\n\nDítě: {jmeno_ditete}\n\nS pozdravem\n{jmeno_rodice} |
 
-Názvy kapitol pro `{kapitola_nazev}`:
+## Kapitoly
+Názvy kapitol (`nazevKapitoly` v `web/js/obsah.js`):
 
 | `kapitola` | název |
 |---|---|

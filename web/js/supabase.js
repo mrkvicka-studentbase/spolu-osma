@@ -10,7 +10,6 @@
 
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.116.0/+esm';
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from './config.js';
-import { predmetZId } from './predmet.js';
 
 /** Sdílený klient (publishable/anon key; bezpečnost řeší RLS). Pro výjimečné dotazy mimo helpery. */
 export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
@@ -761,49 +760,6 @@ export async function ulozSemafor({ sezeniId, ulohaId, volbaRodice, spravneAuto,
     doporuceni,
   };
   return ulozSFrontou({ druh: 'semafor', radek }, 'Semafor se nepodařilo uložit.');
-}
-
-// =====================================================================
-// Historie (SOS)
-// =====================================================================
-
-/**
- * Chronologická historie DOKONČENÝCH lekcí dítěte (od nejstarší) s hlavní barvou lekce
- * (souhrn.hlavniBarva = barva úlohy typu „semafor") — pro SOS pravidlo
- * „2 dokončené lekce po sobě v kapitole s hlavní červenou" (viz dveCerveneVRade).
- * @param {string} diteId
- * @returns {Promise<Array<{sezeniId: string, lekceId: string, predmet: 'matematika'|'cestina', kapitola: string|null,
- *   tema: string|null, hlavniBarva: Barva|null, datum: string}>>}  predmet podle id lekce (čeština = cj-…, predmet.js)
- */
-export async function historieDitete(diteId) {
-  const radky = vysledek(await supabase.from('sezeni')
-    .select('id, lekce_id, zacatek, konec, souhrn, lekce(kapitola, tema)')
-    .eq('dite_id', diteId).eq('stav', 'dokonceno')
-    .order('konec', { ascending: true, nullsFirst: true }).order('zacatek', { ascending: true }),
-  'Nepodařilo se načíst historii.');
-  return radky.map((r) => ({
-    sezeniId: r.id,
-    lekceId: r.lekce_id,
-    predmet: predmetZId(r.lekce_id),
-    // F2 (R38): blok/simulace mají v katalogu kapitolu `mix`/`simulace`; souhrn nese kapitolu hlavní úlohy
-    kapitola: r.souhrn?.kapitola ?? r.lekce?.kapitola ?? null,
-    tema: r.lekce?.tema ?? null,
-    hlavniBarva: r.souhrn?.hlavniBarva ?? null,
-    datum: r.konec || r.zacatek,
-  }));
-}
-
-/**
- * Čistá funkce: mají poslední dvě dokončené lekce dané kapitoly (v pořadí historie) obě hlavní
- * barvu červenou? Právě probíhající lekci přidá volající na konec historie sám (souhrn před „Ukončit").
- * @param {Array<{kapitola: string|null, hlavniBarva: Barva|null}>} historie  z historieDitete()
- * @param {string} kapitola
- * @param {string|null} [predmet]  jen lekce tohoto předmětu (položky bez predmet = matematika); bez něj všechny
- * @returns {boolean}
- */
-export function dveCerveneVRade(historie, kapitola, predmet = null) {
-  const posledni = historie.filter((x) => x.kapitola === kapitola && (!predmet || (x.predmet ?? 'matematika') === predmet)).slice(-2);
-  return posledni.length === 2 && posledni.every((x) => x.hlavniBarva === 'cervena');
 }
 
 // =====================================================================

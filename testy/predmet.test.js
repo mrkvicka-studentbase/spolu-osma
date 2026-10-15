@@ -3,14 +3,14 @@
 // Spustit: npm test
 //
 // Pokrývá: předmět lekce bez pole predmet (katalog před migrací 0007 = matematika), předměty dítěte bez sloupce
-// predmety, volbu záložky (URL → localStorage → první aktivní, jen z aktivních), předmět podle id lekce (historie/SOS).
+// predmety, volbu záložky (URL → localStorage → první aktivní, jen z aktivních).
 // =====================================================================
 
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
 
 import {
-  predmetLekce, predmetyDitete, maSloupecPredmety, zvolPredmet, predmetZId, ulozenyPredmet, ulozPredmet,
+  predmetLekce, predmetyDitete, maSloupecPredmety, zvolPredmet, ulozenyPredmet, ulozPredmet,
 } from '../web/js/predmet.js';
 
 describe('predmet.js', () => {
@@ -21,15 +21,6 @@ describe('predmet.js', () => {
     assert.equal(predmetLekce({ id: 'cj-t1-l1', predmet: 'cestina' }), 'cestina');
     assert.equal(predmetLekce({ predmet: 'dejepis' }), 'matematika');
     assert.equal(predmetLekce(null), 'matematika');
-  });
-
-  test('předmět podle id lekce (historie sezení): cj-… = čeština', () => {
-    assert.equal(predmetZId('cj-t1-l1'), 'cestina');
-    assert.equal(predmetZId('P1'), 'matematika');
-    assert.equal(predmetZId('F2-T03-L2'), 'matematika');
-    assert.equal(predmetZId('M8-T03-L2'), 'matematika');
-    assert.equal(predmetZId('cj-t0-diag'), 'cestina');
-    assert.equal(predmetZId(null), 'matematika');
   });
 
   test('předměty dítěte: bez pole / prázdné = oba (Spolu 8), pořadí záložek pevné', () => {

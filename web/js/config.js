@@ -3,5 +3,6 @@
 // Dokud tu je DOPLNIT, nasadit.bat ani nastroje/k-nahrani.mjs složku k-nahrani nepřipraví.
 export const SUPABASE_URL = "https://DOPLNIT-NOVY-PROJEKT.supabase.co";
 export const SUPABASE_ANON_KEY = "DOPLNIT";
-export const SOS_EMAIL = "mrkvicka@studentbase.cz";
+// Kontakt pro rodiče (menu „Kontakt“, přehled, manuál, uzavřený účet). Starý název SOS_EMAIL web bere dál jako zálohu.
+export const KONTAKT_EMAIL = "mrkvicka@studentbase.cz";
 export const PLATBA_TEXT = "";

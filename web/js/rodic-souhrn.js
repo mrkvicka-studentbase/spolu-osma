@@ -1,22 +1,20 @@
 // =====================================================================
-// rodic-souhrn.js — semafor, souhrn lekce a SOS na stránce rodiče (R17; agenti/07 body 6–8)
+// rodic-souhrn.js — semafor a souhrn lekce na stránce rodiče (R17; agenti/07 body 6–7)
 //
 // - Semafor: barva = barvaSemaforu(volba, spravnostUlohy(odpovědi úlohy)) z vyhodnoceni.js
 //   (matice kostra/02; správnost = POSLEDNÍ odpověď `final` od dítěte i rodiče).
 // - R8: „Kontrola pro vás: …" v textu semaforu je vždy sbalená (rozdelKontrolu).
 // - Souhrn: {barvy, hlavniBarva, doporuceni} → dokoncitSezeni (SouhrnSezeni v supabase.js).
-// - SOS: 2 dokončené lekce po sobě v téže kapitole (a témže předmětu) s hlavní barvou červenou (dveCerveneVRade).
+// - Placená SOS konzultace po 2. červené v řadě je pryč (Pavel 15. 10. 2026); kontakt je v menu a na přehledu (kontakt.js).
 // =====================================================================
 
 import { el, ikona, toast, formatDatum } from './ui.js';
 import { h } from './hlasky.js';
 import { rozdelKontrolu, nazevKapitoly, NAZVY_TYPU } from './obsah.js';
 import { barvaSemaforu, spravnostUlohy, VOLBY_RODICE } from './vyhodnoceni.js';
-import { ulozSemafor, historieDitete, dveCerveneVRade } from './supabase.js';
-import { SOS_EMAIL } from './config.js';
+import { ulozSemafor } from './supabase.js';
 import { md, vytvorRozbalovaci, jeKontrolniUloha } from './rodic-karta.js';
 import { kapitolaLekce } from './simulace.js';
-import { predmetLekce } from './predmet.js';
 
 export const LABEL_BARVA = { zelena: 'Zelená', oranzova: 'Oranžová', cervena: 'Červená' };
 const IKONA_BARVA = { zelena: 'fajfka', oranzova: 'opakovat', cervena: 'stop' };
@@ -125,7 +123,7 @@ function vytvorKlic() {
 }
 
 // ---------------------------------------------------------------------
-// Souhrn a SOS
+// Souhrn
 // ---------------------------------------------------------------------
 
 /**
@@ -141,38 +139,9 @@ export function sestavSouhrn(s) {
     .map((u) => rozdelKontrolu(u.semafor?.[barvy[u.id]] || '').text) // R8: bez kontroly
     .filter(Boolean)
     .join('\n\n');
-  // F2 (R38): u bloků (kapitola `mix`) se SOS a historie řídí kapitolou hlavní úlohy — uloží se do souhrnu
+  // F2 (R38): u bloků (kapitola `mix`) se statistiky řídí kapitolou hlavní úlohy — uloží se do souhrnu
   // pocetUloh: „celá správně“ (R61) pozná i lekci ukončenou dřív, než rodič klikl semafor u všech úloh
   return { barvy, hlavniBarva: barvy[hlavniUloha(s.lekce).id] || null, doporuceni, kapitola: kapitolaLekce(s.lekce), pocetUloh: s.lekce.ulohy.length };
-}
-
-/**
- * Zjistí, zda nabídnout SOS (s.sosAktivni). Aktuální lekci (ještě neukončenou) přidá na konec
- * historie s její hlavní barvou; u dokončené (jen pro čtení) už v historii je.
- * @param {object} s
- */
-export async function pripravSouhrnData(s) {
-  s.sosAktivni = false;
-  try {
-    const historie = (await historieDitete(s.diteId)).filter((x) => x.sezeniId !== s.sezeni.id);
-    const kapitola = kapitolaLekce(s.lekce);
-    const predmet = predmetLekce(s.lekce); // SOS per předmět (ZADANI-CESTINA §8.2); matematika = jako dřív
-    historie.push({ sezeniId: s.sezeni.id, predmet, kapitola, hlavniBarva: sestavSouhrn(s).hlavniBarva });
-    s.sosAktivni = dveCerveneVRade(historie, kapitola, predmet);
-  } catch (e) {
-    console.error('SOS: historii se nepodařilo načíst', e);
-  }
-}
-
-function vytvorSosOdkaz(s) {
-  const kapitolaNazev = nazevKapitoly(kapitolaLekce(s.lekce));
-  const predmet = h('sos.mailto_predmet', { kapitola_nazev: kapitolaNazev, jmeno_ditete: s.diteJmeno });
-  const telo = h('sos.mailto_telo', {
-    kapitola_nazev: kapitolaNazev, jmeno_ditete: s.diteJmeno,
-    lekce_tema: s.lekce.tema, lekce_id: s.lekce.id, jmeno_rodice: s.jmenoRodice,
-  });
-  const href = `mailto:${SOS_EMAIL}?subject=${encodeURIComponent(predmet)}&body=${encodeURIComponent(telo.replace(/\n/g, '\r\n'))}`;
-  return el('a', { class: 'tlacitko tlacitko--sekundarni', href }, ikona('mail'), h('sos.tlacitko'));
 }
 
 function vytvorPolozku(s, uloha, jeHlavni) {
@@ -188,7 +157,7 @@ function vytvorPolozku(s, uloha, jeHlavni) {
 }
 
 /**
- * Obsah souhrnu (4 barvy, hlavní zvýrazněná, „Na zítra", případně SOS).
+ * Obsah souhrnu (4 barvy, hlavní zvýrazněná, „Na zítra").
  * @param {object} s
  * @returns {Element[]}
  */
@@ -212,13 +181,6 @@ export function vytvorSouhrn(s) {
         ...textSemaforu(u, barva));
     })) : null;
 
-  const sos = s.sosAktivni ? el('div', { class: 'hlaska hlaska--info' },
-    ikona('sos'),
-    el('div', { class: 'hlaska__text' },
-      el('strong', { text: h('rodic.sos_nadpis', { kapitola_nazev: nazevKapitoly(kapitolaLekce(s.lekce)) }) }),
-      h('rodic.sos_nabidka'),
-      el('div', { class: 'hlaska__akce' }, vytvorSosOdkaz(s)))) : null;
-
   const uvod = s.jenCteni
     ? h('rodic.souhrn_jen_cteni', { datum: formatDatum(s.sezeni.konec || s.sezeni.zacatek, { rok: true }) })
     : h('rodic.konec');
@@ -228,6 +190,6 @@ export function vytvorSouhrn(s) {
     el('p', { class: 'text-tlumeny', text: uvod }),
     el('div', { class: 'souhrn' },
       el('ol', { class: 'souhrn__ulohy' }, ulohy.map((u) => vytvorPolozku(s, u, u === hlavni))),
-      zitra, naZitra, sos),
+      zitra, naZitra),
   ];
 }

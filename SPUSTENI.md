@@ -143,7 +143,6 @@ Po natočení:
 - [ ] **Podmínky a GDPR:** registrace odkazuje na studentbase.cz jako na „podmínky používání a zpracování osobních údajů“. Ověř, že tam takový text opravdu je.
 - [ ] **Spolu 8:**
   - obsah celého roku je kompletní (oba předměty po 162 lekcích včetně naostro, B-variant, úvodního a pololetního testu), ale 194 nahrávek češtiny ještě není natočených. Seznam je v `cestina/Obsah/nahravky-k-nataceni.md`. Lekce bez nahrávky dítěti ukáže hlášku místo přehrávače, poslech nebo diktát pak nejde udělat.
-- [ ] **Spolu 8 — SOS konzultace za 150 Kč** je v aplikaci. Necháš ji tam?
 - [ ] **Free projekty** se po 7 dnech bez provozu uspí. Při běžném provozu to nehrozí, jinak přejít na Pro (25 $/měsíc).
 
 ## Když něco nejde

@@ -40,7 +40,7 @@ Složka projektu: `C:\Users\Administrátor\Desktop\MVP`
 2. Otevři ho a doplň:
    - `SUPABASE_URL` … tvoje **Project URL**
    - `SUPABASE_ANON_KEY` … **anon public** klíč (ten je v pořádku, může být ve webu)
-   - `SOS_EMAIL` … e-mail, kam mají chodit SOS zprávy (nechal jsem `mrkvicka@studentbase.cz`, uprav, pokud chceš jiný)
+   - `KONTAKT_EMAIL` … e-mail, kam rodiče píšou přes „Kontakt“ (dotazy, domluva lekce s lektorem; nechal jsem `mrkvicka@studentbase.cz`, uprav, pokud chceš jiný). Starší `config.js` se `SOS_EMAIL` funguje taky.
    - `PLATBA_TEXT` … text s Revolut odkazem, který uvidí rodič po dotazníku (můžeš doladit později)
 3. Ulož.
 

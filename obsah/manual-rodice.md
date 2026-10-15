@@ -48,6 +48,6 @@
 - Červená: dnes skončete a pochvalte snahu. ==Zítra místo nové lekce:== cvičení z doporučení, pak znovu stejná lekce.
 :::
 
-::: blok barva=zelena ikona=sos
-**SOS.** Když se červená opakuje, aplikace nabídne konzultaci s lektorem (30 minut online, 150 Kč). SOS je i v přehledu u kapitoly.
+::: blok barva=zelena ikona=mail
+**Kontakt.** Když něco nejde nebo byste chtěli domluvit lekci s lektorem StudentBase, ==napište nám==. Tlačítko „Napsat nám“ je pod tímto návodem a v menu pod „Kontakt“.
 :::
