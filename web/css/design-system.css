@@ -2462,6 +2462,139 @@ footer.hlavicka { border-bottom: 0; border-top: 3px solid var(--barva-akcent); }
 }
 
 /* ==========================================================================
+   R78 + R82 (převzato ze Spolu 9): sbírka taháků a měsíční výzva — tahaky.html (tahaky-stranka.js), přehled, lekce
+   (tahaky-ui.js). Barvy předmětů: matematika zelená, čeština --barva-cj, bonus zlatá. Bez levých proužků (R68).
+   ========================================================================== */
+
+/* --- Stránka „Moje taháky“ ---------------------------------------------------------------------- */
+.tahaky-hlavicka { display: flex; flex-direction: column; gap: var(--mezera-3); }
+.tahaky-hlavicka > p { margin: 0; }
+.tahaky-hlavicka__zpet { align-self: flex-start; margin-left: calc(-1 * var(--mezera-3)); }
+.tahaky-hlavicka__radek { align-items: center; gap: var(--mezera-3); }
+.tahaky-hlavicka h1 { font-size: clamp(1.75rem, 4.5vw, 2.25rem); letter-spacing: -0.02em; line-height: 1.15; }
+.tahaky-hlavicka__uvod { max-width: 62ch; color: var(--barva-text-2); }
+.tahaky-skupina { display: flex; flex-direction: column; gap: var(--mezera-3); }
+.tahaky-skupina__nadpis { font-size: var(--pismo-velke); }
+.tahaky-skupina__nadpis .text-tlumeny { font-size: var(--pismo-zaklad); font-weight: var(--pismo-vaha-stredni); }
+
+.tahaky-mrizka { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--mezera-3);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 13.5rem), 1fr)); }
+.tahaky-mrizka__polozka { display: flex; min-width: 0; }
+
+/* Kartička: odemčená = tlačítko v barvě předmětu, zamčená = šedá s čárkovaným okrajem a zámkem */
+.tahak-karticka {
+  --k-okraj: var(--barva-zelena); --k-plocha: var(--barva-zelena-plocha); --k-akce: var(--barva-zelena-text);
+  flex: 1 1 auto; min-width: 0; display: flex; align-items: flex-start; gap: var(--mezera-3);
+  min-height: 7.5rem; padding: var(--mezera-4); margin: 0;
+  border: 2px solid var(--k-okraj); border-radius: var(--polomer-karta); background: var(--k-plocha);
+  color: var(--barva-text); font: inherit; text-align: left;
+}
+.tahak-karticka--modra { --k-okraj: var(--barva-cj); --k-plocha: var(--barva-cj-plocha); --k-akce: var(--barva-cj-text); }
+.tahak-karticka--zlata { --k-okraj: var(--barva-zlata-obrys); --k-plocha: var(--barva-zlata-plocha); --k-akce: var(--barva-zlata-text); }
+.tahak-karticka--zamceno { --k-okraj: var(--barva-okraj-silny); --k-plocha: var(--barva-povrch-2); border-style: dashed; color: var(--barva-text-tlumeny); }
+button.tahak-karticka { cursor: pointer; transition: transform var(--prechod), box-shadow var(--prechod); }
+button.tahak-karticka:hover { transform: translateY(-2px); box-shadow: var(--stin-2); }
+button.tahak-karticka:hover .tahak-karticka__obrazek svg { transform: rotate(-4deg) scale(1.05); }
+.tahak-karticka__obrazek { flex: 0 0 3.25rem; width: 3.25rem; height: 3.25rem; line-height: 0; }
+.tahak-karticka__obrazek svg { width: 100%; height: 100%; transition: transform var(--prechod); }
+.tahak-karticka--zamceno .tahak-karticka__obrazek svg { filter: grayscale(1); opacity: 0.4; }
+.tahak-karticka__text { display: flex; flex-direction: column; gap: 2px; min-width: 0; align-self: stretch; }
+.tahak-karticka__podnazev { font-size: 0.8125rem; font-weight: var(--pismo-vaha-polotucne); color: var(--barva-text-tlumeny); }
+.tahak-karticka__nazev { font-size: 1.0625rem; line-height: 1.25; color: var(--barva-text); overflow-wrap: anywhere; }
+.tahak-karticka--zamceno .tahak-karticka__nazev { color: var(--barva-text-2); }
+.tahak-karticka__akce { margin-top: auto; padding-top: var(--mezera-2); display: inline-flex; align-items: center; gap: 0.3em;
+  font-size: var(--pismo-maly); font-weight: var(--pismo-vaha-tucne); color: var(--k-akce); }
+.tahak-karticka__akce .ikona { width: 1rem; height: 1rem; }
+.tahak-karticka__zamek { margin-top: auto; padding-top: var(--mezera-2); display: flex; gap: 0.4em; font-size: var(--pismo-maly); line-height: 1.35; }
+.tahak-karticka__zamek .ikona { flex: 0 0 auto; width: 1rem; height: 1rem; margin-top: 0.1em; }
+/* telefon: kartička nižší (sbírka má přes 25 taháků pod sebou) */
+@media (max-width: 40rem) {
+  .tahak-karticka { min-height: 0; padding: var(--mezera-3) var(--mezera-4); }
+  .tahak-karticka__obrazek { flex-basis: 2.75rem; width: 2.75rem; height: 2.75rem; }
+  .tahak-karticka__akce, .tahak-karticka__zamek { padding-top: var(--mezera-1); }
+}
+
+/* --- Přehled: řádek „Taháky: x z N“ (vzhled jako řádek odznaků) ---------------------------------- */
+a.tahaky-radek { text-decoration: none; }
+a.tahaky-radek:hover { border-color: var(--barva-okraj-silny); }
+.tahak-mini { flex: 0 0 auto; width: 36px; height: 36px; line-height: 0; }
+.tahak-mini svg { width: 100%; height: 100%; }
+.tahak-mini--zamceno svg { filter: grayscale(1); opacity: 0.35; }
+
+/* --- Měsíční výzva: karta se zlatým nádechem a ukazatelem po lekcích ------------------------------ */
+.vyzva { display: flex; flex-direction: column; gap: var(--mezera-3);
+  border-color: var(--barva-zlata-obrys); background: linear-gradient(135deg, var(--barva-zlata-plocha) 0%, var(--barva-povrch) 75%); }
+.vyzva__hlavicka { display: flex; align-items: center; gap: var(--mezera-3); }
+.vyzva__obrazek { flex: 0 0 3rem; width: 3rem; height: 3rem; line-height: 0; }
+.vyzva__obrazek svg { width: 100%; height: 100%; }
+.vyzva__text { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.vyzva__nadpis { margin: 0; font-size: 1.0625rem; line-height: 1.3; }
+.vyzva__meta { margin: 0; font-size: var(--pismo-maly); color: var(--barva-text-2); }
+.vyzva__popis { margin: 0; font-size: var(--pismo-maly); color: var(--barva-text-tlumeny); }
+.vyzva__akce { display: flex; flex-wrap: wrap; gap: var(--mezera-2); }
+.vyzva__segmenty { display: grid; grid-template-columns: repeat(var(--pocet), minmax(0, 1fr)); gap: 4px; }
+.vyzva__segmenty > span { height: 10px; border-radius: 3px; background: var(--barva-povrch-2); box-shadow: inset 0 0 0 1px var(--barva-okraj-silny); }
+/* hotová lekce: zlatá výplň s tmavým obrysem (graf má vedle i text „7 z 12 lekcí“) */
+.vyzva__segmenty > span.je-hotovo { background: var(--barva-zlata); box-shadow: inset 0 0 0 1.5px var(--barva-zlata-text); }
+.vyzva__podil { height: 10px; border-radius: 5px; background: var(--barva-povrch-2); overflow: hidden; }
+.vyzva__podil > span { display: block; height: 100%; background: var(--barva-zlata); }
+.vyzva--splneno { background: linear-gradient(135deg, var(--barva-zlata-plocha) 0%, var(--barva-zelena-plocha) 100%); }
+
+/* --- Tahák (modal a tisk): hlavička s obrázkem, očíslované bloky s pravidlem a vzorovým příkladem ---- */
+.modal--tahak { width: min(54rem, calc(100% - 1rem)); }
+.tahak { --t-plocha: var(--barva-zelena-plocha); --t-text: var(--barva-zelena-text);
+  display: flex; flex-direction: column; gap: var(--mezera-4); min-width: 0; }
+.tahak--modra { --t-plocha: var(--barva-cj-plocha); --t-text: var(--barva-cj-text); }
+.tahak--zlata { --t-plocha: var(--barva-zlata-plocha); --t-text: var(--barva-zlata-text); }
+.tahak__hlavicka { display: flex; align-items: center; gap: var(--mezera-3); padding-right: 3.25rem; }
+.tahak__obrazek { flex: 0 0 3.5rem; width: 3.5rem; height: 3.5rem; line-height: 0; }
+.tahak__obrazek svg { width: 100%; height: 100%; }
+.tahak__titulek { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.tahak__stitek { font-size: 0.8125rem; font-weight: var(--pismo-vaha-tucne); letter-spacing: 0.04em; text-transform: uppercase; color: var(--t-text); }
+.tahak__nazev { margin: 0; font-size: clamp(1.5rem, 4vw, 2rem); line-height: 1.15; letter-spacing: -0.02em; overflow-wrap: anywhere; }
+.tahak__bloky { counter-reset: tahak-blok; display: grid; gap: var(--mezera-3); grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
+.tahak__blok { min-width: 0; display: flex; flex-direction: column; gap: var(--mezera-2); padding: var(--mezera-4);
+  border: 1px solid var(--barva-okraj); border-radius: var(--polomer-l); background: var(--barva-povrch); }
+.tahak__nadpis { margin: 0; display: flex; align-items: baseline; gap: 0.5em; font-size: var(--pismo-stredni); line-height: 1.3; }
+.tahak__nadpis::before { counter-increment: tahak-blok; content: counter(tahak-blok); flex: 0 0 auto; display: inline-grid; place-items: center;
+  min-width: 1.6em; height: 1.6em; border-radius: var(--polomer-s); background: var(--t-plocha); color: var(--t-text); font-size: 0.85em; }
+.tahak__text, .tahak__priklad-text { font-size: var(--pismo-stredni); line-height: 1.5; color: var(--barva-text-2); overflow-x: auto; overflow-y: hidden; }
+.tahak__text > :first-child, .tahak__priklad-text > :first-child { margin-top: 0; }
+.tahak__text > :last-child, .tahak__priklad-text > :last-child { margin-bottom: 0; }
+.tahak__text p, .tahak__priklad-text p { margin: 0 0 0.5em; }
+.tahak__text ul, .tahak__text ol { margin: 0 0 0.5em; padding-left: 1.25em; }
+.tahak__priklad { margin-top: auto; padding: var(--mezera-2) var(--mezera-3); border-radius: var(--polomer-m); background: var(--t-plocha); }
+.tahak__priklad .tahak__priklad-text { color: var(--barva-text); }
+.tahak__priklad-popisek { display: block; font-size: 0.75rem; font-weight: var(--pismo-vaha-tucne); letter-spacing: 0.06em; text-transform: uppercase; color: var(--t-text); }
+.tahak__pata { display: flex; justify-content: space-between; gap: var(--mezera-2); }
+
+
+/* --- Tisk „Vytisknout odemčené“: taháky po dvou na list A4, na obrazovce schované ------------------- */
+.tahaky-tisk { display: none; }
+@page tahaky { size: A4 portrait; margin: 8mm; }
+@media print {
+  body:has(> .tahaky-tisk) { background: #FFFFFF; }
+  body:has(> .tahaky-tisk) > :not(.tahaky-tisk) { display: none !important; }
+  .tahaky-tisk { display: block; page: tahaky; color: #0F172A; font-size: 8.5pt; line-height: 1.3; }
+  .tahaky-tisk__list { display: flex; flex-direction: column; gap: 4mm; break-after: page; }
+  .tahaky-tisk__list:last-child { break-after: auto; }
+  .tahak--tisk { gap: 1.5mm; padding: 3.5mm 4.5mm; border: 0.75pt solid #94A3B8; border-radius: 4mm; break-inside: avoid;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .tahak--tisk .tahak__hlavicka { padding-right: 0; gap: 3mm; }
+  .tahak--tisk .tahak__obrazek { flex-basis: 9mm; width: 9mm; height: 9mm; }
+  .tahak--tisk .tahak__stitek { font-size: 7.5pt; }
+  .tahak--tisk .tahak__nazev { font-size: 13pt; }
+  .tahak--tisk .tahak__bloky { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2mm; }
+  .tahak--tisk .tahak__blok { gap: 1mm; padding: 2mm 2.5mm; border: 0.5pt solid #CBD5E1; border-radius: 2.5mm; break-inside: avoid; }
+  .tahak--tisk .tahak__nadpis { font-size: 9.5pt; }
+  .tahak--tisk .tahak__text, .tahak--tisk .tahak__priklad-text { font-size: 8pt; line-height: 1.28; overflow: visible; }
+  .tahak--tisk .tahak__priklad { padding: 1.2mm 2mm; border-radius: 1.5mm; }
+  .tahak--tisk .tahak__priklad-popisek { font-size: 6.5pt; }
+  .tahak--tisk .tahak__pata { font-size: 7pt; color: #475569; }
+}
+
+
+/* ==========================================================================
    R81 Redesign odznaků a karet (převzato ze Spolu 9 ve verzi 9. 10., návrh designérky)
    odznaky.js (htmlOdznaku), odznaky-ui.js (dlaždice v přehledu odznaků, řádek na přehledu),
    odznaky-karty.js (karta nového odznaku i taháku). Nahrazuje styly odznaků z R62 a karty z 6. 10.

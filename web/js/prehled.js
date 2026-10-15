@@ -34,6 +34,8 @@ import * as KONFIG from './config.js';
 import { spocitejOdznaky, svgOdznaku } from './odznaky.js';
 import { radekOdznaku, ukazNoveOdznaky } from './odznaky-ui.js';
 import { dveSamoZaSebou } from './samo.js';
+import { stavVyzvy, sezonaZamcena } from './tahaky.js';
+import { tedNyni, odemceneTahakyDitete, radekTahaku, kartaVyzvy, ukazNoveTahaky } from './tahaky-ui.js';
 
 const BARVY = {
   zelena: { ikona: 'fajfka', klic: 'rodic.barva_zelena' },
@@ -439,7 +441,11 @@ async function vykresli() {
 
     const rodic = stav.role === 'rodic';
     stav.odznaky = spocitejOdznaky(vsechny); // R61–R63: odznaky patří dítěti, ne předmětu
-    const casti = [hlavickaPrehledu(), ukazatelPostupu(hlavni, stav.odznaky), radekOdznaku(stav.odznaky.ziskane)];
+    const ted = tedNyni(); // R78: taháky a výzva (na localhost jde podstrčit ?datum=…)
+    const tahaky = odemceneTahakyDitete(stav.dite.id, vsechny, { ted });
+    const casti = [hlavickaPrehledu(), ukazatelPostupu(hlavni, stav.odznaky), radekOdznaku(stav.odznaky.ziskane),
+      radekTahaku(tahaky), // R78: „Taháky: x z N“ → tahaky.html
+      sezonaZamcena(vsechny) ? null : kartaVyzvy(stavVyzvy(vsechny, ted), { rodic })].filter(Boolean); // R78 + R82: měsíční výzva
 
     if (rodic && dveSamoZaSebou(vsechny)) casti.push(hlaska('info', 'uzivatel', h('samo.pripominka'))); // R64
     if (lekce.some((l) => l.dokoncene && jeDnes(l.dokoncene.konec))) {
@@ -505,7 +511,10 @@ async function vykresli() {
     obsah.removeAttribute('aria-busy');
     obsah.replaceChildren(...casti);
     // R62: nově získané odznaky (dítě i rodič, na každém zařízení jednou); první načtení na zařízení tiše
-    ukazNoveOdznaky(stav.dite.id, stav.odznaky.ziskane).catch((e) => console.warn('odznaky:', e));
+    // R78: po odznacích nově odemčené taháky (stejně: na každém zařízení jednou, první načtení tiše)
+    const diteId = stav.dite.id;
+    ukazNoveOdznaky(diteId, stav.odznaky.ziskane).catch((e) => console.warn('odznaky:', e))
+      .then(() => ukazNoveTahaky(diteId, tahaky)).catch((e) => console.warn('taháky:', e));
   } catch (e) {
     console.error(e);
     chybaStranky(obsah, e?.message || h('chyba.nacteni'));

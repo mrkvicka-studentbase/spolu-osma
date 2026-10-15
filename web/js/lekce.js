@@ -38,6 +38,7 @@ import { popisChyby, jeDetektivniChyba } from './chyby.js';
 import { sestavSouhrn } from './rodic-souhrn.js';
 import { spocitejOdznaky } from './odznaky.js';
 import { ukazNoveOdznaky } from './odznaky-ui.js';
+import { ukazNoveTahakyPoLekci } from './tahaky-ui.js';
 import { ziskejDite, nastavDite } from './role.js';
 import { napojMenu, nastavPredmet } from './menu.js';
 import { predmetLekce } from './predmet.js';
@@ -842,8 +843,10 @@ async function vykresliKonecSamo() {
 async function ukazOdznakyPoLekci() {
   try {
     const lekce = await lekceProDite(stav.dite.id);
-    const { ziskane } = spocitejOdznaky(lekce, { navic: { id: stav.lekce.id, konec: new Date().toISOString() } });
+    const navic = { id: stav.lekce.id, konec: new Date().toISOString() };
+    const { ziskane } = spocitejOdznaky(lekce, { navic });
     await ukazNoveOdznaky(stav.dite.id, ziskane, { prvniTise: false });
+    await ukazNoveTahakyPoLekci(stav.dite.id, lekce, navic); // R78: po odznacích nově odemčené taháky
   } catch (e) {
     console.warn('odznaky po lekci:', e); // odznak není důležitější než lekce — chyba se jen zaloguje
   }

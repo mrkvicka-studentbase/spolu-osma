@@ -399,6 +399,7 @@ export async function katalogLekci() {
  *   stavLekce: 'nezacato'|'probiha'|'hotovo',
  *   sezeni: Sezeni|null,          // rozpracované (probiha < 24 h), jinak poslední dokončené, jinak null
  *   dokoncene: Sezeni|null,       // poslední dokončené sezení (R61, R62: hotová lekce, celá správně, odznaky)
+ *   dokonceniVse: string[],       // R82: konce všech dokončených sezení (měsíční výzva)
  *   souhrn: SouhrnSezeni|null     // souhrn posledního dokončeného sezení
  * }>>}
  * Zamčené lekce mají zamceno = 'platba' („Odemkne se po platbě") / 'datum' („Otevře se {otevrit_od}")
@@ -421,7 +422,9 @@ export async function lekceProDite(diteId) {
     if (probihajici) stavLekce = 'probiha';
     else if (dokoncene) stavLekce = 'hotovo';
     // dokoncene: poslední dokončené sezení (i když teď běží opakování) — pro hotovou lekci a odznaky (R61, R62)
-    return { ...l, stavLekce, sezeni: probihajici || dokoncene, dokoncene, souhrn: dokoncene?.souhrn ?? null };
+    // R82: konce VŠECH dokončených sezení (měsíční výzva počítá lekci v každém měsíci, kdy byla dokončena; dotaz beze změny)
+    const dokonceniVse = moje.filter((s) => s.stav === 'dokonceno' && s.konec).map((s) => s.konec);
+    return { ...l, stavLekce, sezeni: probihajici || dokoncene, dokoncene, dokonceniVse, souhrn: dokoncene?.souhrn ?? null };
   });
 }
 
