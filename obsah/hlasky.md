@@ -715,6 +715,9 @@ Názvy, pochvaly a popisy odznaků jsou v `web/js/odznaky.js` (texty Spolu 8 bez
 | `odznaky.zamceno` | okno odznaků, štítek zamčeného odznaku | Zamčeno |
 | `odznaky.razitko` | karta nového odznaku a taháku po otočení, ozdobné razítko | Získáno! |
 | `odznaky.sekce_lekce` | okno odznaků, nadpis sekce odznaků za lekce | Za lekce |
+| `odznaky.sekce_oba` | okno odznaků, nadpis sekce (R80, jen dítě s oběma předměty) | Za oba předměty |
+| `odznaky.sekce_vyzvy` | okno odznaků, nadpis sekce (R80) | Měsíční výzvy |
+| `odznaky.sekce_sbirka` | okno odznaků, nadpis sekce (R80) | Sbírka taháků |
 
 ## Názvy témat (Spolu 8)
 Název tématu na přehledu: „Téma 3 · Zlomky I“. Klíče `tema_mat.t1` … `tema_mat.t10` (matematika) a `tema_cj.t1` … `tema_cj.t10` (čeština) doplní metodici z osnov (`obsah/OSNOVA-MATEMATIKA.md`, `cestina/Obsah/OSNOVA.md`), pak `node nastroje/generuj-hlasky.mjs`. Dokud řádek chybí, aplikace název složí z kapitol lekcí tématu (`web/js/temata.js`).

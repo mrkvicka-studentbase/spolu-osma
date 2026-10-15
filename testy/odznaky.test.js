@@ -92,10 +92,10 @@ test('právě dokončená lekce (žák na „Hotovo") se počítá do dokončen�
   assert.equal(s.pocetHotovych, 3);
 });
 
-test('nové odznaky proti už ukázaným; SVG existuje pro všech 8', () => {
+test('nové odznaky proti už ukázaným; SVG existuje pro všech 10 za lekce (R80: + řada 20 a 30)', () => {
   assert.deepEqual(noveOdznaky(new Set(['prvni', 'rada3']), ['prvni']), ['rada3']);
   assert.deepEqual(noveOdznaky(new Set(['prvni']), null), ['prvni']);
-  assert.equal(ODZNAKY.length, 8);
+  assert.equal(ODZNAKY.length, 10);
   assert.ok(ODZNAKY.filter((o) => o.barva === 'zelena' || ['test', 'predmet'].includes(o.id)).length >= 4, 'aspoň polovina za vytrvalost');
   for (const o of ODZNAKY) assert.match(svgOdznaku(o.id), /^<svg viewBox="0 0 72 72"[^]*<\/svg>$/);
   assert.match(svgOdznaku('prvni', { titulek: 'První "lekce"' }), /aria-label="První &quot;lekce&quot;"/);
@@ -119,4 +119,97 @@ test('R81: htmlOdznaku — tvar podle skupiny, tón podle barvy, znak, zamčený
   assert.doesNotMatch(htmlOdznaku('predmet', { zamceno: true, velikost: 40 }), /odz__zamek/, 'malý zamčený jen šedý');
   assert.match(htmlOdznaku('prvni', { velikost: 40 }), /odz--maly"[^>]*style="--s:40px"/);
   assert.match(htmlOdznaku('prvni', { titulek: 'První "lekce"' }), /role="img" aria-label="První &quot;lekce&quot;"/);
+});
+
+// ---------------------------------------------------------------------
+// R80: delší řady, oba předměty, výzvy, sbírka taháků, viděné se neodebírají
+// ---------------------------------------------------------------------
+
+/** Katalog celého roku z obsah/ (bez obsahu): matematika i čeština, učební, naostro, B, testy. */
+async function katalogRoku(hotove = {}) {
+  const { nactiLekce, polozkaKatalogu } = await import('../nastroje/staticky-server.mjs');
+  return (await nactiLekce()).map((l) => polozkaKatalogu(l)).map((l) => ({ ...l, dokoncene: hotove[l.id] ? { konec: hotove[l.id], souhrn: null } : null }));
+}
+
+test('R80: řada 20 a 30; téma 0 (úvodní + pololetní test) nedá „Celé téma“', () => {
+  const ids = ['M8-T01-L1', 'M8-T01-L2', 'M8-T01-L3', 'M8-T01-L4', 'M8-T02-L1', 'M8-T02-L2', 'cj-t1-l1', 'cj-t1-l2', 'cj-t1-l3', 'cj-t1-l4'];
+  const k = katalog(Object.fromEntries(ids.map((id, i) => [id, { konec: iso(i) }])));
+  const navic = Array.from({ length: 25 }, (_, i) => ({ id: `X${i}`, predmet: 'matematika', faze: 'osma', tyden: 9, dokoncene: { konec: iso(10 + i) } }));
+  const z = spocitejOdznaky([...k, ...navic]).ziskane;
+  assert.ok(z.has('rada20') && z.has('rada30'), '35 lekcí za sebou');
+  assert.ok(!spocitejOdznaky(k).ziskane.has('rada20'));
+  const testy = [{ id: 'M8-T00-DIAG', predmet: 'matematika', faze: 'osma', tyden: 0, dokoncene: { konec: iso(0) } },
+    { id: 'M8-T00-POL', predmet: 'matematika', faze: 'osma', tyden: 0, dokoncene: { konec: iso(1) } }];
+  assert.ok(!spocitejOdznaky(testy).ziskane.has('tyden'), 'dva testy tématu 0 nejsou celé téma');
+});
+
+test('R80: oba předměty — lekce z obou, řada 3 v obou; jen jeden předmět v katalogu = žádné oba:', async () => {
+  const { ODZNAKY_OBA } = await import('../web/js/odznaky.js');
+  assert.equal(ODZNAKY_OBA.length, 2);
+  const jenMat = spocitejOdznaky(katalog({ 'M8-T01-L1': { konec: iso(0) } }));
+  assert.ok(!jenMat.ziskane.has('oba:prvni'));
+  const prvni = spocitejOdznaky(katalog({ 'M8-T01-L1': { konec: iso(0) }, 'cj-t1-l1': { konec: iso(1) } }));
+  assert.ok(prvni.ziskane.has('oba:prvni') && !prvni.ziskane.has('oba:rada'));
+  assert.equal(prvni.maObaPredmety, true);
+  const h = Object.fromEntries(['M8-T01-L1', 'M8-T01-L2', 'M8-T01-L3', 'cj-t1-l1', 'cj-t1-l2', 'cj-t1-l3'].map((id, i) => [id, { konec: iso(i) }]));
+  assert.ok(spocitejOdznaky(katalog(h)).ziskane.has('oba:rada'));
+  const bezCj = spocitejOdznaky(katalog(h).filter((l) => l.predmet === 'matematika'));
+  assert.equal(bezCj.maObaPredmety, false);
+  assert.ok(![...bezCj.ziskane].some((id) => id.startsWith('oba:')));
+  // právě dokončená lekce češtiny se počítá
+  assert.ok(spocitejOdznaky(katalog({ 'M8-T01-L1': { konec: iso(0) } }), { navic: { id: 'cj-t1-l1', konec: iso(1) } }).ziskane.has('oba:prvni'));
+});
+
+test('R80: výzvy a sbírka taháků na katalogu roku (B-varianty a testy se do výzvy nepočítají)', async () => {
+  const { odznakyVyzevATahaku, najdiOdznak, ODZNAKY_VYZEV, ODZNAKY_SBIRKY } = await import('../web/js/odznaky.js');
+  assert.equal(ODZNAKY_VYZEV.length, 7, 'listopad 2026 – květen 2027');
+  assert.equal(ODZNAKY_SBIRKY.length, 3);
+  const cil = Number(najdiOdznak('vyzva:2026-11').popis.match(/\d+/)[0]);
+  // učební lekce témat 1–5 matematiky v listopadu (Praha)
+  const hotove = {};
+  let d = 1;
+  for (let t = 1; t <= 5; t++) for (let n = 1; n <= 4; n++) hotove[`M8-T0${t}-L${n}`] = `2026-11-${String(d++).padStart(2, '0')}T15:00:00Z`;
+  const k = await katalogRoku(hotove);
+  const z = odznakyVyzevATahaku(k, { ted: Date.parse('2026-11-30T12:00:00Z') });
+  assert.ok(20 >= cil && z.has('vyzva:2026-11'), `20 lekcí v listopadu ≥ ${cil}`);
+  assert.ok(!z.has('vyzva:2026-12'));
+  assert.ok(z.has('sber:5') && !z.has('sber:15'), '5 témat = 5 taháků');
+  // jen B-varianty a testy: výzva ne
+  const jenB = {};
+  for (const id of ['M8-T00-DIAG', 'M8-T00-POL', 'cj-t0-diag', 'cj-t0-pol', ...[1, 2, 3, 4].flatMap((n) => [`M8-T01-L${n}B`, `M8-T02-L${n}B`, `M8-T03-L${n}B`, `M8-T01-L${n}NB`])]) jenB[id] = '2026-11-10T15:00:00Z';
+  assert.ok(!odznakyVyzevATahaku(await katalogRoku(jenB)).has('vyzva:2026-11'));
+  // účet uzavřený (bez sezóny): výzvy ne, sbírka ano
+  const uz = k.map((l) => ({ ...l, zamceno: 'uzavreno' }));
+  const zu = odznakyVyzevATahaku(uz, { ted: Date.parse('2026-11-30T12:00:00Z') });
+  assert.ok(!zu.has('vyzva:2026-11') && zu.has('sber:5'));
+  // všechny učební lekce roku: celá sbírka
+  const vse = Object.fromEntries(k.filter((l) => /^(M8-T(0[1-9]|10)-L[1-4]|cj-t\d+-l\d+)$/.test(l.id)).map((l) => [l.id, '2027-03-02T15:00:00Z']));
+  assert.ok(odznakyVyzevATahaku(await katalogRoku(vse)).has('sber:vse'));
+  assert.equal(najdiOdznak('vyzva:2026-11').popis, `Dokonči ${cil} lekcí v listopadu.`);
+  assert.match(najdiOdznak('vyzva:2027-05').popis, /v květnu\.$/);
+});
+
+test('R80: jednou viděný odznak se nikdy neodebírá (videne), neznámé id se ignoruje', () => {
+  const z = spocitejOdznaky(katalog(), { videne: ['predmet', 'vyzva:2026-12', 'neznamy', 'oba:rada'] }).ziskane;
+  assert.deepEqual([...z].sort(), ['oba:rada', 'predmet', 'vyzva:2026-12']);
+  assert.equal(spocitejOdznaky(katalog(), { videne: null }).ziskane.size, 0);
+});
+
+test('R80: noveOdznaky v pořadí okna (za lekce, oba, výzvy, sbírka); vzhled nových skupin', async () => {
+  const { htmlOdznaku, vzhledOdznaku, ODZNAKY_OBA, ODZNAKY_VYZVY_A_TAHAKY } = await import('../web/js/odznaky.js');
+  assert.deepEqual(noveOdznaky(new Set(['sber:5', 'vyzva:2026-11', 'oba:prvni', 'rada20']), []), ['rada20', 'oba:prvni', 'vyzva:2026-11', 'sber:5']);
+  for (const o of [...ODZNAKY_OBA, ...ODZNAKY_VYZVY_A_TAHAKY]) {
+    assert.match(htmlOdznaku(o.id), /^<span class="odz odz--(kruh|sestiuhelnik) odz--(zelena|zlata)"[^]*<\/span>$/, o.id);
+    assert.match(htmlOdznaku(o.id), /<span class="odz__lic">(?!<\/span>)/, `${o.id}: líc má znak`);
+    assert.match(svgOdznaku(o.id), /^<svg viewBox="0 0 72 72"[^]*<\/svg>$/, `${o.id}: SVG`);
+  }
+  assert.deepEqual(vzhledOdznaku('oba:prvni'), { tvar: 'sestiuhelnik', ton: 'zlata' });
+  assert.deepEqual(vzhledOdznaku('vyzva:2026-11'), { tvar: 'kruh', ton: 'zlata' });
+  assert.deepEqual(vzhledOdznaku('sber:5'), { tvar: 'sestiuhelnik', ton: 'zelena' });
+  assert.deepEqual(vzhledOdznaku('sber:vse'), { tvar: 'sestiuhelnik', ton: 'zlata' });
+  assert.match(htmlOdznaku('vyzva:2027-02'), /odz__zkratka">ÚNO</);
+  assert.match(htmlOdznaku('vyzva:2027-05'), /odz__zkratka">KVĚ</);
+  assert.match(htmlOdznaku('sber:vse'), /odz__karticky odz__karticky--maly">vše</);
+  assert.match(htmlOdznaku('oba:prvni'), /odz__cislo odz__cislo--maly">1\+1</);
+  assert.match(htmlOdznaku('rada30'), /odz__cislo">30<[^]*odz__sipky/);
 });

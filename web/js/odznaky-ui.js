@@ -6,16 +6,22 @@
 // =====================================================================
 
 import { el, otevritModal, zavritModal } from './ui.js';
-import { ODZNAKY, htmlOdznaku, noveOdznaky } from './odznaky.js';
+import { ODZNAKY, ODZNAKY_OBA, ODZNAKY_VYZEV, ODZNAKY_SBIRKY, htmlOdznaku, noveOdznaky } from './odznaky.js';
 import { h } from './hlasky.js';
 import { oknoNovychOdznaku } from './odznaky-karty.js';
 
 /**
- * Sekce okna odznaků v pořadí zobrazení: [{nadpis, sada}]. Spolu 8: odznaky patří dítěti (oba předměty dohromady).
- * @param {object} [volby]
+ * Sekce okna odznaků v pořadí zobrazení: [{nadpis, sada}]. Spolu 8: odznaky za lekce patří dítěti (oba předměty
+ * dohromady); R80: za oba předměty (jen dítě s oběma předměty), měsíční výzvy (jen se sezónou), sbírka taháků.
+ * @param {{oba?: boolean, vyzvy?: boolean}} [volby]
  */
-export function sekceOdznaku(volby = {}) { // eslint-disable-line no-unused-vars
-  return [{ nadpis: h('odznaky.sekce_lekce'), sada: ODZNAKY }];
+export function sekceOdznaku({ oba = true, vyzvy = true } = {}) {
+  return [
+    { nadpis: h('odznaky.sekce_lekce'), sada: ODZNAKY },
+    oba ? { nadpis: h('odznaky.sekce_oba'), sada: ODZNAKY_OBA } : null,
+    vyzvy && ODZNAKY_VYZEV.length ? { nadpis: h('odznaky.sekce_vyzvy'), sada: ODZNAKY_VYZEV } : null,
+    { nadpis: h('odznaky.sekce_sbirka'), sada: ODZNAKY_SBIRKY },
+  ].filter(Boolean);
 }
 
 /** Všechny odznaky k zobrazení (pořadí okna). */
