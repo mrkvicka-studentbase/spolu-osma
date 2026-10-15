@@ -1,0 +1,749 @@
+{
+  "id": "cj-t8-l29nb",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 8,
+  "poradi": 1,
+  "tema": "Přísudek slovesný a jmenný",
+  "kapitola": "vetne-cleny",
+  "cil_pro_rodice": "Dítě samo najde celý přísudek i v delších větách, kde ho rozděluje podmět nebo kde je spona v záporu či v budoucím čase (nebyl smutný, bude těžký), a určí, jestli je slovesný, nebo jmenný se sponou.",
+  "uvod_pro_rodice": "Opakování po červeném semaforu: stejná naostro lekce „Přísudek slovesný a jmenný“ s jinými větami a slovy, aby dítě znovu našlo celý přísudek a určilo, jestli je slovesný, nebo jmenný se sponou.",
+  "uvod_pravidla": [
+    {
+      "znak": "Přísudek: co dělá, kdo/jaký je",
+      "text": "co to je"
+    },
+    {
+      "znak": "být + jméno → jmenný se sponou",
+      "text": "test"
+    },
+    {
+      "znak": "byla v lese = slovesný (kde?)",
+      "text": "příklad"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "větný člen": "část věty, která má ve větě svůj úkol (podmět, přísudek a další); pozná se otázkou",
+    "podmět": "kdo nebo co něco dělá nebo jaké je; ptáme se kdo, co? (Pes štěká → kdo štěká? pes)",
+    "přísudek": "co podmět dělá, nebo kdo či jaký je (štěká; je lékař)",
+    "přísudek slovesný": "přísudek je jen sloveso (pes štěká; táta je v práci = je někde)",
+    "přísudek jmenný se sponou": "přísudek ze dvou částí: tvar slova být a slovo, které říká, kdo nebo jaký podmět je (je lékař, nebyla ospalá, bude dlouhý)",
+    "spona": "tvar slova být v jmenném přísudku (je, byl, nebyla, bude)"
+  },
+  "cas_min": 25,
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t8-l29nb-U1",
+      "typ": "rozcvicka",
+      "cil": "Ledoborec ze společného základu: najít přísudek (sloveso) a podmět (kdo, co?) i v delší větě, kde podmět stojí až za slovesem a na začátku je jiné slovo.",
+      "cas_min": 4,
+      "zadani": "V řadách A a D najdi přísudek, v řadách B a C podmět.\n\nA) Na pláži chvíli odpočívala Lucka.\n\nB) Dnes přivezl pekař čerstvé pečivo.\n\nC) Na kluziště vzala Klára nové brusle.\n\nD) O Vánocích uvařila Ema večeři.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "pláži",
+                "spravne": false,
+                "typ_chyby": "prisudek-neni-sloveso"
+              },
+              {
+                "id": "b",
+                "text": "chvíli",
+                "spravne": false,
+                "typ_chyby": "prisudek-neni-sloveso"
+              },
+              {
+                "id": "c",
+                "text": "odpočívala",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "Lucka",
+                "spravne": false,
+                "typ_chyby": "podmet-prisudek-zamena"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Dnes",
+                "spravne": false,
+                "typ_chyby": "podmet-prvni-slovo"
+              },
+              {
+                "id": "b",
+                "text": "přivezl",
+                "spravne": false,
+                "typ_chyby": "podmet-prisudek-zamena"
+              },
+              {
+                "id": "c",
+                "text": "pekař",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "pečivo",
+                "spravne": false,
+                "typ_chyby": "podmet-za-predmet"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "kluziště",
+                "spravne": false
+              },
+              {
+                "id": "b",
+                "text": "vzala",
+                "spravne": false,
+                "typ_chyby": "podmet-prisudek-zamena"
+              },
+              {
+                "id": "c",
+                "text": "Klára",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "brusle",
+                "spravne": false,
+                "typ_chyby": "podmet-za-predmet"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Vánocích",
+                "spravne": false,
+                "typ_chyby": "prisudek-neni-sloveso"
+              },
+              {
+                "id": "b",
+                "text": "uvařila",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "Ema",
+                "spravne": false,
+                "typ_chyby": "podmet-prisudek-zamena"
+              },
+              {
+                "id": "d",
+                "text": "večeři",
+                "spravne": false,
+                "typ_chyby": "prisudek-neni-sloveso"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje, co dítě zná z dřívějška: přísudek je sloveso, které říká, co se děje; podmět najde otázkou „kdo, co?“ od přísudku. Věty jsou delší, dlaždice čtyři a podmět stojí ve všech řadách až za slovesem. Otázky jsou po příkladech: čtěte tu u příkladu, kde se dítě zasekne.",
+        "reseni": "#### A) Na pláži chvíli odpočívala Lucka.\n\nodpočívala (co Lucka dělala? odpočívala; na pláži říká kde, chvíli jak dlouho)\n\n#### B) Dnes přivezl pekař čerstvé pečivo.\n\npekař (kdo, co přivezl? pekař; pečivo pekař přivezl, to nic nedělá)\n\n#### C) Na kluziště vzala Klára nové brusle.\n\nKlára (kdo vzal brusle? Klára; brusle Klára vzala, ty nic nedělají)\n\n#### D) O Vánocích uvařila Ema večeři.\n\nuvařila (co Ema udělala? uvařila; o Vánocích říká kdy)\n\n**Výsledek:** A) odpočívala, B) pekař, C) Klára, D) uvařila",
+        "otazky": [
+          {
+            "k": "A a D",
+            "text": "„Které slovo říká, co se ve větě děje? Zkus před každé slovo říct ‚on‘ nebo ‚ona‘.“"
+          },
+          {
+            "k": "B",
+            "text": "„Najdi nejdřív sloveso. Pak se od něj zeptej: kdo, co přivezl?“"
+          },
+          {
+            "k": "C",
+            "text": "„Kdo tu něco dělá? Zeptej se od slovesa: kdo vzal? A vzal koho, co?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, jak ve větě C najdeš podmět, když stojí až za slovesem.“",
+        "otocena_role_odpoved": "Nejdřív najdu sloveso: vzala. Pak se zeptám: kdo vzal brusle? Klára. Brusle Klára vzala, ty nic nedělají, takže podmět nejsou.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V řadě A nebo D vybere jiné slovo než sloveso (pláži, chvíli, Lucka, Vánocích, Ema, večeři). Zeptejte se: „Které slovo říká, co se děje?“ V řadě B nebo C vybere „Dnes“, „přivezl“, „pečivo“, „kluziště“, „vzala“ nebo „brusle“: „Kdo přivezl? Kdo vzal?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — přísudek i podmět sedí, i když podmět stál za slovesem. Pochvalte, že se dítě ptalo od slovesa, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti větu: „Večer nám zatelefonoval strýc.“ Dítě řekne přísudek a podmět. Kontrola pro vás: přísudek zatelefonoval (co se stalo?), podmět strýc (kdo zatelefonoval?); večer říká kdy.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše větu Před domem zametala babička chodník. Pod sloveso napíše „co se děje“, pod jméno, které to dělá, „kdo“. Pak se zeptá: kdo zametal? Potom zopakujte lekci „Přísudek slovesný a jmenný“. Kontrola pro vás: přísudek zametala, podmět babička (kdo zametal?); chodník babička zametá, sám nic nedělá."
+      },
+      "tisk": {
+        "zadani": "V řadách A a D zakroužkuj přísudek, v řadách B a C podmět.\n\nA) Na pláži chvíli odpočívala Lucka. — a) pláži b) chvíli c) odpočívala d) Lucka\n\nB) Dnes přivezl pekař čerstvé pečivo. — a) Dnes b) přivezl c) pekař d) pečivo\n\nC) Na kluziště vzala Klára nové brusle. — a) kluziště b) vzala c) Klára d) brusle\n\nD) O Vánocích uvařila Ema večeři. — a) Vánocích b) uvařila c) Ema d) večeři"
+      }
+    },
+    {
+      "id": "cj-t8-l29nb-U2",
+      "typ": "nova",
+      "cil": "Rozlišit přísudek slovesný a jmenný se sponou u šesti vět, i se sponou v záporu a v budoucím čase (nebyla, bude) a u přídavného jména mimo přísudek (má pruhovanou šálu).",
+      "cas_min": 5,
+      "zadani": "U každé věty urči, jaký je přísudek: slovesný, nebo jmenný se sponou.\n\nA) Adam je v předsíni.\n\nB) Bratranec mé kamarádky je fotograf.\n\nC) Ta zmrzlina bude studená.\n\nD) Lucka má pruhovanou šálu.\n\nE) Ema byla v nemocnici.\n\nF) Klára nebyla překvapená.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "A) Adam je v předsíni.",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "slovesný",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "jmenný se sponou",
+                "spravne": false,
+                "typ_chyby": "prisudek-slovesny-za-jmenny"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "B) Bratranec mé kamarádky je fotograf.",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "slovesný",
+                "spravne": false,
+                "typ_chyby": "prisudek-jmenny-za-slovesny"
+              },
+              {
+                "id": "b",
+                "text": "jmenný se sponou",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "C) Ta zmrzlina bude studená.",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "slovesný",
+                "spravne": false,
+                "typ_chyby": "prisudek-jmenny-za-slovesny"
+              },
+              {
+                "id": "b",
+                "text": "jmenný se sponou",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k4",
+          "popisek": "D) Lucka má pruhovanou šálu.",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "slovesný",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "jmenný se sponou",
+                "spravne": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "k5",
+          "popisek": "E) Ema byla v nemocnici.",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "slovesný",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "jmenný se sponou",
+                "spravne": false,
+                "typ_chyby": "prisudek-slovesny-za-jmenny"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "F) Klára nebyla překvapená.",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "slovesný",
+                "spravne": false,
+                "typ_chyby": "prisudek-jmenny-za-slovesny"
+              },
+              {
+                "id": "b",
+                "text": "jmenný se sponou",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě u každé věty vybírá ze dvou možností, vět je šest. Pasti: ve větách A a E je za tvarem slova být jen místo (kde?), přísudek je slovesný. Ve větě D je přídavné jméno, ale sloveso je má, ne tvar slova být. Spona bývá i v záporu (nebyla) a v budoucím čase (bude).",
+        "reseni": "A) slovesný (je v předsíni: říká, kde Adam je)\n\nB) jmenný se sponou (je fotograf: kdo bratranec je)\n\nC) jmenný se sponou (bude studená: jaká zmrzlina bude)\n\nD) slovesný (má: sloveso mít, ne být; pruhovanou říká jen, jakou šálu)\n\nE) slovesný (byla v nemocnici: kde Ema byla)\n\nF) jmenný se sponou (nebyla překvapená: jaká Klára nebyla)\n\n**Výsledek:** A slovesný, B jmenný, C jmenný, D slovesný, E slovesný, F jmenný",
+        "otazky": [
+          "„Jak poznáš jmenný přísudek se sponou? Řekni to vlastními slovy.“",
+          "„Najdi v každé větě sloveso. Je to tvar slova být? Jaké tvary slova být znáš?“",
+          "„Za tvarem slova být se zeptej: kde? Nebo kdo, jaký? Na kterou otázku odpovídá slovo za ním?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč ve větě o Lucce není jmenný přísudek, i když je v ní přídavné jméno.“",
+        "otocena_role_odpoved": "Sloveso je tam má, ne tvar slova být. Pruhovanou jen říká, jakou šálu Lucka má. Jmenný přísudek se sponou potřebuje je, byl nebo bude a jméno za ním.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. U A nebo E vybere „jmenný“, protože vidí je, byla: „Říká to, kde je, nebo jaká je?“ U D „jmenný“: „Je tam tvar slova být?“ U B, C, F „slovesný“: „Kdo bratranec je? Jaká zmrzlina bude? Jaká Klára nebyla?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — dítě poznalo přísudek i v záporu a v budoucím čase. Pochvalte, že se ptalo kde, nebo jaký, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti tři věty: „Babička je na zahradě.“ „Čaj bude sladký.“ „Pokoj nebyl uklizený.“ U každé řekne, jaký je přísudek. Kontrola pro vás: je na zahradě = slovesný (kde); bude sladký a nebyl uklizený = jmenné se sponou (jaký).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: tři lístky papíru a tužku. Zítra ať dítě napíše na lístky: Táta je v garáži. Táta bude unavený. Táta má novou čepici. U každé věty se zeptá: kde táta je? jaký je? Potom zopakujte lekci „Přísudek slovesný a jmenný“. Kontrola pro vás: je v garáži a má čepici = slovesné; bude unavený = jmenný se sponou (jaký bude)."
+      },
+      "tisk": {
+        "zadani": "U každé věty zakroužkuj, jaký je přísudek.\n\nA) Adam je v předsíni. — a) slovesný b) jmenný se sponou\n\nB) Bratranec mé kamarádky je fotograf. — a) slovesný b) jmenný se sponou\n\nC) Ta zmrzlina bude studená. — a) slovesný b) jmenný se sponou\n\nD) Lucka má pruhovanou šálu. — a) slovesný b) jmenný se sponou\n\nE) Ema byla v nemocnici. — a) slovesný b) jmenný se sponou\n\nF) Klára nebyla překvapená. — a) slovesný b) jmenný se sponou"
+      }
+    },
+    {
+      "id": "cj-t8-l29nb-U3",
+      "typ": "nova",
+      "cil": "Najít celý přísudek i ve dvou větách za sebou: jmenný se sponou (i oddělený podmětem) vedle slovesného, i se slovem být ve významu „být někde“.",
+      "cas_min": 5,
+      "zadani": "Klikni ve větách na všechna slova, která patří do přísudku.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Část 1",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Po prudkém výstupu byli všichni kamarádi zpocení.",
+            "cil": "slova",
+            "min": 1,
+            "max": 4
+          },
+          "spravne": [
+            3,
+            6
+          ],
+          "zname_chyby": [
+            {
+              "chybi": [
+                6
+              ],
+              "typ_chyby": "prisudek-jmenny-jen-spona"
+            },
+            {
+              "navic": [
+                5
+              ],
+              "typ_chyby": "podmet-prisudek-zamena"
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "popisek": "Část 2",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Navečer byl potok ledový. Později přišel mráz.",
+            "cil": "slova",
+            "min": 1,
+            "max": 5
+          },
+          "spravne": [
+            1,
+            3,
+            5
+          ],
+          "zname_chyby": [
+            {
+              "chybi": [
+                3
+              ],
+              "typ_chyby": "prisudek-jmenny-jen-spona"
+            },
+            {
+              "navic": [
+                2,
+                6
+              ],
+              "typ_chyby": "podmet-prisudek-zamena"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Část 3",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Ještě předevčírem byla Ema zamyšlená. Teď je na procházce.",
+            "cil": "slova",
+            "min": 1,
+            "max": 5
+          },
+          "spravne": [
+            2,
+            4,
+            6
+          ],
+          "zname_chyby": [
+            {
+              "chybi": [
+                4
+              ],
+              "typ_chyby": "prisudek-jmenny-jen-spona"
+            },
+            {
+              "navic": [
+                8
+              ],
+              "typ_chyby": "prisudek-slovesny-za-jmenny"
+            },
+            {
+              "navic": [
+                3
+              ],
+              "typ_chyby": "podmet-prisudek-zamena"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě kliká na slova přímo ve větách a může jich vybrat víc. Ve dvou částech jsou dvě věty, každá s jiným přísudkem. U jmenného patří do přísudku tvar slova být i jméno za ním, u slovesného jen sloveso. Past: „na procházce“ říká jen kde, do přísudku nepatří.",
+        "reseni": "Část 1: byli zpocení (jací kamarádi byli? zpocení; kamarádi jsou podmět)\n\nČást 2: byl ledový (jaký potok byl?), přišel (co mráz udělal?)\n\nČást 3: byla zamyšlená (jaká Ema byla?), je (kde je? na procházce: slovesný, jen je)\n\n**Výsledek:** 1. byli zpocení, 2. byl ledový, přišel, 3. byla zamyšlená, je",
+        "otazky": [
+          "„Co patří do přísudku slovesného a co do jmenného se sponou? Řekni to vlastními slovy.“",
+          "„Najdi v každé větě sloveso. Když je to tvar slova být, zeptej se od něj: kde? Nebo jaký?“",
+          "„Slovo, které odpovídá na jaký, patří do přísudku. Hledej ho i dál ve větě, za podmětem.“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč v části 3 klikneš u slova být jednou na dvě slova a jednou jen na jedno.“",
+        "otocena_role_odpoved": "Byla zamyšlená říká, jaká Ema byla, tak patří do přísudku obě slova. Je na procházce říká jen kde, tak je přísudek samo je.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne jen na byli, byl nebo byla: „Jací kamarádi byli? Jaký byl potok?“ Klikne i na „procházce“: „Říká na procházce, jaká Ema je?“ Klikne na kamarádi, potok, mráz nebo Ema: „Je to přísudek, nebo podmět?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — dítě našlo celé přísudky i ve dvou větách za sebou. Pochvalte, že se ptalo kde, nebo jaký, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti dvě věty: „Dopoledne byla Lucka veselá. Teď je u babičky.“ Dítě řekne, která slova patří do přísudku. Kontrola pro vás: byla veselá (jaká Lucka byla?); je (kde je? u babičky, jen sloveso); Lucka je podmět.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a dvě pastelky. Zítra ať dítě napíše věty Večer byl Adam ospalý. Potom byl v koupelně. Jednou barvou zakroužkuje podmět, druhou celý přísudek. Potom zopakujte lekci „Přísudek slovesný a jmenný“. Kontrola pro vás: podmět Adam; přísudky byl ospalý (obě slova, jaký byl) a byl (kde byl? v koupelně)."
+      },
+      "tisk": {
+        "zadani": "Podtrhni ve větách celý přísudek (všechna slova, která do něj patří).\n\n1. Po prudkém výstupu byli všichni kamarádi zpocení.\n\n2. Navečer byl potok ledový. Později přišel mráz.\n\n3. Ještě předevčírem byla Ema zamyšlená. Teď je na procházce."
+      }
+    },
+    {
+      "id": "cj-t8-l29nb-U4",
+      "typ": "detektiv",
+      "cil": "Najít u spolužáka neúplný jmenný přísudek, jehož jméno stojí daleko za podmětem (jen spona: prisudek-jmenny-jen-spona), mezi třemi správně podtrženými přísudky.",
+      "cas_min": 5,
+      "zadani": "Petr měl ve větách podtrhnout celý přísudek:\n\n**Lucka byla u moře. Tomáš je šachista. Na lodi byla Ema celou dobu klidná. Klára sbírá houby.**\n\nPodtrhl: **byla** (Lucka), **je šachista** (Tomáš), **byla** (Ema), **sbírá** (Klára). Udělal **jednu** chybu. Najdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "U kterého přísudku má Petr chybu?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "byla (Lucka)",
+                "spravne": false,
+                "typ_chyby": "prisudek-slovesny-za-jmenny"
+              },
+              {
+                "id": "b",
+                "text": "je šachista (Tomáš)",
+                "spravne": false,
+                "typ_chyby": "detektiv-jine-slovo"
+              },
+              {
+                "id": "c",
+                "text": "byla (Ema)",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "sbírá (Klára)",
+                "spravne": false,
+                "typ_chyby": "detektiv-jine-slovo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Co měl Petr podtrhnout?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "byla u moře",
+                "spravne": false,
+                "typ_chyby": "prisudek-slovesny-za-jmenny"
+              },
+              {
+                "id": "b",
+                "text": "Tomáš je",
+                "spravne": false,
+                "typ_chyby": "podmet-prisudek-zamena"
+              },
+              {
+                "id": "c",
+                "text": "byla klidná",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "sbírá houby",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák; hledat cizí chybu je snazší než přiznat vlastní. Věty jsou čtyři a chybný přísudek je rozdělený: mezi tvarem slova být a jménem stojí podmět a „celou dobu“. Past: „byla“ u Lucky má Petr správně, říká jen kde. V kroku 2 (Co měl Petr podtrhnout?) dítě vybere opravu.",
+        "reseni": "Chyba je u Emy: Petr podtrhl jen tvar slova být.\n\nbyla (Lucka byla u moře: slovesný, říká kde; Petr má správně)\n\nje šachista (kdo Tomáš je? šachista: jmenný se sponou; Petr má správně)\n\nbyla klidná (jaká Ema byla? klidná: jmenný se sponou, Petrovi chybí klidná)\n\nsbírá (co Klára dělá? sbírá; houby do přísudku nepatří)\n\n**Výsledek:** krok 1 byla (Ema), krok 2 byla klidná",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Řekni mi vlastními slovy, co všechno patří do přísudku.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„U každého Petrova přísudku se zeptej od slovesa: kde? Nebo kdo, jaký? Dočti každou větu až do konce.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Začni u Kláry: stačí samo sbírá? Pak stejně projdi ostatní tři věty.“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a jak si ji příště ohlídám.“",
+        "otocena_role_odpoved": "U Emy máš jen byla. Jaká Ema byla? Klidná, to patří do přísudku taky, i když je až na konci věty. Příště dočtu větu a zeptám se jaký.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 vybere „byla (Lucka)“: „Říká u moře, jaká Lucka byla, nebo kde?“ (Kde, Petr to má dobře.) Vybere Tomáše nebo Kláru: „Stačí, co Petr podtrhl?“ V kroku 2 vybere „byla u moře“, „Tomáš je“ nebo „sbírá houby“: „Jaká Ema byla?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — dítě našlo Petrovu chybu i opravu, i když byl přísudek rozdělený. Pochvalte, že dočetlo větu do konce, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr ve větě Na koncertě byl Tomáš celý večer nadšený podtrhl jako přísudek jen byl.“ Zeptejte se: „Má Petr pravdu? Co mu chybí?“ Kontrola pro vás: nemá; přísudek je byl nadšený (jaký Tomáš byl? nadšený), jmenný se sponou.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše dvě věty: Máma byla v obchodě. Večer byla máma spokojená. V každé podtrhne přísudek a zeptá se: kde máma byla? jaká byla? Potom zopakujte lekci „Přísudek slovesný a jmenný“. Kontrola pro vás: v první větě jen byla (kde, slovesný); ve druhé byla spokojená (jaká, jmenný se sponou)."
+      },
+      "tisk": {
+        "zadani": "Petr měl ve větách podtrhnout celý přísudek:\n\nLucka byla u moře. Tomáš je šachista. Na lodi byla Ema celou dobu klidná. Klára sbírá houby.\n\nPodtrhl: byla (Lucka), je šachista (Tomáš), byla (Ema), sbírá (Klára). Udělal jednu chybu.\n\nA) U kterého přísudku má Petr chybu? Zakroužkuj: a) byla (Lucka) b) je šachista (Tomáš) c) byla (Ema) d) sbírá (Klára)\n\nB) Co měl Petr podtrhnout? Zakroužkuj: a) byla u moře b) Tomáš je c) byla klidná d) sbírá houby"
+      }
+    },
+    {
+      "id": "cj-t8-l29nb-U5",
+      "typ": "kontrolni",
+      "cil": "Samostatně určit ve čtyřech větách podmět a druh přísudku u deseti slov, i s podmětem za slovesem a se třemi tvary slova být (jednou slovesný).",
+      "cas_min": 6,
+      "zadani": "U každého označeného slova vyber, jaký je to větný člen.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "oznac_role",
+            "text": "Po snídani byl Adam u bazénu. Instruktor plavání byl mladý. Na schodech lenošil plavčík. Voda byla příjemná.",
+            "slova": [
+              2,
+              3,
+              6,
+              8,
+              9,
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            "role": [
+              "podmět",
+              "přísudek slovesný",
+              "přísudek jmenný se sponou"
+            ]
+          },
+          "spravne": {
+            "2": "přísudek slovesný",
+            "3": "podmět",
+            "6": "podmět",
+            "8": "přísudek jmenný se sponou",
+            "9": "přísudek jmenný se sponou",
+            "12": "přísudek slovesný",
+            "13": "podmět",
+            "14": "podmět",
+            "15": "přísudek jmenný se sponou",
+            "16": "přísudek jmenný se sponou"
+          },
+          "zname_chyby": [
+            {
+              "hodnota": {
+                "2": "přísudek jmenný se sponou"
+              },
+              "typ_chyby": "prisudek-slovesny-za-jmenny"
+            },
+            {
+              "hodnota": {
+                "8": "přísudek slovesný",
+                "15": "přísudek slovesný"
+              },
+              "typ_chyby": "prisudek-jmenny-za-slovesny"
+            },
+            {
+              "hodnota": {
+                "9": "podmět",
+                "16": "podmět"
+              },
+              "typ_chyby": "prisudek-jmenny-jen-spona"
+            },
+            {
+              "hodnota": {
+                "12": "podmět",
+                "13": "přísudek slovesný"
+              },
+              "typ_chyby": "podmet-prisudek-zamena"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Slov je deset ve čtyřech větách a ve třetí stojí podmět za slovesem. U jmenného přísudku dostanou stejnou volbu obě slova. Past: třikrát tvar slova být, jednou je přísudek slovesný.",
+        "reseni": "byl: přísudek slovesný (kde Adam byl? u bazénu)\n\nAdam: podmět (kdo byl u bazénu?)\n\nInstruktor: podmět (kdo byl mladý?)\n\nbyl mladý: přísudek jmenný se sponou (jaký instruktor byl?)\n\nlenošil: přísudek slovesný (co plavčík dělal?)\n\nplavčík: podmět (kdo lenošil?)\n\nVoda: podmět (co bylo příjemné?)\n\nbyla příjemná: přísudek jmenný se sponou (jaká voda byla?)\n\n**Výsledek:** podmět Adam, Instruktor, plavčík, Voda; slovesný byl (Adam), lenošil; jmenný se sponou byl mladý, byla příjemná",
+        "otazky": [
+          "„Řekni mi vlastními slovy, jak poznáš podmět a oba druhy přísudku.“",
+          "„U každého tvaru slova být se zeptej: kde? Nebo kdo, jaký? Na co věta odpovídá?“",
+          "„Ve třetí větě najdi nejdřív sloveso. Pak se od něj zeptej: kdo, co to dělá?“"
+        ],
+        "otocena_role": "„Vyber si jeden tvar slova být z textu a dokaž mi, jaký je to přísudek.“",
+        "otocena_role_odpoved": "Adam byl u bazénu: kde byl? U bazénu, to neříká, jaký je, takže slovesný. Voda byla příjemná: jaká byla? Příjemná, takže jmenný se sponou.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: „byl“ u Adama jako jmenný. Zeptejte se: „Kde Adam byl? Jaký byl?“ „byl“ u instruktora nebo „byla“ jako slovesný, nebo „mladý“, „příjemná“ jako podmět: „Jaký instruktor byl? Jaká byla voda?“ Prohodí „lenošil“ a „plavčík“: „Kdo lenošil?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — podmět i oba přísudky dítě určí samo i v delším textu. Pochvalte, že se ptalo kde, nebo jaký. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti dvě věty: „Na stole byla polévka.“ „Polévka byla horká.“ U každé řekne podmět a jaký je přísudek. Kontrola pro vás: podmět je v obou polévka; byla na stole = slovesný (kde byla); byla horká = jmenný se sponou (jaká byla).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: tři lístky papíru a tužku. Zítra ať dítě napíše na lístky: Děda byl na poště. Děda je zahradník. Čaj byl hořký. V každé větě zakroužkuje podmět a podtrhne celý přísudek. Potom zopakujte lekci „Přísudek slovesný a jmenný“. Kontrola pro vás: podmět děda, děda, čaj; byl na poště je slovesný (jen byl); je zahradník a byl hořký jsou jmenné se sponou (obě slova)."
+      },
+      "tisk": {
+        "zadani": "Nad každé tučné slovo napiš zkratku: Po = podmět, Ps = přísudek slovesný, Pj = přísudek jmenný se sponou.\n\nPo snídani **byl** **Adam** u bazénu. **Instruktor** plavání **byl** **mladý**. Na schodech **lenošil** **plavčík**. **Voda** **byla** **příjemná**."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "B-varianta naostro lekce cj-t8-l29n (opakování po červené, ZADANI-OSMA §9 bod 4), autor 14. 10. 2026, rozpis cestina/Obsah/TEMA-8-B.md (oddíl B-varianty naostro lekcí). Struktura 1:1 s cj-t8-l29n (typy úloh, vstup.typ, počty kroků, dlaždic a rolí, správné volby a kódy na stejných pozicích, stejné min/max a tvary známých chyb u klikání, 10 slov ve stejných indexech v U5) ověřena skriptem /tmp/b-cj8nb/porovnej.py; indexy přes tokenizuj; vzorová odpověď každého kroku správně a každá chybná dlaždice i známá chyba vrací svůj kód (vyhodnotKrok, /tmp/b-cj8nb/over.mjs). Hodnocená slova a věty nejsou z cj-t8-l29 … l32, l29n … l32n, l29b … l32b, cj-t0-diag ani cj-t0-pol (kontrolováno skriptem /tmp/b-cj8nb/prekryv.py); opakují se jen tvary být, jména a zájmena. „Platí“ a slovníček převzaté z naostro lekce (byla v lese, je lékař B-varianta nehodnotí). Jmenný přísudek se sponou = být + přídavné jméno nebo 1. p. podstatného jména (id=610), dítě tvar nevolí; být + místo (je v předsíni, byla v nemocnici, byla u moře, je na procházce, byl u bazénu) = slovesný. Spona i v záporu (nebyla) a v budoucím čase (bude). Rozcvička jen ze Z4. Otázky taháku bez odpovědi; v detektivovi se ptají u všech čtyř Petrových přísudků stejně. Ověřeno v ÚJČ (nastroje/ujc.sh, tabulky tvarů): pláži, chvíli, odpočívala, přivezl, pekař, pečivo, kluziště, vzala, brusle, Vánocích, uvařila, večeři, předsíni, bratranec, kamarádky, fotograf, zmrzlina, studený, pruhovanou, šálu, nemocnici, překvapený, zpocený, kamarádi (jediný tvar 1. p. mn.), potok, ledový, přišel, mráz, zamyšlený, procházce, moře, šachista, klidný, sbírá, houby, instruktor, mladý, lenošil, bazén (2. p. u bazénu), plavčík, voda, příjemný. Korektura (korektor, 14. 10. 2026): všechny hodnocené tvary a slova vytištěných vět znovu porovnány s tabulkami ÚJČ (nastroje/ujc.sh), chybně napsaný hodnocený tvar 0. Opraveno: U5 „v bazénu“ (6. p. bazéně/bazénu = dubleta) → „u bazénu“ (2. p. jediný tvar); „Instruktor plavání byl policista“ → „Instruktor plavání byl mladý“ (přirozená věta, stejný jev a indexy, pokyn vedoucího). Indexy přes tokenizuj, vyhodnotKrok + vzorovaOdpoved bez chyb, limity SABLONA §4 v pořádku.",
+    "zkontroloval": "korektor",
+    "datum": "2026-10-14",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?id=610",
+      "https://prirucka.ujc.cas.cz/?id=600",
+      "https://prirucka.ujc.cas.cz/?slovo=pl%C3%A1%C5%BE",
+      "https://prirucka.ujc.cas.cz/?slovo=chv%C3%ADle",
+      "https://prirucka.ujc.cas.cz/?slovo=odpo%C4%8D%C3%ADvat",
+      "https://prirucka.ujc.cas.cz/?slovo=Lucka",
+      "https://prirucka.ujc.cas.cz/?slovo=dnes",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C5%99iv%C3%A9zt",
+      "https://prirucka.ujc.cas.cz/?slovo=peka%C5%99",
+      "https://prirucka.ujc.cas.cz/?slovo=%C4%8Derstv%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=pe%C4%8Divo",
+      "https://prirucka.ujc.cas.cz/?slovo=kluzi%C5%A1t%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=vz%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=Kl%C3%A1ra",
+      "https://prirucka.ujc.cas.cz/?slovo=nov%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=brusle",
+      "https://prirucka.ujc.cas.cz/?slovo=V%C3%A1noce",
+      "https://prirucka.ujc.cas.cz/?slovo=uva%C5%99it",
+      "https://prirucka.ujc.cas.cz/?slovo=Ema",
+      "https://prirucka.ujc.cas.cz/?slovo=ve%C4%8De%C5%99e",
+      "https://prirucka.ujc.cas.cz/?slovo=Adam",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C5%99eds%C3%AD%C5%88",
+      "https://prirucka.ujc.cas.cz/?slovo=bratranec",
+      "https://prirucka.ujc.cas.cz/?slovo=m%C5%AFj",
+      "https://prirucka.ujc.cas.cz/?slovo=kamar%C3%A1dka",
+      "https://prirucka.ujc.cas.cz/?slovo=fotograf",
+      "https://prirucka.ujc.cas.cz/?slovo=zmrzlina",
+      "https://prirucka.ujc.cas.cz/?slovo=studen%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=m%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=pruhovan%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1%C3%A1la",
+      "https://prirucka.ujc.cas.cz/?slovo=b%C3%BDt",
+      "https://prirucka.ujc.cas.cz/?slovo=nemocnice",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C5%99ekvapen%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=prudk%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=v%C3%BDstup",
+      "https://prirucka.ujc.cas.cz/?slovo=kamar%C3%A1d",
+      "https://prirucka.ujc.cas.cz/?slovo=zpocen%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=potok",
+      "https://prirucka.ujc.cas.cz/?slovo=ledov%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C5%99ij%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=mr%C3%A1z",
+      "https://prirucka.ujc.cas.cz/?slovo=zamy%C5%A1len%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=proch%C3%A1zka",
+      "https://prirucka.ujc.cas.cz/?slovo=mo%C5%99e",
+      "https://prirucka.ujc.cas.cz/?slovo=Tom%C3%A1%C5%A1",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1achista",
+      "https://prirucka.ujc.cas.cz/?slovo=klidn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=sb%C3%ADrat",
+      "https://prirucka.ujc.cas.cz/?slovo=houba",
+      "https://prirucka.ujc.cas.cz/?slovo=sn%C3%ADdan%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=baz%C3%A9n",
+      "https://prirucka.ujc.cas.cz/?slovo=instruktor",
+      "https://prirucka.ujc.cas.cz/?slovo=plav%C3%A1n%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=mlad%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=leno%C5%A1it",
+      "https://prirucka.ujc.cas.cz/?slovo=plav%C4%8D%C3%ADk",
+      "https://prirucka.ujc.cas.cz/?slovo=voda",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C5%99%C3%ADjemn%C3%BD"
+    ],
+    "testovaci_rodic": null
+  }
+}
