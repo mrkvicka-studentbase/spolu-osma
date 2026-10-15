@@ -62,8 +62,8 @@
 2. **Nový Supabase projekt a hosting:** `SPUSTENI.md`, část B.
 3. **Rozhodnuto 15. 10. (Pavel):**
    - placená SOS konzultace (150 Kč) z aplikace zmizí, místo ní bude stálý kontakt pro rodiče („napište nám, domluvíme i lekci s lektorem“);
-     - datum otevření je **2. 11. 2026**, seed `--otevrit-od 2026-11-02`;
-     - zlatý tahák „Co mě čeká v 9. třídě“ zůstává i s větou o přijímací zkoušce, je to ukázka, co děti čeká.
+   - datum otevření je **2. 11. 2026**, seed `--otevrit-od 2026-11-02`;
+   - zlatý tahák „Co mě čeká v 9. třídě“ zůstává i s větou o přijímací zkoušce, je to ukázka, co děti čeká.
 
 ## Otevřené drobnosti (neblokují)
 - **Kódy chyb:** pravidlo vedoucího je žádné nové kódy. Navrhované kódy proto korektoři nahradili existujícími:
