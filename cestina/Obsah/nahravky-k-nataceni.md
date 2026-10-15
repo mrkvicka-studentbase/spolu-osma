@@ -1,4 +1,4 @@
-# Nahrávky k natočení (188)
+# Nahrávky k natočení (194)
 
 Vygenerováno 2026-10-15 nástrojem nastroje/seznam-nahravek.mjs. Postup: cestina/Obsah/NAHRAVKY-NAVOD.md.
 Do ElevenLabs vlož PŘESNĚ text z bloku (bez zpětných apostrofů). Soubor ulož jako `složka/název`.
@@ -1387,7 +1387,15 @@ Lekce: cj-t10-l38n úloha 3 · Věta: Před školou se shromáždili lidé z cel
 Před školou se shromáždili lidé z celé vesnice. Když ředitel začal mluvit, všichni ztichli. Jen Tomáš se shýbl pro míč, který mu upadl.
 ```
 
-## 174. t10/l39-u3.mp3 — poslech
+## 174. t10/l38nb-u3.mp3 — poslech
+
+Lekce: cj-t10-l38nb úloha 3 · Věta: Kluci z tábora se za týden úplně sblížili. Když vedoucí oznámil, že výlet nebude, byli všichni zklamaní. Večer pak aspoň sháněli dříví na oheň.
+
+```text
+Kluci z tábora se za týden úplně sblížili. Když vedoucí oznámil, že výlet nebude, byli všichni zklamaní. Večer pak aspoň sháněli dříví na oheň.
+```
+
+## 175. t10/l39-u3.mp3 — poslech
 
 Lekce: cj-t10-l39 úloha 3 · Věta: Tomáš zapomněl doma klíče.
 
@@ -1395,7 +1403,7 @@ Lekce: cj-t10-l39 úloha 3 · Věta: Tomáš zapomněl doma klíče.
 Tomáš zapomněl doma klíče.
 ```
 
-## 175. t10/l39b-u3.mp3 — poslech
+## 176. t10/l39b-u3.mp3 — poslech
 
 Lekce: cj-t10-l39b úloha 3 · Věta: Před bouřkou mrak ztemněl a začalo pršet.
 
@@ -1403,7 +1411,7 @@ Lekce: cj-t10-l39b úloha 3 · Věta: Před bouřkou mrak ztemněl a začalo pr�
 Před bouřkou mrak ztemněl a začalo pršet.
 ```
 
-## 176. t10/l39n-u3.mp3 — poslech
+## 177. t10/l39n-u3.mp3 — poslech
 
 Lekce: cj-t10-l39n úloha 3 · Věta: Klára jemně pohladila koťátko. Zřejmě mělo hlad, a tak mu nalila mléko.
 
@@ -1411,7 +1419,15 @@ Lekce: cj-t10-l39n úloha 3 · Věta: Klára jemně pohladila koťátko. Zřejm�
 Klára jemně pohladila koťátko. Zřejmě mělo hlad, a tak mu nalila mléko.
 ```
 
-## 177. t10/l40-d1.mp3 — diktát
+## 178. t10/l39nb-u3.mp3 — poslech
+
+Lekce: cj-t10-l39nb úloha 3 · Věta: Táta umně vyřezal hůl. Strmě stoupající cestou jsme pak šli k rozhledně.
+
+```text
+Táta umně vyřezal hůl. Strmě stoupající cestou jsme pak šli k rozhledně.
+```
+
+## 179. t10/l40-d1.mp3 — diktát
 
 Lekce: cj-t10-l40 úloha 5, věta 1 · Věta: Táta objednal večeři.
 
@@ -1419,7 +1435,7 @@ Lekce: cj-t10-l40 úloha 5, věta 1 · Věta: Táta objednal večeři.
 Táta objednal večeři. <break time="2s" /> Táta <break time="0.7s" /> objednal <break time="0.7s" /> večeři.
 ```
 
-## 178. t10/l40b-d1.mp3 — diktát
+## 180. t10/l40b-d1.mp3 — diktát
 
 Lekce: cj-t10-l40b úloha 5, věta 1 · Věta: Pevné objetí pomůže.
 
@@ -1427,7 +1443,7 @@ Lekce: cj-t10-l40b úloha 5, věta 1 · Věta: Pevné objetí pomůže.
 Pevné objetí pomůže. <break time="2s" /> Pevné <break time="0.7s" /> objetí <break time="0.7s" /> pomůže.
 ```
 
-## 179. t10/l40n-d1.mp3 — diktát
+## 181. t10/l40n-d1.mp3 — diktát
 
 Lekce: cj-t10-l40n úloha 5, věta 1 · Věta: Ema se s Klárou zúčastnila závodu.
 
@@ -1435,7 +1451,15 @@ Lekce: cj-t10-l40n úloha 5, věta 1 · Věta: Ema se s Klárou zúčastnila zá
 Ema se s Klárou zúčastnila závodu. <break time="2s" /> Ema <break time="0.7s" /> se <break time="0.7s" /> s <break time="0.7s" /> velké písmeno — Klárou <break time="0.7s" /> zúčastnila <break time="0.7s" /> závodu.
 ```
 
-## 180. t10/l40-d2.mp3 — diktát
+## 182. t10/l40nb-d1.mp3 — diktát
+
+Lekce: cj-t10-l40nb úloha 5, věta 1 · Věta: Hádka se spolužákem byla samoúčelná.
+
+```text
+Hádka se spolužákem byla samoúčelná. <break time="2s" /> Hádka <break time="0.7s" /> se <break time="0.7s" /> spolužákem <break time="0.7s" /> byla <break time="0.7s" /> samoúčelná.
+```
+
+## 183. t10/l40-d2.mp3 — diktát
 
 Lekce: cj-t10-l40 úloha 5, věta 2 · Věta: Lucka zapomněla na trénink.
 
@@ -1443,7 +1467,7 @@ Lekce: cj-t10-l40 úloha 5, věta 2 · Věta: Lucka zapomněla na trénink.
 Lucka zapomněla na trénink. <break time="2s" /> Lucka <break time="0.7s" /> zapomněla <break time="0.7s" /> na <break time="0.7s" /> trénink.
 ```
 
-## 181. t10/l40b-d2.mp3 — diktát
+## 184. t10/l40b-d2.mp3 — diktát
 
 Lekce: cj-t10-l40b úloha 5, věta 2 · Věta: Ten velký sál byl zatemněný.
 
@@ -1451,7 +1475,7 @@ Lekce: cj-t10-l40b úloha 5, věta 2 · Věta: Ten velký sál byl zatemněný.
 Ten velký sál byl zatemněný. <break time="2s" /> Ten <break time="0.7s" /> velký <break time="0.7s" /> sál <break time="0.7s" /> byl <break time="0.7s" /> zatemněný.
 ```
 
-## 182. t10/l40n-d2.mp3 — diktát
+## 185. t10/l40n-d2.mp3 — diktát
 
 Lekce: cj-t10-l40n úloha 5, věta 2 · Věta: Pohostinný soused mně podal čaj.
 
@@ -1459,7 +1483,15 @@ Lekce: cj-t10-l40n úloha 5, věta 2 · Věta: Pohostinný soused mně podal ča
 Pohostinný soused mně podal čaj. <break time="2s" /> Pohostinný <break time="0.7s" /> soused <break time="0.7s" /> mně <break time="0.7s" /> podal <break time="0.7s" /> čaj.
 ```
 
-## 183. t10/l40-d3.mp3 — diktát
+## 186. t10/l40nb-d2.mp3 — diktát
+
+Lekce: cj-t10-l40nb úloha 5, věta 2 · Věta: Holenní chránič mně půjčil Tomáš.
+
+```text
+Holenní chránič mně půjčil Tomáš. <break time="2s" /> Holenní <break time="0.7s" /> chránič <break time="0.7s" /> mně <break time="0.7s" /> půjčil <break time="0.7s" /> velké písmeno — Tomáš.
+```
+
+## 187. t10/l40-d3.mp3 — diktát
 
 Lekce: cj-t10-l40 úloha 5, věta 3 · Věta: Ten oddíl má cenný pohár.
 
@@ -1467,7 +1499,7 @@ Lekce: cj-t10-l40 úloha 5, věta 3 · Věta: Ten oddíl má cenný pohár.
 Ten oddíl má cenný pohár. <break time="2s" /> Ten <break time="0.7s" /> oddíl <break time="0.7s" /> má <break time="0.7s" /> cenný <break time="0.7s" /> pohár.
 ```
 
-## 184. t10/l40b-d3.mp3 — diktát
+## 188. t10/l40b-d3.mp3 — diktát
 
 Lekce: cj-t10-l40b úloha 5, věta 3 · Věta: Ranní test byl nejjednodušší.
 
@@ -1475,7 +1507,7 @@ Lekce: cj-t10-l40b úloha 5, věta 3 · Věta: Ranní test byl nejjednodušší.
 Ranní test byl nejjednodušší. <break time="2s" /> Ranní <break time="0.7s" /> test <break time="0.7s" /> byl <break time="0.7s" /> nejjednodušší.
 ```
 
-## 185. t10/l40n-d3.mp3 — diktát
+## 189. t10/l40n-d3.mp3 — diktát
 
 Lekce: cj-t10-l40n úloha 5, věta 3 · Věta: Táta zrušil objednávku dortu.
 
@@ -1483,7 +1515,15 @@ Lekce: cj-t10-l40n úloha 5, věta 3 · Věta: Táta zrušil objednávku dortu.
 Táta zrušil objednávku dortu. <break time="2s" /> Táta <break time="0.7s" /> zrušil <break time="0.7s" /> objednávku <break time="0.7s" /> dortu.
 ```
 
-## 186. t10/l40-d4.mp3 — diktát
+## 190. t10/l40nb-d3.mp3 — diktát
+
+Lekce: cj-t10-l40nb úloha 5, věta 3 · Věta: Kurýr ztratil objednaný dort.
+
+```text
+Kurýr ztratil objednaný dort. <break time="2s" /> Kurýr <break time="0.7s" /> ztratil <break time="0.7s" /> objednaný <break time="0.7s" /> dort.
+```
+
+## 191. t10/l40-d4.mp3 — diktát
 
 Lekce: cj-t10-l40 úloha 5, věta 4 · Věta: Klára shodila hrnek na zem.
 
@@ -1491,7 +1531,7 @@ Lekce: cj-t10-l40 úloha 5, věta 4 · Věta: Klára shodila hrnek na zem.
 Klára shodila hrnek na zem. <break time="2s" /> Klára <break time="0.7s" /> shodila <break time="0.7s" /> hrnek <break time="0.7s" /> na <break time="0.7s" /> zem.
 ```
 
-## 187. t10/l40b-d4.mp3 — diktát
+## 192. t10/l40b-d4.mp3 — diktát
 
 Lekce: cj-t10-l40b úloha 5, věta 4 · Věta: Tomáš sklouzl po svahu dolů.
 
@@ -1499,10 +1539,18 @@ Lekce: cj-t10-l40b úloha 5, věta 4 · Věta: Tomáš sklouzl po svahu dolů.
 Tomáš sklouzl po svahu dolů. <break time="2s" /> Tomáš <break time="0.7s" /> sklouzl <break time="0.7s" /> po <break time="0.7s" /> svahu <break time="0.7s" /> dolů.
 ```
 
-## 188. t10/l40n-d4.mp3 — diktát
+## 193. t10/l40n-d4.mp3 — diktát
 
 Lekce: cj-t10-l40n úloha 5, věta 4 · Věta: Lucka jemně sklonila hlavu.
 
 ```text
 Lucka jemně sklonila hlavu. <break time="2s" /> Lucka <break time="0.7s" /> jemně <break time="0.7s" /> sklonila <break time="0.7s" /> hlavu.
+```
+
+## 194. t10/l40nb-d4.mp3 — diktát
+
+Lekce: cj-t10-l40nb úloha 5, věta 4 · Věta: Klára umně seskočila na zem.
+
+```text
+Klára umně seskočila na zem. <break time="2s" /> Klára <break time="0.7s" /> umně <break time="0.7s" /> seskočila <break time="0.7s" /> na <break time="0.7s" /> zem.
 ```
