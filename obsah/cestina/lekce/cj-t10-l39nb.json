@@ -1,0 +1,760 @@
+{
+  "id": "cj-t10-l39nb",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 10,
+  "poradi": 3,
+  "tema": "Skupiny bě/bje, vě/vje, mě/mně",
+  "kapitola": "pravopis",
+  "cil_pro_rodice": "Dítě samo napíše bje, vje jen na švu předpony ob-, v- a části na je-, jinak bě, vě, pě (i za předponami o-, roz-, za-), mně tam, kde je v příbuzném slově mn nebo men, mně a mě v tvarech slova já podle otázky, a to i v delším textu a v poslechu.",
+  "uvod_pro_rodice": "Opakování po červené: dítě znovu píše je na švu předpony ob-, mně podle příbuzného slova a mě × mně v tvarech slova já, tentokrát v jiných slovech.",
+  "uvod_pravidla": [
+    {
+      "znak": "bje, vje jen na švu: ob-, v- + je-",
+      "text": "co to je"
+    },
+    {
+      "znak": "mně, když je v příbuzném mn/men",
+      "text": "test"
+    },
+    {
+      "znak": "skromně (skromný) × kromě (krom)",
+      "text": "příklad"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "předpona": "část na začátku slova, kterou jde odtrhnout (ob-jem, v-jezd, o-běhnout, roz-běhnout)",
+    "šev": "místo, kde se dvě části slova potkají (ob|jem); v lekci ho ukazuje svislá čára",
+    "příbuzné slovo": "slovo ze stejné rodiny, podle kterého se rozhoduje (jemně ← jemný, kromě ← krom)",
+    "přídavné jméno": "slovo, které říká, jaký kdo nebo co je (jemný, zřejmý, skromný)",
+    "mě, mně": "tvary slova já: mně = komu? o kom? (pomoz mně, jako tobě), mě = koho? (počkej na mě, jako na tebe)",
+    "vjedno": "dohromady, v jedno (hlasy splynuly vjedno); je to v- + jedno, proto vje"
+  },
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "cas_min": 25,
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t10-l39nb-U1",
+      "typ": "rozcvicka",
+      "cil": "Rozcvička z lekce 37: najít hranici předpony i tam, kde je za ní ú nebo kde předpona roze-, pří-, po- vypadá jinak (roze|smát, pří|běh, po|věsit).",
+      "cas_min": 4,
+      "zadani": "Kde končí předpona? U každého slova vyber správné rozdělení.\n\nA) rozesmát\n\nB) protiústavní\n\nC) příběh\n\nD) pověsit",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "roz|esmát",
+                "spravne": false,
+                "typ_chyby": "stavba-hranice-zamena"
+              },
+              {
+                "id": "b",
+                "text": "roze|smát",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "rozes|mát",
+                "spravne": false,
+                "typ_chyby": "stavba-hranice-zamena"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "proti|ústavní",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "prot|iústavní",
+                "spravne": false,
+                "typ_chyby": "stavba-hranice-zamena"
+              },
+              {
+                "id": "c",
+                "text": "protiú|stavní",
+                "spravne": false,
+                "typ_chyby": "stavba-hranice-zamena"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "přib|ěh",
+                "spravne": false,
+                "typ_chyby": "stavba-hranice-zamena"
+              },
+              {
+                "id": "b",
+                "text": "příbě|h",
+                "spravne": false,
+                "typ_chyby": "stavba-hranice-zamena"
+              },
+              {
+                "id": "c",
+                "text": "pří|běh",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "pov|ěsit",
+                "spravne": false,
+                "typ_chyby": "stavba-hranice-zamena"
+              },
+              {
+                "id": "b",
+                "text": "po|věsit",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "p|ověsit",
+                "spravne": false,
+                "typ_chyby": "stavba-hranice-zamena"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička z lekce o stavbě slova: dítě hledá, kde končí předpona. Test: odtrhnout předponu a zkusit, jestli zbude slovo, které zná (smát, ústavní, běh, věsit). Proti učební lekci jsou v řadách C a D pasti: na švu je b nebo v, ale předpona není ob- ani v-. To se dnes bude hodit. Otázky jsou po příkladech.",
+        "reseni": "#### A) rozesmát\n\nroze|smát (roze- + smát, jako roze-stavět)\n\n#### B) protiústavní\n\nproti|ústavní (proti- + ústavní)\n\n#### C) příběh\n\npří|běh (pří- + běh)\n\n#### D) pověsit\n\npo|věsit (po- + věsit)\n\n**Výsledek:** A) roze|smát, B) proti|ústavní, C) pří|běh, D) po|věsit",
+        "otazky": [
+          {
+            "k": "A a B",
+            "text": "„Odtrhni předponu na začátku. Jaké slovo zbude? Znáš ho?“"
+          },
+          {
+            "k": "C",
+            "text": "„Které kratší slovo o pohybu je v tom slově schované? Kde začíná?“"
+          },
+          {
+            "k": "D",
+            "text": "„Co znamená pověsit? Které kratší sloveso v něm najdeš, když odtrhneš začátek?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč ve slově příběh zůstává bě.“",
+        "otocena_role_odpoved": "Když odtrhnu pří-, zbude běh, a to je slovo, které znám. Předpona ob- ani v- tam není, proto se píše bě.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Vybere roz|esmát nebo rozes|mát: „Co zbude, když odtrhneš předponu? Je to slovo?“ U protiústavní vybere jiné dělení: „Je tam slovo ústavní?“ Vybere přib|ěh nebo pov|ěsit: „Je ěh nebo ěsit slovo? Co zbude po pří-, po-?“ Jiné dělení: „Co je na začátku?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — předpony sedí i tam, kde se schovávaly. Pochvalte, že dítě zkoušelo, co zbude, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: rozzářit, obložit, oběhnout. U každého řekne předponu a co zbude. Kontrola pro vás: roz + zářit, ob + ložit, o + běhnout.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše příběh, pověsit, rozesmát a svislou čarou oddělí předponu. Pod každé slovo napíše, co zbylo. Potom zopakujte lekci „Skupiny bě/bje, vě/vje, mě/mně“. Kontrola pro vás: pří|běh (běh), po|věsit (věsit), roze|smát (smát)."
+      },
+      "tisk": {
+        "zadani": "U každého slova zakroužkuj správné rozdělení.\n\nA) a) roz|esmát b) roze|smát c) rozes|mát\n\nB) a) proti|ústavní b) prot|iústavní c) protiú|stavní\n\nC) a) přib|ěh b) příbě|h c) pří|běh\n\nD) a) pov|ěsit b) po|věsit c) p|ověsit"
+      }
+    },
+    {
+      "id": "cj-t10-l39nb-U2",
+      "typ": "nova",
+      "cil": "Napsat je na švu ob-, v- + je- (objemová, vjedno, objednané) a ě po b, v, p jinde, i za předponami vy-, u-, které jen připomínají ob-, v-.",
+      "cas_min": 5,
+      "zadani": "Doplň ě, nebo je. Nejdřív zkus slovo rozložit.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "ob_mová jednotka, vyv_trat pokoj, splynout v_dno, uv_domit si chybu, ob_dnané taxi, vyb_hnout ven, sp_chat domů",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "ě",
+                  "je"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "ě",
+                  "je"
+                ]
+              },
+              {
+                "i": 2,
+                "moznosti": [
+                  "ě",
+                  "je"
+                ]
+              },
+              {
+                "i": 3,
+                "moznosti": [
+                  "ě",
+                  "je"
+                ]
+              },
+              {
+                "i": 4,
+                "moznosti": [
+                  "ě",
+                  "je"
+                ]
+              },
+              {
+                "i": 5,
+                "moznosti": [
+                  "ě",
+                  "je"
+                ]
+              },
+              {
+                "i": 6,
+                "moznosti": [
+                  "ě",
+                  "je"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "je",
+            "ě",
+            "je",
+            "ě",
+            "je",
+            "ě",
+            "ě"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                "ě",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "skupina-e-za-je"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                "ě",
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "skupina-e-za-je"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                null,
+                "ě",
+                null,
+                null
+              ],
+              "typ_chyby": "skupina-e-za-je"
+            },
+            {
+              "hodnota": [
+                null,
+                "je",
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "skupina-je-za-e"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě doplňuje ě, nebo je. Je se píše tam, kde je předpona ob- nebo v- a za ní část na je-: ob-jem, v-jedno (v jedno, dohromady), ob-jednat. Proti učební lekci je mezer sedm a pasti jsou za předponou: vy-větrat, u-vědomit, vy-běhnout. Po p vždy jen ě.",
+        "reseni": "objemová (ob- + jem: je)\n\nvyvětrat (vy- + větrat: ě)\n\nvjedno (v- + jedno, dohromady: je)\n\nuvědomit (u- + vědomí: ě)\n\nobjednané (ob- + jednat: je)\n\nvyběhnout (vy- + běhnout: ě)\n\nspěchat (po p vždy ě)\n\n**Výsledek:** je, ě, je, ě, je, ě, ě",
+        "otazky": [
+          "„Kdy se píše je a kdy ě? Řekni mi to vlastními slovy.“",
+          "„Vyber si slovo, u kterého váháš. Jaká je na začátku předpona? Jak začíná zbytek slova?“",
+          "„Zkus odtrhnout ob- nebo v- a pak jen o-, u- nebo vy-. Kdy zbude část, která začíná na je?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč se objemová píše s je, ale uvědomit s ě.“",
+        "otocena_role_odpoved": "Objemová je předpona ob- a jem, takže se potká b a je. Uvědomit je u- a vědomí, předpona ob- ani v- tam není a vědomí se píše s ě.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Napíše oběmová, vědno nebo obědnané: „Je tam ob- nebo v-? Jak začíná zbytek?“ Napíše vyvjetrat, uvjedomit nebo vybjehnout: „Jaká je předpona? Začíná zbytek na je?“ (Ne: větrat, vědomí, běhnout.) U spěchat: po p se píše vždy ě."
+      },
+      "semafor": {
+        "zelena": "Výborně — ě i je sedí i u zrádných předpon. Pochvalte, že dítě hledalo předponu, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Napište dítěti: ob_m, zav_sit, ob_dnat. Dítě doplní ě, nebo je a řekne proč. Kontrola pro vás: objem (ob- + jem), zavěsit (za- + věsit), objednat (ob- + jednat).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše do jednoho sloupce ob, u, vy a do druhého jem, vědomit, běhnout. Spojí je do slov objem, uvědomit, vyběhnout a u každého zakroužkuje šev. Potom zopakujte lekci „Skupiny bě/bje, vě/vje, mě/mně“. Kontrola pro vás: objem (je: ob- + je-); uvědomit, vyběhnout (ě: předpona u-, vy-)."
+      },
+      "tisk": {
+        "zadani": "Doplň ě, nebo je.\n\nob_mová jednotka, vyv_trat pokoj, splynout v_dno, uv_domit si chybu, ob_dnané taxi, vyb_hnout ven, sp_chat domů"
+      }
+    },
+    {
+      "id": "cj-t10-l39nb-U3",
+      "typ": "nova",
+      "cil": "Poslechem (bez textu) napsat mně ve slově od umný a mě ve slově od strmý, kde obojí zní stejně; nejdřív najít přídavné jméno, ze kterého slovo je.",
+      "cas_min": 5,
+      "zadani": "Poslechni si nahrávku. Pak odpověz na tři otázky. Nahrávku si můžeš pustit, kolikrát chceš.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Otázka 1",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t10/l39nb-u3.mp3",
+            "prepis": "Táta umně vyřezal hůl. Strmě stoupající cestou jsme pak šli k rozhledně.",
+            "max_prehrani": 0,
+            "otazka": "Jak se píše slovo, které říká, jak táta vyřezal hůl?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "umě",
+                  "spravne": false,
+                  "typ_chyby": "skupina-me-za-mne"
+                },
+                {
+                  "id": "b",
+                  "text": "umně",
+                  "spravne": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Otázka 2",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t10/l39nb-u3.mp3",
+            "prepis": "Táta umně vyřezal hůl. Strmě stoupající cestou jsme pak šli k rozhledně.",
+            "max_prehrani": 0,
+            "otazka": "Od jakého přídavného jména je první slovo druhé věty?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "strmný",
+                  "spravne": false
+                },
+                {
+                  "id": "b",
+                  "text": "strmý",
+                  "spravne": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Otázka 3",
+          "vstup": {
+            "typ": "poslech",
+            "audio": "audio/cestina/t10/l39nb-u3.mp3",
+            "prepis": "Táta umně vyřezal hůl. Strmě stoupající cestou jsme pak šli k rozhledně.",
+            "max_prehrani": 0,
+            "otazka": "Jak se píše první slovo druhé věty?",
+            "vnoreny_vstup": {
+              "typ": "dlazdice",
+              "moznosti": [
+                {
+                  "id": "a",
+                  "text": "strmě",
+                  "spravne": true
+                },
+                {
+                  "id": "b",
+                  "text": "strmně",
+                  "spravne": false,
+                  "typ_chyby": "skupina-mne-za-me"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě věty jen slyší; co zazní, máte sbalené pod „Co zazní v nahrávce“, nahlas to nečtěte. Mě a mně znějí stejně. Proti učební lekci jsou slova dvě a každé se píše jinak: dítě najde přídavné jméno, ze kterého slovo je, a podle toho, jestli v něm je mn, píše mně, nebo mě.",
+        "reseni": "Otázka 1: umně (od umný, šikovný: mn, proto mně)\n\nOtázka 2: strmý (strmný slovo není)\n\nOtázka 3: strmě (od strmý, prudký: n tam není, proto mě)\n\n**Výsledek:** 1. umně, 2. strmý, 3. strmě",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Co táta udělal a kam jste pak šli? Řekni to vlastními slovy.“"
+          },
+          {
+            "k": "Otázka 1",
+            "text": "„Řekni: Táta je při vyřezávání… Jaké přídavné jméno tam patří? Je v něm mn?“"
+          },
+          {
+            "k": "Otázka 2 a 3",
+            "text": "„Řekni: Ta cesta je velmi… Jaké přídavné jméno tam doplníš, aby to znamenalo totéž? Najdeš v něm n?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, podle čeho se rozhodneš mezi mě a mně uprostřed slova.“",
+        "otocena_role_odpoved": "Najdu přídavné jméno, ze kterého slovo je. Umný má mn, tak píšu umně. Strmý žádné n nemá, tak píšu strmě.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V kroku 1 (Otázka 1) vybere umě: „Jaký byl táta při práci? Je v tom slově mn?“ V kroku 2 vybere strmný: „Řekni: Ta cesta je … Slyšíš tam n?“ V kroku 3 vybere strmně: „Je ve slově strmý n?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — dítě našlo přídavné jméno a podle něj se rozhodlo. Pochvalte to a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Řekněte dítěti: příjemně, soukromě, temně. U každého řekne přídavné jméno, ze kterého je, a jestli se píše mě, nebo mně. Kontrola pro vás: příjemně (příjemný: mně), soukromě (soukromý: mě), temně (temný: mně).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše do jednoho sloupce umný, příjemný, do druhého strmý, soukromý. Pod každé napíše slovo na -ě: umně, příjemně, strmě, soukromě. V prvním sloupci zakroužkuje mn. Potom zopakujte lekci „Skupiny bě/bje, vě/vje, mě/mně“. Kontrola pro vás: umně, příjemně (mně, je tam mn); strmě, soukromě (mě, n tam není)."
+      },
+      "tisk": {
+        "zadani": "Poslouchej nahrávku (pustí rodič). Můžeš si ji pustit, kolikrát chceš. Pak zakroužkuj odpovědi.\n\n1. Jak se píše slovo, které říká, jak táta vyřezal hůl? — a) umě b) umně\n\n2. Od jakého přídavného jména je první slovo druhé věty? — a) strmný b) strmý\n\n3. Jak se píše první slovo druhé věty? — a) strmě b) strmně"
+      }
+    },
+    {
+      "id": "cj-t10-l39nb-U4",
+      "typ": "detektiv",
+      "cil": "Najít u spolužáka chybu mně místo mě (průmněr od míra) mezi slovy objemové (je na švu), vyvětrali (vy- + větrat) a měření a říct proč.",
+      "cas_min": 5,
+      "zadani": "Petr napsal dvě věty a udělal v nich **jednu** chybu:\n\nEma zapsala do sešitu průmněr všech měření. Pak jsme umyli objemové sklo a vyvětrali.\n\nNajdi ji.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na slovo, které Petr napsal špatně.",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Ema zapsala do sešitu průmněr všech měření. Pak jsme umyli objemové sklo a vyvětrali.",
+            "cil": "slova",
+            "min": 1,
+            "max": 1
+          },
+          "spravne": [
+            4
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                0,
+                1,
+                2,
+                3,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13
+              ],
+              "typ_chyby": "detektiv-jine-slovo"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Proč je to slovo špatně?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "V příbuzném slově je mn, patří mně",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "b",
+                "text": "Na švu ob- a je- patří je",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "c",
+                "text": "V příbuzném slově n není, patří mě",
+                "spravne": true
+              },
+              {
+                "id": "d",
+                "text": "Bez předpony ob- patří bě",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák; hledat cizí chybu je snazší než přiznat vlastní. Proti učební lekci je chyba v mně a pasti jsou tři: objemové (ob- + jem: je), vyvětrali (vy- + větrat: ě) a měření (od měřit) má Petr dobře. Průměr je od míra, měřit, v nich žádné n není. V kroku 2 (Proč je to slovo špatně?) dítě vybere důvod; nabídka mluví o všech pastech.",
+        "reseni": "Chyba je průmněr: správně průměr (od míra, měřit: n tam není, proto mě).\n\nobjemové (ob- + jem: je, Petr to má správně)\n\nvyvětrali (vy- + větrat: ě, Petr to má správně)\n\nměření (od měřit: mě, Petr to má správně)\n\n**Výsledek:** krok 1 průmněr, krok 2 V příbuzném slově n není, patří mě",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Jak poznáš, jak se píše slovo, u kterého váháš? Řekni mi to vlastními slovy.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi slova jedno po druhém. U kterých musíš přemýšlet, jak se píšou? Ke každému najdi předponu nebo příbuzné slovo.“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„U každého takového slova zkontroluj, jestli to, jak ho Petr napsal, sedí s předponou nebo s příbuzným slovem.“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a jak si ji příště ohlídám.“",
+        "otocena_role_odpoved": "Průmněr je špatně, má být průměr. Je to od míra a měřit a tam žádné n není, tak se píše mě. Objemové a vyvětrali máš dobře.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na objemové: „Je tam předpona ob- a za ní je-?“ (Ano, Petr to má správně.) Klikne na vyvětrali nebo měření: „Odtrhni předponu. Je v příbuzném slově mn?“ (Správně.) V kroku 2 vybere jiný důvod: „Od jakého slova je to slovo? Je v něm mn?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — Petrovu chybu dítě našlo i mezi pastmi. Pochvalte, že hledalo příbuzné slovo, a jděte dál.",
+        "oranzova": "Zítra 5 minut, na papír. Napište dítěti: Klára se usmívala příjemě, kromě rána. Zeptejte se: „Kde je chyba? Proč?“ Kontrola pro vás: příjemě je špatně, správně příjemně (příjemný: mn); kromě je správně (krom, bez n).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše do dvou sloupců umný, skromný a měřit, zřejmý. Pod slova napíše umně, skromně, průměr, zřejmě. V prvním sloupci zakroužkuje mn. Potom zopakujte lekci „Skupiny bě/bje, vě/vje, mě/mně“. Kontrola pro vás: umně, skromně (mně); průměr, zřejmě (mě)."
+      },
+      "tisk": {
+        "zadani": "Petr napsal dvě věty a udělal v nich jednu chybu:\n\nEma zapsala do sešitu průmněr všech měření. Pak jsme umyli objemové sklo a vyvětrali.\n\nA) Podtrhni slovo, které Petr napsal špatně.\n\nB) Proč je to slovo špatně? Zakroužkuj: a) V příbuzném slově je mn, patří mně b) Na švu ob- a je- patří je c) V příbuzném slově n není, patří mě d) Bez předpony ob- patří bě"
+      }
+    },
+    {
+      "id": "cj-t10-l39nb-U5",
+      "typ": "kontrolni",
+      "cil": "Samostatně napsat v delším textu je × ě na švu (vjedno, objednaná × vyběhl, sběratel, uvědomil), mně × mě uvnitř slova podle přídavného jména nebo příbuzného slova a mě × mně v tvarech slova já.",
+      "cas_min": 6,
+      "zadani": "Doplň chybějící písmena: ě, je, nebo ně.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "doplnit_pismeno",
+            "text": "Na školním závodě Adam vyb_hl ze startu jako první. Trenér k němu přišel: „Ukaž m_ medaili!“ Moje dom_nka se potvrdila. Adam je velký sb_ratel medailí. Potlesk a hlasy fanoušků se slily v_dno. Rozhodčí prý nikoho vědom_ nezvýhodnil. Pak nás čekala ob_dnaná pizza. „Kdo m_ doprovodí k autu?“ zeptal se trenér. Adam si najednou uv_domil, že tam má tašku. Při hym_ jsme všichni stáli v pozoru.",
+            "mezery": [
+              {
+                "i": 0,
+                "moznosti": [
+                  "ě",
+                  "je"
+                ]
+              },
+              {
+                "i": 1,
+                "moznosti": [
+                  "ě",
+                  "ně"
+                ]
+              },
+              {
+                "i": 2,
+                "moznosti": [
+                  "ě",
+                  "ně"
+                ]
+              },
+              {
+                "i": 3,
+                "moznosti": [
+                  "ě",
+                  "je"
+                ]
+              },
+              {
+                "i": 4,
+                "moznosti": [
+                  "ě",
+                  "je"
+                ]
+              },
+              {
+                "i": 5,
+                "moznosti": [
+                  "ě",
+                  "ně"
+                ]
+              },
+              {
+                "i": 6,
+                "moznosti": [
+                  "ě",
+                  "je"
+                ]
+              },
+              {
+                "i": 7,
+                "moznosti": [
+                  "ě",
+                  "ně"
+                ]
+              },
+              {
+                "i": 8,
+                "moznosti": [
+                  "ě",
+                  "je"
+                ]
+              },
+              {
+                "i": 9,
+                "moznosti": [
+                  "ě",
+                  "ně"
+                ]
+              }
+            ]
+          },
+          "spravne": [
+            "ě",
+            "ně",
+            "ně",
+            "ě",
+            "je",
+            "ě",
+            "je",
+            "ě",
+            "ě",
+            "ně"
+          ],
+          "zname_chyby": [
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                null,
+                "ě",
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "skupina-e-za-je"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                "ě",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "skupina-me-za-mne"
+            },
+            {
+              "hodnota": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                "ně",
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "skupina-mne-za-me"
+            },
+            {
+              "hodnota": [
+                null,
+                "ě",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "typ_chyby": "me-mne-zamena"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Deset mezer místo osmi: je (vjedno, objednaná), ě za jinou předponou (vyběhl, sběratel, uvědomil), mně × mě uvnitř slova (domněnka, hymně × vědomě) a tvary slova já: mně (ukaž komu?), mě (doprovodí koho?). Past: vědomě má m jako domněnka, ale n v příbuzném slově nemá.",
+        "reseni": "vyběhl (vy- + běhnout: ě)\n\nmně (ukaž komu? mně, jako tobě)\n\ndomněnka (od domnívat se: mn, proto mně)\n\nsběratel (s- + běr, jako sbírat: ě)\n\nvjedno (v- + jedno, dohromady: je)\n\nvědomě (od vědomý, bez n: mě)\n\nobjednaná (ob- + jednat: je)\n\nmě (doprovodí koho? mě, jako tebe)\n\nuvědomil (u- + vědomí: ě)\n\nhymně (od hymna: mn, proto mně)\n\n**Výsledek:** ě, ně, ně, ě, je, ě, je, ě, ě, ně",
+        "otazky": [
+          "„Řekni mi vlastními slovy, jak se rozhodneš mezi ě a je a mezi mě a mně.“",
+          "„Vyber si mezeru, u které váháš. Je tam předpona? Je to slovo já? Nebo najdeš příbuzné slovo?“",
+          "„U slova já dosaď tobě, nebo tebe. U ostatních řekni přídavné jméno nebo příbuzné slovo a hledej v něm mn.“"
+        ],
+        "otocena_role": "„Vyber si z textu jedno slovo s mě a jedno s mně a dokaž mi, proč se píšou právě takhle.“",
+        "otocena_role_odpoved": "Vědomě je od vědomý, tam n není, proto mě. Hymně je od hymna a tam mn je, proto mně.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: Vědno, obědnaná: „Je tam ob- nebo v- a za ní je-?“ Vybjehl, sbjeratel, uvjedomil: „Jaká je předpona?“ Doměnka, hymě, vědomně: „Jaké je příbuzné slovo? Je v něm mn?“ Ukaž mě, doprovodí mně: „Dosaď tobě, nebo tebe.“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — ě, je, mě i mně sedí. Pochvalte, že dítě hledalo předponu a příbuzné slovo. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, na papír. Napište dítěti: Půjč m_ to. Vzbudil m_. Mluvil rozum_. Dítě doplní ě, nebo ně. Kontrola pro vás: půjč mně (tobě), vzbudil mě (tě), rozumně (rozumný: mn).",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše dvě věty: Ukaž mně. Doprovoď mě. Pod mně napíše tobě, pod mě napíše tebe. Pak napíše hymně a vědomě a vedle každého příbuzné slovo. Potom zopakujte lekci „Skupiny bě/bje, vě/vje, mě/mně“. Kontrola pro vás: ukaž mně (tobě), doprovoď mě (tebe); hymně (hymna, mně), vědomě (vědomý, mě)."
+      },
+      "tisk": {
+        "zadani": "Doplň ě, je, nebo ně.\n\nNa školním závodě Adam vyb_hl ze startu jako první. Trenér k němu přišel: „Ukaž m_ medaili!“ Moje dom_nka se potvrdila. Adam je velký sb_ratel medailí. Potlesk a hlasy fanoušků se slily v_dno. Rozhodčí prý nikoho vědom_ nezvýhodnil. Pak nás čekala ob_dnaná pizza. „Kdo m_ doprovodí k autu?“ zeptal se trenér. Adam si najednou uv_domil, že tam má tašku. Při hym_ jsme všichni stáli v pozoru."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "B-varianta naostro lekce cj-t10-l39n (opakování po červené, ZADANI-OSMA §9 bod 4), autor 14. 10. 2026, rozpis v oddílu „B-varianty naostro lekcí (l37nb–l40nb)“ souboru cestina/Obsah/TEMA-10-B.md. Struktura 1:1 s hlavní lekcí ověřena skriptem /tmp/b-cj10nb/kontrola.mjs: typy úloh, vstup.typ v každém kroku, počty kroků, dlaždic a mezer, nabídky v mezerách, správné odpovědi ve stejném pořadí, pozice správné dlaždice, kódy na stejných volbách a kódy a pořadí známých chyb; indexy tokenů počítány tokenizací vyhodnoceni-cj.js; vzorová odpověď každého kroku vyšla správně (vyhodnotKrok, vzorovaOdpoved) a každá chybná dlaždice i známá chyba vrací svůj kód. Každá mezera i dlaždice složena se všemi nabídkami a přečtena (žádná tři stejná písmena). Hodnocená slova a věty nejsou z cj-t10-l37 … l40, l37n … l40n, l37b … l40b ani z úloh tématu 10 v cj-t0-diag a cj-t0-pol (u testů ani stejný kořen se stejným jevem); kontrolováno skriptem. Otázky taháku neříkají odpověď a u detektiva nejmenují jev, který je ve větách jen u chybného slova. Slovní limity SABLONA §4 a FORMAT-CJ dodrženy. ÚJČ 14.–15. 10. 2026 přetížená (dotazy padaly po 75–300 s): všechna hodnocená slova jsou z cache nastroje/ujc.sh (hesla v zdroj) nebo z výčtů výkladových kapitol ÚJČ (id=110, 111, 125, 126, 127, 650). Slova s vje jsou vyčerpaná (testy vjezd, vjela; naostro vjem) a nepoužitá slova s bje podle id=126 jsou jen objemový a přejatá objekt, objektiv, objektivní (ÚJČ je výslovně řadí ke skupině bje); proto místo vjem stojí objektiv se stejným kódem skupina-e-za-je. Ověřeno: id=126 (je: objemový, objektiv, objektivní, objekt; ě: příběh, sběratel, uvědomit, uvědomění, napětí – po p vždy ě; mně: umně, domněnka, hymně; mě: strmě, vědomě, průměr od míra, měření), id=127 (protiústavní), id=650 (mně 3. p., mě 4. p.), hesla pod (SSJČ: poddůstojník), pověsit, objemový, vyvětrat, vyběhnout, spěchat, hymna (6. p. hymně). Dlaždice strmný v U3 k2 je chybná nabídka bez kódu (jako zřejmný v hlavní lekci). Korektor 14.–15. 10. 2026 (nezávisle): každá mezera složena se všemi nabídkami a přečtena, dlaždice hranic a kořenů složeny zpět do slova, indexy přepočítány tokenizerem aplikace, vzorové odpovědi a všechny známé chyby a chybné dlaždice ověřeny vyhodnotKrok/vzorovaOdpoved (/tmp/kor-kor-cj10nb/kontrola.mjs), slovní limity SABLONA §4 a FORMAT-CJ zkontrolovány, překryv hodnocených slov s cj-t10-l37…l40, n, b, testy a taháky (tahaky-cestina.js téma 10, tahaky-bonus.js) kontrolován skriptem. ÚJČ 15. 10.: heslo poddůstojník v IJP potvrzeno (pod-dů-s-toj-ník, 7. p. poddůstojníkem), další dotazy spadly na časový limit, nová slova proto jen z hesel v cache a z výčtů kapitol id=110, 125, 126, 127. Jazykové chyby 1: přejatá objektiv, objektivní, objekt (U2 ×2, U5 ×2) – šev ob-/je tu osmák nevidí (rozhodnutí vedoucího) → vjedno (id=126: v-jedno) a objednané, objednaná (id=126: objednat; jiný tvar než v L39, L40); objasnit, objímat, obejmout, objíždět skupinu bje nemají, použít nejdou. Opraveno: U1 poddůstojník (opakování) → roze|smát (heslo, ro-ze-smát), U5 nepřirozená věta „Vědomě jsme zatleskali“ → „Rozhodčí prý nikoho vědomě nezvýhodnil.“, slovníček (vjedno). Ponecháno: protiústavní, pověsit, umně (opakování v jiné lekci), vjedno a kořen objedn- dvakrát v lekci (jiná ověřená domácí slova s bje/vje mimo lekce, testy a tahák nejsou).",
+    "zkontroloval": "korektor",
+    "datum": "2026-10-14",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?id=126",
+      "https://prirucka.ujc.cas.cz/?id=127",
+      "https://prirucka.ujc.cas.cz/?id=650",
+      "https://prirucka.ujc.cas.cz/?slovo=pod",
+      "https://prirucka.ujc.cas.cz/?slovo=pov%C4%9Bsit",
+      "https://prirucka.ujc.cas.cz/?slovo=objemov%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=vyv%C4%9Btrat",
+      "https://prirucka.ujc.cas.cz/?slovo=vyb%C4%9Bhnout",
+      "https://prirucka.ujc.cas.cz/?slovo=sp%C4%9Bchat",
+      "https://prirucka.ujc.cas.cz/?slovo=hymna",
+      "https://prirucka.ujc.cas.cz/?slovo=rozesm%C3%A1t"
+    ],
+    "testovaci_rodic": null
+  }
+}
