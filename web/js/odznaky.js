@@ -49,7 +49,7 @@ export const ODZNAKY = Object.freeze([
   { id: 'rada30', pochvala: 'Třicet lekcí za sebou. Obdivuhodná vytrvalost!', nazev: 'Řada 30', popis: 'Třicet lekcí za sebou (pauza nejvýš týden).', barva: 'zelena', znak: (b) => CISLO(b, '30', 41, 22) + SIPKY(b) },
   { id: 'test', pochvala: 'Úvodní test hotový. Teď víme, kde začít!', nazev: 'Úvodní test', popis: 'Dokonči úvodní test v jednom předmětu.', barva: 'zlata',
     znak: (b) => `<path d="M26 54V18" stroke="${b.znak}" stroke-width="3.4" stroke-linecap="round"/><path d="M27 20h21l-5 7 5 7H27z" fill="${b.znak}"/>` },
-  { id: 'predmet', pochvala: 'Celý předmět hotový. Obrovský kus práce!', nazev: 'Celý předmět', popis: 'Dokonči všech 40 lekcí jednoho předmětu.', barva: 'zlata',
+  { id: 'predmet', pochvala: 'Celý předmět hotový. Obrovský kus práce!', nazev: 'Celý předmět', popis: 'Dokonči všechny lekce jednoho předmětu (i naostro).', barva: 'zlata',
     znak: (b) => `<path d="M25 20h22v8a11 11 0 0 1-22 0z" fill="${b.znak}"/><path d="M25 23h-5a5 5 0 0 0 5 8M47 23h5a5 5 0 0 1-5 8" fill="none" stroke="${b.znak}" stroke-width="2.6"/><path d="M36 39v7M28 52h16M31 46h10" stroke="${b.znak}" stroke-width="3.4" stroke-linecap="round"/>` },
 ]);
 
