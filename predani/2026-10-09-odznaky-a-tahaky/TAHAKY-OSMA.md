@@ -1,6 +1,6 @@
-# Taháky Spolu 8: co napsat (kostra je hotová, obsah chybí)
+# Taháky Spolu 8: obsah a pravidla
 
-Zapsal vývojář 15. 10. 2026 při převzetí R78 + R82 ze Spolu 9. Kód je hotový, chybí jen obsah taháků.
+Zapsal vývojář 15. 10. 2026 při převzetí R78 + R82 ze Spolu 9. **Stav 15. 10. večer:** obsah všech 27 taháků je napsaný a zrecenzovaný (matematika přepočet, čeština korektura ÚJČ, bez úniků z úloh lekcí a testů); test „3–6 bloků“ je zpřísněný.
 Obsah se píše **jen** do tří souborů a kód se při tom nemění:
 - `web/js/tahaky-matematika.js` (`TAHAKY_MATEMATIKA`, 10 taháků);
 - `web/js/tahaky-cestina.js` (`TAHAKY_CESTINA`, 10 taháků);
@@ -16,7 +16,8 @@ Zatím má jeden zástupný blok `{ nadpis: 'Připravujeme', text: '…' }`. Ten
 - **Zlatý tahák:** splněná měsíční výzva (počet lekcí v měsíci, oba předměty se sčítají). Od 1. 6. 2027 má všechny každý účet se sezónou.
 
 ## Pravidla formátu (kontroluje `testy/tahaky.test.js`)
-- **3–6 bloků** `{ nadpis, text, priklad? }`. Test „3–6 bloků“ je teď označený jako *todo*, protože kostra má 1 blok. Až bude obsah hotový, vedoucí odstraní `todo` u testu „obsah taháků: 3–6 bloků“ a v hlavním testu formátu změní spodní mez z 1 na 3.
+- **3–6 bloků** `{ nadpis, text, priklad? }`. Hlídá to `testy/tahaky.test.js`.
+- **Nový řádek** je `\n\n` (samotné `\n` se slije do mezery), seznam `- ` až za `\n\n`; text nezačínat „1. “ (vykreslí se jako číslovaný seznam).
 - **`text` a `priklad`** jsou markdown s KaTeXem (`$…$`, párové dolary). Zpětné lomítko v LaTeXu je v JS řetězci zdvojené: `'$\\frac{1}{4}$'`. Jednotky jako `$3\\ \\text{cm}^2$`, desetinná čárka `$1{,}5$`.
 - **Blok** = jedno pravidlo nebo postup a k němu vzorový příklad. Nejčastější chybu napiš do příkladu jako „Pozor: …“.
 - **Příklady musí být jiné než v úlohách lekcí** (tahák nesmí být klíčem k úlohám). Test strojově porovná každý výraz v `$…$` z `priklad` (aspoň 8 znaků bez mezer) s JSON lekcí tématu. Jiná čísla a jiná slova ale hlídá i autor.

@@ -165,7 +165,7 @@ Podklady: `predani/2026-10-09-odznaky-a-tahaky/README.md`. Všechno se počítá
 - **Datum na lokálu:** `tahaky.html?datum=2026-11-20` nebo `prehled.html?datum=…` podstrčí datum výzvy. Platí jen na localhost.
 - **Jak doplnit obsah taháků:** jen tři obsahové soubory, kód se nemění. Postup, pravidla formátu a seznam id s lekcemi jsou v `predani/2026-10-09-odznaky-a-tahaky/TAHAKY-OSMA.md`.
   - Kontrola: `npm test` (`testy/tahaky.test.js` hlídá formát, párové `$`, unikátní id, výzvu ke každému bonusu, tahák ke každému tématu a příklady, které nejsou z lekcí).
-  - Test „3–6 bloků“ je teď *todo*. Po doplnění obsahu ho vedoucí zpřísní.
+  - Obsah všech 27 taháků je hotový; test hlídá 3–6 bloků u každého.
 - **Testy:** `testy/odznaky.test.js` (R80, R81), `testy/tahaky.test.js`.
 
 ## 2. Jak spustit lokálně

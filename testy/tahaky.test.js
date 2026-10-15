@@ -206,8 +206,7 @@ test('obsah taháků drží formát (id, nazev, bloky, párové $, výzvy, bonus
     ids.add(t.id);
     assert.ok(typeof t.nazev === 'string' && t.nazev.trim(), `${t.id}: nazev`);
     assert.ok(typeof t.podnazev === 'string' && t.podnazev.trim(), `${t.id}: podnazev`);
-    // TODO(vedoucí): zástupný obsah „Připravujeme“ má 1 blok; po doplnění obsahu platí 3–6 bloků (test níže, teď todo)
-    assert.ok(Array.isArray(t.bloky) && t.bloky.length >= 1 && t.bloky.length <= 6, `${t.id}: 1–6 bloků (má ${t.bloky?.length})`);
+    assert.ok(Array.isArray(t.bloky) && t.bloky.length >= 3 && t.bloky.length <= 6, `${t.id}: 3–6 bloků (má ${t.bloky?.length})`);
     for (const b of t.bloky) {
       assert.ok(typeof b.nadpis === 'string' && b.nadpis.trim(), `${t.id}: blok bez nadpisu`);
       assert.ok(typeof b.text === 'string' && b.text.trim(), `${t.id} / ${b.nadpis}: text`);
@@ -258,7 +257,7 @@ test('příklady taháků nejsou opsané z úloh lekcí svého tématu (výraz v
   }
 });
 
-test('obsah taháků: 3–6 bloků (spec §4)', { todo: 'vedoucí zpřísní po doplnění obsahu taháků (teď zástupný blok „Připravujeme“)' }, () => {
+test('obsah taháků: 3–6 bloků (spec §4)', () => {
   for (const t of [...DATA.matematika, ...DATA.cestina]) {
     assert.ok(t.bloky.length >= 3 && t.bloky.length <= 6, `${t.id}: 3–6 bloků (má ${t.bloky.length})`);
   }
