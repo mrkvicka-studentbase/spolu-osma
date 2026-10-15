@@ -94,7 +94,7 @@ npm run seed -- --adresar obsah/cestina/lekce --otevrit-od <DATUM> --suchy-beh
 npm run seed -- --adresar obsah/cestina/lekce --otevrit-od <DATUM>
 ```
 - **Matematika:** „Hotovo: nahráno 162 lekcí“ (40 učebních + 40 naostro + 80 B-variant + úvodní a pololetní test).
-- **Čeština:** „Hotovo: nahráno 162 lekcí“ (stejné složení). Dokud nebude pololetní test češtiny ověřený (`STAV.md`), vyjde 161; test se pak dohraje stejným příkazem před lednem.
+- **Čeština:** „Hotovo: nahráno 162 lekcí“ (stejné složení).
 - Až nahrávky dáš do `web\audio\cestina\t1` … `t10`, stačí znovu nahrát web (krok B8), lekce se znovu seedovat nemusí.
 
 ### B8. Web na Endoru (10 min)

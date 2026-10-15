@@ -61,7 +61,7 @@
    - bez nahrávky ukáže poslech nebo diktát hlášku „Nahrávka se nenačetla“, ostatní úlohy fungují;
    - 4 nahrávky (témata 1–2) jsou hotové.
 2. **Nový Supabase projekt a hosting:** `SPUSTENI.md`, část B.
-3. **Pololetní test češtiny `cj-t0-pol` má `jistota: "stredni"`.** Kontrola novosti 15. 10. vyměnila slova, která se kryla s lekcemi, ale ÚJČ byla nedostupná. Zbývá v IJP ověřit: *klavírista, obcházet, usednout, obdivovat, vyžehlit, sirup, viklat, blikat, semafor, přicestovat, povalovat se, pobít, zfialovět, nejjižnější, nachomýtnout se* (seznam i v `cestina/Obsah/POLOLETNI-TEST.md` §7). Pak přepnout na `jista`. Do té doby ho seed nenahraje. Test je potřeba až v lednu, takže start 2. 11. to neblokuje.
+3. ~~Pololetní test češtiny~~ **hotovo 16. 10.:** nová slova testu jsou ověřená v IJP, `cj-t0-pol` má `jistota: "jista"`.
 4. **Rozhodnuto 15. 10. (Pavel):**
    - placená SOS konzultace (150 Kč) je z aplikace pryč, místo ní je stálý kontakt pro rodiče (hotovo);
    - datum otevření je **2. 11. 2026**, seed `--otevrit-od 2026-11-02`;
@@ -76,5 +76,5 @@
 - **Méně častá slova:** B-varianty češtiny T10 kvůli vyčerpané zásobě slov hodnotí i méně častá slova (*vjedno, protiústavní, zúročit*). Věty jsou upravené tak, aby šel význam odvodit.
 - **Mobil:** vstup `cislo` má `inputmode="decimal"`. Na iOS ta klávesnice nemá znaménko minus. Ověřit na iPhonu u lekcí se zápornými čísly (T06).
 - **Validátor a SABLONA:** validátor nehlídá max. 4 dlaždice (SABLONA §5.2) ani délku `znak` (36 znaků). Lekce limity dodržují, ověřily to audity.
-- **Taháky češtiny, slova neověřená v IJP** (ÚJČ byla 15. 10. nedostupná; běžné spisovné tvary bez známé dublety, korektor je ověřil v SSČ nebo podle vzoru): *uhašen, plazi, daň, zastánce, sluha, houslař, kořenný, nevyspalý, zubařka, palanda, kopytník, netopýří, výří, syslí, pylový, terárium, klisna, lněný, neúčast, neúčinný, sloučit, vzpřímit se, objevitel, objednací, ohromně, zahřmít, šeptem, celer, pepř, anténa, levně, svítat, jedenáctkrát, sedmnáctý, ostrov, knoflík, vikýř, promyšlený*. Až ÚJČ pojede: `bash nastroje/ujc.sh <slovo>`.
+- **Taháky češtiny:** všechna slova, která 15. 10. nešla ověřit, jsou 16. 10. v IJP nalezená. Dublety *kopytník* (vedlejší podoba ke *kopytnatec*), *zahřmít/zahřmět* a *šeptem/šeptmo* jsou jen v příkladech pravidel, ne v hodnocení.
 - **Hovorová slova** *kluk, máma, táta* jsou v celém produktu záměrně (přirozený jazyk dětí). Hodnocená jsou jen tam, kde nejde o jev.
