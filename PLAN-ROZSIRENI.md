@@ -4,14 +4,16 @@ Verze 1, 9. 10. 2026. Rozhodnutí Pavla: `ZADANI-OSMA.md` §9.
 
 ## 1. Kolik lekcí
 
-| Na předmět | Hotovo | Dodělat |
+| Na předmět | Hotovo 9. 10. | Hotovo 15. 10. |
 |---|---|---|
-| Učební lekce (L1–L4 v 10 tématech) | 40 | 0 |
+| Učební lekce (L1–L4 v 10 tématech) | 40 | 40 |
 | Naostro lekce (dvojče každé lekce, o kus těžší) | 0 | 40 |
 | B-varianty (po červené; ke každé z 80 lekcí) | 0 | 80 |
-| Úvodní test | 1 | 0 |
+| Úvodní test | 1 | 1 |
 | Pololetní test (leden) | 0 | 1 |
-| **Celkem** | **41** | **121** |
+| **Celkem** | **41** | **162** |
+
+**Stav 15. 10. 2026:** plán je splněný v obou předmětech (recenze/korektura, závěrečné audity, QA v prohlížeči). Nahrávek je 198 (4 hotové, 194 k natočení). Aktuální stav: `STAV.md`.
 
 Oba předměty: **240 nových lekcí + 2 pololetní testy**. Čeština navíc potřebuje nahrávky. Dnes je 49 nahrávek na 40 lekcí, takže na 120 nových lekcí to bude odhadem **~150 nahrávek**.
 
