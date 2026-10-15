@@ -6,7 +6,7 @@
 //   <header class="hlavicka"><div class="hlavicka__vnitrek"><a class="logo" href="prehled.html">…</a></div></header>
 // napojMenu() do ní přidá tlačítko „Menu" a <dialog class="modal"> s položkami:
 //   přepínač role zařízení (role.js) · Jak vést lekci + Jak číst zápisy nahlas (jen rodič)
-//   · Zpět na přehled · Vzhled (Světlý / Tmavý / Podle zařízení, R26) · Odhlásit se
+//   · Zpět na přehled · Moje taháky (R78) · Vzhled (Světlý / Tmavý / Podle zařízení, R26) · Odhlásit se
 // Přepínač motivu jen vykreslí tlačítka [data-motiv-nastav]; kliknutí a uložení (localStorage
 // `spolu.motiv`) obsluhuje inline skript motivu v <head> každé stránky (window.spoluMotiv).
 // Texty modalů: web/js/manual.js a web/js/cteni-zapisu.js (generuje nastroje/generuj-hlasky.mjs).
@@ -145,9 +145,10 @@ export function prepinacMotivu() {
  * @param {boolean} [volby.role=true]     ukázat přepínač role zařízení
  * @param {(role: 'rodic'|'zak') => void} [volby.poZmeneRole]  jen mimo lekce.html/rodic.html (tam role.js přepne stránku sama)
  * @param {boolean} [volby.prehled=true]  položka „Zpět na přehled" (na prehled.html false)
+ * @param {boolean} [volby.tahaky=true]  položka „Moje taháky" (R78; na tahaky.html false)
  * @returns {{otevrit: () => Promise<string>, dialog: HTMLDialogElement}}
  */
-export function napojMenu({ hlavicka, role = true, poZmeneRole, prehled = true } = {}) {
+export function napojMenu({ hlavicka, role = true, poZmeneRole, prehled = true, tahaky = true } = {}) {
   const cil = hlavicka || document.querySelector('.hlavicka__vnitrek');
   const slotRole = el('div');
   const btnManual = el('button', { class: 'tlacitko tlacitko--sekundarni', type: 'button' }, ikona('kniha'), 'Jak vést lekci');
@@ -163,6 +164,7 @@ export function napojMenu({ hlavicka, role = true, poZmeneRole, prehled = true }
         role ? slotRole : null,
         btnManual, btnCteni,
         prehled ? (odkazPrehled = el('a', { class: 'tlacitko tlacitko--sekundarni', href: adresaPrehledu() }, ikona('sipka-vlevo'), 'Zpět na přehled')) : null,
+        tahaky ? el('a', { class: 'tlacitko tlacitko--sekundarni', href: 'tahaky.html' }, ikona('kniha'), h('tahaky.nadpis')) : null, // R78
         el('p', { class: 'text-tlumeny', text: 'Vzhled:' }),
         prepinacMotivu(),
         btnOdhlasit)));

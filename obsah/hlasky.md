@@ -663,6 +663,62 @@ Skupina `cj`. Žákovi tykáme bez rodu, rodiči vykáme.
 | `osma.test_konec_zak` | žák, konec úvodního testu | Hotovo. Díky! Podle testu jsme ti seřadili lekce. Najdeš je na přehledu. |
 | `samo.kontrolni_ceka` | lekce žáka „Dnes samo“, kontrolní úloha před prvním odevzdáním | Tuhle úlohu zkus nejdřív bez nápovědy. Když napoprvé nevyjde, nápovědy se odemknou. |
 
+## Taháky a měsíční výzva (R78 + R82, převzato ze Spolu 9) — `tahaky.html`, `prehled.html`, `lekce.html`, `rodic.html`
+
+Taháky jsou pro dítě (tykáme), rodič je čte stejně. Výzva na přehledu má jinou větu po splnění pro rodiče. Spolu 8: jeden tahák na téma (odemkne se dokončením lekcí 1–4 tématu), výzvy listopad–květen, zlaté taháky všem od 1. 6.
+
+| klíč | kde | text |
+|---|---|---|
+| `tahaky.nadpis` | stránka taháků, nadpis; menu | Moje taháky |
+| `tahaky.uvod` | stránka taháků, pod nadpisem | Za každé téma dostaneš tahák: pravidla tématu a k nim vzorové příklady. Hodí se k opakování a můžeš si je vytisknout. |
+| `tahaky.radek` | přehled, řádek pod odznaky | Taháky: {x} z {n} |
+| `tahaky.radek_bonus` | přehled, řádek taháků, když má dítě zlaté taháky | zlaté: {x} |
+| `tahaky.zobrazit` | přehled, řádek taháků | Zobrazit |
+| `tahaky.zpet` | stránka taháků, odkaz nahoře | Zpět na přehled |
+| `tahaky.pocet` | stránka taháků, pod úvodem | Odemčeno {x} z {n} |
+| `tahaky.sekce_matematika` | stránka taháků, nadpis skupiny | Matematika |
+| `tahaky.sekce_cestina` | stránka taháků, nadpis skupiny | Čeština |
+| `tahaky.sekce_bonus` | stránka taháků, nadpis skupiny | Zlaté taháky za měsíční výzvy |
+| `tahaky.zamceno_tema` | zamčený tahák tématu | Odemkneš, až dokončíš lekce 1–4 tématu {tema}. |
+| `tahaky.zamceno_vyzva` | zamčený zlatý tahák, výzva teprve bude | Odměna za výzvu: {cil} {lekci} {mesic}. |
+| `tahaky.zamceno_vyzva_bezi` | zamčený zlatý tahák, výzva právě běží | Splň výzvu: {x} z {cil} lekcí {mesic}. |
+| `tahaky.zamceno_vyzva_skoncila` | zamčený zlatý tahák, výzva skončila nesplněná ({datum} = 1. 6.) | Výzva skončila. Tahák se ti odemkne {datum} |
+| `tahaky.zamceno_bez_sezony` | zamčený zlatý tahák u účtu bez sezóny (uzavřený účet; bez ceny) | Výzvy jsou součástí sezóny. |
+| `tahaky.otevrit` | karta nového taháku, dlaždice, výzva | Otevřít tahák |
+| `tahaky.tisk` | stránka taháků, tlačítko | Vytisknout odemčené |
+| `tahaky.tisk_nic` | stránka taháků, když není nic odemčeno | Až odemkneš první tahák, půjde vytisknout. |
+| `tahaky.priklad` | tahák, popisek vzorového příkladu | Příklad |
+| `tahaky.zadne` | stránka taháků, když obsah ještě není nahraný | Taháky připravujeme. Brzy tu budou. |
+| `tahaky.karta_novy` | karta nového taháku, nadpis okna | Nový tahák! |
+| `tahaky.karta_nove` | karty nových taháků, nadpis okna | Nové taháky: {n} |
+| `tahaky.karta_seber` | karta nového taháku, hlavní tlačítko | Seber tahák |
+| `tahaky.karta_seber_vice` | karty nových taháků, hlavní tlačítko | Seber taháky |
+| `tahaky.karta_druh` | karta nového taháku, druh | Tahák |
+| `tahaky.karta_druh_bonus` | karta nového zlatého taháku, druh | Zlatý tahák |
+| `tahaky.karta_oznameni` | čtečka obrazovky po otočení karty | Nový tahák |
+| `vyzva.karta` | přehled, karta výzvy | {nazev}: {x} z {cil} lekcí |
+| `vyzva.zbyva_1` | přehled, karta výzvy | zbývá 1 den |
+| `vyzva.zbyva_2_4` | přehled, karta výzvy | zbývají {n} dny |
+| `vyzva.zbyva_5` | přehled, karta výzvy | zbývá {n} dní |
+| `vyzva.odmena` | přehled, karta výzvy | odměna: zlatý tahák |
+| `vyzva.popis` | přehled, karta výzvy, pod ukazatelem | Počítají se lekce z matematiky i z češtiny dokončené {mesic}. Testy a lekce s jinými úlohami se nepočítají. |
+| `vyzva.splneno_zak` | přehled žáka, výzva splněna | Výzva splněna! Tahák „{nazev}“ je tvůj. |
+| `vyzva.splneno_rodic` | přehled rodiče, výzva splněna | Výzva splněna! Zlatý tahák „{nazev}“ je odemčený. |
+
+## Odznaky — okno a karta (R81, převzato ze Spolu 9) — `prehled.html`, `lekce.html`, `rodic.html`, `tahaky.html`
+
+Názvy, pochvaly a popisy odznaků jsou v `web/js/odznaky.js` (texty Spolu 8 beze změny). Tady jsou jen štítky dlaždic, nadpisy sekcí okna a razítko na kartě.
+
+| klíč | kde | text |
+|---|---|---|
+| `odznaky.ziskano` | okno odznaků, štítek získaného odznaku | Získáno |
+| `odznaky.zamceno` | okno odznaků, štítek zamčeného odznaku | Zamčeno |
+| `odznaky.razitko` | karta nového odznaku a taháku po otočení, ozdobné razítko | Získáno! |
+| `odznaky.sekce_lekce` | okno odznaků, nadpis sekce odznaků za lekce | Za lekce |
+| `odznaky.sekce_oba` | okno odznaků, nadpis sekce (R80, jen dítě s oběma předměty) | Za oba předměty |
+| `odznaky.sekce_vyzvy` | okno odznaků, nadpis sekce (R80) | Měsíční výzvy |
+| `odznaky.sekce_sbirka` | okno odznaků, nadpis sekce (R80) | Sbírka taháků |
+
 ## Názvy témat (Spolu 8)
 Název tématu na přehledu: „Téma 3 · Zlomky I“. Klíče `tema_mat.t1` … `tema_mat.t10` (matematika) a `tema_cj.t1` … `tema_cj.t10` (čeština) doplní metodici z osnov (`obsah/OSNOVA-MATEMATIKA.md`, `cestina/Obsah/OSNOVA.md`), pak `node nastroje/generuj-hlasky.mjs`. Dokud řádek chybí, aplikace název složí z kapitol lekcí tématu (`web/js/temata.js`).
 

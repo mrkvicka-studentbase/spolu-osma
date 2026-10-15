@@ -20,7 +20,8 @@ import {
   zacitSezeni, aktualniSezeni, stavSezeni, dokoncitSezeni, mojeDeti, neulozeneOdpovedi, lekceProDite,
 } from './supabase.js';
 import { spocitejOdznaky } from './odznaky.js';
-import { ukazNoveOdznaky } from './odznaky-ui.js';
+import { ukazNoveOdznaky, nactiVidene } from './odznaky-ui.js';
+import { odemceneTahakyDitete, ukazNoveTahaky } from './tahaky-ui.js';
 import { lzeSamo } from './samo.js';
 import { ziskejDite, nastavDite } from './role.js';
 import { napojMenu, otevritManual, manualPrecteny, nastavPredmet } from './menu.js';
@@ -384,8 +385,10 @@ async function prejdiNaProchazeni({ auto = false } = {}) {
 /** R62 (ODPOVED 30. 9., otázka 3): rodič uvidí nový odznak v souhrnu hned po ukončení lekce. */
 async function ukazOdznakyRodici() {
   try {
-    const { ziskane } = spocitejOdznaky(await lekceProDite(stranka.diteId));
+    const lekce = await lekceProDite(stranka.diteId);
+    const { ziskane } = spocitejOdznaky(lekce, { videne: nactiVidene(stranka.diteId) });
     await ukazNoveOdznaky(stranka.diteId, ziskane);
+    await ukazNoveTahaky(stranka.diteId, odemceneTahakyDitete(stranka.diteId, lekce)); // R78: po odznacích nově odemčené taháky
   } catch (e) {
     console.warn('odznaky v souhrnu:', e); // odznak není důležitější než souhrn — chyba se jen zaloguje
   }
