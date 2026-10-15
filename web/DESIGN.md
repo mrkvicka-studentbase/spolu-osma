@@ -233,7 +233,6 @@ Stavy: `--nezacato`, `--probiha`, `--hotovo`, `--zamceno`. Mřížka `.mrizka-ka
     <div class="karta-lekce__meta"><span><svg class="ikona" …hodiny/>20 min</span><span>4 úlohy</span></div>
     <div class="karta-lekce__akce">
       <button class="tlacitko tlacitko--primarni tlacitko--velke">Začít lekci</button>
-      <a class="tlacitko tlacitko--tiche" href="mailto:…"><svg class="ikona" …sos/>SOS</a>  <!-- jen rodič -->
     </div>
   </article>
   <!-- probíhá: stitek--navy „Probíhá · 2/4", tlačítko „Pokračovat" -->
@@ -444,7 +443,6 @@ Režim papír: sekce `.tahak__sekce` „Výsledek dítěte" se stejným vstupem 
     </li>
   </ol>
   <div class="semafor-vysledek semafor-vysledek--oranzova"> …„Na zítra" + doporučení… </div>
-  <!-- 2. červená v řadě: .hlaska--info s ikonou sos a tlačítkem mailto -->
 </div>
 ```
 
@@ -596,7 +594,6 @@ Na stránce jednou `<div class="toasty" aria-live="polite"></div>` (fixně nad s
 | otocit | `<path d="M4 8h15l-3.5-3.5M20 16H5l3.5 3.5"/>` |
 | oko | `<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>` |
 | dolu | `<path d="M6 9l6 6 6-6"/>` |
-| sos | `<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M5.6 5.6l3.6 3.6M14.8 14.8l3.6 3.6M18.4 5.6l-3.6 3.6M9.2 14.8l-3.6 3.6"/>` |
 | uzivatel | `<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>` |
 | menu | `<path d="M4 7h16M4 12h16M4 17h16"/>` |
 | kniha | `<path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M8 7h8"/>` |
@@ -674,7 +671,7 @@ Veřejné stránky (`index`, `registrace`, `nove-heslo`, `uzavreno`) mají logo 
 | `.prubeh__krok.je-hotovo` / `.je-aktualni` | hotové úseky zelené, aktuální delší se zeleným obrysem |
 | `.krok:not(.krok--hotovy)` | aktivní krok žáka: zelená linka vlevo, „KROK 1" zeleně |
 | `.karta-lekce--probiha` | zelená linka vlevo (dřív navy) |
-| `.karta-lekce__akce` | hlavní/sekundární tlačítko přes celou šířku, tichá tlačítka („Projít znovu", „SOS") vedle sebe |
+| `.karta-lekce__akce` | hlavní/sekundární tlačítko přes celou šířku, tichá tlačítka („Projít znovu") vedle sebe |
 | `.zadani ol` (i `.tisk-uloha__zadani ol`) | detektiv: Petrův výpočet jako „list" — čísla řádků vlevo, řádky oddělené, „=" pod sebou; slovo „řádek:" ztlumené |
 | `.souhrn__ulohy` | souhrn: úlohy jako řádky (znak · název · barva), hlavní úloha zvýrazněná pod nimi |
 | `.rozbalovaci--uvod` | **pro integrátora**: u 2.–4. úlohy obalit `.uvod-lekce` do `<details class="rozbalovaci rozbalovaci--uvod"><summary>…Než začnete…</summary><div class="rozbalovaci__obsah">…</div></details>` |

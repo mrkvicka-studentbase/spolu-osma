@@ -5,7 +5,7 @@
 // HTML stránky obsahuje jen hlavičku s logem (odkaz na prehled.html):
 //   <header class="hlavicka"><div class="hlavicka__vnitrek"><a class="logo" href="prehled.html">…</a></div></header>
 // napojMenu() do ní přidá tlačítko „Menu" a <dialog class="modal"> s položkami:
-//   přepínač role zařízení (role.js) · Jak vést lekci + Jak číst zápisy nahlas (jen rodič)
+//   přepínač role zařízení (role.js) · Jak vést lekci + Jak číst zápisy nahlas + Kontakt (mailto, kontakt.js; jen rodič)
 //   · Zpět na přehled · Moje taháky (R78) · Vzhled (Světlý / Tmavý / Podle zařízení, R26) · Odhlásit se
 // Přepínač motivu jen vykreslí tlačítka [data-motiv-nastav]; kliknutí a uložení (localStorage
 // `spolu.motiv`) obsluhuje inline skript motivu v <head> každé stránky (window.spoluMotiv).
@@ -22,6 +22,7 @@ import { nacistKnihovny, renderMarkdown, renderManual } from './obsah.js';
 import { MANUAL_NADPIS, MANUAL_MD } from './manual.js';
 import { MANUAL_CJ_NADPIS, MANUAL_CJ_MD } from './manual-cj.js';
 import { CTENI_NADPIS, CTENI_MD } from './cteni-zapisu.js';
+import { kontaktMailto } from './kontakt.js';
 
 const KLIC_MANUAL = 'spolu.manual-precteno';
 const KLIC_MANUAL_CJ = 'spolu.manual-precteno.cestina';
@@ -51,7 +52,7 @@ const modaly = new Map(); // id → dialog
 /**
  * Modal s Markdown textem; vytvoří se při prvním otevření. Když CDN knihovny nejdou načíst,
  * ukáže text bez formátování (lepší než nic).
- * @param {{id: string, nadpis: string, md: string, rozumim?: boolean, dalsi?: Element|null,
+ * @param {{id: string, nadpis: string, md: string, rozumim?: boolean, dalsi?: Element|Element[]|null,
  *   render?: (md: string) => Node, trida?: string}} volby  render: výchozí renderMarkdown (manuál: renderManual, H1)
  * @returns {Promise<string>}
  */
@@ -67,7 +68,7 @@ async function otevritTextovyModal({ id, nadpis, md, rozumim = false, dalsi = nu
       obsah.append(el('p', { text: md.replace(/\*\*|\$|==|^:::.*$/gm, '') }));
     }
     const akce = [];
-    if (dalsi) akce.push(dalsi);
+    if (dalsi) akce.push(...[dalsi].flat());
     if (rozumim) {
       akce.push(el('button', {
         class: 'tlacitko tlacitko--primarni', type: 'button', onClick: () => zavritModal(dialog, 'ok'),
@@ -91,15 +92,22 @@ export function otevritCteni() {
 }
 
 /**
- * Manuál rodiče (obsah/manual-rodice.md) s tlačítkem „Rozumím" a odkazem na slovníček.
+ * Manuál rodiče (obsah/manual-rodice.md) s tlačítkem „Rozumím", odkazem na slovníček a „Napsat nám" (blok Kontakt).
  * U češtiny (nastavPredmet) manuál cestina/Obsah/manual-rodice-cj.md bez slovníčku zápisů.
  * Zapamatuje si, že ho rodič viděl (localStorage) — viz manualPrecteny().
  */
+/** „Napsat nám" pod manuálem (blok Kontakt v manuálu na něj odkazuje); href se sestaví při kliknutí (jméno dítěte). */
+function tlacitkoKontakt() {
+  const a = el('a', { class: 'tlacitko tlacitko--sekundarni', href: kontaktMailto() }, ikona('mail'), h('kontakt.tlacitko'));
+  a.addEventListener('click', () => { a.href = kontaktMailto(); });
+  return a;
+}
+
 export function otevritManual() {
   if (jeCestina()) {
     try { localStorage.setItem(KLIC_MANUAL_CJ, '1'); } catch { /* nevadí */ }
     return otevritTextovyModal({
-      id: 'modalManualCj', nadpis: MANUAL_CJ_NADPIS, md: MANUAL_CJ_MD, rozumim: true, render: renderManual, trida: 'manual',
+      id: 'modalManualCj', nadpis: MANUAL_CJ_NADPIS, md: MANUAL_CJ_MD, rozumim: true, dalsi: tlacitkoKontakt(), render: renderManual, trida: 'manual',
     });
   }
   try { localStorage.setItem(KLIC_MANUAL, '1'); } catch { /* nevadí */ }
@@ -108,7 +116,7 @@ export function otevritManual() {
     onClick: () => { zavritModal(modaly.get('modalManual')); otevritCteni(); },
   }, ikona('bublina'), h('rodic.cteni_zapisu'));
   return otevritTextovyModal({
-    id: 'modalManual', nadpis: MANUAL_NADPIS, md: MANUAL_MD, rozumim: true, dalsi: odkazCteni, render: renderManual, trida: 'manual',
+    id: 'modalManual', nadpis: MANUAL_NADPIS, md: MANUAL_MD, rozumim: true, dalsi: [odkazCteni, tlacitkoKontakt()], render: renderManual, trida: 'manual',
   });
 }
 
@@ -153,6 +161,7 @@ export function napojMenu({ hlavicka, role = true, poZmeneRole, prehled = true, 
   const slotRole = el('div');
   const btnManual = el('button', { class: 'tlacitko tlacitko--sekundarni', type: 'button' }, ikona('kniha'), 'Jak vést lekci');
   const btnCteni = el('button', { class: 'tlacitko tlacitko--sekundarni', type: 'button' }, ikona('bublina'), h('rodic.cteni_zapisu'));
+  const odkazKontakt = el('a', { class: 'tlacitko tlacitko--sekundarni', href: kontaktMailto() }, ikona('mail'), h('kontakt.menu'));
   const btnOdhlasit = el('button', { class: 'tlacitko tlacitko--tiche', type: 'button' }, 'Odhlásit se');
 
   const dialog = el('dialog', { class: 'modal', 'aria-labelledby': 'modalMenuNadpis' },
@@ -162,7 +171,7 @@ export function napojMenu({ hlavicka, role = true, poZmeneRole, prehled = true, 
       el('div', { class: 'zasobnik' },
         role ? el('p', { class: 'text-tlumeny', text: 'Toto zařízení používá:' }) : null,
         role ? slotRole : null,
-        btnManual, btnCteni,
+        btnManual, btnCteni, odkazKontakt,
         prehled ? (odkazPrehled = el('a', { class: 'tlacitko tlacitko--sekundarni', href: adresaPrehledu() }, ikona('sipka-vlevo'), 'Zpět na přehled')) : null,
         tahaky ? el('a', { class: 'tlacitko tlacitko--sekundarni', href: 'tahaky.html' }, ikona('kniha'), h('tahaky.nadpis')) : null, // R78
         el('p', { class: 'text-tlumeny', text: 'Vzhled:' }),
@@ -179,6 +188,8 @@ export function napojMenu({ hlavicka, role = true, poZmeneRole, prehled = true, 
     const jeRodic = ziskejRoli() === 'rodic';
     btnManual.hidden = !jeRodic;
     btnCteni.hidden = !jeRodic || jeCestina(); // zápisy matematiky u češtiny nedávají smysl
+    odkazKontakt.hidden = !jeRodic; // kontakt (dotaz, lekce s lektorem) je pro rodiče
+    odkazKontakt.href = kontaktMailto(); // jméno dítěte mohla stránka nastavit až po napojení menu
     window.spoluMotiv?.pouzij?.(); // aria-pressed přepínače motivu podle aktuální volby
     return otevritModal(dialog);
   };

@@ -99,7 +99,7 @@ describe('typ lekce, kapitola, písmena', () => {
     assert.equal(typVKatalogu({ kapitola: 'mix', tema: 'Rozbor simulace 1' }), null);
     assert.equal(typVKatalogu({ kapitola: 'zlomky', tema: 'Blok' }), null);
   });
-  test('kapitolaLekce: mix/simulace → kapitola hlavní úlohy (SOS, statistiky)', () => {
+  test('kapitolaLekce: mix/simulace → kapitola hlavní úlohy (statistiky)', () => {
     assert.equal(kapitolaLekce(BLOK), 'geometrie'); // U4 semafor
     assert.equal(kapitolaLekce({ kapitola: 'zlomky', ulohy: [] }), 'zlomky');
     assert.equal(kapitolaLekce(L2), 'slovni-ulohy'); // simulace: poslední úloha (16)

@@ -193,7 +193,7 @@ Barvu určí aplikace z volby rodiče a výsledku (matice v `kostra/02`). Text �
   - Zítra: věc z reálného světa, kterou dítě může vzít do ruky nebo nakreslit (peníze a nákup, kostky/lego, bonbony, pizza, schody, pravítko). Dítě manipuluje a počítá, rodič se ptá.
   - Most zpět k matematice: „Pak ať to samo zapíše: $…$“.
   - Konec vždy: „Potom zopakujte lekci ‚<tema>‘.“ s **názvem tématu lekce** v uvozovkách, ne s id (rozhodnutí vedoucího 25. 9.): v JSON přesně `Potom zopakujte lekci „Mocniny a odmocniny zpaměti“.` (text = pole `tema`). Id typu F1-T01-L2 rodiči nic neřekne. Výjimka: pilot P1–P4 nechává „Potom zopakujte lekci P1.“ (tam rodič id vidí). R21: po červené je zítřek místo nové lekce, cvičení + znovu celá lekce; manuál rodiče to říká stejně.
-  - Nikdy „dítě to neumí“, „je potřeba doučování“. Nabídku SOS dělá aplikace sama při opakované červené.
+  - Nikdy „dítě to neumí“, „je potřeba doučování“.
 
 ## 10. `tisk.zadani`
 - Hlavní výraz úlohy na vlastním řádku `$$…$$`, stejně jako v `zadani` (R23).
@@ -406,7 +406,7 @@ Jádro je v `obsah/osnova-faze2.md` §3.5 a §4 (schéma podle nich rozšiřuje 
 | `typ` | lekce | `bezna` (výchozí, když chybí) \| `blok` \| `simulace` | bloky na čas, simulace |
 | `kapitola` | lekce | i pseudo-kapitoly `mix` (bloky, rozbory, poslední rozcvička), `simulace` | vždy |
 | `pozice` | úloha | 1–16 (číslo úlohy v rozložení testu 2026) | bloky, simulace, lekce „pozice v testu“ |
-| `kapitola` | úloha | kód kapitoly úlohy (SOS a statistiky ji berou místo `mix` / `simulace`) | bloky, simulace, rozbory |
+| `kapitola` | úloha | kód kapitoly úlohy (statistiky ji berou místo `mix` / `simulace`) | bloky, simulace, rozbory |
 | `body` | krok | celé číslo; součet v úloze = body úlohy v testovém sešitu | jen simulace |
 | `postup` | krok | `true` = úloha „uveďte celý postup“ | 2.3, 3.3, 4.1, 4.2 a lekce o archu |
 | `pismena` | `vstup` dlaždice | `"A-E"` (5 možností), `"AN"` (2), `"A-F"` (6) | simulace, T5-L2, U3 bloků |

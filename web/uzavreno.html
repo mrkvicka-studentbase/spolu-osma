@@ -59,13 +59,13 @@
     </div>
   </div></footer>
 <script type="module">
-  import { SOS_EMAIL } from './js/config.js';
+  import { KONTAKT_EMAIL } from './js/kontakt.js'; // KONTAKT_EMAIL, záloha starý SOS_EMAIL
 
   // E-mail z konfigurace (statický text výše je záloha bez JS)
   for (const a of [document.getElementById('kontakt-email'), document.getElementById('kontakt-tlacitko')]) {
-    a.href = `mailto:${SOS_EMAIL}?subject=${encodeURIComponent('Pokračování v doučování')}`;
+    a.href = `mailto:${KONTAKT_EMAIL}?subject=${encodeURIComponent('Pokračování v doučování')}`;
   }
-  document.getElementById('kontakt-email').textContent = SOS_EMAIL;
+  document.getElementById('kontakt-email').textContent = KONTAKT_EMAIL;
 
   // Odhlásit — jen když je někdo přihlášený
   try {

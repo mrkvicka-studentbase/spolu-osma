@@ -7,13 +7,14 @@
 // témata nahoru, silná na konec; bez testu pořadí osnovy. Celý rok (ZADANI-OSMA §9): kalendář dítěte otevírá
 // 3 lekce týdně od prvního sezení; B-varianta (jiné úlohy) se nabídne jen po červené; pololetní test od 11. týdne.
 // Bez přijímaček, pilotu, fází, platby, dotazníku, simulací a bloků; časová osa sezóny (R63) je pryč, odznaky (R62) zůstaly.
-// Rodič navíc: manuál „Jak vést lekci“, SOS u kapitoly (mailto), výsledek úvodního testu, souhrn hotové lekce (R19).
+// Rodič navíc: manuál „Jak vést lekci“ s řádkem kontaktu (mailto, kontakt.js), výsledek úvodního testu, souhrn hotové lekce (R19).
+// Placená SOS konzultace u kapitoly je pryč (Pavel 15. 10. 2026).
 // Výsledek testu se bere ze souhrnu sezení diagnostiky; když chybí, dopočítá se z odpovědí v DB (bez nové tabulky).
 // =====================================================================
 
 import { el, ikona, chranStranku, nacitani, chybaStranky, otevritModal, zavritModal, formatDatum } from './ui.js';
 import { h } from './hlasky.js';
-import { nazevKapitoly, nactiLekciObsah } from './obsah.js';
+import { nactiLekciObsah } from './obsah.js';
 import { mojeDeti, lekceProDite, stavSezeni } from './supabase.js';
 import { ziskejRoli, ziskejDite, nastavDite, stranaLekce, vykresliVolbuRole } from './role.js';
 import { napojMenu, otevritManual, nastavPredmet } from './menu.js';
@@ -30,7 +31,7 @@ import {
   bVariantaPoCervene, dalsiLekceRoku,
 } from './plan-roku.js';
 import { nazevTematu, pocetUlohLekce, casLekce, zeZ } from './temata.js';
-import * as KONFIG from './config.js';
+import { kontaktMailto, nastavKontakt } from './kontakt.js';
 import { spocitejOdznaky, svgOdznaku } from './odznaky.js';
 import { radekOdznaku, ukazNoveOdznaky, nactiVidene } from './odznaky-ui.js';
 import { dveSamoZaSebou } from './samo.js';
@@ -104,25 +105,6 @@ async function vysledekTestu(diag, katalogPredmetu) {
 // ---------------------------------------------------------------------
 // Karty lekcí
 // ---------------------------------------------------------------------
-
-function sosOdkaz(l) {
-  const kapitola = nazevKapitoly(l.kapitola);
-  const predmet = h('sos.mailto_predmet', { kapitola_nazev: kapitola, jmeno_ditete: stav.dite.krestni_jmeno });
-  const telo = h('sos.mailto_telo', {
-    kapitola_nazev: kapitola, jmeno_ditete: stav.dite.krestni_jmeno, lekce_tema: l.tema, lekce_id: l.id,
-    jmeno_rodice: stav.rodina?.jmeno_rodice || '',
-  });
-  return `mailto:${KONFIG.SOS_EMAIL || ''}?subject=${encodeURIComponent(predmet)}&body=${encodeURIComponent(telo.replace(/\n/g, '\r\n'))}`;
-}
-
-function tlacitkoSos(l) {
-  const href = sosOdkaz(l);
-  return el('a', {
-    class: 'tlacitko tlacitko--tiche', href,
-    'aria-label': `SOS: ${nazevKapitoly(l.kapitola)}`,
-    onClick: (e) => { e.preventDefault(); otevritSos(l, href); },
-  }, ikona('sos'), 'SOS');
-}
 
 function vysledekLekce(barva) {
   const b = BARVY[barva];
@@ -209,7 +191,7 @@ function kartaLekce(l, pokrok, { doporucena = false } = {}) {
     doporucena ? el('p', { class: 'karta-lekce__popis text-tlumeny', text: textPoradi(l) }) : null,
     doporucena && l.bPo ? el('p', { class: 'karta-lekce__popis', text: h('osma.b_popis') }) : null,
     tema, meta, vysledek,
-    el('div', { class: 'karta-lekce__akce' }, akce, rodic ? tlacitkoSos(l) : null));
+    el('div', { class: 'karta-lekce__akce' }, akce));
 }
 
 /**
@@ -260,7 +242,7 @@ function kartaTestu(l, pokrok, vysledek) {
 }
 
 // ---------------------------------------------------------------------
-// Modaly: režim, SOS
+// Modal režimu
 // ---------------------------------------------------------------------
 
 function otevritRezim(l) {
@@ -294,16 +276,17 @@ function napojRezim() {
   });
 }
 
-function otevritSos(l, href) {
-  $('sosText').textContent = h('sos.text');
-  $('sosKapitola').textContent = `Kapitola: ${nazevKapitoly(l.kapitola)} · ${stav.dite.krestni_jmeno}`;
-  $('sosOdkaz').href = href;
-  otevritModal($('modalSos'));
-}
-
 // ---------------------------------------------------------------------
 // Vykreslení přehledu
 // ---------------------------------------------------------------------
+
+/** Nenápadný řádek pod manuálem: dotaz nebo téma s lektorem → e-mail (kontakt.js, hlášky kontakt.*). */
+function radekKontaktu() {
+  nastavKontakt({ jmenoDitete: stav.dite.krestni_jmeno, jmenoRodice: stav.rodina?.jmeno_rodice });
+  return el('p', { class: 'text-tlumeny text-maly' },
+    `${h('kontakt.prehled_text')} `,
+    el('a', { href: kontaktMailto() }, h('kontakt.prehled_odkaz')));
+}
 
 function hlavickaPrehledu() {
   const prepinacDeti = stav.deti.length > 1
@@ -457,6 +440,7 @@ async function vykresli() {
     if (rodic) {
       casti.push(el('div', { class: 'radek' },
         el('button', { class: 'tlacitko tlacitko--sekundarni', type: 'button', onClick: otevritManual }, ikona('kniha'), 'Jak vést lekci')));
+      casti.push(radekKontaktu()); // stálý kontakt místo SOS (Pavel 15. 10. 2026)
     }
 
     if (!lekce.length && !diag) {

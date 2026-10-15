@@ -62,3 +62,7 @@ Nejvýš jedna lekce denně.
 - Oranžová: nejdřív 5minutové cvičení z doporučení, pak nová lekce.
 - Červená: dnes skončete a pochvalte snahu. ==Zítra místo nové lekce:== cvičení z doporučení, pak znovu stejná lekce.
 :::
+
+::: blok barva=zelena ikona=mail
+**Kontakt.** Když něco nejde nebo byste chtěli domluvit lekci s lektorem StudentBase, ==napište nám==. Tlačítko „Napsat nám“ je pod tímto návodem a v menu pod „Kontakt“.
+:::

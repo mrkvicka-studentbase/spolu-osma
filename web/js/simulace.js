@@ -51,7 +51,7 @@ export function typVKatalogu(l) {
 }
 
 /**
- * Kapitola, podle které se lekce počítá v SOS a statistikách: u pseudo-kapitol `mix` / `simulace`
+ * Kapitola, podle které se lekce počítá ve statistikách: u pseudo-kapitol `mix` / `simulace`
  * kapitola hlavní úlohy (typ `semafor`, jinak poslední), jinak kapitola lekce (osnova §3.5).
  * @param {{kapitola?: string, ulohy?: Array<{typ?: string, kapitola?: string}>}} lekce
  * @returns {string|null}

@@ -1,8 +1,7 @@
 // =====================================================================
 // predmet.js — dva předměty ve stejném webu: Matematika a Čeština (ZADANI-CESTINA §8.2, R65)
 //
-// - Předmět lekce: `l.predmet ?? 'matematika'`. Kde lekci nemáme (historie sezení), rozhodne id: čeština má vždy
-//   prefix `cj-` (constraint lekce_predmet_id_check v supabase/migrations/0001_schema.sql).
+// - Předmět lekce: `l.predmet ?? 'matematika'`.
 // - Předměty dítěte: `dite.predmety`, Spolu 8 výchozí oba (deti.predmety default {matematika,cestina}).
 // - Volba předmětu v přehledu: zdroj pravdy je URL `?predmet=`, localStorage `spolu.predmet` je jen pohodlí
 //   (návrat na prehled.html bez parametru). Storage vždy v try/catch.
@@ -18,15 +17,6 @@ export const NAZVY_PREDMETU = Object.freeze({ matematika: 'Matematika', cestina:
 const KLIC_PREDMET = 'spolu.predmet';
 
 const jePredmet = (p) => PREDMETY.includes(p);
-
-/**
- * Předmět podle id lekce (čeština = `cj-…`). Pro řádky, kde katalog/lekce není k dispozici.
- * @param {string|null|undefined} id
- * @returns {'matematika'|'cestina'}
- */
-export function predmetZId(id) {
-  return /^cj-/.test(String(id || '')) ? 'cestina' : 'matematika';
-}
 
 /**
  * Předmět lekce (položka katalogu nebo celá lekce). Bez pole `predmet` = matematika.

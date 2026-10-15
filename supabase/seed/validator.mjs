@@ -663,7 +663,7 @@ export function domenoveKontroly(l, nazevSouboru, slovnik = null, { audioMd = nu
 
   if (l.faze === 'faze2' && Number.isInteger(l.tyden) && l.tyden > 13) chyba(`faze2 má týdny 1–13, tyden je ${l.tyden}`);
   if ((l.kapitola === 'mix' || jeSimulace) && ulohy.some((u) => jeObjekt(u) && !u.kapitola)) {
-    chyba(`lekce s kapitolou "${l.kapitola}": každá úloha musí mít vlastní kapitolu (SOS a statistiky)`);
+    chyba(`lekce s kapitolou "${l.kapitola}": každá úloha musí mít vlastní kapitolu (statistiky)`);
   }
   if (jeSimulace) kontrolaSimulaceLekce(l, chyba);
 

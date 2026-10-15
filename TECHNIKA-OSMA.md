@@ -57,7 +57,8 @@ Repo je kopie aplikace Spolu (matematika na přijímačky + čeština základy).
   - záložky Matematika | Čeština (výchozí obě);
   - karta „Úvodní test (25 min)“, pod ní „Doporučeno teď“;
   - 10 sekcí „Téma n · Název“ po 4 lekcích (4. lekce = „kontrola tématu“);
-  - štítek tématu podle testu (Procvičit / Zopakovat / Jde to), odznaky (R62) a SOS.
+  - štítek tématu podle testu (Procvičit / Zopakovat / Jde to) a odznaky (R62);
+  - u rodiče pod „Jak vést lekci“ řádek kontaktu (mailto, `web/js/kontakt.js`).
   - Počet úloh a minut na kartě je z dat (`pocet_uloh`, `cas_min`).
   - Bez fází, pilotu, platby, dotazníku, simulací a bloků (kód pro ně zůstal, nevolá se).
   - Časová osa do přijímaček (R63, `osa-sezony.js`) je smazaná.
@@ -201,6 +202,6 @@ node nastroje/qa-osma.mjs                  # až budou lekce v obsah/ (všechny 
 3. **Nahrávky:** `cestina/Obsah/AUDIO.md` má řádky pro všechny nahrávky Spolu 8 (4. 10.). Natočené jsou jen 4 nahrávky témat 1–2; 45 nahrávek témat 3–10 čeká na Pavla (`cestina/Obsah/nahravky-k-nataceni.md` / `.csv` (generuje `node nastroje/seznam-nahravek.mjs`, postup pro agenta `cestina/Obsah/NAHRAVKY-NAVOD.md`)). Lekce bez souboru ukáže dítěti `cj.audio_chyba`.
 4. **Stupně a minuty (T07-L1):** `cislo.jednotka` zobrazí i `°` a `′` (jednotka je prostý text za polem). Dva kroky ale nejsou v jednom řádku, každý krok je samostatný blok pod sebou.
 5. **Datum otevření a `verejna`** rozhodne Pavel (`--otevrit-od`, `--verejna`). Nový Supabase projekt zatím neexistuje. Migrace jsou ověřené jen lokálně (PostgreSQL 16 + stuby `auth`).
-6. **SOS** nabízí placenou konzultaci (150 Kč) jako ve Spolu, jen u rodiče. Jestli zůstane, rozhodne Pavel.
+6. ~~SOS konzultace~~ odstraněna 15. 10. (rozhodnutí Pavla): žádná placená nabídka po 2. červené v řadě ani u kapitoly. Místo ní stálý kontakt pro rodiče bez ceny: položka „Kontakt“ v menu, řádek na přehledu a blok „Kontakt“ s tlačítkem „Napsat nám“ v obou manuálech (`web/js/kontakt.js`, hlášky `kontakt.*`). E-mail je `KONTAKT_EMAIL` v `config.js`, starý klíč `SOS_EMAIL` funguje dál jako záloha.
 7. Kód Spolu pro simulace, bloky, papírový režim diagnostiky a výsledek diagnostiky Fáze 1 zůstal (nevolá se pro fázi `osma`). Smazat ho jde později jedním krokem.
 8. Úvodní stránka (`web/index.html`) je statická bez JS jako ve Spolu, takže její texty nejsou v `hlasky.md`.
