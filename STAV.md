@@ -61,7 +61,7 @@
    - bez nahrávky ukáže poslech nebo diktát hlášku „Nahrávka se nenačetla“, ostatní úlohy fungují;
    - 4 nahrávky (témata 1–2) jsou hotové.
 2. **Nový Supabase projekt a hosting:** `SPUSTENI.md`, část B.
-3. ~~Pololetní test češtiny~~ **hotovo 16. 10.:** nová slova testu jsou ověřená v IJP, `cj-t0-pol` má `jistota: "jista"`.
+3. ~~Pololetní test češtiny~~ **hotovo 15. 10. ráno:** nová slova testu jsou ověřená v IJP, `cj-t0-pol` má `jistota: "jista"`.
 4. **Rozhodnuto 15. 10. (Pavel):**
    - placená SOS konzultace (150 Kč) je z aplikace pryč, místo ní je stálý kontakt pro rodiče (hotovo);
    - datum otevření je **2. 11. 2026**, seed `--otevrit-od 2026-11-02`;
@@ -76,5 +76,5 @@
 - **Méně častá slova:** B-varianty češtiny T10 kvůli vyčerpané zásobě slov hodnotí i méně častá slova (*vjedno, protiústavní, zúročit*). Věty jsou upravené tak, aby šel význam odvodit.
 - **Mobil:** vstup `cislo` má `inputmode="decimal"`. Na iOS ta klávesnice nemá znaménko minus. Ověřit na iPhonu u lekcí se zápornými čísly (T06).
 - **Validátor a SABLONA:** validátor nehlídá max. 4 dlaždice (SABLONA §5.2) ani délku `znak` (36 znaků). Lekce limity dodržují, ověřily to audity.
-- **Taháky češtiny:** všechna slova, která 15. 10. nešla ověřit, jsou 16. 10. v IJP nalezená. Dublety *kopytník* (vedlejší podoba ke *kopytnatec*), *zahřmít/zahřmět* a *šeptem/šeptmo* jsou jen v příkladech pravidel, ne v hodnocení.
+- **Taháky češtiny:** všechna slova, která 15. 10. nešla ověřit, jsou 15. 10. ráno v IJP nalezená. Dublety *kopytník* (vedlejší podoba ke *kopytnatec*), *zahřmít/zahřmět* a *šeptem/šeptmo* jsou jen v příkladech pravidel, ne v hodnocení.
 - **Hovorová slova** *kluk, máma, táta* jsou v celém produktu záměrně (přirozený jazyk dětí). Hodnocená jsou jen tam, kde nejde o jev.

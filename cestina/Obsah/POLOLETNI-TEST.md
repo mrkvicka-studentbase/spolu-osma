@@ -1,6 +1,6 @@
 # Pololetní test z češtiny `cj-t0-pol` — rozpis
 
-Verze 1.3, 16. 10. 2026. Autor: metodik a autor úloh ČJ Spolu 8; jazyková korektura 14. 10. 2026 (§8); závěrečná kontrola novosti proti hotovým lekcím 15. 10. 2026 (§4, §7). Zadání: `ZADANI-OSMA.md` §9 bod 6 (pololetní test v lednu, formát jako úvodní test, přeskládá zbytek roku).
+Verze 1.3, 15. 10. 2026. Autor: metodik a autor úloh ČJ Spolu 8; jazyková korektura 14. 10. 2026 (§8); závěrečná kontrola novosti proti hotovým lekcím 15. 10. 2026 (§4, §7). Zadání: `ZADANI-OSMA.md` §9 bod 6 (pololetní test v lednu, formát jako úvodní test, přeskládá zbytek roku).
 **Soubor:** `obsah/cestina/lekce/cj-t0-pol.json`. **Vzor:** úvodní test `cj-t0-diag` a jeho rozpis v `OSNOVA.md` §15.
 
 ## 1. Formát (stejný jako úvodní test)
@@ -114,7 +114,7 @@ Test nemá poslech ani diktát — žádné řádky do `AUDIO.md`.
 - `node supabase/seed/seed-lekce.mjs --jen-validace --adresar obsah/cestina/lekce --lekce cj-t0-pol`: 0 chyb; `npm test`: `# fail 0`.
 - Kontrola přes `web/js/vyhodnoceni.js` (`vyhodnotKrok`) + `vyhodnoceni-cj.js` (`vzorovaOdpoved`): vzorová odpověď všech 23 položek správně, všech 56 známých chyb a chybných dlaždic vrací svůj kód (79 kontrol, 0 chyb). Indexy slov (P1, P2, P9, P16, P18, P20) přepočítány tokenizérem `tokenizuj`; doplňovačky složeny se vzorovou odpovědí i se všemi nabídkami (délka *i/y × í/ý*: P12 *nachom_tla* a P13 *zab_val* mají nabídku *í/ý*).
 - Novost: §4 (skript přes všech 161 souborů a taháky, puštěn znovu na konci).
-- **ÚJČ:** ověřeno z mezipaměti `nastroje/ujc.sh` a výkladů: *pobýt* („jiné je: pobít“), *vyčerpaný* (příd., příč. trp. *vyčerpán*), *křehký* (2. st. *křehčí, křehčejší*), *kroupa*, id=100 (*zabývat se*, *nachomýtnout se* v řadách; *sirup, viklat* v řadách nejsou), id=125 (*ochrana – ochranný*). Server ÚJČ byl 15. 10. 03:20–05:40 přetížený (dotazy 04:07, 04:29, 04:52, 05:13, 05:36 bez odpovědi). **Doověřeno 16. 10. 2026 (vedoucí):** všechna hesla *klavírista, obcházet, usednout, obdivovat, vyžehlit, sirup, viklat, blikat, semafor, přicestovat, povalovat se, pobít, zfialovět, jižní, nachomýtnout se* jsou v IJP. *sirup* má dubletu *sirob*, mezera *s_rup* je v obou podobách *i*, takže se hodnocení netýká. `kontrola.jistota: "jista"`.
+- **ÚJČ:** ověřeno z mezipaměti `nastroje/ujc.sh` a výkladů: *pobýt* („jiné je: pobít“), *vyčerpaný* (příd., příč. trp. *vyčerpán*), *křehký* (2. st. *křehčí, křehčejší*), *kroupa*, id=100 (*zabývat se*, *nachomýtnout se* v řadách; *sirup, viklat* v řadách nejsou), id=125 (*ochrana – ochranný*). Server ÚJČ byl 15. 10. 03:20–05:40 přetížený (dotazy 04:07, 04:29, 04:52, 05:13, 05:36 bez odpovědi). **Doověřeno 15. 10. 2026 ráno (vedoucí):** všechna hesla *klavírista, obcházet, usednout, obdivovat, vyžehlit, sirup, viklat, blikat, semafor, přicestovat, povalovat se, pobít, zfialovět, jižní, nachomýtnout se* jsou v IJP. *sirup* má dubletu *sirob*, mezera *s_rup* je v obou podobách *i*, takže se hodnocení netýká. `kontrola.jistota: "jista"`.
 
 ## 8. Jazyková korektura (korektor, 14. 10. 2026)
 Jazykové chyby (hodnocené místo s více správnými odpověďmi nebo bez měřeného jevu): **2** — P14 *Na zastávce zastavil_ autobusy* (čtení s nevyjádřeným podmětem *oni zastavili autobusy* dává správně i *-i*) → *visel_ nové jízdní řády*; P4 *na sýkor_* (po *r* vždy *y*, měří jen Z5, ne vzor; rozpis tvrdil opak) → *na pěnkav_*.
