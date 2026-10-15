@@ -60,7 +60,8 @@
    - bez nahrávky ukáže poslech nebo diktát hlášku „Nahrávka se nenačetla“, ostatní úlohy fungují;
    - 4 nahrávky (témata 1–2) jsou hotové.
 2. **Nový Supabase projekt a hosting:** `SPUSTENI.md`, část B.
-3. **Rozhodnuto 15. 10. (Pavel):**
+3. **Pololetní test češtiny `cj-t0-pol` má `jistota: "stredni"`.** Kontrola novosti 15. 10. vyměnila slova, která se kryla s lekcemi, ale ÚJČ byla nedostupná. Zbývá v IJP ověřit: *klavírista, obcházet, usednout, obdivovat, vyžehlit, sirup, viklat, blikat, semafor, přicestovat, povalovat se, pobít, zfialovět, nejjižnější, nachomýtnout se* (seznam i v `cestina/Obsah/POLOLETNI-TEST.md` §7). Pak přepnout na `jista`. Do té doby ho seed nenahraje. Test je potřeba až v lednu, takže start 2. 11. to neblokuje.
+4. **Rozhodnuto 15. 10. (Pavel):**
    - placená SOS konzultace (150 Kč) z aplikace zmizí, místo ní bude stálý kontakt pro rodiče („napište nám, domluvíme i lekci s lektorem“);
    - datum otevření je **2. 11. 2026**, seed `--otevrit-od 2026-11-02`;
    - zlatý tahák „Co mě čeká v 9. třídě“ zůstává i s větou o přijímací zkoušce, je to ukázka, co děti čeká.
