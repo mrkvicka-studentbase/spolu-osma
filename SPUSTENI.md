@@ -53,7 +53,7 @@ cd Spolu8
 npm ci
 npm test
 ```
-Má vyjít `pass 3308`, `fail 0`.
+Má vyjít `pass 3314`, `fail 0`.
 
 ### B3. Soubor `.env` (tajné, jen u tebe)
 Ve složce `Spolu8` zkopíruj `.env.example` jako `.env` a doplň hodnoty z **nového** projektu:

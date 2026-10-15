@@ -51,7 +51,8 @@
   - karta výzvy na přehledu.
 
   Obsah taháků je napsaný pro 8. třídu a recenzovaný: matematika přepočtená, čeština ověřená v ÚJČ. Žádný příklad neprozrazuje úlohu z lekcí. Podrobnosti: `TECHNIKA-OSMA.md`, `predani/2026-10-09-odznaky-a-tahaky/TAHAKY-OSMA.md`.
-- `npm test`: 3308 testů, 0 selhání.
+- `npm test`: 3314 testů, 0 selhání.
+- **Kontakt místo SOS** (Pavel 15. 10.): placená konzultace je pryč, rodič má „Kontakt“ v menu, řádek „Napište nám“ na přehledu a blok v manuálu (`web/js/kontakt.js`, e-mail `KONTAKT_EMAIL` v `config.js`, starý `SOS_EMAIL` dál funguje).
 
 ## Chybí, než to půjde k dětem
 1. **194 nahrávek češtiny** (76 poslechů, 118 vět diktátu, témata 1–10, hlavně nové lekce N, B a NB):
@@ -62,7 +63,7 @@
 2. **Nový Supabase projekt a hosting:** `SPUSTENI.md`, část B.
 3. **Pololetní test češtiny `cj-t0-pol` má `jistota: "stredni"`.** Kontrola novosti 15. 10. vyměnila slova, která se kryla s lekcemi, ale ÚJČ byla nedostupná. Zbývá v IJP ověřit: *klavírista, obcházet, usednout, obdivovat, vyžehlit, sirup, viklat, blikat, semafor, přicestovat, povalovat se, pobít, zfialovět, nejjižnější, nachomýtnout se* (seznam i v `cestina/Obsah/POLOLETNI-TEST.md` §7). Pak přepnout na `jista`. Do té doby ho seed nenahraje. Test je potřeba až v lednu, takže start 2. 11. to neblokuje.
 4. **Rozhodnuto 15. 10. (Pavel):**
-   - placená SOS konzultace (150 Kč) z aplikace zmizí, místo ní bude stálý kontakt pro rodiče („napište nám, domluvíme i lekci s lektorem“);
+   - placená SOS konzultace (150 Kč) je z aplikace pryč, místo ní je stálý kontakt pro rodiče (hotovo);
    - datum otevření je **2. 11. 2026**, seed `--otevrit-od 2026-11-02`;
    - zlatý tahák „Co mě čeká v 9. třídě“ zůstává i s větou o přijímací zkoušce, je to ukázka, co děti čeká.
 
