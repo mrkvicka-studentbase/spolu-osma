@@ -603,7 +603,7 @@
       "typ": "detektiv",
       "cil": "Najít u spolužáka v delším textu slovo z rodiny vyjmenovaného slova napsané s i (neobvikle) mezi slovy z řad a zrádnými slovy s i a říct, ke kterému slovu z řady patří.",
       "cas_min": 5,
-      "zadani": "Petr měl doplnit i, nebo y. Napsal:\n\nKlára jela s Tomášem na kolech k babičce. U plotu na ně syčela husa. Bylo neobvikle teplo a na silnici se třpytilo slunce. Babička je přivítala a nasypala jim do misky oříšky.\n\nUdělal **jednu** chybu. Najdi ji.",
+      "zadani": "Petr měl doplnit i, nebo y. Napsal:\n\nKlára jela s Tomášem na kolech k babičce. U plotu na ně štěkalo vyžle. Bylo neobvikle teplo a silnice se ve slunci třpytila. Babička je přivítala a nasypala jim do misky oříšky.\n\nUdělal **jednu** chybu. Najdi ji.",
       "zdroj": "vlastni",
       "kroky": [
         {
@@ -611,7 +611,7 @@
           "popisek": "Klikni na slovo, které Petr napsal špatně.",
           "vstup": {
             "typ": "klik_ve_textu",
-            "text": "Klára jela s Tomášem na kolech k babičce. U plotu na ně syčela husa. Bylo neobvikle teplo a na silnici se třpytilo slunce. Babička je přivítala a nasypala jim do misky oříšky.",
+            "text": "Klára jela s Tomášem na kolech k babičce. U plotu na ně štěkalo vyžle. Bylo neobvikle teplo a silnice se ve slunci třpytila. Babička je přivítala a nasypala jim do misky oříšky.",
             "cil": "slova",
             "min": 1,
             "max": 1
@@ -622,9 +622,9 @@
           "zname_chyby": [
             {
               "navic": [
-                12,
-                19,
-                21,
+                13,
+                18,
+                22,
                 25,
                 27
               ],
@@ -646,7 +646,7 @@
               },
               {
                 "id": "b",
-                "text": "syčet",
+                "text": "vyžle",
                 "spravne": false,
                 "typ_chyby": "detektiv-oprava-jine-chyby"
               },
@@ -666,8 +666,8 @@
         }
       ],
       "tahak": {
-        "vysvetleni": "Petr napsal správně všechno kromě jednoho slova. Proti učební lekci je text delší a chyba je uprostřed, ve slově z rodiny (neobvykle = jinak, než bývá zvykem). Syčela, třpytilo a nasypala patří k syčet, třpytit se a sypat; silnici a přivítala v řadách nejsou. V kroku 2 (Ke kterému vyjmenovanému slovu patří?) dítě vybírá slovo z řady.",
-        "reseni": "Chyba je neobvikle, správně neobvykle.\n\nsyčela (y: syčet je v řadě po s)\n\nneobvykle (y: obvyklý je z rodiny slova zvykat)\n\nsilnici (i: v řadě není)\n\ntřpytilo (y: třpytit se je v řadě po p)\n\npřivítala (í: vítat v řadě není)\n\nnasypala (y: z rodiny slova sypat)\n\n**Výsledek:** krok 1 neobvikle, krok 2 zvykat",
+        "vysvetleni": "Petr napsal správně všechno kromě jednoho slova. Proti učební lekci je text delší a chyba je uprostřed, ve slově z rodiny (neobvykle = jinak, než bývá zvykem). Vyžle je přímo v řadě po v, třpytila a nasypala patří k třpytit se a sypat; silnice a přivítala v řadách nejsou. V kroku 2 (Ke kterému vyjmenovanému slovu patří?) dítě vybírá slovo z řady.",
+        "reseni": "Chyba je neobvikle, správně neobvykle.\n\nvyžle (y: v řadě po v)\n\nneobvykle (y: obvyklý je z rodiny slova zvykat)\n\nsilnice (i: v řadě není)\n\ntřpytila (y: třpytit se je v řadě po p)\n\npřivítala (í: vítat v řadě není)\n\nnasypala (y: z rodiny slova sypat)\n\n**Výsledek:** krok 1 neobvikle, krok 2 zvykat",
         "otazky": [
           {
             "k": "Celá úloha",
@@ -683,16 +683,16 @@
           }
         ],
         "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a jak si ji příště ohlídám.“",
-        "otocena_role_odpoved": "Neobvykle se píše s y, protože je z rodiny slova zvykat: obvyklé je to, na co jsme zvyklí. Silnici a přivítala máš dobře s i.",
-        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na silnici nebo přivítala (čeká y). Zeptejte se: „Je to slovo v řadě?“ (Není, Petr to má dobře.) Klikne na syčela, třpytilo nebo nasypala: „Je to v řadě, nebo v rodině?“ (Je.) V kroku 2 vybere jiné slovo: „Má stejný základ?“"
+        "otocena_role_odpoved": "Neobvykle se píše s y, protože je z rodiny slova zvykat: obvyklé je to, na co jsme zvyklí. Silnice a přivítala máš dobře s i.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne na silnice nebo přivítala (čeká y). Zeptejte se: „Je to slovo v řadě?“ (Není, Petr to má dobře.) Klikne na vyžle, třpytila nebo nasypala: „Je to v řadě, nebo v rodině?“ (Je.) V kroku 2 vybere jiné slovo: „Má stejný základ?“"
       },
       "semafor": {
         "zelena": "Výborně — chybu dítě našlo i ve slově z rodiny. Pochvalte, že prošlo všechna slova s p, s, v, z, a jděte dál.",
         "oranzova": "Zítra 5 minut. Napište dítěti na papír: jazikověda, povykovat, sílit. U každého slova řekne, jestli je napsané dobře a proč. Kontrola pro vás: jazikověda je špatně, správně jazykověda (z rodiny slova jazyk); povykovat je dobře (povyk); sílit je dobře (od síla, v řadě není).",
-        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše slova zvykat, sypat a syčet a ke každému jedno slovo z rodiny, třeba zvyk, nasypat, sykot. Potom zopakujte lekci „Vyjmenovaná slova po P, S, V, Z“. Kontrola pro vás: y je ve slově z řady i ve všech slovech z jeho rodiny."
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše slova zvykat, sypat a třpytit se a ke každému jedno slovo z rodiny, třeba zvyk, nasypat, třpytivý. Potom zopakujte lekci „Vyjmenovaná slova po P, S, V, Z“. Kontrola pro vás: y je ve slově z řady i ve všech slovech z jeho rodiny."
       },
       "tisk": {
-        "zadani": "Petr měl doplnit i, nebo y. Napsal:\n\nKlára jela s Tomášem na kolech k babičce. U plotu na ně syčela husa. Bylo neobvikle teplo a na silnici se třpytilo slunce. Babička je přivítala a nasypala jim do misky oříšky.\n\nUdělal jednu chybu.\n\nA) Podtrhni slovo, které Petr napsal špatně.\n\nB) Ke kterému vyjmenovanému slovu patří? Zakroužkuj: a) sypat b) syčet c) zvykat d) třpytit se"
+        "zadani": "Petr měl doplnit i, nebo y. Napsal:\n\nKlára jela s Tomášem na kolech k babičce. U plotu na ně štěkalo vyžle. Bylo neobvikle teplo a silnice se ve slunci třpytila. Babička je přivítala a nasypala jim do misky oříšky.\n\nUdělal jednu chybu.\n\nA) Podtrhni slovo, které Petr napsal špatně.\n\nB) Ke kterému vyjmenovanému slovu patří? Zakroužkuj: a) sypat b) vyžle c) zvykat d) třpytit se"
       }
     },
     {
@@ -906,7 +906,7 @@
   ],
   "kontrola": {
     "jistota": "jista",
-    "poznamka": "Autor 14. 10.: naostro dvojče cj-t6-l22, věty, slova v mezerách a příklady nové. Ověřeno v ÚJČ: výklad id=100 (lýtko, plýtvat, zbytek, vzlyk, myší, nazývat se, netopýr, klopýtnout, třpytit se, zvyknout a obvyklý u zvykat, zvyk, synovec, synovský, jazýček, jazykověda, sypký, sykot, syrový, výskat, usychat, nasytit, žvýkačka, pysk – pyskatý, opylovat, povyk, povykovat, vydří, třpytivý); hesla plíce, myslivec, mířit, plivat, bicí, syčet, pískot, silnice, zírat, vítat, pilný, víčko, sítko, nasypat, miska, dvířka, píchnout, opice, višňový, jazykolam, slepýš, pozítří, pivoňka, síť, sílit, pípat, slíva, sirka. Mezery jen v kořeni, žádná v koncovce. Vzorové odpovědi i všechny známé chyby prověřeny přes vyhodnotKrok, indexy detektiva tokenizerem. Validátor bez chyb. Korektor 14. 10.: všechna hodnocená slova ověřena nezávisle v ÚJČ (id=100, hesla včetně délky samohlásky). Opraveno: U1 D b_cí měla nabídku í/ý a vzorovou odpověď „í“ (bící) → nabídka i/y, správně i (bicí, heslo bicí), známá chyba y → vs-b-y-za-i; U2 mezera tř_ptily byla mezi ř a p (vzorově třyptily) → třp_tily; oranžová U2 p_lný (hodnocené v U3) → p_rko (pírko, od pero). Vzorové odpovědi a všechny známé chyby znovu přes vyhodnotKrok, indexy detektiva tokenizerem, slovní limity v pořádku. Validátor bez chyb.",
+    "poznamka": "Autor 14. 10.: naostro dvojče cj-t6-l22, věty, slova v mezerách a příklady nové. Ověřeno v ÚJČ: výklad id=100 (lýtko, plýtvat, zbytek, vzlyk, myší, nazývat se, netopýr, klopýtnout, třpytit se, zvyknout a obvyklý u zvykat, zvyk, synovec, synovský, jazýček, jazykověda, sypký, sykot, syrový, výskat, usychat, nasytit, žvýkačka, pysk – pyskatý, opylovat, povyk, povykovat, vydří, třpytivý); hesla plíce, myslivec, mířit, plivat, bicí, syčet, pískot, silnice, zírat, vítat, pilný, víčko, sítko, nasypat, miska, dvířka, píchnout, opice, višňový, jazykolam, slepýš, pozítří, pivoňka, síť, sílit, pípat, slíva, sirka. Mezery jen v kořeni, žádná v koncovce. Vzorové odpovědi i všechny známé chyby prověřeny přes vyhodnotKrok, indexy detektiva tokenizerem. Validátor bez chyb. Korektor 14. 10.: všechna hodnocená slova ověřena nezávisle v ÚJČ (id=100, hesla včetně délky samohlásky). Opraveno: U1 D b_cí měla nabídku í/ý a vzorovou odpověď „í“ (bící) → nabídka i/y, správně i (bicí, heslo bicí), známá chyba y → vs-b-y-za-i; U2 mezera tř_ptily byla mezi ř a p (vzorově třyptily) → třp_tily; oranžová U2 p_lný (hodnocené v U3) → p_rko (pírko, od pero). Vzorové odpovědi a všechny známé chyby znovu přes vyhodnotKrok, indexy detektiva tokenizerem, slovní limity v pořádku. Validátor bez chyb. Audit 2026-10-14: detektiv U4 „na silnici“ (= hodnocený tvar U2 s_lnici) → „silnice se ve slunci třpytila“, navic [12, 18, 22, 25, 27]. Ponecháno k rozhodnutí vedoucího: U2 „s_čela husa“ a U4 „syčela husa“ jsou stejný tvar a skoro stejná věta jako pololetní test (U12 „Husa na dvoře s_čela“), lekci podle zadání neměním. Audit 2026-10-14 (rozhodnutí vedoucího): detektiv U4 „syčela husa“ (= hodnocený tvar U2 s_čela) → „štěkalo vyžle“ (vyžle doslova v ÚJČ id=100, v T6 jinde nehodnocené), navic [13, 18, 22, 25, 27], dlaždice syčet → vyžle.",
     "zkontroloval": "korektor",
     "datum": "2026-10-14",
     "zdroj": [
