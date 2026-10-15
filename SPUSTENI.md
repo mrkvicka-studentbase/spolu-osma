@@ -95,12 +95,12 @@ npm run seed -- --adresar obsah/cestina/lekce --otevrit-od <DATUM>
 ```
 - **Matematika:** „Hotovo: nahráno 162 lekcí“ (40 učebních + 40 naostro + 80 B-variant + úvodní a pololetní test).
 - **Čeština:** „Hotovo: nahráno 162 lekcí“ (stejné složení).
-- Až nahrávky dáš do `web\audio\cestina\t1` … `t10`, stačí znovu nahrát web (krok B8), lekce se znovu seedovat nemusí.
+- Nahrávky češtiny jsou ve webu (`web\audio\cestina\t1` … `t10`), seedovat je nejde: nahrají se s webem v kroku B8.
 
 ### B8. Web na Endoru (10 min)
 1. V administraci Endory založ subdoménu **`osma`** (`osma.studentbase.cz`). Když zvolíš jiný název, změň ho i v B6.
 2. Ve složce `Spolu8` dvojklik na `nasadit.bat`. Vznikne `k-nahrani`.
-3. Nahraj **celý obsah** složky `k-nahrani` do kořene subdomény (74 souborů včetně 4 hotových nahrávek; s natočenými nahrávkami jich bude o 194 víc).
+3. Nahraj **celý obsah** složky `k-nahrani` do kořene subdomény (269 souborů, z toho 198 nahrávek češtiny, asi 31 MB).
 
 ### B9. Admin a test (10 min)
 1. Na `https://osma.studentbase.cz` se zaregistruj jako rodič a potvrď e-mail.
@@ -114,7 +114,7 @@ npm run seed -- --adresar obsah/cestina/lekce --otevrit-od <DATUM>
    - lekce s nahrávkou (`cj-t1-l3`, úloha 2) hraje;
    - „Dnes samo“ funguje u jedné lekce matematiky;
    - v menu je „Moje taháky“ a na přehledu karta měsíční výzvy.
-4. Poslechni 4 nahrávky a porovnej je s texty v `cestina\Obsah\AUDIO.md`.
+4. Poslechni 5 nahrávek vybraných ve zprávě `cestina\Obsah\NAHRAVKY-ZPRAVA-2026-10-15.md` a porovnej je s texty v `cestina\Obsah\AUDIO.md`.
 
 ### B10. Nahrávky češtiny (agent přes noc)
 Natáčí je agent v Coworku s Claude in Chrome a ElevenLabs. Dej mu tyto tři soubory z `cestina\Obsah\`:
@@ -126,7 +126,7 @@ Dál mu dej:
 - **Složku stahování `hlas tutor`.**
 - **Cílovou složku.** Agent v ní vytvoří `t1` … `t10` s pojmenovanými MP3, deník a zprávu.
 
-Teď je to 194 nahrávek (76 poslechů, 118 vět diktátu) pro lekce celého roku. Až se změní lekce, vedoucí seznam přegeneruje (`node nastroje/seznam-nahravek.mjs`) a agent pojede podle stejného návodu znovu.
+**Stav 15. 10.:** všech 198 nahrávek je natočených a zapojených, seznam k natočení je prázdný. Až se změní lekce, vedoucí seznam přegeneruje (`node nastroje/seznam-nahravek.mjs`) a agent pojede podle stejného návodu znovu.
 
 Po natočení:
 1. Poslechni 5 nahrávek, které agent vybere v `ZPRAVA.md`.
@@ -142,7 +142,7 @@ Po natočení:
 - [ ] **Registrace cizím e-mailem** (třeba Gmail) funguje a e-mail nespadne do spamu.
 - [ ] **Podmínky a GDPR:** registrace odkazuje na studentbase.cz jako na „podmínky používání a zpracování osobních údajů“. Ověř, že tam takový text opravdu je.
 - [ ] **Spolu 8:**
-  - obsah celého roku je kompletní (oba předměty po 162 lekcích včetně naostro, B-variant, úvodního a pololetního testu), ale 194 nahrávek češtiny ještě není natočených. Seznam je v `cestina/Obsah/nahravky-k-nataceni.md`. Lekce bez nahrávky dítěti ukáže hlášku místo přehrávače, poslech nebo diktát pak nejde udělat.
+  - obsah celého roku je kompletní (oba předměty po 162 lekcích včetně naostro, B-variant, úvodního a pololetního testu) a všech 198 nahrávek češtiny je natočených. Zbývá je poslechnout (5 vybraných + 22 „zkontrolovat“ podle zprávy agenta).
 - [ ] **Free projekty** se po 7 dnech bez provozu uspí. Při běžném provozu to nehrozí, jinak přejít na Pro (25 $/měsíc).
 
 ## Když něco nejde

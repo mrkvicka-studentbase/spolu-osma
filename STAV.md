@@ -1,6 +1,6 @@
 # Stav Spolu 8 — 15. 10. 2026
 
-> **Celý rok je hotový.** Obsah podle `PLAN-ROZSIRENI.md` a `ZADANI-OSMA.md` §9 je na `main` a prošel kontrolami. Do Supabase se nic nezapisovalo: databázi a seed pouští Pavel podle `SPUSTENI.md`, část B. Zbývají nahrávky češtiny a spuštění.
+> **Celý rok je hotový.** Obsah podle `PLAN-ROZSIRENI.md` a `ZADANI-OSMA.md` §9 je na `main` a prošel kontrolami. Do Supabase se nic nezapisovalo: databázi a seed pouští Pavel podle `SPUSTENI.md`, část B. Nahrávky češtiny jsou natočené a zapojené (15. 10.). Zbývá spuštění.
 >
 > Větve `rozpracovano-2026-10-09`, `rozpracovano-2026-10-12` a `odznaky-tahaky` jsou celé zpracované a sloučené. Do main už nic nového nepřinesou a dají se smazat.
 
@@ -36,7 +36,7 @@
   - `POLOLETNI-TEST.md`.
 
   Pololetní test matematiky je popsaný v `TECHNIKA-OSMA.md`.
-- **Validace:** `npm run validace:osma` → 0 chyb. Varování jsou jen u nenatočených nahrávek.
+- **Validace:** `npm run validace:osma` → 0 chyb, 0 varování.
 - **Validátor češtiny** nově hlídá, aby mezera po doplnění vzorové odpovědi nedala tři stejná písmena za sebou.
 
 ### Aplikace
@@ -55,11 +55,11 @@
 - **Kontakt místo SOS** (Pavel 15. 10.): placená konzultace je pryč, rodič má „Kontakt“ v menu, řádek „Napište nám“ na přehledu a blok v manuálu (`web/js/kontakt.js`, e-mail `KONTAKT_EMAIL` v `config.js`, starý `SOS_EMAIL` dál funguje).
 
 ## Chybí, než to půjde k dětem
-1. **194 nahrávek češtiny** (76 poslechů, 118 vět diktátu, témata 1–10, hlavně nové lekce N, B a NB):
-   - text pro ElevenLabs je v `cestina/Obsah/nahravky-k-nataceni.md` (a `.csv`), postup v `cestina/Obsah/NAHRAVKY-NAVOD.md`, texty v `cestina/Obsah/AUDIO.md`;
-   - soubory patří do `web/audio/cestina/t1/` … `t10/`;
-   - bez nahrávky ukáže poslech nebo diktát hlášku „Nahrávka se nenačetla“, ostatní úlohy fungují;
-   - 4 nahrávky (témata 1–2) jsou hotové.
+1. ~~Nahrávky češtiny~~ **hotovo 15. 10.:** všech 198 nahrávek (80 poslechů, 118 vět diktátu, 29 min) je v `web/audio/cestina/t1/` … `t10/`.
+   - Hlas: Jana – Warm, Confident Czech Female, model Eleven Multilingual v2.
+   - Natáčel je agent podle `cestina/Obsah/NAHRAVKY-NAVOD.md`, jeho zpráva je v `cestina/Obsah/NAHRAVKY-ZPRAVA-2026-10-15.md`. Čtyři starší poslechy témat 1–2 (mužský hlas) jsou přetočené stejným hlasem.
+   - Ověřeno: názvy 1:1 se seznamem, validace bez varování, všechny soubory se v Chromiu načtou, pauzy v diktátech fungují, QA vzorku lekcí bez nálezů.
+   - Pavel ještě poslechne 5 vybraných nahrávek ze zprávy a 22 položek „zkontrolovat“ (krátké věty, jen délka mimo orientační rozsah).
 2. **Nový Supabase projekt a hosting:** `SPUSTENI.md`, část B.
 3. ~~Pololetní test češtiny~~ **hotovo 15. 10. ráno:** nová slova testu jsou ověřená v IJP, `cj-t0-pol` má `jistota: "jista"`.
 4. **Rozhodnuto 15. 10. (Pavel):**
