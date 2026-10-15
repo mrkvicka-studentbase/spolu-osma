@@ -1,6 +1,6 @@
 # Návod pro agenta: nahrávky češtiny Spolu 8 v ElevenLabs
 
-Verze 1.0, 9. 10. 2026. Napsal vedoucí projektu Spolu 8 pro samostatného agenta (Cowork + Claude in Chrome), který pracuje přes noc bez dozoru.
+Verze 1.1, 15. 10. 2026 (celý rok: 194 nahrávek, složky `t1`–`t10`). Napsal vedoucí projektu Spolu 8 pro samostatného agenta (Cowork + Claude in Chrome), který pracuje přes noc bez dozoru.
 Zadavatel je Pavel (StudentBase.cz). Tento návod je závazný. Když něco nesedí, zastav se a zapiš to do zprávy, nevymýšlej.
 
 ---
@@ -20,18 +20,22 @@ Pro každou položku ze seznamu `nahravky-k-nataceni.md` vygeneruj v ElevenLabs 
 
 Než začneš, ověř, že máš přístup ke všemu z tabulky. Když něco chybí (složka, přihlášení), nic negeneruj, napiš to do `CÍL/ZPRAVA.md` a skonči.
 
+**Kredity:** seznam má 194 nahrávek a dohromady asi 26 000 znaků (značky pauz se počítají). Na začátku si v ElevenLabs přečti zbývající kredity a zapiš je do `ZPRAVA.md`. Když jich je méně než 30 000, normálně začni, ale počítej s tím, že ti můžou dojít (pak podle bodu 7 skonči).
+
 ## 3. Struktura v cílové složce
-Seznam má u každé nahrávky **složku** (`t3` až `t10`, později možná další) a **název souboru** (např. `l12-d1.mp3`). Výsledek musí vypadat takto:
+Seznam má u každé nahrávky **složku** (`t1` až `t10`) a **název souboru** (např. `l12-d1.mp3`, `l1b-u3.mp3`, `l21nb-d4.mp3`). Výsledek musí vypadat takto:
 
 ```
 CÍL/
-  t3/
-    l9-u3.mp3
-    l11-u3.mp3
-    l12-d1.mp3
+  t1/
+    l1b-u3.mp3
+    l1n-u3.mp3
     …
-  t4/
+  t2/
     …
+  …
+  t10/
+    l40nb-d4.mp3
   nahravky-denik.csv   ← deník (bod 6)
   ZPRAVA.md            ← zpráva na konci (bod 9)
 ```
@@ -39,6 +43,7 @@ CÍL/
 Pravidla pro názvy (aplikace je hledá doslova):
 - přesně podle seznamu, **malými písmeny, bez diakritiky a mezer**, s příponou `.mp3`;
 - `l9-u3.mp3` = lekce 9, úloha 3 (poslech); `l12-d1.mp3` = lekce 12, diktát, věta 1;
+- písmena za číslem lekce patří k názvu: `n` = naostro lekce, `b` = B-varianta, `nb` = B-varianta naostro lekce (`l12nb-d1.mp3`). Nikdy je nevynechávej, jinak se přepíše jiná nahrávka;
 - nic nepřidávej (žádné `_final`, `(1)`, datum). Nic nepřečíslovávej.
 
 ## 4. Nastavení ElevenLabs (jednou na začátku, pak před každou nahrávkou zkontroluj)
@@ -76,7 +81,7 @@ Pravidla pro názvy (aplikace je hledá doslova):
    - Když je nových víc nebo žádný, nic nepřesouvej a řeš to podle bodu 8.
 8. **Zkontroluj soubor:**
    - velikost aspoň 15 kB;
-   - délka podle přehrávače v ElevenLabs: **poslech asi 3–20 s, diktát asi 8–45 s**.
+   - délka podle přehrávače v ElevenLabs: **poslech asi 3–20 s, diktát asi 8–60 s** (nejdelší věty diktátu mají kolem 300 znaků i s pauzami).
 
    Výrazně jiná délka je podezřelá (třeba pauzy přečtené jako slova, nebo nahrávka uťatá). Zapiš ji do deníku jako `zkontrolovat`.
 9. **Přesuň a přejmenuj:** soubor přesuň do `CÍL/<složka>/<název_souboru>` (složku vytvoř, pokud není). V `hlas tutor` nesmí zůstat.
@@ -138,6 +143,6 @@ Krátce, česky:
 ## 10. Co bude dál (pro Pavla, ne pro agenta)
 1. **Poslechnout vybraných 5 nahrávek** ze `ZPRAVA.md` a projít položky `zkontrolovat`.
 2. **Předat nahrávky do projektu:**
-   - buď celou CÍL (složky `t3`…`t10`) zkopírovat do `Desktop\Spolu8\web\audio\cestina\`;
+   - buď celou CÍL (složky `t1`…`t10`) zkopírovat do `Desktop\Spolu8\web\audio\cestina\` (ke 4 hotovým nahrávkám témat 1–2; nic nepřepisovat);
    - nebo ji poslat jako zip vedoucímu projektu (chat Spolu 8), který je zapojí a ověří (validátor + QA).
-3. **Až přibudou nové lekce** (naostro a B-varianty), vedoucí přegeneruje `nahravky-k-nataceni.md` (`node nastroje/seznam-nahravek.mjs`). Agent pak pojede **podle stejného návodu** znovu. Hotové nahrávky v seznamu už nebudou.
+3. **Když se lekce změní**, vedoucí přegeneruje `nahravky-k-nataceni.md` (`node nastroje/seznam-nahravek.mjs`). Agent pak pojede **podle stejného návodu** znovu. Hotové nahrávky (ty, které už jsou v `web/audio/cestina/`) v seznamu nebudou.
