@@ -1,0 +1,703 @@
+{
+  "id": "cj-t9-l35nb",
+  "predmet": "cestina",
+  "faze": "osma",
+  "tyden": 9,
+  "poradi": 3,
+  "tema": "Čárka ve větě jednoduché",
+  "kapitola": "souveti",
+  "cil_pro_rodice": "Dítě napíše čárku ve výčtu (i sloves a slov, která říkají jaký), před ale a u oslovení (uprostřed věty z obou stran) a nenapíše ji před a, i, ani, které jen spojují.",
+  "uvod_pro_rodice": "Opakování po červené: dítě znovu píše čárky ve výčtu, před ale a u oslovení a hlídá, kde čárka není, tentokrát na jiných větách.",
+  "uvod_pravidla": [
+    {
+      "znak": "Výčet: čárka, před a ne",
+      "text": "co to je"
+    },
+    {
+      "znak": "ale: čárka · a, i, ani: bez",
+      "text": "test"
+    },
+    {
+      "znak": "Pojď, Emo, k nám!",
+      "text": "příklad"
+    }
+  ],
+  "slovnicek_pro_rodice": {
+    "věta jednoduchá": "věta s jedním přísudkem (Autobus přijel včas.)",
+    "výčet": "několik slov za sebou, která ve větě dělají totéž (lžíce, vidlička a nůž); mezi nimi je čárka, před posledním a není",
+    "oslovení": "jméno toho, na koho voláme (Emo!); odděluje se čárkou, uprostřed věty z obou stran (Pojď, Emo, k nám!)",
+    "ale": "slovo, které staví jednu věc proti druhé (pomalý, ale vytrvalý); před ním je čárka",
+    "a, i, ani, nebo": "slova, která jen spojují dvě věci za sebou (kluci i holky); čárka před nimi není",
+    "věta vedlejší": "věta, která sama neobstojí; začíná slovem jako že, když, protože, aby, který, kde (že přijede)",
+    "vložená věta": "vedlejší věta uprostřed jiné věty; čárka je před ní i za ní (Dům, kde bydlím, je starý.)"
+  },
+  "pomucky": [
+    "sešit",
+    "propiska"
+  ],
+  "cas_min": 25,
+  "vychozi_text": null,
+  "ulohy": [
+    {
+      "id": "cj-t9-l35nb-U1",
+      "typ": "rozcvicka",
+      "cil": "Zopakovat čárky z lekce 34 ve třech větách souvětí: za větou s až, před že, protože, do kterého, na konci vložené věty a ne před a, které jen spojuje.",
+      "cas_min": 4,
+      "zadani": "V každé řadě A až D vyber větu, která je napsaná správně.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Až usne táta, upečeme koláč, protože má narozeniny.",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "Až usne táta upečeme koláč, protože má narozeniny.",
+                "spravne": false,
+                "typ_chyby": "carka-chybi-za-uvodni-vetou"
+              },
+              {
+                "id": "c",
+                "text": "Až usne táta, upečeme koláč protože má narozeniny.",
+                "spravne": false,
+                "typ_chyby": "carka-chybi-pred-spojkou"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Tomáš vaří, a Klára nakupuje, protože je sobota.",
+                "spravne": false,
+                "typ_chyby": "carka-navic-a"
+              },
+              {
+                "id": "b",
+                "text": "Tomáš vaří a Klára nakupuje, protože je sobota.",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "Tomáš vaří a Klára nakupuje protože je sobota.",
+                "spravne": false,
+                "typ_chyby": "carka-chybi-pred-spojkou"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Lucka doufá že dopis, který odeslala, přijde včas.",
+                "spravne": false,
+                "typ_chyby": "carka-chybi-ze"
+              },
+              {
+                "id": "b",
+                "text": "Lucka doufá, že dopis, který odeslala přijde včas.",
+                "spravne": false,
+                "typ_chyby": "carka-vlozena-chybi-druha"
+              },
+              {
+                "id": "c",
+                "text": "Lucka doufá, že dopis, který odeslala, přijde včas.",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Bazén, do kterého jezdí Adam, má teplou vodu.",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "Bazén, do kterého jezdí Adam má teplou vodu.",
+                "spravne": false,
+                "typ_chyby": "carka-vlozena-chybi-druha"
+              },
+              {
+                "id": "c",
+                "text": "Bazén do kterého jezdí Adam, má teplou vodu.",
+                "spravne": false,
+                "typ_chyby": "carka-chybi-ktery"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Rozcvička opakuje čárky z minulé lekce. V souvětích jsou až tři věty a v každé řadě tři možnosti, které se liší jen čárkami. Past v řadě D: vedlejší věta začíná už slovem do, čárka patří před do kterého. Otázky jsou po řadách: čtěte tu u řady, kde se dítě zasekne.",
+        "reseni": "#### A)\n\nAž usne táta, upečeme koláč, protože má narozeniny. (za větou s až, před protože)\n\n#### B)\n\nTomáš vaří a Klára nakupuje, protože je sobota. (před protože; před a ne, jen spojuje)\n\n#### C)\n\nLucka doufá, že dopis, který odeslala, přijde včas. (před že; vložená věta který odeslala: před i za)\n\n#### D)\n\nBazén, do kterého jezdí Adam, má teplou vodu. (vložená věta do kterého jezdí Adam: před i za)\n\n**Výsledek:** A) dvě čárky (za táta, před protože), B) jen před protože, C) tři čárky, D) dvě čárky (před do, za Adam)",
+        "otazky": [
+          {
+            "k": "A a B",
+            "text": "„Najdi všechna slovesa. Kde jedna věta končí a další začíná? A co dělá slovo a?“"
+          },
+          {
+            "k": "C",
+            "text": "„Kde začíná věta se že? A kde začíná a kde končí věta, která začíná který?“"
+          },
+          {
+            "k": "D",
+            "text": "„Řekni větu, která sama neobstojí, celou od prvního slova. Kde začíná a kde končí?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč je v řadě D čárka před do, a ne až před kterého.“",
+        "otocena_role_odpoved": "Věta do kterého jezdí Adam začíná už slovem do, to k ní patří. Je vložená, takže čárka je před ní i za ní, za Adam.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. V A nebo B vybere větu s chybějící čárkou: „Kde jedna věta končí a další začíná?“ V B vybere čárku před a: „Spojuje a jen dvě věci?“ V C nebo D vybere větu s jednou čárkou: „Kde ta věta začíná a končí?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — čárky v souvětí dítě drží z minulé lekce. Pochvalte, že hledalo začátek i konec vět, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Hřiště za kterým bydlíme je nové.“ Dítě řekne, kam patří čárky. Kontrola pro vás: před za kterým a za bydlíme; věta za kterým bydlíme je vložená doprostřed.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše tři souvětí: se slovem až na začátku, se slovem protože a se slovem která uprostřed. V každém podtrhne slovesa a napíše čárky. Potom zopakujte lekci „Čárka ve větě jednoduché“. Kontrola pro vás: čárka za větou s až a před protože; u věty s která před ní i za ní."
+      },
+      "tisk": {
+        "zadani": "V každé řadě zakroužkuj větu, která je napsaná správně.\n\nA) a) Až usne táta, upečeme koláč, protože má narozeniny. b) Až usne táta upečeme koláč, protože má narozeniny. c) Až usne táta, upečeme koláč protože má narozeniny.\n\nB) a) Tomáš vaří, a Klára nakupuje, protože je sobota. b) Tomáš vaří a Klára nakupuje, protože je sobota. c) Tomáš vaří a Klára nakupuje protože je sobota.\n\nC) a) Lucka doufá že dopis, který odeslala, přijde včas. b) Lucka doufá, že dopis, který odeslala přijde včas. c) Lucka doufá, že dopis, který odeslala, přijde včas.\n\nD) a) Bazén, do kterého jezdí Adam, má teplou vodu. b) Bazén, do kterého jezdí Adam má teplou vodu. c) Bazén do kterého jezdí Adam, má teplou vodu."
+      }
+    },
+    {
+      "id": "cj-t9-l35nb-U2",
+      "typ": "nova",
+      "cil": "Napsat sedm čárek ve čtyřech výčtech (věci, jména, slovesa, slova, která říkají jaký) a nenapsat čárku před a ani před i, které připojují poslední člen.",
+      "cas_min": 5,
+      "zadani": "Klikni na místa, kam patří čárka.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Děda má na zahradě jabloň višeň lípu a buk. Lucka Adam Klára Ema i Tomáš vystupují ve školním divadle. O víkendu jsme stanovali na louce fotili motýly a potom rozdělali oheň. Cesta k chatě byla úzká prudká a kamenitá.",
+            "cil": "mezery",
+            "min": 1,
+            "max": 10
+          },
+          "spravne": [
+            4,
+            5,
+            9,
+            10,
+            11,
+            24,
+            35
+          ],
+          "zname_chyby": [
+            {
+              "chybi": [
+                4,
+                5,
+                9,
+                10,
+                11,
+                24,
+                35
+              ],
+              "typ_chyby": "carka-vycet-chybi"
+            },
+            {
+              "navic": [
+                6,
+                26,
+                36
+              ],
+              "typ_chyby": "carka-navic-a"
+            },
+            {
+              "navic": [
+                12
+              ],
+              "typ_chyby": "carka-navic-pred-i-ani-nebo"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě kliká na místa mezi slovy. Věty jsou čtyři a výčtem jsou i slovesa (stanovali, fotili…) a slova, která říkají jaký (úzká, prudká…). Mezi členy výčtu je čárka; před posledním členem, který připojí a nebo i, čárka není.",
+        "reseni": "Děda má na zahradě jabloň, višeň, lípu a buk. (výčet stromů; před a ne)\n\nLucka, Adam, Klára, Ema i Tomáš vystupují ve školním divadle. (výčet jmen; před i ne)\n\nO víkendu jsme stanovali na louce, fotili motýly a potom rozdělali oheň. (výčet toho, co jsme dělali; před a ne)\n\nCesta k chatě byla úzká, prudká a kamenitá. (výčet, jaká cesta byla; před a ne)\n\n**Výsledek:** čárky za jabloň, višeň, Lucka, Adam, Klára, louce, úzká",
+        "otazky": [
+          "„Co je výčet? Řekni to vlastními slovy.“",
+          "„Vezmi větu po větě. Co se v ní vyjmenovává? Ukaž si to na prstech.“",
+          "„Podívej se vždy na poslední dvě věci výčtu. Co je mezi nimi místo čárky?“"
+        ],
+        "otocena_role": "„Vysvětli mi, proč ve druhé větě není čárka před i.“",
+        "otocena_role_odpoved": "I tam spojuje poslední dvě jména stejně jako a. Před takové i se čárka nepíše, mezi ostatními jmény ano.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Chybí čárka mezi věcmi nebo jmény: „Kolik je toho vyjmenováno? Co je mezi tím?“ Chybí za louce nebo úzká: „Jsou to taky věci za sebou?“ Čárka před a nebo i: „Co spojuje poslední dvě věci?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — výčet dítě pozná i u sloves a u slov, která říkají jaký. Pochvalte, že si výčet spočítalo, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „V sobotu jsme vyprali prádlo vytřeli podlahu a upekli perník.“ Dítě řekne, za kterými slovy by napsalo čárku. Kontrola pro vás: za prádlo a za podlahu (výčet toho, co jsme dělali); před a čárka není.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše větu se čtyřmi věcmi, které má v pokoji, a větu se třemi slovy, která říkají, jaké je jeho oblíbené jídlo. Mezi ně napíše čárky. Potom zopakujte lekci „Čárka ve větě jednoduché“. Kontrola pro vás: čárka mezi věcmi i slovy, před posledním s a ne (postel, stůl, lampa a skříň)."
+      },
+      "tisk": {
+        "zadani": "Doplň čárky.\n\nDěda má na zahradě jabloň višeň lípu a buk. Lucka Adam Klára Ema i Tomáš vystupují ve školním divadle. O víkendu jsme stanovali na louce fotili motýly a potom rozdělali oheň. Cesta k chatě byla úzká prudká a kamenitá."
+      }
+    },
+    {
+      "id": "cj-t9-l35nb-U3",
+      "typ": "nova",
+      "cil": "Napsat čárku před ale a u oslovení (na začátku, uprostřed z obou stran, na konci) a nenapsat ji před i a ani, které jen spojují, i když jsou ve větě dva jevy najednou.",
+      "cas_min": 5,
+      "zadani": "V každé řadě vyber větu, která je napsaná správně.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Řada A",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Kláro, ten polštář je hebký, ale pevný.",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "Kláro ten polštář je hebký, ale pevný.",
+                "spravne": false,
+                "typ_chyby": "carka-osloveni-chybi"
+              },
+              {
+                "id": "c",
+                "text": "Kláro, ten polštář je hebký ale pevný.",
+                "spravne": false,
+                "typ_chyby": "carka-chybi-pred-ale"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k2",
+          "popisek": "Řada B",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Lucka, i Adam trénovali pečlivě, ale nevyhráli.",
+                "spravne": false,
+                "typ_chyby": "carka-navic-pred-i-ani-nebo"
+              },
+              {
+                "id": "b",
+                "text": "Lucka i Adam trénovali pečlivě ale nevyhráli.",
+                "spravne": false,
+                "typ_chyby": "carka-chybi-pred-ale"
+              },
+              {
+                "id": "c",
+                "text": "Lucka i Adam trénovali pečlivě, ale nevyhráli.",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k3",
+          "popisek": "Řada C",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Najdi mi Adame, v garáži kladívko.",
+                "spravne": false,
+                "typ_chyby": "carka-osloveni-chybi"
+              },
+              {
+                "id": "b",
+                "text": "Najdi mi, Adame, v garáži kladívko.",
+                "spravne": true
+              },
+              {
+                "id": "c",
+                "text": "Najdi mi, Adame v garáži kladívko.",
+                "spravne": false,
+                "typ_chyby": "carka-osloveni-chybi"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k4",
+          "popisek": "Řada D",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Ema nechce křečka, ani myš.",
+                "spravne": false,
+                "typ_chyby": "carka-navic-pred-i-ani-nebo"
+              },
+              {
+                "id": "b",
+                "text": "Ema nechce křečka ani myš.",
+                "spravne": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "popisek": "Řada E",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Dej mi lampu sirky a svíčku, Tomáši!",
+                "spravne": false,
+                "typ_chyby": "carka-vycet-chybi"
+              },
+              {
+                "id": "b",
+                "text": "Dej mi lampu, sirky a svíčku Tomáši!",
+                "spravne": false,
+                "typ_chyby": "carka-osloveni-chybi"
+              },
+              {
+                "id": "c",
+                "text": "Dej mi lampu, sirky a svíčku, Tomáši!",
+                "spravne": true
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Dítě vybírá z vět, které se liší jen čárkami. Řad je pět a ve větě bývají dva jevy najednou. Před ale se čárka píše, před i a ani, které jen spojují, ne. Oslovení se odděluje čárkou, uprostřed věty z obou stran (řada C).",
+        "reseni": "A) Kláro, ten polštář je hebký, ale pevný. (oslovení; před ale)\n\nB) Lucka i Adam trénovali pečlivě, ale nevyhráli. (i jen spojuje; před ale)\n\nC) Najdi mi, Adame, v garáži kladívko. (oslovení uprostřed: před i za)\n\nD) Ema nechce křečka ani myš. (ani jen spojuje)\n\nE) Dej mi lampu, sirky a svíčku, Tomáši! (výčet; oslovení na konci)\n\n**Výsledek:** A) za Kláro i před ale, B) jen před ale, C) před i za Adame, D) bez čárky, E) ve výčtu i před Tomáši",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Kde se píše čárka, i když má věta jen jedno sloveso? Řekni všechno, co si pamatuješ.“"
+          },
+          {
+            "k": "A, B a D",
+            "text": "„Staví to slovo jednu věc proti druhé, nebo je jen spojuje jako a?“"
+          },
+          {
+            "k": "A, C a E",
+            "text": "„Najdi jméno toho, na koho se volá. Co je před ním a co za ním?“"
+          }
+        ],
+        "otocena_role": "„Vysvětli mi, proč má věta v řadě C dvě čárky.“",
+        "otocena_role_odpoved": "Adame je oslovení uprostřed věty. Oslovení se odděluje z obou stran, takže čárka je před ním i za ním.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Vybere větu bez čárky před ale: „Staví ale jednu věc proti druhé?“ S čárkou před i nebo ani: „Spojuje to slovo jen dvě věci?“ U oslovení jen jednu nebo žádnou čárku: „Kde volání začíná a končí?“ V E chybí čárka ve výčtu: „Kolik věcí?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — ale, oslovení i spojky bez čárky dítě rozliší i se dvěma jevy ve větě. Pochvalte, že se ptalo proč, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Podívej se Tomáši ten pes je malý ale silný.“ Dítě řekne, kam patří čárky. Kontrola pro vás: před Tomáši i za ním (oslovení uprostřed) a před ale.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše tři věty: s oslovením na konci, se slovem ale a se slovem ani (Nemám… ani…). U každé řekne, kde čárka je a kde ne. Potom zopakujte lekci „Čárka ve větě jednoduché“. Kontrola pro vás: před oslovením na konci čárka je; před ale čárka je; před ani čárka není."
+      },
+      "tisk": {
+        "zadani": "V každé řadě zakroužkuj větu, která je napsaná správně.\n\nA) a) Kláro, ten polštář je hebký, ale pevný. b) Kláro ten polštář je hebký, ale pevný. c) Kláro, ten polštář je hebký ale pevný.\n\nB) a) Lucka, i Adam trénovali pečlivě, ale nevyhráli. b) Lucka i Adam trénovali pečlivě ale nevyhráli. c) Lucka i Adam trénovali pečlivě, ale nevyhráli.\n\nC) a) Najdi mi Adame, v garáži kladívko. b) Najdi mi, Adame, v garáži kladívko. c) Najdi mi, Adame v garáži kladívko.\n\nD) a) Ema nechce křečka, ani myš. b) Ema nechce křečka ani myš.\n\nE) a) Dej mi lampu sirky a svíčku, Tomáši! b) Dej mi lampu, sirky a svíčku Tomáši! c) Dej mi lampu, sirky a svíčku, Tomáši!"
+      }
+    },
+    {
+      "id": "cj-t9-l35nb-U4",
+      "typ": "detektiv",
+      "cil": "Najít u Petra chybějící druhou čárku u oslovení uprostřed věty (první čárku Petr má) a říct proč; past: výčet s a, který má Petr dobře.",
+      "cas_min": 5,
+      "zadani": "Petr napsal větu a zapomněl v ní jednu čárku:\n\nUkaž mi, Kláro tu novou mikinu, tričko a kalhoty.\n\nNajdi místo, kam čárka patří.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "k1",
+          "popisek": "Klikni na místo, kde čárka chybí.",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Ukaž mi, Kláro tu novou mikinu, tričko a kalhoty.",
+            "cil": "mezery",
+            "min": 1,
+            "max": 1
+          },
+          "spravne": [
+            2
+          ],
+          "zname_chyby": [
+            {
+              "navic": [
+                6
+              ],
+              "typ_chyby": "carka-navic-a"
+            },
+            {
+              "navic": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                7
+              ],
+              "typ_chyby": "detektiv-jine-slovo"
+            }
+          ]
+        },
+        {
+          "id": "final",
+          "popisek": "Proč tam patří čárka?",
+          "vstup": {
+            "typ": "dlazdice",
+            "moznosti": [
+              {
+                "id": "a",
+                "text": "Končí tam oslovení",
+                "spravne": true
+              },
+              {
+                "id": "b",
+                "text": "Začíná tam oslovení",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "c",
+                "text": "Je tam výčet",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              },
+              {
+                "id": "d",
+                "text": "Stojí tam ale",
+                "spravne": false,
+                "typ_chyby": "detektiv-oprava-jine-chyby"
+              }
+            ]
+          }
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Petr je vymyšlený spolužák. Chyba je schovaná: oslovení stojí uprostřed věty, první čárku Petr napsal, chybí jen druhá. Ve větě je i výčet, který má Petr dobře. Dítě klikne na místo mezi slovy a v kroku 2 (Proč tam patří čárka?) vybere důvod.",
+        "reseni": "Chyba: chybí čárka za Kláro.\n\nUkaž mi, Kláro, tu novou mikinu, tričko a kalhoty. (oslovení uprostřed má čárku před i za; výčet má Petr dobře, před a čárka není)\n\n**Výsledek:** krok 1 za Kláro, krok 2 Končí tam oslovení",
+        "otazky": [
+          {
+            "k": "Celá úloha",
+            "text": "„Ve kterých případech se píše čárka, i když má věta jen jedno sloveso? Vyjmenuj je.“"
+          },
+          {
+            "k": "Krok 1",
+            "text": "„Projdi Petrovu větu slovo po slovu. Co v ní najdeš: výčet, ale, oslovení, nebo větu, která sama neobstojí? Má každé svoje čárky?“"
+          },
+          {
+            "k": "Krok 1 a 2",
+            "text": "„Zkus Petrovu větu říct nahlas a ukázat, kam patří čárky. Kde to máš jinak než Petr?“"
+          }
+        ],
+        "otocena_role": "„Já budu Petr. Řekni mi, kde mám chybu a jak si ji příště ohlídám.“",
+        "otocena_role_odpoved": "Chybí čárka za Kláro. Kláro je oslovení uprostřed věty, takže má čárku před i za. Příště u oslovení zkontrolovat obě strany.",
+        "typicka_chyba": "Podívejte se na obrazovku dítěte. Klikne za tričko, před a: „Spojuje a jen poslední dvě věci?“ Klikne jinam: „Na koho se volá a kde to volání končí?“ V kroku 2 zvolí Začíná tam oslovení: „Je na začátku oslovení čárka?“ Zvolí výčet nebo ale: „Na koho Petr volá?“"
+      },
+      "semafor": {
+        "zelena": "Výborně — chybějící čárku u oslovení dítě našlo i vysvětlilo. Pochvalte, že zkontrolovalo obě strany oslovení, a jděte dál.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Petr napsal čárku jen za Ráno: Ráno Emo nezapomeň klíče.“ Zeptejte se: „Kam patří čárka, kterou Petr zapomněl? Proč?“ Kontrola pro vás: za Emo; oslovení uprostřed má čárku před i za.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše tři věty, ve kterých volá na kamaráda nebo sourozence: jménem na začátku, uprostřed a na konci. Pak u každého jména zakroužkuje čárky. Potom zopakujte lekci „Čárka ve větě jednoduché“. Kontrola pro vás: na začátku čárka za jménem, na konci před jménem, uprostřed před i za ním."
+      },
+      "tisk": {
+        "zadani": "Petr napsal větu a zapomněl v ní jednu čárku:\n\nUkaž mi, Kláro tu novou mikinu, tričko a kalhoty.\n\nA) Napiš čárku tam, kam patří.\n\nB) Proč tam patří čárka? Zakroužkuj: a) Končí tam oslovení b) Začíná tam oslovení c) Je tam výčet d) Stojí tam ale"
+      }
+    },
+    {
+      "id": "cj-t9-l35nb-U5",
+      "typ": "kontrolni",
+      "cil": "Samostatně napsat osm čárek ve čtyřech větách (oslovení na začátku i uprostřed, dva výčty, ale, vedlejší věta s kde) a nenapsat čárku před a ani před i.",
+      "cas_min": 6,
+      "zadani": "Klikni na všechna místa, kam patří čárka.",
+      "zdroj": "vlastni",
+      "kroky": [
+        {
+          "id": "final",
+          "popisek": "Tvoje odpověď",
+          "vstup": {
+            "typ": "klik_ve_textu",
+            "text": "Adame na hory si dej do auta lyže hůlky kombinézu a termosku. Ten sál je malý ale čistý. Počkej na nás Tomáši u kostela kde je zastávka. Klára Ema i Lucka už mávají u vchodu.",
+            "cil": "mezery",
+            "min": 1,
+            "max": 11
+          },
+          "spravne": [
+            0,
+            7,
+            8,
+            15,
+            20,
+            21,
+            23,
+            27
+          ],
+          "zname_chyby": [
+            {
+              "chybi": [
+                0,
+                20,
+                21
+              ],
+              "typ_chyby": "carka-osloveni-chybi"
+            },
+            {
+              "chybi": [
+                7,
+                8,
+                27
+              ],
+              "typ_chyby": "carka-vycet-chybi"
+            },
+            {
+              "chybi": [
+                15
+              ],
+              "typ_chyby": "carka-chybi-pred-ale"
+            },
+            {
+              "navic": [
+                28
+              ],
+              "typ_chyby": "carka-navic-pred-i-ani-nebo"
+            }
+          ]
+        }
+      ],
+      "tahak": {
+        "vysvetleni": "Kontrolní úloha: dítě ji řeší samo, vy jen sledujete. Otázky použijte, až když se úplně zasekne; pak v semaforu zvolte „Potřeboval(a) otázku“. Čárek je osm a jevy se míchají: oslovení na začátku i uprostřed (z obou stran), dva výčty, ale a vedlejší věta s kde. Pasti: před a a před i čárka není.",
+        "reseni": "Adame, na hory si dej do auta lyže, hůlky, kombinézu a termosku. (oslovení; výčet, před a ne)\n\nTen sál je malý, ale čistý. (před ale)\n\nPočkej na nás, Tomáši, u kostela, kde je zastávka. (oslovení uprostřed: před i za; před kde)\n\nKlára, Ema i Lucka už mávají u vchodu. (výčet; před i ne)\n\n**Výsledek:** čárky za Adame, lyže, hůlky, malý, nás, Tomáši, kostela, Klára",
+        "otazky": [
+          "„Ve kterých případech se píše čárka? Řekni všechny, které znáš.“",
+          "„Projdi větu po větě. Je v ní oslovení, výčet, ale, nebo věta, která sama neobstojí?“",
+          "„U každého oslovení a každého výčtu zkontroluj začátek i konec. Co je mezi posledními dvěma členy výčtu?“"
+        ],
+        "otocena_role": "„Vyber si dvě čárky z různých důvodů a vysvětli mi, proč tam jsou.“",
+        "otocena_role_odpoved": "Třeba za malý: před ale je čárka, staví malý proti čistý. A před i za Tomáši: je to oslovení uprostřed věty.",
+        "typicka_chyba": "Kontrolní úloha: než dítě odevzdá, mlčte; když se úplně zasekne (minutu nic nekliká nebo řekne „nevím“), čtěte Otázky 1–3 z taháku. Po odevzdání se podívejte na obrazovku dítěte: chybí čárka u Adame nebo Tomáši: „Kde volání začíná a končí?“ Ve výčtu: „Kolik věcí?“ Před ale: „Staví ale něco proti sobě?“ Před kde: „Kde začíná věta, která sama neobstojí?“ Čárka před a nebo i: „Co spojuje?“ Semafor: opraví se samo, bez vaší otázky = „Sám/sama“; opraví se po vaší otázce = „Potřeboval(a) otázku“; chybu neopraví = „Spletl(a) se“."
+      },
+      "semafor": {
+        "zelena": "Výborně — všech osm čárek sedí a před a ani i žádná není. Pochvalte, že u každé vědělo proč. Zítra můžete pokračovat další lekcí.",
+        "oranzova": "Zítra 5 minut, jen ústně. Přečtěte dítěti: „Tomáši na nákup vezmi tašku peněženku a seznam ale sladkosti nekupuj.“ Dítě řekne, kam patří čárky a proč. Kontrola pro vás: za Tomáši (oslovení), za tašku (výčet), za seznam (před ale); před a čárka není.",
+        "cervena": "Dnes už nepokračujte, pochvalte snahu. Připravte: papír a tužku. Zítra ať dítě napíše čtyři věty: s oslovením na začátku, s výčtem tří zvířat, se slovem ale a se slovem ani (Nemám… ani…). U každé čárky řekne proč. Potom zopakujte lekci „Čárka ve větě jednoduché“. Kontrola pro vás: za oslovením čárka; ve výčtu čárka, před a ne; před ale čárka; před ani ne."
+      },
+      "tisk": {
+        "zadani": "Doplň čárky.\n\nAdame na hory si dej do auta lyže hůlky kombinézu a termosku. Ten sál je malý ale čistý. Počkej na nás Tomáši u kostela kde je zastávka. Klára Ema i Lucka už mávají u vchodu."
+      }
+    }
+  ],
+  "kontrola": {
+    "jistota": "jista",
+    "poznamka": "B-varianta naostro lekce cj-t9-l35n (opakování po červené, ZADANI-OSMA §9 bod 4), autor 14. 10. 2026, rozpis cestina/Obsah/TEMA-9-B.md (oddíl B-varianty naostro lekcí). Struktura 1:1 s hlavní lekcí ověřena skriptem /tmp/b-cj9nb/kontrola.mjs: typy úloh, vstup.typ v každém kroku, počty kroků, dlaždic, čárek a rolí, min/max, pozice správné dlaždice, kódy na stejných volbách, kódy a pořadí známých chyb; indexy tokenů počítány tokenizací vyhodnoceni-cj.js; vzorová odpověď každého kroku vyšla správně (vyhodnotKrok, vzorovaOdpoved) a každá chybná dlaždice i známá chyba vrací svůj kód. Hodnocená slova a věty nejsou z cj-t9-l33 … l36, cj-t9-l33n … l36n, cj-t9-l33b … l36b ani z úloh tématu 9 v cj-t0-diag a cj-t0-pol (skript porovnává dlaždice, celé texty čárkových úloh, označená slovesa, přepisy a diktát); opakují se jen uzavřené skupiny (spojovací výrazy, oslovení jmen, počty vět, důvody v detektivu) a běžná slova kolem hodnocených míst, vždy v nové větě. Pravidla ÚJČ: id=150 (čárka na hranici vedlejší věty, vložená věta z obou stran), id=151 (výčet, ale ve větě jednoduché, oslovení; několikanásobný přísudek se společným podmětem v úlohách na počet vět není), id=153 (a, i, ani ve slučovacím poměru bez čárky, a potom je slučovací), id=155 (nebo v hodnoceném místě není). Nikde čárka před slučovacím a, i, ani; a nikde nestojí hned za vloženou větou; žádné až když, poté co, oslovení s pozdravem, vsuvka ani přísudek před několikanásobným podmětem. Poslech neověřuje čárku (žádný kód s „čárkou“). V textech, které rodič čte nahlas, Kontrola pro vás říká, kam čárky patří. Každé slovo hodnocených textů ověřeno v tabulce hesla ÚJČ přes nastroje/ujc.sh (cache 14. 10.; nově dotázáno buchta, kombinéza, lepidlo, ručník, termoska, nachystat; slova, na která ÚJČ při výpadku neodpověděl, nahrazena ověřenými z cache); tvary příčestí v ž. r. a mn. č. jsou pravidelné tvary ověřených sloves. Jména Tomáš, Lucka (jen 1. p.), Klára, Adam, Ema; Petr jen detektiv, Honzík ne. Oslovení Kláro, Adame, Tomáši v tabulkách hesel; Emo se nehodnotí, proto je ve slovníčku a v Platí jako příklad. Korektura 14. 10. 2026 (jazykový korektor, nezávisle na autorovi): každý hodnocený tvar (dlaždice, řádky v zadání, texty čárkových úloh, označená slovesa, přepisy nahrávek, diktát) znovu ověřen proti tabulkám hesel ÚJČ (nastroje/ujc.sh, cache; dotázáno navíc starý), příčestí ž. r. a mn. č. a zápory jsou pravidelné tvary ověřených sloves; čárky ověřeny podle id=150 (vložené věty z obou stran, i před příklonným se/si), 151, 153 (a potom slučovací), 155; indexy tokenů přepočítány ručně; vyhodnocení ověřeno vlastním skriptem (/tmp/kor-nb9/vyh.mjs přes vyhodnotKrok a vzorovaOdpoved): vzorová odpověď každého kroku správně, každá chybná dlaždice a každá známá chyba vrací svůj kód. Opraveno (opakovaná hodnocená slova hlavní L35n): U1 řada D „Škola, do které chodí Adam, má velkou knihovnu“ → „Bazén, do kterého jezdí Adam, má teplou vodu“ (chodí); U2 „hrají ve školním divadle“ → „vystupují ve školním divadle“ (hrají); U3 řada A „hebký, ale těžký“ → „hebký, ale pevný“ (těžký u čárky před ale; náhrada starý, ale pohodlný zamítnuta, je v učební L35). Odkaz ?slovo=Lucka ze zdroje vyřazen: příručka pod ním vrací jen místní jméno Lucko; Lucka je jméno ze zadání (ZADANI-OSMA §4), užité jen v 1. pádě, tvar se nehodnotí.",
+    "zkontroloval": "korektor",
+    "datum": "2026-10-14",
+    "zdroj": [
+      "https://prirucka.ujc.cas.cz/?id=150",
+      "https://prirucka.ujc.cas.cz/?id=151",
+      "https://prirucka.ujc.cas.cz/?id=153",
+      "https://prirucka.ujc.cas.cz/?id=155",
+      "https://prirucka.ujc.cas.cz/?slovo=Ema",
+      "https://prirucka.ujc.cas.cz/?slovo=Kl%C3%A1ra",
+      "https://prirucka.ujc.cas.cz/?slovo=Adam",
+      "https://prirucka.ujc.cas.cz/?slovo=Tom%C3%A1%C5%A1",
+      "https://prirucka.ujc.cas.cz/?slovo=usnout",
+      "https://prirucka.ujc.cas.cz/?slovo=t%C3%A1ta",
+      "https://prirucka.ujc.cas.cz/?slovo=up%C3%A9ct",
+      "https://prirucka.ujc.cas.cz/?slovo=kol%C3%A1%C4%8D",
+      "https://prirucka.ujc.cas.cz/?slovo=m%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=narozeniny",
+      "https://prirucka.ujc.cas.cz/?slovo=va%C5%99it",
+      "https://prirucka.ujc.cas.cz/?slovo=nakupovat",
+      "https://prirucka.ujc.cas.cz/?slovo=sobota",
+      "https://prirucka.ujc.cas.cz/?slovo=doufat",
+      "https://prirucka.ujc.cas.cz/?slovo=dopis",
+      "https://prirucka.ujc.cas.cz/?slovo=odeslat",
+      "https://prirucka.ujc.cas.cz/?slovo=p%C5%99ij%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=v%C4%8Das",
+      "https://prirucka.ujc.cas.cz/?slovo=baz%C3%A9n",
+      "https://prirucka.ujc.cas.cz/?slovo=jezdit",
+      "https://prirucka.ujc.cas.cz/?slovo=tepl%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=voda",
+      "https://prirucka.ujc.cas.cz/?slovo=d%C4%9Bda",
+      "https://prirucka.ujc.cas.cz/?slovo=zahrada",
+      "https://prirucka.ujc.cas.cz/?slovo=jablo%C5%88",
+      "https://prirucka.ujc.cas.cz/?slovo=vi%C5%A1e%C5%88",
+      "https://prirucka.ujc.cas.cz/?slovo=l%C3%ADpa",
+      "https://prirucka.ujc.cas.cz/?slovo=buk",
+      "https://prirucka.ujc.cas.cz/?slovo=vystupovat",
+      "https://prirucka.ujc.cas.cz/?slovo=%C5%A1koln%C3%AD",
+      "https://prirucka.ujc.cas.cz/?slovo=divadlo",
+      "https://prirucka.ujc.cas.cz/?slovo=v%C3%ADkend",
+      "https://prirucka.ujc.cas.cz/?slovo=stanovat",
+      "https://prirucka.ujc.cas.cz/?slovo=louka",
+      "https://prirucka.ujc.cas.cz/?slovo=fotit",
+      "https://prirucka.ujc.cas.cz/?slovo=mot%C3%BDl",
+      "https://prirucka.ujc.cas.cz/?slovo=potom",
+      "https://prirucka.ujc.cas.cz/?slovo=rozd%C4%9Blat",
+      "https://prirucka.ujc.cas.cz/?slovo=ohe%C5%88",
+      "https://prirucka.ujc.cas.cz/?slovo=cesta",
+      "https://prirucka.ujc.cas.cz/?slovo=chata",
+      "https://prirucka.ujc.cas.cz/?slovo=%C3%BAzk%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=prudk%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=kamenit%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=pol%C5%A1t%C3%A1%C5%99",
+      "https://prirucka.ujc.cas.cz/?slovo=hebk%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=pevn%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=tr%C3%A9novat",
+      "https://prirucka.ujc.cas.cz/?slovo=pe%C4%8Dliv%C4%9B",
+      "https://prirucka.ujc.cas.cz/?slovo=vyhr%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?slovo=naj%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=gar%C3%A1%C5%BE",
+      "https://prirucka.ujc.cas.cz/?slovo=klad%C3%ADvko",
+      "https://prirucka.ujc.cas.cz/?slovo=cht%C3%ADt",
+      "https://prirucka.ujc.cas.cz/?slovo=k%C5%99e%C4%8Dek",
+      "https://prirucka.ujc.cas.cz/?slovo=my%C5%A1",
+      "https://prirucka.ujc.cas.cz/?slovo=d%C3%A1t",
+      "https://prirucka.ujc.cas.cz/?slovo=lampa",
+      "https://prirucka.ujc.cas.cz/?slovo=sirka",
+      "https://prirucka.ujc.cas.cz/?slovo=sv%C3%AD%C4%8Dka",
+      "https://prirucka.ujc.cas.cz/?slovo=uk%C3%A1zat",
+      "https://prirucka.ujc.cas.cz/?slovo=nov%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=mikina",
+      "https://prirucka.ujc.cas.cz/?slovo=tri%C4%8Dko",
+      "https://prirucka.ujc.cas.cz/?slovo=kalhoty",
+      "https://prirucka.ujc.cas.cz/?slovo=hora",
+      "https://prirucka.ujc.cas.cz/?slovo=auto",
+      "https://prirucka.ujc.cas.cz/?slovo=ly%C5%BEe",
+      "https://prirucka.ujc.cas.cz/?slovo=h%C5%AFlka",
+      "https://prirucka.ujc.cas.cz/?slovo=kombin%C3%A9za",
+      "https://prirucka.ujc.cas.cz/?slovo=termoska",
+      "https://prirucka.ujc.cas.cz/?slovo=s%C3%A1l",
+      "https://prirucka.ujc.cas.cz/?slovo=mal%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=%C4%8Dist%C3%BD",
+      "https://prirucka.ujc.cas.cz/?slovo=po%C4%8Dkat",
+      "https://prirucka.ujc.cas.cz/?slovo=kostel",
+      "https://prirucka.ujc.cas.cz/?slovo=zast%C3%A1vka",
+      "https://prirucka.ujc.cas.cz/?slovo=m%C3%A1vat",
+      "https://prirucka.ujc.cas.cz/?slovo=vchod"
+    ],
+    "testovaci_rodic": null
+  }
+}
