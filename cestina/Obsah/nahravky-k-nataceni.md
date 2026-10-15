@@ -1453,10 +1453,10 @@ Ema se s Klárou zúčastnila závodu. <break time="2s" /> Ema <break time="0.7s
 
 ## 182. t10/l40nb-d1.mp3 — diktát
 
-Lekce: cj-t10-l40nb úloha 5, věta 1 · Věta: Hádka se spolužákem byla samoúčelná.
+Lekce: cj-t10-l40nb úloha 5, věta 1 · Věta: Ema se spolužákem narýsovala čtyřúhelník.
 
 ```text
-Hádka se spolužákem byla samoúčelná. <break time="2s" /> Hádka <break time="0.7s" /> se <break time="0.7s" /> spolužákem <break time="0.7s" /> byla <break time="0.7s" /> samoúčelná.
+Ema se spolužákem narýsovala čtyřúhelník. <break time="2s" /> Ema <break time="0.7s" /> se <break time="0.7s" /> spolužákem <break time="0.7s" /> narýsovala <break time="0.7s" /> čtyřúhelník.
 ```
 
 ## 183. t10/l40-d2.mp3 — diktát
