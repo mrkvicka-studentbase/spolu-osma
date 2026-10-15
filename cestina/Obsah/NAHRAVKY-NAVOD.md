@@ -1,6 +1,6 @@
 # Návod pro agenta: nahrávky češtiny Spolu 8 v ElevenLabs
 
-Verze 1.1, 15. 10. 2026 (celý rok: 194 nahrávek, složky `t1`–`t10`). Napsal vedoucí projektu Spolu 8 pro samostatného agenta (Cowork + Claude in Chrome), který pracuje přes noc bez dozoru.
+Verze 1.2, 15. 10. 2026 (celý rok: 194 nahrávek + 4 přetočit novým hlasem, složky `t1`–`t10`). Napsal vedoucí projektu Spolu 8 pro samostatného agenta (Cowork + Claude in Chrome), který pracuje přes noc bez dozoru.
 Zadavatel je Pavel (StudentBase.cz). Tento návod je závazný. Když něco nesedí, zastav se a zapiš to do zprávy, nevymýšlej.
 
 ---
@@ -14,13 +14,15 @@ Pro každou položku ze seznamu `nahravky-k-nataceni.md` vygeneruj v ElevenLabs 
 |---|---|---|
 | Tento návod | `NAHRAVKY-NAVOD.md` | |
 | Seznam nahrávek | `nahravky-k-nataceni.md` (a totéž jako tabulka `nahravky-k-nataceni.csv`) | Čti z `.md`. Text každé nahrávky je v bloku ```` ```text ```` a kopíruje se celý, přesně. |
+| Přetočit | `nahravky-pretocit.md` (a `.csv`) | 4 starší poslechy témat 1–2 (čísla 195–198). Natoč je **po** hlavním seznamu, stejným hlasem a postupem. |
+| Hlas | **jméno hlasu napíše Pavel v zadání** | Celá dávka (198 nahrávek) jedním hlasem. |
 | Složka stahování | **`hlas tutor`** | Chrome do ní ukládá stažené soubory (Pavel ji nastavil jako výchozí). |
 | Cílová složka | složka, kterou ti Pavel zpřístupní v Coworku. Dál jí říkám **CÍL** | Sem patří hotové nahrávky. |
 | ElevenLabs | `https://elevenlabs.io/app/speech-synthesis/text-to-speech`, Pavel je v Chromu přihlášený | |
 
 Než začneš, ověř, že máš přístup ke všemu z tabulky. Když něco chybí (složka, přihlášení), nic negeneruj, napiš to do `CÍL/ZPRAVA.md` a skonči.
 
-**Kredity:** seznam má 194 nahrávek a dohromady asi 26 000 znaků (značky pauz se počítají). Na začátku si v ElevenLabs přečti zbývající kredity a zapiš je do `ZPRAVA.md`. Když jich je méně než 30 000, normálně začni, ale počítej s tím, že ti můžou dojít (pak podle bodu 7 skonči).
+**Kredity:** seznam má 194 nahrávek a dohromady asi 26 000 znaků, přetočení dalších 4 nahrávek asi 200 znaků (značky pauz se počítají). Na začátku si v ElevenLabs přečti zbývající kredity a zapiš je do `ZPRAVA.md`. Když jich je méně než 30 000, normálně začni, ale počítej s tím, že ti můžou dojít (pak podle bodu 7 skonči).
 
 ## 3. Struktura v cílové složce
 Seznam má u každé nahrávky **složku** (`t1` až `t10`) a **název souboru** (např. `l12-d1.mp3`, `l1b-u3.mp3`, `l21nb-d4.mp3`). Výsledek musí vypadat takto:
@@ -47,14 +49,14 @@ Pravidla pro názvy (aplikace je hledá doslova):
 - nic nepřidávej (žádné `_final`, `(1)`, datum). Nic nepřečíslovávej.
 
 ## 4. Nastavení ElevenLabs (jednou na začátku, pak před každou nahrávkou zkontroluj)
-1. **Hlas: stejný jako u prvních čtyř nahrávek** (Pavel je dělal 2. 10.).
-   - Otevři v ElevenLabs historii (History) a najdi generování textu „Pátý den tábora jsme my dva našli v lese tři houby.“ (případně „Večer jsme šli kolem rybníka a viděli tam dvě volavky.“).
-   - Použij **ten hlas** a **stejné nastavení** (rychlost, stabilita, podobnost). Zapiš si je do `ZPRAVA.md`.
-   - Když tyto nahrávky v historii nenajdeš: použij ženský, klidný český hlas „paní učitelka, která nespěchá“. Dej přednost hlasu, který Pavel už používal (podívej se do historie), a do zprávy napiš, který jsi vybral. Hlas pak **po celou dobu neměň**.
+1. **Hlas: ten, který Pavel jmenuje v zadání** (od 15. 10. nový hlas; staré nahrávky z 2. 10. byly mužským hlasem a přetáčejí se, viz `nahravky-pretocit.md`).
+   - Starý hlas z historie ElevenLabs **nepoužívej**.
+   - Když Pavel hlas v zadání nejmenuje: nic negeneruj, napiš to do `ZPRAVA.md` a skonči.
+   - Hlas i nastavení zapiš do `ZPRAVA.md` a **po celou dobu je neměň**.
 2. **Model: Eleven Multilingual v2.**
    - Jen ten spolehlivě čte češtinu a umí pauzy `<break time="…" />`.
    - Nepoužívej v3 ani Flash/Turbo, protože pauzy by přečetly nahlas nebo ignorovaly.
-3. **Výchozí nastavení**, když z historie nic nevyčteš:
+3. **Výchozí nastavení** (když Pavel neurčí jiné):
    - Speed 0,9;
    - Stability ~60 %;
    - Similarity ~75 %;
@@ -138,11 +140,11 @@ Krátce, česky:
 - **Kolik nahrávek je `hotovo`, `zkontrolovat` a `chyba`** (u každé `zkontrolovat` a `chyba` jedna věta proč).
 - **Hlas a nastavení:** název hlasu, model, rychlost, stabilita, podobnost.
 - **Kde jsi skončil**, pokud jsi nedokončil všechno, a proč.
-- **Co má Pavel ráno poslechnout:** vyber 5 nahrávek, z toho aspoň 3 diktáty (různá témata) a tu nejdelší.
+- **Co má Pavel ráno poslechnout:** vyber 5 nahrávek, z toho aspoň 3 diktáty (různá témata), tu nejdelší a jednu ze 4 přetočených (`t1/l1-u3.mp3`).
 
 ## 10. Co bude dál (pro Pavla, ne pro agenta)
 1. **Poslechnout vybraných 5 nahrávek** ze `ZPRAVA.md` a projít položky `zkontrolovat`.
 2. **Předat nahrávky do projektu:**
-   - buď celou CÍL (složky `t1`…`t10`) zkopírovat do `Desktop\Spolu8\web\audio\cestina\` (ke 4 hotovým nahrávkám témat 1–2; nic nepřepisovat);
+   - buď celou CÍL (složky `t1`…`t10`) zkopírovat do `Desktop\Spolu8\web\audio\cestina\` (4 starší nahrávky témat 1–2 se tím **přepíšou** novým hlasem, to je správně);
    - nebo ji poslat jako zip vedoucímu projektu (chat Spolu 8), který je zapojí a ověří (validátor + QA).
 3. **Když se lekce změní**, vedoucí přegeneruje `nahravky-k-nataceni.md` (`node nastroje/seznam-nahravek.mjs`). Agent pak pojede **podle stejného návodu** znovu. Hotové nahrávky (ty, které už jsou v `web/audio/cestina/`) v seznamu nebudou.
